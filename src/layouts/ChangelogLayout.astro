@@ -1,0 +1,95 @@
+---
+import '@/styles/globals.css'
+import { ClientRouter } from 'astro:transitions'
+
+interface Props {
+	title: string
+	description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<title>{title}</title>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta
+			name='keywords'
+			content='duneiu, tailwindcss, duneui.com, components, templates, open-source, tailwindcss-components, tailwindcss-templates'
+		/>
+		<link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
+		<meta name='description' content={description} />
+		<link
+			rel='apple-touch-icon'
+			sizes='180x180'
+			href='/favicon/apple-touch-icon.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='32x32'
+			href='/favicon/favicon-32x32.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='16x16'
+			href='/favicon/favicon-16x16.png'
+		/>
+		<link rel='manifest' href='/favicon/site.webmanifest' />
+		<link
+			rel='mask-icon'
+			href='/favicon/safari-pinned-tab.svg'
+			color='#000000'
+		/>
+		<meta name='msapplication-TileColor' content='#ffffff' />
+		<meta name='theme-color' content='#ffffff' />
+		<link rel='canonical' href='https://duneui.com/' />
+		<meta name='apple-mobile-web-app-title' content='DuneUI' />
+		<meta name='application-name' content='DuneUI' />
+		<meta property='og:url' content='https://duneui.com/' />
+		<meta property='og:type' content='website' />
+		<meta property='og:title' content='DuneUI' />
+		<meta
+			property='og:image'
+			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
+		/>
+		<meta property='og:description' content={description} />
+		<meta property='og:locate' content='es_MX' />
+		<meta property='og:site_name' content='DuneUI' />
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:site' content='@FabianHermar' />
+		<meta name='twitter:title' content='DuneUI' />
+		<meta
+			name='twitter:description'
+			content='An open-source library of components and templates made with TailwindCSS.'
+		/>
+		<meta
+			name='twitter:image'
+			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
+		/>
+		<script is:inline type='text/partytown'>
+			;(function (c, l, a, r, i, t, y) {
+				c[a] =
+					c[a] ||
+					function () {
+						;(c[a].q = c[a].q || []).push(arguments)
+					}
+				t = l.createElement(r)
+				t.async = 1
+				t.src = 'https://www.clarity.ms/tag/' + i
+				y = l.getElementsByTagName(r)[0]
+				y.parentNode.insertBefore(t, y)
+			})(window, document, 'clarity', 'script', 'o2gfoxgfkv')
+		</script>
+		<ClientRouter />
+	</head>
+	<body class='flex h-full flex-col'>
+		<main class='flex-1'>
+			<slot />
+		</main>
+	</body>
+</html>
