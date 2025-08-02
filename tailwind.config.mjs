@@ -16,9 +16,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				GilroyRegular: ['GilroyRegular', 'system-ui', 'sans-serif'],
-				GilroyBold: ['Gilroy Bold', 'system-ui', 'sans-serif'],
-				GilroySemibold: ['Gilroy Semibold', 'system-ui', 'sans-serif'],
+				heading: ['Gilroy Bold', 'system-ui', 'sans-serif'],
+				display: ['Gilroy Semibold', 'system-ui', 'sans-serif'],
 				accent: ['Albert Sans Variable', 'system-ui', 'sans-serif']
 			},
 			keyframes: {
