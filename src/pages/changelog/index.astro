@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '@/core/components/formattedDate.astro'
 import { Image } from 'astro:assets'
 import '@/styles/globals.css'
-import ChangeLog from '@/layouts/ChangelogLayout.astro'
 
 const posts = (await getCollection('changelog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -154,7 +153,7 @@ const posts = (await getCollection('changelog')).sort(
 			<main class='space-y-20 py-20 sm:space-y-32 sm:py-32'>
 				<article class='scroll-mt-16' style='padding-bottom: 0px;'>
 					<div>
-						{posts.map((post, index) => (
+						{posts.map((post) => (
 						<header class='relative mb-10 xl:mb-0'>
 							<div
 								class='pointer-events-none absolute top-0 left-[max(-0.5rem,calc(50%-18.625rem))] z-50 flex h-4 items-center justify-end gap-x-2 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:left-0 lg:min-w-lg xl:h-8'
