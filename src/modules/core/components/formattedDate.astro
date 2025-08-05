@@ -1,0 +1,47 @@
+---
+interface Props {
+	date?: Date | string | null | undefined // Permite recibir Date, string, null o undefined
+}
+
+const { date } = Astro.props
+
+// Validación y conversión de fecha más robusta
+let dateObj: Date
+
+if (!date || date === null || date === undefined) {
+	// Si no hay fecha, usar fecha actual
+	dateObj = new Date()
+} else if (typeof date === 'string') {
+	// Intentar crear fecha desde string
+	const trimmedDate = date.trim()
+	if (!trimmedDate) {
+		dateObj = new Date()
+	} else {
+		dateObj = new Date(trimmedDate)
+		// Si la fecha es inválida, intentar parsear formatos comunes
+		if (isNaN(dateObj.getTime())) {
+			// Intentar convertir formatos como "Jul 08 2022" a formato ISO
+			const parsedDate = new Date(Date.parse(trimmedDate))
+			dateObj = isNaN(parsedDate.getTime()) ? new Date() : parsedDate
+		}
+	}
+} else {
+	dateObj = date
+}
+
+// Verificación final para asegurar que tenemos una fecha válida
+if (!dateObj || isNaN(dateObj.getTime())) {
+	console.warn('FormattedDate: Invalid date provided, using current date as fallback')
+	dateObj = new Date()
+}
+---
+
+<time datetime={dateObj.toISOString()}>
+	{
+		dateObj.toLocaleDateString('en-us', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric'
+		})
+	}
+</time>
