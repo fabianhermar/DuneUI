@@ -7,7 +7,16 @@ import react from "@astrojs/react";
 
 import tailwind from "@astrojs/tailwind";
 
+import mdx from '@astrojs/mdx'
+
+import sitemap from '@astrojs/sitemap'
+
+import vercel from '@astrojs/vercel'
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [react(), tailwind(), partytown()]
+	site: 'https://duneui.com',
+	integrations: [react(), tailwind(), partytown(), mdx(), sitemap()],
+	adapter: vercel(),
+	output: 'static'
 })
