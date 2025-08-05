@@ -48,12 +48,10 @@ const firstRow = reviews.slice(0, reviews.length);
 
 const ReviewCard = ({
   img,
-  name,
-  body,
+	name,
 }: {
   img: string;
-  name: string;
-  body: string;
+		name: string;
 }) => {
   return (
     <figure
