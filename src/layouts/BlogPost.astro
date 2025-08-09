@@ -1,0 +1,197 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Header from '@/core/components/Header.astro'
+import Footer from '@/core/components/Footer.astro'
+import FormattedDate from '@/core/components/formattedDate.astro'
+import '@/styles/globals.css'
+import { ClientRouter } from 'astro:transitions'
+
+type Props = CollectionEntry<'blog'>['data']
+
+const {
+	title,
+	description,
+	pubDate,
+	readTime,
+	updatedDate,
+	heroImage,
+	category,
+	writer,
+	writerImage,
+	role
+} = Astro.props
+---
+
+<html lang='en'>
+	<head>
+		<title>{title}</title>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta
+			name='keywords'
+			content='duneiu, tailwindcss, duneui.com, components, templates, open-source, tailwindcss-components, tailwindcss-templates'
+		/>
+		<link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
+		<meta name='description' content={description} />
+		<link
+			rel='apple-touch-icon'
+			sizes='180x180'
+			href='/favicon/apple-touch-icon.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='32x32'
+			href='/favicon/favicon-32x32.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='16x16'
+			href='/favicon/favicon-16x16.png'
+		/>
+		<link rel='manifest' href='/favicon/site.webmanifest' />
+		<link
+			rel='mask-icon'
+			href='/favicon/safari-pinned-tab.svg'
+			color='#000000'
+		/>
+		<meta name='msapplication-TileColor' content='#ffffff' />
+		<meta name='theme-color' content='#ffffff' />
+		<link rel='canonical' href='https://duneui.com/' />
+		<meta name='apple-mobile-web-app-title' content='DuneUI' />
+		<meta name='application-name' content='DuneUI' />
+		<meta property='og:url' content='https://duneui.com/' />
+		<meta property='og:type' content='website' />
+		<meta property='og:title' content='DuneUI' />
+		<meta
+			property='og:image'
+			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
+		/>
+		<meta property='og:description' content={description} />
+		<meta property='og:locate' content='es_MX' />
+		<meta property='og:site_name' content='DuneUI' />
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:site' content='@FabianHermar' />
+		<meta name='twitter:title' content='DuneUI' />
+		<meta
+			name='twitter:description'
+			content='An open-source library of components and templates made with TailwindCSS.'
+		/>
+		<meta
+			name='twitter:image'
+			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
+		/>
+		<ClientRouter />
+	</head>
+
+	<body>
+		<Header logo='invert' navLinks='text-black' />
+		<main class='pt-32'>
+			<article>
+				<h1 class='font-heading font-bold text-center text-5xl'>{title}</h1>
+				<div
+					class='flex items-center flex-row gap-x-4 mb-4 justify-center pt-4'
+				>
+					<img
+						src={writerImage}
+						alt={writer}
+						class='rounded-full size-6 object-cover'
+						loading='lazy'
+					/>
+					<div class='flex flex-row gap-x-2'>
+						<span class='font-display font-semibold'>{writer}</span>
+						<span class='font-accent font-light text-gray-500'>{role}</span>
+					</div>
+				</div>
+				<div class='hero-image'>
+					{
+						heroImage && (
+							<img width={720} height={360} src={heroImage} alt={title} />
+						)
+					}
+				</div>
+				<div class='prose'>
+					<div>
+						<div class='date flex justify-between items-center mt-16'>
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div class='last-updated-on font-display font-light'>
+										Last updated on <FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
+							<div
+								class='flex justify-center items-center gap-x-2 font-display'
+							>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									fill='none'
+									viewBox='0 0 24 24'
+									stroke-width='1.5'
+									stroke='currentColor'
+									class='size-6'
+								>
+									<path
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										d='M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'></path>
+								</svg>
+								<span>{readTime} min</span>
+							</div>
+						</div>
+					</div>
+					<slot />
+					<div class='flex font-display font-semibold text-sm gap-x-2'>
+						Category: <span class='font-accent font-light'>{category}</span>
+					</div>
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	body {
+		width: calc(100% - 2em);
+		max-width: 100%;
+		margin: 0;
+	}
+	.hero-image {
+		width: 100%;
+	}
+	.hero-image img {
+		display: block;
+		margin: 0 auto;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+	}
+	.prose {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 1em;
+		color: rgb(var(--gray-dark));
+		font-family: 'Albert Sans Variable', sans-serif;
+		font-weight: 400;
+	}
+	.title {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		text-align: center;
+		line-height: 1;
+	}
+	.title h1 {
+		margin: 0 0 0.5em 0;
+		font-family: 'Albert Sans Variable', sans-serif;
+	}
+	.date {
+		margin-bottom: 0.5em;
+		color: rgb(var(--gray));
+	}
+	.last-updated-on {
+		font-style: italic;
+	}
+</style>
