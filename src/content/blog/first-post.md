@@ -2,6 +2,7 @@
 title: 'First post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
+readTime: '3'
 heroImage: '/blog/blog-placeholder-3.jpg'
 writer: 'John Doe'
 writerImage: 'https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGd1eXxlbnwwfHwwfHx8Mg%3D%3D'
