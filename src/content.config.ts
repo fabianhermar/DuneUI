@@ -10,6 +10,7 @@ const blog = defineCollection({
 		description: z.string(),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
+		readTime: z.string().optional(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		writer: z.string(),
@@ -19,13 +20,4 @@ const blog = defineCollection({
 	})
 })
 
-const changelog = defineCollection({
-	loader: glob({ base: './src/content/changelog', pattern: '**/*.{md,mdx}' }),
-	schema: z.object({
-		title: z.string(),
-		pubDate: z.coerce.date(),
-		heroImage: z.string().optional(),
-	})
-})
-
-export const collections = { blog, changelog }
+export const collections = { blog }
