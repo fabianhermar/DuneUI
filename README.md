@@ -1,44 +1,105 @@
-# DuneUI
+<div align='center'>
+	<a href='https://neoicons.windui.org' target='_blank'>
+		<picture>
+  	  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/FabianHermar/DuneUI/refs/heads/main/public/svg/DuneUI-logo-white.svg">
+  	  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/FabianHermar/DuneUI/refs/heads/main/public/svg/DuneUI-logo-black.svg">
+  	  <Image alt="Neoicons" src="https://raw.githubusercontent.com/FabianHermar/DuneUI/refs/heads/main/public/svg/DuneUI-logo-black.svg" width="500" style="max-width: 100%;">
+    </picture>
+	</a>
+</div>
+<div align='center'>
+  <p>Create stunning user interfaces in minutes with our free collection of high-quality Tailwind CSS components.</p>
+  <a href='https://duneui.com' target='_blank'>Explore DuneUI →</a>
+</div>
+				
+## 🚀 Features
 
-**DuneUI** is a UI component library built on **TailwindCSS**, designed to simplify the creation of modern and accessible web interfaces. No need to install additional packages—just copy and paste the component code, and use the power of TailwindCSS to customize everything to your needs.
+* 🎨 **Modern designs** ready for production.
+* 📱 **Responsive** by default.
+* ⚡ **No extra dependencies**, just TailwindCSS.
+* ♿ **Accessibility built-in** (proper ARIA attributes and roles).
+* 🔄 **Easy customization** with Tailwind utilities.
 
-## Features
+---
 
-- **TailwindCSS-based**: All components are styled using TailwindCSS utilities, allowing you to easily tweak and adjust styles.
-- **Production-ready components**: Copy and paste components directly into your project with no extra dependencies.
-- **Accessibility**: Components are designed following best accessibility practices.
-- **Framework-agnostic**: Works in any project that uses TailwindCSS, with no additional JavaScript required.
+## 📦 Installation
 
-## Getting Started
+Before using the components, make sure **TailwindCSS** is installed in your project.
+If you don’t have it yet, follow the [official installation guide](https://tailwindcss.com/docs/installation).
 
-1. Ensure that **TailwindCSS** is set up in your project. If not, follow [this installation guide](https://tailwindcss.com/docs/installation).
-2. Browse the [DuneUI documentation](https://duneui.com/docs) to find the component you need.
-3. Copy the component’s code.
-4. Paste it into your project and adjust the TailwindCSS classes as needed.
+---
 
-### Example
+## 🛠 Usage
 
-```html
-<!-- DuneUI Button Component -->
-<button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-  Click me
+1. Find the component you want in the documentation.
+2. Copy the component code.
+3. Paste it into your project and tweak as needed.
+
+Example: **Basic Button**
+
+```jsx
+<button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+  Click Me
 </button>
 ```
 
-## Documentation
+---
 
-Check out the full [DuneUI documentation](https://duneui.com/docs) to explore all available components and learn how to customize them using TailwindCSS.
+## 📚 Included Components
 
-## Contributing
+* Buttons
+* Forms & Inputs
+* Cards
+* Navbar
+* Modals
+* Tables
+* Alerts & Notifications
+* Badges & Labels
+* Pagination
+* … and more
 
-Contributions are welcome! If you’d like to contribute or add new components, follow these steps:
+---
 
-1. Fork the repository.
-2. Create a new branch for your feature: `git checkout -b my-new-feature`.
-3. Commit your changes: `git commit -m 'Add new feature'`.
-4. Push to the branch: `git push origin my-new-feature`.
-5. Open a Pull Request for review.
+## 🎯 Customization
 
-## License
+> [!NOTE]\
+> If you are using TailwindCSS version 4, the `tailwind.config.js` file is no longer necessary. Now, all your configurations and customizations must be done directly in the `globals.css` file.
+> Check out the official documentation on how to do it correctly. [TailwindCSS Docs](https://tailwindcss.com/docs/installation)
 
-This project is licensed under the [MIT License](LICENSE).
+> [!NOTE]\
+> If you are using TailwindCSS version 3, you will need to make the appropriate configurations in the `tailwind.config.js` file to adapt the components to your liking.
+> - You can customize colors, typography, and spacing directly from your `tailwind.config.js` file.
+
+
+```js
+// tailwind.config.js
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2563eb',
+      },
+    },
+  },
+}
+```
+
+
+
+---
+
+## 📄 License
+
+This project is **Open Source** under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributing
+
+If you’d like to add a new component or improve an existing one:
+
+1. Fork the repository
+2. Create a branch for your changes
+3. Submit a pull request
+¿Quieres que lo prepare así?
+
