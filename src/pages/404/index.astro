@@ -1,0 +1,39 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Button from '@/core/design-system/Button.astro'
+---
+
+<Layout
+	title='404 - page not found'
+	description='The page you are looking for seems to have vanished like sand in the wind.'
+>
+	<main class='pt-10 md:pt-24'>
+		<div class='min-h-screen flex flex-col justify-between'>
+			<div
+				class='flex-grow flex flex-col items-center justify-center text-center px-4 pt-5'
+			>
+				<h1 class='text-6xl font-bold font-heading mb-4'>
+					Oops, you got lost in the dunes.
+				</h1>
+				<p class='mb-4 font-normal font-accent text-lg max-w-lg'>
+					The page you are looking for seems to have vanished like sand in the
+					wind.
+				</p>
+				<Button
+					href='/'
+					text='Back to the Oasis'
+					additionalClasses='bg-[#93603e] hover:bg-[#c18156] transition-colors duration-100 select-none'
+				/>
+			</div>
+			<div class='w-full'>
+				<img
+					src='/svg/dune.svg'
+					width={1200}
+					height={300}
+					alt='Desert landscape with cacti and mountains under a crescent moon'
+					class='w-full h-auto select-none'
+				/>
+			</div>
+		</div>
+	</main>
+</Layout>
