@@ -15,7 +15,6 @@
 			"@/AUI/*": ["./src/modules/application-ui/*"],
 			"@/ecommerce/*": ["./src/modules/ecommerce/*"],
 			"@/marketing/*": ["./src/modules/marketing/*"]
-		},
-		"baseUrl": "./"
+		}
 	}
 }
