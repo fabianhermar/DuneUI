@@ -1,0 +1,18 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Library from '@/modules/application-ui/Library'
+
+// Trae todos los archivos HTML en application-ui usando Vite
+const globFiles = import.meta.glob('../../../modules/snippets/application-ui/**/*.html', { eager: true, query: '?raw', import: 'default' });
+
+// Mapea cada archivo a { title, category, code }
+const components = Object.entries(globFiles).map(([path, content]) => ({
+	title: path.split('/').pop()?.replace('.html', '') ?? 'Component',
+	category: path.split('/').slice(-2, -1)[0], // carpeta padre
+	code: content as string
+}))
+---
+
+<Layout title='UI Library' description='Todos los snippets UI'>
+	<Library components={components} client:load />
+</Layout>
