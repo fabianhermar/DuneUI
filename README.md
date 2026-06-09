@@ -31,7 +31,7 @@ If you don’t have it yet, follow the [official installation guide](https://tai
 
 ## 🛠 Usage
 
-1. Find the component you want in the documentation.
+1. Find the component you want in the documentation..
 2. Copy the component code.
 3. Paste it into your project and tweak as needed.
 
