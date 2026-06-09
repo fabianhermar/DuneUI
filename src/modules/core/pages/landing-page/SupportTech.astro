@@ -1,17 +1,55 @@
 ---
-import { MarqueeDemo } from './Tech'
+const techs = [
+	{ name: 'Astro', img: '/svg/logos/astro.svg' },
+	{ name: 'HTML', img: '/svg/logos/html.svg' },
+	{ name: 'Next.js', img: '/svg/logos/nextjs.svg' },
+	{ name: 'Nuxt', img: '/svg/logos/nuxt.svg' },
+	{ name: 'Preact', img: '/svg/logos/preact.svg' },
+	{ name: 'React', img: '/svg/logos/react.svg' },
+	{ name: 'Svelte', img: '/svg/logos/svelte.svg' },
+	{ name: 'Vue', img: '/svg/logos/vue.svg' },
+]
 ---
 
-<section class='h-96 backdrop-blur px-5 max-md:hidden'>
-	<div class='flex flex-col md:flex-row justify-around items-center gap-x-4'>
-		<div class='max-w-md'>
-			<p class='font-semibold font-display text-2xl text-neutral-800'>
-				You can use our components in the different frameworks that support
-				TailwindCSS.
+<section class='relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 pt-32 pb-32'>
+	<div class='flex flex-col md:flex-row items-start md:items-center gap-14 md:gap-20'>
+
+		<!-- Left: Text -->
+		<div class='shrink-0 md:max-w-sm'>
+			<p class='text-sm font-semibold font-accent uppercase tracking-widest text-[#93603e] mb-4'>
+				Compatible with
+			</p>
+			<h2 class='text-3xl md:text-4xl font-bold font-heading text-neutral-900 leading-tight'>
+				Works with your favorite frameworks
+			</h2>
+			<p class='mt-4 text-base font-accent text-neutral-500 leading-relaxed'>
+				Any framework that supports TailwindCSS is compatible with Dune UI out of the box.
 			</p>
 		</div>
-		<span class='border-l-2 border-neutral-500 h-24 rounded-xl hidden md:block'
-		></span>
-		<MarqueeDemo />
+
+		<!-- Divider -->
+		<span class='hidden md:block self-stretch w-px bg-[#ede9e3] rounded-full'></span>
+
+		<!-- Right: Logo grid -->
+		<div class='flex-1 grid grid-cols-4 gap-5'>
+			{techs.map(tech => (
+				<div
+					class='group flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#ede9e3] bg-white/70 p-6 shadow-sm transition-all duration-200 hover:border-[#c18156]/30 hover:shadow-md hover:-translate-y-1 hover:bg-white'
+				>
+					<img
+						src={tech.img}
+						alt={tech.name}
+						width='48'
+						height='48'
+						class='size-12 object-contain grayscale transition-all duration-200 group-hover:grayscale-0'
+						loading='lazy'
+						decoding='async'
+					/>
+					<span class='text-sm font-semibold font-accent text-neutral-400 group-hover:text-neutral-700 transition-colors duration-200'>
+						{tech.name}
+					</span>
+				</div>
+			))}
+		</div>
 	</div>
 </section>

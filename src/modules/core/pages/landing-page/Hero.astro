@@ -1,121 +1,297 @@
----
-import Button from '@/core/design-system/Button.astro'
-import Pill from '@/core/design-system/Pill.astro'
-import GridPatternLinearGradient from '@/core/components/Background'
-import { Particles } from '@/core/components/Particles'
----
+<section
+	class='relative min-h-svh flex flex-col items-center justify-center overflow-hidden pt-20'
+>
 
-<GridPatternLinearGradient>
-	<section class='overflow-hidden relative h-max'>
-		<div class='w-full pt-32 md:pt-32 lg:pt-48 px-4 md:px-6'>
-			<div
-				class='container mx-auto flex flex-col items-center space-y-4 text-center'
+	<!-- ===================== MAIN GRID ===================== -->
+	<div class='relative z-10 w-full max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center pt-12 pb-24'>
+
+		<!-- ========== LEFT: CONTENT ========== -->
+		<div class='flex flex-col gap-7 items-center lg:items-start animate-fade-up'>
+
+			<!-- Badge -->
+			<a
+				href='#!'
+				class='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-accent text-[0.8125rem] text-[#cea472] w-max cursor-default
+					   bg-[rgba(193,129,86,0.08)] border border-[rgba(193,129,86,0.25)]
+					   transition-all duration-300
+					   hover:bg-[rgba(193,129,86,0.14)] hover:border-[rgba(193,129,86,0.4)] hover:-translate-y-px
+					   [animation-delay:0.1s] animate-fade-up'
+				aria-label='Alpha version badge'
 			>
-				<Pill text='🛠 Alpha version of DuneUI' href='#!' />
-				<h1
-					class='text-4xl font-bold lg:h-[150px] font-heading tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none max-w-3xl mx-auto bg-clip-text text-transparent bg-gradient-to-r from-[#93603e] via-[#c18156] to-[#cea472]'
+				<span
+					class='size-[7px] rounded-full bg-[#c18156] animate-pulse-dot
+						   shadow-[0_0_8px_rgba(193,129,86,0.8)]'
+				></span>
+				<span class='text-[rgba(206,164,114,0.9)]'>🏜️ Alpha — Open Source & Free</span>
+				<span class='text-[rgba(206,164,114,0.5)] transition-transform duration-200 group-hover:translate-x-1'>→</span>
+			</a>
+
+			<!-- Heading -->
+			<h1
+				class='flex flex-col gap-1 font-heading font-extrabold tracking-[-0.03em] leading-[1.08]
+					   text-[clamp(2.5rem,6vw,4.5rem)]
+					   text-center lg:text-left
+					   [animation-delay:0.15s] animate-fade-up'
+			>
+				<span class='text-black'>Craft stunning</span>
+				<span
+					class='bg-clip-text text-transparent animate-gradient-shift bg-size-[200%_200%]
+						   bg-[linear-gradient(135deg,#f6edde_0%,#cea472_30%,#c18156_55%,#e8b07a_80%,#f6d9b0_100%)]'
+				>UI components</span>
+				<span class='text-black'>in seconds.</span>
+			</h1>
+
+			<!-- Subtitle -->
+			<p
+				class='font-accent text-[clamp(1rem,2vw,1.125rem)] leading-[1.7] text-gray-500
+					   max-w-[520px] text-center lg:text-left
+					   [animation-delay:0.2s] animate-fade-up'
+			>
+				The most beautiful collection of
+				<strong class='text-[rgba(206,164,114,0.85)] font-semibold'>Tailwind CSS & CSS components</strong>
+				— designed for developers who care about craft. Free. Always.
+			</p>
+
+			<!-- CTA Buttons -->
+			<div class='flex flex-wrap justify-center lg:justify-start gap-3.5 [animation-delay:0.25s] animate-fade-up'>
+
+				<!-- Primary -->
+				<a
+					href='/components'
+					id='hero-browse-btn'
+					aria-label='Browse all components'
+					class='relative inline-flex items-center gap-2 px-6 py-3 font-accent font-semibold text-[0.9375rem] text-white
+						   rounded-[10px] overflow-hidden no-underline
+						   bg-[linear-gradient(135deg,#93603e_0%,#c18156_50%,#cea472_100%)]
+						   shadow-[0_0_20px_rgba(193,129,86,0.35),0_4px_16px_rgba(147,96,62,0.4),inset_0_1px_0_rgba(255,255,255,0.15)]
+						   transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+						   hover:-translate-y-0.5 hover:scale-[1.02]
+						   hover:shadow-[0_0_35px_rgba(193,129,86,0.55),0_8px_25px_rgba(147,96,62,0.5),inset_0_1px_0_rgba(255,255,255,0.2)]
+						   active:translate-y-0 active:scale-[0.99]'
 				>
-					Make your websites looks stunning
-				</h1>
-				<p
-					class='mx-auto max-w-[700px] font-normal font-accent text-gray-600 md:text-xl dark:text-gray-300 mb-8'
+					<!-- Button inner glow -->
+					<span class='absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0%,transparent_60%)] pointer-events-none'></span>
+
+					<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='relative z-10'>
+						<rect x='3' y='3' width='7' height='7'></rect>
+						<rect x='14' y='3' width='7' height='7'></rect>
+						<rect x='14' y='14' width='7' height='7'></rect>
+						<rect x='3' y='14' width='7' height='7'></rect>
+					</svg>
+					<span class='relative z-10'>Browse Components</span>
+					<span class='relative z-10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5'>↗</span>
+				</a>
+
+				<!-- Secondary -->
+				<a
+					href='/support'
+					id='hero-support-btn'
+					aria-label='Support the project'
+					class='inline-flex items-center gap-2 px-6 py-3 font-accent font-medium text-[0.9375rem]
+						   text-black rounded-[10px] no-underline
+						   bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.2)] backdrop-blur-lg
+						   transition-all duration-300
+						   hover:bg-[rgba(0,0,0,0.08)] hover:border-[rgba(0,0,0,0.2)]
+						   hover:-translate-y-px'
 				>
-					Create stunning user interfaces in minutes with our free collection of
-					high-quality Tailwind CSS components.
-				</p>
-				<div class='flex flex-col sm:flex-row gap-4'>
-					<Button
-						href='/components'
-						ariaLabel='Browse all components'
-						text='Browse all components'
-						additionalClasses='bg-[#93603e] hover:bg-[#c18156] transition-colors duration-100 select-none'
-					/>
-					<a
-						href='/support'
-						aria-label="Support Dune UI's development"
-						class='inline-flex items-center font-semibold backdrop-blur font-display justify-center rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-gray-300 hover:bg-gray-100 h-11 px-8'
+					<svg
+						width='16' height='16' viewBox='0 0 24 24'
+						fill='#e05d5d'
+						class='transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-110'
 					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							stroke-width='2'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							class='mr-2 h-4 w-4'
-							><path
-								d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'
-							></path></svg
-						>
-						Support the project
-					</a>
+						<path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/>
+					</svg>
+					Support the project
+				</a>
+			</div>
+
+			<!-- Feature pills -->
+			<div class='flex flex-wrap justify-center lg:justify-start gap-4 [animation-delay:0.3s] animate-fade-up'>
+				{[
+					'100% Free forever',
+					'Copy & paste ready',
+					'Regular updates',
+				].map((feat) => (
+					<div class='flex items-center gap-1.5 font-accent text-[0.8125rem] text-[rgb(206,165,114)]'>
+						<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#c18156' stroke-width='2.5' class='shrink-0'>
+							<polyline points='20 6 9 17 4 12'></polyline>
+						</svg>
+						{feat}
+					</div>
+				))}
+			</div>
+
+			<!-- Stats -->
+			<div
+				class='flex items-center gap-6 pt-4 border-t border-[rgb(193,129,86)]
+					   [animation-delay:0.35s] animate-fade-up'
+			>
+				{[
+					{ num: '100+', label: 'Components' },
+					{ num: '∞',   label: 'Customizable' },
+					{ num: 'v4',  label: 'Tailwind CSS' },
+				].map((stat, i) => (
+					<>
+						{i > 0 && <div class='w-px h-9 bg-[rgba(193,129,86,0.5)] shrink-0'></div>}
+						<div class='flex flex-col gap-0.5'>
+							<span class='font-heading font-extrabold text-[1.75rem] leading-none tracking-[-0.02em] text-[rgba(0,0,0,0.9)]'>
+								{stat.num}
+							</span>
+							<span class='font-accent text-[0.75rem] text-[rgba(67,59,48,0.5)] uppercase tracking-[0.05em]'>
+								{stat.label}
+							</span>
+						</div>
+					</>
+				))}
+			</div>
+		</div>
+
+		<!-- ========== RIGHT: FLOATING COMPONENT CARDS ========== -->
+		<div
+			class='relative h-[520px] hidden lg:block [animation-delay:0.4s] animate-fade-in'
+			aria-hidden='true'
+		>
+
+			<!-- Card 1: Button -->
+			<div
+				class='absolute w-[260px] top-5 right-2.5
+					   rounded-[14px] overflow-hidden backdrop-blur-xl
+					   bg-[rgba(16,12,8,0.8)] border border-[rgba(193,129,86,0.15)]
+					   shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_1px_rgba(193,129,86,0.08),inset_0_1px_0_rgba(255,255,255,0.04)]
+					   transition-all duration-300
+					   hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(193,129,86,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]'
+			>
+				<!-- Card header -->
+				<div class='flex items-center gap-2 px-3.5 py-2.5 bg-[rgba(193,129,86,0.05)] border-b border-[rgba(193,129,86,0.1)]'>
+					<div class='flex gap-[5px]'>
+						<span class='size-[10px] rounded-full bg-[#ff5f57]'></span>
+						<span class='size-[10px] rounded-full bg-[#febc2e]'></span>
+						<span class='size-[10px] rounded-full bg-[#28c840]'></span>
+					</div>
+					<span class='ml-auto font-accent text-[0.7rem] text-[rgba(206,164,114,0.4)]'>button.html</span>
 				</div>
-				<div
-					class='flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-8'
-				>
-					<div class='flex items-center space-x-2'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							stroke-width='2'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							class='text-[#93603e]'
-							><polyline points='20 6 9 17 4 12'></polyline></svg
-						>
-						<span
-							class='text-sm text-gray-600 dark:text-gray-300 font-normal font-accent'
-							>100% free</span
-						>
+				<!-- Card body -->
+				<div class='p-3.5 flex flex-col gap-1'>
+					<div class='font-mono text-[0.75rem] leading-[1.6] text-[#c18156]'>&lt;button</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6] pl-4'>
+						<span class='text-[#cea472]'>class=</span><span class='text-[#a8d8a8]'>"bg-burlywood text-white"</span>
 					</div>
-					<div class='flex items-center space-x-2'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							stroke-width='2'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							class='text-[#93603e]'
-							><polyline points='20 6 9 17 4 12'></polyline></svg
-						>
-						<span
-							class='text-sm text-gray-600 dark:text-gray-300 font-normal font-accent'
-							>Modern & Elegant</span
-						>
+					<div class='font-mono text-[0.75rem] leading-[1.6] text-[#c18156]'>&gt;</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6] pl-4 text-[rgba(246,237,222,0.7)]'>Get Started</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6] text-[#c18156]'>&lt;/button&gt;</div>
+					<!-- Live preview button -->
+					<button
+						type='button'
+						class='mt-3 w-full py-2 px-4 font-accent text-[0.8rem] font-semibold text-white rounded-[7px] cursor-pointer
+							   bg-[linear-gradient(135deg,#93603e,#c18156)]
+							   shadow-[0_0_12px_rgba(193,129,86,0.3)]
+							   transition-all duration-200
+							   hover:shadow-[0_0_20px_rgba(193,129,86,0.5)] hover:scale-[1.02]'
+					>
+						Get Started ↗
+					</button>
+				</div>
+			</div>
+
+			<!-- Card 2: Badges -->
+			<div
+				class='absolute w-[230px] top-[200px] left-0
+					   rounded-[14px] overflow-hidden backdrop-blur-xl
+					   bg-[rgba(16,12,8,0.8)] border border-[rgba(193,129,86,0.15)]
+					   shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_1px_rgba(193,129,86,0.08),inset_0_1px_0_rgba(255,255,255,0.04)]
+					   transition-all duration-300
+					   hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(193,129,86,0.25)]'
+			>
+				<div class='flex items-center gap-2 px-3.5 py-2.5 bg-[rgba(193,129,86,0.05)] border-b border-[rgba(193,129,86,0.1)]'>
+					<div class='flex gap-[5px]'>
+						<span class='size-[10px] rounded-full bg-[#ff5f57]'></span>
+						<span class='size-[10px] rounded-full bg-[#febc2e]'></span>
+						<span class='size-[10px] rounded-full bg-[#28c840]'></span>
 					</div>
-					<div class='flex items-center space-x-2'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-							fill='none'
-							stroke='currentColor'
-							stroke-width='2'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							class='text-[#93603e]'
-							><polyline points='20 6 9 17 4 12'></polyline></svg
-						>
-						<span
-							class='text-sm text-gray-600 dark:text-gray-300 font-normal font-accent'
-							>Regular updates</span
-						>
+					<span class='ml-auto font-accent text-[0.7rem] text-[rgba(206,164,114,0.4)]'>badge.html</span>
+				</div>
+				<div class='p-3.5 flex flex-col gap-1'>
+					<!-- Live badge previews -->
+					<div class='flex gap-1.5 flex-wrap mb-2'>
+						<span class='font-accent text-[0.7rem] font-semibold px-2 py-0.5 rounded-full text-[#cea472] bg-[rgba(193,129,86,0.15)] border border-[rgba(193,129,86,0.3)]'>New</span>
+						<span class='font-accent text-[0.7rem] font-semibold px-2 py-0.5 rounded-full text-[#38bdf8] bg-[rgba(56,189,248,0.1)] border border-[rgba(56,189,248,0.2)]'>Stable</span>
+						<span class='font-accent text-[0.7rem] font-semibold px-2 py-0.5 rounded-full text-[#fb7185] bg-[rgba(251,113,133,0.1)] border border-[rgba(251,113,133,0.2)]'>Hot 🔥</span>
+					</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6]'>
+						<span class='text-[#c18156]'>&lt;span</span>
+						<span class='text-[#cea472]'> class=</span><span class='text-[#a8d8a8]'>"badge"</span><span class='text-[#c18156]'>&gt;</span>
+					</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6] pl-4 text-[rgba(246,237,222,0.7)]'>New</div>
+					<div class='font-mono text-[0.75rem] leading-[1.6] text-[#c18156]'>&lt;/span&gt;</div>
+				</div>
+			</div>
+
+			<!-- Card 3: Card component -->
+			<div
+				class='absolute w-[250px] bottom-7 right-7
+					   rounded-[14px] overflow-hidden backdrop-blur-xl
+					   bg-[rgba(16,12,8,0.8)] border border-[rgba(193,129,86,0.15)]
+					   shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_1px_rgba(193,129,86,0.08),inset_0_1px_0_rgba(255,255,255,0.04)]
+					   transition-all duration-300
+					   hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(193,129,86,0.25)]'
+			>
+				<div class='flex items-center gap-2 px-3.5 py-2.5 bg-[rgba(193,129,86,0.05)] border-b border-[rgba(193,129,86,0.1)]'>
+					<div class='flex gap-[5px]'>
+						<span class='size-[10px] rounded-full bg-[#ff5f57]'></span>
+						<span class='size-[10px] rounded-full bg-[#febc2e]'></span>
+						<span class='size-[10px] rounded-full bg-[#28c840]'></span>
+					</div>
+					<span class='ml-auto font-accent text-[0.7rem] text-[rgba(206,164,114,0.4)]'>card.html</span>
+				</div>
+				<div class='p-3.5'>
+					<!-- Mini card preview -->
+					<div class='flex flex-col gap-2'>
+						<div class='h-[70px] rounded-lg border border-[rgba(193,129,86,0.1)] relative overflow-hidden
+								    bg-[linear-gradient(135deg,rgba(193,129,86,0.2)_0%,rgba(147,96,62,0.1)_100%)]'>
+							<div class='absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(193,129,86,0.08)_100%)]'></div>
+						</div>
+						<div class='flex flex-col gap-1'>
+							<p class='font-heading font-bold text-[0.8125rem] text-[rgba(246,237,222,0.85)]'>Component Card</p>
+							<p class='font-accent text-[0.7rem] text-[rgba(206,164,114,0.5)]'>Beautiful & reusable</p>
+							<div class='flex gap-1 mt-1'>
+								<span class='font-accent text-[0.65rem] px-1.5 py-0.5 rounded bg-[rgba(193,129,86,0.1)] border border-[rgba(193,129,86,0.15)] text-[rgba(206,164,114,0.6)]'>CSS</span>
+								<span class='font-accent text-[0.65rem] px-1.5 py-0.5 rounded bg-[rgba(193,129,86,0.1)] border border-[rgba(193,129,86,0.15)] text-[rgba(206,164,114,0.6)]'>Tailwind</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<!-- Tech pill: Tailwind -->
+			<div
+				class='absolute bottom-[150px] left-3.5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+					   font-accent font-semibold text-[0.75rem] text-[#38bdf8]
+					   bg-[rgba(56,189,248,0.08)] border border-[rgba(56,189,248,0.2)] backdrop-blur-xl
+					   animate-float-pill [animation-delay:1s]'
+			>
+				<svg width='14' height='14' viewBox='0 0 248 31' fill='none'>
+					<path fill-rule='evenodd' clip-rule='evenodd' d='M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.807 0 11.057-3.382 12.76-10.146-2.55 3.382-5.528 4.65-8.93 3.805-1.942-.482-3.33-1.882-4.865-3.432C34.738 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.528-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.807 0 11.057-3.381 12.76-10.146-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.882-4.864-3.432-2.502-2.524-5.398-5.445-11.724-5.445z' fill='#38BDF8'/>
+				</svg>
+				Tailwind CSS v4
+			</div>
+
+			<!-- Tech pill: CSS -->
+			<div
+				class='absolute top-[120px] right-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+					   font-accent font-semibold text-[0.75rem] text-[#818cf8]
+					   bg-[rgba(99,102,241,0.08)] border border-[rgba(99,102,241,0.2)] backdrop-blur-xl
+					   animate-float-pill [animation-delay:2.5s]'
+			>
+				<svg width='14' height='14' viewBox='0 0 24 24' fill='currentColor'>
+					<path d='M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z'/>
+				</svg>
+				Pure CSS
+			</div>
+
+			<!-- Decorative floating chars -->
+			<span class='absolute top-20 left-20 text-xl opacity-50 animate-float-star [animation-delay:0.5s] pointer-events-none select-none'>⚡</span>
+			<span class='absolute top-[300px] right-2.5 opacity-40 text-[#cea472] animate-float-star [animation-delay:1.5s] pointer-events-none select-none'>✦</span>
+			<span class='absolute bottom-24 left-24 opacity-25 text-[#38bdf8] text-base animate-float-star [animation-delay:3s] pointer-events-none select-none'>◈</span>
 		</div>
-	</section>
-	<Particles client:visible />
-</GridPatternLinearGradient>
+	</div>
+</section>
