@@ -2,6 +2,10 @@
 	"name": "duneui",
 	"type": "module",
 	"version": "1.0.0-alpha.1",
+	"packageManager": "pnpm@11.4.0",
+	"engines": {
+		"node": "22.x"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -17,7 +21,6 @@
 		"@astrojs/react": "5.0.7",
 		"@astrojs/rss": "^4.0.18",
 		"@astrojs/sitemap": "^3.7.3",
-		"@astrojs/tailwind": "6.0.2",
 		"@astrojs/vercel": "^10.0.8",
 		"@fontsource-variable/albert-sans": "^5.2.6",
 		"@fontsource-variable/urbanist": "^5.2.7",
@@ -52,7 +55,9 @@
 		"tailwindcss-animate": "1.0.7",
 		"typescript-eslint": "8.60.1"
 	},
-	"trustedDependencies": [
-		"@tsparticles/engine"
-	]
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@tsparticles/engine"
+		]
+	}
 }
