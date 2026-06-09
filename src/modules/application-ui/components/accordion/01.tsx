@@ -36,13 +36,13 @@ export default function SimpleComponent() {
 				<div className="flex items-center justify-between border-b border-gray-200 pb-4">
 					<div className="flex items-center gap-2 sm:gap-3">
 						<h1 className="text-lg sm:text-xl font-bold font-heading text-gray-900">Simple centered</h1>
-						<span className="hidden lg:inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-semibold font-display text-blue-700 ring-1 ring-inset ring-blue-700/10">
+						<span className="hidden lg:inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-semibold font-accent text-blue-700 ring-1 ring-inset ring-blue-700/10">
 							Requires JS
 						</span>
 					</div>
 
 					<div className="flex items-center gap-2 sm:gap-3">
-						<div className="inline-flex rounded-lg shadow-sm gap-0.5">
+						<div className="inline-flex rounded-lg shadow-xs gap-0.5">
 							<button
 								onClick={() => setActiveTab('preview')}
 								className={`relative inline-flex items-center px-3 sm:px-4 py-2 text-sm font-medium rounded-lg
@@ -55,7 +55,7 @@ export default function SimpleComponent() {
 									<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 									<circle cx="12" cy="12" r="3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
-								<span className="hidden sm:inline font-display">Preview</span>
+								<span className="hidden sm:inline font-accent">Preview</span>
 							</button>
 							<button
 								onClick={() => setActiveTab('code')}
@@ -68,7 +68,7 @@ export default function SimpleComponent() {
 								<svg className="sm:mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
 									<path d="m8 6-6 6 6 6M16 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
-								<span className="hidden sm:inline font-display">Code</span>
+								<span className="hidden sm:inline font-accent">Code</span>
 							</button>
 						</div>
 

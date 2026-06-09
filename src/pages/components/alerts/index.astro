@@ -1,9 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Library from '@/modules/application-ui/Library'
+import Library from '@/modules/application-ui/components/Library'
 
 // Trae todos los archivos HTML en application-ui usando Vite
-const globFiles = import.meta.glob('../../../modules/snippets/application-ui/**/*.html', { eager: true, query: '?raw', import: 'default' });
+const globFiles = import.meta.glob('../../../data/snippets/application-ui/**/*.html', { eager: true, query: '?raw', import: 'default' });
 
 // Mapea cada archivo a { title, category, code }
 const components = Object.entries(globFiles).map(([path, content]) => ({
