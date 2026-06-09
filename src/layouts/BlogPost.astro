@@ -2,7 +2,6 @@
 import type { CollectionEntry } from 'astro:content'
 import Header from '@/core/components/Header.astro'
 import Footer from '@/core/components/Footer.astro'
-import FormattedDate from '@/core/components/formattedDate.astro'
 import '@/styles/globals.css'
 import { ClientRouter } from 'astro:transitions'
 
@@ -20,178 +19,183 @@ const {
 	writerImage,
 	role
 } = Astro.props
+
+function formatDate(date: Date) {
+	return date.toLocaleDateString('en-US', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric'
+	}).toUpperCase()
+}
+
+function getInitials(name: string) {
+	return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+}
+
+const canonicalUrl = `https://duneui.com/blog/`
 ---
 
 <html lang='en'>
 	<head>
-		<title>{title}</title>
+		<title>{title} · DuneUI</title>
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1' />
-		<meta
-			name='keywords'
-			content='duneiu, tailwindcss, duneui.com, components, templates, open-source, tailwindcss-components, tailwindcss-templates'
-		/>
-		<link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
 		<meta name='description' content={description} />
-		<link
-			rel='apple-touch-icon'
-			sizes='180x180'
-			href='/favicon/apple-touch-icon.png'
-		/>
-		<link
-			rel='icon'
-			type='image/png'
-			sizes='32x32'
-			href='/favicon/favicon-32x32.png'
-		/>
-		<link
-			rel='icon'
-			type='image/png'
-			sizes='16x16'
-			href='/favicon/favicon-16x16.png'
-		/>
+		<meta name='keywords' content='duneui, tailwindcss, components, templates, open-source' />
+		<link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
+		<link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
+		<link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
+		<link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
 		<link rel='manifest' href='/favicon/site.webmanifest' />
-		<link
-			rel='mask-icon'
-			href='/favicon/safari-pinned-tab.svg'
-			color='#000000'
-		/>
-		<meta name='msapplication-TileColor' content='#ffffff' />
-		<meta name='theme-color' content='#ffffff' />
-		<link rel='canonical' href='https://duneui.com/' />
+		<link rel='canonical' href={canonicalUrl} />
 		<meta name='apple-mobile-web-app-title' content='DuneUI' />
-		<meta name='application-name' content='DuneUI' />
-		<meta property='og:url' content='https://duneui.com/' />
-		<meta property='og:type' content='website' />
-		<meta property='og:title' content='DuneUI' />
-		<meta
-			property='og:image'
-			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
-		/>
+		<meta property='og:type' content='article' />
+		<meta property='og:title' content={title} />
 		<meta property='og:description' content={description} />
-		<meta property='og:locate' content='es_MX' />
+		<meta property='og:image' content={heroImage ?? 'https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'} />
 		<meta property='og:site_name' content='DuneUI' />
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:site' content='@FabianHermar' />
-		<meta name='twitter:title' content='DuneUI' />
-		<meta
-			name='twitter:description'
-			content='An open-source library of components and templates made with TailwindCSS.'
-		/>
-		<meta
-			name='twitter:image'
-			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
-		/>
+		<meta name='twitter:title' content={title} />
+		<meta name='twitter:description' content={description} />
 		<ClientRouter />
 	</head>
 
-	<body>
+	<body class='bg-white antialiased'>
 		<Header logo='invert' navLinks='text-black' />
-		<main class='pt-32'>
-			<article>
-				<h1 class='font-heading font-bold text-center text-5xl'>{title}</h1>
-				<div
-					class='flex items-center flex-row gap-x-4 mb-4 justify-center pt-4'
+
+		<main class='pt-28 pb-24'>
+			<div class='mx-auto w-full max-w-3xl px-4 sm:px-6'>
+
+				<!-- ── Back link ─────────────────────────── -->
+				<a
+					href='/blog'
+					class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-neutral-500 hover:text-neutral-800 transition-colors mb-8 group'
 				>
-					<img
-						src={writerImage}
-						alt={writer}
-						class='rounded-full size-6 object-cover'
-						loading='lazy'
-					/>
-					<div class='flex flex-row gap-x-2'>
-						<span class='font-display font-semibold'>{writer}</span>
-						<span class='font-accent font-light text-gray-500'>{role}</span>
-					</div>
-				</div>
-				<div class='hero-image'>
-					{
-						heroImage && (
-							<img width={720} height={360} src={heroImage} alt={title} />
-						)
-					}
-				</div>
-				<div class='prose'>
-					<div>
-						<div class='date flex justify-between items-center mt-16'>
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class='last-updated-on font-display font-light'>
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-							<div
-								class='flex justify-center items-center gap-x-2 font-display'
-							>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									fill='none'
-									viewBox='0 0 24 24'
-									stroke-width='1.5'
-									stroke='currentColor'
-									class='size-6'
-								>
-									<path
-										stroke-linecap='round'
-										stroke-linejoin='round'
-										d='M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'></path>
+					<svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+						<path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
+					</svg>
+					Back to blog
+				</a>
+
+				<!-- ── Meta row ──────────────────────────── -->
+				<div class='flex items-center gap-2 text-xs font-semibold font-accent uppercase tracking-widest text-[#93603e] mb-5'>
+					{category && <span>{category}</span>}
+					{category && <span class='text-neutral-300'>·</span>}
+					<time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+					{readTime && (
+						<>
+							<span class='text-neutral-300'>·</span>
+							<span class='inline-flex items-center gap-1.5'>
+								<svg class='size-3.5 text-[#93603e]' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+									<circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/>
 								</svg>
-								<span>{readTime} min</span>
-							</div>
+								{readTime} min read
+							</span>
+						</>
+					)}
+				</div>
+
+				<!-- ── Title ─────────────────────────────── -->
+				<h1 class='text-4xl sm:text-5xl font-bold font-heading text-neutral-900 leading-[1.1] tracking-tight mb-8'>
+					{title}
+				</h1>
+
+				<!-- ── Author row ────────────────────────── -->
+				<div class='flex items-center justify-between mb-6'>
+					<div class='flex items-center gap-3'>
+						{writerImage ? (
+							<img
+								src={writerImage}
+								alt={writer}
+								class='size-10 rounded-full object-cover ring-2 ring-neutral-100'
+								loading='lazy'
+							/>
+						) : (
+							<span class='size-10 rounded-full bg-[#93603e] flex items-center justify-center text-sm font-bold text-white ring-2 ring-[#93603e]/20 shrink-0'>
+								{getInitials(writer)}
+							</span>
+						)}
+						<div>
+							<p class='text-sm font-semibold font-accent text-neutral-800 leading-tight'>{writer}</p>
+							{role && <p class='text-xs font-accent text-neutral-400 leading-tight'>{role}</p>}
 						</div>
 					</div>
-					<slot />
-					<div class='flex font-display font-semibold text-sm gap-x-2'>
-						Category: <span class='font-accent font-light'>{category}</span>
-					</div>
+
+					<!-- Copy link button -->
+					<button
+						id='copy-link-btn'
+						class='inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold font-accent text-neutral-600 hover:border-neutral-300 hover:text-neutral-900 transition-all duration-200 cursor-pointer'
+					>
+						<svg class='size-3.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+							<path stroke-linecap='round' stroke-linejoin='round' d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' />
+						</svg>
+						Copy link
+					</button>
 				</div>
-			</article>
+
+				<!-- ── Divider ───────────────────────────── -->
+				<div class='h-px bg-neutral-100 mb-10'></div>
+
+				<!-- ── Hero image ────────────────────────── -->
+				{heroImage && (
+					<div class='w-full rounded-2xl overflow-hidden mb-12 shadow-md'>
+						<img
+							src={heroImage}
+							alt={title}
+							width={800}
+							height={450}
+							class='w-full object-cover'
+							loading='eager'
+						/>
+					</div>
+				)}
+
+				<!-- ── Article body ──────────────────────── -->
+				<div class='prose prose-neutral md:prose-lg prose-headings:font-heading prose-a:text-[#93603e] prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-[#93603e] prose-code:text-[#93603e] prose-pre:bg-neutral-900 prose-img:rounded-2xl max-w-none font-accent prose-p:leading-relaxed marker:text-[#93603e]'>
+					<slot />
+				</div>
+
+				<!-- ── Updated date ──────────────────────── -->
+				{updatedDate && (
+					<p class='mt-10 text-xs font-accent text-neutral-400 italic'>
+						Last updated on {formatDate(updatedDate)}
+					</p>
+				)}
+
+				<!-- ── Footer nav ────────────────────────── -->
+				<div class='mt-14 pt-8 border-t border-neutral-100'>
+					<a
+						href='/blog'
+						class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-[#93603e] hover:text-[#7a4f33] transition-colors group'
+					>
+						<svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+							<path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
+						</svg>
+						Back to all articles
+					</a>
+				</div>
+			</div>
 		</main>
+
 		<Footer />
 	</body>
 </html>
 
-<style>
-	body {
-		width: calc(100% - 2em);
-		max-width: 100%;
-		margin: 0;
-	}
-	.hero-image {
-		width: 100%;
-	}
-	.hero-image img {
-		display: block;
-		margin: 0 auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-	.prose {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 1em;
-		color: rgb(var(--gray-dark));
-		font-family: 'Albert Sans Variable', sans-serif;
-		font-weight: 400;
-	}
-	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
-		text-align: center;
-		line-height: 1;
-	}
-	.title h1 {
-		margin: 0 0 0.5em 0;
-		font-family: 'Albert Sans Variable', sans-serif;
-	}
-	.date {
-		margin-bottom: 0.5em;
-		color: rgb(var(--gray));
-	}
-	.last-updated-on {
-		font-style: italic;
-	}
-</style>
+
+
+<script>
+	const btn = document.getElementById('copy-link-btn')
+	btn?.addEventListener('click', async () => {
+		try {
+			await navigator.clipboard.writeText(window.location.href)
+			const original = btn.innerHTML
+			btn.innerHTML = `<svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Copied!`
+			btn.classList.add('border-[#93603e]', 'text-[#93603e]')
+			setTimeout(() => {
+				btn.innerHTML = original
+				btn.classList.remove('border-[#93603e]', 'text-[#93603e]')
+			}, 2000)
+		} catch {}
+	})
+</script>
