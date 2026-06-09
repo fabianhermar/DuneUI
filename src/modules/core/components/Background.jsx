@@ -10,7 +10,7 @@ const GridPatternLinearGradient = ({ children }) => {
 				x={-1}
 				y={-1}
 				className={cn(
-					'[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] '
+					'mask-[linear-gradient(to_bottom_right,white,transparent,transparent)] '
 				)}
 			/>
 			{children}

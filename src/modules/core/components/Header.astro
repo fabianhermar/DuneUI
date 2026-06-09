@@ -11,18 +11,18 @@ import Container from './Container.astro'
 	function toggleNavlinks() {
 		if (isToggled) {
 			navlinks.classList.add(
-				'!visible',
-				'!scale-100',
-				'!opacity-100',
+				'visible!',
+				'scale-100!',
+				'opacity-100!',
 				'!lg:translate-y-0'
 			)
 			hamburger.classList.add('toggled')
 			// layer.classList.add("origin-top", "scale-y-100", "backdrop-blur-lg");
 		} else {
 			navlinks.classList.remove(
-				'!visible',
-				'!scale-100',
-				'!opacity-100',
+				'visible!',
+				'scale-100!',
+				'opacity-100!',
 				'!lg:translate-y-0'
 			)
 			hamburger.classList.remove('toggled')
@@ -44,7 +44,7 @@ import Container from './Container.astro'
 
 <header>
 	<nav
-		class='fixed z-20 w-full select-none border-b border-black/5 bg-white/[0.01] pt-0 backdrop-blur-lg dark:border-white/5 lg:border-transparent'
+		class='fixed z-20 w-full select-none border-b border-black/5 bg-white/1 pt-0 backdrop-blur-lg dark:border-white/5 lg:border-transparent'
 	>
 		<Container>
 			<div
@@ -102,7 +102,7 @@ import Container from './Container.astro'
 								<li>
 									<a
 										href='/components'
-										class='block font-display text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
+										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
 										aria-label='Components'
 									>
 										<span>Components</span>
@@ -111,7 +111,7 @@ import Container from './Container.astro'
 								<li>
 									<a
 										href='/templates'
-										class='block font-display text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
+										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
 										aria-label='Templates'
 									>
 										<span>Templates</span>
@@ -120,7 +120,7 @@ import Container from './Container.astro'
 								<li>
 									<a
 										href='/showcases'
-										class='block font-display text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
+										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
 										aria-label='Showcases'
 									>
 										<span>Showcases</span>
@@ -129,7 +129,7 @@ import Container from './Container.astro'
 								<li>
 									<a
 										href='/blog'
-										class='block font-display text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
+										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
 										aria-label='Blog'
 									>
 										<span>What's new</span>
@@ -144,6 +144,8 @@ import Container from './Container.astro'
 	</nav>
 
 	<style>
+		@reference "../../../styles/globals.css";
+
 		#toggle_nav:checked ~ div #hamburger #line {
 			@apply translate-y-1.5 rotate-45;
 		}

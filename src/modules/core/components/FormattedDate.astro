@@ -7,7 +7,7 @@ const { date } = Astro.props
 const dateObj = typeof date === 'string' ? new Date(date) : date
 ---
 
-<time datetime={dateObj.toISOString()} class='font-display'>
+<time datetime={dateObj.toISOString()} class='font-accent'>
 	{
 		dateObj.toLocaleDateString('en-us', {
 			year: 'numeric',
