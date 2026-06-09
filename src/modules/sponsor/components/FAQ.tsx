@@ -10,14 +10,14 @@ export default function FAQ() {
 			id='faqs'
 			className='mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 mt-20 scroll-m-20 sm:mt-24 sm:scroll-m-24 xl:mt-32 xl:scroll-m-32 pb-32'
 		>
-			<div className='mx-auto grid max-w-[40rem] grid-cols-1 gap-x-14 gap-y-16 lg:max-w-none lg:grid-cols-12'>
+			<div className='mx-auto grid max-w-160 grid-cols-1 gap-x-14 gap-y-16 lg:max-w-none lg:grid-cols-12'>
 				<div className='lg:col-span-4'>
-					<h2 className='text-lg leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-display'>
+					<h2 className='text-lg leading-7 text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent'>
 						Frequently asked questions
 					</h2>
-					<p className='mt-4 text-4xl font-heading tracking-tight text-black xl:text-6xl xl:leading-[3.5rem]'>
+					<p className='mt-4 text-4xl font-heading tracking-tight text-black xl:text-6xl xl:leading-14'>
 						Everything you need to know about wind UI
-						<span className='text-transparent bg-clip-text bg-gradient-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-display'>
+						<span className='text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent'>
 							.
 						</span>
 					</p>
@@ -28,7 +28,7 @@ export default function FAQ() {
 							{FAQS.map((faq) => (
 								<AccordionItem
 									className='text-black font-accent'
-									classNames={{ title: 'text-danger, font-display' }}
+									classNames={{ title: 'text-danger, font-accent' }}
 									key={faq.key}
 									aria-label={faq.label}
 									title={faq.title}
