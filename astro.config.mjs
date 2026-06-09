@@ -5,7 +5,7 @@ import partytown from '@astrojs/partytown'
 
 import react from "@astrojs/react";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 import mdx from '@astrojs/mdx'
 
@@ -16,7 +16,10 @@ import vercel from '@astrojs/vercel'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://duneui.com',
-	integrations: [react(), tailwind(), partytown(), mdx(), sitemap()],
+	integrations: [react(), partytown(), mdx(), sitemap()],
 	adapter: vercel(),
-	output: 'static'
+	output: 'static',
+	vite: {
+		plugins: [tailwindcss()]
+	}
 })

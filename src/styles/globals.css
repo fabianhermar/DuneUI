@@ -1,16 +1,214 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:is(.dark *));
 
-*, *::before, *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+
+	@media (width >=--theme(--breakpoint-sm)) {
+		max-width: none;
+	}
+
+	@media (width >=1400px) {
+		max-width: 1400px;
+	}
 }
 
+@theme {
+	--font-accent: "Albert Sans Variable", system-ui, sans-serif;
+	--font-heading: "Urbanist Variable", system-ui, sans-serif;
+
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-marquee: marquee var(--duration) linear infinite;
+	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+	/* Hero animations */
+	--animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+	--animate-fade-in: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+	--animate-orb-drift: orb-drift 10s ease-in-out infinite alternate;
+	--animate-orb-drift-reverse: orb-drift 12s ease-in-out infinite alternate-reverse;
+	--animate-gradient-shift: gradient-shift 4s ease infinite;
+	--animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+	--animate-scroll-pulse: scroll-pulse 2s ease-in-out infinite;
+	--animate-float-pill: float-pill 5s ease-in-out infinite;
+	--animate-float-star: float-star 4s ease-in-out infinite;
+
+	@keyframes accordion-down {
+		from {
+			height: 0;
+		}
+
+		to {
+			height: var(--radix-accordion-content-height);
+		}
+	}
+
+	@keyframes accordion-up {
+		from {
+			height: var(--radix-accordion-content-height);
+		}
+
+		to {
+			height: 0;
+		}
+	}
+
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+
+		to {
+			transform: translateX(calc(-100% - var(--gap)));
+		}
+	}
+
+	@keyframes marquee-vertical {
+		from {
+			transform: translateY(0);
+		}
+
+		to {
+			transform: translateY(calc(-100% - var(--gap)));
+		}
+	}
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(32px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes orb-drift {
+		0% {
+			transform: translate(0, 0) scale(1);
+		}
+
+		100% {
+			transform: translate(30px, 20px) scale(1.08);
+		}
+	}
+
+
+	@keyframes gradient-shift {
+
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	@keyframes pulse-dot {
+
+		0%,
+		100% {
+			box-shadow: 0 0 8px rgba(193, 129, 86, 0.8);
+		}
+
+		50% {
+			box-shadow: 0 0 14px rgba(193, 129, 86, 1), 0 0 20px rgba(193, 129, 86, 0.4);
+		}
+	}
+
+	@keyframes scroll-pulse {
+		0% {
+			transform: scaleY(0);
+			transform-origin: top;
+			opacity: 0;
+		}
+
+		50% {
+			transform: scaleY(1);
+			transform-origin: top;
+			opacity: 1;
+		}
+
+		100% {
+			transform: scaleY(1);
+			transform-origin: bottom;
+			opacity: 0;
+		}
+	}
+
+	@keyframes float-pill {
+
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+
+	@keyframes float-star {
+
+		0%,
+		100% {
+			transform: translateY(0) rotate(0deg);
+			opacity: 0.3;
+		}
+
+		50% {
+			transform: translateY(-10px) rotate(15deg);
+			opacity: 0.6;
+		}
+	}
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles,
+  we need to add an explicit border color utility to any element that depends on these defaults. */
 @layer base {
 
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
+
+@layer utilities {
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+  }
+}
 	@font-face {
 		font-family: 'Urbanist Variable';
 		font-style: normal;
@@ -26,6 +224,10 @@
 		font-weight: 100 900;
 		src: url(@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2) format('woff2-variations');
 	}
+
+html,
+body {
+	background-color: #ffffff;
 }
 
 html {
