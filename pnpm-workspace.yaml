@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  sharp: false
+minimumReleaseAgeExclude:
+  - eslint@10.6.0
+  - prettier@3.8.5
