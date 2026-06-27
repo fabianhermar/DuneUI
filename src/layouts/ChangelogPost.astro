@@ -1,0 +1,129 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Header from '@/core/components/Header.astro'
+import Footer from '@/core/components/Footer.astro'
+import '@/styles/globals.css'
+import { ClientRouter } from 'astro:transitions'
+
+type Props = CollectionEntry<'changelog'>['data'] & { id: string }
+
+const { title, version, description, pubDate, tags, image, id } = Astro.props
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+}
+
+const tagStyles: Record<string, string> = {
+  New: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  Improved: 'bg-sky-50 text-sky-700 border-sky-200',
+  Fixed: 'bg-amber-50 text-amber-700 border-amber-200',
+  Breaking: 'bg-red-50 text-red-700 border-red-200',
+}
+---
+
+<html lang='en'>
+  <head>
+    <title>{version} {title} · Changelog · DuneUI</title>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='description' content={description} />
+    <link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
+    <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
+    <link rel='manifest' href='/favicon/site.webmanifest' />
+    <ClientRouter />
+  </head>
+
+  <body class='bg-white antialiased'>
+    <Header logo='invert' navLinks='text-black' />
+
+    <main class='pt-28 pb-24'>
+      <div class='mx-auto w-full max-w-3xl px-4 sm:px-6'>
+
+        <!-- Back link -->
+        <a
+          href='/changelog'
+          class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-neutral-400 hover:text-neutral-700 transition-colors mb-10 group'
+        >
+          <svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
+          </svg>
+          Back to changelog
+        </a>
+
+        <!-- Version + Tags -->
+        <div class='flex flex-wrap items-center gap-2 mb-5'>
+          <span class='rounded-md bg-[#f6edde] border border-[#d39c64]/40 px-3 py-1 text-sm font-bold font-accent text-[#93603e] tracking-wide'>
+            {version}
+          </span>
+          {tags?.map(tag => (
+            <span class={`rounded-md border px-2.5 py-1 text-xs font-semibold font-accent ${tagStyles[tag] ?? 'bg-gray-50 text-gray-600 border-gray-200'}`}>
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <!-- Title -->
+        <h1 class='text-3xl sm:text-4xl font-bold font-heading text-neutral-900 leading-tight tracking-tight mb-3'>
+          {title}
+        </h1>
+
+        <!-- Date -->
+        <time class='text-sm font-accent text-neutral-400' datetime={pubDate.toISOString()}>
+          {formatDate(pubDate)}
+        </time>
+
+        <!-- Hero image -->
+        {image && (
+          <div class='mt-8 w-full aspect-video rounded-2xl overflow-hidden border border-neutral-100 shadow-sm'>
+            <img
+              src={image}
+              alt={title}
+              width={900}
+              height={506}
+              class='w-full h-full object-cover'
+              loading='eager'
+            />
+          </div>
+        )}
+
+        <!-- Divider -->
+        <div class='h-px bg-neutral-100 my-10'></div>
+
+        <!-- Content -->
+        <div class='prose prose-neutral md:prose-lg max-w-none font-accent
+          prose-headings:font-heading prose-headings:text-neutral-900
+          prose-h2:text-xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-neutral-100 prose-h2:pb-3
+          prose-p:text-neutral-600 prose-p:leading-relaxed
+          prose-li:text-neutral-600
+          prose-strong:text-neutral-800 prose-strong:font-semibold
+          prose-a:text-[#93603e] prose-a:no-underline hover:prose-a:underline
+          prose-code:text-[#93603e] prose-code:bg-[#f6edde] prose-code:px-1 prose-code:rounded
+          marker:text-[#93603e]
+          prose-ul:mt-3 prose-li:mt-1'>
+          <slot />
+        </div>
+
+        <!-- Footer nav -->
+        <div class='mt-16 pt-8 border-t border-neutral-100 flex items-center justify-between'>
+          <a
+            href='/changelog'
+            class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-[#93603e] hover:text-[#7a4f33] transition-colors group'
+          >
+            <svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+              <path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
+            </svg>
+            All releases
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

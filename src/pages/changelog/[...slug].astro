@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import ChangelogPost from '@/layouts/ChangelogPost.astro'
+import { render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const entries = await getCollection('changelog')
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: entry,
+  }))
+}
+
+type Props = CollectionEntry<'changelog'>
+
+const entry = Astro.props
+const { Content } = await render(entry)
+---
+
+<ChangelogPost {...entry.data} id={entry.id}>
+  <Content />
+</ChangelogPost>
