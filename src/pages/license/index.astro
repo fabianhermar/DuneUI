@@ -1,0 +1,185 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const allowed = [
+  { title: 'Personal projects', desc: 'Build your portfolio, blog, or side project. No restrictions.' },
+  { title: 'Commercial projects', desc: 'Ship client work, SaaS apps, or commercial products with no limitations.' },
+  { title: 'Modify & customize', desc: 'Adapt any component to your design system. Change anything, it\'s yours.' },
+  { title: 'Client projects', desc: 'Deliver projects for clients using DuneUI. The end product belongs to them.' },
+  { title: 'Open-source projects', desc: 'Use components in your open-source projects freely.' },
+  { title: 'No attribution required', desc: 'You don\'t need to credit DuneUI — though it\'s always appreciated.' },
+]
+
+const notAllowed = [
+  { title: 'Re-publish as a UI library', desc: 'Don\'t package DuneUI components into a UI kit and distribute it publicly.' },
+  { title: 'Sell the components', desc: 'Don\'t sell DuneUI components or templates as standalone design resources.' },
+  { title: 'Convert & resell as templates', desc: 'Don\'t convert sections into templates and sell or distribute them separately.' },
+]
+
+const cases = [
+  { label: 'Personal website', ok: true },
+  { label: 'Client project', ok: true },
+  { label: 'SaaS application', ok: true },
+  { label: 'Open-source project', ok: true },
+  { label: 'E-commerce store', ok: true },
+  { label: 'Selling as a UI kit', ok: false },
+  { label: 'Template marketplace listing', ok: false },
+  { label: 'Re-publishing on a components site', ok: false },
+]
+---
+
+<Layout
+  title='License · DuneUI'
+  description='Learn how you can use DuneUI components in your projects — personal, commercial, and more.'
+>
+  <!-- ── Header ───────────────────────────────────── -->
+  <div class='mx-auto w-full max-w-4xl px-4 sm:px-6 pt-32 pb-16'>
+    <div class='max-w-2xl'>
+      <span class='inline-block text-xs font-semibold font-accent uppercase tracking-[0.2em] text-[#93603e] mb-4'>
+        Free & Open
+      </span>
+      <h1 class='text-5xl lg:text-6xl font-bold font-heading text-neutral-900 leading-[1.05] tracking-tight'>
+        License &<br/>Usage
+      </h1>
+      <p class='mt-5 text-base font-accent text-neutral-500 leading-relaxed max-w-lg'>
+        DuneUI components are free to use. Here's a clear breakdown of what you can and cannot do when using them in your projects.
+      </p>
+    </div>
+  </div>
+
+  <div class='mx-auto w-full max-w-4xl px-4 sm:px-6 pb-28 flex flex-col gap-20'>
+
+    <!-- ── TL;DR ─────────────────────────────────── -->
+    <div class='rounded-2xl bg-[#f6edde]/60 border border-[#d39c64]/25 px-7 py-6 flex gap-5 items-start'>
+      <div class='mt-0.5 shrink-0 flex h-9 w-9 items-center justify-center rounded-xl bg-[#93603e]/10'>
+        <svg class='size-5 text-[#93603e]' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='1.5'>
+          <path stroke-linecap='round' stroke-linejoin='round' d='M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18' />
+        </svg>
+      </div>
+      <div>
+        <p class='text-sm font-bold font-accent text-neutral-800 mb-1'>TL;DR — Use it freely, just don't re-sell it.</p>
+        <p class='text-sm font-accent text-neutral-500 leading-relaxed'>
+          Use DuneUI in any personal or commercial project. Modify it however you want. Just don't package and sell it — or distribute it — as your own component library or template product.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── What you CAN do ───────────────────────── -->
+    <div>
+      <div class='flex items-center gap-3 mb-10'>
+        <div class='flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100'>
+          <svg class='size-3.5 text-emerald-600' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' />
+          </svg>
+        </div>
+        <h2 class='text-lg font-bold font-heading text-neutral-900'>
+          What you <span class='text-emerald-600'>can</span> do
+        </h2>
+        <div class='flex-1 h-px bg-neutral-100'></div>
+      </div>
+
+      <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
+        {allowed.map(item => (
+          <div class='group flex gap-3.5 rounded-xl border border-neutral-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-emerald-200 hover:shadow-md'>
+            <div class='mt-0.5 shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100'>
+              <svg class='size-3 text-emerald-600' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+                <path stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' />
+              </svg>
+            </div>
+            <div>
+              <p class='text-sm font-bold font-accent text-neutral-800 mb-1'>{item.title}</p>
+              <p class='text-xs font-accent text-neutral-500 leading-relaxed'>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── What you CANNOT do ────────────────────── -->
+    <div>
+      <div class='flex items-center gap-3 mb-10'>
+        <div class='flex h-6 w-6 items-center justify-center rounded-full bg-red-100'>
+          <svg class='size-3.5 text-red-500' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
+          </svg>
+        </div>
+        <h2 class='text-lg font-bold font-heading text-neutral-900'>
+          What you <span class='text-red-500'>cannot</span> do
+        </h2>
+        <div class='flex-1 h-px bg-neutral-100'></div>
+      </div>
+
+      <div class='grid grid-cols-1 sm:grid-cols-3 gap-5'>
+        {notAllowed.map(item => (
+          <div class='group flex gap-3.5 rounded-xl border border-neutral-100 bg-white p-5 shadow-sm transition-all duration-200 hover:border-red-200 hover:shadow-md'>
+            <div class='mt-0.5 shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-100'>
+              <svg class='size-3 text-red-500' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+                <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
+              </svg>
+            </div>
+            <div>
+              <p class='text-sm font-bold font-accent text-neutral-800 mb-1'>{item.title}</p>
+              <p class='text-xs font-accent text-neutral-500 leading-relaxed'>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── Use case table ────────────────────────── -->
+    <div>
+      <div class='flex items-center gap-3 mb-10'>
+        <h2 class='text-lg font-bold font-heading text-neutral-900'>Common use cases</h2>
+        <div class='flex-1 h-px bg-neutral-100'></div>
+      </div>
+
+      <div class='rounded-xl border border-neutral-100 bg-white shadow-sm overflow-hidden'>
+        {cases.map((c, i) => (
+          <div class={`flex items-center justify-between px-6 py-3.5 ${i < cases.length - 1 ? 'border-b border-neutral-50' : ''}`}>
+            <span class='text-sm font-accent text-neutral-700'>{c.label}</span>
+            {c.ok ? (
+              <span class='inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-[11px] font-bold font-accent text-emerald-700'>
+                <svg class='size-3' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' />
+                </svg>
+                Allowed
+              </span>
+            ) : (
+              <span class='inline-flex items-center gap-1.5 rounded-full bg-red-50 border border-red-100 px-3 py-1 text-[11px] font-bold font-accent text-red-600'>
+                <svg class='size-3' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2.5'>
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
+                </svg>
+                Not allowed
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── Questions CTA ─────────────────────────── -->
+    <div class='rounded-2xl bg-neutral-950 px-8 py-10'>
+      <div class='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6'>
+        <div>
+          <p class='text-xs font-semibold font-accent uppercase tracking-[0.2em] text-neutral-500 mb-2'>Questions?</p>
+          <h3 class='text-xl font-bold font-heading text-white mb-1'>Have a specific use case in mind?</h3>
+          <p class='text-sm font-accent text-neutral-400 leading-relaxed'>
+            Not sure if your use case is covered? Reach out and we'll give you a clear answer.
+          </p>
+        </div>
+        <a
+          href='https://x.com/FabianHermar'
+          target='_blank'
+          rel='noreferrer noopener'
+          class='shrink-0 inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-semibold font-accent text-neutral-900 hover:bg-neutral-100 transition-colors duration-200 whitespace-nowrap'
+        >
+          <svg class='size-4' fill='currentColor' viewBox='0 0 24 24'>
+            <path d='M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' />
+          </svg>
+          Ask on Twitter
+        </a>
+      </div>
+    </div>
+
+  </div>
+</Layout>
