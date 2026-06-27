@@ -3,9 +3,7 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import CheckIcon from "@/core/design-system/Icons/CheckIcon";
-import CopyIcon from "@/core/design-system/Icons/CopyIcon";
-import { Eye, Code, Smartphone, Tablet, Monitor, Maximize } from "lucide-react";
+import { Eye, Code, Smartphone, Tablet, Monitor, Maximize, Check, Copy } from "lucide-react";
 
 interface ComponentPreviewProps {
   title: string;
@@ -91,11 +89,11 @@ export default function ComponentPreview({
           >
             {copy ? (
               <>
-                <CheckIcon className="w-3.5 h-3.5" /> Copied
+                <Check className="w-3.5 h-3.5" /> Copied
               </>
             ) : (
               <>
-                <CopyIcon className="w-3.5 h-3.5" /> Copy
+                <Copy className="w-3.5 h-3.5" /> Copy
               </>
             )}
           </button>
