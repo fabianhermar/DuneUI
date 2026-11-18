@@ -541,39 +541,46 @@ const categoryCounts = ICON_CATEGORIES.map((cat) => ({
 			if (!ok) throw new Error('Clipboard access unavailable')
 		}
 
+		const escapeAttr = (value: string) =>
+			value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 		const buildSvgMarkup = (icon: SelectedIconData, jsx = false, sizeOverride?: string) => {
-			const sz = sizeOverride || curSize
+			const sz = escapeAttr(String(sizeOverride || curSize).replace(/[^0-9.]/g, '') || '24')
+			const safeStroke = escapeAttr(String(curStroke).replace(/[^0-9.]/g, '') || '1.75')
+			const safeAccent = escapeAttr(curAccent)
 			const layers: string[] = []
 
 			if (curStyle !== 'stroke' && icon.duotone.length > 0) {
-				const fillVal = curStyle === 'twotone' ? curAccent : 'currentColor'
+				const fillVal = curStyle === 'twotone' ? safeAccent : 'currentColor'
 				const op = curStyle === 'twotone' ? '0.16' : '0.14'
 				icon.duotone.forEach((d) => {
+					const safeD = escapeAttr(d)
 					if (jsx) {
-						layers.push(`  <path d="${d}" stroke="none" fill="${fillVal}" fillOpacity="${op}" />`)
+						layers.push(`  <path d="${safeD}" stroke="none" fill="${fillVal}" fillOpacity="${op}" />`)
 					} else {
-						layers.push(`  <path d="${d}" stroke="none" fill="${fillVal}" fill-opacity="${op}" />`)
+						layers.push(`  <path d="${safeD}" stroke="none" fill="${fillVal}" fill-opacity="${op}" />`)
 					}
 				})
 			}
 
 			icon.outline.forEach((d) => {
-				layers.push(`  <path d="${d}" />`)
+				layers.push(`  <path d="${escapeAttr(d)}" />`)
 			})
 
 			icon.accent.forEach((d) => {
+				const safeD = escapeAttr(d)
 				if (curStyle === 'twotone') {
-					layers.push(`  <path d="${d}" stroke="${curAccent}" />`)
+					layers.push(`  <path d="${safeD}" stroke="${safeAccent}" />`)
 				} else {
-					layers.push(`  <path d="${d}" />`)
+					layers.push(`  <path d="${safeD}" />`)
 				}
 			})
 
 			if (jsx) {
-				return `<svg\n  xmlns="http://www.w3.org/2000/svg"\n  width={${sz}}\n  height={${sz}}\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  strokeWidth={${curStroke}}\n  strokeLinecap="round"\n  strokeLinejoin="round"\n>\n${layers.join('\n')}\n</svg>`
+				return `<svg\n  xmlns="http://www.w3.org/2000/svg"\n  width={${sz}}\n  height={${sz}}\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  strokeWidth={${safeStroke}}\n  strokeLinecap="round"\n  strokeLinejoin="round"\n>\n${layers.join('\n')}\n</svg>`
 			}
 
-			return `<svg xmlns="http://www.w3.org/2000/svg" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${curStroke}" stroke-linecap="round" stroke-linejoin="round">\n${layers.join('\n')}\n</svg>`
+			return `<svg xmlns="http://www.w3.org/2000/svg" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${safeStroke}" stroke-linecap="round" stroke-linejoin="round">\n${layers.join('\n')}\n</svg>`
 		}
 
 		const renderInspector = () => {

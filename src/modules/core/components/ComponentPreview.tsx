@@ -477,6 +477,7 @@ export default function ComponentPreview({
                 ref={iframeRef}
                 title={title}
                 srcDoc={srcDoc}
+                sandbox="allow-scripts allow-same-origin allow-forms"
                 className="w-full border-0 block"
                 style={{ height: `${frameHeight}px` }}
               />

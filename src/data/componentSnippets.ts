@@ -39,7 +39,7 @@ let cachedIndex: DiscoveredCategory[] | null = null
  * Reads only lightweight JSON metadata so build-time path generation stays fast.
  */
 function discoverCategories(): DiscoveredCategory[] {
-	if (cachedIndex && !import.meta.env.DEV) return cachedIndex
+	if (cachedIndex && !import.meta.env?.DEV) return cachedIndex
 
 	const entries: DiscoveredCategory[] = []
 	if (!fs.existsSync(SNIPPETS_ROOT)) {
@@ -96,8 +96,12 @@ export function getCategoryBySlug(slug: string): CategoryCatalog | undefined {
 	const found = discoverCategories().find((entry) => entry.meta.slug === slug)
 	if (!found) return undefined
 
+	const resolvedDir = path.resolve(found.dir)
 	const specs: ComponentSpec[] = found.specMetas.map((specMeta) => {
-		const htmlPath = path.join(found.dir, specMeta.file)
+		const htmlPath = path.resolve(resolvedDir, specMeta.file)
+		if (!htmlPath.startsWith(resolvedDir + path.sep)) {
+			throw new Error(`Invalid snippet file path "${specMeta.file}" in category "${slug}"`)
+		}
 		const html = fs.readFileSync(htmlPath, 'utf8').trim()
 		return {
 			title: specMeta.title,
