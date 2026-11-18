@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <defs>
+    <radialGradient id="v1-glow" cx="72%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#CEA472" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#EAE3D7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F5F1EA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="v1-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#DDD5C7" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Base Paper -->
+  <rect width="1600" height="900" fill="#F5F1EA"/>
+  <rect width="1600" height="900" fill="url(#v1-grid)" opacity="0.65"/>
+  <rect width="1600" height="900" fill="url(#v1-glow)"/>
+
+  <!-- Editorial Frame -->
+  <rect x="44" y="44" width="1512" height="812" rx="28" fill="none" stroke="#C5B9A6" stroke-width="2"/>
+  <line x1="44" y1="128" x2="1556" y2="128" stroke="#DDD5C7" stroke-width="1.5"/>
+
+  <!-- Top Bar Metadata -->
+  <g transform="translate(88, 72)">
+    <rect width="118" height="32" rx="6" fill="#161412"/>
+    <text x="59" y="21" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" font-weight="700" letter-spacing="1.5">v1.0.0</text>
+    <text x="142" y="21" fill="#857B70" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600" letter-spacing="2.2">ARCHIVE // SEP 11, 2024</text>
+  </g>
+  <text x="1512" y="93" text-anchor="end" fill="#B5542D" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="700" letter-spacing="2.2">ESSENTIAL BUILDING BLOCKS</text>
+
+  <!-- Left Column: DuneUI Logo + Typography -->
+  <g transform="translate(88, 195)">
+    <!-- DuneUI Emblem -->
+    <g transform="translate(-38, -56) scale(0.38)">
+      <path fill="#cea472" d="M 336.46 221.43 C 333.9 227.05 331.01 232.5 327.8 237.77 C 324.59 243.05 321.09 248.13 317.28 252.99 C 313.48 257.86 309.4 262.48 305.05 266.86 C 300.7 271.25 296.1 275.36 291.27 279.2 L 288.82 281.01 C 256.27 281.38 229.71 281.26 223.86 280.25 C 206.42 277.2 158.12 252.19 194.51 233.96 C 194.51 233.96 200.94 232.83 210.85 231.31 L 215.5 230.61 C 235.89 227.62 266.86 223.75 288.4 224.17 C 314.55 224.68 324.97 220.67 336.46 221.43 Z"/>
+      <path fill="#c18156" d="M 322.38 245.9 C 313.62 258.51 303.23 269.58 291.19 279.11 L 288.75 280.91 C 276.87 290.01 263.95 297.22 249.98 302.55 C 235.3 301.03 218.68 299.17 201.87 297.04 C 157.26 291.58 112.04 284.44 105.48 278.34 C 97.8 271 119.52 250.28 137.92 234.89 C 142.81 230.88 147.23 227.23 151 224.29 C 151.88 223.61 178.34 226.27 207.57 229.65 L 215.52 230.58 C 243.96 233.96 273.02 237.75 282.36 239.63 C 299.16 243.01 303.42 243.3 322.38 245.9 Z"/>
+      <path fill="#93603e" d="M 291.27 279.2 L 288.82 281.01 C 276.95 290.11 264.02 297.32 250.05 302.64 C 239.13 306.82 227.87 309.71 216.28 311.33 C 194.44 314.3 152 310 114.86 290.96 C 74 270 46 226 40.21 178.85 C 50.65 179.39 89.34 193.73 89.34 193.73 C 89.34 193.73 135 201 160.64 211.96 C 181.04 220.82 192.29 222.31 207.57 229.65 C 228 240 264 261 291.27 279.2 Z"/>
+      <path fill="#3f3a36" d="M 216.38 311.33 C 182 316 125 306 87.2 270.01 C 50 235 38.67 190 38.67 157.51 C 53.34 159.39 78 165 95.97 181.59 C 115 199 127.74 223.24 137.94 234.89 C 156 255 184 282 216.38 311.33 Z"/>
+      <circle fill="#da9762" cx="153.5" cy="103.5" r="41"/>
+    </g>
+    <text x="118" y="42" fill="#161412" font-family="'Urbanist', system-ui, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">DuneUI</text>
+
+    <text x="0" y="165" fill="#161412" font-family="'Urbanist', system-ui, sans-serif" font-size="82" font-weight="800" letter-spacing="-2.5">Initial</text>
+    <text x="0" y="254" fill="#B5542D" font-family="'Instrument Serif', Georgia, serif" font-size="92" font-style="italic">Foundation</text>
+
+    <text x="0" y="328" fill="#574F47" font-family="'Albert Sans', system-ui, sans-serif" font-size="23" font-weight="500">Clean, copy-pasteable Tailwind CSS building</text>
+    <text x="0" y="362" fill="#574F47" font-family="'Albert Sans', system-ui, sans-serif" font-size="23" font-weight="500">blocks for modern web interfaces.</text>
+
+    <!-- Minimal Spec Pills -->
+    <g transform="translate(0, 425)">
+      <rect width="196" height="44" rx="22" fill="#FAF7F2" stroke="#C5B9A6" stroke-width="1.5"/>
+      <text x="98" y="27" text-anchor="middle" fill="#161412" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="700">CORE COMPONENTS</text>
+
+      <rect x="212" width="166" height="44" rx="22" fill="#FAF7F2" stroke="#C5B9A6" stroke-width="1.5"/>
+      <text x="295" y="27" text-anchor="middle" fill="#574F47" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600">ZERO LOCK-IN</text>
+
+      <rect x="394" width="164" height="44" rx="22" fill="#FAF7F2" stroke="#C5B9A6" stroke-width="1.5"/>
+      <text x="476" y="27" text-anchor="middle" fill="#574F47" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600">RESPONSIVE</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Clean v1.0.0 Essential Component Wireframes -->
+  <g transform="translate(820, 185)">
+    <!-- Back Card -->
+    <rect x="70" y="24" width="600" height="490" rx="24" fill="#EAE3D7" stroke="#C5B9A6" stroke-width="1.5"/>
+    <!-- Front Card -->
+    <rect x="0" y="0" width="620" height="490" rx="24" fill="#FAF7F2" stroke="#161412" stroke-width="2"/>
+
+    <!-- Window Header -->
+    <circle cx="36" cy="34" r="6" fill="#C5B9A6"/>
+    <circle cx="58" cy="34" r="6" fill="#C5B9A6"/>
+    <circle cx="80" cy="34" r="6" fill="#B5542D"/>
+    <text x="584" y="39" text-anchor="end" fill="#857B70" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="600">INDEX // CORE_UI</text>
+    <line x1="0" y1="68" x2="620" y2="68" stroke="#DDD5C7" stroke-width="1.5"/>
+
+    <!-- Essential Button + Alert Specimen -->
+    <rect x="36" y="100" width="548" height="84" rx="16" fill="#FFFFFF" stroke="#DDD5C7" stroke-width="1.5"/>
+    <circle cx="74" cy="142" r="14" fill="#B5542D" fill-opacity="0.14"/>
+    <circle cx="74" cy="142" r="5" fill="#B5542D"/>
+    <rect x="106" y="128" width="180" height="12" rx="6" fill="#161412"/>
+    <rect x="106" y="149" width="260" height="9" rx="4.5" fill="#C5B9A6"/>
+    <rect x="448" y="124" width="112" height="36" rx="18" fill="#161412"/>
+    <text x="504" y="147" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="700">COPY HTML</text>
+
+    <!-- Essential Card + Form Row -->
+    <rect x="36" y="210" width="262" height="240" rx="16" fill="#FFFFFF" stroke="#DDD5C7" stroke-width="1.5"/>
+    <rect x="58" y="232" width="218" height="102" rx="10" fill="#EAE3D7"/>
+    <path d="M96 314 Q165 260 240 314 Z" fill="#C9955B" opacity="0.7"/>
+    <circle cx="218" cy="264" r="14" fill="#B5542D" opacity="0.8"/>
+    <rect x="58" y="354" width="144" height="12" rx="6" fill="#161412"/>
+    <rect x="58" y="378" width="196" height="9" rx="4.5" fill="#C5B9A6"/>
+    <rect x="58" y="408" width="96" height="26" rx="13" fill="#B5542D"/>
+
+    <rect x="322" y="210" width="262" height="240" rx="16" fill="#FFFFFF" stroke="#DDD5C7" stroke-width="1.5"/>
+    <rect x="344" y="236" width="120" height="12" rx="6" fill="#161412"/>
+    <rect x="344" y="268" width="218" height="38" rx="10" fill="#F5F1EA" stroke="#DDD5C7" stroke-width="1.5"/>
+    <rect x="344" y="320" width="218" height="38" rx="10" fill="#F5F1EA" stroke="#DDD5C7" stroke-width="1.5"/>
+    <rect x="344" y="384" width="136" height="40" rx="10" fill="#161412"/>
+    <rect x="492" y="384" width="70" height="40" rx="10" fill="#EAE3D7"/>
+  </g>
+</svg>

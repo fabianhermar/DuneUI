@@ -7,7 +7,7 @@ import { ClientRouter } from 'astro:transitions'
 
 type Props = CollectionEntry<'changelog'>['data'] & { id: string }
 
-const { title, version, description, pubDate, tags, image, id } = Astro.props
+const { title, version, description, pubDate, tags, image } = Astro.props
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', {
@@ -18,10 +18,10 @@ function formatDate(date: Date) {
 }
 
 const tagStyles: Record<string, string> = {
-  New: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  Improved: 'bg-sky-50 text-sky-700 border-sky-200',
-  Fixed: 'bg-amber-50 text-amber-700 border-amber-200',
-  Breaking: 'bg-red-50 text-red-700 border-red-200',
+  New: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+  Improved: 'bg-sky-50 text-sky-800 border-sky-200',
+  Fixed: 'bg-amber-50 text-amber-800 border-amber-200',
+  Breaking: 'bg-red-50 text-red-800 border-red-200',
 }
 ---
 
@@ -38,89 +38,76 @@ const tagStyles: Record<string, string> = {
     <ClientRouter />
   </head>
 
-  <body class='bg-white antialiased'>
-    <Header logo='invert' navLinks='text-black' />
+  <body class='relative flex min-h-screen flex-col bg-paper text-ink antialiased'>
+    <div aria-hidden='true' class='paper-grain pointer-events-none fixed inset-0 z-50 opacity-[0.032] mix-blend-multiply'></div>
+    <Header />
 
-    <main class='pt-28 pb-24'>
-      <div class='mx-auto w-full max-w-3xl px-4 sm:px-6'>
-
-        <!-- Back link -->
+    <main class='flex-1 py-14 sm:py-20'>
+      <div class='mx-auto w-full max-w-3xl px-5 sm:px-8'>
         <a
           href='/changelog'
-          class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-neutral-400 hover:text-neutral-700 transition-colors mb-10 group'
+          class='inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-muted hover:text-ink transition-colors mb-10 group'
         >
-          <svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-            <path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
-          </svg>
-          Back to changelog
+          <span class='transition-transform group-hover:-translate-x-0.5'>←</span>
+          <span>Back to changelog</span>
         </a>
 
-        <!-- Version + Tags -->
         <div class='flex flex-wrap items-center gap-2 mb-5'>
-          <span class='rounded-md bg-[#f6edde] border border-[#d39c64]/40 px-3 py-1 text-sm font-bold font-accent text-[#93603e] tracking-wide'>
+          <span class='border border-ink bg-ink px-3 py-1 font-mono text-xs font-bold text-paper-elevated tracking-wide'>
             {version}
           </span>
           {tags?.map(tag => (
-            <span class={`rounded-md border px-2.5 py-1 text-xs font-semibold font-accent ${tagStyles[tag] ?? 'bg-gray-50 text-gray-600 border-gray-200'}`}>
+            <span class={`border px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider ${tagStyles[tag] ?? 'bg-paper-recessed text-ink-secondary border-rule'}`}>
               {tag}
             </span>
           ))}
         </div>
 
-        <!-- Title -->
-        <h1 class='text-3xl sm:text-4xl font-bold font-heading text-neutral-900 leading-tight tracking-tight mb-3'>
+        <h1 class='font-heading text-3xl sm:text-5xl font-bold text-ink leading-tight tracking-tight mb-3'>
           {title}
         </h1>
 
-        <!-- Date -->
-        <time class='text-sm font-accent text-neutral-400' datetime={pubDate.toISOString()}>
+        <time class='font-mono text-xs uppercase tracking-wider text-ink-muted' datetime={pubDate.toISOString()}>
           {formatDate(pubDate)}
         </time>
 
-        <!-- Hero image -->
         {image && (
-          <div class='mt-8 w-full aspect-video rounded-2xl overflow-hidden border border-neutral-100 shadow-sm'>
+          <div class='mt-8 w-full border border-rule bg-paper-elevated p-2'>
             <img
               src={image}
               alt={title}
               width={900}
               height={506}
-              class='w-full h-full object-cover'
+              class='w-full aspect-video object-cover'
               loading='eager'
             />
           </div>
         )}
 
-        <!-- Divider -->
-        <div class='h-px bg-neutral-100 my-10'></div>
+        <div class='h-px bg-rule my-10'></div>
 
-        <!-- Content -->
         <div class='prose prose-neutral md:prose-lg max-w-none font-accent
-          prose-headings:font-heading prose-headings:text-neutral-900
-          prose-h2:text-xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-neutral-100 prose-h2:pb-3
-          prose-p:text-neutral-600 prose-p:leading-relaxed
-          prose-li:text-neutral-600
-          prose-strong:text-neutral-800 prose-strong:font-semibold
-          prose-a:text-[#93603e] prose-a:no-underline hover:prose-a:underline
-          prose-code:text-[#93603e] prose-code:bg-[#f6edde] prose-code:px-1 prose-code:rounded
-          marker:text-[#93603e]
+          prose-headings:font-heading prose-headings:text-ink
+          prose-h2:text-xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-rule prose-h2:pb-3
+          prose-p:text-ink-secondary prose-p:leading-relaxed
+          prose-li:text-ink-secondary
+          prose-strong:text-ink prose-strong:font-semibold
+          prose-a:text-clay prose-a:no-underline hover:prose-a:underline
+          prose-code:text-clay prose-code:bg-paper-recessed prose-code:px-1.5 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm
+          marker:text-clay
           prose-ul:mt-3 prose-li:mt-1'>
           <slot />
         </div>
 
-        <!-- Footer nav -->
-        <div class='mt-16 pt-8 border-t border-neutral-100 flex items-center justify-between'>
+        <div class='mt-16 pt-8 border-t border-rule flex items-center justify-between'>
           <a
             href='/changelog'
-            class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-[#93603e] hover:text-[#7a4f33] transition-colors group'
+            class='inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-clay hover:text-clay-deep transition-colors'
           >
-            <svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-              <path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
-            </svg>
-            All releases
+            <span>←</span>
+            <span>All releases</span>
           </a>
         </div>
-
       </div>
     </main>
 

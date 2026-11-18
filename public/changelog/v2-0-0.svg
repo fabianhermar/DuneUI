@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <defs>
+    <radialGradient id="v2-glow1" cx="76%" cy="38%" r="50%">
+      <stop offset="0%" stop-color="#C9955B" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#B5542D" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#151311" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="v2-glow2" cx="22%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#93603E" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#151311" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="v2-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#2A2520" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Obsidian Base -->
+  <rect width="1600" height="900" fill="#151311"/>
+  <rect width="1600" height="900" fill="url(#v2-grid)" opacity="0.8"/>
+  <rect width="1600" height="900" fill="url(#v2-glow1)"/>
+  <rect width="1600" height="900" fill="url(#v2-glow2)"/>
+
+  <!-- Architectural Frame -->
+  <rect x="44" y="44" width="1512" height="812" rx="28" fill="none" stroke="#3F3A36" stroke-width="2"/>
+  <line x1="44" y1="128" x2="1556" y2="128" stroke="#2D2824" stroke-width="1.5"/>
+
+  <!-- Top Bar -->
+  <g transform="translate(88, 72)">
+    <rect width="118" height="32" rx="6" fill="#C9955B"/>
+    <text x="59" y="21" text-anchor="middle" fill="#151311" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" font-weight="800" letter-spacing="1.5">v2.0.0</text>
+    <text x="142" y="21" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600" letter-spacing="2.2">MAJOR RELEASE // NOV 18, 2026</text>
+  </g>
+  <text x="1512" y="93" text-anchor="end" fill="#CEA472" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="700" letter-spacing="2.2">ASTRO + TAILWIND CSS V4</text>
+
+  <!-- Left Column: DuneUI Logo + Editorial Hero Title -->
+  <g transform="translate(88, 195)">
+    <g transform="translate(-38, -56) scale(0.38)">
+      <path fill="#cea472" d="M 336.46 221.43 C 333.9 227.05 331.01 232.5 327.8 237.77 C 324.59 243.05 321.09 248.13 317.28 252.99 C 313.48 257.86 309.4 262.48 305.05 266.86 C 300.7 271.25 296.1 275.36 291.27 279.2 L 288.82 281.01 C 256.27 281.38 229.71 281.26 223.86 280.25 C 206.42 277.2 158.12 252.19 194.51 233.96 C 194.51 233.96 200.94 232.83 210.85 231.31 L 215.5 230.61 C 235.89 227.62 266.86 223.75 288.4 224.17 C 314.55 224.68 324.97 220.67 336.46 221.43 Z"/>
+      <path fill="#c18156" d="M 322.38 245.9 C 313.62 258.51 303.23 269.58 291.19 279.11 L 288.75 280.91 C 276.87 290.01 263.95 297.22 249.98 302.55 C 235.3 301.03 218.68 299.17 201.87 297.04 C 157.26 291.58 112.04 284.44 105.48 278.34 C 97.8 271 119.52 250.28 137.92 234.89 C 142.81 230.88 147.23 227.23 151 224.29 C 151.88 223.61 178.34 226.27 207.57 229.65 L 215.52 230.58 C 243.96 233.96 273.02 237.75 282.36 239.63 C 299.16 243.01 303.42 243.3 322.38 245.9 Z"/>
+      <path fill="#93603e" d="M 291.27 279.2 L 288.82 281.01 C 276.95 290.11 264.02 297.32 250.05 302.64 C 239.13 306.82 227.87 309.71 216.28 311.33 C 194.44 314.3 152 310 114.86 290.96 C 74 270 46 226 40.21 178.85 C 50.65 179.39 89.34 193.73 89.34 193.73 C 89.34 193.73 135 201 160.64 211.96 C 181.04 220.82 192.29 222.31 207.57 229.65 C 228 240 264 261 291.27 279.2 Z"/>
+      <path fill="#574f47" d="M 216.38 311.33 C 182 316 125 306 87.2 270.01 C 50 235 38.67 190 38.67 157.51 C 53.34 159.39 78 165 95.97 181.59 C 115 199 127.74 223.24 137.94 234.89 C 156 255 184 282 216.38 311.33 Z"/>
+      <circle fill="#da9762" cx="153.5" cy="103.5" r="41"/>
+    </g>
+    <text x="118" y="42" fill="#FAF7F2" font-family="'Urbanist', system-ui, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">DuneUI 2.0</text>
+
+    <text x="0" y="165" fill="#FAF7F2" font-family="'Urbanist', system-ui, sans-serif" font-size="82" font-weight="800" letter-spacing="-2.5">600 Specs</text>
+    <text x="0" y="254" fill="#CEA472" font-family="'Instrument Serif', Georgia, serif" font-size="90" font-style="italic">60 UI Families</text>
+
+    <text x="0" y="328" fill="#B8AEA2" font-family="'Albert Sans', system-ui, sans-serif" font-size="23" font-weight="500">Full Light &amp; Dark parity, Loaders #60, redesigned</text>
+    <text x="0" y="362" fill="#B8AEA2" font-family="'Albert Sans', system-ui, sans-serif" font-size="23" font-weight="500">E-Commerce suites, Pure CSS, Templates &amp; NeoIcons.</text>
+
+    <!-- Feature Chips -->
+    <g transform="translate(0, 425)">
+      <rect width="174" height="44" rx="22" fill="#B5542D"/>
+      <text x="87" y="27" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="700">TAILWIND V4</text>
+
+      <rect x="190" width="182" height="44" rx="22" fill="#201D19" stroke="#3F3A36" stroke-width="1.5"/>
+      <text x="281" y="27" text-anchor="middle" fill="#CEA472" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600">LOADERS +60</text>
+
+      <rect x="388" width="188" height="44" rx="22" fill="#201D19" stroke="#3F3A36" stroke-width="1.5"/>
+      <text x="482" y="27" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" font-weight="600">LIGHT &amp; DARK</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Bento Showcase of v2.0.0 Architecture -->
+  <g transform="translate(800, 175)">
+    <!-- Bento Tile 1: Orbital Loader Ring -->
+    <rect x="0" y="0" width="310" height="250" rx="24" fill="#201D19" stroke="#3F3A36" stroke-width="2"/>
+    <text x="28" y="38" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="1.5">60 // LOADERS</text>
+    <circle cx="155" cy="132" r="56" stroke="#2D2824" stroke-width="12"/>
+    <path d="M155 76 A56 56 0 1 1 102 152" stroke="#C9955B" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="155" cy="132" r="34" stroke="#B5542D" stroke-width="4" stroke-dasharray="10 8"/>
+    <text x="155" y="138" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" font-weight="800">94%</text>
+    <rect x="85" y="210" width="140" height="10" rx="5" fill="#3F3A36"/>
+
+    <!-- Bento Tile 2: Multi-Facet Filter & Commerce -->
+    <rect x="334" y="0" width="346" height="250" rx="24" fill="#201D19" stroke="#3F3A36" stroke-width="2"/>
+    <text x="362" y="38" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="1.5">55-60 // COMMERCE</text>
+    <rect x="362" y="64" width="128" height="34" rx="17" fill="#C9955B"/>
+    <text x="426" y="85" text-anchor="middle" fill="#151311" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="800">FILTERS (4)</text>
+    <rect x="502" y="64" width="148" height="34" rx="17" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <rect x="362" y="122" width="288" height="10" rx="5" fill="#2D2824"/>
+    <rect x="362" y="122" width="194" height="10" rx="5" fill="#B5542D"/>
+    <circle cx="556" cy="127" r="11" fill="#FAF7F2"/>
+    <rect x="362" y="156" width="136" height="66" rx="14" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <rect x="380" y="176" width="84" height="10" rx="5" fill="#CEA472"/>
+    <rect x="380" y="196" width="56" height="8" rx="4" fill="#574F47"/>
+    <rect x="514" y="156" width="136" height="66" rx="14" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <rect x="532" y="176" width="84" height="10" rx="5" fill="#FAF7F2"/>
+    <rect x="532" y="196" width="56" height="8" rx="4" fill="#574F47"/>
+
+    <!-- Bento Tile 3: Full-Width Telemetry & Suites -->
+    <rect x="0" y="274" width="680" height="248" rx="24" fill="#201D19" stroke="#C9955B" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="32" y="314" fill="#CEA472" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="700" letter-spacing="1.5">ECOSYSTEM // PURE CSS · TEMPLATES · NEOICONS</text>
+
+    <rect x="32" y="340" width="190" height="150" rx="16" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <text x="54" y="378" fill="#FAF7F2" font-family="'Urbanist', system-ui, sans-serif" font-size="28" font-weight="800">60</text>
+    <text x="54" y="406" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11">CATEGORIES</text>
+    <rect x="54" y="438" width="146" height="26" rx="8" fill="#B5542D" fill-opacity="0.22"/>
+    <text x="127" y="455" text-anchor="middle" fill="#CEA472" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="700">600 SPECS</text>
+
+    <rect x="245" y="340" width="190" height="150" rx="16" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <text x="267" y="378" fill="#FAF7F2" font-family="'Urbanist', system-ui, sans-serif" font-size="28" font-weight="800">0 KB</text>
+    <text x="267" y="406" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11">RUNTIME JS</text>
+    <rect x="267" y="438" width="146" height="26" rx="8" fill="#C9955B" fill-opacity="0.2"/>
+    <text x="340" y="455" text-anchor="middle" fill="#FAF7F2" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="700">HTML5 + TW4</text>
+
+    <rect x="458" y="340" width="190" height="150" rx="16" fill="#151311" stroke="#3F3A36" stroke-width="1.5"/>
+    <text x="480" y="378" fill="#CEA472" font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic">Editorial</text>
+    <text x="480" y="406" fill="#A69B8E" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11">BENTO &amp; GLASS</text>
+    <rect x="480" y="438" width="146" height="26" rx="8" fill="#3F3A36" fill-opacity="0.55"/>
+    <text x="553" y="455" text-anchor="middle" fill="#CEA472" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" font-weight="700">WCAG AA</text>
+  </g>
+</svg>
