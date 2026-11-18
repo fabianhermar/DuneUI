@@ -6,9 +6,9 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "astro sync && tsc --noEmit",
 		"lint": "eslint src tests",
-		"build": "tsc --noEmit && astro build",
+		"build": "astro sync && tsc --noEmit && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
 		"test:unit": "node --test tests/unit/*.test.ts",
