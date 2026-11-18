@@ -1,0 +1,40 @@
+<section data-cf8 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+    <div class="space-y-4 md:col-span-4 border-b md:border-b-0 md:border-r border-slate-100 dark:border-zinc-800 pb-4 md:pb-0 md:pr-5">
+      <div>
+        <h3 class="font-bold text-slate-900 dark:text-white">Minimum Customer Rating</h3>
+        <div class="mt-2.5 space-y-2">
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="radio" name="rat_cf8" value="4.8" class="accent-amber-500" /><span class="text-amber-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 &amp; up</span><span class="font-mono text-slate-400">2</span></label>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="radio" name="rat_cf8" value="4.5" checked class="accent-amber-500" /><span class="text-amber-500">&#9733;&#9733;&#9733;&#9733;</span> 4.5 &amp; up</span><span class="font-mono text-slate-400">4</span></label>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="radio" name="rat_cf8" value="0" class="accent-amber-500" /> All Ratings</span><span class="font-mono text-slate-400">4</span></label>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 dark:border-zinc-800 pt-3">
+        <p class="font-bold text-slate-900 dark:text-white">Origin Workshop</p>
+        <div class="mt-2 space-y-1.5">
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="kyoto" data-cf8-ws class="accent-indigo-600" /> Kyoto Kiln</label>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="zurich" data-cf8-ws class="accent-indigo-600" /> Zurich Atelier</label>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="cph" data-cf8-ws class="accent-indigo-600" /> Copenhagen Woodshop</label>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 md:col-span-8">
+      <div data-cf8-it data-rat="4.9" data-ws="kyoto" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5"><img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="size-16 rounded-xl object-cover" /><div><p class="font-bold">Stoneware Carafe</p><p class="text-[11px] text-amber-600 dark:text-amber-400">4.9&#9733; (92) &middot; Kyoto Kiln</p><p class="mt-0.5 font-mono font-bold">$68</p></div></div>
+      <div data-cf8-it data-rat="4.8" data-ws="zurich" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5"><img src="/images/ecommerce/lamp.jpg" alt="Lamp" class="size-16 rounded-xl object-cover" /><div><p class="font-bold">Architectural Lamp</p><p class="text-[11px] text-amber-600 dark:text-amber-400">4.8&#9733; (64) &middot; Zurich Atelier</p><p class="mt-0.5 font-mono font-bold">$210</p></div></div>
+      <div data-cf8-it data-rat="5.0" data-ws="cph" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5"><img src="/images/ecommerce/chair.jpg" alt="Chair" class="size-16 rounded-xl object-cover" /><div><p class="font-bold">Lounge Chair No. 02</p><p class="text-[11px] text-amber-600 dark:text-amber-400">5.0&#9733; (29) &middot; Copenhagen</p><p class="mt-0.5 font-mono font-bold">$1,280</p></div></div>
+      <div data-cf8-it data-rat="4.6" data-ws="zurich" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5"><img src="/images/ecommerce/clock.jpg" alt="Clock" class="size-16 rounded-xl object-cover" /><div><p class="font-bold">Brushed Steel Clock</p><p class="text-[11px] text-amber-600 dark:text-amber-400">4.6&#9733; (48) &middot; Zurich Atelier</p><p class="mt-0.5 font-mono font-bold">$120</p></div></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf8]'); if (!r) return;
+  const rts = [...r.querySelectorAll('input[name="rat_cf8"]')], wss = [...r.querySelectorAll('[data-cf8-ws]')], items = [...r.querySelectorAll('[data-cf8-it]')];
+  const upd = () => {
+    const minR = Number(rts.find(x => x.checked)?.value || 0);
+    const activeW = wss.filter(w => w.checked).map(w => w.value);
+    items.forEach(it => it.classList.toggle('hidden', !(Number(it.dataset.rat) >= minR && activeW.includes(it.dataset.ws))));
+  };
+  [...rts, ...wss].forEach(el => el.addEventListener('change', upd));
+})();
+</script>

@@ -1,0 +1,25 @@
+<nav data-jump-pager class="mx-auto flex w-full max-w-xl flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 py-3 shadow-sm text-xs text-slate-700 dark:text-zinc-300">
+  <span class="hidden sm:inline font-mono text-[11px] font-medium text-slate-500 dark:text-zinc-400">1,280 total rows</span>
+  <div class="mx-auto sm:mx-0 flex items-center gap-2">
+    <button type="button" data-jump-first aria-label="First page" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1.5 font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-700">«</button>
+    <button type="button" data-jump-prev aria-label="Previous page" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-1.5 font-semibold text-slate-800 dark:text-zinc-100 hover:bg-slate-50 dark:hover:bg-zinc-700">←</button>
+    <label class="inline-flex items-center gap-1.5 text-slate-600 dark:text-zinc-300">
+      <span>Page</span>
+      <input type="number" min="1" max="32" value="4" data-jump-input class="w-12 rounded-lg border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-2 py-1 text-center font-mono font-semibold text-slate-900 dark:text-white focus:border-indigo-500 focus:outline-none" />
+      <span>of <strong class="text-slate-900 dark:text-white">32</strong></span>
+    </label>
+    <button type="button" data-jump-next aria-label="Next page" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-1.5 font-semibold text-slate-800 dark:text-zinc-100 hover:bg-slate-50 dark:hover:bg-zinc-700">→</button>
+    <button type="button" data-jump-last aria-label="Last page" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1.5 font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-700">»</button>
+  </div>
+</nav>
+<script>
+  document.querySelectorAll('[data-jump-pager]').forEach((nav) => {
+    const inp = nav.querySelector('[data-jump-input]');
+    const get = () => Math.min(32, Math.max(1, Number(inp?.value) || 1));
+    const set = (n) => { if (inp) inp.value = String(Math.min(32, Math.max(1, n))); };
+    nav.querySelector('[data-jump-first]')?.addEventListener('click', () => set(1));
+    nav.querySelector('[data-jump-prev]')?.addEventListener('click', () => set(get() - 1));
+    nav.querySelector('[data-jump-next]')?.addEventListener('click', () => set(get() + 1));
+    nav.querySelector('[data-jump-last]')?.addEventListener('click', () => set(32));
+  });
+</script>

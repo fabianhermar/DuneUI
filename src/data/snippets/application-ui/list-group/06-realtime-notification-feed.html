@@ -1,0 +1,48 @@
+<div data-notif-list class="mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm text-slate-900 dark:text-zinc-100">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 px-4 py-3">
+    <div class="flex items-center gap-2">
+      <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Notifications</h3>
+      <span data-unread-pill class="rounded-full bg-indigo-50 dark:bg-indigo-500/20 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">2 unread</span>
+    </div>
+    <button type="button" data-mark-read class="text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline">Mark all read</button>
+  </div>
+  <ul class="divide-y divide-slate-100 dark:divide-zinc-800/80">
+    <li class="flex items-start gap-3 p-4 transition hover:bg-slate-50/70 dark:hover:bg-zinc-800/40">
+      <img src="/images/avatars/sofia.jpg" alt="Sofia Cruz" class="size-8 shrink-0 rounded-full object-cover" />
+      <div class="min-w-0 flex-1 text-xs leading-relaxed">
+        <p class="text-slate-800 dark:text-zinc-200"><strong class="font-semibold text-slate-950 dark:text-white">Sofia Cruz</strong> commented on <strong class="font-semibold">Hero Shot</strong></p>
+        <p class="mt-0.5 text-slate-500 dark:text-zinc-400">“Padding on mobile frame feels balanced now.”</p>
+        <span class="mt-1 inline-block text-[11px] text-slate-500 dark:text-zinc-400">4m ago</span>
+      </div>
+      <span data-unread-dot class="mt-1.5 size-2 shrink-0 rounded-full bg-indigo-600"></span>
+    </li>
+    <li class="flex items-start gap-3 p-4 transition hover:bg-slate-50/70 dark:hover:bg-zinc-800/40">
+      <img src="/images/avatars/mateo.jpg" alt="Mateo Ruiz" class="size-8 shrink-0 rounded-full object-cover" />
+      <div class="min-w-0 flex-1 text-xs leading-relaxed">
+        <p class="text-slate-800 dark:text-zinc-200"><strong class="font-semibold text-slate-950 dark:text-white">Mateo Ruiz</strong> approved <span class="font-mono font-semibold text-indigo-600 dark:text-indigo-400">PR #148</span></p>
+        <span class="mt-0.5 inline-block text-[11px] text-slate-500 dark:text-zinc-400">22m ago</span>
+      </div>
+      <span data-unread-dot class="mt-1.5 size-2 shrink-0 rounded-full bg-indigo-600"></span>
+    </li>
+    <li class="flex items-start gap-3 p-4 transition hover:bg-slate-50/70 dark:hover:bg-zinc-800/40">
+      <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+      </span>
+      <div class="min-w-0 flex-1 text-xs leading-relaxed">
+        <p class="text-slate-700 dark:text-zinc-300"><strong class="font-semibold text-slate-900 dark:text-zinc-100">CI Runner</strong> passed all 18 visual tests</p>
+        <span class="mt-0.5 inline-block text-[11px] text-slate-500 dark:text-zinc-400">1h ago</span>
+      </div>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-notif-list]').forEach((root) => {
+    const pill = root.querySelector('[data-unread-pill]');
+    const mark = root.querySelector('[data-mark-read]');
+    const dots = root.querySelectorAll('[data-unread-dot]');
+    mark?.addEventListener('click', () => {
+      dots.forEach((d) => { d.classList.remove('bg-indigo-600'); d.classList.add('bg-slate-300', 'dark:bg-zinc-700'); });
+      if (pill) pill.textContent = '0 unread';
+    });
+  });
+</script>

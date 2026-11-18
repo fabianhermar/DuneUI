@@ -1,0 +1,69 @@
+{
+  "slug": "accordion",
+  "index": "01",
+  "tag": "Disclosure",
+  "title": "Accordions",
+  "description": "10 responsive disclosure panels spanning Linear dark specs, Liquid Glass drawers, neo-brutalist FAQ stacks, step onboarding accordions, and Tailwind UI minimal lists.",
+  "specs": [
+    {
+      "file": "01-minimal-native-accordion.html",
+      "title": "Minimal Native Accordion",
+      "styleTag": "Tailwind · Minimal",
+      "canvas": "light"
+    },
+    {
+      "file": "02-contained-dual-icon-stack.html",
+      "title": "Contained Dual-Icon Stack",
+      "styleTag": "SaaS · Clean Ring",
+      "canvas": "light"
+    },
+    {
+      "file": "03-linear-obsidian-spec-faq.html",
+      "title": "Linear Obsidian Spec FAQ",
+      "styleTag": "Linear · Dark Ops",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-brutalist-sticker-accordion.html",
+      "title": "Brutalist Sticker Accordion",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-frosted-faq.html",
+      "title": "Liquid Glass Frosted FAQ",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-editorial-serif-faq-index.html",
+      "title": "Editorial Serif FAQ Index",
+      "styleTag": "Editorial · Magazine",
+      "canvas": "light"
+    },
+    {
+      "file": "07-soft-pill-release-notes.html",
+      "title": "Soft-Pill Release Notes",
+      "styleTag": "Stripe · Soft UI",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-care-shipping-spec-drawer.html",
+      "title": "Care & Shipping Spec Drawer",
+      "styleTag": "Storefront · FAQ",
+      "canvas": "light"
+    },
+    {
+      "file": "09-api-endpoint-schema-drawer.html",
+      "title": "API Endpoint Schema Drawer",
+      "styleTag": "Swagger · Dark API",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-clinical-onboarding-drawer.html",
+      "title": "Clinical Onboarding Drawer",
+      "styleTag": "Healthcare · Clean",
+      "canvas": "muted"
+    }
+  ]
+}

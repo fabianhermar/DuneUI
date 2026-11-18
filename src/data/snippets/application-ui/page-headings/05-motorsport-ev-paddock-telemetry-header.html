@@ -1,0 +1,31 @@
+<header class="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0C0E] text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-col gap-5 p-6 md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-4">
+      <img src="/images/heroes/alpine-coupe.jpg" alt="Alpine EV GT" class="h-16 w-24 shrink-0 rounded-xl object-cover ring-1 ring-slate-200 dark:ring-white/15" />
+      <div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-orange-600 dark:text-orange-400">CHASSIS #GT-044</span>
+          <span class="rounded bg-emerald-500/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-emerald-700 dark:text-emerald-400">BATTERY 88%</span>
+        </div>
+        <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-900 dark:text-white">Kastel GT-R Alpine Spec</h1>
+        <p data-ph5-meta class="mt-0.5 font-mono text-[11px] text-slate-500 dark:text-zinc-400">Torque Vectoring: Track &middot; Suspension: -15mm &middot; 760 km est.</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-900 p-1 font-mono text-[11px]">
+      <button type="button" data-ph5-mode="Torque Vectoring: Range · Suspension: +10mm · 760 km est." class="rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-400">RANGE</button>
+      <button type="button" data-ph5-mode="Torque Vectoring: Sport+ · Suspension: -8mm · 610 km est." class="rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-400">SPORT+</button>
+      <button type="button" data-ph5-mode="Torque Vectoring: Track · Suspension: -15mm · 490 km est." class="rounded-lg bg-orange-600 px-3 py-1.5 font-bold text-white shadow-xs">TRACK</button>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  const btns = [...document.querySelectorAll('[data-ph5-mode]')], meta = document.querySelector('[data-ph5-meta]');
+  const onCls = 'rounded-lg bg-orange-600 px-3 py-1.5 font-bold text-white shadow-xs';
+  const offCls = 'rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-400';
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => { x.className = x === b ? onCls : offCls; });
+    if (meta && b.dataset.ph5Mode) meta.textContent = b.dataset.ph5Mode;
+  }));
+})();
+</script>

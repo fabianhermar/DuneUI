@@ -1,0 +1,60 @@
+<section data-acc9 class="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 sm:p-7 font-mono text-xs text-slate-900 dark:text-zinc-100 shadow-lg space-y-3.5">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 pb-3.5">
+    <div class="flex items-center gap-2">
+      <span class="size-2 rounded-full bg-emerald-400"></span>
+      <span class="font-bold text-slate-900 dark:text-white">REST API Reference &middot; v2.4</span>
+    </div>
+    <span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2.5 py-1 text-[11px] text-slate-500 dark:text-zinc-400">https://api.duneui.dev/v2</span>
+  </div>
+  <details class="group rounded-2xl border border-emerald-500/30 bg-emerald-50/20 dark:bg-zinc-900/90 p-4 [&_summary::-webkit-details-marker]:hidden" open>
+    <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-2 text-slate-900 dark:text-white">
+      <div class="flex items-center gap-2.5">
+        <span class="rounded-md bg-emerald-500/20 px-2.5 py-1 font-bold text-emerald-700 dark:text-emerald-400">POST</span>
+        <span class="font-semibold">/v2/checkout/sessions</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="rounded bg-emerald-500/15 px-2 py-0.5 text-[10px] text-emerald-700 dark:text-emerald-300">201 Created</span>
+      </div>
+    </summary>
+    <div class="mt-3.5 space-y-2.5 border-t border-emerald-500/20 pt-3">
+      <div class="flex items-center justify-between text-[11px] font-sans text-slate-500 dark:text-zinc-400">
+        <span>Creates an authenticated multi-currency checkout session.</span>
+        <button type="button" data-acc9-copy class="font-mono font-bold text-emerald-700 dark:text-emerald-400 hover:underline">Copy JSON</button>
+      </div>
+      <pre class="overflow-x-auto rounded-xl bg-slate-900 dark:bg-black/70 p-3.5 text-[11px] leading-relaxed text-emerald-300">{
+  "id": "cs_live_94812a",
+  "currency": "usd",
+  "mode": "subscription",
+  "trial_days": 14,
+  "automatic_tax": { "enabled": true }
+}</pre>
+    </div>
+  </details>
+  <details class="group rounded-2xl border border-sky-500/30 bg-sky-50/20 dark:bg-zinc-900/90 p-4 [&_summary::-webkit-details-marker]:hidden">
+    <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-2 text-slate-900 dark:text-white">
+      <div class="flex items-center gap-2.5">
+        <span class="rounded-md bg-sky-500/20 px-2.5 py-1 font-bold text-sky-700 dark:text-sky-400">GET</span>
+        <span class="font-semibold">/v2/customers/:id/ledger</span>
+      </div>
+      <span class="rounded bg-sky-500/15 px-2 py-0.5 text-[10px] text-sky-700 dark:text-sky-300">200 OK</span>
+    </summary>
+    <p class="mt-3 border-t border-sky-500/20 pt-3 font-sans text-xs text-slate-600 dark:text-zinc-400">Returns paginated invoice settlements, active seat allocations, and default SEPA/card payment tokens.</p>
+  </details>
+  <details class="group rounded-2xl border border-amber-500/30 bg-amber-50/20 dark:bg-zinc-900/90 p-4 [&_summary::-webkit-details-marker]:hidden">
+    <summary class="flex cursor-pointer list-none flex-wrap items-center justify-between gap-2 text-slate-900 dark:text-white">
+      <div class="flex items-center gap-2.5">
+        <span class="rounded-md bg-amber-500/20 px-2.5 py-1 font-bold text-amber-700 dark:text-amber-400">PATCH</span>
+        <span class="font-semibold">/v2/webhooks/endpoints/:id</span>
+      </div>
+      <span class="rounded bg-amber-500/15 px-2 py-0.5 text-[10px] text-amber-700 dark:text-amber-300">200 Updated</span>
+    </summary>
+    <p class="mt-3 border-t border-amber-500/20 pt-3 font-sans text-xs text-slate-600 dark:text-zinc-400">Rotates HMAC-SHA256 signing secrets with a 24-hour dual-signature grace window.</p>
+  </details>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-acc9]'); if (!r) return;
+  const b = r.querySelector('[data-acc9-copy]');
+  b?.addEventListener('click', () => { b.textContent = 'Copied Payload ✓'; setTimeout(() => { b.textContent = 'Copy JSON'; }, 1800); });
+})();
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "404-pages",
+  "index": "45",
+  "tag": "Feedback",
+  "title": "404 Pages",
+  "description": "10 high-craft 404 Not Found pages: architectural grid centerpieces, split editorial photo layouts, theater dot-matrix errors, CLI route trace debuggers, Liquid Glass spatial errors, volumetric overhead spotlight 404s, and deep-space UFO scenes.",
+  "specs": [
+    {
+      "file": "01-archival-ledger-graph-grid-404.html",
+      "title": "Archival Ledger Graph Grid 404",
+      "styleTag": "Editorial · Archive Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "02-split-architectural-photo-404.html",
+      "title": "Split Architectural Photo 404",
+      "styleTag": "Editorial · Split",
+      "canvas": "light"
+    },
+    {
+      "file": "03-theater-matrix-dot-404.html",
+      "title": "Theater Matrix Dot-404",
+      "styleTag": "Interactive · Matrix 404",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-popular-resources-directory-404.html",
+      "title": "Popular Resources Directory 404",
+      "styleTag": "Stripe · Helpful",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-cli-route-trace-debugger-404.html",
+      "title": "CLI Route Trace Debugger 404",
+      "styleTag": "DevTools · Terminal",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-liquid-glass-spatial-404.html",
+      "title": "Liquid Glass Spatial 404",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "07-neo-brutalist-error-poster-404.html",
+      "title": "Neo-Brutalist Error Poster 404",
+      "styleTag": "Brutalist · Poster",
+      "canvas": "light"
+    },
+    {
+      "file": "08-overhead-volumetric-spotlight-404.html",
+      "title": "Overhead Volumetric Spotlight 404",
+      "styleTag": "Cinematic · Spotlight",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-storefront-collection-recovery-404.html",
+      "title": "Storefront Collection Recovery 404",
+      "styleTag": "Storefront · Error",
+      "canvas": "light"
+    },
+    {
+      "file": "10-orbital-ufo-abduction-404.html",
+      "title": "Orbital UFO Abduction 404",
+      "styleTag": "Space · SVG Scene",
+      "canvas": "dark"
+    }
+  ]
+}

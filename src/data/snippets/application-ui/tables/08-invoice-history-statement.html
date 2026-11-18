@@ -1,0 +1,62 @@
+<div class="w-full overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800 text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 px-5 py-3.5">
+    <div>
+      <h3 class="text-sm font-bold text-slate-900 dark:text-zinc-100">Billing Statements &bull; 2026</h3>
+      <p data-inv-sel class="text-[11px] text-slate-500 dark:text-zinc-400">Select rows to batch download receipts</p>
+    </div>
+    <button type="button" class="rounded-lg border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 px-3 py-1.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800">Export CSV</button>
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="w-full min-w-[500px] text-left text-xs">
+      <thead class="border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-800/60 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+        <tr>
+          <th class="w-10 px-5 py-3"><input type="checkbox" data-inv-all aria-label="Select all invoices" class="rounded border-slate-300 dark:border-zinc-700 accent-indigo-600" /></th>
+          <th class="px-3 py-3">Invoice</th>
+          <th class="px-4 py-3">Billing Date</th>
+          <th class="px-4 py-3">Method</th>
+          <th class="px-4 py-3">Amount</th>
+          <th class="px-5 py-3 text-right">Receipt</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-zinc-800/80 text-slate-700 dark:text-zinc-300">
+        <tr class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><input type="checkbox" data-inv-row aria-label="Select INV-2026-11" class="rounded border-slate-300 dark:border-zinc-700 accent-indigo-600" /></td>
+          <td class="px-3 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">INV-2026-11</td>
+          <td class="px-4 py-3">Nov 01, 2026</td>
+          <td class="px-4 py-3 text-slate-500 dark:text-zinc-400">Visa &bull;&bull;&bull;&bull; 4242</td>
+          <td class="px-4 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">$49.00</td>
+          <td class="px-5 py-3 text-right"><a href="#" class="inline-flex items-center gap-1 rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/15">PDF &darr;</a></td>
+        </tr>
+        <tr class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><input type="checkbox" data-inv-row aria-label="Select INV-2026-10" class="rounded border-slate-300 dark:border-zinc-700 accent-indigo-600" /></td>
+          <td class="px-3 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">INV-2026-10</td>
+          <td class="px-4 py-3">Oct 01, 2026</td>
+          <td class="px-4 py-3 text-slate-500 dark:text-zinc-400">Visa &bull;&bull;&bull;&bull; 4242</td>
+          <td class="px-4 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">$49.00</td>
+          <td class="px-5 py-3 text-right"><a href="#" class="inline-flex items-center gap-1 rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/15">PDF &darr;</a></td>
+        </tr>
+        <tr class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><input type="checkbox" data-inv-row aria-label="Select INV-2026-09" class="rounded border-slate-300 dark:border-zinc-700 accent-indigo-600" /></td>
+          <td class="px-3 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">INV-2026-09</td>
+          <td class="px-4 py-3">Sep 01, 2026</td>
+          <td class="px-4 py-3 text-slate-500 dark:text-zinc-400">Visa &bull;&bull;&bull;&bull; 4242</td>
+          <td class="px-4 py-3 font-mono font-semibold text-slate-900 dark:text-zinc-100">$49.00</td>
+          <td class="px-5 py-3 text-right"><a href="#" class="inline-flex items-center gap-1 rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/15">PDF &darr;</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+(() => {
+  const all = document.querySelector('[data-inv-all]');
+  const boxes = [...document.querySelectorAll('[data-inv-row]')];
+  const label = document.querySelector('[data-inv-sel]');
+  const update = () => {
+    const n = boxes.filter((b) => b.checked).length;
+    if (label) label.textContent = n > 0 ? n + ' invoice(s) selected for batch download' : 'Select rows to batch download receipts';
+  };
+  if (all) all.addEventListener('change', () => { boxes.forEach((b) => { b.checked = all.checked; }); update(); });
+  boxes.forEach((b) => b.addEventListener('change', () => { if (all) all.checked = boxes.every((x) => x.checked); update(); }));
+})();
+</script>

@@ -1,0 +1,36 @@
+<div data-sel2 class="mx-auto min-h-[290px] w-full max-w-sm rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FAF9F6] dark:bg-zinc-900 p-5 text-stone-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="/images/ecommerce/sneaker.jpg" alt="Runner" class="size-10 rounded-lg object-cover ring-1 ring-stone-200 dark:ring-zinc-700" />
+      <div>
+        <h3 class="font-serif text-base leading-tight">Field Runner 04</h3>
+        <p data-sel2-picked class="font-mono text-[10px] text-emerald-700 dark:text-emerald-400">Selected: US 9 / EU 42 &middot; In Stock</p>
+      </div>
+    </div>
+    <button type="button" data-sel2-unit class="cursor-pointer rounded-md border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-2 py-1 font-mono text-[10px] font-bold">US / EU</button>
+  </div>
+  <div class="mt-4 grid grid-cols-3 gap-2 font-mono text-xs">
+    <button type="button" data-sel2-sz data-us="US 7.5" data-eu="EU 40" data-stock="4 pairs left" class="cursor-pointer rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2.5 font-semibold hover:border-stone-900 dark:hover:border-white transition">US 7.5</button>
+    <button type="button" data-sel2-sz data-us="US 8" data-eu="EU 41" data-stock="Only 1 left" class="cursor-pointer rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2.5 font-semibold hover:border-stone-900 dark:hover:border-white transition">US 8</button>
+    <button type="button" data-sel2-sz data-us="US 9" data-eu="EU 42" data-stock="In Stock" data-active="true" class="cursor-pointer rounded-lg border-2 border-stone-900 dark:border-white bg-stone-900 dark:bg-white py-2.5 font-bold text-white dark:text-stone-900 transition">US 9</button>
+    <button type="button" data-sel2-sz data-us="US 10" data-eu="EU 43" data-stock="In Stock" class="cursor-pointer rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2.5 font-semibold hover:border-stone-900 dark:hover:border-white transition">US 10</button>
+    <button type="button" data-sel2-sz data-us="US 11" data-eu="EU 44" data-stock="2 pairs left" class="cursor-pointer rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2.5 font-semibold hover:border-stone-900 dark:hover:border-white transition">US 11</button>
+    <button type="button" disabled class="cursor-not-allowed rounded-lg border border-stone-200 dark:border-zinc-800 bg-stone-100 dark:bg-zinc-800/40 py-2.5 text-stone-400 line-through">US 12</button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel2]').forEach((root) => {
+    let euMode = false;
+    const btns = [...root.querySelectorAll('[data-sel2-sz]')], unitBtn = root.querySelector('[data-sel2-unit]'), out = root.querySelector('[data-sel2-picked]');
+    const onCls = 'cursor-pointer rounded-lg border-2 border-stone-900 dark:border-white bg-stone-900 dark:bg-white py-2.5 font-bold text-white dark:text-stone-900 transition';
+    const offCls = 'cursor-pointer rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2.5 font-semibold hover:border-stone-900 dark:hover:border-white transition';
+    const renderLabels = () => btns.forEach((b) => { b.textContent = euMode ? (b.dataset.eu || '') : (b.dataset.us || ''); });
+    unitBtn?.addEventListener('click', () => { euMode = !euMode; renderLabels(); });
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; });
+      if (out) out.textContent = 'Selected: ' + b.dataset.us + ' / ' + b.dataset.eu + ' · ' + b.dataset.stock;
+    }));
+  });
+})();
+</script>

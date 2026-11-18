@@ -1,0 +1,53 @@
+<section data-sc3 class="mx-auto w-full max-w-2xl border-2 border-black dark:border-zinc-200 bg-[#FFFDF7] dark:bg-zinc-900 p-6 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7] text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black dark:border-zinc-200 pb-3.5">
+    <div>
+      <h2 class="font-mono text-sm font-black uppercase">RESERVE BAG // 14:52 HOLD</h2>
+      <p class="font-mono text-[10px] text-neutral-500 dark:text-zinc-400">STOCK LOCKED WHILE CHECKING OUT</p>
+    </div>
+    <span class="border-2 border-black bg-[#FFE95A] px-2.5 py-0.5 font-mono text-[11px] font-black text-black">DROP #08</span>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-4 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 p-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/ecommerce/sneaker.jpg" alt="Field Runner XT" class="size-16 border-2 border-black dark:border-zinc-200 object-cover" />
+      <div>
+        <p class="font-black text-sm">FIELD RUNNER XT</p>
+        <div class="mt-1 flex items-center gap-2 font-mono text-[11px]">
+          <span>SIZE:</span>
+          <button type="button" data-sc3-sz="US 9.5" class="cursor-pointer border border-black dark:border-zinc-400 px-1.5 py-0.5 font-bold hover:bg-[#FFE95A] hover:text-black">US 9.5</button>
+          <button type="button" data-sc3-sz="US 10" class="cursor-pointer border border-black dark:border-zinc-200 bg-[#BEF264] px-1.5 py-0.5 font-bold text-black">US 10</button>
+        </div>
+      </div>
+    </div>
+    <span class="font-mono text-base font-black">$185.00</span>
+  </div>
+  <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <form data-sc3-form class="flex gap-2">
+      <input type="text" data-sc3-inp placeholder="Code (try DUNE20)" class="w-40 border-2 border-black dark:border-zinc-300 bg-white dark:bg-zinc-950 px-3 py-2 font-mono text-xs focus:outline-none" />
+      <button type="submit" class="cursor-pointer border-2 border-black dark:border-zinc-200 bg-black dark:bg-white px-3 py-2 font-mono text-xs font-black text-white dark:text-black">APPLY</button>
+    </form>
+    <div class="flex items-center justify-between gap-4">
+      <div class="text-right font-mono">
+        <p data-sc3-msg class="text-[10px] text-neutral-500 dark:text-zinc-400">FREE EXPRESS</p>
+        <p data-sc3-tot class="text-sm font-black">$185.00</p>
+      </div>
+      <button type="button" class="cursor-pointer border-2 border-black dark:border-zinc-200 bg-[#A7F3D0] px-4 py-2.5 font-mono text-xs font-black text-black shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]">LOCK ORDER &rarr;</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc3]'); if (!root) return;
+  const f = root.querySelector('[data-sc3-form]'), inp = root.querySelector('[data-sc3-inp]'), msg = root.querySelector('[data-sc3-msg]'), tot = root.querySelector('[data-sc3-tot]'), szs = [...root.querySelectorAll('[data-sc3-sz]')];
+  szs.forEach(s => s.addEventListener('click', () => {
+    szs.forEach(x => { x.className = x === s ? 'cursor-pointer border border-black dark:border-zinc-200 bg-[#BEF264] px-1.5 py-0.5 font-bold text-black' : 'cursor-pointer border border-black dark:border-zinc-400 px-1.5 py-0.5 font-bold hover:bg-[#FFE95A] hover:text-black'; });
+  }));
+  f?.addEventListener('submit', e => {
+    e.preventDefault();
+    if (inp.value.trim().toUpperCase() === 'DUNE20') {
+      msg.textContent = 'DUNE20 (-20%) APPLIED'; msg.className = 'text-[10px] font-bold text-emerald-700 dark:text-emerald-400'; tot.textContent = '$148.00';
+    } else {
+      msg.textContent = 'INVALID — TRY DUNE20'; msg.className = 'text-[10px] font-bold text-rose-600 dark:text-rose-400'; tot.textContent = '$185.00';
+    }
+  });
+})();
+</script>

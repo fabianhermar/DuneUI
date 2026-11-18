@@ -1,0 +1,62 @@
+{
+  "slug": "product-overviews",
+  "index": "56",
+  "tag": "Commerce",
+  "title": "Product Overviews",
+  "description": "10 high-craft, distinct Product Detail Page (PDP) architectures spanning footwear galleries, studio hardware configurators, editorial ceramics, horology, brutalist drops, licensing tiers, modular synths, knitwear, bespoke furniture, and coffee subscriptions.",
+  "specs": [
+    {
+      "file": "01-nike-style-footwear-flagship-pdp.html",
+      "title": "Nike-Style Footwear Flagship PDP",
+      "styleTag": "Footwear · Flagship"
+    },
+    {
+      "file": "02-studio-hardware-keynote-configurator.html",
+      "title": "Studio Hardware Keynote Configurator",
+      "styleTag": "Hardware · Dark PDP",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-sensory-editorial-ceramic-pdp.html",
+      "title": "Sensory Editorial Ceramic PDP",
+      "styleTag": "Editorial · Craft"
+    },
+    {
+      "file": "04-horology-atelier-live-configurator.html",
+      "title": "Horology Atelier Live Configurator",
+      "styleTag": "Horology · Atelier",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-neo-brutalist-collector-drop-pdp.html",
+      "title": "Neo-Brutalist Collector Drop PDP",
+      "styleTag": "Brutalist · Limited Drop"
+    },
+    {
+      "file": "06-saas-asset-archive-tiered-pdp.html",
+      "title": "SaaS Asset Archive Tiered PDP",
+      "styleTag": "Digital · Licensing"
+    },
+    {
+      "file": "07-industrial-modular-synth-schematic-pdp.html",
+      "title": "Industrial Modular Synth Schematic PDP",
+      "styleTag": "Music Tech · Industrial",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-biella-knitwear-lookbook-oos-notify-pdp.html",
+      "title": "Biella Knitwear Lookbook + OOS Notify PDP",
+      "styleTag": "Fashion · Storefront"
+    },
+    {
+      "file": "09-architectural-furniture-spec-configurator.html",
+      "title": "Architectural Furniture Spec Configurator",
+      "styleTag": "Interior · Made-to-Order"
+    },
+    {
+      "file": "10-roastery-micro-lot-subscription-pdp.html",
+      "title": "Roastery Micro-Lot Subscription PDP",
+      "styleTag": "Subscription · DTC"
+    }
+  ]
+}

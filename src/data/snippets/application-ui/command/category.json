@@ -1,0 +1,69 @@
+{
+  "slug": "command",
+  "index": "22",
+  "tag": "Productivity",
+  "title": "Command Palettes",
+  "description": "Interactive Cmd+K launchers, Raycast action palettes, AI context omniboxes, dual-pane inspectors, IDE switchers, and slash-command editors.",
+  "specs": [
+    {
+      "file": "01-raycast-action-launcher.html",
+      "title": "Raycast Action Launcher",
+      "styleTag": "Raycast Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-notion-ai-quick-find-menu.html",
+      "title": "Notion AI Quick-Find Menu",
+      "styleTag": "Notion Clean",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-ai-context-prompt-omnibox.html",
+      "title": "AI Context Prompt Omnibox",
+      "styleTag": "AI Studio · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-liquid-glass-spotlight.html",
+      "title": "Liquid Glass Spotlight",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-dual-pane-command-palette.html",
+      "title": "Dual-Pane Command Palette",
+      "styleTag": "Linear · Dual Pane",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-brutalist-command-dock.html",
+      "title": "Brutalist Command Dock",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "07-ide-multi-mode-file-palette.html",
+      "title": "IDE Multi-Mode File Palette",
+      "styleTag": "VS Code · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-docs-search-command-palette.html",
+      "title": "Docs Search Command Palette",
+      "styleTag": "Vercel · Docs Search",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-slash-command-block-menu.html",
+      "title": "Slash-Command Block Menu",
+      "styleTag": "Rich Editor",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-nested-reviewer-command-bar.html",
+      "title": "Nested Reviewer Command Bar",
+      "styleTag": "Workflow · Submenu",
+      "canvas": "light"
+    }
+  ]
+}

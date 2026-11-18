@@ -1,0 +1,168 @@
+<div data-pp-10 class="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200/90 dark:border-white/15 bg-white dark:bg-[#0A0C10] text-slate-900 dark:text-white shadow-xl">
+  <!-- Outer architectural corner crosshairs -->
+  <span class="pointer-events-none absolute top-2 left-2.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+  <span class="pointer-events-none absolute top-2 right-2.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+  <span class="pointer-events-none absolute bottom-2 left-2.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+  <span class="pointer-events-none absolute bottom-2 right-2.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+
+  <!-- Hero with blueprint guide nodes -->
+  <section class="relative px-6 pt-12 pb-8 text-center sm:px-10">
+    <!-- Left blueprint guide node -->
+    <div class="pointer-events-none absolute top-14 left-0 hidden md:flex items-center">
+      <div class="h-px w-20 bg-slate-200/80 dark:bg-white/10"></div>
+      <div class="flex size-6 items-center justify-center rounded-md border border-slate-200 dark:border-white/15 bg-white dark:bg-[#13161F] shadow-xs">
+        <svg class="size-3 text-slate-700 dark:text-zinc-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 10v4M9 7v10M13 5v14M17 8v8"/></svg>
+      </div>
+      <div class="ml-3 mt-10 h-4 w-0.5 rounded-full bg-sky-400/70"></div>
+    </div>
+
+    <!-- Right blueprint guide node -->
+    <div class="pointer-events-none absolute top-28 right-0 hidden md:flex items-center">
+      <div class="mr-1.5 h-0.5 w-3 rounded-full bg-sky-400/70"></div>
+      <div class="flex size-6 items-center justify-center rounded-md border border-slate-200 dark:border-white/15 bg-white dark:bg-[#13161F] font-serif text-[10px] font-bold text-slate-700 dark:text-zinc-200 shadow-xs">A</div>
+      <div class="h-px w-20 bg-slate-200/80 dark:bg-white/10"></div>
+    </div>
+
+    <div class="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 dark:border-white/15 bg-slate-50/90 dark:bg-white/5 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-slate-500 dark:text-zinc-400">
+      <span>ANNUAL DISCOUNT</span>
+      <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/20 px-2 py-0.5 font-mono font-bold text-emerald-700 dark:text-emerald-300">40%</span>
+    </div>
+
+    <h1 class="mt-4 font-serif text-4xl tracking-tight text-slate-950 dark:text-white sm:text-5xl">Choose Pricing Plan</h1>
+    <p class="mx-auto mt-3 max-w-md text-xs leading-relaxed text-slate-500 dark:text-zinc-400 sm:text-sm">
+      Choose the perfect plan for your voice creation needs &mdash; from getting started to scaling your production.
+    </p>
+
+    <!-- Studio / DUB / API Segmented Switcher -->
+    <div role="group" aria-label="Product suite" class="mt-7 inline-flex items-center gap-1 rounded-xl border border-slate-200/90 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 p-1 text-xs font-medium shadow-2xs">
+      <button type="button" data-pp10-mode="studio" class="rounded-lg bg-[#141414] dark:bg-white px-5 py-1.5 font-semibold text-white dark:text-slate-950 shadow-xs cursor-pointer transition">Studio</button>
+      <button type="button" data-pp10-mode="dub" class="rounded-lg px-5 py-1.5 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white cursor-pointer transition">DUB</button>
+      <button type="button" data-pp10-mode="api" class="rounded-lg px-5 py-1.5 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white cursor-pointer transition">API</button>
+    </div>
+  </section>
+
+  <!-- Architectural Crosshair 3-Column Pricing Grid -->
+  <section class="relative px-4 pb-10 sm:px-9">
+    <div class="relative grid grid-cols-1 border-y border-slate-200/80 dark:border-white/10 md:grid-cols-3">
+      <!-- Vertical dividers & corner crosshairs -->
+      <div class="relative flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-200/80 dark:border-white/10 bg-slate-50/40 dark:bg-white/[0.01] p-6 sm:p-7">
+        <span class="pointer-events-none absolute -top-2 -left-1.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+        <span class="pointer-events-none absolute -bottom-2 -left-1.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+        <div>
+          <span class="inline-block rounded-lg border border-slate-200 dark:border-white/15 bg-gradient-to-b from-slate-100 to-white dark:from-white/10 dark:to-white/5 px-3 py-1 text-[11px] font-medium text-slate-700 dark:text-zinc-200 shadow-2xs">Free</span>
+          <div class="mt-5 flex items-baseline gap-1.5">
+            <span data-pp10-p0 class="font-serif text-4xl tracking-tight text-slate-950 dark:text-white">$0</span>
+            <span class="text-xs text-slate-400 dark:text-zinc-500">/Month</span>
+          </div>
+          <p data-pp10-d0 class="mt-3 text-xs leading-relaxed text-slate-500 dark:text-zinc-400">Get started with essential neural voice synthesis and studio editing &mdash; no credit card required.</p>
+          <a href="#" class="mt-5 block rounded-lg border border-slate-200/80 dark:border-white/15 bg-slate-100/90 dark:bg-white/10 py-2.5 text-center text-xs font-semibold text-slate-900 dark:text-white hover:bg-slate-200/80 dark:hover:bg-white/15 transition">Get Started Free</a>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-600 dark:text-zinc-300">
+            <li data-pp10-f0>&#10003; Access to core Text-to-Speech</li>
+            <li>&#10003; 10,000 monthly characters</li>
+            <li>&#10003; Standard voice library</li>
+            <li>&#10003; Basic pitch &amp; pacing control</li>
+            <li>&#10003; Community Discord support</li>
+            <li>&#10003; Watermarked MP3 exports</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Featured Center Column (Creator) -->
+      <div class="relative z-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#111520] p-6 sm:p-7 shadow-[0_12px_36px_-12px_rgba(15,23,42,0.08)] dark:shadow-[0_12px_36px_-12px_rgba(0,0,0,0.6)]">
+        <span class="pointer-events-none absolute -top-2 -left-1.5 font-mono text-xs text-slate-400 dark:text-zinc-500 select-none">+</span>
+        <span class="pointer-events-none absolute -top-2 -right-1.5 font-mono text-xs text-slate-400 dark:text-zinc-500 select-none">+</span>
+        <span class="pointer-events-none absolute -bottom-2 -left-1.5 font-mono text-xs text-slate-400 dark:text-zinc-500 select-none">+</span>
+        <span class="pointer-events-none absolute -bottom-2 -right-1.5 font-mono text-xs text-slate-400 dark:text-zinc-500 select-none">+</span>
+        <div>
+          <span class="inline-block rounded-lg border border-sky-200/90 dark:border-sky-400/30 bg-gradient-to-b from-sky-100/90 via-sky-50/70 to-white dark:from-sky-500/25 dark:to-white/5 px-3 py-1 text-[11px] font-semibold text-slate-800 dark:text-sky-200 shadow-2xs">Creator</span>
+          <div class="mt-5 flex items-baseline gap-1.5">
+            <span data-pp10-p1 class="font-serif text-4xl tracking-tight text-slate-950 dark:text-white">$29</span>
+            <span class="text-xs text-slate-400 dark:text-zinc-500">/Month</span>
+          </div>
+          <p data-pp10-d1 class="mt-3 text-xs leading-relaxed text-slate-500 dark:text-zinc-400">Built for content creators, podcasters, and independent media studios scaling daily output.</p>
+          <a href="#" class="mt-5 block rounded-lg bg-[#141414] dark:bg-white py-2.5 text-center text-xs font-semibold text-white dark:text-slate-950 shadow-sm hover:opacity-90 transition">Upgrade to Creator</a>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-700 dark:text-zinc-200">
+            <li data-pp10-f1>&#10003; Everything in Free + Studio Editor</li>
+            <li>&#10003; 250,000 monthly characters</li>
+            <li>&#10003; Full neural voice library access</li>
+            <li>&#10003; Lossless 48kHz WAV audio exports</li>
+            <li>&#10003; Emotion &amp; multi-speaker tuning</li>
+            <li>&#10003; Commercial broadcast rights</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column (Business) -->
+      <div class="relative flex flex-col justify-between bg-slate-50/40 dark:bg-white/[0.01] p-6 sm:p-7">
+        <span class="pointer-events-none absolute -top-2 -right-1.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+        <span class="pointer-events-none absolute -bottom-2 -right-1.5 font-mono text-xs text-slate-400 dark:text-zinc-600 select-none">+</span>
+        <div>
+          <span class="inline-block rounded-lg border border-sky-200/70 dark:border-sky-400/20 bg-gradient-to-b from-sky-50 to-white dark:from-sky-500/15 dark:to-white/5 px-3 py-1 text-[11px] font-medium text-slate-700 dark:text-zinc-200 shadow-2xs">Business</span>
+          <div class="mt-5 flex items-baseline gap-1.5">
+            <span data-pp10-p2 class="font-serif text-4xl tracking-tight text-slate-950 dark:text-white">$69</span>
+            <span class="text-xs text-slate-400 dark:text-zinc-500">/Month</span>
+          </div>
+          <p data-pp10-d2 class="mt-3 text-xs leading-relaxed text-slate-500 dark:text-zinc-400">High-volume synthesis, low-latency API access, shared workspaces, and SOC2 security guarantees.</p>
+          <a href="#" class="mt-5 block rounded-lg border border-slate-200/80 dark:border-white/15 bg-slate-100/90 dark:bg-white/10 py-2.5 text-center text-xs font-semibold text-slate-900 dark:text-white hover:bg-slate-200/80 dark:hover:bg-white/15 transition">Contact Sales</a>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-600 dark:text-zinc-300">
+            <li data-pp10-f2>&#10003; Everything in Creator</li>
+            <li>&#10003; 1M+ high-volume characters</li>
+            <li>&#10003; Dedicated streaming WebSocket API</li>
+            <li>&#10003; Team collaboration &amp; brand voices</li>
+            <li>&#10003; Instant custom voice cloning</li>
+            <li>&#10003; Enterprise SAML SSO &amp; zero retention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  document.querySelectorAll('[data-pp-10]').forEach((root) => {
+    const btns = root.querySelectorAll('[data-pp10-mode]');
+    const on = 'rounded-lg bg-[#141414] dark:bg-white px-5 py-1.5 font-semibold text-white dark:text-slate-950 shadow-xs cursor-pointer transition';
+    const off = 'rounded-lg px-5 py-1.5 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white cursor-pointer transition';
+    const suites = {
+      studio: {
+        prices: ['$0', '$29', '$69'],
+        descs: [
+          'Get started with essential neural voice synthesis and studio editing — no credit card required.',
+          'Built for content creators, podcasters, and independent media studios scaling daily output.',
+          'High-volume synthesis, low-latency API access, shared workspaces, and SOC2 security guarantees.'
+        ],
+        feats: ['✓ Access to core Text-to-Speech', '✓ Everything in Free + Studio Editor', '✓ Everything in Creator']
+      },
+      dub: {
+        prices: ['$0', '$49', '$119'],
+        descs: [
+          'Preview automated 29-language video dubbing with lip-sync timing on short clips.',
+          'Auto-translate long-form YouTube episodes, documentaries, and courses with voice preservation.',
+          'Multi-track broadcast dubbing workflows, glossary locks, and dedicated GPU queues.'
+        ],
+        feats: ['✓ 5 min/mo automated AI dubbing', '✓ 90 min/mo studio-grade video dubs', '✓ Unlimited localization pipelines']
+      },
+      api: {
+        prices: ['$0', '$79', '$199'],
+        descs: [
+          'Test real-time WebSocket voice streaming and SDK endpoints in sandbox environments.',
+          'Sub-180ms inference latency for conversational agents, NPCs, and mobile apps.',
+          'Dedicated regional clusters, 99.99% uptime SLA, and HIPAA/SOC2 Type II attestation.'
+        ],
+        feats: ['✓ 10k API sandbox requests/mo', '✓ 500k real-time streaming requests', '✓ Custom concurrency & VPC peering']
+      }
+    };
+    btns.forEach((b) => b.addEventListener('click', () => {
+      const m = b.getAttribute('data-pp10-mode') || 'studio';
+      const data = suites[m] || suites.studio;
+      btns.forEach((x) => { x.className = x === b ? on : off; });
+      [0, 1, 2].forEach((i) => {
+        const pEl = root.querySelector('[data-pp10-p' + i + ']');
+        const dEl = root.querySelector('[data-pp10-d' + i + ']');
+        const fEl = root.querySelector('[data-pp10-f' + i + ']');
+        if (pEl) pEl.textContent = data.prices[i];
+        if (dEl) dEl.textContent = data.descs[i];
+        if (fEl) fEl.textContent = data.feats[i];
+      });
+    }));
+  });
+</script>

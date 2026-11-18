@@ -1,0 +1,61 @@
+{
+  "slug": "shopping-carts",
+  "index": "54",
+  "tag": "Commerce",
+  "title": "Shopping Carts",
+  "description": "10 high-conversion Shopping Carts crafted across 10 distinct store verticals: 2-column recalculating bags, DTC slide-over progress drawers, streetwear timed-hold drop carts, hardware warranty builders, subscribe-and-save coffee bags, white-glove furniture delivery selectors, and B2B seat quote carts.",
+  "specs": [
+    {
+      "file": "01-flagship-2-column-bag-with-live-stepper-remove.html",
+      "title": "Flagship 2-Column Bag with Live Stepper & Remove",
+      "styleTag": "DTC · 2-Column Bag"
+    },
+    {
+      "file": "02-dtc-slide-over-bag-with-free-shipping-meter.html",
+      "title": "DTC Slide-Over Bag with Free-Shipping Meter",
+      "styleTag": "Shopify · Threshold Drawer"
+    },
+    {
+      "file": "03-streetwear-timed-hold-drop-cart-promo-code.html",
+      "title": "Streetwear Timed-Hold Drop Cart & Promo Code",
+      "styleTag": "Drop · Streetwear Bag"
+    },
+    {
+      "file": "04-pro-audio-rig-cart-with-care-protection-toggle.html",
+      "title": "Pro Audio Rig Cart with Care Protection Toggle",
+      "styleTag": "Hardware · Studio Rig",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-boutique-gifting-bag-with-bespoke-handwritten-note.html",
+      "title": "Boutique Gifting Bag with Bespoke Handwritten Note",
+      "styleTag": "Atelier · Gift Wrap"
+    },
+    {
+      "file": "06-scandinavian-furniture-bag-with-white-glove-selector.html",
+      "title": "Scandinavian Furniture Bag with White-Glove Selector",
+      "styleTag": "Interior · Furniture"
+    },
+    {
+      "file": "07-roastery-subscribe-save-toggle-cart.html",
+      "title": "Roastery Subscribe & Save Toggle Cart",
+      "styleTag": "Subscription · Cadence Bag"
+    },
+    {
+      "file": "08-glass-spatial-bag-with-apple-pay-express-strip.html",
+      "title": "Glass Spatial Bag with Apple Pay Express Strip",
+      "styleTag": "Glass · Express Bag",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-b2b-seat-license-quote-builder-cart.html",
+      "title": "B2B Seat & License Quote Builder Cart",
+      "styleTag": "B2B · SaaS Quote"
+    },
+    {
+      "file": "10-multi-studio-split-shipment-marketplace-bag.html",
+      "title": "Multi-Studio Split-Shipment Marketplace Bag",
+      "styleTag": "Marketplace · Split Bag"
+    }
+  ]
+}

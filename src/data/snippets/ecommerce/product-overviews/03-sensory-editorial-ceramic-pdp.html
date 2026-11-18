@@ -1,0 +1,51 @@
+<section data-po3 class="mx-auto w-full max-w-5xl rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FAF7F2] dark:bg-zinc-900 p-6 sm:p-10 text-stone-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-start">
+    <div class="space-y-4 md:col-span-6">
+      <div class="overflow-hidden rounded-2xl border border-stone-200/80 dark:border-zinc-800 bg-stone-100 dark:bg-zinc-950">
+        <img src="/images/ecommerce/carafe.jpg" alt="Hand-Thrown Stoneware Carafe" class="h-80 sm:h-[400px] w-full object-cover" />
+      </div>
+      <div class="grid grid-cols-2 gap-3 rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-950/60 p-4 text-[11px]">
+        <div><p class="font-mono uppercase tracking-widest text-stone-400">Firing Temp</p><p class="mt-0.5 font-semibold text-stone-800 dark:text-zinc-200">1,280&deg;C Wood-Ash Kiln</p></div>
+        <div><p class="font-mono uppercase tracking-widest text-stone-400">Origin Atelier</p><p class="mt-0.5 font-semibold text-stone-800 dark:text-zinc-200">Uji Kiln Collective, Kyoto</p></div>
+      </div>
+    </div>
+    <div class="md:col-span-6">
+      <div class="flex items-center justify-between border-b border-stone-200 dark:border-zinc-800 pb-3">
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">No. 014 &middot; Tableware Object</span>
+        <span class="font-mono text-[11px] font-semibold text-amber-800 dark:text-amber-300">Small Batch · 18 Left</span>
+      </div>
+      <h2 class="mt-4 font-serif text-3xl tracking-tight text-stone-900 dark:text-stone-100">Hand-Thrown Stoneware Carafe</h2>
+      <div class="mt-2 flex items-baseline gap-3">
+        <p data-po3-price class="font-mono text-2xl font-bold text-stone-900 dark:text-stone-100">$68.00</p>
+        <span class="text-xs text-stone-500 dark:text-stone-400">Includes cork collar &amp; care card</span>
+      </div>
+      <p class="mt-4 text-xs leading-relaxed text-stone-600 dark:text-stone-300">Wheel-thrown from iron-rich Shigaraki clay and finished in a matte mineral glaze. High thermal mass keeps single-origin pour-over warm through a long morning table.</p>
+      <div class="mt-5">
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Vessel Capacity</p>
+        <div class="mt-2 grid grid-cols-2 gap-2.5 text-xs">
+          <button type="button" data-po3-vol="750ml" data-po3-p="$68.00" class="rounded-full border-2 border-stone-900 dark:border-stone-100 bg-stone-900 dark:bg-stone-100 py-2.5 font-semibold text-white dark:text-stone-950">750ml Carafe &mdash; $68</button>
+          <button type="button" data-po3-vol="1.2L" data-po3-p="$88.00" class="rounded-full border border-stone-300 dark:border-zinc-700 py-2.5 font-semibold text-stone-700 dark:text-zinc-300 hover:border-stone-600 dark:hover:border-zinc-500">1.2L Pitcher &mdash; $88</button>
+        </div>
+      </div>
+      <div class="mt-6 divide-y divide-stone-200 dark:divide-zinc-800 border-y border-stone-200 dark:border-zinc-800 text-xs">
+        <details open class="py-3.5"><summary class="cursor-pointer font-semibold text-stone-900 dark:text-stone-100">Material &amp; Proportions</summary><p class="mt-2 leading-relaxed text-stone-600 dark:text-stone-300">Height 19cm &times; Base 10.5cm. Lead-free mineral glaze inside; raw stoneware foot ring.</p></details>
+        <details class="py-3.5"><summary class="cursor-pointer font-semibold text-stone-900 dark:text-stone-100">Care &amp; Dishwasher Guidance</summary><p class="mt-2 leading-relaxed text-stone-600 dark:text-stone-300">Hand wash with warm water or top-rack gentle cycle. Avoid thermal shock from boiling water to ice.</p></details>
+        <details class="py-3.5"><summary class="cursor-pointer font-semibold text-stone-900 dark:text-stone-100">Plastic-Free Dispatch</summary><p class="mt-2 leading-relaxed text-stone-600 dark:text-stone-300">Ships within 24h in custom-molded honeycomb kraft suspension.</p></details>
+      </div>
+      <button type="button" data-po3-add class="mt-6 w-full rounded-full bg-stone-900 dark:bg-white py-3.5 text-xs font-semibold tracking-wide text-white dark:text-slate-950 hover:bg-stone-800 dark:hover:bg-zinc-200 transition">Add 750ml Carafe to Bag &mdash; $68.00</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-po3]'); if (!r) return;
+  const pr = r.querySelector('[data-po3-price]'), add = r.querySelector('[data-po3-add]'), btns = [...r.querySelectorAll('[data-po3-vol]')];
+  let sel = '750ml', p = '$68.00';
+  btns.forEach(b => b.addEventListener('click', () => {
+    sel = b.dataset.po3Vol; p = b.dataset.po3P; pr.textContent = p;
+    add.textContent = 'Add ' + sel + ' Vessel to Bag — ' + p;
+    btns.forEach(x => x.className = x === b ? 'rounded-full border-2 border-stone-900 dark:border-stone-100 bg-stone-900 dark:bg-stone-100 py-2.5 font-semibold text-white dark:text-stone-950' : 'rounded-full border border-stone-300 dark:border-zinc-700 py-2.5 font-semibold text-stone-700 dark:text-zinc-300 hover:border-stone-600 dark:hover:border-zinc-500');
+  }));
+  add?.addEventListener('click', () => { add.textContent = 'Added ' + sel + ' Vessel (' + p + ')'; });
+})();
+</script>

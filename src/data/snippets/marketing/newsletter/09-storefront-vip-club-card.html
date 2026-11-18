@@ -1,0 +1,32 @@
+<section data-nl-9 class="mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm text-black dark:text-zinc-100">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <div class="relative min-h-[220px] md:col-span-5">
+      <img src="/images/ecommerce/carafe.jpg" alt="Handcrafted stoneware carafe" class="h-full w-full object-cover" />
+      <div class="absolute bottom-3 left-3 rounded-full bg-stone-950/85 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">Edition #04 · Kiln Drop</div>
+    </div>
+    <div class="flex flex-col justify-center p-7 sm:p-10 md:col-span-7">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-amber-700 dark:text-amber-300">Atelier Collectors Club</p>
+      <h2 class="mt-2 font-serif text-2xl text-stone-900 dark:text-stone-100 sm:text-3xl">Receive 15% off your first ceramic edition.</h2>
+      <p class="mt-2 text-sm text-stone-600 dark:text-stone-300">First access to small-batch kiln releases, studio seconds sales, and seasonal lookbooks.</p>
+      <form data-nl-form class="mt-5 flex flex-col gap-2 sm:flex-row">
+        <input type="email" required placeholder="collector@atelier.com" class="w-full flex-1 rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3.5 py-2.5 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-500 dark:placeholder:text-zinc-400 focus:border-stone-900 dark:focus:border-stone-200 focus:outline-none" />
+        <button type="submit" class="shrink-0 rounded-xl bg-stone-900 dark:bg-white px-5 py-2.5 text-xs font-semibold text-white dark:text-slate-950 hover:bg-stone-800 dark:hover:bg-zinc-200 transition">Unlock 15%</button>
+      </form>
+      <div data-nl-msg class="hidden mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/15 px-3.5 py-2 text-xs">
+        <span class="font-medium text-amber-900 dark:text-amber-200">VIP code unlocked:</span>
+        <span class="font-mono font-bold tracking-wider text-amber-950 dark:text-white">ATELIER15</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-9]').forEach((root) => {
+    const form = root.querySelector('[data-nl-form]');
+    const msg = root.querySelector('[data-nl-msg]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg?.classList.remove('hidden');
+      msg?.classList.add('flex');
+    });
+  });
+</script>

@@ -1,0 +1,191 @@
+<section data-cf4 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 text-slate-900 dark:text-zinc-100 text-xs shadow-lg">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-5">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="size-2 rounded-full bg-emerald-400"></span>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">Parametric Hardware Matrix // v4.2</span>
+      </div>
+      <h3 class="mt-1 text-xl font-bold text-slate-900 dark:text-white">Pro Audio, Synthesis &amp; Desk Engineering</h3>
+    </div>
+    <div class="flex flex-wrap items-center gap-2.5">
+      <input type="search" data-cf4-q placeholder="Search model, spec, bus..." class="w-44 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-1.5 font-mono text-xs focus:border-emerald-500 focus:outline-none" />
+      <select data-cf4-sort aria-label="Sort hardware" class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-1.5 font-mono font-semibold">
+        <option value="default">SORT: SPEC INDEX</option>
+        <option value="asc">PRICE: LOW &rarr; HIGH</option>
+        <option value="desc">PRICE: HIGH &rarr; LOW</option>
+      </select>
+      <span data-cf4-cnt class="rounded-xl bg-emerald-500/15 px-3 py-1.5 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300">6 / 6 UNITS</span>
+    </div>
+  </div>
+  <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
+    <aside class="space-y-4 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-zinc-800 pb-5 lg:pb-0 lg:pr-5">
+      <div>
+        <div class="flex items-center justify-between">
+          <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">01 // Hardware Category</p>
+          <button type="button" data-cf4-rst class="font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:underline">RESET ALL</button>
+        </div>
+        <div class="mt-2 grid grid-cols-2 gap-1.5 font-mono text-[11px]">
+          <button type="button" data-cf4-cat="all" class="rounded-lg bg-emerald-500 px-2.5 py-1.5 text-left font-bold text-zinc-950">ALL GEAR (6)</button>
+          <button type="button" data-cf4-cat="synth" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-300">SYNTHESIZERS</button>
+          <button type="button" data-cf4-cat="audio" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-300">MONITORING</button>
+          <button type="button" data-cf4-cat="desk" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-300">DESK &amp; TIME</button>
+        </div>
+      </div>
+      <div class="border-t border-slate-200 dark:border-zinc-800 pt-3.5">
+        <div class="flex items-center justify-between font-mono text-[11px]">
+          <span class="font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">02 // Budget Ceiling</span>
+          <span data-cf4-pval class="rounded bg-slate-900 dark:bg-zinc-800 px-2 py-0.5 font-bold text-emerald-400">$1,500</span>
+        </div>
+        <input type="range" min="100" max="1500" step="20" value="1500" data-cf4-price class="mt-2.5 w-full accent-emerald-500" />
+        <div class="flex justify-between font-mono text-[10px] text-slate-400"><span>$100</span><span>$750</span><span>$1,500</span></div>
+      </div>
+      <div class="border-t border-slate-200 dark:border-zinc-800 pt-3.5">
+        <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">03 // I/O &amp; Architecture</p>
+        <div class="mt-2 grid grid-cols-2 gap-2 text-[11px]">
+          <label class="flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 p-2"><input type="checkbox" value="usbc" data-cf4-io class="accent-emerald-500" /> USB-C 24-Bit</label>
+          <label class="flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 p-2"><input type="checkbox" value="analog" data-cf4-io class="accent-emerald-500" /> Analog / CV</label>
+          <label class="flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 p-2"><input type="checkbox" value="cnc" data-cf4-io class="accent-emerald-500" /> CNC Aluminum</label>
+          <label class="flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 p-2"><input type="checkbox" value="balanced" data-cf4-io class="accent-emerald-500" /> Balanced Out</label>
+        </div>
+      </div>
+      <div class="border-t border-slate-200 dark:border-zinc-800 pt-3.5 space-y-2">
+        <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">04 // Enclosure &amp; Dispatch</p>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" data-cf4-fin="all" class="rounded-md border border-slate-900 dark:border-white bg-slate-100 dark:bg-zinc-800 px-2.5 py-1 font-semibold">Any Chassis</button>
+          <button type="button" data-cf4-fin="black" class="rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-slate-600 dark:text-zinc-400">Obsidian Black</button>
+          <button type="button" data-cf4-fin="silver" class="rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-slate-600 dark:text-zinc-400">Raw Metal / Brass</button>
+        </div>
+        <label class="mt-2 flex cursor-pointer items-center gap-2 pt-1 font-semibold text-slate-700 dark:text-zinc-300">
+          <input type="checkbox" data-cf4-stk class="accent-emerald-500" /> In Stock &middot; Calibrated &amp; Ready Today
+        </label>
+      </div>
+    </aside>
+    <div data-cf4-grid class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:col-span-8">
+      <article data-cf4-card data-idx="0" data-cat="audio" data-fin="black" data-stk="1" data-price="349" data-io="cnc balanced analog" data-q="spatial reference studio headphones 50mm beryllium" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/ecommerce/headphones.jpg" alt="Spatial Headphones" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-emerald-600 dark:text-emerald-400 font-bold">SR-50 PRO</span><span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-700 dark:text-emerald-300">IN STOCK</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Spatial Reference Studio</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">50mm Beryllium &middot; 32&Omega; Balanced</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">CNC OBSIDIAN</span><span class="text-sm font-bold text-slate-900 dark:text-white">$349</span>
+        </div>
+      </article>
+      <article data-cf4-card data-idx="1" data-cat="synth" data-fin="black" data-stk="1" data-price="640" data-io="usbc analog cnc balanced" data-q="analog filter bank 6u eurorack modular" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/heroes/synth-modular.jpg" alt="Filter Bank" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-emerald-600 dark:text-emerald-400 font-bold">AFB-6U REV2</span><span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-700 dark:text-emerald-300">IN STOCK</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Analog Filter Bank 6U</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">42HP Eurorack &middot; CV + USB-C</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">ANODIZED BLACK</span><span class="text-sm font-bold text-slate-900 dark:text-white">$640</span>
+        </div>
+      </article>
+      <article data-cf4-card data-idx="2" data-cat="synth" data-fin="silver" data-stk="0" data-price="899" data-io="usbc analog cnc balanced" data-q="field polyphonic keys synthesizer workstation" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/heroes/synth-keys.jpg" alt="Poly Synth" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-amber-600 dark:text-amber-400 font-bold">OP-FIELD 37</span><span class="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-700 dark:text-amber-300">BATCH 05</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Field Polyphonic Keys</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">8-Voice FM/Analog &middot; USB-C</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">RAW ALUMINUM</span><span class="text-sm font-bold text-slate-900 dark:text-white">$899</span>
+        </div>
+      </article>
+      <article data-cf4-card data-idx="3" data-cat="desk" data-fin="silver" data-stk="1" data-price="120" data-io="cnc analog" data-q="brushed steel desk clock timer instrument" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/ecommerce/clock.jpg" alt="Steel Clock" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-emerald-600 dark:text-emerald-400 font-bold">CLK-316L</span><span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-700 dark:text-emerald-300">IN STOCK</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Brushed Steel Desk Clock</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">Silent Sweep Quartz &middot; CNC Case</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">RAW STEEL</span><span class="text-sm font-bold text-slate-900 dark:text-white">$120</span>
+        </div>
+      </article>
+      <article data-cf4-card data-idx="4" data-cat="desk" data-fin="silver" data-stk="1" data-price="210" data-io="cnc usbc" data-q="architectural desk lamp studio task light" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/ecommerce/lamp.jpg" alt="Task Lamp" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-emerald-600 dark:text-emerald-400 font-bold">LUM-2700K</span><span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-700 dark:text-emerald-300">IN STOCK</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Architectural Studio Lamp</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">CRI 97 Dimmer &middot; USB-C PD</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">BRUSHED BRASS</span><span class="text-sm font-bold text-slate-900 dark:text-white">$210</span>
+        </div>
+      </article>
+      <article data-cf4-card data-idx="5" data-cat="audio" data-fin="black" data-stk="1" data-price="1290" data-io="usbc cnc balanced" data-q="mastering console desk controller interface" class="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/80 p-3.5">
+        <div class="flex items-start gap-3.5">
+          <img src="/images/auth/studio-desk.jpg" alt="Studio Console" class="size-16 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center justify-between font-mono text-[10px]"><span class="text-emerald-600 dark:text-emerald-400 font-bold">DAC-MASTER</span><span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-700 dark:text-emerald-300">IN STOCK</span></div>
+            <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Mastering Monitor Bridge</p>
+            <p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">32-Bit/384kHz &middot; Dual XLR</p>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between border-t border-slate-200/80 dark:border-zinc-800 pt-2.5 font-mono">
+          <span class="text-[10px] text-slate-500">OBSIDIAN CNC</span><span class="text-sm font-bold text-slate-900 dark:text-white">$1,290</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf4]'); if (!r) return;
+  const cnt = r.querySelector('[data-cf4-cnt]'), cats = [...r.querySelectorAll('[data-cf4-cat]')], fins = [...r.querySelectorAll('[data-cf4-fin]')];
+  const pr = r.querySelector('[data-cf4-price]'), pval = r.querySelector('[data-cf4-pval]'), ios = [...r.querySelectorAll('[data-cf4-io]')];
+  const stk = r.querySelector('[data-cf4-stk]'), q = r.querySelector('[data-cf4-q]'), sort = r.querySelector('[data-cf4-sort]');
+  const grid = r.querySelector('[data-cf4-grid]'), cards = [...r.querySelectorAll('[data-cf4-card]')];
+  let curCat = 'all', curFin = 'all';
+  const upd = () => {
+    const maxP = Number(pr.value), query = q.value.trim().toLowerCase(), reqIo = ios.filter(i => i.checked).map(i => i.value);
+    pval.textContent = '$' + maxP.toLocaleString();
+    const sorted = [...cards].sort((a, b) => {
+      if (sort.value === 'asc') return Number(a.dataset.price) - Number(b.dataset.price);
+      if (sort.value === 'desc') return Number(b.dataset.price) - Number(a.dataset.price);
+      return Number(a.dataset.idx) - Number(b.dataset.idx);
+    });
+    let n = 0;
+    sorted.forEach(c => {
+      grid.appendChild(c);
+      const ioOk = reqIo.every(tag => c.dataset.io.includes(tag));
+      const ok = (curCat === 'all' || c.dataset.cat === curCat)
+        && (curFin === 'all' || c.dataset.fin === curFin)
+        && Number(c.dataset.price) <= maxP
+        && ioOk
+        && (!stk.checked || c.dataset.stk === '1')
+        && (!query || c.dataset.q.includes(query));
+      c.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = n + ' / 6 UNITS';
+  };
+  cats.forEach(b => b.addEventListener('click', () => {
+    curCat = b.dataset.cf4Cat; upd();
+    cats.forEach(x => x.className = x === b ? 'rounded-lg bg-emerald-500 px-2.5 py-1.5 text-left font-bold text-zinc-950' : 'rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-300');
+  }));
+  fins.forEach(b => b.addEventListener('click', () => {
+    curFin = b.dataset.cf4Fin; upd();
+    fins.forEach(x => x.className = x === b ? 'rounded-md border border-slate-900 dark:border-white bg-slate-100 dark:bg-zinc-800 px-2.5 py-1 font-semibold' : 'rounded-md border border-slate-200 dark:border-zinc-800 px-2.5 py-1 text-slate-600 dark:text-zinc-400');
+  }));
+  [...ios, stk, sort].forEach(el => el?.addEventListener('change', upd));
+  pr?.addEventListener('input', upd); q?.addEventListener('input', upd);
+  r.querySelector('[data-cf4-rst]')?.addEventListener('click', () => {
+    curCat = 'all'; curFin = 'all'; pr.value = '1500'; q.value = ''; stk.checked = false; sort.value = 'default';
+    ios.forEach(i => { i.checked = false; });
+    cats[0]?.click(); fins[0]?.click(); upd();
+  });
+})();
+</script>

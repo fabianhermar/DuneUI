@@ -1,0 +1,39 @@
+<section data-ck6 class="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-stone-300 dark:border-zinc-800 bg-[#F4F1EA] dark:bg-[#121211] p-6 sm:p-8 text-stone-900 dark:text-stone-100 shadow-lg">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
+    <div class="space-y-5 md:col-span-5">
+      <img src="/images/heroes/synth-modular.jpg" alt="Eurorack 6U" class="h-44 w-full rounded-xl object-cover ring-1 ring-black/15" />
+      <div>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-orange-600 dark:text-orange-400">BATCH #09 RESERVATION</span>
+        <h3 class="mt-1 text-xl font-bold">Field Modular 6U Workstation</h3>
+      </div>
+      <div class="space-y-2 text-xs">
+        <button type="button" data-ck6-opt="$249.00" class="cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-orange-600 bg-orange-500/10 p-3 text-left"><span><strong class="block">Reserve Deposit</strong><span class="text-stone-500 dark:text-stone-400">Remainder billed at factory ship</span></span><span class="font-mono font-bold">$249</span></button>
+        <button type="button" data-ck6-opt="$899.00" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-300 dark:border-zinc-700 p-3 text-left"><span><strong class="block">Pay Full (+Flight Case)</strong><span class="text-stone-500 dark:text-stone-400">Priority bench calibration</span></span><span class="font-mono font-bold">$899</span></button>
+      </div>
+    </div>
+    <form class="space-y-4 rounded-2xl border border-stone-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 text-xs md:col-span-7">
+      <h4 class="font-mono text-[11px] font-bold uppercase tracking-wider text-stone-500">UNIT DISPATCH &amp; CARD</h4>
+      <div><label class="block font-semibold">Studio Email</label><input type="email" value="maya@synthlab.de" class="mt-1.5 w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-stone-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" /></div>
+      <div><label class="block font-semibold">Shipping Country</label><input type="text" value="Berlin, Germany (230V EU Plug)" class="mt-1.5 w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-stone-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" /></div>
+      <div class="grid grid-cols-12 gap-2.5 font-mono">
+        <div class="col-span-7"><label class="block font-sans font-semibold">Card</label><input type="text" value="5500 •••• •••• 9912" class="mt-1.5 w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-stone-50 dark:bg-zinc-950 px-3 py-2.5" /></div>
+        <div class="col-span-3"><label class="block font-sans font-semibold">Exp</label><input type="text" value="04/28" class="mt-1.5 w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-stone-50 dark:bg-zinc-950 px-3 py-2.5" /></div>
+        <div class="col-span-2"><label class="block font-sans font-semibold">CVC</label><input type="text" value="409" class="mt-1.5 w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-stone-50 dark:bg-zinc-950 px-2.5 py-2.5" /></div>
+      </div>
+      <button type="button" data-ck6-cta class="cursor-pointer w-full rounded-lg bg-orange-600 py-3 font-mono font-bold text-white hover:bg-orange-500 transition-colors">PAY $249.00 DEPOSIT</button>
+    </form>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck6]'); if (!root) return;
+  const opts = [...root.querySelectorAll('[data-ck6-opt]')], cta = root.querySelector('[data-ck6-cta]');
+  const onCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-orange-600 bg-orange-500/10 p-3 text-left';
+  const offCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-300 dark:border-zinc-700 p-3 text-left';
+  opts.forEach(o => o.addEventListener('click', () => {
+    opts.forEach(x => { x.className = x === o ? onCls : offCls; });
+    if (cta) cta.textContent = 'PAY ' + o.dataset.ck6Opt + (o.dataset.ck6Opt === '$249.00' ? ' DEPOSIT' : ' FULL RIG');
+  }));
+  cta?.addEventListener('click', () => { cta.textContent = 'UNIT #EU-094 RESERVED ✓'; });
+})();
+</script>

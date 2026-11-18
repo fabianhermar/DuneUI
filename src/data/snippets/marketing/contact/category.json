@@ -1,0 +1,69 @@
+{
+  "slug": "contact",
+  "index": "42",
+  "tag": "Marketing",
+  "title": "Contact Sections",
+  "description": "10 high-conversion Contact sections: enterprise SLA intake splits, multi-hub global directories, dark Linear concierge desks, interactive triage routers, Liquid Glass booking cards, and editorial atelier schedulers.",
+  "specs": [
+    {
+      "file": "01-split-studio-brief-sla-form.html",
+      "title": "Split Studio Brief & SLA Form",
+      "styleTag": "Tailwind · Enterprise",
+      "canvas": "light"
+    },
+    {
+      "file": "02-global-engineering-hubs-bento.html",
+      "title": "Global Engineering Hubs Bento",
+      "styleTag": "Global · Offices",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-linear-obsidian-architecture-desk.html",
+      "title": "Linear Obsidian Architecture Desk",
+      "styleTag": "Linear · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-multi-channel-department-router.html",
+      "title": "Multi-Channel Department Router",
+      "styleTag": "SaaS · Channels",
+      "canvas": "light"
+    },
+    {
+      "file": "05-centered-spotlight-demo-request.html",
+      "title": "Centered Spotlight Demo Request",
+      "styleTag": "Stripe · Clean",
+      "canvas": "muted"
+    },
+    {
+      "file": "06-quote-testimonial-case-intake.html",
+      "title": "Quote Testimonial & Case Intake",
+      "styleTag": "Split · Social Proof",
+      "canvas": "light"
+    },
+    {
+      "file": "07-liquid-glass-concierge-bento.html",
+      "title": "Liquid Glass Concierge Bento",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "08-neo-brutalist-dispatch-brief.html",
+      "title": "Neo-Brutalist Dispatch Brief",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "09-interactive-priority-triage-router.html",
+      "title": "Interactive Priority Triage Router",
+      "styleTag": "Interactive · Triage",
+      "canvas": "light"
+    },
+    {
+      "file": "10-editorial-atelier-slot-booking.html",
+      "title": "Editorial Atelier & Slot Booking",
+      "styleTag": "Editorial · Studio",
+      "canvas": "light"
+    }
+  ]
+}

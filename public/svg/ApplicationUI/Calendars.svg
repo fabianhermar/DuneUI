@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1290" height="675" viewBox="0 0 1290 675" fill="none">
+  <rect x="265" y="95" width="760" height="485" rx="30" fill="#FFFFFF" stroke="#E2E2E2" stroke-width="6"/>
+  <rect x="265" y="95" width="760" height="95" rx="30" fill="#545454"/>
+  <rect x="335" y="132" width="220" height="22" rx="11" fill="#FFFFFF"/>
+  <circle cx="400" cy="265" r="24" fill="#EAEAEA"/>
+  <circle cx="520" cy="265" r="24" fill="#EAEAEA"/>
+  <circle cx="640" cy="265" r="28" fill="#C18156"/>
+  <circle cx="760" cy="265" r="24" fill="#EAEAEA"/>
+  <circle cx="880" cy="265" r="24" fill="#EAEAEA"/>
+  <circle cx="400" cy="365" r="24" fill="#EAEAEA"/>
+  <circle cx="520" cy="365" r="24" fill="#EAEAEA"/>
+  <circle cx="640" cy="365" r="24" fill="#EAEAEA"/>
+  <circle cx="760" cy="365" r="24" fill="#EAEAEA"/>
+  <circle cx="880" cy="365" r="24" fill="#EAEAEA"/>
+  <circle cx="400" cy="465" r="24" fill="#EAEAEA"/>
+  <circle cx="520" cy="465" r="24" fill="#EAEAEA"/>
+  <circle cx="640" cy="465" r="24" fill="#EAEAEA"/>
+</svg>

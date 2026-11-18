@@ -1,0 +1,61 @@
+{
+  "slug": "category-previews",
+  "index": "58",
+  "tag": "Commerce",
+  "title": "Category Previews",
+  "description": "10 Dribbble-inspired storefront category preview architectures: asymmetric bento lookbooks, interactive editorial index switchers, dark hardware departments, spatial rooms, and multi-space explorers.",
+  "specs": [
+    {
+      "file": "01-asymmetric-editorial-bento-showcase.html",
+      "title": "Asymmetric Editorial Bento Showcase",
+      "styleTag": "Bento · Storefront"
+    },
+    {
+      "file": "02-3-col-collection-cards-w-subcategory-pills.html",
+      "title": "3-Col Collection Cards w/ Subcategory Pills",
+      "styleTag": "Storefront · Cards"
+    },
+    {
+      "file": "03-dark-studio-gear-departments.html",
+      "title": "Dark Studio Gear Departments",
+      "styleTag": "Dark · Hardware Lineup",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-5-pillar-department-shelf-quick-links.html",
+      "title": "5-Pillar Department Shelf & Quick Links",
+      "styleTag": "Carousel · Shelf"
+    },
+    {
+      "file": "05-liquid-glass-spatial-curated-rooms.html",
+      "title": "Liquid Glass Spatial Curated Rooms",
+      "styleTag": "Liquid Glass · Rooms",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-neo-brutalist-drop-archive-grid.html",
+      "title": "Neo-Brutalist Drop Archive Grid",
+      "styleTag": "Brutalist · Archive Grid"
+    },
+    {
+      "file": "07-50-50-dual-seasonal-campaign-split.html",
+      "title": "50/50 Dual Seasonal Campaign Split",
+      "styleTag": "Editorial · 50/50 Split"
+    },
+    {
+      "file": "08-interactive-department-spotlight-grid.html",
+      "title": "Interactive Department Spotlight Grid",
+      "styleTag": "Directory · Interactive"
+    },
+    {
+      "file": "09-editorial-index-w-live-lookbook-preview.html",
+      "title": "Editorial Index w/ Live Lookbook Preview",
+      "styleTag": "Editorial · Live Switcher"
+    },
+    {
+      "file": "10-interactive-space-explorer-tabs.html",
+      "title": "Interactive Space Explorer Tabs",
+      "styleTag": "Interactive · Filter Tabs"
+    }
+  ]
+}

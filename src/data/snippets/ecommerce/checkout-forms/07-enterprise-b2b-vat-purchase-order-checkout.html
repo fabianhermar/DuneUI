@@ -1,0 +1,52 @@
+<section data-ck7 class="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm text-xs text-slate-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <div class="p-6 sm:p-7 md:col-span-7 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-zinc-800 pb-4">
+        <h3 class="text-base font-bold">Corporate Procurement Checkout</h3>
+        <div class="flex rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 p-0.5 font-mono text-[10px]">
+          <button type="button" data-ck7-m="card" class="cursor-pointer rounded-md bg-white dark:bg-zinc-900 px-2.5 py-1 font-bold shadow-xs">Card</button>
+          <button type="button" data-ck7-m="po" class="cursor-pointer rounded-md px-2.5 py-1 text-slate-500 dark:text-zinc-400">Net-30 PO</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div><label class="block font-semibold text-slate-600 dark:text-zinc-300">Legal Entity</label><input type="text" value="Northstar Labs GmbH" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3 py-2.5 focus:outline-none" /></div>
+        <div>
+          <label class="block font-semibold text-slate-600 dark:text-zinc-300">EU VAT / Tax ID</label>
+          <div class="mt-1.5 flex gap-1.5">
+            <input type="text" value="DE319482019" class="w-full rounded-xl border border-emerald-500 bg-emerald-50/40 dark:bg-emerald-500/15 px-3 py-2.5 font-mono" />
+            <button type="button" data-ck7-chk class="cursor-pointer rounded-xl border border-slate-200 dark:border-zinc-700 px-3 font-mono font-bold hover:bg-slate-50 dark:hover:bg-zinc-800">VIES</button>
+          </div>
+        </div>
+        <div data-ck7-po class="hidden sm:col-span-2"><label class="block font-semibold text-slate-600 dark:text-zinc-300">Purchase Order Number</label><input type="text" placeholder="PO-2026-8841" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3 py-2.5 font-mono" /></div>
+      </div>
+      <p data-ck7-note class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-2.5 font-medium text-emerald-800 dark:text-emerald-300">Reverse-charge 0% EU VAT validated via VIES registry.</p>
+    </div>
+    <div class="bg-slate-50 dark:bg-zinc-950 p-6 sm:p-7 md:col-span-5 border-t md:border-t-0 md:border-l border-slate-200 dark:border-zinc-800 flex flex-col justify-between">
+      <div>
+        <h4 class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400">QUOTE SUMMARY</h4>
+        <dl class="mt-4 space-y-2.5">
+          <div class="flex justify-between"><dt class="text-slate-500 dark:text-zinc-400">12 Org Seats &times; $120/yr</dt><dd class="font-mono font-semibold">$1,440.00</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-500 dark:text-zinc-400">EU VAT (Reverse Charge)</dt><dd class="font-mono text-emerald-700 dark:text-emerald-400">$0.00</dd></div>
+          <div class="flex justify-between border-t border-slate-200 dark:border-zinc-800 pt-3 text-sm font-bold"><dt>Total Due</dt><dd class="font-mono">$1,440.00</dd></div>
+        </dl>
+      </div>
+      <button type="button" data-ck7-cta class="cursor-pointer mt-6 w-full rounded-xl bg-slate-900 dark:bg-white py-3 font-semibold text-white dark:text-slate-950 hover:opacity-90">Complete $1,440 Purchase</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck7]'); if (!root) return;
+  const ms = [...root.querySelectorAll('[data-ck7-m]')], po = root.querySelector('[data-ck7-po]'), cta = root.querySelector('[data-ck7-cta]'), note = root.querySelector('[data-ck7-note]');
+  const onCls = 'cursor-pointer rounded-md bg-white dark:bg-zinc-900 px-2.5 py-1 font-bold shadow-xs';
+  const offCls = 'cursor-pointer rounded-md px-2.5 py-1 text-slate-500 dark:text-zinc-400';
+  ms.forEach(m => m.addEventListener('click', () => {
+    ms.forEach(x => { x.className = x === m ? onCls : offCls; });
+    const isPo = m.dataset.ck7M === 'po';
+    po?.classList.toggle('hidden', !isPo);
+    if (cta) cta.textContent = isPo ? 'Issue Net-30 Invoice ($1,440)' : 'Complete $1,440 Purchase';
+  }));
+  root.querySelector('[data-ck7-chk]')?.addEventListener('click', () => { if (note) note.textContent = 'VIES Status: Valid VAT DE319482019 ✓'; });
+  cta?.addEventListener('click', () => { cta.textContent = 'Order Confirmed ✓'; });
+})();
+</script>

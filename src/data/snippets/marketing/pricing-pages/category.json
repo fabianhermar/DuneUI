@@ -1,0 +1,69 @@
+{
+  "slug": "pricing-pages",
+  "index": "47",
+  "tag": "Templates",
+  "title": "Pricing Pages",
+  "description": "10 high-converting SaaS, fintech, developer, bento, and editorial pricing pages featuring live billing & seat toggles, usage-based sliders, comparison matrices, enterprise anchors, and interactive FAQs.",
+  "specs": [
+    {
+      "file": "01-saas-flagship-tiers-matrix-faq.html",
+      "title": "SaaS Flagship Tiers + Matrix + FAQ",
+      "styleTag": "Tailwind · Flagship",
+      "canvas": "light"
+    },
+    {
+      "file": "02-obsidian-linear-enterprise-anchor.html",
+      "title": "Obsidian Linear + Enterprise Anchor",
+      "styleTag": "Linear · SOTD Pricing",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-editorial-atelier-lifetime-license.html",
+      "title": "Editorial Atelier Lifetime License",
+      "styleTag": "Awwwards · Editorial",
+      "canvas": "light"
+    },
+    {
+      "file": "04-stripe-modular-currency-compare-matrix.html",
+      "title": "Stripe Modular Currency + Compare Matrix",
+      "styleTag": "Stripe · Compare",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-smoked-liquid-glass-focus-tiers.html",
+      "title": "Smoked Liquid Glass Focus Tiers",
+      "styleTag": "Liquid Glass · Frosted",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-neo-brutalist-swiss-raw-licensing.html",
+      "title": "Neo-Brutalist Swiss Raw Licensing",
+      "styleTag": "Brutalist · Zine",
+      "canvas": "light"
+    },
+    {
+      "file": "07-usage-based-compute-live-estimator.html",
+      "title": "Usage-Based Compute + Live Estimator",
+      "styleTag": "DevTools · Calculator",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-pastel-wash-scheduling-tiers.html",
+      "title": "Pastel Wash Scheduling Tiers",
+      "styleTag": "Cal · Pastel Wash",
+      "canvas": "light"
+    },
+    {
+      "file": "09-amber-volcanic-ai-pricing.html",
+      "title": "Amber Volcanic AI Pricing",
+      "styleTag": "AI · Volcanic Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-architectural-crosshair-blueprint-pricing.html",
+      "title": "Architectural Crosshair Blueprint Pricing",
+      "styleTag": "Voice Aura · Blueprint",
+      "canvas": "light"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<div class="w-full max-w-md space-y-3 rounded-3xl border border-slate-900/20 dark:border-white/30 bg-slate-900/[0.04] dark:bg-white/14 p-4 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl backdrop-blur-2xl" data-glass-theme>
+  <div data-preview-card class="rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/85 dark:bg-slate-950/55 p-4 transition-colors">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-cyan-500 dark:bg-cyan-300"></span><span class="text-xs font-semibold">macOS Appearance Preview</span></div>
+      <span data-mode-tag class="rounded-full bg-slate-900/[0.07] dark:bg-white/15 px-2 py-0.5 font-mono text-[10px]">Obsidian Glass</span>
+    </div>
+    <div class="mt-3 grid grid-cols-3 gap-2">
+      <div class="h-8 rounded-lg bg-slate-200/80 dark:bg-white/15"></div>
+      <div class="h-8 rounded-lg bg-slate-200/80 dark:bg-white/10"></div>
+      <div class="h-8 rounded-lg bg-cyan-500/20 dark:bg-cyan-300/30"></div>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-1.5 rounded-2xl border border-slate-900/15 dark:border-white/25 bg-slate-900/[0.07] dark:bg-white/12 p-1.5 text-xs font-semibold">
+    <button type="button" onclick="const r=this.closest('[data-glass-theme]');const p=r.querySelector('[data-preview-card]');p.className='rounded-2xl border border-slate-300/80 bg-white/90 text-slate-900 p-4 transition-colors';r.querySelector('[data-mode-tag]').textContent='Daylight Paper';r.querySelectorAll('[data-tbtn]').forEach(b=>b.className='flex items-center justify-center gap-1.5 rounded-xl py-2 text-slate-700 dark:text-white/80 hover:bg-slate-900/10 dark:hover:bg-white/10');this.className='flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white py-2 text-white dark:text-slate-950 shadow-sm';" data-tbtn class="flex items-center justify-center gap-1.5 rounded-xl py-2 text-slate-700 dark:text-white/80 hover:bg-slate-900/10 dark:hover:bg-white/10">☀ Light</button>
+    <button type="button" onclick="const r=this.closest('[data-glass-theme]');const p=r.querySelector('[data-preview-card]');p.className='rounded-2xl border border-white/25 bg-slate-950/75 text-white p-4 transition-colors';r.querySelector('[data-mode-tag]').textContent='Obsidian Glass';r.querySelectorAll('[data-tbtn]').forEach(b=>b.className='flex items-center justify-center gap-1.5 rounded-xl py-2 text-slate-700 dark:text-white/80 hover:bg-slate-900/10 dark:hover:bg-white/10');this.className='flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white py-2 text-white dark:text-slate-950 shadow-sm';" data-tbtn class="flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white py-2 text-white dark:text-slate-950 shadow-sm">☾ Dark</button>
+    <button type="button" onclick="const r=this.closest('[data-glass-theme]');const p=r.querySelector('[data-preview-card]');p.className='rounded-2xl border border-slate-900/15 dark:border-white/30 bg-slate-900/[0.06] dark:bg-white/20 text-slate-900 dark:text-white p-4 backdrop-blur-md transition-colors';r.querySelector('[data-mode-tag]').textContent='Adaptive Frost';r.querySelectorAll('[data-tbtn]').forEach(b=>b.className='flex items-center justify-center gap-1.5 rounded-xl py-2 text-slate-700 dark:text-white/80 hover:bg-slate-900/10 dark:hover:bg-white/10');this.className='flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white py-2 text-white dark:text-slate-950 shadow-sm';" data-tbtn class="flex items-center justify-center gap-1.5 rounded-xl py-2 text-slate-700 dark:text-white/80 hover:bg-slate-900/10 dark:hover:bg-white/10">✦ Auto</button>
+  </div>
+</div>

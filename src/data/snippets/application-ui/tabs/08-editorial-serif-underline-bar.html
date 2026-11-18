@@ -1,0 +1,47 @@
+<div class="mx-auto w-full max-w-2xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FAF8F4] dark:bg-zinc-900/95 p-6 sm:p-7 text-slate-900 dark:text-zinc-100">
+  <div role="tablist" aria-label="Archive categories" class="flex flex-wrap items-center justify-between gap-4 border-b border-stone-300 dark:border-zinc-700 pb-3">
+    <div class="flex flex-wrap gap-6 font-serif text-base">
+      <button type="button" data-etab="essays" aria-selected="true" class="-mb-3.5 border-b-2 border-stone-900 dark:border-stone-200 pb-3 italic text-stone-900 dark:text-stone-100">All Essays</button>
+      <button type="button" data-etab="interviews" aria-selected="false" class="pb-0 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">Interviews</button>
+      <button type="button" data-etab="monographs" aria-selected="false" class="pb-0 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">Monographs</button>
+    </div>
+    <span class="font-mono text-[10px] uppercase tracking-widest text-stone-400 dark:text-zinc-400">Vol. 2026</span>
+  </div>
+  <div class="mt-4 text-xs">
+    <div data-epanel="essays" class="flex flex-wrap items-baseline justify-between gap-2">
+      <p class="font-serif text-base text-stone-900 dark:text-stone-100">No. 14 &mdash; Why Whitespace Creates Trust in Financial Software</p>
+      <span class="font-mono text-[11px] text-stone-500 dark:text-stone-400">Nov 12 &bull; 7 min</span>
+    </div>
+    <div data-epanel="interviews" class="hidden flex-wrap items-baseline justify-between gap-2">
+      <p class="font-serif text-base text-stone-900 dark:text-stone-100">Dialogue with Massimo Atelier on Restraint &amp; Grid Systems</p>
+      <span class="font-mono text-[11px] text-stone-500 dark:text-stone-400">Oct 28 &bull; 12 min</span>
+    </div>
+    <div data-epanel="monographs" class="hidden flex-wrap items-baseline justify-between gap-2">
+      <p class="font-serif text-base text-stone-900 dark:text-stone-100">Monograph 04 &mdash; High-Density Dashboards Without Visual Fatigue</p>
+      <span class="font-mono text-[11px] text-stone-500 dark:text-stone-400">PDF &bull; 48 pp</span>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-etab]');
+  const panels = document.querySelectorAll('[data-epanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-etab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-etab') === id;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? '-mb-3.5 border-b-2 border-stone-900 pb-3 italic text-stone-900'
+          : 'pb-0 text-stone-500 hover:text-stone-900';
+      });
+      panels.forEach((p) => {
+        const show = p.getAttribute('data-epanel') === id;
+        p.classList.toggle('hidden', !show);
+        p.classList.toggle('flex', show);
+      });
+    });
+  });
+})();
+</script>

@@ -1,0 +1,26 @@
+<div class="w-full max-w-md rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0D0F13] p-5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl" data-synth-rack>
+  <div class="flex items-center justify-between border-b border-slate-200 dark:border-zinc-800 pb-3">
+    <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-400"></span><span class="font-mono text-xs font-bold tracking-wider">VCF // 24DB LADDER</span></div>
+    <div class="flex gap-1 font-mono text-[10px]">
+      <span class="rounded bg-amber-50 dark:bg-amber-400/20 px-2 py-0.5 font-bold text-amber-700 dark:text-amber-300">LPF</span>
+      <span class="rounded bg-slate-50 dark:bg-zinc-900 px-2 py-0.5 text-slate-500 dark:text-zinc-500 border border-slate-200 dark:border-white/15">BPF</span>
+      <span class="rounded bg-slate-50 dark:bg-zinc-900 px-2 py-0.5 text-slate-500 dark:text-zinc-500 border border-slate-200 dark:border-white/15">HPF</span>
+    </div>
+  </div>
+  <div class="mt-3.5 rounded-xl border border-zinc-800/90 bg-slate-900/[0.06] dark:bg-black/60 p-3">
+    <svg viewBox="0 0 260 56" class="h-12 w-full" aria-hidden="true">
+      <path d="M 4 38 L 135 38 Q 165 38 175 14 Q 184 36 205 46 L 256 52" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+      <line x1="175" y1="4" x2="175" y2="52" stroke="#3F3F46" stroke-dasharray="3 3"/>
+    </svg>
+  </div>
+  <div class="mt-4 space-y-3.5">
+    <div>
+      <div class="flex justify-between font-mono text-xs"><span class="text-slate-600 dark:text-zinc-400">CUTOFF FREQ</span><span data-cut-val class="font-bold text-amber-700 dark:text-amber-400">2,400 Hz</span></div>
+      <input type="range" min="200" max="8000" value="2400" oninput="this.closest('[data-synth-rack]').querySelector('[data-cut-val]').textContent=Number(this.value).toLocaleString()+' Hz'" class="mt-1.5 w-full cursor-pointer accent-amber-400" />
+    </div>
+    <div>
+      <div class="flex justify-between font-mono text-xs"><span class="text-slate-600 dark:text-zinc-400">RESONANCE / Q</span><span data-res-val class="font-bold text-cyan-600 dark:text-cyan-400">42%</span></div>
+      <input type="range" min="0" max="100" value="42" oninput="this.closest('[data-synth-rack]').querySelector('[data-res-val]').textContent=this.value+'%'" class="mt-1.5 w-full cursor-pointer accent-cyan-400" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div data-pill-nav class="mx-auto flex w-full max-w-2xl flex-col items-center text-slate-900 dark:text-zinc-100">
+  <header class="w-full sm:w-auto rounded-2xl sm:rounded-full border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-2 shadow-xl text-xs font-medium text-slate-600 dark:text-zinc-300">
+    <div class="flex items-center justify-between gap-2 sm:gap-3">
+      <a href="#" class="flex items-center gap-2.5 pl-1 pr-1 shrink-0">
+        <img src="/images/testimonials/henrik.jpg" alt="Henrik Sato" class="size-7 rounded-full object-cover ring-2 ring-emerald-500/40" />
+        <div class="text-left leading-tight">
+          <p class="font-bold tracking-tight text-slate-900 dark:text-white">sato.design</p>
+          <p class="flex items-center gap-1 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Open Q1</p>
+        </div>
+      </a>
+      <span class="hidden sm:inline text-slate-200 dark:text-zinc-800">|</span>
+      <nav class="hidden sm:flex items-center gap-1">
+        <button type="button" data-pill-link class="rounded-full bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 font-semibold text-slate-900 dark:text-white transition">Work</button>
+        <button type="button" data-pill-link class="rounded-full px-3 py-1.5 transition hover:text-slate-900 dark:hover:text-white">Lab</button>
+        <button type="button" data-pill-link class="rounded-full px-3 py-1.5 transition hover:text-slate-900 dark:hover:text-white">Notes</button>
+        <button type="button" data-pill-link class="rounded-full px-3 py-1.5 transition hover:text-slate-900 dark:hover:text-white">About</button>
+      </nav>
+      <div class="flex items-center gap-1.5 shrink-0">
+        <button type="button" data-talk-btn class="rounded-full bg-slate-900 dark:bg-white px-4 py-1.5 font-semibold text-white dark:text-slate-950 shadow-xs transition hover:bg-slate-800 dark:hover:bg-zinc-200">Let's talk ↗</button>
+        <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Menu" class="inline-flex sm:hidden size-8 items-center justify-center rounded-full border border-slate-200 dark:border-zinc-700 text-slate-800 dark:text-zinc-200">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav data-mobile-drawer class="hidden sm:hidden flex-col gap-1 border-t border-slate-100 dark:border-zinc-800 mt-2.5 pt-2.5 px-1 text-xs">
+      <a href="#" class="flex items-center justify-between rounded-xl bg-slate-100 dark:bg-zinc-800 px-3 py-2 font-semibold text-slate-900 dark:text-white"><span>Selected Work</span><span class="font-mono text-[10px]">06</span></a>
+      <a href="#" class="flex items-center justify-between rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-300"><span>Motion Lab</span><span class="font-mono text-[10px]">12</span></a>
+      <a href="#" class="rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-300">Notes &amp; About</a>
+    </nav>
+  </header>
+</div>
+<script>
+  document.querySelectorAll('[data-pill-nav]').forEach((nav) => {
+    const links = Array.from(nav.querySelectorAll('[data-pill-link]'));
+    links.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        links.forEach((l) => {
+          l.className = 'rounded-full px-3 py-1.5 transition hover:text-slate-900 dark:hover:text-white';
+        });
+        btn.className = 'rounded-full bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 font-semibold text-slate-900 dark:text-white transition';
+      });
+    });
+    const talkBtn = nav.querySelector('[data-talk-btn]');
+    talkBtn?.addEventListener('click', () => {
+      talkBtn.textContent = talkBtn.textContent?.includes('Copied') ? "Let's talk ↗" : 'Copied email ✓';
+    });
+    const mBtn = nav.querySelector('[data-mobile-toggle]');
+    const mDrawer = nav.querySelector('[data-mobile-drawer]');
+    mBtn?.addEventListener('click', () => {
+      const open = mBtn.getAttribute('aria-expanded') === 'true';
+      mBtn.setAttribute('aria-expanded', String(!open));
+      mDrawer?.classList.toggle('hidden', open);
+      mDrawer?.classList.toggle('flex', !open);
+    });
+  });
+</script>

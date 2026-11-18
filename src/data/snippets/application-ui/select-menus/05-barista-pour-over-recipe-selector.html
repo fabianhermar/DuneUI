@@ -1,0 +1,28 @@
+<div data-sel5 class="mx-auto w-full max-w-md rounded-2xl border border-amber-900/15 dark:border-zinc-800 bg-[#FAF5EF] dark:bg-[#191614] p-5 text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex items-center gap-3 border-b border-amber-900/10 dark:border-zinc-800 pb-3.5">
+    <img src="/images/heroes/pour-over.jpg" alt="Pour over coffee" class="size-11 rounded-full object-cover ring-2 ring-amber-800/20" />
+    <div>
+      <h3 class="font-serif text-base font-semibold">Brew Extraction Profile</h3>
+      <p data-sel5-spec class="font-mono text-[11px] text-amber-800 dark:text-amber-400">93&deg;C &middot; 15g : 250ml &middot; Medium-Fine</p>
+    </div>
+  </div>
+  <div class="mt-3.5 grid grid-cols-2 gap-2 text-xs">
+    <button type="button" data-sel5-brew="93°C · 15g : 250ml · Medium-Fine" class="cursor-pointer rounded-xl border-2 border-amber-800 dark:border-amber-400 bg-white dark:bg-zinc-900 p-3 text-left font-semibold">Hario V60 Ceramic<span class="block mt-0.5 text-[10px] font-normal text-stone-500 dark:text-zinc-400">Bright floral clarity</span></button>
+    <button type="button" data-sel5-brew="88°C · 18g : 200ml · Fine" class="cursor-pointer rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 p-3 text-left font-semibold hover:border-amber-700">AeroPress Inverted<span class="block mt-0.5 text-[10px] font-normal text-stone-500 dark:text-zinc-400">Syrupy chocolate body</span></button>
+    <button type="button" data-sel5-brew="94°C · 30g : 500ml · Coarse" class="cursor-pointer rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 p-3 text-left font-semibold hover:border-amber-700">Chemex Carafe<span class="block mt-0.5 text-[10px] font-normal text-stone-500 dark:text-zinc-400">Crisp tea-like finish</span></button>
+    <button type="button" data-sel5-brew="93°C · 18g : 36ml · 9 Bar" class="cursor-pointer rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 p-3 text-left font-semibold hover:border-amber-700">La Marzocco Espresso<span class="block mt-0.5 text-[10px] font-normal text-stone-500 dark:text-zinc-400">Dense crema pull</span></button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel5]').forEach((root) => {
+    const btns = [...root.querySelectorAll('[data-sel5-brew]')], spec = root.querySelector('[data-sel5-spec]');
+    const onCls = 'cursor-pointer rounded-xl border-2 border-amber-800 dark:border-amber-400 bg-white dark:bg-zinc-900 p-3 text-left font-semibold';
+    const offCls = 'cursor-pointer rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 p-3 text-left font-semibold hover:border-amber-700';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; });
+      if (spec) spec.textContent = b.dataset.sel5Brew || '';
+    }));
+  });
+})();
+</script>

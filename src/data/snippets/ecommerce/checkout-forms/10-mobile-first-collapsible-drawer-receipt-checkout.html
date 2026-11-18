@@ -1,0 +1,46 @@
+<section data-ck10 class="mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-xs text-slate-900 dark:text-zinc-100 shadow-xl">
+  <button type="button" data-ck10-tog class="cursor-pointer flex w-full items-center justify-between bg-slate-50 dark:bg-zinc-800/70 px-5 py-4 font-semibold border-b border-slate-200 dark:border-zinc-800">
+    <span data-ck10-lbl>Show Order Summary (2 items) &#9662;</span>
+    <span data-ck10-top class="font-mono font-bold">$278.00</span>
+  </button>
+  <div data-ck10-sum class="hidden border-b border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-950/60 px-5 py-4 space-y-3">
+    <div class="flex items-center justify-between gap-3"><div class="flex items-center gap-2.5"><img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="size-9 rounded-lg object-cover" /><span>Stoneware Carafe</span></div><span class="font-mono font-semibold">$68.00</span></div>
+    <div class="flex items-center justify-between gap-3"><div class="flex items-center gap-2.5"><img src="/images/ecommerce/lamp.jpg" alt="Lamp" class="size-9 rounded-lg object-cover" /><span>Desk Task Lamp</span></div><span class="font-mono font-semibold">$210.00</span></div>
+  </div>
+  <div class="p-5 space-y-4">
+    <button type="button" class="cursor-pointer w-full rounded-xl bg-black dark:bg-white py-2.5 font-semibold text-white dark:text-slate-950">&#63743; Express Pay</button>
+    <div class="space-y-2.5">
+      <div><label class="block font-semibold text-slate-600 dark:text-zinc-300">Recipient</label><input type="text" value="Daniel Kim" class="mt-1 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" /></div>
+      <div><label class="block font-semibold text-slate-600 dark:text-zinc-300">Delivery Address</label><input type="text" value="742 Pine St, Seattle, WA" class="mt-1 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" /></div>
+    </div>
+    <div>
+      <p class="mb-1.5 font-semibold text-slate-600 dark:text-zinc-300">Courier Tip</p>
+      <div class="grid grid-cols-3 gap-2 font-mono text-[11px]">
+        <button type="button" data-ck10-tip="0" class="cursor-pointer rounded-xl border-2 border-slate-900 dark:border-white bg-slate-100 dark:bg-zinc-800 py-2 font-bold">None</button>
+        <button type="button" data-ck10-tip="10" class="cursor-pointer rounded-xl border border-slate-200 dark:border-zinc-700 py-2 font-semibold">+$10</button>
+        <button type="button" data-ck10-tip="20" class="cursor-pointer rounded-xl border border-slate-200 dark:border-zinc-700 py-2 font-semibold">+$20</button>
+      </div>
+    </div>
+    <button type="button" data-ck10-cta class="cursor-pointer w-full rounded-xl bg-indigo-600 py-3.5 font-semibold text-white hover:bg-indigo-500">Complete Order &mdash; $278.00</button>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck10]'); if (!root) return;
+  const tog = root.querySelector('[data-ck10-tog]'), sum = root.querySelector('[data-ck10-sum]'), lbl = root.querySelector('[data-ck10-lbl]');
+  const tips = [...root.querySelectorAll('[data-ck10-tip]')], cta = root.querySelector('[data-ck10-cta]'), top = root.querySelector('[data-ck10-top]');
+  const onCls = 'cursor-pointer rounded-xl border-2 border-slate-900 dark:border-white bg-slate-100 dark:bg-zinc-800 py-2 font-bold';
+  const offCls = 'cursor-pointer rounded-xl border border-slate-200 dark:border-zinc-700 py-2 font-semibold';
+  tog?.addEventListener('click', () => {
+    const hidden = sum?.classList.toggle('hidden');
+    if (lbl) lbl.innerHTML = hidden ? 'Show Order Summary (2 items) &#9662;' : 'Hide Order Summary (2 items) &#9652;';
+  });
+  tips.forEach(t => t.addEventListener('click', () => {
+    tips.forEach(x => { x.className = x === t ? onCls : offCls; });
+    const tot = '$' + (278 + Number(t.dataset.ck10Tip || 0)).toFixed(2);
+    if (top) top.textContent = tot;
+    if (cta) cta.textContent = 'Complete Order — ' + tot;
+  }));
+  cta?.addEventListener('click', () => { cta.textContent = 'Order #DN-8841 Confirmed ✓'; });
+})();
+</script>

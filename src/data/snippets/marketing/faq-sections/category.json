@@ -1,0 +1,69 @@
+{
+  "slug": "faq-sections",
+  "index": "36",
+  "tag": "Marketing",
+  "title": "FAQ Sections",
+  "description": "Custom-chevron Q&A accordions, Stripe-style Q&A matrices, searchable help centers, dark CLI technical FAQs, and editorial indexed directories.",
+  "specs": [
+    {
+      "file": "01-split-sticky-intro-faq.html",
+      "title": "Split Sticky Intro FAQ",
+      "styleTag": "Tailwind · Split FAQ",
+      "canvas": "light"
+    },
+    {
+      "file": "02-obsidian-dark-faq-stack.html",
+      "title": "Obsidian Dark FAQ Stack",
+      "styleTag": "Linear · Dark FAQ",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-docs-2-col-faq-matrix.html",
+      "title": "Docs 2-Col FAQ Matrix",
+      "styleTag": "Stripe · Docs",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-brutalist-contrast-faq.html",
+      "title": "Brutalist Contrast FAQ",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-floating-faq.html",
+      "title": "Liquid Glass Floating FAQ",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-editorial-indexed-faq.html",
+      "title": "Editorial Indexed FAQ",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-searchable-help-center-faq.html",
+      "title": "Searchable Help Center FAQ",
+      "styleTag": "Help Center · SaaS",
+      "canvas": "light"
+    },
+    {
+      "file": "08-tabbed-faq-sales-concierge.html",
+      "title": "Tabbed FAQ & Sales Concierge",
+      "styleTag": "Modern SaaS · Tabs",
+      "canvas": "light"
+    },
+    {
+      "file": "09-dark-devdocs-technical-faq.html",
+      "title": "Dark DevDocs Technical FAQ",
+      "styleTag": "DevTools · CLI",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-dispatch-specialist-faq.html",
+      "title": "Dispatch & Specialist FAQ",
+      "styleTag": "Commerce · Help",
+      "canvas": "muted"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "breadcrumb",
+  "index": "05",
+  "tag": "Navigation",
+  "title": "Breadcrumbs",
+  "description": "10 responsive path trails: SaaS segmented bars, Git repo paths, Liquid Glass pills, Neo-Brutalist tags, interactive cloud drive expanders, checkout steppers, IDE symbol traces, and workspace switchers.",
+  "specs": [
+    {
+      "file": "01-floating-saas-breadcrumb.html",
+      "title": "Floating SaaS Breadcrumb",
+      "styleTag": "Tailwind · Bar",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-vercel-git-repo-slash-trail.html",
+      "title": "Vercel Git Repo Slash Trail",
+      "styleTag": "Vercel · Repo Path",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-liquid-glass-pill-trail.html",
+      "title": "Liquid Glass Pill Trail",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-neo-brutalist-folder-stepper.html",
+      "title": "Neo-Brutalist Folder Stepper",
+      "styleTag": "Neo-Brutalist · Tags",
+      "canvas": "light"
+    },
+    {
+      "file": "05-storefront-dept-breadcrumb.html",
+      "title": "Storefront Dept Breadcrumb",
+      "styleTag": "Storefront · Editorial",
+      "canvas": "light"
+    },
+    {
+      "file": "06-interactive-checkout-stepper.html",
+      "title": "Interactive Checkout Stepper",
+      "styleTag": "Stripe · Interactive",
+      "canvas": "light"
+    },
+    {
+      "file": "07-interactive-ellipsis-expand-trail.html",
+      "title": "Interactive Ellipsis Expand Trail",
+      "styleTag": "Cloud Drive · Interactive",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-mobile-first-back-trail.html",
+      "title": "Mobile-First Back Trail",
+      "styleTag": "Responsive · Adaptive",
+      "canvas": "light"
+    },
+    {
+      "file": "09-ide-file-symbol-trace.html",
+      "title": "IDE File & Symbol Trace",
+      "styleTag": "VS Code · Trace",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-interactive-workspace-context-trail.html",
+      "title": "Interactive Workspace Context Trail",
+      "styleTag": "Notion · Switcher",
+      "canvas": "light"
+    }
+  ]
+}

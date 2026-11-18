@@ -1,0 +1,28 @@
+<section data-sc5 class="mx-auto w-full max-w-lg rounded-2xl border border-amber-900/15 dark:border-zinc-800 bg-[#FAF6EF] dark:bg-[#181614] p-6 text-xs text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex items-center gap-3.5 border-b border-amber-900/10 dark:border-zinc-800 pb-4">
+    <img src="/images/heroes/pour-over.jpg" alt="Pour Over Set" class="size-16 rounded-xl object-cover ring-1 ring-amber-900/20" />
+    <div class="flex-1 min-w-0">
+      <p class="font-serif text-base font-semibold">Barista Pour-Over Reserve</p>
+      <p class="text-stone-500 dark:text-zinc-400">Ceramic Dripper + 250g Huila Gesha</p>
+    </div>
+    <span class="font-mono text-sm font-bold">$92.00</span>
+  </div>
+  <div class="mt-4 space-y-3">
+    <label class="flex items-center justify-between rounded-xl border border-amber-900/15 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3.5 cursor-pointer">
+      <span class="flex items-center gap-2.5 font-medium"><input type="checkbox" data-sc5-gift class="accent-amber-700" /> Add linen gift box &amp; wax seal</span>
+      <span class="font-mono font-bold text-amber-800 dark:text-amber-300">+$12</span>
+    </label>
+    <input type="text" data-sc5-msg maxlength="80" placeholder="Optional handwritten card message..." class="hidden w-full rounded-xl border border-amber-900/20 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3.5 py-2.5 text-xs focus:border-amber-700 focus:outline-none" />
+  </div>
+  <button type="button" class="cursor-pointer mt-5 w-full rounded-full bg-stone-900 dark:bg-amber-400 py-3 font-semibold text-white dark:text-stone-950 hover:opacity-90">Continue to Checkout &mdash; <span data-sc5-tot class="font-mono">$92.00</span></button>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc5]'); if (!root) return;
+  const chk = root.querySelector('[data-sc5-gift]'), msg = root.querySelector('[data-sc5-msg]'), tot = root.querySelector('[data-sc5-tot]');
+  chk?.addEventListener('change', () => {
+    msg?.classList.toggle('hidden', !chk.checked);
+    if (tot) tot.textContent = chk.checked ? '$104.00' : '$92.00';
+  });
+})();
+</script>

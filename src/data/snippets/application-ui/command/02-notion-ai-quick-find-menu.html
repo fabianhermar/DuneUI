@@ -1,0 +1,47 @@
+<div class="w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl text-black dark:text-zinc-100" data-notion-cmd>
+  <div class="flex items-center gap-3 border-b border-slate-100 dark:border-zinc-800/80 px-4 py-3.5">
+    <svg class="h-4 w-4 shrink-0 text-slate-400 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    <input type="text" placeholder="Search pages, databases, or ask Notion AI..." class="min-w-0 flex-1 text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 focus:outline-none bg-white dark:bg-zinc-900" oninput="const q=this.value.toLowerCase();this.closest('[data-notion-cmd]').querySelectorAll('[data-doc-row]').forEach(el=>el.style.display=el.textContent.toLowerCase().includes(q)?'flex':'none')" />
+    <kbd class="hidden rounded border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 px-1.5 py-0.5 font-mono text-[10px] text-slate-400 dark:text-zinc-500 sm:inline">ESC</kbd>
+  </div>
+  <div class="flex flex-wrap items-center gap-1.5 border-b border-slate-100 dark:border-zinc-800/80 bg-slate-50/70 dark:bg-zinc-800/60 px-4 py-2 text-[11px]">
+    <span class="rounded-full bg-slate-900 dark:bg-white px-2.5 py-0.5 font-medium text-white dark:text-slate-950">Title & Body</span>
+    <span class="rounded-full border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-800 px-2.5 py-0.5 text-slate-600 dark:text-zinc-300">In: Engineering</span>
+    <span class="rounded-full border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-800 px-2.5 py-0.5 text-slate-600 dark:text-zinc-300">Updated: 7d</span>
+  </div>
+  <div class="p-2 text-xs">
+    <div class="flex items-center justify-between gap-2 rounded-xl bg-gradient-to-r from-violet-50 to-indigo-50 dark:from-violet-950/60 dark:to-indigo-950/60 px-3 py-2.5 text-indigo-950 dark:text-indigo-200 ring-1 ring-inset ring-indigo-200/70 dark:ring-indigo-500/30">
+      <div class="flex items-center gap-2.5">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white">✦</span>
+        <div>
+          <p class="font-semibold">Ask Notion AI about your workspace</p>
+          <p class="text-[11px] text-indigo-700/80 dark:text-indigo-300">Summarize Q4 specs or find owners</p>
+        </div>
+      </div>
+      <kbd class="rounded bg-white dark:bg-zinc-800 px-2 py-0.5 font-mono text-[10px] text-indigo-600 dark:text-indigo-400 shadow-2xs border border-slate-200 dark:border-zinc-800">Tab</kbd>
+    </div>
+    <p class="mt-2.5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-zinc-500">Recent Documents</p>
+    <div data-doc-row class="flex items-center justify-between gap-3 rounded-xl bg-slate-100/90 px-3 py-2 text-slate-900 dark:text-zinc-100 dark:bg-zinc-800">
+      <div class="flex min-w-0 items-center gap-2.5">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-800 text-slate-600 dark:text-zinc-300">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
+        </span>
+        <div class="min-w-0"><p class="truncate font-semibold">Q4 Design Systems Audit</p><p class="truncate text-[11px] text-slate-500 dark:text-zinc-400">Design Ops / Core Tokens</p></div>
+      </div>
+      <span class="shrink-0 text-[11px] text-slate-400 dark:text-zinc-500">2m ago</span>
+    </div>
+    <div data-doc-row class="mt-0.5 flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60">
+      <div class="flex min-w-0 items-center gap-2.5">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6Z"/></svg>
+        </span>
+        <div class="min-w-0"><p class="truncate font-medium text-slate-900 dark:text-zinc-100">2026 Platform Roadmap</p><p class="truncate text-[11px] text-slate-400 dark:text-zinc-500">Product / Architecture</p></div>
+      </div>
+      <span class="shrink-0 text-[11px] text-slate-400 dark:text-zinc-500">Yesterday</span>
+    </div>
+  </div>
+  <div class="flex items-center justify-between border-t border-slate-100 dark:border-zinc-800/80 bg-slate-50/70 dark:bg-zinc-800/60 px-4 py-2 text-[11px] text-slate-500 dark:text-zinc-400">
+    <span>↑↓ Navigate · ↵ Open</span>
+    <span class="font-medium text-indigo-600 dark:text-indigo-400">+ New Spec <kbd class="ml-1 rounded border border-indigo-200 dark:border-indigo-500/30 bg-white dark:bg-zinc-800 px-1 font-mono text-[10px] text-black dark:text-zinc-100">⌘N</kbd></span>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<figure class="relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 dark:from-[#0F172A] via-white dark:via-[#312E81] to-indigo-50/70 dark:to-[#701A75] p-5 shadow-lg dark:shadow-2xl sm:p-7 border border-slate-200 dark:border-white/15 text-slate-900 dark:text-zinc-100">
+  <div class="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-cyan-50 dark:bg-cyan-400/25 blur-3xl"></div>
+  <div class="relative rounded-2xl border border-slate-900/15 dark:border-white/25 bg-slate-900/[0.07] dark:bg-white/10 p-6 text-slate-900 dark:text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.35)] backdrop-blur-2xl sm:p-8">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-900/15 dark:border-white/15 pb-3.5">
+      <span data-voice-label class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-700 dark:text-cyan-200">Voice: Literary Serif</span>
+      <div role="group" aria-label="Writing voice switcher" class="inline-flex rounded-xl border border-slate-900/15 dark:border-white/20 bg-slate-900/[0.06] dark:bg-black/25 p-0.5 text-[11px] font-semibold">
+        <button type="button" data-voice-btn="serif" aria-pressed="true" class="rounded-lg bg-white px-2.5 py-1 text-slate-950 border border-slate-200 dark:border-zinc-800">Serif</button>
+        <button type="button" data-voice-btn="sans" aria-pressed="false" class="rounded-lg px-2.5 py-1 text-slate-700 dark:text-white/75 hover:text-slate-900 dark:hover:text-white">Sans</button>
+        <button type="button" data-voice-btn="mono" aria-pressed="false" class="rounded-lg px-2.5 py-1 text-slate-700 dark:text-white/75 hover:text-slate-900 dark:hover:text-white">Mono</button>
+      </div>
+    </div>
+    <blockquote data-voice-quote class="mt-6 font-serif text-2xl italic leading-snug text-slate-900 dark:text-white sm:text-3xl">&ldquo;Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.&rdquo;</blockquote>
+    <figcaption class="mt-5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-700 dark:text-white/75">
+      <span>&mdash; <strong class="font-semibold text-slate-900 dark:text-white">Antoine de Saint-Exup&eacute;ry</strong>, Terre des Hommes</span>
+      <span class="font-mono text-[10px] uppercase tracking-widest text-cyan-700 dark:text-cyan-200/80">Epigraph Style</span>
+    </figcaption>
+  </div>
+</figure>
+<script>
+(() => {
+  const voices = {
+    serif: { label: 'Voice: Literary Serif', cls: 'mt-6 font-serif text-2xl italic leading-snug text-slate-900 dark:text-white sm:text-3xl' },
+    sans: { label: 'Voice: Modernist Sans', cls: 'mt-6 font-sans text-2xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-3xl' },
+    mono: { label: 'Voice: Archival Mono', cls: 'mt-6 font-mono text-lg leading-relaxed tracking-normal text-cyan-800 dark:text-cyan-50 sm:text-xl' }
+  };
+  const label = document.querySelector('[data-voice-label]');
+  const quote = document.querySelector('[data-voice-quote]');
+  const btns = document.querySelectorAll('[data-voice-btn]');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const k = btn.getAttribute('data-voice-btn') || 'serif';
+      const v = voices[k];
+      btns.forEach((b) => {
+        const active = b.getAttribute('data-voice-btn') === k;
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        b.className = active ? 'rounded-lg bg-white px-2.5 py-1 text-slate-950 border border-slate-200 dark:border-zinc-800' : 'rounded-lg px-2.5 py-1 text-slate-700 dark:text-white/75 hover:text-slate-900 dark:hover:text-white';
+      });
+      if (label && v) label.textContent = v.label;
+      if (quote && v) quote.className = v.cls;
+    });
+  });
+})();
+</script>

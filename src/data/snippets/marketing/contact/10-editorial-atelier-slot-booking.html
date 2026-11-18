@@ -1,0 +1,53 @@
+<section data-ct-10 class="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FAF8F4] dark:bg-zinc-900 p-7 sm:p-10 text-stone-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
+    <div class="flex flex-col justify-between md:col-span-6">
+      <div>
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-stone-500 dark:text-stone-400">Showroom &amp; Consult</p>
+        <h2 class="mt-2 font-serif text-3xl leading-tight text-stone-900 dark:text-stone-100">Visit our studio gallery.</h2>
+        <p class="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-300">Private viewing appointments Monday through Friday, 10:00&ndash;18:00 CET in central Z&uuml;rich.</p>
+      </div>
+      <div class="mt-6 flex items-center gap-3.5 border-t border-stone-200 dark:border-zinc-800 pt-5">
+        <img src="/images/heroes/concrete-pavilion.jpg" alt="Atelier gallery pavilion" class="size-14 rounded-xl object-cover border border-stone-300/70 dark:border-zinc-700" />
+        <div class="space-y-0.5 text-xs text-stone-600 dark:text-stone-300">
+          <p class="font-semibold text-stone-900 dark:text-stone-100">Maison Solis Atelier</p>
+          <p>Talstrasse 62, 8001 Z&uuml;rich</p>
+          <p class="font-mono text-[11px] text-stone-500 dark:text-stone-400">atelier@maison-solis.ch</p>
+        </div>
+      </div>
+    </div>
+
+    <form data-ct-form class="space-y-4 border-t border-stone-300 dark:border-zinc-700 pt-5 md:col-span-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">Select Available Window</p>
+      <div class="grid grid-cols-3 gap-2 font-mono text-[11px]">
+        <label class="flex cursor-pointer flex-col items-center rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2 text-center has-[:checked]:border-stone-900 dark:has-[:checked]:border-white has-[:checked]:bg-stone-900 dark:has-[:checked]:bg-white has-[:checked]:text-white dark:has-[:checked]:text-stone-950">
+          <input type="radio" name="ct10-slot" checked class="sr-only" />
+          <span class="font-bold">THU</span>
+          <span class="text-[10px] opacity-80">11:00</span>
+        </label>
+        <label class="flex cursor-pointer flex-col items-center rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2 text-center has-[:checked]:border-stone-900 dark:has-[:checked]:border-white has-[:checked]:bg-stone-900 dark:has-[:checked]:bg-white has-[:checked]:text-white dark:has-[:checked]:text-stone-950">
+          <input type="radio" name="ct10-slot" class="sr-only" />
+          <span class="font-bold">THU</span>
+          <span class="text-[10px] opacity-80">15:30</span>
+        </label>
+        <label class="flex cursor-pointer flex-col items-center rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 py-2 text-center has-[:checked]:border-stone-900 dark:has-[:checked]:border-white has-[:checked]:bg-stone-900 dark:has-[:checked]:bg-white has-[:checked]:text-white dark:has-[:checked]:text-stone-950">
+          <input type="radio" name="ct10-slot" class="sr-only" />
+          <span class="font-bold">FRI</span>
+          <span class="text-[10px] opacity-80">10:30</span>
+        </label>
+      </div>
+      <input type="email" required placeholder="guest@architecture.ch" class="w-full rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3.5 py-2.5 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 focus:border-stone-900 dark:focus:border-white focus:outline-none" />
+      <button type="submit" class="w-full rounded-lg border border-stone-900 dark:border-zinc-200 bg-stone-900 dark:bg-white px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-wider text-white dark:text-slate-950 hover:bg-stone-800 dark:hover:bg-zinc-200 transition cursor-pointer">Reserve Private Slot &rarr;</button>
+      <p data-ct-ok class="hidden font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">Reservation held &mdash; confirmation emailed.</p>
+    </form>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-ct-10]').forEach((root) => {
+    const f = root.querySelector('[data-ct-form]');
+    const ok = root.querySelector('[data-ct-ok]');
+    f?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ok?.classList.remove('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "alerts",
+  "index": "02",
+  "tag": "Feedback",
+  "title": "Alerts",
+  "description": "10 high-contrast production alerts: interactive dismissal & diff inspection, TLS trace callouts, Glass AI snackbars, quota progress banners, Vercel build logs, Stripe KYC checklists, and GDPR preference bars.",
+  "specs": [
+    {
+      "file": "01-production-sync-confirmation.html",
+      "title": "Production Sync Confirmation",
+      "styleTag": "SaaS · Dismissible",
+      "canvas": "light"
+    },
+    {
+      "file": "02-diff-inspection-revert-alert.html",
+      "title": "Diff Inspection & Revert Alert",
+      "styleTag": "DevTools · Interactive",
+      "canvas": "light"
+    },
+    {
+      "file": "03-validation-tls-error-trace.html",
+      "title": "Validation & TLS Error Trace",
+      "styleTag": "Security · Critical",
+      "canvas": "light"
+    },
+    {
+      "file": "04-ai-embedding-pipeline-glass-bar.html",
+      "title": "AI Embedding Pipeline Glass Bar",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-neo-brutalist-quota-meter-alert.html",
+      "title": "Neo-Brutalist Quota Meter Alert",
+      "styleTag": "Brutalist · Stark",
+      "canvas": "light"
+    },
+    {
+      "file": "06-vercel-edge-deployment-diagnostic.html",
+      "title": "Vercel Edge Deployment Diagnostic",
+      "styleTag": "DevTools · Obsidian",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-stripe-payout-hold-kyc-checklist.html",
+      "title": "Stripe Payout Hold & KYC Checklist",
+      "styleTag": "Stripe · Fintech",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-launch-announcement-top-ribbon.html",
+      "title": "Launch Announcement Top Ribbon",
+      "styleTag": "SaaS · Top Ribbon",
+      "canvas": "light"
+    },
+    {
+      "file": "09-granular-gdpr-cookie-preference-bar.html",
+      "title": "Granular GDPR Cookie Preference Bar",
+      "styleTag": "Privacy · Interactive",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-live-incident-sla-timeline-alert.html",
+      "title": "Live Incident & SLA Timeline Alert",
+      "styleTag": "Statuspage · Live",
+      "canvas": "dark"
+    }
+  ]
+}

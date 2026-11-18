@@ -1,0 +1,33 @@
+<section data-nl-10 class="mx-auto w-full max-w-3xl rounded-2xl sm:rounded-full border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3 sm:p-2 sm:pl-4 shadow-sm text-black dark:text-zinc-100">
+  <form data-nl-form class="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-3 min-w-0">
+      <div class="flex -space-x-2 shrink-0">
+        <img src="/images/avatars/sofia.jpg" alt="Sofia" class="size-7 rounded-full object-cover ring-2 ring-white dark:ring-zinc-900" />
+        <img src="/images/avatars/mateo.jpg" alt="Mateo" class="size-7 rounded-full object-cover ring-2 ring-white dark:ring-zinc-900" />
+      </div>
+      <div class="min-w-0">
+        <p class="truncate text-xs font-bold text-slate-900 dark:text-zinc-100">Weekly frontend patterns</p>
+        <p data-nl-sub class="truncate text-[11px] text-slate-500 dark:text-zinc-400">14.2k UI engineers subscribed</p>
+      </div>
+    </div>
+    <div class="flex flex-1 sm:max-w-xs items-center gap-2">
+      <input type="email" required placeholder="you@domain.com" class="w-full rounded-xl sm:rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-4 py-2 text-xs text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-indigo-600 focus:bg-white dark:focus:bg-zinc-800 focus:outline-none" />
+      <button type="submit" data-nl-btn class="shrink-0 rounded-xl sm:rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-bold text-white dark:text-slate-950 hover:bg-indigo-600 dark:hover:bg-zinc-200 transition">Join</button>
+    </div>
+  </form>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-10]').forEach((root) => {
+    const form = root.querySelector('[data-nl-form]');
+    const sub = root.querySelector('[data-nl-sub]');
+    const btn = root.querySelector('[data-nl-btn]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (sub) {
+        sub.textContent = '✓ Subscribed — next digest ships Friday';
+        sub.className = 'truncate text-[11px] font-semibold text-emerald-600 dark:text-emerald-400';
+      }
+      if (btn) btn.textContent = 'Joined';
+    });
+  });
+</script>

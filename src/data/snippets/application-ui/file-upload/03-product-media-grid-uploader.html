@@ -1,0 +1,39 @@
+<div class="w-full max-w-xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 shadow-sm text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <div>
+      <h4 class="text-sm font-bold text-slate-900 dark:text-zinc-100">Product Photos</h4>
+      <p class="text-xs text-slate-500 dark:text-zinc-400">Upload up to 10 JPG, PNG, or WEBP images (min 800×800px).</p>
+    </div>
+    <span class="text-xs font-semibold text-slate-500 dark:text-zinc-400">3 / 10 uploaded</span>
+  </div>
+  <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <div class="group relative aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-zinc-800 bg-gradient-to-br from-amber-100 to-orange-100 p-2">
+      <div class="flex h-full flex-col justify-between">
+        <div class="flex justify-between">
+          <span class="rounded bg-slate-900/[0.06] dark:bg-black/75 px-1.5 py-0.5 text-[10px] font-semibold text-slate-900 dark:text-white">Cover</span>
+          <button type="button" class="flex h-5 w-5 items-center justify-center rounded-full bg-white/90 dark:bg-zinc-800/90 text-xs font-bold text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-800">×</button>
+        </div>
+        <div class="rounded-lg bg-white/85 dark:bg-zinc-800/85 px-2 py-1 text-[10px] font-medium text-slate-700 dark:text-zinc-300 backdrop-blur border border-slate-200 dark:border-zinc-800">front.webp · 1.4 MB</div>
+      </div>
+    </div>
+    <div class="relative aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-zinc-800 bg-gradient-to-br from-slate-100 dark:from-zinc-900 to-slate-200 dark:to-zinc-800 p-2">
+      <div class="flex h-full flex-col justify-between">
+        <div class="flex justify-end"><button type="button" class="flex h-5 w-5 items-center justify-center rounded-full bg-white/90 dark:bg-zinc-800/90 text-xs font-bold text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-800">×</button></div>
+        <div class="rounded-lg bg-white/85 dark:bg-zinc-800/85 px-2 py-1 text-[10px] font-medium text-slate-700 dark:text-zinc-300 backdrop-blur border border-slate-200 dark:border-zinc-800">detail.jpg · 980 KB</div>
+      </div>
+    </div>
+    <div class="relative aspect-square overflow-hidden rounded-xl border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/15 p-2">
+      <div class="flex h-full flex-col items-center justify-center text-center">
+        <span class="text-xs font-bold text-indigo-700 dark:text-indigo-300">76%</span>
+        <div class="mt-1.5 h-1.5 w-3/4 overflow-hidden rounded-full bg-indigo-200"><div class="h-full w-3/4 rounded-full bg-indigo-600"></div></div>
+        <span class="mt-1.5 text-[10px] text-indigo-600 dark:text-indigo-400">Uploading...</span>
+      </div>
+    </div>
+    <label class="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800/60 p-2 text-center transition hover:border-indigo-400 hover:bg-indigo-50/40 dark:hover:bg-indigo-500/15">
+      <input type="file" multiple accept="image/*" class="sr-only" />
+      <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-zinc-800 text-indigo-600 dark:text-indigo-400 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800">+</span>
+      <span class="mt-2 text-xs font-semibold text-slate-800 dark:text-zinc-200">Add Photos</span>
+      <span class="text-[10px] text-slate-400 dark:text-zinc-500">or drop here</span>
+    </label>
+  </div>
+</div>

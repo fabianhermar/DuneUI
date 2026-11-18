@@ -1,0 +1,69 @@
+{
+  "slug": "progress",
+  "index": "28",
+  "tag": "Feedback",
+  "title": "Progress Bars",
+  "description": "Rich linear file transfer meters, concentric multi-ring SVG gauges, cloud quota breakdowns, stepped milestone tracks, and CI pipeline progress bars.",
+  "specs": [
+    {
+      "file": "01-file-upload-speed-controls.html",
+      "title": "File Upload Speed & Controls",
+      "styleTag": "Tailwind Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-sprint-ring-velocity.html",
+      "title": "Dark Sprint Ring & Velocity",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-cloud-storage-quota-meter.html",
+      "title": "Cloud Storage Quota Meter",
+      "styleTag": "Apple Cloud",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-triple-activity-ring-widget.html",
+      "title": "Triple Activity Ring Widget",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-campaign-meter.html",
+      "title": "Brutalist Campaign Meter",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "06-segmented-led-resource-bar.html",
+      "title": "Segmented LED Resource Bar",
+      "styleTag": "DevTools Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-account-setup-progress.html",
+      "title": "Account Setup Progress",
+      "styleTag": "Workspace SaaS",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-free-shipping-reward-meter.html",
+      "title": "Free Shipping Reward Meter",
+      "styleTag": "Commerce Warm",
+      "canvas": "light"
+    },
+    {
+      "file": "09-reading-audio-time-bar.html",
+      "title": "Reading & Audio Time Bar",
+      "styleTag": "Editorial Minimal",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-live-ci-cd-pipeline-progress.html",
+      "title": "Live CI/CD Pipeline Progress",
+      "styleTag": "Vercel · Pipeline",
+      "canvas": "light"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<div data-shell-dual class="flex w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#14151B] text-slate-800 dark:text-zinc-200 shadow-lg dark:shadow-2xl md:min-h-[460px] md:flex-row">
+  <div class="flex md:hidden items-center justify-between gap-2 border-b border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-[#0A0B0F] px-3.5 py-2.5">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle channel rail" class="inline-flex size-8 shrink-0 items-center justify-center rounded-lg border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <span data-mobile-ws-pill class="flex size-6 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-[10px] font-bold text-white">DN</span>
+      <span data-mobile-channel class="truncate text-xs font-bold text-slate-900 dark:text-white"># design-system</span>
+    </div>
+    <span class="rounded bg-slate-900/[0.07] dark:bg-white/10 px-2 py-0.5 text-[10px] font-medium text-slate-700 dark:text-zinc-300">24 online</span>
+  </div>
+
+  <div data-sidebar-drawer class="hidden md:flex flex-col shrink-0 border-b border-slate-200 dark:border-white/15 md:flex-row md:border-b-0">
+    <!-- Far Left Workspace Icon Rail -->
+    <div class="flex flex-row items-center gap-2.5 border-b border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-[#0A0B0F] p-2.5 md:w-16 md:flex-col md:justify-between md:border-b-0 md:border-r md:py-4">
+      <div class="flex flex-row items-center gap-2.5 md:flex-col">
+        <button type="button" data-ws-pill data-ws-label="DuneHQ" data-ws-code="DN" class="flex size-10 items-center justify-center rounded-2xl bg-indigo-600 text-xs font-bold text-white shadow-lg shadow-indigo-500/30 ring-2 ring-indigo-300 dark:ring-white/30">DN</button>
+        <button type="button" data-ws-pill data-ws-label="NexaOps" data-ws-code="NX" class="flex size-10 items-center justify-center rounded-2xl bg-slate-100 dark:bg-zinc-800 text-xs font-bold text-slate-600 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-700 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/15">NX</button>
+        <button type="button" data-ws-pill data-ws-label="SyncLab" data-ws-code="SY" class="flex size-10 items-center justify-center rounded-2xl bg-slate-100 dark:bg-zinc-800 text-xs font-bold text-slate-600 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-700 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/15">SY</button>
+        <span class="hidden h-px w-7 bg-slate-900/[0.07] dark:bg-white/10 md:block"></span>
+        <button type="button" aria-label="Add workspace" class="flex size-10 items-center justify-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-700 text-sm text-slate-600 dark:text-zinc-400 hover:border-zinc-500 hover:text-slate-900 dark:hover:text-white">+</button>
+      </div>
+      <span class="ml-auto flex size-8 items-center justify-center rounded-full bg-emerald-500 text-[11px] font-bold text-zinc-950 md:ml-0">MK</span>
+    </div>
+
+    <!-- Inner Channels & DM Sidebar -->
+    <aside class="flex flex-1 flex-col justify-between bg-slate-50 dark:bg-[#101117] p-3.5 md:w-56 md:border-r md:border-slate-200 dark:md:border-white/15">
+      <div>
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/15 pb-3">
+          <span data-ws-heading class="text-sm font-bold text-slate-900 dark:text-white">DuneHQ</span>
+          <span class="rounded bg-slate-900/[0.07] dark:bg-white/10 px-1.5 py-0.5 text-[10px] text-slate-700 dark:text-zinc-300">24 online</span>
+        </div>
+        <div class="mt-4 space-y-4 text-xs">
+          <div>
+            <p class="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Channels</p>
+            <nav class="mt-1.5 space-y-0.5">
+              <button type="button" data-channel-btn data-channel-name="# design-system" class="flex w-full items-center justify-between rounded-lg bg-indigo-50 dark:bg-indigo-500/20 px-2.5 py-1.5 text-left font-semibold text-slate-900 dark:text-white"><span># design-system</span><span class="rounded bg-indigo-600 px-1.5 text-[10px] text-white">3</span></button>
+              <button type="button" data-channel-btn data-channel-name="# frontend-ops" class="block w-full rounded-lg px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200"># frontend-ops</button>
+              <button type="button" data-channel-btn data-channel-name="# releases-v4" class="block w-full rounded-lg px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200"># releases-v4</button>
+            </nav>
+          </div>
+          <div>
+            <p class="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Direct Messages</p>
+            <nav class="mt-1.5 space-y-1">
+              <button type="button" data-channel-btn data-channel-name="Elena Morales" class="flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5 text-left text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-white/5"><span class="size-2 rounded-full bg-emerald-400"></span> Elena Morales</button>
+              <button type="button" data-channel-btn data-channel-name="Daniel Kim" class="flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5 text-left text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-white/5"><span class="size-2 rounded-full bg-amber-400"></span> Daniel Kim</button>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center justify-between rounded-xl bg-slate-900/[0.07] dark:bg-white/[0.04] px-3 py-2 text-[11px] text-slate-600 dark:text-zinc-400">
+        <span>Huddle ready</span>
+        <span class="text-emerald-700 dark:text-emerald-400 font-semibold">Join</span>
+      </div>
+    </aside>
+  </div>
+
+  <main class="flex flex-1 min-w-0 flex-col justify-between bg-white dark:bg-[#14151B] p-4 sm:p-6">
+    <div>
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-white/15 pb-3">
+        <h4 data-main-channel class="text-sm font-bold text-slate-900 dark:text-white"># design-system</h4>
+        <span class="text-xs text-slate-500 dark:text-zinc-400">Pinned: Component Tokens v4.2</span>
+      </div>
+      <div class="mt-4 space-y-3 text-xs">
+        <div class="rounded-xl bg-slate-900/[0.05] dark:bg-white/[0.04] p-3.5">
+          <p class="font-semibold text-slate-900 dark:text-white">Elena Morales <span class="ml-2 font-normal text-slate-500 dark:text-zinc-400">10:42 AM</span></p>
+          <p data-main-msg class="mt-1 text-slate-700 dark:text-zinc-300">Updated all 10 responsive sidebar patterns with dual-rail and mobile drawer states.</p>
+        </div>
+      </div>
+    </div>
+    <div data-msg-placeholder class="mt-4 rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.04] dark:bg-white/[0.03] px-3.5 py-2.5 text-xs text-slate-500 dark:text-zinc-400">Message #design-system...</div>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-dual]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const wsHeading = root.querySelector('[data-ws-heading]');
+    const mobileWsPill = root.querySelector('[data-mobile-ws-pill]');
+    const mobileChannel = root.querySelector('[data-mobile-channel]');
+    const mainChannel = root.querySelector('[data-main-channel]');
+    const placeholder = root.querySelector('[data-msg-placeholder]');
+    const wsPills = Array.from(root.querySelectorAll('[data-ws-pill]'));
+    const channelBtns = Array.from(root.querySelectorAll('[data-channel-btn]'));
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    wsPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        wsPills.forEach((el) => {
+          el.className = 'flex size-10 items-center justify-center rounded-2xl bg-slate-100 dark:bg-zinc-800 text-xs font-bold text-slate-600 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-700 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/15';
+        });
+        pill.className = 'flex size-10 items-center justify-center rounded-2xl bg-indigo-600 text-xs font-bold text-white shadow-lg shadow-indigo-500/30 ring-2 ring-indigo-300 dark:ring-white/30';
+        const label = pill.getAttribute('data-ws-label') || 'DuneHQ';
+        const code = pill.getAttribute('data-ws-code') || 'DN';
+        if (wsHeading) wsHeading.textContent = label;
+        if (mobileWsPill) mobileWsPill.textContent = code;
+      });
+    });
+    channelBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        channelBtns.forEach((el) => {
+          el.classList.remove('bg-indigo-50', 'dark:bg-indigo-500/20', 'font-semibold', 'text-slate-900', 'dark:text-white');
+        });
+        btn.classList.add('bg-indigo-50', 'dark:bg-indigo-500/20', 'font-semibold', 'text-slate-900', 'dark:text-white');
+        const name = btn.getAttribute('data-channel-name') || '# design-system';
+        if (mainChannel) mainChannel.textContent = name;
+        if (mobileChannel) mobileChannel.textContent = name;
+        if (placeholder) placeholder.textContent = 'Message ' + name + '...';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+  });
+</script>

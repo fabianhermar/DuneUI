@@ -1,0 +1,48 @@
+<nav aria-label="Breadcrumb" data-ws-trail class="flex flex-col items-center gap-2 text-slate-900 dark:text-zinc-100">
+  <ol class="inline-flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-3 py-2 text-xs font-medium text-slate-700 dark:text-zinc-300 shadow-2xs">
+    <li>
+      <button type="button" data-ws-toggle aria-expanded="false" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 dark:bg-zinc-800 px-2.5 py-1 font-medium text-slate-900 dark:text-zinc-100 hover:bg-slate-200 dark:hover:bg-zinc-700 cursor-pointer transition-colors">
+        <span class="flex size-4 items-center justify-center rounded bg-slate-900 dark:bg-white text-[9px] font-bold text-white dark:text-slate-950" data-ws-badge>E</span>
+        <span data-ws-name>Engineering</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5 text-slate-500 dark:text-zinc-400"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+      </button>
+    </li>
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600">/</li>
+    <li>
+      <span aria-current="page" data-ws-doc class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-500/15 px-2.5 py-1 font-semibold text-indigo-700 dark:text-indigo-300">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5 opacity-80" aria-hidden="true"><path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 12.5 4H8.414a1.5 1.5 0 0 1-1.06-.44L6.44 2.647A1.5 1.5 0 0 0 5.379 2H3.5Z"/></svg>
+        Q4 Architecture Spec
+      </span>
+    </li>
+  </ol>
+  <div data-ws-menu class="hidden items-center gap-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-1.5 text-xs shadow-md">
+    <button type="button" data-ws-pick="Engineering|E|Q4 Architecture Spec" class="rounded-lg px-2.5 py-1 font-medium text-slate-800 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Engineering</button>
+    <button type="button" data-ws-pick="Design|D|Token Governance v4" class="rounded-lg px-2.5 py-1 font-medium text-slate-800 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Design</button>
+    <button type="button" data-ws-pick="Product|P|2026 Roadmap" class="rounded-lg px-2.5 py-1 font-medium text-slate-800 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Product</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-ws-trail]');
+      const toggle = root.querySelector('[data-ws-toggle]');
+      const menu = root.querySelector('[data-ws-menu]');
+      const nameEl = root.querySelector('[data-ws-name]');
+      const badgeEl = root.querySelector('[data-ws-badge]');
+      const docEl = root.querySelector('[data-ws-doc]');
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle('inline-flex', open);
+      };
+      toggle?.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      root.querySelectorAll('[data-ws-pick]').forEach((opt) => {
+        opt.addEventListener('click', () => {
+          const [team, initial, doc] = opt.dataset.wsPick.split('|');
+          nameEl.textContent = team;
+          badgeEl.textContent = initial;
+          docEl.lastChild.textContent = ' ' + doc;
+          setOpen(false);
+        });
+      });
+    })();
+  </script>
+</nav>

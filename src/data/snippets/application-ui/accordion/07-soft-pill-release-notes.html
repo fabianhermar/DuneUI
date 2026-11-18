@@ -1,0 +1,48 @@
+<section class="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950 p-6 sm:p-7 text-slate-900 dark:text-zinc-100 space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-3 px-1">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Release Ledger</span>
+      <h2 class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">Platform Changelog &amp; Rollouts</h2>
+    </div>
+    <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-3 py-1 font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">All Systems Operational</span>
+  </div>
+  <div class="space-y-3">
+    <details class="group rounded-2xl bg-white dark:bg-zinc-900 p-5 shadow-xs ring-1 ring-slate-200/80 dark:ring-zinc-800 transition open:ring-2 open:ring-indigo-500/50 [&_summary::-webkit-details-marker]:hidden" open>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+          <span class="rounded-full bg-indigo-600 px-2.5 py-0.5 font-mono text-[11px] font-bold text-white shrink-0">v4.2.0</span>
+          <span class="rounded-md bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700 dark:text-indigo-300">LATEST</span>
+          <span class="text-sm font-bold text-slate-900 dark:text-white truncate">Instant SEPA &amp; FedNow settlement rails</span>
+        </div>
+        <span class="font-mono text-[11px] font-medium text-slate-400 dark:text-zinc-500 shrink-0">Nov 18</span>
+      </summary>
+      <div class="mt-4 border-t border-slate-100 dark:border-zinc-800 pt-3.5 text-xs leading-relaxed text-slate-600 dark:text-zinc-300 space-y-2.5">
+        <p>Real-time webhook reconciliation with sub-second ledger finality across EUR and USD clearing accounts.</p>
+        <ul class="grid grid-cols-1 gap-1.5 sm:grid-cols-2 text-[11px] text-slate-700 dark:text-zinc-300">
+          <li class="flex items-center gap-1.5"><span class="text-emerald-600 dark:text-emerald-400">&#10003;</span> Zero-fee instant payout routing</li>
+          <li class="flex items-center gap-1.5"><span class="text-emerald-600 dark:text-emerald-400">&#10003;</span> Signed idempotency headers</li>
+        </ul>
+      </div>
+    </details>
+    <details class="group rounded-2xl bg-white dark:bg-zinc-900 p-5 shadow-xs ring-1 ring-slate-200/80 dark:ring-zinc-800 transition open:ring-2 open:ring-indigo-500/50 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+          <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-0.5 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300 shrink-0">v4.1.4</span>
+          <span class="text-sm font-bold text-slate-900 dark:text-white truncate">Automated EU VAT &amp; tax evidence capture</span>
+        </div>
+        <span class="font-mono text-[11px] font-medium text-slate-400 dark:text-zinc-500 shrink-0">Nov 04</span>
+      </summary>
+      <p class="mt-4 border-t border-slate-100 dark:border-zinc-800 pt-3.5 text-xs leading-relaxed text-slate-600 dark:text-zinc-300">Captures BIN country, IP geolocation, and reverse-charge TIN validation directly inside immutable PDF tax receipts.</p>
+    </details>
+    <details class="group rounded-2xl bg-white dark:bg-zinc-900 p-5 shadow-xs ring-1 ring-slate-200/80 dark:ring-zinc-800 transition open:ring-2 open:ring-indigo-500/50 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+          <span class="rounded-full bg-slate-100 dark:bg-zinc-800 px-2.5 py-0.5 font-mono text-[11px] font-bold text-slate-700 dark:text-zinc-300 shrink-0">v4.1.0</span>
+          <span class="text-sm font-bold text-slate-900 dark:text-white truncate">Passkey &amp; WebAuthn biometric checkout</span>
+        </div>
+        <span class="font-mono text-[11px] font-medium text-slate-400 dark:text-zinc-500 shrink-0">Oct 22</span>
+      </summary>
+      <p class="mt-4 border-t border-slate-100 dark:border-zinc-800 pt-3.5 text-xs leading-relaxed text-slate-600 dark:text-zinc-300">Hardware-bound FIDO2 credentials reduce mobile checkout abandonment by 34% without SMS OTP delays.</p>
+    </details>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+<section data-ldr3 class="mx-auto w-full max-w-xl rounded-3xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-950 p-6 sm:p-7 font-mono text-xs text-slate-900 dark:text-zinc-100 shadow-xl space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+    <div class="flex items-center gap-2.5">
+      <span class="size-3 rounded-full border-2 border-emerald-500 border-t-transparent animate-spin"></span>
+      <span class="font-bold text-slate-900 dark:text-white">deploy_94812a &middot; production</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span data-ldr3-step class="rounded-md bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">STAGE 3 / 4</span>
+      <button type="button" data-ldr3-adv class="rounded-lg border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-zinc-900 px-2.5 py-1 text-[11px] font-bold hover:border-emerald-400">Advance +</button>
+    </div>
+  </div>
+  <div class="space-y-2">
+    <div class="flex justify-between text-[11px]">
+      <span data-ldr3-msg class="font-sans font-semibold text-slate-700 dark:text-zinc-300">Propagating edge worker bundles to 38 PoPs...</span>
+      <span data-ldr3-pct class="font-bold text-emerald-600 dark:text-emerald-400">75%</span>
+    </div>
+    <div data-ldr3-bars class="grid grid-cols-12 gap-1.5 pt-1">
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-500"></span>
+      <span class="h-3 rounded-xs bg-emerald-400 animate-pulse"></span>
+      <span class="h-3 rounded-xs bg-slate-200 dark:bg-zinc-800"></span>
+      <span class="h-3 rounded-xs bg-slate-200 dark:bg-zinc-800"></span>
+      <span class="h-3 rounded-xs bg-slate-200 dark:bg-zinc-800"></span>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-2.5 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-zinc-900/90 p-3.5 text-[11px]">
+    <div><span class="block text-[10px] text-slate-400">US-EAST (IAD1)</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; Ready (18ms)</strong></div>
+    <div><span class="block text-[10px] text-slate-400">EU-CENTRAL (FRA1)</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; Ready (24ms)</strong></div>
+    <div><span class="block text-[10px] text-slate-400">AP-EAST (HND1)</span><strong class="text-amber-600 dark:text-amber-400 animate-pulse">&#8635; Syncing...</strong></div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr3]'); if (!r) return;
+  const bars = [...r.querySelectorAll('[data-ldr3-bars] span')], pct = r.querySelector('[data-ldr3-pct]'), msg = r.querySelector('[data-ldr3-msg]'), st = r.querySelector('[data-ldr3-step]');
+  let filled = 9;
+  r.querySelector('[data-ldr3-adv]')?.addEventListener('click', () => {
+    filled = filled >= 12 ? 3 : filled + 3;
+    bars.forEach((b, i) => {
+      b.className = i < filled - 1 ? 'h-3 rounded-xs bg-emerald-500' : i === filled - 1 && filled < 12 ? 'h-3 rounded-xs bg-emerald-400 animate-pulse' : i < filled ? 'h-3 rounded-xs bg-emerald-500' : 'h-3 rounded-xs bg-slate-200 dark:bg-zinc-800';
+    });
+    const p = Math.round((filled / 12) * 100);
+    pct.textContent = p + '%';
+    st.textContent = 'STAGE ' + Math.ceil(filled / 3) + ' / 4';
+    msg.textContent = p === 100 ? 'All 38 global edge nodes live & verified ✓' : 'Propagating edge worker bundles to 38 PoPs...';
+  });
+})();
+</script>

@@ -1,0 +1,122 @@
+<section data-cf7 class="mx-auto w-full max-w-5xl border-2 border-black dark:border-zinc-200 bg-[#FFFDF7] dark:bg-zinc-900 p-5 sm:p-7 shadow-[6px_6px_0_#000] dark:shadow-[6px_6px_0_#e4e4e7] font-mono text-xs text-slate-900 dark:text-zinc-100 space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b-2 border-black dark:border-zinc-200 pb-4">
+    <div>
+      <span class="border-2 border-black bg-[#FFE95A] px-2 py-0.5 text-[10px] font-black text-black">DROP ARCHIVE // MULTI-FILTER</span>
+      <h3 class="mt-1 text-lg font-black uppercase">STREETWEAR, FOOTWEAR &amp; STUDIO HARDWARE</h3>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <input type="search" data-cf7-q placeholder="SEARCH SKU / ITEM..." class="w-44 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 px-2.5 py-1.5 font-bold focus:outline-none" />
+      <select data-cf7-sort aria-label="Sort archive" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 px-2.5 py-1.5 font-black">
+        <option value="default">SORT: DROP #</option>
+        <option value="asc">PRICE: LOW-HIGH</option>
+        <option value="desc">PRICE: HIGH-LOW</option>
+      </select>
+      <span data-cf7-cnt class="border-2 border-black dark:border-zinc-200 bg-[#A7F3D0] px-3 py-1.5 font-black text-black">6 / 6 SHOWN</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-12">
+    <aside class="space-y-4 lg:col-span-4">
+      <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3.5">
+        <div class="flex items-center justify-between border-b-2 border-black dark:border-zinc-200 pb-2">
+          <span class="font-black">01 / DEPARTMENTS</span>
+          <button type="button" data-cf7-rst class="underline font-black">RESET</button>
+        </div>
+        <div class="mt-2.5 grid grid-cols-2 gap-2 font-bold">
+          <label class="flex cursor-pointer items-center gap-1.5"><input type="checkbox" checked value="footwear" data-cf7-dept class="accent-black" /> FOOTWEAR</label>
+          <label class="flex cursor-pointer items-center gap-1.5"><input type="checkbox" checked value="apparel" data-cf7-dept class="accent-black" /> APPAREL</label>
+          <label class="flex cursor-pointer items-center gap-1.5"><input type="checkbox" checked value="carry" data-cf7-dept class="accent-black" /> CARRY</label>
+          <label class="flex cursor-pointer items-center gap-1.5"><input type="checkbox" checked value="hardware" data-cf7-dept class="accent-black" /> HARDWARE</label>
+        </div>
+      </div>
+      <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3.5">
+        <span class="block font-black">02 / RELEASE TIER</span>
+        <div class="mt-2 grid grid-cols-3 gap-1.5 font-black text-[11px]">
+          <button type="button" data-cf7-ed="all" class="border-2 border-black bg-[#FFE95A] py-1.5 text-black">ALL</button>
+          <button type="button" data-cf7-ed="limited" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 py-1.5">LIMITED</button>
+          <button type="button" data-cf7-ed="core" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 py-1.5">CORE</button>
+        </div>
+      </div>
+      <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3.5 space-y-2">
+        <div class="flex items-center justify-between font-black">
+          <span>03 / MAX PRICE</span>
+          <span data-cf7-pval class="border border-black bg-[#FFE95A] px-2 py-0.5 text-black">$1,000</span>
+        </div>
+        <input type="range" min="60" max="1000" step="20" value="1000" data-cf7-price class="w-full accent-black" />
+        <label class="mt-2 flex cursor-pointer items-center gap-2 border-t-2 border-black dark:border-zinc-200 pt-2.5 font-black">
+          <input type="checkbox" data-cf7-ver class="accent-black" /> SERIALIZED &amp; READY TO SHIP
+        </label>
+      </div>
+    </aside>
+    <div data-cf7-grid class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8">
+      <article data-cf7-card data-idx="0" data-cat="footwear" data-ed="limited" data-price="195" data-ver="1" data-q="field runner xt-04 sneaker footwear" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/ecommerce/sneaker.jpg" alt="Runner" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-[#FFE95A] px-1.5 py-0.5 text-[10px] font-black text-black">LIMITED #0421</span></div>
+        <p class="mt-2.5 font-black">FIELD RUNNER XT-04</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>FOOTWEAR</span><span class="text-black dark:text-white font-black">$195</span></div>
+      </article>
+      <article data-cf7-card data-idx="1" data-cat="apparel" data-ed="limited" data-price="320" data-ver="1" data-q="storm parka 02 outerwear jacket" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/heroes/streetwear-editorial.jpg" alt="Outerwear" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-[#FFE95A] px-1.5 py-0.5 text-[10px] font-black text-black">LIMITED #0108</span></div>
+        <p class="mt-2.5 font-black">STORM PARKA 02</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>APPAREL</span><span class="text-black dark:text-white font-black">$320</span></div>
+      </article>
+      <article data-cf7-card data-idx="2" data-cat="carry" data-ed="core" data-price="64" data-ver="1" data-q="24oz field tote bag carry" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/ecommerce/tote.jpg" alt="Tote" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-[#A7F3D0] px-1.5 py-0.5 text-[10px] font-black text-black">CORE ARCHIVE</span></div>
+        <p class="mt-2.5 font-black">24OZ FIELD TOTE</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>CARRY</span><span class="text-black dark:text-white font-black">$64</span></div>
+      </article>
+      <article data-cf7-card data-idx="3" data-cat="apparel" data-ed="core" data-price="145" data-ver="1" data-q="heavy merino crew knitwear" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/ecommerce/knitwear.jpg" alt="Merino" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-[#A7F3D0] px-1.5 py-0.5 text-[10px] font-black text-black">CORE ARCHIVE</span></div>
+        <p class="mt-2.5 font-black">HEAVY MERINO CREW</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>APPAREL</span><span class="text-black dark:text-white font-black">$145</span></div>
+      </article>
+      <article data-cf7-card data-idx="4" data-cat="hardware" data-ed="limited" data-price="640" data-ver="1" data-q="analog filter bank 6u synth hardware" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/heroes/synth-modular.jpg" alt="Synth" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-[#FFE95A] px-1.5 py-0.5 text-[10px] font-black text-black">LIMITED #0042</span></div>
+        <p class="mt-2.5 font-black">FILTER BANK 6U</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>HARDWARE</span><span class="text-black dark:text-white font-black">$640</span></div>
+      </article>
+      <article data-cf7-card data-idx="5" data-cat="hardware" data-ed="core" data-price="899" data-ver="0" data-q="field poly keys synth hardware" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3 shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+        <div class="relative"><img src="/images/heroes/synth-keys.jpg" alt="Keys" class="h-32 w-full border-2 border-black dark:border-zinc-200 object-cover" /><span class="absolute left-2 top-2 border border-black bg-white px-1.5 py-0.5 text-[10px] font-black text-black">PREORDER</span></div>
+        <p class="mt-2.5 font-black">FIELD POLY KEYS</p>
+        <div class="mt-1 flex justify-between font-bold text-neutral-600 dark:text-neutral-400"><span>HARDWARE</span><span class="text-black dark:text-white font-black">$899</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf7]'); if (!r) return;
+  const depts = [...r.querySelectorAll('[data-cf7-dept]')], eds = [...r.querySelectorAll('[data-cf7-ed]')];
+  const pr = r.querySelector('[data-cf7-price]'), pval = r.querySelector('[data-cf7-pval]'), ver = r.querySelector('[data-cf7-ver]');
+  const q = r.querySelector('[data-cf7-q]'), sort = r.querySelector('[data-cf7-sort]'), cnt = r.querySelector('[data-cf7-cnt]');
+  const grid = r.querySelector('[data-cf7-grid]'), cards = [...r.querySelectorAll('[data-cf7-card]')];
+  let curEd = 'all';
+  const upd = () => {
+    const actD = depts.filter(d => d.checked).map(d => d.value), maxP = Number(pr.value), query = q.value.trim().toLowerCase();
+    pval.textContent = '$' + maxP;
+    const sorted = [...cards].sort((a, b) => {
+      if (sort.value === 'asc') return Number(a.dataset.price) - Number(b.dataset.price);
+      if (sort.value === 'desc') return Number(b.dataset.price) - Number(a.dataset.price);
+      return Number(a.dataset.idx) - Number(b.dataset.idx);
+    });
+    let n = 0;
+    sorted.forEach(c => {
+      grid.appendChild(c);
+      const ok = actD.includes(c.dataset.cat)
+        && (curEd === 'all' || c.dataset.ed === curEd)
+        && Number(c.dataset.price) <= maxP
+        && (!ver.checked || c.dataset.ver === '1')
+        && (!query || c.dataset.q.includes(query));
+      c.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = n + ' / 6 SHOWN';
+  };
+  eds.forEach(b => b.addEventListener('click', () => {
+    curEd = b.dataset.cf7Ed; upd();
+    eds.forEach(x => x.className = x === b ? 'border-2 border-black bg-[#FFE95A] py-1.5 text-black' : 'border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 py-1.5');
+  }));
+  [...depts, ver, sort].forEach(el => el?.addEventListener('change', upd));
+  pr?.addEventListener('input', upd); q?.addEventListener('input', upd);
+  r.querySelector('[data-cf7-rst]')?.addEventListener('click', () => {
+    depts.forEach(d => { d.checked = true; }); pr.value = '1000'; ver.checked = false; q.value = ''; sort.value = 'default'; eds[0]?.click(); upd();
+  });
+})();
+</script>

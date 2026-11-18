@@ -1,0 +1,69 @@
+{
+  "slug": "cta",
+  "index": "25",
+  "tag": "Marketing",
+  "title": "Call to Actions",
+  "description": "High-impact conversion banners, interactive CLI & product drop CTAs, glass launch docks, editorial catalog splits, and mobile studio previews.",
+  "specs": [
+    {
+      "file": "01-aurora-cli-preview-cta.html",
+      "title": "Aurora CLI Preview CTA",
+      "styleTag": "Linear / Raycast",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-advisory-demo-split-cta.html",
+      "title": "Advisory & Demo Split CTA",
+      "styleTag": "Enterprise Split",
+      "canvas": "light"
+    },
+    {
+      "file": "03-brutalist-drop-waitlist-cta.html",
+      "title": "Brutalist Drop Waitlist CTA",
+      "styleTag": "Neo-Brutalist Zine",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-liquid-glass-launch-cta.html",
+      "title": "Liquid Glass Launch CTA",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-monograph-edition-cta.html",
+      "title": "Monograph Edition CTA",
+      "styleTag": "Swiss Monograph",
+      "canvas": "muted"
+    },
+    {
+      "file": "06-hardware-vip-preorder-cta.html",
+      "title": "Hardware VIP Preorder CTA",
+      "styleTag": "Hardware Flagship",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-open-source-github-cli-cta.html",
+      "title": "Open Source GitHub CLI CTA",
+      "styleTag": "DevTools Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-mobile-companion-studio-cta.html",
+      "title": "Mobile Companion Studio CTA",
+      "styleTag": "Mobile Flagship",
+      "canvas": "light"
+    },
+    {
+      "file": "09-team-seats-promo-banner.html",
+      "title": "Team Seats Promo Banner",
+      "styleTag": "Commerce CTA",
+      "canvas": "light"
+    },
+    {
+      "file": "10-founder-guarantee-trial-cta.html",
+      "title": "Founder Guarantee Trial CTA",
+      "styleTag": "Founder Boutique",
+      "canvas": "muted"
+    }
+  ]
+}

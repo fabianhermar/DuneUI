@@ -1,0 +1,51 @@
+<section data-ldr6 class="mx-auto w-full max-w-lg rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 text-xs text-slate-900 dark:text-zinc-100 shadow-sm space-y-5">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3">
+      <div class="relative flex size-11 items-center justify-center rounded-2xl bg-indigo-50 dark:bg-indigo-500/15">
+        <span data-ldr6-ring class="absolute size-9 rounded-full border-2 border-indigo-600 dark:border-indigo-400 border-t-transparent animate-spin"></span>
+        <span data-ldr6-icon class="font-mono text-xs font-bold text-indigo-700 dark:text-indigo-300">3DS</span>
+      </div>
+      <div>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Stripe Treasury Clearing</span>
+        <h3 data-ldr6-title class="mt-0.5 text-base font-bold text-slate-900 dark:text-white">Verifying 3D-Secure Bank Token...</h3>
+      </div>
+    </div>
+    <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">$2,480.00</span>
+  </div>
+  <div class="space-y-2.5 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/70 p-4">
+    <div class="flex items-center justify-between">
+      <span class="flex items-center gap-2 font-medium text-emerald-700 dark:text-emerald-400"><span>&#10003;</span> TLS 1.3 Cryptographic Handshake</span>
+      <span class="font-mono text-[11px] text-slate-400">22ms</span>
+    </div>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center gap-2 font-medium text-emerald-700 dark:text-emerald-400"><span>&#10003;</span> Radar Fraud Risk Score (0.01 / Low)</span>
+      <span class="font-mono text-[11px] text-slate-400">68ms</span>
+    </div>
+    <div class="flex items-center justify-between">
+      <span data-ldr6-last class="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"><span class="size-2 rounded-full bg-indigo-500 animate-ping"></span> Issuer Settlement Authorization (Visa &bull;&bull; 4242)</span>
+      <span data-ldr6-st class="font-mono text-[11px] font-bold text-indigo-600 dark:text-indigo-400">Pending</span>
+    </div>
+  </div>
+  <div class="flex items-center justify-between pt-1">
+    <span class="text-[11px] text-slate-500 dark:text-zinc-400">Do not refresh or close this window</span>
+    <button type="button" data-ldr6-btn class="rounded-xl bg-slate-900 dark:bg-white px-3.5 py-2 font-semibold text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-zinc-200 transition">
+      Simulate Approval
+    </button>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr6]'); if (!r) return;
+  const ring = r.querySelector('[data-ldr6-ring]'), ic = r.querySelector('[data-ldr6-icon]'), ttl = r.querySelector('[data-ldr6-title]'), last = r.querySelector('[data-ldr6-last]'), st = r.querySelector('[data-ldr6-st]'), btn = r.querySelector('[data-ldr6-btn]');
+  let done = false;
+  btn?.addEventListener('click', () => {
+    done = !done;
+    ring.classList.toggle('animate-spin', !done);
+    ic.textContent = done ? '✓' : '3DS';
+    ttl.textContent = done ? 'Payment Authorized & Settled' : 'Verifying 3D-Secure Bank Token...';
+    st.textContent = done ? '110ms ✓' : 'Pending';
+    last.innerHTML = done ? '<span>&#10003;</span> Issuer Settlement Authorized (Visa &bull;&bull; 4242)' : '<span class="size-2 rounded-full bg-indigo-500 animate-ping"></span> Issuer Settlement Authorization (Visa &bull;&bull; 4242)';
+    btn.textContent = done ? 'Reset Loader' : 'Simulate Approval';
+  });
+})();
+</script>

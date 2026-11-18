@@ -1,0 +1,69 @@
+{
+  "slug": "tabs",
+  "index": "17",
+  "tag": "Navigation",
+  "title": "Tabs & Switchers",
+  "description": "10 interactive tab & switcher systems: true zero-JS CSS radio panels, Liquid Glass bars, ATS underline badges, folder binders, vertical settings rails, and mobile app docks.",
+  "specs": [
+    {
+      "file": "01-zero-js-content-tabs.html",
+      "title": "Zero-JS Content Tabs",
+      "styleTag": "CSS Peer · Tabs",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-liquid-glass-pill-tabs.html",
+      "title": "Liquid Glass Pill Tabs",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "03-underline-tabs-with-badges.html",
+      "title": "Underline Tabs with Badges",
+      "styleTag": "Tailwind · Badges",
+      "canvas": "light"
+    },
+    {
+      "file": "04-linear-dark-glow-tabs.html",
+      "title": "Linear Dark Glow Tabs",
+      "styleTag": "Linear · Dark Bar",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-brutalist-folder-tabs.html",
+      "title": "Brutalist Folder Tabs",
+      "styleTag": "Brutalist · Folder",
+      "canvas": "light"
+    },
+    {
+      "file": "06-vertical-settings-rail-tabs.html",
+      "title": "Vertical Settings Rail Tabs",
+      "styleTag": "Vercel · Vertical",
+      "canvas": "light"
+    },
+    {
+      "file": "07-bordered-box-grid-tabs.html",
+      "title": "Bordered Box Grid Tabs",
+      "styleTag": "SaaS · Equal Split",
+      "canvas": "light"
+    },
+    {
+      "file": "08-editorial-serif-underline-bar.html",
+      "title": "Editorial Serif Underline Bar",
+      "styleTag": "Editorial · Archive",
+      "canvas": "light"
+    },
+    {
+      "file": "09-statement-quarter-tabs.html",
+      "title": "Statement Quarter Tabs",
+      "styleTag": "Stripe · Quarters",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-mobile-bottom-dock-tabs.html",
+      "title": "Mobile Bottom Dock Tabs",
+      "styleTag": "Mobile · Dock Tabs",
+      "canvas": "dark"
+    }
+  ]
+}

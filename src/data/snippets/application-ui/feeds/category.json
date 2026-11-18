@@ -1,0 +1,63 @@
+{
+  "slug": "feeds",
+  "index": "51",
+  "tag": "Data Display",
+  "title": "Feeds & Activity",
+  "description": "10 radically diverse activity & timeline streams covering Figma spatial pin critiques, podcast chapters, Kubernetes pod rollouts, live sports match tickers, live horology auction bidding, solar microgrid telemetry, academic peer review, cold-chain sensors, gaming patch notes, and kitchen expo pacing.",
+  "specs": [
+    {
+      "file": "01-interactive-spatial-design-critique-pin-thread.html",
+      "title": "Interactive Spatial Design Critique Pin Thread",
+      "styleTag": "Canvas · Spatial Pins"
+    },
+    {
+      "file": "02-podcast-episode-chapter-timestamp-stream.html",
+      "title": "Podcast Episode Chapter & Timestamp Stream",
+      "styleTag": "Media · Chapters",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-kubernetes-canary-pod-rollout-stream.html",
+      "title": "Kubernetes Canary Pod Rollout Stream",
+      "styleTag": "Infra · Terminal Log",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-live-football-match-minute-by-minute-ticker.html",
+      "title": "Live Football Match Minute-by-Minute Ticker",
+      "styleTag": "Sports · Live Ticker"
+    },
+    {
+      "file": "05-live-horology-auction-paddle-bidding-feed.html",
+      "title": "Live Horology Auction Paddle Bidding Feed",
+      "styleTag": "Auction · Live Room",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-solar-microgrid-home-battery-event-log.html",
+      "title": "Solar Microgrid & Home Battery Event Log",
+      "styleTag": "Energy · CleanTech"
+    },
+    {
+      "file": "07-academic-journal-peer-review-timeline.html",
+      "title": "Academic Journal Peer-Review Timeline",
+      "styleTag": "Research · LaTeX Journal"
+    },
+    {
+      "file": "08-cold-chain-air-freight-sensor-journey.html",
+      "title": "Cold-Chain Air Freight Sensor Journey",
+      "styleTag": "Logistics · Cold Chain"
+    },
+    {
+      "file": "09-competitive-game-patch-hotfix-notes-feed.html",
+      "title": "Competitive Game Patch & Hotfix Notes Feed",
+      "styleTag": "Gaming · Patch Notes",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-fine-dining-kitchen-expo-course-pacing-ticket.html",
+      "title": "Fine-Dining Kitchen Expo & Course Pacing Ticket",
+      "styleTag": "Culinary · Kitchen Pass"
+    }
+  ]
+}

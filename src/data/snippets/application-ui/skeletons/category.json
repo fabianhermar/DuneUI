@@ -1,0 +1,69 @@
+{
+  "slug": "skeletons",
+  "index": "29",
+  "tag": "Feedback",
+  "title": "Skeleton Loaders",
+  "description": "High-craft shimmer wave skeletons with realistic product anatomy across editorial cards, dark issue backlogs, analytics charts, data grids, spatial media, chat workspaces, and IDEs.",
+  "specs": [
+    {
+      "file": "01-editorial-article-card.html",
+      "title": "Editorial Article Card",
+      "styleTag": "Tailwind · Shimmer",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-issue-backlog-queue.html",
+      "title": "Dark Issue Backlog Queue",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-kpi-revenue-chart-bento.html",
+      "title": "KPI & Revenue Chart Bento",
+      "styleTag": "Fintech · Shimmer",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-saas-data-table-filters.html",
+      "title": "SaaS Data Table & Filters",
+      "styleTag": "Stripe · Data Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-audio-player.html",
+      "title": "Liquid Glass Audio Player",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-messaging-split-thread.html",
+      "title": "Messaging Split Thread",
+      "styleTag": "Slack · Chat UI",
+      "canvas": "light"
+    },
+    {
+      "file": "07-storefront-product-grid.html",
+      "title": "Storefront Product Grid",
+      "styleTag": "Commerce Warm",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-brutalist-wireframe-loader.html",
+      "title": "Brutalist Wireframe Loader",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "09-ide-explorer-code-stream.html",
+      "title": "IDE Explorer & Code Stream",
+      "styleTag": "VS Code · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-editorial-profile-feed.html",
+      "title": "Editorial Profile & Feed",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    }
+  ]
+}

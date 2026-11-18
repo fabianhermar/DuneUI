@@ -1,0 +1,47 @@
+<section data-os8 class="mx-auto w-full max-w-4xl rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FAF7F2] dark:bg-zinc-900 p-6 sm:p-7 text-xs text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/ecommerce/knitwear.jpg" alt="Merino Crew" class="size-16 rounded-2xl object-cover border border-stone-200 dark:border-zinc-800" />
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500 dark:text-stone-400">Order #ORD-8802 &middot; Eligible for 22 More Days</span>
+        <h3 class="mt-0.5 text-base font-bold text-stone-900 dark:text-stone-100">Extra-Fine Merino Crew (Size M &middot; $145)</h3>
+      </div>
+    </div>
+    <span class="rounded-full bg-emerald-100 dark:bg-emerald-500/15 px-3 py-1 font-semibold text-emerald-800 dark:text-emerald-300">Printerless QR Return Ready</span>
+  </div>
+  <div class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-12">
+    <div class="space-y-2.5 md:col-span-7">
+      <p class="font-semibold text-stone-900 dark:text-stone-100">Choose Self-Service Resolution:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <button type="button" data-os8-opt="Instant Size Exchange (Ships Today)" data-os8-val="Size L · $0.00 Due" class="rounded-2xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-950 p-3.5 text-left">
+          <p class="font-bold text-stone-900 dark:text-white">Instant Size Exchange</p>
+          <p class="mt-0.5 text-[11px] text-stone-500 dark:text-zinc-400">We ship Size L immediately on scan</p>
+        </button>
+        <button type="button" data-os8-opt="Store Credit (+10% Bonus)" data-os8-val="$159.50 Credit" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-3.5 text-left hover:border-stone-400">
+          <p class="font-bold text-stone-900 dark:text-white">Store Credit (+$14.50)</p>
+          <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Get $159.50 credit immediately</p>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4 md:col-span-5">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Selected Outcome</span>
+        <p data-os8-mode class="mt-1 font-bold text-stone-900 dark:text-white">Instant Size Exchange (Ships Today)</p>
+        <p data-os8-valtxt class="mt-0.5 font-mono text-sm font-bold text-emerald-700 dark:text-emerald-400">Size L &middot; $0.00 Due</p>
+      </div>
+      <button type="button" data-os8-qr class="mt-4 w-full rounded-full bg-stone-900 dark:bg-white py-2.5 font-semibold text-white dark:text-slate-950 hover:bg-stone-800 dark:hover:bg-zinc-200">Generate Dropoff QR Label</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-os8]'); if (!r) return;
+  const m = r.querySelector('[data-os8-mode]'), v = r.querySelector('[data-os8-valtxt]'), qr = r.querySelector('[data-os8-qr]');
+  const ops = [...r.querySelectorAll('[data-os8-opt]')];
+  ops.forEach(b => b.addEventListener('click', () => {
+    m.textContent = b.dataset.os8Opt; v.textContent = b.dataset.os8Val; qr.textContent = 'Generate Dropoff QR Label';
+    ops.forEach(x => x.className = x === b ? 'rounded-2xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-950 p-3.5 text-left' : 'rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-3.5 text-left hover:border-stone-400');
+  }));
+  qr?.addEventListener('click', () => { qr.textContent = 'QR Pass Ready (#RMA-8802) ✓'; });
+})();
+</script>

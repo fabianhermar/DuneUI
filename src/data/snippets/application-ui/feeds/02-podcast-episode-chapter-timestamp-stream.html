@@ -1,0 +1,28 @@
+<div class="mx-auto w-full max-w-xl rounded-2xl border border-stone-300 dark:border-zinc-800 bg-[#F4F1EA] dark:bg-[#151513] p-5 sm:p-6 text-xs text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex items-center justify-between gap-3 border-b border-stone-300/70 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3">
+      <img src="/images/heroes/synth-modular.jpg" alt="Episode cover" class="size-11 rounded-xl object-cover ring-1 ring-black/15" />
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 dark:text-amber-400">EPISODE 88 &middot; SOUND DESIGN</span>
+        <h3 class="text-sm font-bold">Tape Saturation &amp; Spatial Mixes</h3>
+      </div>
+    </div>
+    <span data-fd2-cur class="font-mono text-[11px] font-bold text-amber-800 dark:text-amber-300">14:20 Active</span>
+  </div>
+  <ul class="mt-3.5 space-y-2">
+    <li><button type="button" data-fd2-ch="00:00 Active" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-300/80 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 px-3.5 py-2.5 text-left hover:border-amber-500 transition"><span><strong class="font-mono text-stone-500 mr-2">00:00</strong> Cold open &amp; Eurorack signal chain</span><span class="font-mono text-[10px] text-stone-400">14m</span></button></li>
+    <li><button type="button" data-fd2-ch="14:20 Active" class="cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-amber-600 dark:border-amber-400 bg-amber-500/15 px-3.5 py-2.5 text-left font-semibold transition"><span><strong class="font-mono text-amber-800 dark:text-amber-300 mr-2">14:20</strong> Spring reverbs vs algorithmic plates</span><span class="font-mono text-[10px] text-amber-800 dark:text-amber-300">NOW</span></button></li>
+    <li><button type="button" data-fd2-ch="31:05 Active" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-300/80 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 px-3.5 py-2.5 text-left hover:border-amber-500 transition"><span><strong class="font-mono text-stone-500 mr-2">31:05</strong> Q&amp;A: Mastering stems for vinyl</span><span class="font-mono text-[10px] text-stone-400">15m</span></button></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const btns = [...document.querySelectorAll('[data-fd2-ch]')], cur = document.querySelector('[data-fd2-cur]');
+  const onCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-amber-600 dark:border-amber-400 bg-amber-500/15 px-3.5 py-2.5 text-left font-semibold transition';
+  const offCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-300/80 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 px-3.5 py-2.5 text-left hover:border-amber-500 transition';
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => { x.className = x === b ? onCls : offCls; });
+    if (cur && b.dataset.fd2Ch) cur.textContent = b.dataset.fd2Ch;
+  }));
+})();
+</script>

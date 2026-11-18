@@ -1,0 +1,61 @@
+<nav aria-label="Breadcrumb" data-checkout-steps class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <ol class="inline-flex flex-wrap items-center justify-center gap-2.5 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 py-2.5 text-xs font-medium shadow-2xs">
+    <li>
+      <button type="button" data-step="1" class="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 cursor-pointer">
+        <span data-step-badge class="flex size-5 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+        </span>
+        <span>Cart</span>
+      </button>
+    </li>
+    <li aria-hidden="true" data-conn="1" class="h-0.5 w-6 rounded-full bg-emerald-500/70"></li>
+    <li>
+      <button type="button" data-step="2" aria-current="step" class="inline-flex items-center gap-2 font-semibold text-indigo-700 dark:text-indigo-300 cursor-pointer">
+        <span data-step-badge class="flex size-5 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-bold text-white ring-4 ring-indigo-600/15 dark:ring-indigo-400/20">2</span>
+        <span>Shipping</span>
+      </button>
+    </li>
+    <li aria-hidden="true" data-conn="2" class="h-0.5 w-6 rounded-full bg-slate-200 dark:bg-zinc-700"></li>
+    <li>
+      <button type="button" data-step="3" class="inline-flex items-center gap-2 text-slate-600 dark:text-zinc-300 cursor-pointer">
+        <span data-step-badge class="flex size-5 items-center justify-center rounded-full bg-slate-100 dark:bg-zinc-800 text-[11px] font-semibold text-slate-700 dark:text-zinc-300 ring-1 ring-slate-300 dark:ring-zinc-700">3</span>
+        <span>Payment</span>
+      </button>
+    </li>
+  </ol>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-checkout-steps]');
+      const btns = [...root.querySelectorAll('[data-step]')];
+      const conns = [...root.querySelectorAll('[data-conn]')];
+      const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>';
+      const render = (active) => {
+        btns.forEach((btn, i) => {
+          const n = i + 1;
+          const badge = btn.querySelector('[data-step-badge]');
+          btn.removeAttribute('aria-current');
+          if (n < active) {
+            btn.className = 'inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 cursor-pointer';
+            badge.className = 'flex size-5 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300';
+            badge.innerHTML = checkSvg;
+          } else if (n === active) {
+            btn.setAttribute('aria-current', 'step');
+            btn.className = 'inline-flex items-center gap-2 font-semibold text-indigo-700 dark:text-indigo-300 cursor-pointer';
+            badge.className = 'flex size-5 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-bold text-white ring-4 ring-indigo-600/15 dark:ring-indigo-400/20';
+            badge.textContent = String(n);
+          } else {
+            btn.className = 'inline-flex items-center gap-2 text-slate-600 dark:text-zinc-300 cursor-pointer';
+            badge.className = 'flex size-5 items-center justify-center rounded-full bg-slate-100 dark:bg-zinc-800 text-[11px] font-semibold text-slate-700 dark:text-zinc-300 ring-1 ring-slate-300 dark:ring-zinc-700';
+            badge.textContent = String(n);
+          }
+        });
+        conns.forEach((c, i) => {
+          c.className = i + 1 < active
+            ? 'h-0.5 w-6 rounded-full bg-emerald-500/70'
+            : 'h-0.5 w-6 rounded-full bg-slate-200 dark:bg-zinc-700';
+        });
+      };
+      btns.forEach((btn) => btn.addEventListener('click', () => render(Number(btn.dataset.step))));
+    })();
+  </script>
+</nav>

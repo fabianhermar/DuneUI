@@ -1,0 +1,32 @@
+<header class="mx-auto w-full max-w-4xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FBF8F3] dark:bg-zinc-900 p-6 text-stone-900 dark:text-zinc-100">
+  <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-4">
+      <img src="/images/heroes/pour-over.jpg" alt="Atelier Dining" class="size-16 shrink-0 rounded-full object-cover ring-2 ring-stone-200 dark:ring-zinc-700" />
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-800 dark:text-amber-400">KYOTO &middot; 12-COURSE SEASONAL KAISEKI</p>
+        <h1 class="mt-0.5 font-serif text-2xl text-stone-950 dark:text-white">Sora Culinary Atelier</h1>
+        <p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Friday Evening &middot; Counter Seating for 2 Guests</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <div class="flex gap-1.5 font-mono text-xs">
+        <button type="button" data-ph8-slot class="rounded-full bg-stone-900 dark:bg-stone-100 px-3 py-1.5 font-semibold text-white dark:text-stone-900">18:30</button>
+        <button type="button" data-ph8-slot class="rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1.5 text-stone-700 dark:text-zinc-300 hover:bg-stone-100 dark:hover:bg-zinc-800">20:45</button>
+      </div>
+      <button type="button" data-ph8-res class="rounded-full bg-amber-800 dark:bg-amber-500 px-4 py-1.5 text-xs font-semibold text-white dark:text-stone-950 hover:opacity-90">Reserve Table</button>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  const slots = [...document.querySelectorAll('[data-ph8-slot]')], res = document.querySelector('[data-ph8-res]');
+  const onCls = 'rounded-full bg-stone-900 dark:bg-stone-100 px-3 py-1.5 font-semibold text-white dark:text-stone-900';
+  const offCls = 'rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1.5 text-stone-700 dark:text-zinc-300 hover:bg-stone-100 dark:hover:bg-zinc-800';
+  let time = '18:30';
+  slots.forEach(s => s.addEventListener('click', () => {
+    slots.forEach(x => { x.className = x === s ? onCls : offCls; });
+    time = s.textContent || '18:30';
+  }));
+  res?.addEventListener('click', () => { res.textContent = 'Held for ' + time; setTimeout(() => { res.textContent = 'Reserve Table'; }, 1200); });
+})();
+</script>

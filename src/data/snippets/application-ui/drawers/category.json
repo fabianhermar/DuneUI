@@ -1,0 +1,69 @@
+{
+  "slug": "drawers",
+  "index": "48",
+  "tag": "Overlays",
+  "title": "Drawers & Slide-overs",
+  "description": "10 slide-over overlay drawers for create/edit sheets, cart summaries, record inspectors, filter panels, user profiles, and dark developer consoles with working open/close triggers.",
+  "specs": [
+    {
+      "file": "01-saas-workspace-provisioning-drawer.html",
+      "title": "SaaS Workspace Provisioning Drawer",
+      "styleTag": "Dribbble · Floating Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "02-atelier-express-cart-slide-over.html",
+      "title": "Atelier Express Cart Slide-Over",
+      "styleTag": "Awwwards · Cart Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "03-linear-edge-deployment-inspector.html",
+      "title": "Linear Edge Deployment Inspector",
+      "styleTag": "Linear · Dark Panel",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-live-filtered-catalog-slide-over.html",
+      "title": "Live-Filtered Catalog Slide-Over",
+      "styleTag": "SaaS · Left Filter Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-talent-inspector-drawer.html",
+      "title": "Liquid Glass Talent Inspector Drawer",
+      "styleTag": "Liquid Glass · Spatial",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-segmented-activity-triage-inbox-drawer.html",
+      "title": "Segmented Activity & Triage Inbox Drawer",
+      "styleTag": "SaaS · Activity Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "07-neo-brutalist-swiss-spec-sheet.html",
+      "title": "Neo-Brutalist Swiss Spec Sheet",
+      "styleTag": "Brutalist · Spec Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "08-concierge-support-live-thread-drawer.html",
+      "title": "Concierge Support Live Thread Drawer",
+      "styleTag": "Helpdesk · Live Slide",
+      "canvas": "light"
+    },
+    {
+      "file": "09-spatial-ios-bottom-action-sheet.html",
+      "title": "Spatial iOS Bottom Action Sheet",
+      "styleTag": "Mobile · Spring Sheet",
+      "canvas": "light"
+    },
+    {
+      "file": "10-awwwards-monograph-colophon-drawer.html",
+      "title": "Awwwards Monograph Colophon Drawer",
+      "styleTag": "Editorial · Studio Slide",
+      "canvas": "light"
+    }
+  ]
+}

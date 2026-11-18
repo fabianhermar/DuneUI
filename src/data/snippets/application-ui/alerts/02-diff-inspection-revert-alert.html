@@ -1,0 +1,66 @@
+<div role="alert" data-alert-action class="mx-auto w-full max-w-xl overflow-hidden rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-white dark:bg-zinc-900 shadow-sm text-slate-900 dark:text-zinc-100">
+  <div class="flex items-start gap-3.5 p-4 sm:p-5">
+    <div class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 dark:bg-amber-500/15 text-amber-700 dark:text-amber-300 ring-1 ring-amber-500/25">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zm8.25-3.75a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z" />
+      </svg>
+    </div>
+
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <strong class="text-sm font-semibold text-slate-900 dark:text-white">Edge routing rules updated</strong>
+        <span class="rounded-md bg-amber-100 dark:bg-amber-500/20 px-2 py-0.5 font-mono text-[10px] font-bold text-amber-800 dark:text-amber-300">REQUIRES PUBLISH</span>
+      </div>
+      <p class="mt-1 text-xs leading-relaxed text-slate-600 dark:text-zinc-300">
+        Staged header rewrites differ from your active production snapshot (<code class="font-mono text-slate-800 dark:text-zinc-200">v24.8</code>). Review before promoting traffic.
+      </p>
+
+      <div class="mt-3.5 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          data-toggle-diff
+          aria-expanded="false"
+          class="rounded-lg bg-slate-900 dark:bg-white px-3 py-1.5 text-xs font-semibold text-white dark:text-slate-950 shadow-2xs transition hover:bg-slate-800 dark:hover:bg-zinc-200"
+        >
+          Inspect Diff
+        </button>
+        <button
+          type="button"
+          data-revert-btn
+          class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-200 transition hover:bg-slate-50 dark:hover:bg-zinc-700"
+        >
+          Revert Draft
+        </button>
+        <span data-status-msg class="ml-auto hidden font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">Draft reverted ✓</span>
+      </div>
+
+      <div data-diff-box class="mt-3 hidden rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950 p-3 font-mono text-[11px] leading-relaxed">
+        <p class="text-rose-700 dark:text-rose-400">- Cache-Control: public, max-age=60</p>
+        <p class="text-emerald-700 dark:text-emerald-400">+ Cache-Control: public, s-maxage=3600, stale-while-revalidate=60</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-alert-action]');
+      const toggleBtn = root.querySelector('[data-toggle-diff]');
+      const revertBtn = root.querySelector('[data-revert-btn]');
+      const diffBox = root.querySelector('[data-diff-box]');
+      const statusMsg = root.querySelector('[data-status-msg]');
+
+      toggleBtn?.addEventListener('click', () => {
+        const open = diffBox.classList.toggle('hidden') === false;
+        toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggleBtn.textContent = open ? 'Hide Diff' : 'Inspect Diff';
+      });
+
+      revertBtn?.addEventListener('click', () => {
+        statusMsg.classList.remove('hidden');
+        revertBtn.textContent = 'Restored';
+        revertBtn.disabled = true;
+        revertBtn.classList.add('opacity-60');
+      });
+    })();
+  </script>
+</div>

@@ -1,0 +1,59 @@
+<div data-pp-7 class="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#090B10] p-6 text-slate-900 dark:text-white shadow-2xl sm:p-10">
+  <div class="pointer-events-none absolute -top-24 right-0 h-64 w-64 rounded-full bg-emerald-500/12 blur-3xl"></div>
+  <div class="relative flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-6">
+    <div>
+      <p class="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Live Compute Estimator</p>
+      <h1 class="mt-1.5 text-3xl font-bold tracking-tight sm:text-4xl">Pay purely for executed edge requests</h1>
+    </div>
+    <span class="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300">$0.15 / 1M requests after 2M free</span>
+  </div>
+
+  <!-- Interactive Usage Slider -->
+  <div class="relative mt-7 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center">
+    <div class="lg:col-span-7 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#11151E] p-6 space-y-5">
+      <div>
+        <div class="flex items-center justify-between font-mono text-xs"><span class="font-bold">Monthly Edge Requests</span><span data-pp7-req-label class="font-bold text-emerald-600 dark:text-emerald-400">20M requests</span></div>
+        <input type="range" min="2" max="100" value="20" data-pp7-req class="mt-3 w-full accent-emerald-500 cursor-pointer" />
+      </div>
+      <div>
+        <div class="flex items-center justify-between font-mono text-xs"><span class="font-bold">Distributed KV Storage</span><span data-pp7-kv-label class="font-bold text-indigo-600 dark:text-indigo-400">50 GB</span></div>
+        <input type="range" min="10" max="500" step="10" value="50" data-pp7-kv class="mt-3 w-full accent-indigo-500 cursor-pointer" />
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 rounded-2xl border border-emerald-500/40 bg-emerald-50/50 dark:bg-emerald-500/10 p-6 space-y-3">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Estimated Monthly Total</p>
+      <p data-pp7-total class="font-mono text-5xl font-bold tracking-tight">$15.20</p>
+      <p data-pp7-breakdown class="font-mono text-[11px] text-slate-600 dark:text-zinc-300">Compute: $2.70 + KV Storage: $12.50</p>
+      <a href="#" class="mt-2 block rounded-xl bg-slate-950 dark:bg-white py-2.5 text-center text-xs font-bold text-white dark:text-slate-950 hover:opacity-90 transition">Deploy with $250 Credits &rarr;</a>
+    </div>
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 text-xs">
+    <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] p-4"><p class="text-slate-500 dark:text-zinc-400">Free Hobby Quota</p><p class="mt-1 font-mono text-base font-bold">2M req / mo free</p></div>
+    <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] p-4"><p class="text-slate-500 dark:text-zinc-400">Sub-millisecond Cold Start</p><p class="mt-1 font-mono text-base font-bold text-emerald-600 dark:text-emerald-400">0ms Isolates</p></div>
+    <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] p-4"><p class="text-slate-500 dark:text-zinc-400">Enterprise Caps</p><p class="mt-1 font-mono text-base font-bold">Hard Spend Limits</p></div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('[data-pp-7]').forEach((root) => {
+    const r = root.querySelector('[data-pp7-req]');
+    const k = root.querySelector('[data-pp7-kv]');
+    const rLbl = root.querySelector('[data-pp7-req-label]');
+    const kLbl = root.querySelector('[data-pp7-kv-label]');
+    const tot = root.querySelector('[data-pp7-total]');
+    const brk = root.querySelector('[data-pp7-breakdown]');
+    const update = () => {
+      const reqs = Number(r?.value || 20);
+      const gb = Number(k?.value || 50);
+      const reqCost = Math.max(0, reqs - 2) * 0.15;
+      const kvCost = gb * 0.25;
+      if (rLbl) rLbl.textContent = reqs + 'M requests';
+      if (kLbl) kLbl.textContent = gb + ' GB';
+      if (tot) tot.textContent = '$' + (reqCost + kvCost).toFixed(2);
+      if (brk) brk.textContent = 'Compute: $' + reqCost.toFixed(2) + ' + KV Storage: $' + kvCost.toFixed(2);
+    };
+    r?.addEventListener('input', update);
+    k?.addEventListener('input', update);
+  });
+</script>

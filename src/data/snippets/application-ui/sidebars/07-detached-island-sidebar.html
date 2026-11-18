@@ -1,0 +1,76 @@
+<div data-shell-island class="flex w-full max-w-5xl flex-col gap-3 rounded-3xl bg-slate-100 dark:bg-zinc-800 p-3 md:min-h-[460px] md:flex-row text-slate-900 dark:text-zinc-100">
+  <div class="flex md:hidden items-center justify-between rounded-2xl bg-white dark:bg-zinc-900 px-3.5 py-2.5 shadow-sm ring-1 ring-slate-200/70 dark:ring-zinc-700/70">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle island sidebar" class="inline-flex size-8 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 text-slate-900 dark:text-white">
+        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <span class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-slate-950 dark:bg-white text-[11px] font-bold text-white dark:text-slate-950">K</span>
+      <span class="truncate text-xs font-bold text-slate-900 dark:text-zinc-100">Kinetix OS</span>
+    </div>
+    <span class="text-[11px] font-medium text-slate-500 dark:text-zinc-400">Design Ops</span>
+  </div>
+
+  <aside data-sidebar-drawer class="hidden md:flex w-full shrink-0 flex-col justify-between rounded-2xl bg-white dark:bg-zinc-900 p-4 shadow-md ring-1 ring-slate-200/70 dark:ring-zinc-700/70 md:w-60 text-black dark:text-zinc-100">
+    <div>
+      <div class="hidden md:flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-zinc-800/60 p-2.5">
+        <span class="flex size-9 items-center justify-center rounded-xl bg-white dark:bg-slate-950 text-xs font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-white/15">K</span>
+        <div>
+          <p class="text-xs font-bold text-slate-900 dark:text-zinc-100">Kinetix OS</p>
+          <p class="text-[11px] text-slate-500 dark:text-zinc-400">Design Ops</p>
+        </div>
+      </div>
+
+      <nav class="md:mt-5 space-y-1 text-xs font-medium">
+        <button type="button" data-island-nav data-heading="Active Projects" class="flex w-full items-center justify-between rounded-xl bg-slate-950 dark:bg-white px-3.5 py-2.5 text-left font-semibold text-white dark:text-slate-950"><span>Projects</span><span class="rounded-md bg-white/20 dark:bg-slate-900/15 px-1.5 py-0.5 text-[10px]">8</span></button>
+        <button type="button" data-island-nav data-heading="Release Calendar" class="flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left text-slate-600 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60 hover:text-slate-900 dark:hover:text-zinc-100">Calendar</button>
+        <button type="button" data-island-nav data-heading="Usage Analytics" class="flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left text-slate-600 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60 hover:text-slate-900 dark:hover:text-zinc-100">Analytics</button>
+        <button type="button" data-island-nav data-heading="Asset Vault" class="flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left text-slate-600 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60 hover:text-slate-900 dark:hover:text-zinc-100">Asset Vault</button>
+      </nav>
+    </div>
+
+    <div class="mt-5 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white">
+      <p class="text-xs font-bold">Upgrade to Team</p>
+      <p class="mt-1 text-[11px] text-white/85">Shared tokens &amp; unlimited seats.</p>
+      <button type="button" class="mt-3 w-full rounded-lg bg-white py-1.5 text-[11px] font-bold text-indigo-700 shadow-xs">View Plans</button>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0 rounded-2xl bg-white dark:bg-zinc-900 p-5 shadow-xs ring-1 ring-slate-200/70 dark:ring-zinc-700/70 sm:p-7 text-black dark:text-zinc-100">
+    <h4 data-island-heading class="text-base font-bold text-slate-900 dark:text-zinc-100">Active Projects</h4>
+    <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">Detached floating sidebar island collapses into its own compact bar on small screens.</p>
+    <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 text-xs">
+      <div class="rounded-xl bg-slate-50 dark:bg-zinc-800/60 p-4"><p class="font-bold text-slate-900 dark:text-zinc-100">Mobile Checkout 2.0</p><p class="mt-1 text-slate-500 dark:text-zinc-400">Due Nov 22</p></div>
+      <div class="rounded-xl bg-slate-50 dark:bg-zinc-800/60 p-4"><p class="font-bold text-slate-900 dark:text-zinc-100">Brand Refresh 2027</p><p class="mt-1 text-slate-500 dark:text-zinc-400">Due Dec 05</p></div>
+    </div>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-island]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const heading = root.querySelector('[data-island-heading]');
+    const links = Array.from(root.querySelectorAll('[data-island-nav]'));
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    links.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        links.forEach((el) => {
+          el.classList.remove('bg-slate-950', 'dark:bg-white', 'font-semibold', 'text-white', 'dark:text-slate-950');
+          el.classList.add('text-slate-600', 'dark:text-zinc-300');
+        });
+        btn.classList.remove('text-slate-600', 'dark:text-zinc-300');
+        btn.classList.add('bg-slate-950', 'dark:bg-white', 'font-semibold', 'text-white', 'dark:text-slate-950');
+        if (heading) heading.textContent = btn.getAttribute('data-heading') || 'Active Projects';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+  });
+</script>

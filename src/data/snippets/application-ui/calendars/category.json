@@ -1,0 +1,69 @@
+{
+  "slug": "calendars",
+  "index": "39",
+  "tag": "Productivity",
+  "title": "Calendars & Booking",
+  "description": "Full-month interactive calendar grids, Cal.com schedulers, Airbnb range pickers, weekly time-blocking views, multi-timezone planners, and service booking cards.",
+  "specs": [
+    {
+      "file": "01-cal-com-3-col-scheduler.html",
+      "title": "Cal.com 3-Col Scheduler",
+      "styleTag": "Cal.com · Booking",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-team-event-calendar.html",
+      "title": "Dark Team Event Calendar",
+      "styleTag": "Notion · Dark Grid",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-dual-month-stay-range-picker.html",
+      "title": "Dual-Month Stay Range Picker",
+      "styleTag": "Airbnb · Booking",
+      "canvas": "light"
+    },
+    {
+      "file": "04-weekly-time-block-calendar.html",
+      "title": "Weekly Time-Block Calendar",
+      "styleTag": "Cron · Schedule",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-liquid-glass-calendar-split.html",
+      "title": "Liquid Glass Calendar Split",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-restaurant-table-booking.html",
+      "title": "Restaurant Table Booking",
+      "styleTag": "OpenTable · Dining",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-brutalist-workshop-calendar.html",
+      "title": "Brutalist Workshop Calendar",
+      "styleTag": "Brutalist · Events",
+      "canvas": "light"
+    },
+    {
+      "file": "08-flight-round-trip-fare-grid.html",
+      "title": "Flight Round-Trip Fare Grid",
+      "styleTag": "Travel · Fare Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "09-timezone-overlap-finder.html",
+      "title": "Timezone Overlap Finder",
+      "styleTag": "Remote Ops · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-clinic-appointment-scheduler.html",
+      "title": "Clinic Appointment Scheduler",
+      "styleTag": "Healthcare · Clean",
+      "canvas": "muted"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "sidebars",
+  "index": "16",
+  "tag": "Layout",
+  "title": "Sidebars & App Shells",
+  "description": "10 full-height, responsive application sidebars inside realistic app shells: Linear dark rails, dual-pane Slack rails, Liquid Glass macOS sidebars, Notion doc trees, Stripe fintech rails, and Neo-Brutalist shells with interactive mobile drawers.",
+  "specs": [
+    {
+      "file": "01-linear-dark-workspace-shell.html",
+      "title": "Linear Dark Workspace Shell",
+      "styleTag": "Linear · App Shell",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-dual-pane-channel-rail.html",
+      "title": "Dual-Pane Channel Rail",
+      "styleTag": "Dual-Rail · 2026",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-saas-sidebar-quota-nav.html",
+      "title": "SaaS Sidebar & Quota Nav",
+      "styleTag": "Tailwind · SaaS",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-macos-liquid-glass-sidebar.html",
+      "title": "macOS Liquid Glass Sidebar",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-hierarchical-doc-tree-rail.html",
+      "title": "Hierarchical Doc Tree Rail",
+      "styleTag": "Notion · Tree",
+      "canvas": "light"
+    },
+    {
+      "file": "06-fintech-ledger-rail-shell.html",
+      "title": "Fintech Ledger Rail Shell",
+      "styleTag": "Stripe · Rail",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-detached-island-sidebar.html",
+      "title": "Detached Island Sidebar",
+      "styleTag": "Dribbble · Island",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-ide-code-explorer-rail.html",
+      "title": "IDE Code Explorer Rail",
+      "styleTag": "DevTools · IDE",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-brutalist-dashboard-shell.html",
+      "title": "Brutalist Dashboard Shell",
+      "styleTag": "Brutalist · Shell",
+      "canvas": "light"
+    },
+    {
+      "file": "10-collapsed-icon-rail-shell.html",
+      "title": "Collapsed Icon-Rail Shell",
+      "styleTag": "Compact · Vercel",
+      "canvas": "light"
+    }
+  ]
+}

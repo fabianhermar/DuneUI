@@ -1,0 +1,29 @@
+<header class="mx-auto w-full max-w-4xl rounded-2xl border border-emerald-900/20 dark:border-emerald-800/40 bg-[#F5F7F4] dark:bg-[#0D1914] p-6 text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-4">
+      <img src="/images/heroes/luxury-watch.jpg" alt="Chronograph Ref. 15202" class="size-20 shrink-0 rounded-xl object-cover ring-1 ring-amber-500/40" />
+      <div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-amber-700 dark:text-amber-300">LOT 042 &middot; GENEVA NOVEMBER</span>
+          <span class="rounded-full border border-emerald-600/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 dark:text-emerald-300">Authenticated</span>
+        </div>
+        <h1 class="mt-1 font-serif text-2xl text-stone-950 dark:text-white">Vacheron Chronom&egrave;tre 1972</h1>
+        <p class="mt-0.5 font-mono text-xs text-stone-600 dark:text-stone-400">Estimate: <strong class="text-stone-900 dark:text-amber-200">$68,000 &ndash; $85,000</strong> &middot; Box &amp; Archive Extract</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 shrink-0">
+      <button type="button" data-ph7-watch class="rounded-lg border border-stone-300 dark:border-emerald-800 px-3.5 py-2 text-xs font-semibold hover:bg-white/60 dark:hover:bg-emerald-950/60 transition-colors">Watch Lot (<span data-ph7-cnt>34</span>)</button>
+      <button type="button" class="rounded-lg bg-amber-600 dark:bg-amber-400 px-4 py-2 text-xs font-bold text-white dark:text-stone-950 hover:opacity-90 transition-opacity">Place Bid</button>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  const btn = document.querySelector('[data-ph7-watch]'), cnt = document.querySelector('[data-ph7-cnt]');
+  let watched = false;
+  btn?.addEventListener('click', () => {
+    watched = !watched;
+    if (cnt) cnt.textContent = watched ? '35' : '34';
+  });
+})();
+</script>

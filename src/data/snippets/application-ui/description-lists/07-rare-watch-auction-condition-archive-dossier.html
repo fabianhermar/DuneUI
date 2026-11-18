@@ -1,0 +1,25 @@
+<div data-dl7 class="mx-auto w-full max-w-2xl rounded-2xl border border-emerald-900/20 dark:border-emerald-800/50 bg-[#F4F6F3] dark:bg-[#0D1813] p-6 text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200 dark:border-emerald-900/50 pb-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/heroes/luxury-watch.jpg" alt="Chronograph" class="size-12 rounded-xl object-cover ring-1 ring-amber-500/40" />
+      <div>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">LOT 042 &middot; REF. 15202ST</span>
+        <h3 class="font-serif text-lg">Vacheron Chronom&egrave;tre 1972</h3>
+      </div>
+    </div>
+    <button type="button" data-dl7-copy class="cursor-pointer rounded-lg border border-stone-300 dark:border-emerald-800 px-3 py-1 font-mono text-[10px] font-bold hover:bg-white/60 dark:hover:bg-emerald-950">Copy Extract ID</button>
+  </div>
+  <dl class="mt-4 divide-y divide-stone-200/80 dark:divide-emerald-900/40 text-xs">
+    <div class="flex justify-between py-2.5"><dt class="text-stone-500 dark:text-stone-400">Caliber &amp; Jewels</dt><dd class="font-mono font-semibold">Cal. 2121 &middot; 36 Jewels</dd></div>
+    <div class="flex justify-between py-2.5"><dt class="text-stone-500 dark:text-stone-400">Balance Amplitude</dt><dd class="font-mono font-semibold text-emerald-700 dark:text-emerald-300">294&deg; (+1.2 s/day)</dd></div>
+    <div class="flex justify-between py-2.5"><dt class="text-stone-500 dark:text-stone-400">Case Condition</dt><dd class="font-semibold">Unpolished Factory Chamfers</dd></div>
+  </dl>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl7]').forEach((root) => {
+    const b = root.querySelector('[data-dl7-copy]');
+    b?.addEventListener('click', () => { b.textContent = 'ARC-1972-994 Copied ✓'; setTimeout(() => { b.textContent = 'Copy Extract ID'; }, 1000); });
+  });
+})();
+</script>

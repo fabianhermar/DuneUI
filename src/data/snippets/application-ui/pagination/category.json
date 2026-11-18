@@ -1,0 +1,69 @@
+{
+  "slug": "pagination",
+  "index": "15",
+  "tag": "Navigation",
+  "title": "Pagination",
+  "description": "10 responsive page controls: top-border indicators, cursor paginators, dark pill steppers, Load More bars, and Neo-Brutalist page tiles.",
+  "specs": [
+    {
+      "file": "01-top-border-editorial-pager.html",
+      "title": "Top-Border Editorial Pager",
+      "styleTag": "Tailwind · Editorial",
+      "canvas": "light"
+    },
+    {
+      "file": "02-saas-table-cursor-status-bar.html",
+      "title": "SaaS Table Cursor Status Bar",
+      "styleTag": "Stripe · Data Table",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-dark-obsidian-pill-pager.html",
+      "title": "Dark Obsidian Pill Pager",
+      "styleTag": "Linear · Pill Capsule",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-brutalist-square-page-tiles.html",
+      "title": "Brutalist Square Page Tiles",
+      "styleTag": "Awwwards · Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-pager-stepper.html",
+      "title": "Liquid Glass Pager Stepper",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-prev-next-documentation-article-pager.html",
+      "title": "Prev / Next Documentation Article Pager",
+      "styleTag": "Docs · Prev / Next",
+      "canvas": "light"
+    },
+    {
+      "file": "07-load-more-progress-catalog-pager.html",
+      "title": "Load More Progress Catalog Pager",
+      "styleTag": "Commerce · Progress",
+      "canvas": "light"
+    },
+    {
+      "file": "08-command-page-jump-per-page-console.html",
+      "title": "Command Page-Jump & Per-Page Console",
+      "styleTag": "Admin · Page Jump",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-minimal-studio-segmented-pager.html",
+      "title": "Minimal Studio Segmented Pager",
+      "styleTag": "Studio · Segmented",
+      "canvas": "light"
+    },
+    {
+      "file": "10-interactive-mobile-stepper-pager.html",
+      "title": "Interactive Mobile Stepper Pager",
+      "styleTag": "iOS · Stepper",
+      "canvas": "dark"
+    }
+  ]
+}

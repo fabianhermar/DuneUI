@@ -1,0 +1,46 @@
+<section data-sc4 class="mx-auto w-full max-w-4xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0D12] p-6 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <h2 class="text-lg font-bold tracking-tight">Studio Hardware Rig Cart</h2>
+    <span class="rounded bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-700 dark:text-emerald-400">BATCH #04 IN STOCK</span>
+  </div>
+  <div class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-12">
+    <div class="space-y-3 md:col-span-7">
+      <div class="flex items-center justify-between gap-4 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/70 p-4">
+        <div class="flex items-center gap-3.5"><img src="/images/heroes/synth-keys.jpg" alt="Field Synth" class="size-16 rounded-lg object-cover border border-slate-200 dark:border-zinc-700" /><div><p class="text-xs font-bold">Field Poly Synth MKII</p><p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">SKU #SYN-890 &middot; Aluminum Grey</p></div></div>
+        <span class="font-mono text-sm font-bold">$899</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/70 p-4">
+        <div class="flex items-center gap-3.5"><img src="/images/ecommerce/lamp.jpg" alt="Studio Lamp" class="size-16 rounded-lg object-cover border border-slate-200 dark:border-zinc-700" /><div><p class="text-xs font-bold">Desk Task Illuminator</p><p class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">SKU #LMP-210 &middot; Warm Dim 95 CRI</p></div></div>
+        <span class="font-mono text-sm font-bold">$210</span>
+      </div>
+      <label class="flex items-center justify-between gap-3 rounded-xl border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-500/10 px-4 py-3 text-xs cursor-pointer">
+        <span class="flex items-center gap-2.5 font-medium"><input type="checkbox" data-sc4-care class="accent-indigo-600" /> Add 2-Year Accidental Hardware Care</span>
+        <span class="font-mono font-bold text-indigo-700 dark:text-indigo-300">+$65.00</span>
+      </label>
+    </div>
+    <div class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-5 md:col-span-5 flex flex-col justify-between">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500 dark:text-zinc-400">Rig Build Summary</p>
+        <dl class="mt-4 space-y-2.5 text-xs">
+          <div class="flex justify-between"><dt class="text-slate-500 dark:text-zinc-400">Hardware (2 units)</dt><dd class="font-mono">$1,109.00</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-500 dark:text-zinc-400">Hardware Care</dt><dd data-sc4-warr class="font-mono">$0.00</dd></div>
+          <div class="flex justify-between"><dt class="text-slate-500 dark:text-zinc-400">Insured Air Courier</dt><dd class="font-mono text-emerald-600 dark:text-emerald-400">Included</dd></div>
+        </dl>
+      </div>
+      <div class="mt-6 border-t border-slate-200 dark:border-zinc-800 pt-4">
+        <div class="flex justify-between text-sm font-bold"><span>Total Due</span><span data-sc4-tot class="font-mono">$1,109.00</span></div>
+        <button type="button" class="cursor-pointer mt-4 w-full rounded-lg bg-slate-900 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-slate-950 hover:opacity-90">Reserve Batch Dispatch</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc4]'); if (!root) return;
+  const chk = root.querySelector('[data-sc4-care]'), warr = root.querySelector('[data-sc4-warr]'), tot = root.querySelector('[data-sc4-tot]');
+  chk?.addEventListener('change', () => {
+    if (warr) warr.textContent = chk.checked ? '$65.00' : '$0.00';
+    if (tot) tot.textContent = chk.checked ? '$1,174.00' : '$1,109.00';
+  });
+})();
+</script>

@@ -1,0 +1,60 @@
+<section data-po7 class="mx-auto w-full max-w-5xl rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-950 p-5 sm:p-7 font-mono text-zinc-900 dark:text-zinc-100">
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-zinc-300 dark:border-zinc-800 pb-3 text-[11px]">
+    <div class="flex items-center gap-3">
+      <span class="bg-amber-400 px-2 py-0.5 font-bold text-zinc-950">TE-BERLIN // 06U</span>
+      <span class="text-zinc-500 dark:text-zinc-400">ANALOG FILTER BANK // REV.2</span>
+    </div>
+    <span class="text-emerald-700 dark:text-emerald-400 font-semibold">[ STATUS: CALIBRATED &amp; IN STOCK ]</span>
+  </div>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+    <div class="space-y-3 md:col-span-6">
+      <img src="/images/heroes/synth-modular.jpg" alt="Analog Filter Bank 6U" class="h-64 sm:h-80 w-full rounded-sm border border-zinc-300 dark:border-zinc-800 object-cover" />
+      <div class="grid grid-cols-3 border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-[10px]">
+        <div class="border-r border-zinc-300 dark:border-zinc-800 p-2.5"><span class="block text-zinc-400">FORMAT</span><span class="font-bold">42HP EURORACK</span></div>
+        <div class="border-r border-zinc-300 dark:border-zinc-800 p-2.5"><span class="block text-zinc-400">DRAW</span><span class="font-bold">+12V 140mA</span></div>
+        <div class="p-2.5"><span class="block text-zinc-400">IO BUS</span><span class="font-bold">CV / USB-C AUDIO</span></div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between space-y-4 md:col-span-6">
+      <div>
+        <h2 class="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">Analog Filter Bank 6U</h2>
+        <p class="mt-2 font-sans text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">Dual resonant state-variable OTA filters with bipolar CV attenuverters, analog soft-clip saturation, and class-compliant 24-bit USB audio return.</p>
+        <div class="mt-4 border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3.5 text-xs">
+          <p class="mb-2.5 text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Hardware Bundle Add-Ons</p>
+          <label class="flex cursor-pointer items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-2.5">
+            <span class="flex items-center gap-2"><input type="checkbox" checked disabled class="accent-amber-500" /> Base Module + Ribbon PSU</span>
+            <span class="font-bold">$640</span>
+          </label>
+          <label class="mt-2.5 flex cursor-pointer items-center justify-between">
+            <span class="flex items-center gap-2"><input type="checkbox" data-po7-addon="49" class="accent-amber-500" /> + 12 Braided Right-Angle Patch Cables</span>
+            <span class="font-bold text-amber-700 dark:text-amber-400">+$49</span>
+          </label>
+          <label class="mt-2.5 flex cursor-pointer items-center justify-between">
+            <span class="flex items-center gap-2"><input type="checkbox" data-po7-addon="110" class="accent-amber-500" /> + Machined 42HP Travel Skiff Case</span>
+            <span class="font-bold text-amber-700 dark:text-amber-400">+$110</span>
+          </label>
+        </div>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-zinc-300 dark:border-zinc-800 pt-4">
+        <div>
+          <span class="block text-[10px] text-zinc-500 dark:text-zinc-400">UNIT SUBTOTAL</span>
+          <span data-po7-total class="text-2xl font-bold text-zinc-950 dark:text-white">$640</span>
+        </div>
+        <button type="button" data-po7-btn class="flex-1 rounded-sm bg-amber-400 px-5 py-3 text-xs font-bold text-zinc-950 hover:bg-amber-300 transition">ADD UNIT TO CRATE &mdash; $640</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-po7]'); if (!r) return;
+  const tot = r.querySelector('[data-po7-total]'), btn = r.querySelector('[data-po7-btn]'), boxes = [...r.querySelectorAll('[data-po7-addon]')];
+  const calc = () => {
+    const sum = 640 + boxes.reduce((acc, c) => acc + (c.checked ? Number(c.dataset.po7Addon) : 0), 0);
+    tot.textContent = '$' + sum; btn.textContent = 'ADD UNIT TO CRATE — $' + sum;
+    return sum;
+  };
+  boxes.forEach(c => c.addEventListener('change', calc));
+  btn?.addEventListener('click', () => { btn.textContent = 'ADDED TO CRATE ($' + calc() + ')'; });
+})();
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "modals",
+  "index": "13",
+  "tag": "Overlays",
+  "title": "Modals & Dialogs",
+  "description": "10 responsive contained modal dialogs: Linear dark workspace invites, Liquid Glass sheets, 2FA verification, billing checkout, image preview, and brutalist promos.",
+  "specs": [
+    {
+      "file": "01-linear-workspace-invite-dialog.html",
+      "title": "Linear Workspace Invite Dialog",
+      "styleTag": "Linear · Dark Dialog",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-liquid-glass-upgrade-sheet.html",
+      "title": "Liquid Glass Upgrade Sheet",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "03-destructive-confirm-dialog.html",
+      "title": "Destructive Confirm Dialog",
+      "styleTag": "Tailwind · Safety",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-brutalist-promo-modal.html",
+      "title": "Brutalist Promo Modal",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "05-oauth-integration-dialog.html",
+      "title": "OAuth Integration Dialog",
+      "styleTag": "OAuth · GitHub",
+      "canvas": "light"
+    },
+    {
+      "file": "06-share-permissions-sheet.html",
+      "title": "Share & Permissions Sheet",
+      "styleTag": "Notion · Workspace",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-onboarding-product-tour-modal.html",
+      "title": "Onboarding Product Tour Modal",
+      "styleTag": "SaaS · Spotlight",
+      "canvas": "light"
+    },
+    {
+      "file": "08-nps-quick-survey-modal.html",
+      "title": "NPS Quick Survey Modal",
+      "styleTag": "Feedback · Rating",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-cookie-preferences-modal.html",
+      "title": "Cookie Preferences Modal",
+      "styleTag": "GDPR · Consent",
+      "canvas": "light"
+    },
+    {
+      "file": "10-dark-api-secret-reveal-modal.html",
+      "title": "Dark API Secret Reveal Modal",
+      "styleTag": "DevTools · Secret",
+      "canvas": "dark"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "category-filters",
+  "index": "59",
+  "tag": "Commerce",
+  "title": "Category Filters",
+  "description": "10 multi-facet storefront catalog & filter systems combining categories, price histograms, color swatches, sizes, ratings, shipping hubs, active filter chips, sorting, and live-filtered product grids.",
+  "specs": [
+    {
+      "file": "01-sidebar-multi-facet-storefront-live-grid.html",
+      "title": "Sidebar Multi-Facet Storefront & Live Grid",
+      "styleTag": "Storefront · Multi-Facet"
+    },
+    {
+      "file": "02-omnichannel-filter-bar-removable-active-chips.html",
+      "title": "Omnichannel Filter Bar & Removable Active Chips",
+      "styleTag": "Marketplace · Multi-Facet Bar"
+    },
+    {
+      "file": "03-price-distribution-histogram-multi-facet-filter.html",
+      "title": "Price Distribution Histogram & Multi-Facet Filter",
+      "styleTag": "Analytics · Range UX"
+    },
+    {
+      "file": "04-pro-studio-hardware-parametric-filter-workbench.html",
+      "title": "Pro Studio Hardware Parametric Filter Workbench",
+      "styleTag": "Hardware · Parametric Console",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-fashion-apparel-multi-facet-lookbook-filter.html",
+      "title": "Fashion & Apparel Multi-Facet Lookbook Filter",
+      "styleTag": "Fashion · Lookbook Matrix"
+    },
+    {
+      "file": "06-liquid-glass-spatial-multi-filter-command-deck.html",
+      "title": "Liquid Glass Spatial Multi-Filter Command Deck",
+      "styleTag": "Liquid Glass · Command Deck",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-neo-brutalist-collector-archive-filter-matrix.html",
+      "title": "Neo-Brutalist Collector Archive Filter Matrix",
+      "styleTag": "Brutalist · Collector Matrix"
+    },
+    {
+      "file": "08-marketplace-trust-rating-shipping-hub-filter.html",
+      "title": "Marketplace Trust, Rating & Shipping Hub Filter",
+      "styleTag": "Marketplace · Trust & Speed"
+    },
+    {
+      "file": "09-enterprise-mega-popover-filter-toolbar-catalog.html",
+      "title": "Enterprise Mega-Popover Filter Toolbar & Catalog",
+      "styleTag": "Popover · Mega-Toolbar"
+    },
+    {
+      "file": "10-curated-design-emporium-multi-dimension-explorer.html",
+      "title": "Curated Design Emporium Multi-Dimension Explorer",
+      "styleTag": "Editorial · Design Emporium"
+    }
+  ]
+}

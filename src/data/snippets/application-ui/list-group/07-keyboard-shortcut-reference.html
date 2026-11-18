@@ -1,0 +1,48 @@
+<div data-keys-list class="mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#14151a] shadow-lg text-xs text-slate-700 dark:text-zinc-200">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/10 px-4 py-3">
+    <span class="font-semibold text-slate-900 dark:text-white">Command Shortcuts</span>
+    <button type="button" data-os-toggle class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/5 px-2 py-0.5 font-mono text-[11px] font-medium text-slate-700 dark:text-zinc-300">macOS</button>
+  </div>
+  <ul class="divide-y divide-slate-100 dark:divide-white/10">
+    <li class="flex items-center justify-between px-4 py-3">
+      <span class="font-medium text-slate-800 dark:text-zinc-100">Open Command Palette</span>
+      <span class="flex items-center gap-1">
+        <kbd data-mod-key class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">⌘</kbd>
+        <kbd class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">K</kbd>
+      </span>
+    </li>
+    <li class="flex items-center justify-between px-4 py-3">
+      <span class="font-medium text-slate-800 dark:text-zinc-100">Toggle Mobile Viewport</span>
+      <span class="flex items-center gap-1">
+        <kbd data-mod-key class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">⌘</kbd>
+        <kbd class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">M</kbd>
+      </span>
+    </li>
+    <li class="flex items-center justify-between px-4 py-3">
+      <span class="font-medium text-slate-800 dark:text-zinc-100">Copy Clean HTML Snippet</span>
+      <span class="flex items-center gap-1">
+        <kbd data-mod-key class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">⌘</kbd>
+        <kbd class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">⇧</kbd>
+        <kbd class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">C</kbd>
+      </span>
+    </li>
+    <li class="flex items-center justify-between px-4 py-3">
+      <span class="font-medium text-slate-800 dark:text-zinc-100">Switch Stage Theme</span>
+      <span class="flex items-center gap-1">
+        <kbd data-mod-key class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">⌘</kbd>
+        <kbd class="rounded-md border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[11px] font-semibold shadow-[0_1px_0_0_rgba(15,23,42,0.12)]">D</kbd>
+      </span>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-keys-list]').forEach((root) => {
+    const toggle = root.querySelector('[data-os-toggle]');
+    const mods = root.querySelectorAll('[data-mod-key]');
+    toggle?.addEventListener('click', () => {
+      const win = toggle.textContent === 'macOS';
+      toggle.textContent = win ? 'Windows' : 'macOS';
+      mods.forEach((m) => { m.textContent = win ? 'Ctrl' : '⌘'; });
+    });
+  });
+</script>

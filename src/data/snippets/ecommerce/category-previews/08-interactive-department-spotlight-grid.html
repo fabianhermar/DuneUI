@@ -1,0 +1,61 @@
+<section data-cp8 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-8 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div>
+      <h2 class="text-lg font-bold text-slate-900 dark:text-white">Popular Departments</h2>
+      <p class="text-xs text-slate-500 dark:text-zinc-400">Select any department card to preview its featured category.</p>
+    </div>
+    <span class="rounded-full bg-indigo-50 dark:bg-indigo-500/15 px-3 py-1 font-mono text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">122 Active SKUs</span>
+  </div>
+  <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 text-xs">
+    <button type="button" data-cp8-dept="Audio &amp; Hi-Fi" data-cp8-sub="Reference Headphones &amp; Balanced DACs · From $349" data-cp8-img="/images/ecommerce/headphones.jpg" class="rounded-2xl border-2 border-indigo-600 bg-indigo-50/60 dark:bg-indigo-500/10 p-4 text-left transition">
+      <div class="flex items-center justify-between"><span class="rounded-lg bg-indigo-600 px-2 py-1 font-mono text-[10px] font-bold text-white">01</span><span class="font-mono text-indigo-600 dark:text-indigo-400">34 items</span></div>
+      <p class="mt-3 text-sm font-bold text-slate-900 dark:text-white">Audio &amp; Hi-Fi</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Studio monitoring</p>
+    </button>
+    <button type="button" data-cp8-dept="Desk Lamps" data-cp8-sub="Architectural Brass &amp; Matte Steel Lighting · From $145" data-cp8-img="/images/ecommerce/lamp.jpg" class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4 text-left hover:border-slate-400 dark:hover:border-zinc-600 transition">
+      <div class="flex items-center justify-between"><span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2 py-1 font-mono text-[10px] font-bold text-slate-700 dark:text-zinc-300">02</span><span class="font-mono text-slate-500 dark:text-zinc-400">19 items</span></div>
+      <p class="mt-3 text-sm font-bold text-slate-900 dark:text-white">Desk Lamps</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Task &amp; ambient</p>
+    </button>
+    <button type="button" data-cp8-dept="Ceramics" data-cp8-sub="Kyoto Hand-Thrown Carafes &amp; Drippers · From $38" data-cp8-img="/images/ecommerce/carafe.jpg" class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4 text-left hover:border-slate-400 dark:hover:border-zinc-600 transition">
+      <div class="flex items-center justify-between"><span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2 py-1 font-mono text-[10px] font-bold text-slate-700 dark:text-zinc-300">03</span><span class="font-mono text-slate-500 dark:text-zinc-400">42 items</span></div>
+      <p class="mt-3 text-sm font-bold text-slate-900 dark:text-white">Ceramics</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Kiln tableware</p>
+    </button>
+    <button type="button" data-cp8-dept="Leather Carry" data-cp8-sub="24oz Waxed Canvas Totes &amp; Sleeves · From $64" data-cp8-img="/images/ecommerce/tote.jpg" class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4 text-left hover:border-slate-400 dark:hover:border-zinc-600 transition">
+      <div class="flex items-center justify-between"><span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2 py-1 font-mono text-[10px] font-bold text-slate-700 dark:text-zinc-300">04</span><span class="font-mono text-slate-500 dark:text-zinc-400">27 items</span></div>
+      <p class="mt-3 text-sm font-bold text-slate-900 dark:text-white">Leather Carry</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Everyday packs</p>
+    </button>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-3.5 text-xs">
+    <div class="flex items-center gap-3.5">
+      <img data-cp8-imgbox src="/images/ecommerce/headphones.jpg" alt="Selected Department" class="size-14 rounded-xl object-cover border border-slate-200 dark:border-zinc-800" />
+      <div>
+        <p data-cp8-title class="text-sm font-bold text-slate-900 dark:text-white">Audio &amp; Hi-Fi</p>
+        <p data-cp8-subtxt class="text-slate-500 dark:text-zinc-400">Reference Headphones &amp; Balanced DACs · From $349</p>
+      </div>
+    </div>
+    <a href="#shop-dept" data-cp8-cta class="rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-zinc-200">Shop Audio &amp; Hi-Fi &rarr;</a>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cp8]'); if (!r) return;
+  const img = r.querySelector('[data-cp8-imgbox]'), ttl = r.querySelector('[data-cp8-title]'), sub = r.querySelector('[data-cp8-subtxt]'), cta = r.querySelector('[data-cp8-cta]');
+  const ds = [...r.querySelectorAll('[data-cp8-dept]')];
+  ds.forEach(b => b.addEventListener('click', () => {
+    img.src = b.dataset.cp8Img; ttl.textContent = b.dataset.cp8Dept; sub.textContent = b.dataset.cp8Sub; cta.textContent = 'Shop ' + b.dataset.cp8Dept + ' →';
+    ds.forEach(x => {
+      const badge = x.querySelector('span');
+      if (x === b) {
+        x.className = 'rounded-2xl border-2 border-indigo-600 bg-indigo-50/60 dark:bg-indigo-500/10 p-4 text-left transition';
+        badge.className = 'rounded-lg bg-indigo-600 px-2 py-1 font-mono text-[10px] font-bold text-white';
+      } else {
+        x.className = 'rounded-2xl border border-slate-200 dark:border-zinc-800 p-4 text-left hover:border-slate-400 dark:hover:border-zinc-600 transition';
+        badge.className = 'rounded-lg bg-slate-100 dark:bg-zinc-900 px-2 py-1 font-mono text-[10px] font-bold text-slate-700 dark:text-zinc-300';
+      }
+    });
+  }));
+})();
+</script>

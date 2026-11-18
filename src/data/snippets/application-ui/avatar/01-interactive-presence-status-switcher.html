@@ -1,0 +1,45 @@
+<div data-avatar-presence class="mx-auto w-full max-w-lg rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 sm:p-5 shadow-sm text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3.5">
+      <div class="relative shrink-0">
+        <img src="/images/avatars/sofia.jpg" alt="Sofia Navarro" data-presence-ring class="size-14 rounded-full object-cover object-top ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-zinc-900 transition-all" />
+        <span data-presence-dot class="absolute bottom-0 right-0 size-4 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-zinc-900"></span>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <strong class="text-sm font-semibold text-slate-900 dark:text-white">Sofia Navarro</strong>
+          <span data-presence-badge class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-700 dark:text-emerald-300">ONLINE</span>
+        </div>
+        <p data-presence-note class="mt-0.5 text-xs text-slate-600 dark:text-zinc-400">Available for design reviews · San Francisco</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2 border-t border-slate-100 dark:border-zinc-800 pt-3">
+    <button type="button" data-status-opt="online" data-ring="ring-emerald-500" data-dot="bg-emerald-500" data-label="ONLINE" data-note="Available for design reviews · San Francisco" class="rounded-lg border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">Online</button>
+    <button type="button" data-status-opt="focus" data-ring="ring-violet-500" data-dot="bg-violet-500" data-label="FOCUS" data-note="Deep work mode · Notifications muted" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700">In Focus</button>
+    <button type="button" data-status-opt="away" data-ring="ring-amber-500" data-dot="bg-amber-500" data-label="AWAY" data-note="Stepped out · Back at 15:30 PST" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700">Away</button>
+    <button type="button" data-status-opt="dnd" data-ring="ring-rose-500" data-dot="bg-rose-500" data-label="DND" data-note="Presenting screen · Replies paused" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700">Do Not Disturb</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-avatar-presence]');
+      const img = root.querySelector('[data-presence-ring]');
+      const dot = root.querySelector('[data-presence-dot]');
+      const badge = root.querySelector('[data-presence-badge]');
+      const note = root.querySelector('[data-presence-note]');
+      const btns = root.querySelectorAll('[data-status-opt]');
+      const rings = ['ring-emerald-500', 'ring-violet-500', 'ring-amber-500', 'ring-rose-500'];
+      const dots = ['bg-emerald-500', 'bg-violet-500', 'bg-amber-500', 'bg-rose-500'];
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          img.classList.remove(...rings);
+          img.classList.add(btn.dataset.ring);
+          dot.classList.remove(...dots);
+          dot.classList.add(btn.dataset.dot);
+          badge.textContent = btn.dataset.label;
+          note.textContent = btn.dataset.note;
+        });
+      });
+    })();
+  </script>
+</div>

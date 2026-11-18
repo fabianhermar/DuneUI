@@ -1,0 +1,48 @@
+<section class="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-br from-slate-50 dark:from-slate-950 via-white dark:via-indigo-950 to-sky-50/80 dark:to-slate-950 p-6 sm:p-7 text-slate-900 dark:text-white shadow-xl space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 px-1">
+    <div>
+      <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">Spatial Compositor</span>
+      <h2 class="mt-0.5 text-lg font-bold">Optical Depth &amp; Acoustic Layers</h2>
+    </div>
+    <span class="rounded-full border border-slate-900/10 dark:border-white/20 bg-white/70 dark:bg-white/10 px-3 py-1 font-mono text-[11px] font-semibold backdrop-blur-md">visionOS 2.4 Ready</span>
+  </div>
+  <div class="space-y-3">
+    <details class="group rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/80 dark:bg-white/12 p-5 shadow-lg backdrop-blur-2xl [&_summary::-webkit-details-marker]:hidden" open>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold">
+        <div class="flex items-center gap-3">
+          <span class="size-2.5 rounded-full bg-sky-500 shadow-[0_0_10px_#0ea5e9]"></span>
+          <span>Spatial depth layers &amp; real-time refraction blur</span>
+        </div>
+        <span class="shrink-0 rounded-full bg-sky-500/15 dark:bg-sky-400/20 px-3 py-0.5 font-mono text-[11px] font-semibold text-sky-700 dark:text-sky-200">Active &middot; 120Hz</span>
+      </summary>
+      <div class="mt-4 space-y-3 border-t border-slate-900/10 dark:border-white/15 pt-3.5 text-xs leading-relaxed text-slate-700 dark:text-white/80">
+        <p>Multi-pass Gaussian blur and specular 1px inner borders separate interactive foreground controls from high-motion ambient video stages.</p>
+        <div class="grid grid-cols-3 gap-2.5 rounded-xl border border-slate-900/10 dark:border-white/15 bg-slate-900/[0.04] dark:bg-slate-950/40 p-3 font-mono text-[11px]">
+          <div><span class="block text-[10px] opacity-65">BLUR RADIUS</span><strong>32px Frosted</strong></div>
+          <div><span class="block text-[10px] opacity-65">REFRACTION</span><strong>1.48 Index</strong></div>
+          <div><span class="block text-[10px] opacity-65">FRAME BUDGET</span><strong>&lt; 1.8ms GPU</strong></div>
+        </div>
+      </div>
+    </details>
+    <details class="group rounded-2xl border border-slate-900/15 dark:border-white/20 bg-white/65 dark:bg-white/[0.07] p-5 backdrop-blur-2xl [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold">
+        <div class="flex items-center gap-3">
+          <span class="size-2.5 rounded-full bg-indigo-400"></span>
+          <span>Adaptive luminance &amp; contrast over HDR video</span>
+        </div>
+        <span class="shrink-0 rounded-full bg-slate-900/[0.07] dark:bg-white/15 px-3 py-0.5 font-mono text-[11px] font-medium text-slate-600 dark:text-white/75">Auto-Scrim</span>
+      </summary>
+      <p class="mt-3.5 border-t border-slate-900/10 dark:border-white/15 pt-3 text-xs leading-relaxed text-slate-700 dark:text-white/80">Dynamic scrim calibration samples background luminance every frame to preserve WCAG AA legibility across bright and dark scenes.</p>
+    </details>
+    <details class="group rounded-2xl border border-slate-900/15 dark:border-white/20 bg-white/65 dark:bg-white/[0.07] p-5 backdrop-blur-2xl [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold">
+        <div class="flex items-center gap-3">
+          <span class="size-2.5 rounded-full bg-emerald-400"></span>
+          <span>Head-tracked spatial audio raytracing</span>
+        </div>
+        <span class="shrink-0 rounded-full bg-slate-900/[0.07] dark:bg-white/15 px-3 py-0.5 font-mono text-[11px] font-medium text-slate-600 dark:text-white/75">64 Channels</span>
+      </summary>
+      <p class="mt-3.5 border-t border-slate-900/10 dark:border-white/15 pt-3 text-xs leading-relaxed text-slate-700 dark:text-white/80">Binaural acoustic reflections adapt to room geometry and window distance for natural tactile feedback when toggling disclosures.</p>
+    </details>
+  </div>
+</section>

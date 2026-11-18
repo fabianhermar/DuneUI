@@ -1,0 +1,39 @@
+<div role="alert" data-cookie-alert class="mx-auto w-full max-w-2xl rounded-2xl bg-white dark:bg-zinc-900 p-5 shadow-md ring-1 ring-slate-200 dark:ring-zinc-800 text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+    <div class="text-xs leading-relaxed text-slate-600 dark:text-zinc-300">
+      <strong class="block text-sm font-semibold text-slate-900 dark:text-white">Your privacy preferences</strong>
+      Strict first-party session cookies only by default—no ad brokers or cross-site tracking.
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-2">
+      <button type="button" data-cookie-manage class="rounded-lg border border-slate-200 dark:border-zinc-700 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-50 dark:hover:bg-zinc-800">Manage</button>
+      <button type="button" data-cookie-accept class="rounded-lg bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-zinc-200">Accept All</button>
+    </div>
+  </div>
+  <div data-cookie-prefs class="mt-4 hidden space-y-2 border-t border-slate-100 dark:border-zinc-800 pt-3.5 text-xs">
+    <label class="flex items-center justify-between text-slate-600 dark:text-zinc-300">
+      <span><strong>Essential Security</strong> &middot; Session auth &amp; CSRF</span>
+      <span class="rounded bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 font-mono text-[10px] font-semibold">Always On</span>
+    </label>
+    <label class="flex items-center justify-between text-slate-700 dark:text-zinc-300 cursor-pointer">
+      <span><strong>Telemetry &amp; Diagnostics</strong> &middot; Anonymous perf timing</span>
+      <input type="checkbox" checked class="size-4 accent-indigo-600 rounded" />
+    </label>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-cookie-alert]');
+      const manage = root.querySelector('[data-cookie-manage]');
+      const accept = root.querySelector('[data-cookie-accept]');
+      const prefs = root.querySelector('[data-cookie-prefs]');
+      manage?.addEventListener('click', () => {
+        const open = prefs.classList.toggle('hidden') === false;
+        manage.textContent = open ? 'Save Choices' : 'Manage';
+      });
+      accept?.addEventListener('click', () => {
+        accept.textContent = 'Preferences Saved ✓';
+        prefs.classList.add('hidden');
+        manage.textContent = 'Manage';
+      });
+    })();
+  </script>
+</div>

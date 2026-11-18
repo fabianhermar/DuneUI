@@ -1,0 +1,97 @@
+<div data-shell-docs class="flex w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 md:min-h-[460px] md:flex-row text-black dark:text-zinc-100">
+  <div class="flex md:hidden items-center justify-between gap-2 border-b border-stone-200 dark:border-zinc-800 bg-[#F7F6F3] dark:bg-zinc-950 px-3.5 py-2.5">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle documentation tree" class="inline-flex size-8 shrink-0 items-center justify-center rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-stone-900 dark:text-zinc-100">
+        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <span class="flex size-6 shrink-0 items-center justify-center rounded bg-white dark:bg-stone-900 text-[11px] font-bold text-stone-900 dark:text-white border border-stone-200 dark:border-white/15">K</span>
+      <span class="truncate text-xs font-bold text-stone-900 dark:text-stone-100">Kanso Knowledge</span>
+    </div>
+    <span class="text-[11px] font-medium text-stone-500 dark:text-zinc-400">Docs Tree</span>
+  </div>
+
+  <aside data-sidebar-drawer class="hidden md:flex w-full shrink-0 flex-col justify-between border-b border-stone-200 dark:border-zinc-800 bg-[#F7F6F3] dark:bg-zinc-950/60 p-4 text-stone-700 dark:text-stone-300 md:w-64 md:border-b-0 md:border-r">
+    <div>
+      <div class="hidden md:flex items-center justify-between rounded-lg px-2 py-1.5 hover:bg-stone-200/60 dark:hover:bg-zinc-800">
+        <span class="flex items-center gap-2 text-xs font-bold text-stone-900 dark:text-stone-100">
+          <span class="flex size-6 items-center justify-center rounded bg-slate-50 dark:bg-stone-900 text-[11px] text-slate-900 dark:text-white border border-slate-200 dark:border-white/15">K</span>
+          Kanso Knowledge
+        </span>
+        <span class="text-xs text-stone-500 dark:text-zinc-400">⇄</span>
+      </div>
+
+      <div class="md:mt-4 space-y-4 text-xs">
+        <div>
+          <p class="px-2 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:text-zinc-400">Teamspaces</p>
+          <div class="mt-1.5 space-y-1">
+            <details open class="group">
+              <summary class="flex cursor-pointer items-center justify-between rounded-lg bg-stone-200/70 px-2 py-1.5 font-semibold text-stone-900 dark:text-stone-100 dark:bg-zinc-800">
+                <span>▸ Product Engineering</span>
+              </summary>
+              <div class="mt-1 ml-3 space-y-1 border-l border-stone-300 dark:border-zinc-700 pl-3 text-stone-600 dark:text-stone-300">
+                <button type="button" data-doc-link data-doc-crumb="Product Engineering / Architecture RFCs" data-doc-title="Component Isolation via Same-Origin Iframes" class="block w-full rounded px-2 py-1 text-left font-semibold text-stone-950 dark:text-white bg-white dark:bg-zinc-800 shadow-2xs border border-slate-200 dark:border-zinc-700">Architecture RFCs</button>
+                <button type="button" data-doc-link data-doc-crumb="Product Engineering / API Deprecation Policy" data-doc-title="Versioning &amp; 12-Month Sunset Windows" class="block w-full rounded px-2 py-1 text-left hover:bg-stone-200/50 dark:hover:bg-zinc-800">API Deprecation Policy</button>
+                <button type="button" data-doc-link data-doc-crumb="Product Engineering / Q4 Launch Checklist" data-doc-title="Production Readiness &amp; Telemetry Gates" class="block w-full rounded px-2 py-1 text-left hover:bg-stone-200/50 dark:hover:bg-zinc-800">Q4 Launch Checklist</button>
+              </div>
+            </details>
+            <details class="group">
+              <summary class="flex cursor-pointer items-center rounded-lg px-2 py-1.5 font-medium text-stone-600 dark:text-stone-300 hover:bg-stone-200/50 dark:hover:bg-zinc-800">
+                <span>▸ Brand Guidelines</span>
+              </summary>
+              <div class="mt-1 ml-3 space-y-1 border-l border-stone-300 dark:border-zinc-700 pl-3 text-stone-600 dark:text-stone-300">
+                <button type="button" data-doc-link data-doc-crumb="Brand Guidelines / Typography Scale" data-doc-title="Editorial Serif &amp; Mono Rhythm" class="block w-full rounded px-2 py-1 text-left hover:bg-stone-200/50 dark:hover:bg-zinc-800">Typography Scale</button>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex items-center justify-between border-t border-stone-200 dark:border-zinc-800 pt-3 text-xs">
+      <button type="button" data-new-doc class="font-semibold text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white">+ New Page</button>
+      <span class="text-[11px] text-stone-500 dark:text-zinc-400">Trash (4)</span>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0 p-5 sm:p-8">
+    <p data-doc-crumb-view class="text-xs text-stone-500 dark:text-zinc-400">Product Engineering / Architecture RFCs</p>
+    <h4 data-doc-title-view class="mt-2 font-serif text-xl sm:text-2xl font-semibold text-stone-900 dark:text-stone-100">Component Isolation via Same-Origin Iframes</h4>
+    <p class="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-300">Using nested collapsible folder trees lets teams navigate dense documentation without overcrowding small screens.</p>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-docs]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const crumbView = root.querySelector('[data-doc-crumb-view]');
+    const titleView = root.querySelector('[data-doc-title-view]');
+    const links = Array.from(root.querySelectorAll('[data-doc-link]'));
+    const newDocBtn = root.querySelector('[data-new-doc]');
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    links.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        links.forEach((el) => {
+          el.classList.remove('font-semibold', 'text-stone-950', 'dark:text-white', 'bg-white', 'dark:bg-zinc-800', 'shadow-2xs', 'border', 'border-slate-200', 'dark:border-zinc-700');
+        });
+        btn.classList.add('font-semibold', 'text-stone-950', 'dark:text-white', 'bg-white', 'dark:bg-zinc-800', 'shadow-2xs', 'border', 'border-slate-200', 'dark:border-zinc-700');
+        if (crumbView) crumbView.textContent = btn.getAttribute('data-doc-crumb') || '';
+        if (titleView) titleView.innerHTML = btn.getAttribute('data-doc-title') || '';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+    newDocBtn?.addEventListener('click', () => {
+      if (crumbView) crumbView.textContent = 'Drafts / Untitled Page';
+      if (titleView) titleView.textContent = 'Untitled Architecture Note';
+      if (window.innerWidth < 768) setDrawer(false);
+    });
+  });
+</script>

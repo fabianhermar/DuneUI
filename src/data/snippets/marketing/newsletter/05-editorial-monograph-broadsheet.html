@@ -1,0 +1,36 @@
+<section data-nl-5 class="mx-auto w-full max-w-4xl rounded-2xl border border-stone-300 dark:border-zinc-700 bg-[#FAF8F4] dark:bg-zinc-900 p-6 sm:p-10 text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-stone-900/80 dark:border-zinc-600 pb-3 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-stone-600 dark:text-stone-400">
+    <span>Sunday Monograph · Vol. IV</span>
+    <span>Est. 2022 · Free Edition</span>
+  </div>
+  <div class="mt-6 grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+    <div class="md:col-span-6">
+      <h2 class="font-serif text-3xl leading-tight text-stone-900 dark:text-stone-100">Essays on quiet software, typography, and digital craft.</h2>
+      <div class="mt-5 flex items-center gap-3">
+        <img src="/images/testimonials/henrik.jpg" alt="Henrik Lindqvist" class="size-8 rounded-full object-cover border border-stone-300 dark:border-zinc-700" />
+        <p class="text-xs text-stone-600 dark:text-stone-400">Curated weekly by <span class="font-semibold text-stone-900 dark:text-stone-100">Henrik Lindqvist</span></p>
+      </div>
+    </div>
+    <div class="border-t border-stone-300 dark:border-zinc-700 pt-5 md:col-span-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+      <form data-nl-form class="space-y-3">
+        <label class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-stone-600 dark:text-stone-400">Reader Email Address</label>
+        <div class="flex flex-col gap-2 sm:flex-row">
+          <input type="email" required placeholder="reader@monograph.org" class="w-full flex-1 border border-stone-400 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-3.5 py-2.5 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-500 dark:placeholder:text-zinc-400 focus:border-stone-900 dark:focus:border-stone-200 focus:outline-none" />
+          <button type="submit" class="shrink-0 bg-stone-900 dark:bg-white px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-wider text-[#FAF8F4] dark:text-stone-900 hover:bg-stone-800 dark:hover:bg-zinc-200 transition">Subscribe</button>
+        </div>
+        <p data-nl-msg class="hidden font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">✓ Confirmed for Sunday's morning edition.</p>
+        <p class="font-serif text-xs italic text-stone-500 dark:text-stone-400">Read free by 19,400+ designers &amp; authors.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-5]').forEach((root) => {
+    const form = root.querySelector('[data-nl-form]');
+    const msg = root.querySelector('[data-nl-msg]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg?.classList.remove('hidden');
+    });
+  });
+</script>

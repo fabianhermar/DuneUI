@@ -1,0 +1,64 @@
+{
+  "slug": "page-headings",
+  "index": "53",
+  "tag": "Layout",
+  "title": "Page Headings",
+  "description": "10 radically distinct page & header compositions spanning cinema festival mastheads, architectural estate hero bars, modular vinyl player headers, clinical patient charts, EV paddock telemetry, Bauhaus syllabi, horology auction lots, tasting-menu reservations, aviation dispatch strips, and broadsheet editorial mastheads.",
+  "specs": [
+    {
+      "file": "01-cinema-festival-screening-premiere-header.html",
+      "title": "Cinema Festival & Screening Premiere Header",
+      "styleTag": "MUBI · Cinema Masthead",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-architectural-residence-estate-hero-header.html",
+      "title": "Architectural Residence & Estate Hero Header",
+      "styleTag": "Architecture · Full-Bleed"
+    },
+    {
+      "file": "03-modular-synth-vinyl-release-player-header.html",
+      "title": "Modular Synth Vinyl Release Player Header",
+      "styleTag": "Audio · Studio Sleeve",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-clinical-patient-chart-vitals-header.html",
+      "title": "Clinical Patient Chart & Vitals Header",
+      "styleTag": "Healthcare · EHR Bar"
+    },
+    {
+      "file": "05-motorsport-ev-paddock-telemetry-header.html",
+      "title": "Motorsport EV Paddock Telemetry Header",
+      "styleTag": "Automotive · Paddock",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-bauhaus-design-academy-module-header.html",
+      "title": "Bauhaus Design Academy Module Header",
+      "styleTag": "Bauhaus · Syllabus"
+    },
+    {
+      "file": "07-luxury-horology-auction-lot-header.html",
+      "title": "Luxury Horology Auction Lot Header",
+      "styleTag": "Auction · Horology",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-michelin-tasting-room-seating-header.html",
+      "title": "Michelin Tasting Room & Seating Header",
+      "styleTag": "Hospitality · Dining"
+    },
+    {
+      "file": "09-aviation-transpacific-flight-dispatch-header.html",
+      "title": "Aviation Transpacific Flight Dispatch Header",
+      "styleTag": "Aviation · Ops Strip",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-broadsheet-longform-journalism-masthead.html",
+      "title": "Broadsheet Longform Journalism Masthead",
+      "styleTag": "Editorial · Print Press"
+    }
+  ]
+}

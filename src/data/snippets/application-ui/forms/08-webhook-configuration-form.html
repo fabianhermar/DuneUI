@@ -1,0 +1,64 @@
+<form data-webhook-form class="w-full max-w-xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 text-slate-900 dark:text-zinc-100 shadow-lg sm:p-6">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div>
+      <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Outbound Webhook Endpoint</h3>
+      <p class="mt-0.5 text-xs text-slate-600 dark:text-zinc-400">Signed HMAC-SHA256 JSON payloads on deployment events.</p>
+    </div>
+    <span class="rounded-md border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">TLS 1.3</span>
+  </div>
+  <div class="mt-5 space-y-4">
+    <div>
+      <label class="block font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-zinc-400">Payload URL</label>
+      <input type="url" value="https://hooks.acme.dev/v2/dune-events" class="mt-1.5 w-full rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/70 px-3 py-2 font-mono text-xs text-slate-900 dark:text-zinc-100 focus:border-rose-500 focus:outline-none" />
+    </div>
+    <div>
+      <div class="flex items-center justify-between gap-2">
+        <label class="block font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-zinc-400">Signing Secret</label>
+        <button type="button" data-secret-toggle class="font-mono text-[11px] font-semibold text-rose-600 dark:text-rose-400 hover:underline">Reveal</button>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/70 px-3 py-2 font-mono text-xs text-slate-800 dark:text-zinc-200">
+        <span data-secret-val>whsec_9a4f••••••••••8c21</span>
+        <span class="text-[10px] uppercase text-slate-500 dark:text-zinc-400">HMAC-256</span>
+      </div>
+    </div>
+    <div>
+      <label class="block font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-zinc-400">Subscribed Events</label>
+      <div class="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/50 px-3 py-2 font-mono text-xs text-slate-800 dark:text-zinc-200"><input type="checkbox" checked class="accent-rose-500" /> deploy.succeeded</label>
+        <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/50 px-3 py-2 font-mono text-xs text-slate-800 dark:text-zinc-200"><input type="checkbox" checked class="accent-rose-500" /> build.failed</label>
+        <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/50 px-3 py-2 font-mono text-xs text-slate-800 dark:text-zinc-200"><input type="checkbox" class="accent-rose-500" /> domain.verified</label>
+        <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/50 px-3 py-2 font-mono text-xs text-slate-800 dark:text-zinc-200"><input type="checkbox" class="accent-rose-500" /> invoice.paid</label>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 flex flex-col gap-3 border-t border-slate-100 dark:border-zinc-800 pt-4 sm:flex-row sm:items-center sm:justify-between">
+    <span data-webhook-status class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">Status: Idle</span>
+    <div class="flex flex-col gap-2 sm:flex-row">
+      <button type="button" data-webhook-test class="rounded-lg border border-slate-200 dark:border-zinc-700 px-3.5 py-2 text-xs font-medium text-slate-700 dark:text-zinc-200 hover:bg-slate-50 dark:hover:bg-zinc-800">Send Test Event</button>
+      <button type="button" data-webhook-save class="rounded-lg bg-rose-600 px-4 py-2 text-xs font-semibold text-white hover:bg-rose-700">Save Endpoint</button>
+    </div>
+  </div>
+</form>
+<script>
+  document.querySelectorAll('[data-webhook-form]').forEach((form) => {
+    const secToggle = form.querySelector('[data-secret-toggle]');
+    const secVal = form.querySelector('[data-secret-val]');
+    const testBtn = form.querySelector('[data-webhook-test]');
+    const saveBtn = form.querySelector('[data-webhook-save]');
+    const status = form.querySelector('[data-webhook-status]');
+    secToggle?.addEventListener('click', () => {
+      const revealed = secToggle.textContent === 'Hide';
+      secToggle.textContent = revealed ? 'Reveal' : 'Hide';
+      if (secVal) secVal.textContent = revealed ? 'whsec_9a4f••••••••••8c21' : 'whsec_9a4f2d1b7e04a8c21';
+    });
+    testBtn?.addEventListener('click', () => {
+      if (status) {
+        status.textContent = '200 OK · 38ms';
+        status.className = 'font-mono text-[11px] font-semibold text-emerald-600 dark:text-emerald-400';
+      }
+    });
+    saveBtn?.addEventListener('click', () => {
+      saveBtn.textContent = saveBtn.textContent === 'Endpoint Saved' ? 'Save Endpoint' : 'Endpoint Saved';
+    });
+  });
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "testimonials",
+  "index": "26",
+  "tag": "Social Proof",
+  "title": "Testimonials",
+  "description": "Editorial portrait pull-quotes, asymmetric bento walls of love, video story frames, ROI case-study splits, and verified developer social proof.",
+  "specs": [
+    {
+      "file": "01-bento-wall-of-love-proof.html",
+      "title": "Bento Wall of Love Proof",
+      "styleTag": "Tailwind · Bento",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-magazine-split-pull-quote.html",
+      "title": "Magazine Split Pull-Quote",
+      "styleTag": "Editorial · Split",
+      "canvas": "light"
+    },
+    {
+      "file": "03-dark-enterprise-telemetry.html",
+      "title": "Dark Enterprise Telemetry",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-glass-story-pager-proof.html",
+      "title": "Glass Story Pager Proof",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-zine-cutout-quote.html",
+      "title": "Brutalist Zine Cutout Quote",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "06-case-study-kpi-endorsement.html",
+      "title": "Case Study KPI Endorsement",
+      "styleTag": "Stripe Case Study",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-developer-proof-thread-duo.html",
+      "title": "Developer Proof Thread Duo",
+      "styleTag": "Dev Community",
+      "canvas": "light"
+    },
+    {
+      "file": "08-ratings-trophies-strip.html",
+      "title": "Ratings & Trophies Strip",
+      "styleTag": "Social · Score",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-video-customer-story-frame.html",
+      "title": "Video Customer Story Frame",
+      "styleTag": "Video Story · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-enterprise-quote-switcher.html",
+      "title": "Enterprise Quote Switcher",
+      "styleTag": "B2B Enterprise",
+      "canvas": "light"
+    }
+  ]
+}

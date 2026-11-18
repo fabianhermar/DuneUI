@@ -1,0 +1,69 @@
+{
+  "slug": "loaders",
+  "index": "60",
+  "tag": "Feedback",
+  "title": "Loaders & Spinners",
+  "description": "10 high-craft loading states, orbital SVG spinners, AI neural reasoning streams, Linear build pipelines, spatial glass orbs, fintech verification loaders, and interactive async button kits.",
+  "specs": [
+    {
+      "file": "01-orbital-svg-ring-telemetry-loader.html",
+      "title": "Orbital SVG Ring & Live Telemetry Loader",
+      "styleTag": "Tailwind · Precision",
+      "canvas": "light"
+    },
+    {
+      "file": "02-ai-neural-reasoning-stream-loader.html",
+      "title": "AI Neural Reasoning & Token Stream Loader",
+      "styleTag": "AI · Telemetry",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-linear-dark-deployment-pipeline-loader.html",
+      "title": "Linear Obsidian Build & Edge Deploy Loader",
+      "styleTag": "Linear · Dark Ops",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-neo-brutalist-arcade-block-loader.html",
+      "title": "Neo-Brutalist Block Matrix & Buffer Loader",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-spatial-orb-loader.html",
+      "title": "Liquid Glass Spatial Orb & Refraction Loader",
+      "styleTag": "Liquid Glass · Spatial",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-stripe-fintech-payment-verification-loader.html",
+      "title": "Fintech 3D-Secure & Settlement Loader",
+      "styleTag": "Stripe · Fintech",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-bento-multi-widget-async-loader-grid.html",
+      "title": "Bento 4-Widget Micro-Loader Showcase",
+      "styleTag": "Bento · Micro-Spinners",
+      "canvas": "light"
+    },
+    {
+      "file": "08-editorial-atelier-hourglass-manifest-loader.html",
+      "title": "Editorial Atelier Allocation & Craft Loader",
+      "styleTag": "Editorial · Luxury",
+      "canvas": "light"
+    },
+    {
+      "file": "09-cloud-database-migration-matrix-loader.html",
+      "title": "Database Cluster Shard & Replica Sync Loader",
+      "styleTag": "DevTools · Cluster",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-interactive-button-inline-loader-collection.html",
+      "title": "Interactive Async Button & Pill Loader Kit",
+      "styleTag": "Micro-UX · Controls",
+      "canvas": "light"
+    }
+  ]
+}

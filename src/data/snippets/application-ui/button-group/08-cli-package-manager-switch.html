@@ -1,0 +1,39 @@
+<div data-cli-switch class="mx-auto w-full max-w-md rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 p-2.5 text-slate-900 dark:text-zinc-100 shadow-2xs">
+  <div class="flex items-center gap-1 border-b border-slate-200 dark:border-white/10 pb-2 font-mono text-[11px]">
+    <button type="button" data-pm="pnpm" data-cmd="pnpm add @dune/ui" aria-pressed="true" class="rounded-md bg-slate-900/8 dark:bg-white/12 px-2.5 py-1 font-semibold text-slate-950 dark:text-white cursor-pointer transition-colors">pnpm</button>
+    <button type="button" data-pm="npm" data-cmd="npm install @dune/ui" aria-pressed="false" class="rounded-md px-2.5 py-1 font-medium text-slate-600 dark:text-zinc-400 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-colors">npm</button>
+    <button type="button" data-pm="bun" data-cmd="bun add @dune/ui" aria-pressed="false" class="rounded-md px-2.5 py-1 font-medium text-slate-600 dark:text-zinc-400 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-colors">bun</button>
+  </div>
+  <div class="flex items-center justify-between gap-2 px-1.5 pt-2.5 font-mono text-xs">
+    <span class="truncate text-emerald-700 dark:text-emerald-300"><span class="mr-1.5 text-slate-400 dark:text-zinc-500 select-none">$</span><span data-cli-cmd>pnpm add @dune/ui</span></span>
+    <button type="button" data-cli-copy class="inline-flex items-center gap-1 rounded-md border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2 py-1 text-[11px] font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-colors">Copy</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-cli-switch]');
+      const tabs = root.querySelectorAll('[data-pm]');
+      const cmdEl = root.querySelector('[data-cli-cmd]');
+      const copyBtn = root.querySelector('[data-cli-copy]');
+      const activeCls = ['bg-slate-900/8', 'dark:bg-white/12', 'font-semibold', 'text-slate-950', 'dark:text-white'];
+      const idleCls = ['font-medium', 'text-slate-600', 'dark:text-zinc-400'];
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => {
+            t.setAttribute('aria-pressed', 'false');
+            t.classList.remove(...activeCls);
+            t.classList.add(...idleCls);
+          });
+          tab.setAttribute('aria-pressed', 'true');
+          tab.classList.remove(...idleCls);
+          tab.classList.add(...activeCls);
+          cmdEl.textContent = tab.dataset.cmd;
+        });
+      });
+      copyBtn?.addEventListener('click', () => {
+        navigator.clipboard?.writeText(cmdEl.textContent || '').catch(() => {});
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1400);
+      });
+    })();
+  </script>
+</div>

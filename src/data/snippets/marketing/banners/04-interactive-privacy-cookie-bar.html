@@ -1,0 +1,31 @@
+<div data-bn-4 class="mx-auto flex w-full max-w-4xl flex-col justify-between gap-4 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#0D0F14] p-4 shadow-lg sm:flex-row sm:items-center sm:px-6 text-slate-900 dark:text-white">
+  <div class="flex items-start gap-3">
+    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+      <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </span>
+    <div class="text-xs">
+      <p class="font-semibold text-slate-900 dark:text-white">Cookie &amp; telemetry preferences</p>
+      <p class="mt-0.5 leading-relaxed text-slate-600 dark:text-zinc-300">We use minimal cookies to save theme state and UI metrics. Read our <a href="#" class="font-semibold text-indigo-600 dark:text-indigo-400 underline underline-offset-2">privacy policy</a>.</p>
+    </div>
+  </div>
+  <div data-bn-actions class="flex shrink-0 items-center gap-2">
+    <button type="button" data-bn-choice="Essential cookies only" class="rounded-xl border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/5 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-white/10 transition cursor-pointer">Essential only</button>
+    <button type="button" data-bn-choice="All cookies accepted" class="rounded-xl bg-slate-900 dark:bg-white px-3.5 py-2 text-xs font-bold text-white dark:text-slate-950 hover:bg-indigo-600 dark:hover:bg-zinc-200 transition cursor-pointer">Accept all</button>
+  </div>
+  <p data-bn-saved class="hidden shrink-0 rounded-full border border-emerald-200 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 px-3 py-1 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300"></p>
+</div>
+<script>
+  document.querySelectorAll('[data-bn-4]').forEach((root) => {
+    const actions = root.querySelector('[data-bn-actions]');
+    const saved = root.querySelector('[data-bn-saved]');
+    root.querySelectorAll('[data-bn-choice]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (actions) actions.classList.add('hidden');
+        if (saved) {
+          saved.textContent = btn.getAttribute('data-bn-choice') || 'Preferences saved';
+          saved.classList.remove('hidden');
+        }
+      });
+    });
+  });
+</script>

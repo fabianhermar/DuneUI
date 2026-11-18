@@ -1,0 +1,64 @@
+<section data-ck4 class="mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm text-xs text-slate-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <div class="divide-y divide-slate-200 dark:divide-zinc-800 md:col-span-7">
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5"><span class="flex size-6 items-center justify-center rounded-full bg-emerald-500/15 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300">&#10003;</span><span class="text-sm font-bold">1. Contact &amp; Receipt</span></div>
+          <button type="button" data-ck4-go="1" class="cursor-pointer font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Edit</button>
+        </div>
+        <p data-ck4-sum="1" class="mt-1.5 pl-8.5 text-slate-500 dark:text-zinc-400">henrik@northstar.io &middot; SMS updates ON</p>
+        <div data-ck4-body="1" class="hidden mt-4 pl-8.5 space-y-3">
+          <input type="email" value="henrik@northstar.io" class="w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" />
+          <button type="button" data-ck4-go="2" class="cursor-pointer rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-950">Continue to Shipping</button>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5"><span class="flex size-6 items-center justify-center rounded-full bg-emerald-500/15 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-300">&#10003;</span><span class="text-sm font-bold">2. Delivery Address</span></div>
+          <button type="button" data-ck4-go="2" class="cursor-pointer font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Edit</button>
+        </div>
+        <p data-ck4-sum="2" class="mt-1.5 pl-8.5 text-slate-500 dark:text-zinc-400">214 King St, San Francisco, CA 94107</p>
+        <div data-ck4-body="2" class="hidden mt-4 pl-8.5 space-y-3">
+          <input type="text" value="214 King St, San Francisco, CA 94107" class="w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" />
+          <button type="button" data-ck4-go="3" class="cursor-pointer rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-950">Continue to Payment</button>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5"><span class="flex size-6 items-center justify-center rounded-full bg-indigo-600 font-mono text-[11px] font-bold text-white">3</span><span class="text-sm font-bold">3. Payment Vault</span></div>
+          <span class="font-mono text-[10px] font-semibold text-indigo-600 dark:text-indigo-400">ENCRYPTED</span>
+        </div>
+        <div data-ck4-body="3" class="mt-4 pl-8.5 space-y-3">
+          <input type="text" value="4242 •••• •••• 4242" class="w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 font-mono focus:border-indigo-500 focus:outline-none" />
+          <div class="grid grid-cols-2 gap-3"><input type="text" value="08 / 29" class="rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 font-mono" /><input type="text" value="842" class="rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 px-3.5 py-2.5 font-mono" /></div>
+          <button type="button" data-ck4-pay class="cursor-pointer w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-500">Authorize $185.00</button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-slate-50 dark:bg-zinc-950 p-6 md:col-span-5 border-t md:border-t-0 md:border-l border-slate-200 dark:border-zinc-800 flex flex-col justify-between">
+      <div>
+        <h3 class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400">ORDER ITEMS</h3>
+        <div class="mt-4 flex items-center gap-3.5">
+          <img src="/images/ecommerce/sneaker.jpg" alt="Trail Runner" class="size-16 rounded-xl object-cover ring-1 ring-slate-200 dark:ring-zinc-800" />
+          <div><p class="font-bold">Alpine Trail Runner 04</p><p class="text-slate-500 dark:text-zinc-400">Size EU 42 &middot; Chalk</p><p class="mt-1 font-mono font-bold">$185.00</p></div>
+        </div>
+      </div>
+      <div class="mt-6 border-t border-slate-200 dark:border-zinc-800 pt-4 space-y-2">
+        <div class="flex justify-between text-slate-500 dark:text-zinc-400"><span>Shipping</span><span class="font-mono text-emerald-700 dark:text-emerald-400">Free 2-Day</span></div>
+        <div class="flex justify-between text-sm font-bold"><span>Total</span><span class="font-mono">$185.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck4]'); if (!root) return;
+  const openStep = (n) => [1, 2, 3].forEach(i => {
+    root.querySelector('[data-ck4-body="' + i + '"]')?.classList.toggle('hidden', i !== n);
+    root.querySelector('[data-ck4-sum="' + i + '"]')?.classList.toggle('hidden', i === n);
+  });
+  root.querySelectorAll('[data-ck4-go]').forEach(b => b.addEventListener('click', () => openStep(Number(b.dataset.ck4Go))));
+  const pay = root.querySelector('[data-ck4-pay]');
+  pay?.addEventListener('click', () => { pay.textContent = 'Authorized ✓ Receipt Emailed'; });
+})();
+</script>

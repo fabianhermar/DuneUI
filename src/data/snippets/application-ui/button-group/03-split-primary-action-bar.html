@@ -1,0 +1,36 @@
+<div data-split-merge class="flex flex-col items-center gap-2 text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex overflow-hidden rounded-xl shadow-xs ring-1 ring-emerald-700/20">
+    <button type="button" data-merge-main class="inline-flex items-center gap-2 bg-emerald-700 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-600 cursor-pointer transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M5.45 2.095a.75.75 0 0 1 .455.955l-.59 1.622a2.5 2.5 0 0 0 4.67 1.756l1.04-2.86a.75.75 0 1 1 1.41.512l-1.04 2.86a4 4 0 0 1-3.145 2.596V13.25a.75.75 0 0 1-1.5 0V9.536A4 4 0 0 1 3.605 5.18l.89-2.448a.75.75 0 0 1 .955-.637Z" clip-rule="evenodd"/></svg>
+      <span data-merge-label>Squash and merge</span>
+    </button>
+    <button type="button" data-merge-toggle aria-expanded="false" aria-label="Choose merge method" class="inline-flex items-center justify-center border-l border-emerald-600 bg-emerald-700 px-2.5 py-2 text-white hover:bg-emerald-600 cursor-pointer transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+  <div data-merge-menu class="hidden w-56 flex-col gap-0.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-1.5 text-left text-xs shadow-lg">
+    <button type="button" data-merge-opt="Squash and merge" class="rounded-lg px-2.5 py-1.5 text-left font-semibold text-slate-900 dark:text-zinc-100 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Squash and merge</button>
+    <button type="button" data-merge-opt="Create a merge commit" class="rounded-lg px-2.5 py-1.5 text-left font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Create a merge commit</button>
+    <button type="button" data-merge-opt="Rebase and merge" class="rounded-lg px-2.5 py-1.5 text-left font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 cursor-pointer">Rebase and merge</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-split-merge]');
+      const toggle = root.querySelector('[data-merge-toggle]');
+      const menu = root.querySelector('[data-merge-menu]');
+      const label = root.querySelector('[data-merge-label]');
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle('flex', open);
+      };
+      toggle?.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      root.querySelectorAll('[data-merge-opt]').forEach((opt) => {
+        opt.addEventListener('click', () => {
+          label.textContent = opt.dataset.mergeOpt;
+          setOpen(false);
+        });
+      });
+    })();
+  </script>
+</div>

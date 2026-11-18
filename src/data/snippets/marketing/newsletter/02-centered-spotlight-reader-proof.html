@@ -1,0 +1,32 @@
+<section data-nl-2 class="relative mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-6 py-11 text-center shadow-sm sm:px-12 text-slate-900 dark:text-zinc-100">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+  <div class="inline-flex items-center gap-2.5 rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3 py-1">
+    <div class="flex -space-x-1.5">
+      <img src="/images/testimonials/daniel.jpg" alt="Daniel" class="size-5 rounded-full object-cover ring-2 ring-white dark:ring-zinc-800" />
+      <img src="/images/testimonials/maya.jpg" alt="Maya" class="size-5 rounded-full object-cover ring-2 ring-white dark:ring-zinc-800" />
+    </div>
+    <span class="font-mono text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">42,000+ Readers Weekly</span>
+  </div>
+  <h2 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Get notified when we ship new kits.</h2>
+  <p class="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-slate-600 dark:text-zinc-300">Early previews of upcoming Tailwind component drops, Figma token updates, and interactive demos.</p>
+  <form data-nl-form class="mx-auto mt-7 flex max-w-md flex-col gap-2 rounded-2xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 p-1.5 sm:flex-row">
+    <input type="email" required placeholder="Enter your work email" class="w-full flex-1 rounded-xl bg-transparent px-3.5 py-2 text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:outline-none" />
+    <button type="submit" class="shrink-0 rounded-xl bg-slate-900 dark:bg-white px-5 py-2.5 text-xs font-bold text-white dark:text-slate-950 hover:bg-indigo-600 dark:hover:bg-zinc-200 transition">Notify me</button>
+  </form>
+  <p data-nl-msg class="hidden mt-3 text-xs font-semibold text-emerald-600 dark:text-emerald-400">You're on the early access list! Watch your inbox.</p>
+  <div class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] text-slate-500 dark:text-zinc-400">
+    <span>✓ UI variable drops</span>
+    <span>✓ Zero ad trackers</span>
+    <span><a href="#" class="font-semibold text-slate-800 dark:text-zinc-200 underline underline-offset-2">Privacy policy</a></span>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-2]').forEach((root) => {
+    const form = root.querySelector('[data-nl-form]');
+    const msg = root.querySelector('[data-nl-msg]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg?.classList.remove('hidden');
+    });
+  });
+</script>

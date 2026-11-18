@@ -1,0 +1,33 @@
+<div role="alert" data-ribbon-alert class="mx-auto w-full max-w-2xl rounded-2xl border border-indigo-200 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-50 via-white to-sky-50 dark:from-slate-900 dark:via-indigo-950/80 dark:to-slate-900 px-4 py-2.5 text-xs text-slate-900 dark:text-white shadow-2xs">
+  <div data-ribbon-body class="flex flex-wrap items-center justify-between gap-3">
+    <div class="flex flex-wrap items-center gap-2.5">
+      <span class="rounded-full bg-indigo-600 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-white">v4.0 Live</span>
+      <span class="font-medium">600 responsive Tailwind v4 components with full Light &amp; Dark support.</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="#_" class="inline-flex items-center gap-1 font-semibold text-indigo-700 dark:text-indigo-300 hover:underline">Changelog <span>&rarr;</span></a>
+      <button type="button" data-ribbon-close aria-label="Dismiss announcement" class="rounded-md p-1 text-slate-500 dark:text-zinc-400 hover:bg-indigo-100/70 dark:hover:bg-white/10">&times;</button>
+    </div>
+  </div>
+  <div data-ribbon-restored class="hidden w-full items-center justify-between text-xs text-slate-600 dark:text-zinc-300">
+    <span>Release banner hidden for this session.</span>
+    <button type="button" data-ribbon-show class="font-semibold text-indigo-700 dark:text-indigo-300 hover:underline">Show</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-ribbon-alert]');
+      const body = root.querySelector('[data-ribbon-body]');
+      const restored = root.querySelector('[data-ribbon-restored]');
+      root.querySelector('[data-ribbon-close]')?.addEventListener('click', () => {
+        body.classList.add('hidden');
+        restored.classList.remove('hidden');
+        restored.classList.add('flex');
+      });
+      root.querySelector('[data-ribbon-show]')?.addEventListener('click', () => {
+        restored.classList.add('hidden');
+        restored.classList.remove('flex');
+        body.classList.remove('hidden');
+      });
+    })();
+  </script>
+</div>

@@ -1,0 +1,36 @@
+<div data-ratio-group class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex flex-wrap items-center justify-center gap-1 rounded-xl bg-white dark:bg-zinc-900 p-1 shadow-xs ring-1 ring-slate-200 dark:ring-zinc-800 font-mono text-xs">
+    <button type="button" data-ratio="16:9" aria-pressed="true" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 dark:bg-white px-3 py-1.5 font-semibold text-white dark:text-slate-950 cursor-pointer transition-all">
+      <span class="h-2.5 w-4 rounded-[2px] border border-current" aria-hidden="true"></span>16:9
+    </button>
+    <button type="button" data-ratio="4:3" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-all">
+      <span class="h-2.5 w-3.5 rounded-[2px] border border-current" aria-hidden="true"></span>4:3
+    </button>
+    <button type="button" data-ratio="1:1" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-all">
+      <span class="size-3 rounded-[2px] border border-current" aria-hidden="true"></span>1:1
+    </button>
+    <button type="button" data-ratio="9:16" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-950 dark:hover:text-white cursor-pointer transition-all">
+      <span class="h-3.5 w-2 rounded-[2px] border border-current" aria-hidden="true"></span>9:16
+    </button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-ratio-group]');
+      const btns = root.querySelectorAll('[data-ratio]');
+      const activeCls = ['bg-slate-900', 'dark:bg-white', 'font-semibold', 'text-white', 'dark:text-slate-950'];
+      const idleCls = ['font-medium', 'text-slate-600', 'dark:text-zinc-300', 'hover:text-slate-950', 'dark:hover:text-white'];
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => {
+            b.setAttribute('aria-pressed', 'false');
+            b.classList.remove(...activeCls);
+            b.classList.add(...idleCls);
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          btn.classList.remove(...idleCls);
+          btn.classList.add(...activeCls);
+        });
+      });
+    })();
+  </script>
+</div>

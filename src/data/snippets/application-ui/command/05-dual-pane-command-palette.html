@@ -1,0 +1,30 @@
+<div class="grid w-full max-w-2xl grid-cols-1 overflow-hidden rounded-2xl border border-white/12 bg-white dark:bg-[#111216] text-slate-900 dark:text-white shadow-lg dark:shadow-2xl sm:grid-cols-5" data-dual-cmd>
+  <div class="border-b border-slate-200 dark:border-white/15 p-3 sm:col-span-3 sm:border-b-0 sm:border-r">
+    <div class="flex items-center gap-2 border-b border-slate-200 dark:border-white/15 pb-2.5">
+      <svg class="h-3.5 w-3.5 text-slate-500 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input type="text" value="Theme & Surface Presets" class="w-full bg-transparent text-xs text-slate-900 dark:text-white focus:outline-none" />
+    </div>
+    <div class="mt-2.5 space-y-1 text-xs">
+      <button type="button" onclick="const r=this.closest('[data-dual-cmd]');r.querySelector('[data-prev-name]').textContent='Obsidian Contrast';r.querySelector('[data-prev-desc]').textContent='OLED-first #090B10 base with 1px translucent hairline borders.';r.querySelector('[data-prev-chip]').textContent='DARK · DEFAULT'" class="flex w-full items-center justify-between rounded-lg bg-violet-50 dark:bg-violet-500/20 px-2.5 py-2 text-left font-medium text-violet-700 dark:text-violet-200 ring-1 ring-inset ring-violet-400/25">
+        <span>Obsidian Contrast</span><span class="font-mono text-[10px] text-violet-700 dark:text-violet-300">Active</span>
+      </button>
+      <button type="button" onclick="const r=this.closest('[data-dual-cmd]');r.querySelector('[data-prev-name]').textContent='Nordic Slate';r.querySelector('[data-prev-desc]').textContent='Muted cool blue-slate elevations balanced for long coding sprints.';r.querySelector('[data-prev-chip]').textContent='COOL SLATE'" class="flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200">
+        <span>Nordic Slate</span><span class="font-mono text-[10px] text-slate-400 dark:text-zinc-600">⇧2</span>
+      </button>
+      <button type="button" onclick="const r=this.closest('[data-dual-cmd]');r.querySelector('[data-prev-name]').textContent='Atelier Warm Sand';r.querySelector('[data-prev-desc]').textContent='Paper-inspired monochrome ink contrast for editorial tools.';r.querySelector('[data-prev-chip]').textContent='LIGHT · PAPER'" class="flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200">
+        <span>Atelier Warm Sand</span><span class="font-mono text-[10px] text-slate-400 dark:text-zinc-600">⇧3</span>
+      </button>
+    </div>
+  </div>
+  <div class="flex flex-col justify-between bg-slate-900/[0.07] dark:bg-white/[0.02] p-4 sm:col-span-2">
+    <div>
+      <span data-prev-chip class="inline-block rounded bg-violet-50 dark:bg-violet-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-violet-700 dark:text-violet-300">DARK · DEFAULT</span>
+      <p data-prev-name class="mt-3 text-sm font-semibold text-slate-900 dark:text-white">Obsidian Contrast</p>
+      <p data-prev-desc class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-zinc-400">OLED-first #090B10 base with 1px translucent hairline borders.</p>
+    </div>
+    <div class="mt-4 flex items-center justify-between border-t border-slate-900/15 dark:border-white/15 pt-3">
+      <span class="text-[10px] text-slate-500 dark:text-zinc-500">Click theme to preview</span>
+      <span class="rounded bg-slate-900/[0.07] dark:bg-white/10 px-2 py-1 font-mono text-[10px] text-slate-800 dark:text-zinc-200">Apply ↵</span>
+    </div>
+  </div>
+</div>

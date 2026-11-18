@@ -1,0 +1,40 @@
+<section data-sc7 class="mx-auto w-full max-w-md rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 text-xs text-stone-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex items-center justify-between border-b border-stone-100 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/ecommerce/carafe.jpg" alt="Coffee Roastery Bag" class="size-14 rounded-xl object-cover ring-1 ring-stone-200 dark:ring-zinc-700" />
+      <div>
+        <h3 class="text-sm font-bold">El Para&iacute;so &middot; Whole Bean (1kg)</h3>
+        <p class="text-[11px] text-stone-500 dark:text-zinc-400">Roasted to order every Tuesday</p>
+      </div>
+    </div>
+    <span data-sc7-price class="font-mono text-sm font-bold">$48.00</span>
+  </div>
+  <div class="mt-4 space-y-2">
+    <button type="button" data-sc7-plan="sub" class="cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-emerald-600 dark:border-emerald-400 bg-emerald-50/60 dark:bg-emerald-500/10 p-3.5 text-left">
+      <div>
+        <div class="flex items-center gap-2"><span class="font-bold">Subscribe &amp; Save 15%</span><span class="rounded bg-emerald-600 px-1.5 py-0.5 font-mono text-[9px] font-bold text-white">BEST VALUE</span></div>
+        <span class="block mt-0.5 text-[11px] text-stone-500 dark:text-zinc-400">Delivers every 2 weeks &middot; Cancel anytime</span>
+      </div>
+      <span class="font-mono font-bold text-emerald-700 dark:text-emerald-300">$40.80</span>
+    </button>
+    <button type="button" data-sc7-plan="once" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-200 dark:border-zinc-800 p-3.5 text-left hover:border-stone-400">
+      <div><span class="font-bold">One-time purchase</span><span class="block mt-0.5 text-[11px] text-stone-500 dark:text-zinc-400">Standard roast batch</span></div>
+      <span class="font-mono font-semibold">$48.00</span>
+    </button>
+  </div>
+  <button type="button" class="cursor-pointer mt-4 w-full rounded-xl bg-stone-900 dark:bg-white py-3 font-semibold text-white dark:text-stone-950 hover:opacity-90">Start Roastery Order &mdash; <span data-sc7-cta class="font-mono">$40.80</span></button>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc7]'); if (!root) return;
+  const btns = [...root.querySelectorAll('[data-sc7-plan]')], price = root.querySelector('[data-sc7-price]'), cta = root.querySelector('[data-sc7-cta]');
+  const onCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-emerald-600 dark:border-emerald-400 bg-emerald-50/60 dark:bg-emerald-500/10 p-3.5 text-left';
+  const offCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border border-stone-200 dark:border-zinc-800 p-3.5 text-left hover:border-stone-400';
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => { x.className = x === b ? onCls : offCls; });
+    const p = b.dataset.sc7Plan === 'sub' ? '$40.80' : '$48.00';
+    if (price) price.textContent = p;
+    if (cta) cta.textContent = p;
+  }));
+})();
+</script>

@@ -1,0 +1,29 @@
+<div data-bag-strip class="flex w-full max-w-sm items-center gap-2.5 mx-auto text-slate-900 dark:text-zinc-100">
+  <button type="button" data-bag-btn class="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-stone-900 dark:bg-white py-3.5 text-xs font-bold uppercase tracking-widest text-white dark:text-slate-950 shadow-sm transition hover:bg-stone-800 dark:hover:bg-zinc-200 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4" aria-hidden="true"><path fill-rule="evenodd" d="M5 4a3 3 0 0 1 6 0v1h.75A1.25 1.25 0 0 1 13 6.25v6.5A1.75 1.75 0 0 1 11.25 14.5h-6.5A1.75 1.75 0 0 1 3 12.75v-6.5A1.25 1.25 0 0 1 4.25 5H5V4Zm1.5 1h3V4a1.5 1.5 0 0 0-3 0v1Z" clip-rule="evenodd"/></svg>
+    <span data-bag-label>Add to Bag — $195</span>
+  </button>
+  <button type="button" data-wish-btn aria-pressed="false" aria-label="Wishlist" class="flex size-12 shrink-0 items-center justify-center rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-stone-700 dark:text-stone-300 transition hover:border-stone-900 dark:hover:border-stone-200 cursor-pointer">
+    <svg data-wish-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
+  </button>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-bag-strip]');
+      const bagBtn = root.querySelector('[data-bag-btn]');
+      const bagLabel = root.querySelector('[data-bag-label]');
+      const wishBtn = root.querySelector('[data-wish-btn]');
+      const wishIcon = root.querySelector('[data-wish-icon]');
+      bagBtn?.addEventListener('click', () => {
+        bagLabel.textContent = 'Added to Bag';
+        setTimeout(() => { bagLabel.textContent = 'Add to Bag — $195'; }, 1200);
+      });
+      wishBtn?.addEventListener('click', () => {
+        const saved = wishBtn.getAttribute('aria-pressed') === 'true';
+        wishBtn.setAttribute('aria-pressed', String(!saved));
+        wishBtn.classList.toggle('text-rose-600', !saved);
+        wishBtn.classList.toggle('dark:text-rose-400', !saved);
+        wishIcon.setAttribute('fill', saved ? 'none' : 'currentColor');
+      });
+    })();
+  </script>
+</div>

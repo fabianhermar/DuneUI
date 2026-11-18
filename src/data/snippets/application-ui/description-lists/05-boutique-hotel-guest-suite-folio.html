@@ -1,0 +1,27 @@
+<div data-dl5 class="mx-auto w-full max-w-2xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 text-stone-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-100 dark:border-zinc-800 pb-4">
+    <div>
+      <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-zinc-400">HOTEL AMAN KYOTO &middot; SUITE 402</p>
+      <h3 class="mt-0.5 font-serif text-xl">Pavilion King with Hinoki Bath</h3>
+    </div>
+    <button type="button" data-dl5-req class="cursor-pointer rounded-full border border-stone-900 dark:border-stone-200 px-3.5 py-1.5 text-xs font-semibold hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-stone-900 transition-colors">Request Late Check-out</button>
+  </div>
+  <dl class="mt-4 divide-y divide-stone-100 dark:divide-zinc-800 text-xs">
+    <div class="flex items-center justify-between py-2.5"><dt class="text-stone-500 dark:text-zinc-400">Arrival / Departure</dt><dd class="font-mono font-medium">Nov 17 &ndash; Nov 21 (4 Nights)</dd></div>
+    <div class="flex items-center justify-between py-2.5"><dt class="text-stone-500 dark:text-zinc-400">Room Preference</dt><dd class="font-medium">Buckwheat Pillow &middot; Unscented Linen</dd></div>
+    <div class="flex items-center justify-between py-2.5"><dt class="text-stone-500 dark:text-zinc-400">Check-out Window</dt><dd data-dl5-out class="font-mono font-semibold text-emerald-700 dark:text-emerald-400">12:00 PM Standard</dd></div>
+  </dl>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl5]').forEach((root) => {
+    const btn = root.querySelector('[data-dl5-req]'), out = root.querySelector('[data-dl5-out]');
+    let late = false;
+    btn?.addEventListener('click', () => {
+      late = !late;
+      btn.textContent = late ? 'Confirmed 4:00 PM ✓' : 'Request Late Check-out';
+      if (out) out.textContent = late ? '04:00 PM Extended (VIP)' : '12:00 PM Standard';
+    });
+  });
+})();
+</script>

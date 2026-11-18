@@ -1,0 +1,69 @@
+{
+  "slug": "steps",
+  "index": "27",
+  "tag": "Progress",
+  "title": "Steps & Steppers",
+  "description": "Full-bodied checkout wizards, connected milestone steppers, vertical deployment timelines, parcel tracking flows, and Stripe-style verification headers.",
+  "specs": [
+    {
+      "file": "01-3-step-checkout-wizard.html",
+      "title": "3-Step Checkout Wizard",
+      "styleTag": "Tailwind Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-deployment-timeline.html",
+      "title": "Dark Deployment Timeline",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-liquid-glass-stepper-card.html",
+      "title": "Liquid Glass Stepper Card",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-brutalist-flow-track-stepper.html",
+      "title": "Brutalist Flow Track Stepper",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-parcel-milestone-stepper.html",
+      "title": "Parcel Milestone Stepper",
+      "styleTag": "E-Commerce Warm",
+      "canvas": "light"
+    },
+    {
+      "file": "06-stripe-verification-stepper.html",
+      "title": "Stripe Verification Stepper",
+      "styleTag": "Stripe Minimal",
+      "canvas": "light"
+    },
+    {
+      "file": "07-segmented-mobile-onboarding.html",
+      "title": "Segmented Mobile Onboarding",
+      "styleTag": "Mobile Wizard",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-canary-release-stage-stepper.html",
+      "title": "Canary Release Stage Stepper",
+      "styleTag": "DevTools Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-activation-checklist-stepper.html",
+      "title": "Activation Checklist Stepper",
+      "styleTag": "SaaS Activation",
+      "canvas": "light"
+    },
+    {
+      "file": "10-editorial-chapter-stepper.html",
+      "title": "Editorial Chapter Stepper",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<div data-drw10 data-open="true" class="group/d10 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-stone-200 dark:border-white/12 bg-[#FAF8F4] dark:bg-[#111110] text-stone-900 dark:text-zinc-100 shadow-lg">
+  <div class="flex h-full flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d10:scale-[0.97] group-data-[open=true]/d10:rounded-2xl">
+    <div class="flex items-center justify-between border-b border-stone-200 dark:border-zinc-800 px-6 py-4">
+      <span class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400">KOMA ARCHITEKTUR // ISSUE 19</span>
+      <button type="button" data-drw10-open class="cursor-pointer rounded-full border border-stone-900 dark:border-stone-200 px-4 py-1.5 font-mono text-[11px] font-semibold transition hover:bg-stone-900 hover:text-white dark:hover:bg-white dark:hover:text-stone-950">Colophon &rarr;</button>
+    </div>
+    <div class="p-6 max-w-sm space-y-2">
+      <p class="font-serif text-3xl leading-tight">Matter, Daylight &amp; Silence.</p>
+      <p class="text-xs leading-relaxed text-stone-500 dark:text-stone-400">Browse architectural archive plates and typographic binding specifications inside the studio drawer.</p>
+    </div>
+  </div>
+
+  <div data-drw10-bg class="absolute inset-0 bg-stone-950/35 dark:bg-black/65 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d10:opacity-100 group-data-[open=true]/d10:pointer-events-auto"></div>
+
+  <aside role="dialog" aria-modal="true" aria-label="Monograph colophon" class="absolute inset-y-3 right-3 flex w-[calc(100%-1.5rem)] max-w-lg flex-col overflow-hidden rounded-2xl border border-stone-200 dark:border-white/15 bg-white dark:bg-[#181715] shadow-2xl translate-x-[112%] group-data-[open=true]/d10:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="flex items-center justify-between border-b border-stone-200 dark:border-zinc-800 px-6 py-4">
+      <div>
+        <p class="font-mono text-[9px] font-bold uppercase tracking-[0.22em] text-rose-700 dark:text-rose-300">EDITION 2026</p>
+        <h3 class="font-serif text-xl">Autumn Monograph Colophon</h3>
+      </div>
+      <button type="button" data-drw10-close class="cursor-pointer font-mono text-[11px] font-semibold text-stone-500 hover:text-stone-950 dark:hover:text-white">CLOSE [ESC]</button>
+    </div>
+
+    <div class="flex-1 space-y-4 overflow-y-auto p-6">
+      <div class="relative overflow-hidden rounded-2xl border border-stone-200 dark:border-zinc-800">
+        <img data-drw10-img src="/images/auth/studio-desk.jpg" alt="Studio monograph spread" class="h-44 w-full object-cover transition duration-500" />
+        <div class="absolute bottom-2.5 left-2.5 flex gap-1.5 font-mono text-[10px]">
+          <button type="button" data-drw10-plate="0" class="cursor-pointer rounded-full bg-white px-2.5 py-1 font-bold text-stone-950 shadow">01 Studio</button>
+          <button type="button" data-drw10-plate="1" class="cursor-pointer rounded-full bg-black/65 px-2.5 py-1 font-semibold text-white backdrop-blur-md">02 Courtyard</button>
+          <button type="button" data-drw10-plate="2" class="cursor-pointer rounded-full bg-black/65 px-2.5 py-1 font-semibold text-white backdrop-blur-md">03 Pavilion</button>
+        </div>
+      </div>
+
+      <p data-drw10-cap class="text-xs leading-relaxed text-stone-600 dark:text-stone-300">Printed on 120gsm Munken Lynx uncoated stock in Zurich. Uses a 12-column Swiss grid paired with Instrument Serif headings.</p>
+
+      <div class="grid grid-cols-3 gap-3 border-t border-stone-200 dark:border-zinc-800 pt-4 text-xs">
+        <div><p class="font-mono text-[10px] uppercase text-stone-400">Run</p><p class="mt-0.5 font-semibold">500 numbered</p></div>
+        <div><p class="font-mono text-[10px] uppercase text-stone-400">Binding</p><p class="mt-0.5 font-semibold">Exposed Thread</p></div>
+        <div><p class="font-mono text-[10px] uppercase text-stone-400">Lead Time</p><p class="mt-0.5 font-semibold">3 Business Days</p></div>
+      </div>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw10]').forEach((root) => {
+    const plates = [
+      { img: '/images/auth/studio-desk.jpg', cap: 'Printed on 120gsm Munken Lynx uncoated stock in Zurich. Uses a 12-column Swiss grid paired with Instrument Serif headings.' },
+      { img: '/images/heroes/staircase-sunlight.jpg', cap: 'Plate 02 — Kyoto Limestone Atrium photographed at solar noon on medium-format silver gelatin film.' },
+      { img: '/images/heroes/concrete-pavilion.jpg', cap: 'Plate 03 — Board-formed concrete acoustics and passive lakeside timber glazing details, Zurich.' }
+    ];
+    const imgEl = root.querySelector('[data-drw10-img]');
+    const capEl = root.querySelector('[data-drw10-cap]');
+    const pBtns = root.querySelectorAll('[data-drw10-plate]');
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    pBtns.forEach((b) => b.addEventListener('click', () => {
+      const idx = Number(b.getAttribute('data-drw10-plate') || 0);
+      pBtns.forEach((x) => { x.className = x === b ? 'cursor-pointer rounded-full bg-white px-2.5 py-1 font-bold text-stone-950 shadow' : 'cursor-pointer rounded-full bg-black/65 px-2.5 py-1 font-semibold text-white backdrop-blur-md'; });
+      if (imgEl) imgEl.src = plates[idx].img;
+      if (capEl) capEl.textContent = plates[idx].cap;
+    }));
+    root.querySelector('[data-drw10-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw10-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelector('[data-drw10-close]')?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  });
+})();
+</script>

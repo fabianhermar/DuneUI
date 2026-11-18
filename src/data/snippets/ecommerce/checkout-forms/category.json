@@ -1,0 +1,63 @@
+{
+  "slug": "checkout-forms",
+  "index": "55",
+  "tag": "Commerce",
+  "title": "Checkout Forms",
+  "description": "10 full-bodied, visually commanding Checkout flows inspired by Stripe Checkout, Polar, Lemon Squeezy, and top Dribbble fintech UI: split-screen order summaries with express wallets, live 3D virtual card synchronization, SaaS annual/monthly switches, B2B VAT reverse-charge calculators, multi-rail Card/SEPA/USDC switchers, and guided 3-step accordions.",
+  "specs": [
+    {
+      "file": "01-stripe-split-screen-flagship-store-checkout.html",
+      "title": "Stripe Split-Screen Flagship Store Checkout",
+      "styleTag": "Stripe · 2-Col Flagship"
+    },
+    {
+      "file": "02-dribbble-live-3d-virtual-card-checkout.html",
+      "title": "Dribbble Live 3D Virtual Card Checkout",
+      "styleTag": "Fintech · Virtual Card Sync",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-polar-lemon-squeezy-saas-cadence-checkout.html",
+      "title": "Polar & Lemon Squeezy SaaS Cadence Checkout",
+      "styleTag": "SaaS · Annual / Monthly"
+    },
+    {
+      "file": "04-interactive-guided-3-step-accordion-checkout.html",
+      "title": "Interactive Guided 3-Step Accordion Checkout",
+      "styleTag": "Guided · Stepper Flow"
+    },
+    {
+      "file": "05-luxury-horology-private-client-acquisition.html",
+      "title": "Luxury Horology Private Client Acquisition",
+      "styleTag": "Horology · Concierge",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-modular-synth-hardware-pre-order-checkout.html",
+      "title": "Modular Synth Hardware Pre-Order Checkout",
+      "styleTag": "Hardware · Split Pay",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-enterprise-b2b-vat-purchase-order-checkout.html",
+      "title": "Enterprise B2B VAT & Purchase Order Checkout",
+      "styleTag": "B2B · Procurement"
+    },
+    {
+      "file": "08-architectural-furniture-white-glove-checkout.html",
+      "title": "Architectural Furniture & White-Glove Checkout",
+      "styleTag": "Interior · White-Glove"
+    },
+    {
+      "file": "09-multi-rail-payment-tabs-card-sepa-usdc.html",
+      "title": "Multi-Rail Payment Tabs (Card / SEPA / USDC)",
+      "styleTag": "Payments · Multi-Rail",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-mobile-first-collapsible-drawer-receipt-checkout.html",
+      "title": "Mobile-First Collapsible Drawer & Receipt Checkout",
+      "styleTag": "Mobile · Full-Stack Sheet"
+    }
+  ]
+}

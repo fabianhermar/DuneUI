@@ -1,0 +1,69 @@
+{
+  "slug": "landing-pages",
+  "index": "46",
+  "tag": "Templates",
+  "title": "Landing Pages",
+  "description": "10 flagship Awwwards & Dribbble-caliber landing pages crafted around monumental tight-tracked typography, double-bezel hardware frames, multi-pane product showcases, and responsive visual craft.",
+  "specs": [
+    {
+      "file": "01-orbital-ai-workspace-landing.html",
+      "title": "Orbital AI Workspace Landing",
+      "styleTag": "Orbital · Interactive",
+      "canvas": "light"
+    },
+    {
+      "file": "02-obsidian-linear-product-flagship.html",
+      "title": "Obsidian Linear Product Flagship",
+      "styleTag": "Linear · Interactive",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-architectural-studio-editorial.html",
+      "title": "Architectural Studio Editorial",
+      "styleTag": "Awwwards · Studio SOTD",
+      "canvas": "light"
+    },
+    {
+      "file": "04-live-drop-studio-showcase-landing.html",
+      "title": "Live Drop Studio Showcase Landing",
+      "styleTag": "Mobile App · Interactive",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-spatial-workspace.html",
+      "title": "Liquid Glass Spatial Workspace",
+      "styleTag": "Liquid Glass · Spatial",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-neo-brutalist-swiss-raw-ui-page.html",
+      "title": "Neo-Brutalist Swiss Raw UI Page",
+      "styleTag": "Brutalist · Zine SOTD",
+      "canvas": "light"
+    },
+    {
+      "file": "07-digital-private-banking-fx-platform.html",
+      "title": "Digital Private Banking & FX Platform",
+      "styleTag": "Digital Bank · Interactive",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-luxury-storefront-lookbook-landing.html",
+      "title": "Luxury Storefront Lookbook Landing",
+      "styleTag": "Storefront · Lookbook",
+      "canvas": "light"
+    },
+    {
+      "file": "09-developer-cli-dual-pane-hero-landing.html",
+      "title": "Developer CLI Dual-Pane Hero Landing",
+      "styleTag": "DevTools · CLI SOTD",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-ev-dealership-showroom-depth-landing.html",
+      "title": "EV Dealership Showroom Depth Landing",
+      "styleTag": "Automotive · Animated",
+      "canvas": "light"
+    }
+  ]
+}

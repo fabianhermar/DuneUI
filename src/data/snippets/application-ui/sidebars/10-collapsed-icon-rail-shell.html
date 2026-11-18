@@ -1,0 +1,100 @@
+<div data-shell-rail class="flex w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm md:min-h-[400px] md:flex-row text-black dark:text-zinc-100">
+  <div class="flex md:hidden items-center justify-between gap-2 border-b border-slate-800 bg-slate-950 px-3.5 py-2.5 text-white">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle icon rail menu" class="inline-flex size-8 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white">
+        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <span class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white text-[11px] font-black text-slate-950">D</span>
+      <span data-mobile-title class="truncate text-xs font-semibold text-white">Dashboard</span>
+    </div>
+    <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white">AL</span>
+  </div>
+
+  <aside data-sidebar-drawer class="hidden md:flex w-full shrink-0 flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800 bg-slate-950 p-3 text-slate-300 md:w-16 transition-[width] duration-200">
+    <div class="flex flex-col gap-2">
+      <div class="hidden md:flex items-center justify-between gap-2">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white text-xs font-black text-slate-950 mx-auto" data-rail-logo>D</span>
+      </div>
+      <span class="hidden h-px w-full bg-white/15 md:block my-1"></span>
+      <button type="button" data-rail-nav data-section="Dashboard" data-heading="Production Overview" title="Dashboard" class="flex items-center gap-3 rounded-xl bg-indigo-600 p-2.5 text-white">
+        <svg class="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+        <span data-rail-label class="md:hidden text-xs font-semibold whitespace-nowrap">Dashboard</span>
+      </button>
+      <button type="button" data-rail-nav data-section="Deployments" data-heading="Production Deployments" title="Deployments" class="flex items-center gap-3 rounded-xl p-2.5 text-slate-300 hover:bg-white/10 hover:text-white">
+        <svg class="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span data-rail-label class="md:hidden text-xs font-medium whitespace-nowrap">Deployments</span>
+      </button>
+      <button type="button" data-rail-nav data-section="Runtime Logs" data-heading="Edge Runtime Logs" title="Logs" class="flex items-center gap-3 rounded-xl p-2.5 text-slate-300 hover:bg-white/10 hover:text-white">
+        <svg class="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span data-rail-label class="md:hidden text-xs font-medium whitespace-nowrap">Logs</span>
+      </button>
+    </div>
+
+    <div class="mt-3 flex flex-col gap-2">
+      <button type="button" data-rail-expand aria-expanded="false" aria-label="Expand sidebar labels" class="hidden md:flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 p-2 text-[11px] font-semibold text-slate-200 hover:bg-white/10">
+        <span data-expand-icon>»</span>
+        <span data-rail-label class="md:hidden whitespace-nowrap">Collapse</span>
+      </button>
+      <div class="hidden md:flex items-center justify-center">
+        <span class="flex size-8 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white">AL</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex flex-1 min-w-0 flex-col justify-between p-4 sm:p-7">
+    <div>
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-zinc-800 pb-3">
+        <h4 data-rail-heading class="text-sm font-bold text-slate-900 dark:text-zinc-100">Production Overview</h4>
+        <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">All Regions Healthy</span>
+      </div>
+      <div class="mt-4 space-y-2.5 text-xs">
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-zinc-800 px-4 py-3"><span class="font-semibold text-slate-900 dark:text-zinc-100">duneui-web · main</span><span class="font-mono text-emerald-600 dark:text-emerald-400">Ready · 28s</span></div>
+        <div class="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-zinc-800 px-4 py-3"><span class="font-semibold text-slate-900 dark:text-zinc-100">duneui-docs · preview</span><span class="font-mono text-slate-500 dark:text-zinc-400">Cached · 12s</span></div>
+      </div>
+    </div>
+    <p class="mt-6 text-xs text-slate-500 dark:text-zinc-400">Slim 64px expandable icon rail on desktop that collapses into a sleek top drawer on 375px screens.</p>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-rail]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const expandBtn = root.querySelector('[data-rail-expand]');
+    const expandIcon = root.querySelector('[data-expand-icon]');
+    const labels = Array.from(root.querySelectorAll('[data-rail-label]'));
+    const mobileTitle = root.querySelector('[data-mobile-title]');
+    const heading = root.querySelector('[data-rail-heading]');
+    const navs = Array.from(root.querySelectorAll('[data-rail-nav]'));
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    expandBtn?.addEventListener('click', () => {
+      const expanded = expandBtn.getAttribute('aria-expanded') === 'true';
+      expandBtn.setAttribute('aria-expanded', String(!expanded));
+      drawer?.classList.toggle('md:w-16', expanded);
+      drawer?.classList.toggle('md:w-52', !expanded);
+      labels.forEach((lbl) => lbl.classList.toggle('md:hidden', expanded));
+      if (expandIcon) expandIcon.textContent = expanded ? '»' : '«';
+    });
+    navs.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        navs.forEach((el) => {
+          el.classList.remove('bg-indigo-600', 'text-white');
+          el.classList.add('text-slate-300');
+        });
+        btn.classList.remove('text-slate-300');
+        btn.classList.add('bg-indigo-600', 'text-white');
+        if (heading) heading.textContent = btn.getAttribute('data-heading') || 'Production Overview';
+        if (mobileTitle) mobileTitle.textContent = btn.getAttribute('data-section') || 'Dashboard';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+  });
+</script>

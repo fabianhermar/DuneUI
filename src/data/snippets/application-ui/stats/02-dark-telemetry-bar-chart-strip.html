@@ -1,0 +1,41 @@
+<div class="w-full max-w-3xl rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#0E1015] p-5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl sm:p-6" data-tel-widget>
+  <div class="flex flex-wrap items-start justify-between gap-3">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        <p class="text-xs font-medium text-slate-600 dark:text-zinc-400">Edge Requests (24h Window)</p>
+      </div>
+      <div class="mt-1.5 flex items-baseline gap-2.5">
+        <p data-req-total class="text-2xl font-bold tracking-tight sm:text-3xl">18,492,010</p>
+        <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">+8.4%</span>
+      </div>
+    </div>
+    <div class="inline-flex rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.03] p-1 font-mono text-[11px]">
+      <button type="button" onclick="this.closest('[data-tel-widget]').querySelector('[data-req-total]').textContent='1,428,900';" class="cursor-pointer rounded-lg px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">1H</button>
+      <button type="button" onclick="this.closest('[data-tel-widget]').querySelector('[data-req-total]').textContent='18,492,010';" class="cursor-pointer rounded-lg bg-slate-900/[0.07] dark:bg-white/15 px-2.5 py-1 font-semibold text-slate-900 dark:text-white">24H</button>
+      <button type="button" onclick="this.closest('[data-tel-widget]').querySelector('[data-req-total]').textContent='129,840,510';" class="cursor-pointer rounded-lg px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">7D</button>
+    </div>
+  </div>
+  <div class="relative mt-6 flex h-28 items-end gap-1.5 border-b border-slate-200 dark:border-white/15 pb-2">
+    <div class="h-[36%] flex-1 rounded-t bg-violet-500/35"></div>
+    <div class="h-[58%] flex-1 rounded-t bg-violet-500/45"></div>
+    <div class="h-[46%] flex-1 rounded-t bg-violet-500/40"></div>
+    <div class="h-[72%] flex-1 rounded-t bg-violet-500/60"></div>
+    <div class="h-[64%] flex-1 rounded-t bg-violet-500/55"></div>
+    <div class="h-[90%] flex-1 rounded-t bg-violet-400 text-black dark:text-black"></div>
+    <div class="h-[78%] flex-1 rounded-t bg-violet-500/75"></div>
+    <div class="h-[85%] flex-1 rounded-t bg-violet-400 text-black dark:text-black"></div>
+    <div class="h-[54%] flex-1 rounded-t bg-violet-500/50"></div>
+    <div class="h-[82%] flex-1 rounded-t bg-violet-400/90"></div>
+    <div class="h-[68%] flex-1 rounded-t bg-violet-500/60"></div>
+    <div class="h-[96%] flex-1 rounded-t bg-gradient-to-t from-emerald-500 to-emerald-300"></div>
+  </div>
+  <div class="mt-3 flex flex-wrap items-center justify-between gap-3 text-xs">
+    <div class="flex flex-wrap items-center gap-4 font-mono text-[11px] text-slate-600 dark:text-zinc-400">
+      <span>2XX <strong class="text-slate-900 dark:text-white">99.4%</strong></span>
+      <span>CACHE HIT <strong class="text-emerald-600 dark:text-emerald-400">94.8%</strong></span>
+      <span>TTFB <strong class="text-slate-900 dark:text-white">18ms</strong></span>
+    </div>
+    <span class="font-mono text-[10px] text-slate-500 dark:text-zinc-500">00:00 UTC → NOW</span>
+  </div>
+</div>

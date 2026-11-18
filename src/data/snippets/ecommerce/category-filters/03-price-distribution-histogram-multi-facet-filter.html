@@ -1,0 +1,77 @@
+<section data-cf3 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="grid grid-cols-1 gap-7 md:grid-cols-12">
+    <div class="space-y-5 md:col-span-5 border-b md:border-b-0 md:border-r border-slate-100 dark:border-zinc-800 pb-5 md:pb-0 md:pr-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Price Distribution &amp; Specs</h3>
+          <p class="text-[11px] text-slate-500 dark:text-zinc-400">Live inventory curve across categories</p>
+        </div>
+        <span data-cf3-val class="rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 font-mono font-bold text-white dark:text-slate-950">&le; $450</span>
+      </div>
+      <div>
+        <div class="flex h-16 items-end gap-1.5 px-1">
+          <div class="flex-1 rounded-t bg-indigo-500/80 h-5"></div>
+          <div class="flex-1 rounded-t bg-indigo-500/90 h-11"></div>
+          <div class="flex-1 rounded-t bg-indigo-600 h-16"></div>
+          <div class="flex-1 rounded-t bg-indigo-500/80 h-12"></div>
+          <div class="flex-1 rounded-t bg-indigo-400/70 h-8"></div>
+          <div class="flex-1 rounded-t bg-slate-200 dark:bg-zinc-800 h-4"></div>
+          <div class="flex-1 rounded-t bg-slate-200 dark:bg-zinc-800 h-6"></div>
+          <div class="flex-1 rounded-t bg-slate-200 dark:bg-zinc-800 h-3"></div>
+        </div>
+        <input type="range" min="50" max="1000" step="10" value="450" data-cf3-rng class="mt-2 w-full accent-indigo-600" />
+        <div class="mt-1 flex justify-between font-mono text-[10px] text-slate-400"><span>$50</span><span>$500</span><span>$1,000+</span></div>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button type="button" data-cf3-preset="150" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 font-semibold hover:border-indigo-500">Under $150</button>
+        <button type="button" data-cf3-preset="450" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 font-semibold hover:border-indigo-500">Under $450</button>
+        <button type="button" data-cf3-preset="1000" class="rounded-lg border border-slate-200 dark:border-zinc-800 px-2.5 py-1.5 font-semibold hover:border-indigo-500">All ($1,000)</button>
+      </div>
+      <div class="border-t border-slate-100 dark:border-zinc-800 pt-4 space-y-2">
+        <p class="font-bold text-slate-900 dark:text-white">Category Filter</p>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" data-cf3-cat="all" class="rounded-full bg-indigo-600 px-3 py-1 font-semibold text-white">All</button>
+          <button type="button" data-cf3-cat="audio" class="rounded-full border border-slate-200 dark:border-zinc-800 px-3 py-1 font-semibold text-slate-600 dark:text-zinc-300">Audio</button>
+          <button type="button" data-cf3-cat="home" class="rounded-full border border-slate-200 dark:border-zinc-800 px-3 py-1 font-semibold text-slate-600 dark:text-zinc-300">Home &amp; Desk</button>
+          <button type="button" data-cf3-cat="wear" class="rounded-full border border-slate-200 dark:border-zinc-800 px-3 py-1 font-semibold text-slate-600 dark:text-zinc-300">Footwear</button>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-3 md:col-span-7">
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-slate-500 dark:text-zinc-400">Matching Catalog Items</span>
+        <span data-cf3-cnt class="font-mono font-bold text-indigo-600 dark:text-indigo-400">4 matches</span>
+      </div>
+      <div class="space-y-2.5">
+        <div data-cf3-it data-cat="home" data-p="68" class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 p-3"><div class="flex items-center gap-3"><img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="size-12 rounded-xl object-cover" /><div><p class="font-bold">Kyoto Stoneware Carafe</p><p class="text-[11px] text-slate-500">Home &amp; Desk · Express 24h</p></div></div><span class="font-mono text-sm font-bold">$68</span></div>
+        <div data-cf3-it data-cat="wear" data-p="185" class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 p-3"><div class="flex items-center gap-3"><img src="/images/ecommerce/sneaker.jpg" alt="Sneaker" class="size-12 rounded-xl object-cover" /><div><p class="font-bold">Alpine Trail XT-4</p><p class="text-[11px] text-slate-500">Footwear · Verified Grip</p></div></div><span class="font-mono text-sm font-bold">$185</span></div>
+        <div data-cf3-it data-cat="home" data-p="210" class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 p-3"><div class="flex items-center gap-3"><img src="/images/ecommerce/lamp.jpg" alt="Lamp" class="size-12 rounded-xl object-cover" /><div><p class="font-bold">Architectural Brass Lamp</p><p class="text-[11px] text-slate-500">Home &amp; Desk · 2700K LED</p></div></div><span class="font-mono text-sm font-bold">$210</span></div>
+        <div data-cf3-it data-cat="audio" data-p="349" class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 p-3"><div class="flex items-center gap-3"><img src="/images/ecommerce/headphones.jpg" alt="Headphones" class="size-12 rounded-xl object-cover" /><div><p class="font-bold">Spatial Reference Studio</p><p class="text-[11px] text-slate-500">Audio · Beryllium 50mm</p></div></div><span class="font-mono text-sm font-bold">$349</span></div>
+        <div data-cf3-it data-cat="audio" data-p="640" class="hidden flex items-center justify-between rounded-2xl border border-slate-200 dark:border-zinc-800 p-3"><div class="flex items-center gap-3"><img src="/images/heroes/synth-modular.jpg" alt="Synth" class="size-12 rounded-xl object-cover" /><div><p class="font-bold">Analog Filter Bank 6U</p><p class="text-[11px] text-slate-500">Audio · Eurorack 42HP</p></div></div><span class="font-mono text-sm font-bold">$640</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf3]'); if (!r) return;
+  const rng = r.querySelector('[data-cf3-rng]'), val = r.querySelector('[data-cf3-val]'), cnt = r.querySelector('[data-cf3-cnt]');
+  const cats = [...r.querySelectorAll('[data-cf3-cat]')], items = [...r.querySelectorAll('[data-cf3-it]')];
+  let curCat = 'all';
+  const upd = () => {
+    const max = Number(rng.value); val.textContent = '≤ $' + max;
+    let n = 0;
+    items.forEach(it => {
+      const ok = Number(it.dataset.p) <= max && (curCat === 'all' || it.dataset.cat === curCat);
+      it.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = n + (n === 1 ? ' match' : ' matches');
+  };
+  rng?.addEventListener('input', upd);
+  r.querySelectorAll('[data-cf3-preset]').forEach(b => b.addEventListener('click', () => { rng.value = b.dataset.cf3Preset; upd(); }));
+  cats.forEach(b => b.addEventListener('click', () => {
+    curCat = b.dataset.cf3Cat; upd();
+    cats.forEach(x => x.className = x === b ? 'rounded-full bg-indigo-600 px-3 py-1 font-semibold text-white' : 'rounded-full border border-slate-200 dark:border-zinc-800 px-3 py-1 font-semibold text-slate-600 dark:text-zinc-300');
+  }));
+})();
+</script>

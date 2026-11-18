@@ -1,0 +1,51 @@
+<section data-cp9 class="mx-auto w-full max-w-5xl rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FAF7F2] dark:bg-zinc-900 p-6 sm:p-8 text-stone-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+    <div class="md:col-span-7">
+      <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-stone-400">Atelier Departments &middot; Select Row</p>
+      <div class="mt-4 divide-y divide-stone-200 dark:divide-zinc-800 border-y border-stone-200 dark:border-zinc-800">
+        <button type="button" data-cp9-row="01 — Seating &amp; Joinery" data-cp9-count="16 objects · From $680" data-cp9-note="Solid Danish ash &amp; vegetable-tanned saddle leather." data-cp9-img="/images/ecommerce/chair.jpg" class="flex w-full items-center justify-between py-4 text-left transition">
+          <div><span class="font-serif text-xl text-stone-900 dark:text-white underline underline-offset-4">01 &mdash; Seating &amp; Joinery</span><p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Copenhagen woodshop editions</p></div>
+          <span class="font-mono text-xs font-bold text-stone-900 dark:text-white">16 objects &rarr;</span>
+        </button>
+        <button type="button" data-cp9-row="02 — Tableware &amp; Kiln" data-cp9-count="28 objects · From $38" data-cp9-note="High-fired Kyoto stoneware glazes for pour-over rituals." data-cp9-img="/images/ecommerce/carafe.jpg" class="flex w-full items-center justify-between py-4 text-left opacity-70 hover:opacity-100 transition">
+          <div><span class="font-serif text-xl text-stone-900 dark:text-white">02 &mdash; Tableware &amp; Kiln</span><p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Shigaraki iron-rich clay</p></div>
+          <span class="font-mono text-xs text-stone-500 dark:text-zinc-400">28 objects &rarr;</span>
+        </button>
+        <button type="button" data-cp9-row="03 — Analog Timekeeping" data-cp9-count="11 objects · From $480" data-cp9-note="Grade 5 titanium field watches &amp; steel desk clocks." data-cp9-img="/images/heroes/luxury-watch.jpg" class="flex w-full items-center justify-between py-4 text-left opacity-70 hover:opacity-100 transition">
+          <div><span class="font-serif text-xl text-stone-900 dark:text-white">03 &mdash; Analog Timekeeping</span><p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Geneva &amp; Tokyo calibers</p></div>
+          <span class="font-mono text-xs text-stone-500 dark:text-zinc-400">11 objects &rarr;</span>
+        </button>
+        <button type="button" data-cp9-row="04 — Studio Lighting" data-cp9-count="14 objects · From $145" data-cp9-note="Counterbalanced brass arms &amp; warm 2700K diffusers." data-cp9-img="/images/ecommerce/lamp.jpg" class="flex w-full items-center justify-between py-4 text-left opacity-70 hover:opacity-100 transition">
+          <div><span class="font-serif text-xl text-stone-900 dark:text-white">04 &mdash; Studio Lighting</span><p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Hand-brushed task lamps</p></div>
+          <span class="font-mono text-xs text-stone-500 dark:text-zinc-400">14 objects &rarr;</span>
+        </button>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-4 md:col-span-5">
+      <div class="overflow-hidden rounded-xl">
+        <img data-cp9-imgbox src="/images/ecommerce/chair.jpg" alt="Department Preview" class="h-56 w-full object-cover transition duration-300" />
+      </div>
+      <div class="mt-4 space-y-1.5 text-xs">
+        <p data-cp9-cnt class="font-mono text-[10px] uppercase tracking-wider text-stone-500 dark:text-zinc-400">16 objects · From $680</p>
+        <h3 data-cp9-ttl class="font-serif text-xl text-stone-900 dark:text-white">01 &mdash; Seating &amp; Joinery</h3>
+        <p data-cp9-nt class="text-stone-600 dark:text-zinc-400">Solid Danish ash &amp; vegetable-tanned saddle leather.</p>
+        <a href="#atelier-dept" class="mt-3 inline-flex w-full items-center justify-center rounded-full bg-stone-900 dark:bg-white py-2.5 font-semibold text-white dark:text-slate-950 hover:bg-stone-800 dark:hover:bg-zinc-200 transition">Open Collection &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cp9]'); if (!r) return;
+  const img = r.querySelector('[data-cp9-imgbox]'), cnt = r.querySelector('[data-cp9-cnt]'), ttl = r.querySelector('[data-cp9-ttl]'), nt = r.querySelector('[data-cp9-nt]');
+  const rows = [...r.querySelectorAll('[data-cp9-row]')];
+  rows.forEach(b => b.addEventListener('click', () => {
+    img.src = b.dataset.cp9Img; cnt.textContent = b.dataset.cp9Count; ttl.textContent = b.dataset.cp9Row; nt.textContent = b.dataset.cp9Note;
+    rows.forEach(x => {
+      const spanTitle = x.querySelector('span.font-serif');
+      x.className = x === b ? 'flex w-full items-center justify-between py-4 text-left transition' : 'flex w-full items-center justify-between py-4 text-left opacity-70 hover:opacity-100 transition';
+      spanTitle.className = x === b ? 'font-serif text-xl text-stone-900 dark:text-white underline underline-offset-4' : 'font-serif text-xl text-stone-900 dark:text-white';
+    });
+  }));
+})();
+</script>

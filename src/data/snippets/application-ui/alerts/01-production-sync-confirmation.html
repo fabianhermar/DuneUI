@@ -1,0 +1,60 @@
+<div role="alert" data-alert-root class="mx-auto w-full max-w-xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-sm text-slate-900 dark:text-zinc-100 transition-all">
+  <div data-alert-body class="flex items-start gap-3.5">
+    <div class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-500/25">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+      </svg>
+    </div>
+
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-wrap items-center gap-2">
+        <strong class="text-sm font-semibold text-slate-900 dark:text-white">Environment variables synced</strong>
+        <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Production</span>
+      </div>
+      <p class="mt-1 text-xs leading-relaxed text-slate-600 dark:text-zinc-300">
+        12 encrypted keys propagated across 4 edge regions with zero downtime.
+      </p>
+      <div class="mt-2.5 flex flex-wrap items-center gap-3 text-[11px] font-mono text-slate-500 dark:text-zinc-400">
+        <span>SHA 9f41c02</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Updated 2s ago</span>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      data-alert-dismiss
+      aria-label="Dismiss alert"
+      class="shrink-0 rounded-lg p-1.5 text-slate-500 dark:text-zinc-400 transition-colors hover:bg-slate-100 dark:hover:bg-zinc-800 hover:text-slate-900 dark:hover:text-white"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div data-alert-restored class="hidden items-center justify-between gap-3 py-1 text-xs text-slate-600 dark:text-zinc-400">
+    <span>Sync confirmation dismissed.</span>
+    <button type="button" data-alert-restore class="font-semibold text-emerald-700 dark:text-emerald-400 hover:underline">Restore alert</button>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-alert-root]');
+      const body = root.querySelector('[data-alert-body]');
+      const restored = root.querySelector('[data-alert-restored]');
+      const dismissBtn = root.querySelector('[data-alert-dismiss]');
+      const restoreBtn = root.querySelector('[data-alert-restore]');
+      dismissBtn?.addEventListener('click', () => {
+        body.classList.add('hidden');
+        restored.classList.remove('hidden');
+        restored.classList.add('flex');
+      });
+      restoreBtn?.addEventListener('click', () => {
+        restored.classList.add('hidden');
+        restored.classList.remove('flex');
+        body.classList.remove('hidden');
+      });
+    })();
+  </script>
+</div>

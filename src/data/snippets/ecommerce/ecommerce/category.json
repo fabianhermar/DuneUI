@@ -1,0 +1,69 @@
+{
+  "slug": "ecommerce",
+  "index": "34",
+  "tag": "Commerce",
+  "title": "E-Commerce",
+  "description": "Product detail cards with size & color pickers, cart drawers with quantity steppers, express checkout panels, product grids, order trackers, and flash-sale strips.",
+  "specs": [
+    {
+      "file": "01-product-showcase-swatches.html",
+      "title": "Product Showcase & Swatches",
+      "styleTag": "Product Detail",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-cart-drawer-shipping-meter.html",
+      "title": "Cart Drawer & Shipping Meter",
+      "styleTag": "Shopify · Cart",
+      "canvas": "light"
+    },
+    {
+      "file": "03-3-col-editorial-product-grid.html",
+      "title": "3-Col Editorial Product Grid",
+      "styleTag": "Editorial · Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "04-2-col-express-checkout.html",
+      "title": "2-Col Express Checkout",
+      "styleTag": "Stripe · Checkout",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-liquid-glass-audio-product.html",
+      "title": "Liquid Glass Audio Product",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-brutalist-sneaker-drop-card.html",
+      "title": "Brutalist Sneaker Drop Card",
+      "styleTag": "Brutalist · Drop",
+      "canvas": "light"
+    },
+    {
+      "file": "07-catalog-filter-sort-bar.html",
+      "title": "Catalog Filter & Sort Bar",
+      "styleTag": "Storefront",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-ratings-buyer-reviews-card.html",
+      "title": "Ratings & Buyer Reviews Card",
+      "styleTag": "Social Proof",
+      "canvas": "light"
+    },
+    {
+      "file": "09-dark-order-tracking-card.html",
+      "title": "Dark Order Tracking Card",
+      "styleTag": "Dark Luxe · Track",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-flash-sale-countdown-banner.html",
+      "title": "Flash Sale Countdown Banner",
+      "styleTag": "Commerce · Promo",
+      "canvas": "light"
+    }
+  ]
+}

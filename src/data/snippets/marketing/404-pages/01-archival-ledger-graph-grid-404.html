@@ -1,0 +1,60 @@
+<section data-nf-archive class="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-stone-300/80 dark:border-zinc-800 bg-[#F7F5EE] dark:bg-[#0D0E12] px-6 py-12 text-stone-900 dark:text-zinc-100 shadow-sm sm:px-10 sm:py-16">
+  <!-- Architectural Graph Grid -->
+  <div class="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,rgba(28,25,23,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(28,25,23,0.045)_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] [background-size:28px_28px]"></div>
+
+  <div class="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
+    <!-- Far Left Index Marker -->
+    <div class="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] lg:col-span-3">
+      <span class="h-px w-6 shrink-0 bg-stone-400/80 dark:bg-zinc-600"></span>
+      <div>
+        <p class="font-bold text-stone-800 dark:text-zinc-200">ATL / 404</p>
+        <p class="mt-0.5 text-stone-600 dark:text-zinc-400">MISSING RECORD</p>
+      </div>
+    </div>
+
+    <!-- Center Editorial Typographic Block -->
+    <div class="relative py-2 lg:col-span-6">
+      <p aria-hidden="true" class="pointer-events-none select-none font-sans text-[112px] font-black leading-none tracking-tighter text-stone-900/[0.06] dark:text-white/[0.05] sm:text-[168px]">404</p>
+      <div class="relative -mt-20 sm:-mt-28">
+        <h1 class="text-3xl font-bold leading-[1.05] tracking-tight text-stone-900 dark:text-white sm:text-5xl">
+          This entry could <br class="hidden sm:inline" />not be <span class="font-serif italic font-normal">located.</span>
+        </h1>
+        <div class="mt-7 flex flex-col justify-between gap-4 border-t border-stone-900/15 dark:border-white/15 pt-5 sm:flex-row sm:items-center">
+          <p class="max-w-[28ch] text-xs leading-relaxed text-stone-600 dark:text-zinc-300">The requested record could not be retrieved from the current archive.</p>
+          <a href="#" class="inline-flex w-fit shrink-0 items-center gap-2 bg-stone-900 dark:bg-white px-5 py-2.5 text-xs font-semibold text-[#F7F5EE] dark:text-stone-950 hover:bg-stone-800 dark:hover:bg-zinc-200 transition">
+            <span>Return Home</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Far Right Record Metadata -->
+    <dl class="flex flex-wrap gap-6 border-t border-stone-900/10 dark:border-white/10 pt-5 font-mono text-[10px] lg:col-span-3 lg:flex-col lg:gap-4 lg:border-t-0 lg:pl-8 lg:pt-0">
+      <div>
+        <dt class="uppercase tracking-[0.18em] text-stone-500 dark:text-zinc-400">Record Status</dt>
+        <dd class="mt-0.5 font-sans text-xs font-semibold text-stone-900 dark:text-white">Missing</dd>
+      </div>
+      <div>
+        <dt class="uppercase tracking-[0.18em] text-stone-500 dark:text-zinc-400">Index</dt>
+        <dd class="mt-0.5 font-sans text-xs font-semibold text-stone-900 dark:text-white">Unavailable</dd>
+      </div>
+      <div>
+        <dt class="uppercase tracking-[0.18em] text-stone-500 dark:text-zinc-400">Reference</dt>
+        <dd class="mt-0.5">
+          <button type="button" data-ref-copy="ATL / 404" class="cursor-pointer font-sans text-xs font-semibold text-stone-900 dark:text-white underline decoration-stone-400/60 underline-offset-4 hover:decoration-stone-900 dark:hover:decoration-white">ATL / 404</button>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nf-archive] [data-ref-copy]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const orig = btn.getAttribute('data-ref-copy') || 'ATL / 404';
+      navigator.clipboard?.writeText(orig).catch(() => {});
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => { btn.textContent = orig; }, 1600);
+    });
+  });
+</script>

@@ -1,0 +1,34 @@
+<section data-ldr5 class="mx-auto w-full max-w-xl rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-br from-slate-50 dark:from-slate-950 via-white dark:via-indigo-950 to-sky-50/80 dark:to-slate-950 p-6 sm:p-8 text-slate-900 dark:text-white shadow-xl">
+  <div class="rounded-2xl border border-slate-900/15 dark:border-white/20 bg-white/80 dark:bg-white/10 p-6 backdrop-blur-2xl">
+    <div class="flex flex-col items-center text-center">
+      <div class="relative flex size-28 items-center justify-center">
+        <span class="absolute size-24 rounded-full bg-sky-400/20 animate-ping"></span>
+        <span class="absolute size-24 rounded-full border-2 border-sky-500/40 dark:border-sky-300/40 border-t-sky-500 dark:border-t-white animate-spin"></span>
+        <span class="absolute size-16 rounded-full border border-indigo-400/50 border-b-transparent animate-spin" style="animation-direction: reverse; animation-duration: 2s;"></span>
+        <div class="flex size-10 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-600 to-sky-400 shadow-lg">
+          <span class="size-2.5 rounded-full bg-white animate-pulse"></span>
+        </div>
+      </div>
+      <span class="mt-4 rounded-full border border-slate-900/10 dark:border-white/20 bg-sky-500/10 dark:bg-white/10 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-widest text-sky-700 dark:text-sky-200">
+        Spatial Mesh Calibration &middot; 120Hz
+      </span>
+      <h3 data-ldr5-title class="mt-2 text-lg font-bold">Mapping Room Depth &amp; Lighting Planes</h3>
+      <p class="mt-1 max-w-sm text-xs text-slate-600 dark:text-indigo-100/80">Aligning LiDAR point-cloud anchors with ambient specular reflection maps.</p>
+    </div>
+    <div class="mt-6 grid grid-cols-3 gap-2.5 text-center font-mono text-[11px]">
+      <button type="button" data-ldr5-mode="LiDAR Point Cloud" class="rounded-xl border-2 border-sky-500 dark:border-white bg-sky-50/70 dark:bg-white/15 p-2.5 font-bold">LiDAR Mesh</button>
+      <button type="button" data-ldr5-mode="Binaural Acoustic Raytrace" class="rounded-xl border border-slate-200 dark:border-white/15 bg-white/50 dark:bg-white/5 p-2.5">Audio Rays</button>
+      <button type="button" data-ldr5-mode="Eye-Tracked Foveated Shaders" class="rounded-xl border border-slate-200 dark:border-white/15 bg-white/50 dark:bg-white/5 p-2.5">Foveated 8K</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr5]'); if (!r) return;
+  const ttl = r.querySelector('[data-ldr5-title]'), btns = [...r.querySelectorAll('[data-ldr5-mode]')];
+  btns.forEach(b => b.addEventListener('click', () => {
+    ttl.textContent = 'Calibrating ' + b.dataset.ldr5Mode + '...';
+    btns.forEach(x => x.className = x === b ? 'rounded-xl border-2 border-sky-500 dark:border-white bg-sky-50/70 dark:bg-white/15 p-2.5 font-bold' : 'rounded-xl border border-slate-200 dark:border-white/15 bg-white/50 dark:bg-white/5 p-2.5');
+  }));
+})();
+</script>

@@ -1,0 +1,74 @@
+<div class="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 text-xs shadow-lg dark:shadow-2xl text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-white/15 px-4 py-3.5 sm:px-5">
+    <div class="flex items-center gap-2.5">
+      <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+      <span class="font-semibold text-slate-900 dark:text-white">Edge API Latency Monitor</span>
+    </div>
+    <div role="group" aria-label="Cluster region" class="inline-flex rounded-lg border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.04] p-0.5 font-mono text-[10px]">
+      <button type="button" data-reg-btn="iad1" aria-pressed="true" class="rounded-md bg-slate-900/[0.07] dark:bg-white/15 px-2.5 py-1 font-semibold text-slate-900 dark:text-white">us-east (iad1)</button>
+      <button type="button" data-reg-btn="fra1" aria-pressed="false" class="rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">eu-central (fra1)</button>
+    </div>
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="w-full min-w-[540px] text-left font-mono">
+      <thead class="border-b border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.02] text-[10px] uppercase tracking-wider text-slate-500 dark:text-zinc-500">
+        <tr>
+          <th class="px-5 py-3">Endpoint Route</th>
+          <th class="px-4 py-3">p95 Latency</th>
+          <th class="px-4 py-3">Throughput</th>
+          <th class="px-4 py-3">Uptime</th>
+          <th class="px-5 py-3 text-right">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-white/[0.07] text-slate-700 dark:text-zinc-300">
+        <tr class="hover:bg-slate-100 dark:hover:bg-white/[0.03]">
+          <td class="px-5 py-3"><span class="mr-2 rounded bg-sky-50 dark:bg-sky-500/15 px-1.5 py-0.5 text-[10px] font-bold text-sky-700 dark:text-sky-300">POST</span><span class="text-slate-900 dark:text-white">/v2/tokens/mint</span></td>
+          <td class="px-4 py-3"><div class="flex items-center gap-2"><span data-lat="0" class="w-11 text-emerald-600 dark:text-emerald-400">18ms</span><span class="h-1.5 w-16 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"><span class="block h-full w-1/4 rounded-full bg-emerald-400 text-black dark:text-black"></span></span></div></td>
+          <td class="px-4 py-3 text-slate-600 dark:text-zinc-400">14.2k rpm</td>
+          <td class="px-4 py-3 text-slate-900 dark:text-white">99.99%</td>
+          <td class="px-5 py-3 text-right"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">200 OK</span></td>
+        </tr>
+        <tr class="hover:bg-slate-100 dark:hover:bg-white/[0.03]">
+          <td class="px-5 py-3"><span class="mr-2 rounded bg-emerald-50 dark:bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">GET</span><span class="text-slate-900 dark:text-white">/v2/stream/events</span></td>
+          <td class="px-4 py-3"><div class="flex items-center gap-2"><span data-lat="1" class="w-11 text-amber-700 dark:text-amber-400">114ms</span><span class="h-1.5 w-16 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"><span class="block h-full w-4/5 rounded-full bg-amber-400 text-black dark:text-black"></span></span></div></td>
+          <td class="px-4 py-3 text-slate-600 dark:text-zinc-400">3.8k rpm</td>
+          <td class="px-4 py-3 text-amber-700 dark:text-amber-300">99.42%</td>
+          <td class="px-5 py-3 text-right"><span class="rounded-full bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-300">DEGRADED</span></td>
+        </tr>
+        <tr class="hover:bg-slate-100 dark:hover:bg-white/[0.03]">
+          <td class="px-5 py-3"><span class="mr-2 rounded bg-violet-50 dark:bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold text-violet-700 dark:text-violet-300">PUT</span><span class="text-slate-900 dark:text-white">/v2/webhooks/verify</span></td>
+          <td class="px-4 py-3"><div class="flex items-center gap-2"><span data-lat="2" class="w-11 text-emerald-600 dark:text-emerald-400">9ms</span><span class="h-1.5 w-16 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"><span class="block h-full w-1/6 rounded-full bg-emerald-400 text-black dark:text-black"></span></span></div></td>
+          <td class="px-4 py-3 text-slate-600 dark:text-zinc-400">28.9k rpm</td>
+          <td class="px-4 py-3 text-slate-900 dark:text-white">100.0%</td>
+          <td class="px-5 py-3 text-right"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">200 OK</span></td>
+        </tr>
+        <tr class="hover:bg-slate-100 dark:hover:bg-white/[0.03]">
+          <td class="px-5 py-3"><span class="mr-2 rounded bg-emerald-50 dark:bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">GET</span><span class="text-slate-900 dark:text-white">/v2/metrics/export</span></td>
+          <td class="px-4 py-3"><div class="flex items-center gap-2"><span data-lat="3" class="w-11 text-sky-700 dark:text-sky-300">42ms</span><span class="h-1.5 w-16 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"><span class="block h-full w-2/5 rounded-full bg-sky-400 text-black dark:text-black"></span></span></div></td>
+          <td class="px-4 py-3 text-slate-600 dark:text-zinc-400">1.1k rpm</td>
+          <td class="px-4 py-3 text-slate-900 dark:text-white">99.98%</td>
+          <td class="px-5 py-3 text-right"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">200 OK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+(() => {
+  const data = { iad1: ['18ms', '114ms', '9ms', '42ms'], fra1: ['24ms', '96ms', '14ms', '51ms'] };
+  document.querySelectorAll('[data-reg-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const reg = btn.getAttribute('data-reg-btn');
+      document.querySelectorAll('[data-reg-btn]').forEach((b) => {
+        const active = b.getAttribute('data-reg-btn') === reg;
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        b.className = active ? 'rounded-md bg-white/15 px-2.5 py-1 font-semibold text-white' : 'rounded-md px-2.5 py-1 text-zinc-400 hover:text-white';
+      });
+      (data[reg] || data.iad1).forEach((val, idx) => {
+        const el = document.querySelector('[data-lat="' + idx + '"]');
+        if (el) el.textContent = val;
+      });
+    });
+  });
+})();
+</script>

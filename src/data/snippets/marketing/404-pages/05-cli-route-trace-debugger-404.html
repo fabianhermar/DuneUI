@@ -1,0 +1,37 @@
+<section data-nf-5 class="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#0D0F14] font-mono text-xs text-slate-900 dark:text-white shadow-xl dark:shadow-2xl">
+  <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] px-5 py-3">
+    <div class="flex items-center gap-2">
+      <span class="size-2.5 rounded-full bg-rose-500"></span>
+      <span class="size-2.5 rounded-full bg-amber-400"></span>
+      <span class="size-2.5 rounded-full bg-emerald-500"></span>
+      <span class="ml-2 text-[11px] font-semibold text-slate-600 dark:text-zinc-400">edge-router — GET /v2/unknown-endpoint</span>
+    </div>
+    <span class="rounded-md bg-rose-500/15 px-2 py-0.5 text-[10px] font-bold text-rose-600 dark:text-rose-400">404 NOT_FOUND</span>
+  </div>
+  <div class="p-6 sm:p-8 space-y-2.5 leading-relaxed">
+    <p class="text-slate-500 dark:text-zinc-500">$ curl -i https://api.duneui.dev/v2/unknown-endpoint</p>
+    <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/80 dark:bg-black/40 p-4 space-y-1.5 text-[11.5px]">
+      <p><span class="text-indigo-600 dark:text-indigo-400">"status"</span>: <span class="text-rose-600 dark:text-rose-400">404</span>,</p>
+      <p><span class="text-indigo-600 dark:text-indigo-400">"edge_pop"</span>: <span class="text-emerald-700 dark:text-emerald-300">"iad1-edge-04 (11ms)"</span>,</p>
+      <p><span class="text-indigo-600 dark:text-indigo-400">"trace_id"</span>: <span class="text-amber-700 dark:text-amber-300">"req_99f2c8e1a4"</span>,</p>
+      <p><span class="text-indigo-600 dark:text-indigo-400">"hint"</span>: <span class="text-slate-700 dark:text-zinc-300">"No static asset or handler matched path."</span></p>
+    </div>
+    <div class="pt-4 flex flex-wrap items-center justify-between gap-3 font-sans">
+      <div class="flex flex-wrap gap-2.5">
+        <a href="#" class="rounded-xl bg-slate-900 dark:bg-white px-4 py-2 text-xs font-bold text-white dark:text-slate-950 hover:bg-indigo-600 dark:hover:bg-zinc-200 transition">cd /home</a>
+        <a href="#" class="rounded-xl border border-slate-300 dark:border-white/15 px-4 py-2 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:border-slate-500 transition">API Status</a>
+      </div>
+      <button type="button" data-nf-copy="req_99f2c8e1a4" class="rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3 py-1.5 font-mono text-[11px] font-semibold text-slate-600 dark:text-zinc-300 hover:border-indigo-400 transition cursor-pointer">Copy trace ID</button>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nf-5]').forEach((root) => {
+    const btn = root.querySelector('[data-nf-copy]');
+    btn?.addEventListener('click', () => {
+      navigator.clipboard?.writeText(btn.getAttribute('data-nf-copy') || '').catch(() => {});
+      btn.textContent = 'Copied req_99f2c8e1a4!';
+      setTimeout(() => { btn.textContent = 'Copy trace ID'; }, 1800);
+    });
+  });
+</script>

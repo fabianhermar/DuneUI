@@ -1,0 +1,141 @@
+<section data-nf-space class="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-b from-[#090B10] via-[#0D1017] to-[#050608] px-6 pt-8 pb-8 text-white shadow-2xl sm:px-12 sm:pt-10 sm:pb-10">
+  <!-- Starfield + Ambient Nebula -->
+  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:28px_28px] opacity-35 [mask-image:radial-gradient(ellipse_at_top,black_45%,transparent_85%)]"></div>
+  <div class="pointer-events-none absolute -top-20 left-1/2 h-64 w-96 -translate-x-1/2 rounded-full bg-slate-200/10 blur-3xl"></div>
+
+  <!-- Top Telemetry Strip -->
+  <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-400">
+    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3 py-1 text-zinc-200">
+      <span class="size-1.5 rounded-full bg-emerald-400"></span>
+      SECTOR 404 · ORBIT NULL
+    </span>
+    <button type="button" data-beam-toggle aria-pressed="true" class="cursor-pointer rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-zinc-300 hover:border-white/30 hover:text-white transition">Tractor Beam: ON</button>
+  </div>
+
+  <!-- Custom Space UFO + 404 Lunar Vector Scene -->
+  <div class="relative z-10 mx-auto mt-2 flex max-w-2xl justify-center">
+    <svg viewBox="0 0 680 315" class="h-auto w-full select-none" role="img" aria-label="404 UFO hovering over a cratered moon surface">
+      <defs>
+        <linearGradient id="dune-num-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a1a1aa"/>
+          <stop offset="55%" stop-color="#52525b"/>
+          <stop offset="100%" stop-color="#18181b" stop-opacity="0.35"/>
+        </linearGradient>
+        <linearGradient id="dune-ufo-beam" x1="0.5" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.82"/>
+          <stop offset="28%" stop-color="#e4e4e7" stop-opacity="0.38"/>
+          <stop offset="75%" stop-color="#a1a1aa" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#18181b" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="dune-ufo-beam-halo" x1="0.5" y1="0" x2="0.5" y2="1">
+          <stop offset="0%" stop-color="#f4f4f5" stop-opacity="0.42"/>
+          <stop offset="55%" stop-color="#d4d4d8" stop-opacity="0.14"/>
+          <stop offset="100%" stop-color="#18181b" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="dune-emitter-glow" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="70%" stop-color="#f4f4f5"/>
+          <stop offset="100%" stop-color="#d4d4d8"/>
+        </radialGradient>
+        <filter id="dune-beam-blur" x="-20%" y="-10%" width="140%" height="125%">
+          <feGaussianBlur stdDeviation="4"/>
+        </filter>
+        <radialGradient id="dune-moon-surface" cx="50%" cy="18%" r="65%">
+          <stop offset="0%" stop-color="#52525b"/>
+          <stop offset="55%" stop-color="#27272a"/>
+          <stop offset="100%" stop-color="#09090b" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dune-saucer" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#e4e4e7"/>
+          <stop offset="55%" stop-color="#71717a"/>
+          <stop offset="100%" stop-color="#27272a"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Twinkling Background Stars -->
+      <circle cx="95" cy="54" r="1.5" fill="#e4e4e7" opacity="0.55"/>
+      <circle cx="152" cy="108" r="1" fill="#a1a1aa" opacity="0.45"/>
+      <circle cx="535" cy="48" r="1.4" fill="#f4f4f5" opacity="0.6"/>
+      <circle cx="595" cy="116" r="1.2" fill="#a1a1aa" opacity="0.5"/>
+      <circle cx="468" cy="84" r="1" fill="#d4d4d8" opacity="0.4"/>
+      <circle cx="218" cy="46" r="1.2" fill="#d4d4d8" opacity="0.45"/>
+
+      <!-- Huge Left & Right 4 Numerals -->
+      <path d="M204 196V112L126 168H232" fill="none" stroke="url(#dune-num-grad)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M526 196V112L448 168H554" fill="none" stroke="url(#dune-num-grad)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Center Zero Capsule -->
+      <rect x="263" y="108" width="154" height="88" rx="22" transform="rotate(-3 340 152)" fill="none" stroke="url(#dune-num-grad)" stroke-width="14"/>
+
+      <!-- Lunar Horizon + Two Minimal Trees + Craters -->
+      <path d="M110 315 C165 208 515 208 570 315 Z" fill="url(#dune-moon-surface)"/>
+      <ellipse cx="305" cy="242" rx="18" ry="5.5" fill="#18181b" opacity="0.55"/>
+      <ellipse cx="404" cy="264" rx="24" ry="8" fill="#18181b" opacity="0.6"/>
+      <ellipse cx="268" cy="268" rx="9" ry="3.5" fill="#27272a" opacity="0.7"/>
+      <path d="M198 242 L205 215 L212 242 Z" fill="#3f3f46"/>
+      <rect x="204" y="242" width="2" height="11" fill="#27272a"/>
+      <path d="M466 244 L473 217 L480 244 Z" fill="#3f3f46"/>
+      <rect x="472" y="244" width="2" height="11" fill="#27272a"/>
+
+      <!-- Floating Saucer UFO + Seamlessly Anchored Volumetric Beam -->
+      <g transform="translate(362 66) rotate(11)">
+        <line x1="0" y1="-22" x2="0" y2="-40" stroke="#a1a1aa" stroke-width="2.5"/>
+        <circle cx="0" cy="-42" r="4" fill="#d4d4d8"/>
+        <path d="M-32 -2 A32 24 0 0 1 32 -2 Z" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
+        <ellipse cx="0" cy="4" rx="76" ry="23" fill="url(#dune-saucer)"/>
+        <circle cx="-44" cy="-2" r="4" fill="#09090b" opacity="0.85"/>
+        <circle cx="-16" cy="-5" r="4.5" fill="#09090b" opacity="0.85"/>
+        <circle cx="16" cy="-5" r="4.5" fill="#09090b" opacity="0.85"/>
+        <circle cx="44" cy="-2" r="4" fill="#09090b" opacity="0.85"/>
+        <!-- Volumetric Tractor Beam Anchored Directly to Emitter Tangents -->
+        <g data-ufo-beam>
+          <path d="M-28 20 L28 20 L86 210 Q0 226 -86 210 Z" fill="url(#dune-ufo-beam-halo)" filter="url(#dune-beam-blur)"/>
+          <path d="M-28 20 L28 20 L58 204 Q0 216 -58 204 Z" fill="url(#dune-ufo-beam)"/>
+        </g>
+        <!-- Recessed Luminous Emitter Lens -->
+        <ellipse cx="0" cy="20" rx="28" ry="8" fill="url(#dune-emitter-glow)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Bottom Recovery Bar -->
+  <div class="relative z-10 mt-2 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <h1 class="font-mono text-xl font-bold tracking-tight text-white sm:text-2xl">We Have Lost This Page</h1>
+      <p data-space-msg class="mt-1.5 max-w-md text-xs leading-relaxed text-zinc-400 sm:text-sm">Sorry, this page doesn&rsquo;t exist or was beamed out of orbit.</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-b from-white to-zinc-300 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-lg hover:to-white transition">
+        Back to home
+      </a>
+      <button type="button" data-beacon-btn class="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-5 py-2.5 text-xs font-semibold text-zinc-200 hover:border-white/40 hover:text-white transition">
+        <svg class="size-3.5 text-zinc-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span data-beacon-label>Contact us</span>
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nf-space]').forEach((root) => {
+    const beamBtn = root.querySelector('[data-beam-toggle]');
+    const beam = root.querySelector('[data-ufo-beam]');
+    const beaconBtn = root.querySelector('[data-beacon-btn]');
+    const beaconLbl = root.querySelector('[data-beacon-label]');
+    const msg = root.querySelector('[data-space-msg]');
+
+    beamBtn?.addEventListener('click', () => {
+      const on = beamBtn.getAttribute('aria-pressed') === 'true';
+      beamBtn.setAttribute('aria-pressed', String(!on));
+      beamBtn.textContent = !on ? 'Tractor Beam: ON' : 'Tractor Beam: OFF';
+      if (beam) beam.style.opacity = !on ? '1' : '0.12';
+    });
+
+    beaconBtn?.addEventListener('click', () => {
+      if (beaconLbl) beaconLbl.textContent = 'Signal Sent ✓';
+      if (msg) msg.textContent = 'Distress telemetry pinged — flight crew notified.';
+      setTimeout(() => {
+        if (beaconLbl) beaconLbl.textContent = 'Contact us';
+      }, 2400);
+    });
+  });
+</script>

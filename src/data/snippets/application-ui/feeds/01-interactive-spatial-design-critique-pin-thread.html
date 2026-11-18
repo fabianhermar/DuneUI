@@ -1,0 +1,41 @@
+<div class="mx-auto w-full max-w-2xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FAF9F6] dark:bg-zinc-900 p-5 sm:p-6 text-xs text-stone-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 dark:border-zinc-800 pb-3.5">
+    <div class="flex items-center gap-2.5">
+      <span class="flex size-6 items-center justify-center rounded-full bg-rose-600 font-mono text-[11px] font-bold text-white">#04</span>
+      <h3 class="font-semibold text-sm">Spatial Pin: Navigation Rail Contrast</h3>
+    </div>
+    <span class="font-mono text-[11px] text-stone-500 dark:text-zinc-400">Frame: Desktop 1440w</span>
+  </div>
+  <ul data-fd1-list class="mt-4 space-y-4">
+    <li class="flex gap-3">
+      <img src="/images/testimonials/elena.jpg" alt="Elena Vance" class="size-7 shrink-0 rounded-full object-cover" />
+      <div class="flex-1 rounded-xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+        <div class="flex justify-between"><strong class="font-semibold">Elena Vance</strong><span class="font-mono text-[10px] text-stone-400">14m ago</span></div>
+        <p class="mt-1.5 leading-relaxed text-stone-600 dark:text-zinc-300">Bumped active pill border from <code class="font-mono text-[11px]">zinc-700</code> to <code class="font-mono text-[11px]">amber-400</code> for WCAG AA on OLED.</p>
+      </div>
+    </li>
+    <li class="flex gap-3">
+      <img src="/images/testimonials/maya.jpg" alt="Maya Patel" class="size-7 shrink-0 rounded-full object-cover" />
+      <div class="flex-1 pt-0.5 flex flex-wrap items-center justify-between gap-2">
+        <p class="text-stone-600 dark:text-zinc-300"><strong class="text-stone-900 dark:text-white">Maya Patel</strong> resolved pin <span class="font-mono text-emerald-700 dark:text-emerald-400">#03 (Spacing 24px)</span></p>
+        <span class="font-mono text-[10px] text-stone-400">5m ago</span>
+      </div>
+    </li>
+  </ul>
+  <form data-fd1-form class="mt-4 flex gap-2 border-t border-stone-200 dark:border-zinc-800 pt-3.5">
+    <input type="text" required placeholder="Reply on pin #04..." class="flex-1 min-w-0 rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-2 text-xs focus:border-rose-500 focus:outline-none" />
+    <button type="submit" class="shrink-0 rounded-xl bg-rose-600 px-3.5 py-2 font-semibold text-white hover:bg-rose-500 transition-colors">Pin Reply</button>
+  </form>
+</div>
+<script>
+(function(){
+  const f = document.querySelector('[data-fd1-form]'), list = document.querySelector('[data-fd1-list]');
+  f?.addEventListener('submit', e => {
+    e.preventDefault();
+    const inp = f.querySelector('input'); if (!inp || !inp.value.trim() || !list) return;
+    const li = document.createElement('li'); li.className = 'flex gap-3';
+    li.innerHTML = '<img src="/images/testimonials/daniel.jpg" alt="You" class="size-7 shrink-0 rounded-full object-cover" /><div class="flex-1 rounded-xl border border-rose-200 dark:border-rose-500/30 bg-rose-50/50 dark:bg-rose-500/10 p-3.5"><div class="flex justify-between"><strong>Daniel Kim</strong><span class="font-mono text-[10px] text-rose-600 dark:text-rose-400">just now</span></div><p class="mt-1.5 text-stone-700 dark:text-zinc-200"></p></div>';
+    li.querySelector('p').textContent = inp.value; list.appendChild(li); inp.value = '';
+  });
+})();
+</script>

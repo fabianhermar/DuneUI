@@ -1,0 +1,57 @@
+<section class="w-full max-w-4xl overflow-hidden rounded-3xl border border-emerald-500/25 bg-white dark:bg-zinc-900 p-6 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl sm:p-8">
+  <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
+    <div class="min-w-0">
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex -space-x-2">
+          <img src="/images/testimonials/elena.jpg" alt="Maintainer 1" class="h-7 w-7 rounded-full border-2 border-[#0A0F0E] object-cover" />
+          <img src="/images/testimonials/henrik.jpg" alt="Maintainer 2" class="h-7 w-7 rounded-full border-2 border-[#0A0F0E] object-cover" />
+          <img src="/images/testimonials/daniel.jpg" alt="Maintainer 3" class="h-7 w-7 rounded-full border-2 border-[#0A0F0E] object-cover" />
+        </div>
+        <span class="rounded-full border border-emerald-400/30 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">MIT Open Source · v2.8.0</span>
+      </div>
+      <h3 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">Clone the monorepo. Own every line of code.</h3>
+      <p class="mt-1.5 text-sm text-slate-600 dark:text-zinc-400">Built by 84 contributors. Zero telemetry, tree-shakeable primitives, full keyboard a11y.</p>
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        <div class="inline-flex rounded-lg border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/90 p-1 font-mono text-[11px]" data-pkg-tabs>
+          <button type="button" data-cmd="pnpm dlx dune-kit init" class="rounded-md bg-emerald-500 px-2.5 py-1 font-bold text-zinc-950">pnpm</button>
+          <button type="button" data-cmd="npx dune-kit init" class="rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">npm</button>
+          <button type="button" data-cmd="bunx dune-kit init" class="rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">bun</button>
+        </div>
+        <code data-cmd-output class="rounded-lg border border-zinc-800 bg-slate-900/[0.06] dark:bg-black/70 px-3 py-1.5 font-mono text-xs text-emerald-700 dark:text-emerald-300">pnpm dlx dune-kit init</code>
+      </div>
+    </div>
+    <div class="flex shrink-0 flex-col gap-2.5 sm:flex-row lg:flex-col">
+      <button type="button" data-star-btn class="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-400/35 bg-amber-50 dark:bg-amber-400/10 px-5 py-3 text-xs font-bold text-amber-700 dark:text-amber-300 transition hover:bg-amber-50 dark:hover:bg-amber-400/20">
+        <span>★</span>
+        <span>Star on GitHub</span>
+        <span data-star-count class="rounded-md bg-slate-900/[0.06] dark:bg-black/40 px-2 py-0.5 font-mono text-slate-900 dark:text-white">18.4k</span>
+      </button>
+      <button type="button" class="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-xs font-bold text-zinc-950 transition hover:bg-emerald-300 text-black dark:text-black">Read Quickstart Docs →</button>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.parentElement;
+      const tabs = root.querySelectorAll('[data-cmd]');
+      const out = root.querySelector('[data-cmd-output]');
+      tabs.forEach((t) => {
+        t.addEventListener('click', () => {
+          tabs.forEach((x) => {
+            x.className = 'rounded-md px-2.5 py-1 text-zinc-400 hover:text-white';
+          });
+          t.className = 'rounded-md bg-emerald-500 px-2.5 py-1 font-bold text-zinc-950';
+          if (out) out.textContent = t.dataset.cmd;
+        });
+      });
+      const starBtn = root.querySelector('[data-star-btn]');
+      const starCount = root.querySelector('[data-star-count]');
+      let starred = false;
+      starBtn?.addEventListener('click', () => {
+        starred = !starred;
+        if (starCount) starCount.textContent = starred ? '18.5k' : '18.4k';
+        starBtn.classList.toggle('bg-amber-400', starred);
+        starBtn.classList.toggle('text-zinc-950', starred);
+      });
+    })();
+  </script>
+</section>

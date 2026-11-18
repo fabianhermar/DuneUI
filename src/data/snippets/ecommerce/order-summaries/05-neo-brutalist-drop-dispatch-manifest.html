@@ -1,0 +1,54 @@
+<section data-os5 class="mx-auto w-full max-w-3xl border-2 border-black dark:border-zinc-200 bg-[#FFFDF7] dark:bg-zinc-900 p-6 shadow-[6px_6px_0_#000] dark:shadow-[6px_6px_0_#e4e4e7] text-xs text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b-2 border-black dark:border-zinc-200 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-black uppercase tracking-widest text-neutral-500 dark:text-neutral-400">ARCHIVE WAREHOUSE // BERLIN</span>
+      <h2 class="font-mono text-xl font-black uppercase">DISPATCH SLIP #884</h2>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="border-2 border-black dark:border-zinc-200 bg-[#FFE95A] px-2.5 py-1 font-mono font-black text-black">EDITION #0421</span>
+      <span class="border-2 border-black dark:border-zinc-200 bg-[#A7F3D0] px-2.5 py-1 font-mono font-black text-black">CONFIRMED</span>
+    </div>
+  </div>
+  <div class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-12">
+    <div class="space-y-3 sm:col-span-8">
+      <div class="flex items-center justify-between gap-3 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3">
+        <div class="flex items-center gap-3">
+          <img src="/images/ecommerce/tote.jpg" alt="Canvas Tote" class="size-12 border-2 border-black dark:border-zinc-200 object-cover" />
+          <div class="font-mono"><p class="font-black">1x HEAVY CANVAS TOTE</p><p class="text-[11px] text-neutral-600 dark:text-neutral-400">24oz Waxed Olive &middot; SKU T-04</p></div>
+        </div>
+        <span class="font-mono text-sm font-black">$64.00</span>
+      </div>
+      <div class="flex items-center justify-between gap-3 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-3">
+        <div class="flex items-center gap-3">
+          <img src="/images/ecommerce/knitwear.jpg" alt="Merino Rib Knit" class="size-12 border-2 border-black dark:border-zinc-200 object-cover" />
+          <div class="font-mono"><p class="font-black">1x MERINO RIB KNIT</p><p class="text-[11px] text-neutral-600 dark:text-neutral-400">Size L &middot; Biella Oat</p></div>
+        </div>
+        <span class="font-mono text-sm font-black">$145.00</span>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between border-2 border-black dark:border-zinc-200 bg-[#FFE95A]/30 dark:bg-zinc-950 p-4 font-mono sm:col-span-4">
+      <div class="space-y-1.5">
+        <p class="font-black uppercase">CARRIER BARCODE</p>
+        <div class="grid h-10 grid-cols-12 gap-0.5 bg-white p-1.5 border border-black">
+          <span class="col-span-1 bg-black"></span><span class="col-span-1 bg-white"></span><span class="col-span-2 bg-black"></span><span class="col-span-1 bg-white"></span><span class="col-span-1 bg-black"></span><span class="col-span-1 bg-white"></span><span class="col-span-2 bg-black"></span><span class="col-span-1 bg-white"></span><span class="col-span-1 bg-black"></span><span class="col-span-1 bg-black"></span>
+        </div>
+        <p class="text-[10px] font-bold">TRK: DE-99402-XT</p>
+      </div>
+      <div class="mt-4 border-t-2 border-black dark:border-zinc-200 pt-2.5">
+        <div class="flex justify-between text-[11px]"><span>SHIPPING</span><span>$0.00</span></div>
+        <div class="flex justify-between text-base font-black"><span>PAID</span><span>$209.00</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t-2 border-black dark:border-zinc-200 pt-4 font-mono">
+    <span class="text-[11px] font-bold">DISPATCHING WITHIN 24H TO BROOKLYN, NY</span>
+    <button type="button" data-os5-btn class="border-2 border-black dark:border-zinc-200 bg-[#A7F3D0] px-4 py-2 font-black text-black shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">COPY TRACKING &rarr;</button>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-os5]'); if (!r) return;
+  const b = r.querySelector('[data-os5-btn]');
+  b?.addEventListener('click', () => { b.textContent = 'COPIED DE-99402-XT ✓'; });
+})();
+</script>

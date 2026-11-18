@@ -1,0 +1,33 @@
+<div class="w-full max-w-lg rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl">
+  <div class="flex items-center justify-between gap-2">
+    <div>
+      <p class="font-mono text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">Multi-Track Stem Uploader</p>
+      <p class="mt-0.5 text-xs text-slate-600 dark:text-zinc-400">24-bit WAV, FLAC, or AIFF · 48 kHz recommended</p>
+    </div>
+    <label class="cursor-pointer rounded-xl bg-cyan-500 px-3.5 py-2 text-xs font-bold text-black">
+      <input type="file" multiple accept="audio/*" class="sr-only" />
+      + Add Stems
+    </label>
+  </div>
+  <div class="mt-4 space-y-2.5 text-xs">
+    <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/70 px-3.5 py-2.5">
+      <div class="min-w-0">
+        <p class="truncate font-mono font-bold text-slate-900 dark:text-white">01_DRUMS_BUS.wav</p>
+        <p class="text-[11px] text-slate-600 dark:text-zinc-400">48.2 MB · Uploaded</p>
+      </div>
+      <span class="shrink-0 rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-0.5 font-semibold text-emerald-600 dark:text-emerald-400">Ready</span>
+    </div>
+    <div class="rounded-xl border border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 px-3.5 py-2.5">
+      <div class="flex items-center justify-between gap-2">
+        <span class="truncate font-mono font-bold text-cyan-700 dark:text-cyan-200">02_BASS_DI.flac</span>
+        <span class="shrink-0 font-mono font-semibold text-cyan-700 dark:text-cyan-300">64%</span>
+      </div>
+      <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-white/15 text-black dark:text-zinc-100"><div class="h-full w-[64%] rounded-full bg-cyan-400"></div></div>
+    </div>
+    <label class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-dashed border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900/30 px-3.5 py-3 transition hover:border-cyan-400/60">
+      <input type="file" accept="audio/*" class="sr-only" />
+      <span class="font-mono text-slate-600 dark:text-zinc-400">03_VOCAL_LEAD · Drop audio stem here</span>
+      <span class="shrink-0 font-semibold text-cyan-600 dark:text-cyan-400">Browse</span>
+    </label>
+  </div>
+</div>

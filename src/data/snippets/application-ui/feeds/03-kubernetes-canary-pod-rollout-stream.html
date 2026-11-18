@@ -1,0 +1,27 @@
+<div class="mx-auto w-full max-w-2xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0D12] p-5 sm:p-6 font-mono text-xs text-slate-800 dark:text-zinc-200 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 pb-3.5">
+    <span class="font-bold text-slate-900 dark:text-white">kubectl rollout &middot; prod-api-v42</span>
+    <div class="flex gap-1 text-[10px]">
+      <button type="button" data-fd3-flt="all" class="cursor-pointer rounded bg-slate-900 dark:bg-white px-2 py-1 font-bold text-white dark:text-slate-950">ALL</button>
+      <button type="button" data-fd3-flt="pod" class="cursor-pointer rounded px-2 py-1 text-slate-500 dark:text-zinc-400">PODS</button>
+      <button type="button" data-fd3-flt="mesh" class="cursor-pointer rounded px-2 py-1 text-slate-500 dark:text-zinc-400">MESH</button>
+    </div>
+  </div>
+  <ul class="mt-4 space-y-2.5">
+    <li data-fd3-k="mesh" class="flex items-center justify-between gap-3 rounded-lg bg-slate-50 dark:bg-zinc-900 px-3 py-2 border border-slate-200/80 dark:border-zinc-800"><span><span class="text-emerald-600 dark:text-emerald-400 font-bold">SHIFT</span> Canary traffic split shifted to 25%</span><span class="text-[10px] text-slate-400">12:04:11</span></li>
+    <li data-fd3-k="pod" class="flex items-center justify-between gap-3 rounded-lg bg-slate-50 dark:bg-zinc-900 px-3 py-2 border border-slate-200/80 dark:border-zinc-800"><span><span class="text-sky-600 dark:text-sky-400 font-bold">READY</span> Pod api-v42-9b8f passed /healthz</span><span class="text-[10px] text-slate-400">12:03:49</span></li>
+    <li data-fd3-k="pod" class="flex items-center justify-between gap-3 rounded-lg bg-slate-50 dark:bg-zinc-900 px-3 py-2 border border-slate-200/80 dark:border-zinc-800"><span><span class="text-amber-600 dark:text-amber-400 font-bold">PULL</span> Pulled ghcr.io/dune/api:4.12 (142MB)</span><span class="text-[10px] text-slate-400">12:02:58</span></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const btns = [...document.querySelectorAll('[data-fd3-flt]')], rows = [...document.querySelectorAll('[data-fd3-k]')];
+  const onCls = 'cursor-pointer rounded bg-slate-900 dark:bg-white px-2 py-1 font-bold text-white dark:text-slate-950';
+  const offCls = 'cursor-pointer rounded px-2 py-1 text-slate-500 dark:text-zinc-400';
+  btns.forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.fd3Flt;
+    btns.forEach(x => { x.className = x === b ? onCls : offCls; });
+    rows.forEach(r => r.classList.toggle('hidden', f !== 'all' && r.dataset.fd3K !== f));
+  }));
+})();
+</script>

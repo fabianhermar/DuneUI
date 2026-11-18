@@ -1,0 +1,121 @@
+<section data-cf9 class="mx-auto min-h-[380px] w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 text-xs text-slate-900 dark:text-zinc-100 shadow-sm space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Multi-Menu Facet Bar</span>
+      <h3 class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">Curated Design &amp; Tech Marketplace (<span data-cf9-cnt>6</span>)</h3>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <div class="relative">
+        <button type="button" data-cf9-tgl="cat" class="rounded-xl border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2 font-semibold hover:border-indigo-500">1. Categories &#9662;</button>
+        <div data-cf9-pop="cat" class="hidden absolute left-0 z-20 mt-1.5 w-52 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3.5 shadow-xl space-y-2">
+          <p class="font-mono text-[10px] font-bold uppercase text-slate-400">Select Departments</p>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="checkbox" checked value="desk" data-cf9-c class="accent-indigo-600" /> Desk &amp; Time</span><span class="font-mono text-[10px] text-slate-400">2</span></label>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="checkbox" checked value="audio" data-cf9-c class="accent-indigo-600" /> Audio &amp; Synths</span><span class="font-mono text-[10px] text-slate-400">2</span></label>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="checkbox" checked value="kitchen" data-cf9-c class="accent-indigo-600" /> Tableware</span><span class="font-mono text-[10px] text-slate-400">1</span></label>
+          <label class="flex cursor-pointer items-center justify-between"><span class="flex items-center gap-2"><input type="checkbox" checked value="living" data-cf9-c class="accent-indigo-600" /> Living &amp; Carry</span><span class="font-mono text-[10px] text-slate-400">1</span></label>
+        </div>
+      </div>
+      <div class="relative">
+        <button type="button" data-cf9-tgl="brand" class="rounded-xl border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2 font-semibold hover:border-indigo-500">2. Studio / Brand &#9662;</button>
+        <div data-cf9-pop="brand" class="hidden absolute left-0 z-20 mt-1.5 w-52 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3.5 shadow-xl space-y-2">
+          <p class="font-mono text-[10px] font-bold uppercase text-slate-400">Partner Workshops</p>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="dune" data-cf9-b class="accent-indigo-600" /> Dune Atelier (CH)</label>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="nordic" data-cf9-b class="accent-indigo-600" /> Nordic Kiln (JP/DK)</label>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked value="field" data-cf9-b class="accent-indigo-600" /> Field Audio (DE)</label>
+        </div>
+      </div>
+      <div class="relative">
+        <button type="button" data-cf9-tgl="price" class="rounded-xl border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2 font-semibold hover:border-indigo-500">3. Price &amp; Perks &#9662;</button>
+        <div data-cf9-pop="price" class="hidden absolute right-0 z-20 mt-1.5 w-60 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-xl space-y-3">
+          <div class="flex justify-between font-semibold"><span>Max Price</span><span data-cf9-pval class="font-mono text-indigo-600 dark:text-indigo-400">$1,500</span></div>
+          <input type="range" min="60" max="1500" step="20" value="1500" data-cf9-pr class="w-full accent-indigo-600" />
+          <label class="flex cursor-pointer items-center gap-2 border-t border-slate-100 dark:border-zinc-800 pt-2"><input type="checkbox" data-cf9-free class="accent-indigo-600" /> Free Express Courier</label>
+          <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" data-cf9-top class="accent-indigo-600" /> Top Rated (4.9&#9733;+)</label>
+        </div>
+      </div>
+      <button type="button" data-cf9-rst class="rounded-xl border border-slate-200 dark:border-zinc-800 px-3 py-2 font-semibold text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-zinc-900">Reset All</button>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <article data-cf9-it data-b="dune" data-c="desk" data-p="210" data-free="1" data-rat="4.8" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/lamp.jpg" alt="Lamp" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Dune Atelier &middot; Desk</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Architectural Illuminator</p>
+        <p class="text-[11px] text-slate-500">$210 &middot; 4.8&#9733; &middot; Free Express</p>
+      </div>
+    </article>
+    <article data-cf9-it data-b="nordic" data-c="kitchen" data-p="68" data-free="1" data-rat="4.9" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Nordic Kiln &middot; Tableware</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Hand-Thrown Carafe</p>
+        <p class="text-[11px] text-slate-500">$68 &middot; 4.9&#9733; &middot; Free Express</p>
+      </div>
+    </article>
+    <article data-cf9-it data-b="field" data-c="audio" data-p="349" data-free="1" data-rat="4.9" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/headphones.jpg" alt="Headphones" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Field Audio &middot; Audio</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Spatial Reference Studio</p>
+        <p class="text-[11px] text-slate-500">$349 &middot; 4.9&#9733; &middot; Free Express</p>
+      </div>
+    </article>
+    <article data-cf9-it data-b="dune" data-c="desk" data-p="120" data-free="0" data-rat="4.7" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/clock.jpg" alt="Clock" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Dune Atelier &middot; Desk</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Brushed Steel Desk Clock</p>
+        <p class="text-[11px] text-slate-500">$120 &middot; 4.7&#9733; &middot; Standard Ship</p>
+      </div>
+    </article>
+    <article data-cf9-it data-b="field" data-c="audio" data-p="640" data-free="1" data-rat="4.9" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/heroes/synth-modular.jpg" alt="Synth" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Field Audio &middot; Synths</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Analog Filter Bank 6U</p>
+        <p class="text-[11px] text-slate-500">$640 &middot; 4.9&#9733; &middot; Free Express</p>
+      </div>
+    </article>
+    <article data-cf9-it data-b="nordic" data-c="living" data-p="1280" data-free="1" data-rat="5.0" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/chair.jpg" alt="Lounge Chair" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <span class="text-[10px] font-bold uppercase text-indigo-600 dark:text-indigo-400">Nordic Kiln &middot; Living</span>
+        <p class="font-bold text-slate-900 dark:text-white truncate">Studio Lounge Chair No. 02</p>
+        <p class="text-[11px] text-slate-500">$1,280 &middot; 5.0&#9733; &middot; White-Glove</p>
+      </div>
+    </article>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf9]'); if (!r) return;
+  const pops = [...r.querySelectorAll('[data-cf9-pop]')], bs = [...r.querySelectorAll('[data-cf9-b]')], cs = [...r.querySelectorAll('[data-cf9-c]')];
+  const pr = r.querySelector('[data-cf9-pr]'), pval = r.querySelector('[data-cf9-pval]'), free = r.querySelector('[data-cf9-free]'), top = r.querySelector('[data-cf9-top]');
+  const items = [...r.querySelectorAll('[data-cf9-it]')], cnt = r.querySelector('[data-cf9-cnt]');
+  r.querySelectorAll('[data-cf9-tgl]').forEach(btn => btn.addEventListener('click', () => {
+    const id = btn.dataset.cf9Tgl;
+    pops.forEach(p => p.classList.toggle('hidden', p.dataset.cf9Pop !== id || !p.classList.contains('hidden')));
+  }));
+  const upd = () => {
+    const ab = bs.filter(x => x.checked).map(x => x.value), ac = cs.filter(x => x.checked).map(x => x.value);
+    const maxP = Number(pr.value); pval.textContent = '$' + maxP.toLocaleString();
+    let n = 0;
+    items.forEach(it => {
+      const ok = ab.includes(it.dataset.b)
+        && ac.includes(it.dataset.c)
+        && Number(it.dataset.p) <= maxP
+        && (!free.checked || it.dataset.free === '1')
+        && (!top.checked || Number(it.dataset.rat) >= 4.9);
+      it.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = String(n);
+  };
+  [...bs, ...cs, free, top].forEach(el => el?.addEventListener('change', upd));
+  pr?.addEventListener('input', upd);
+  r.querySelector('[data-cf9-rst]')?.addEventListener('click', () => {
+    bs.forEach(x => { x.checked = true; }); cs.forEach(x => { x.checked = true; });
+    pr.value = '1500'; free.checked = false; top.checked = false; pops.forEach(p => p.classList.add('hidden')); upd();
+  });
+})();
+</script>

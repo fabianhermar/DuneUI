@@ -1,0 +1,33 @@
+<div data-story-pager class="mx-auto flex w-full max-w-sm items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 py-3 shadow-lg text-slate-900 dark:text-zinc-100">
+  <button type="button" data-story-skip class="text-xs font-medium text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Reset</button>
+  <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1.5">
+      <span data-story-dot="1" class="h-1.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all"></span>
+      <span data-story-dot="2" class="size-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 transition-all"></span>
+      <span data-story-dot="3" class="size-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 transition-all"></span>
+      <span data-story-dot="4" class="size-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 transition-all"></span>
+    </div>
+    <span data-story-step class="font-mono text-[10px] font-semibold text-slate-500 dark:text-zinc-400">1/4</span>
+  </div>
+  <button type="button" data-story-next class="rounded-full bg-slate-900 dark:bg-white px-4 py-1.5 text-xs font-semibold text-white dark:text-slate-950 shadow-xs transition hover:bg-slate-800 dark:hover:bg-zinc-200">Next →</button>
+</div>
+<script>
+  document.querySelectorAll('[data-story-pager]').forEach((root) => {
+    const dots = Array.from(root.querySelectorAll('[data-story-dot]'));
+    const label = root.querySelector('[data-story-step]');
+    const nextBtn = root.querySelector('[data-story-next]');
+    let step = 1;
+    const render = () => {
+      dots.forEach((d) => {
+        const idx = Number(d.getAttribute('data-story-dot'));
+        d.className = idx === step
+          ? 'h-1.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all'
+          : 'size-1.5 rounded-full bg-slate-300 dark:bg-zinc-700 transition-all';
+      });
+      if (label) label.textContent = step + '/4';
+      if (nextBtn) nextBtn.textContent = step === 4 ? 'Done ✓' : 'Next →';
+    };
+    nextBtn?.addEventListener('click', () => { step = step === 4 ? 1 : step + 1; render(); });
+    root.querySelector('[data-story-skip]')?.addEventListener('click', () => { step = 1; render(); });
+  });
+</script>

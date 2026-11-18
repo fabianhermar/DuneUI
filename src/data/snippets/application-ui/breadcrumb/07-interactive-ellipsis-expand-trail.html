@@ -1,0 +1,42 @@
+<nav aria-label="Breadcrumb" data-ellipsis-trail class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <ol class="inline-flex flex-wrap items-center gap-1.5 rounded-xl bg-white dark:bg-zinc-900 px-3.5 py-2 text-xs ring-1 ring-slate-200 dark:ring-zinc-800 text-slate-600 dark:text-zinc-300 shadow-2xs">
+    <li>
+      <a href="#" class="inline-flex items-center gap-1.5 font-medium hover:text-slate-950 dark:hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5 text-sky-600 dark:text-sky-400" aria-hidden="true"><path d="M2 4.75A1.75 1.75 0 0 1 3.75 3h2.69c.464 0 .909.184 1.237.513l.646.646c.14.14.331.22.53.22h3.397A1.75 1.75 0 0 1 14 6.128v5.122A1.75 1.75 0 0 1 12.25 13h-8.5A1.75 1.75 0 0 1 2 11.25V4.75Z"/></svg>
+        Drive
+      </a>
+    </li>
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600">/</li>
+    <li data-ellipsis-node>
+      <button type="button" data-expand-path aria-expanded="false" aria-label="Show hidden folders" class="rounded-md bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 font-mono text-[11px] font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-200 dark:hover:bg-zinc-700 cursor-pointer transition-colors">
+        &bull;&bull;&bull;
+      </button>
+    </li>
+    <li data-mid-crumb class="hidden items-center gap-1.5">
+      <a href="#" class="hover:text-slate-950 dark:hover:text-white">Brand Studio</a>
+      <span aria-hidden="true" class="text-slate-400 dark:text-zinc-600">/</span>
+      <a href="#" class="hover:text-slate-950 dark:hover:text-white">Q4 Launch</a>
+    </li>
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600">/</li>
+    <li><a href="#" class="hover:text-slate-950 dark:hover:text-white">2026 Renders</a></li>
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600">/</li>
+    <li class="inline-flex items-center gap-1.5">
+      <span aria-current="page" class="font-semibold text-slate-950 dark:text-white">Final_Keynote</span>
+      <span class="rounded bg-violet-100 dark:bg-violet-500/20 px-1.5 py-0.5 font-mono text-[10px] font-bold text-violet-700 dark:text-violet-300">.fig</span>
+    </li>
+  </ol>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-ellipsis-trail]');
+      const trigger = root.querySelector('[data-expand-path]');
+      const node = root.querySelector('[data-ellipsis-node]');
+      const mid = root.querySelector('[data-mid-crumb]');
+      trigger?.addEventListener('click', () => {
+        trigger.setAttribute('aria-expanded', 'true');
+        node.classList.add('hidden');
+        mid.classList.remove('hidden');
+        mid.classList.add('inline-flex');
+      });
+    })();
+  </script>
+</nav>

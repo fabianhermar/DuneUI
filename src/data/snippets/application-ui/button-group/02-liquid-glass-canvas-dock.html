@@ -1,0 +1,40 @@
+<div data-glass-dock class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex flex-wrap items-center justify-center gap-1 rounded-2xl sm:rounded-full border border-slate-900/12 dark:border-white/25 bg-white/75 dark:bg-white/12 p-1.5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl backdrop-blur-2xl">
+    <button type="button" data-tool="Select" aria-pressed="true" class="inline-flex items-center gap-1.5 rounded-full bg-slate-900 dark:bg-white px-3.5 py-1.5 text-xs font-semibold text-white dark:text-slate-950 shadow-sm cursor-pointer transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path d="M3.22 2.22a.75.75 0 0 1 .78-.17l9.5 3.5a.75.75 0 0 1-.03 1.41l-4.03 1.24-1.24 4.03a.75.75 0 0 1-1.41.03l-3.5-9.5a.75.75 0 0 1-.07-.54Z"/></svg>
+      Select
+    </button>
+    <button type="button" data-tool="Frame" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-white/85 hover:bg-slate-900/8 dark:hover:bg-white/15 cursor-pointer transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" class="size-3.5" aria-hidden="true"><path stroke-linecap="round" d="M5 2v12M11 2v12M2 5h12M2 11h12"/></svg>
+      Frame
+    </button>
+    <button type="button" data-tool="Pen" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-white/85 hover:bg-slate-900/8 dark:hover:bg-white/15 cursor-pointer transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path d="M13.488 2.513a1.75 1.75 0 0 0-2.475 0L4.1 9.426a1.75 1.75 0 0 0-.443.765l-.59 2.362a.75.75 0 0 0 .91.91l2.362-.59a1.75 1.75 0 0 0 .765-.443l6.913-6.913a1.75 1.75 0 0 0 0-2.475v-.529Z"/></svg>
+      Pen
+    </button>
+    <button type="button" data-tool="Note" aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-white/85 hover:bg-slate-900/8 dark:hover:bg-white/15 cursor-pointer transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v9A1.5 1.5 0 0 0 3.5 14h6.086a1.5 1.5 0 0 0 1.06-.44l2.915-2.914a1.5 1.5 0 0 0 .439-1.06V3.5A1.5 1.5 0 0 0 12.5 2h-9ZM9 12.25V10a1 1 0 0 1 1-1h2.25L9 12.25Z" clip-rule="evenodd"/></svg>
+      Note
+    </button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-glass-dock]');
+      const btns = root.querySelectorAll('[data-tool]');
+      const activeCls = ['bg-slate-900', 'dark:bg-white', 'font-semibold', 'text-white', 'dark:text-slate-950', 'shadow-sm'];
+      const idleCls = ['font-medium', 'text-slate-700', 'dark:text-white/85', 'hover:bg-slate-900/8', 'dark:hover:bg-white/15'];
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => {
+            b.setAttribute('aria-pressed', 'false');
+            b.classList.remove(...activeCls);
+            b.classList.add(...idleCls);
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          btn.classList.remove(...idleCls);
+          btn.classList.add(...activeCls);
+        });
+      });
+    })();
+  </script>
+</div>

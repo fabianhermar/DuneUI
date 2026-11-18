@@ -1,0 +1,81 @@
+<form data-pay-form class="w-full max-w-md rounded-2xl border border-slate-200/90 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 shadow-lg shadow-slate-900/5 sm:p-7 text-slate-900 dark:text-zinc-100">
+  <div class="flex items-start justify-between gap-3">
+    <div>
+      <p class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+        Encrypted Checkout
+      </p>
+      <h3 class="mt-1 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">$149.00 <span class="text-xs font-normal text-slate-500 dark:text-zinc-400">/ year</span></h3>
+    </div>
+    <span class="rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-semibold text-slate-700 dark:text-zinc-200">Pro Team</span>
+  </div>
+  <div class="mt-4 grid grid-cols-2 gap-2.5">
+    <button type="button" data-express-pay class="flex items-center justify-center gap-1.5 rounded-lg bg-slate-950 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-slate-950 transition hover:bg-slate-800 dark:hover:bg-zinc-200">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+      Pay
+    </button>
+    <button type="button" data-express-pay class="flex items-center justify-center gap-1.5 rounded-lg bg-[#00D66F] py-2.5 text-xs font-bold text-slate-950 transition hover:bg-[#00C063]">
+      <span class="inline-block h-2 w-2 rounded-full bg-slate-950"></span>
+      Link Fast Pay
+    </button>
+  </div>
+  <div class="my-4 flex items-center gap-3">
+    <div class="flex-1 border-t border-slate-200 dark:border-zinc-800"></div>
+    <span class="shrink-0 whitespace-nowrap text-[11px] font-medium uppercase tracking-wider text-slate-500 dark:text-zinc-400">or card</span>
+    <div class="flex-1 border-t border-slate-200 dark:border-zinc-800"></div>
+  </div>
+  <div class="space-y-3.5">
+    <div>
+      <label class="block text-xs font-medium text-slate-700 dark:text-zinc-300">Email</label>
+      <input type="email" value="alex@acme.dev" class="mt-1 w-full rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950/60 px-3 py-2 text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20" />
+    </div>
+    <div>
+      <label class="block text-xs font-medium text-slate-700 dark:text-zinc-300">Card information</label>
+      <div class="mt-1 overflow-hidden rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950/60 divide-y divide-slate-200 dark:divide-zinc-800 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-500/20">
+        <div class="flex items-center justify-between gap-2 px-3 py-2">
+          <input type="text" value="4242 4242 4242 4242" class="min-w-0 flex-1 bg-transparent font-mono text-sm text-slate-900 dark:text-zinc-100 focus:outline-none" />
+          <div class="flex shrink-0 items-center gap-1">
+            <span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[10px] font-bold text-slate-700 dark:text-zinc-200">VISA</span>
+            <span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[10px] font-bold text-slate-700 dark:text-zinc-200">MC</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 divide-x divide-slate-200 dark:divide-zinc-800">
+          <input type="text" placeholder="MM / YY" value="08 / 28" class="w-full bg-transparent px-3 py-2 font-mono text-sm text-slate-900 dark:text-zinc-100 focus:outline-none" />
+          <input type="text" placeholder="CVC" value="424" class="w-full bg-transparent px-3 py-2 font-mono text-sm text-slate-900 dark:text-zinc-100 focus:outline-none" />
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div class="relative">
+        <select class="w-full appearance-none rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950/60 px-3 py-2 pr-8 text-sm text-slate-900 dark:text-zinc-100 focus:border-indigo-500 focus:outline-none">
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Germany</option>
+        </select>
+        <svg class="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <input type="text" placeholder="ZIP / Postal" value="94107" class="w-full rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950/60 px-3 py-2 font-mono text-sm text-slate-900 dark:text-zinc-100 focus:border-indigo-500 focus:outline-none" />
+    </div>
+  </div>
+  <button type="button" data-pay-btn class="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700">
+    <span data-pay-label>Pay $149.00 securely</span>
+  </button>
+</form>
+<script>
+  document.querySelectorAll('[data-pay-form]').forEach((form) => {
+    const btn = form.querySelector('[data-pay-btn]');
+    const label = form.querySelector('[data-pay-label]');
+    const express = form.querySelectorAll('[data-express-pay]');
+    const confirmPay = () => {
+      if (!btn || !label) return;
+      const done = label.textContent === 'Payment Confirmed';
+      label.textContent = done ? 'Pay $149.00 securely' : 'Payment Confirmed';
+      btn.classList.toggle('bg-emerald-600', !done);
+      btn.classList.toggle('hover:bg-emerald-700', !done);
+      btn.classList.toggle('bg-indigo-600', done);
+      btn.classList.toggle('hover:bg-indigo-700', done);
+    };
+    btn?.addEventListener('click', confirmPay);
+    express.forEach((b) => b.addEventListener('click', confirmPay));
+  });
+</script>

@@ -1,0 +1,49 @@
+<div class="relative mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 p-5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl sm:p-6">
+  <div class="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/70 to-transparent"></div>
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div role="tablist" aria-label="Developer API sections" class="inline-flex flex-wrap rounded-xl border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-zinc-900/90 p-1 text-xs">
+      <button type="button" data-ltab="keys" aria-selected="true" class="rounded-lg bg-slate-100 dark:bg-zinc-800 px-3.5 py-1.5 font-semibold text-slate-900 dark:text-white shadow ring-1 ring-slate-200 dark:ring-white/10">API Keys</button>
+      <button type="button" data-ltab="hooks" aria-selected="false" class="rounded-lg px-3.5 py-1.5 font-medium text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Webhooks</button>
+      <button type="button" data-ltab="logs" aria-selected="false" class="rounded-lg px-3.5 py-1.5 font-medium text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Live Logs</button>
+    </div>
+    <span class="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-600 dark:text-emerald-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>prod-iad1</span>
+  </div>
+
+  <div class="mt-4 rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.03] p-4 font-mono text-xs text-slate-700 dark:text-zinc-300">
+    <div data-lpanel="keys" class="flex flex-wrap items-center justify-between gap-2">
+      <div><p class="text-slate-900 dark:text-white">dune_live_98a4&bull;&bull;&bull;&bull;7f21</p><p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-500">Scoped: read:telemetry, write:deploy &bull; Last used 14s ago</p></div>
+      <span class="rounded-md border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Active</span>
+    </div>
+    <div data-lpanel="hooks" class="hidden flex-wrap items-center justify-between gap-2">
+      <div><p class="text-sky-700 dark:text-sky-300">https://api.acme.dev/hooks/dune</p><p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-500">Subscribed events: release.published, sla.breach</p></div>
+      <span class="rounded-md border border-sky-500/30 bg-sky-50 dark:bg-sky-500/10 px-2 py-0.5 text-[10px] font-semibold text-sky-700 dark:text-sky-300">99.9% OK</span>
+    </div>
+    <div data-lpanel="logs" class="hidden space-y-1 text-[11px]">
+      <p><span class="text-emerald-600 dark:text-emerald-400">200 OK</span> <span class="text-slate-500 dark:text-zinc-500">POST</span> /v2/deployments <span class="text-slate-500 dark:text-zinc-500">(14ms)</span></p>
+      <p><span class="text-emerald-600 dark:text-emerald-400">200 OK</span> <span class="text-slate-500 dark:text-zinc-500">GET</span> /v2/tokens/audit <span class="text-slate-500 dark:text-zinc-500">(9ms)</span></p>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-ltab]');
+  const panels = document.querySelectorAll('[data-lpanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-ltab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-ltab') === id;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? 'rounded-lg bg-zinc-800 px-3.5 py-1.5 font-semibold text-white shadow ring-1 ring-white/10'
+          : 'rounded-lg px-3.5 py-1.5 font-medium text-zinc-400 hover:text-white';
+      });
+      panels.forEach((p) => {
+        const show = p.getAttribute('data-lpanel') === id;
+        p.classList.toggle('hidden', !show);
+        if (id !== 'logs') p.classList.toggle('flex', show);
+      });
+    });
+  });
+})();
+</script>

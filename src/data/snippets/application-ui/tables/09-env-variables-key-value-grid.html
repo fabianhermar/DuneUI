@@ -1,0 +1,62 @@
+<div class="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 font-mono text-xs shadow-xl text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/60 px-5 py-3">
+    <div class="flex items-center gap-2">
+      <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
+      <span class="font-sans text-xs font-semibold text-slate-900 dark:text-white">Environment Variables</span>
+    </div>
+    <span class="rounded-md border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-2 py-0.5 text-[10px] text-slate-700 dark:text-zinc-300">AES-256 Encrypted</span>
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="w-full min-w-[480px] text-left">
+      <thead class="border-b border-slate-200 dark:border-zinc-800 text-[10px] uppercase tracking-wider text-slate-500 dark:text-zinc-500">
+        <tr>
+          <th class="px-5 py-2.5">Key</th>
+          <th class="px-4 py-2.5">Value</th>
+          <th class="px-4 py-2.5">Target</th>
+          <th class="px-5 py-2.5 text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-zinc-800/80 text-slate-700 dark:text-zinc-300">
+        <tr class="hover:bg-zinc-900/40">
+          <td class="px-5 py-3 font-semibold text-indigo-600 dark:text-indigo-300">STRIPE_SECRET_KEY</td>
+          <td data-secret-val="0" data-raw="sk_live_51N9x8K2mPq" class="px-4 py-3 text-slate-500 dark:text-zinc-500">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
+          <td class="px-4 py-3"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] text-emerald-600 dark:text-emerald-400">Production</span></td>
+          <td class="px-5 py-3 text-right"><button type="button" data-secret-btn="0" class="rounded border border-slate-300 dark:border-zinc-700 px-2 py-0.5 text-[10px] text-slate-700 dark:text-zinc-300 hover:border-zinc-500 hover:text-slate-900 dark:hover:text-white">Reveal</button></td>
+        </tr>
+        <tr class="hover:bg-zinc-900/40">
+          <td class="px-5 py-3 font-semibold text-indigo-600 dark:text-indigo-300">DATABASE_URL</td>
+          <td data-secret-val="1" data-raw="postgres://neon-eu:443" class="px-4 py-3 text-slate-500 dark:text-zinc-500">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
+          <td class="px-4 py-3"><span class="rounded-full bg-sky-50 dark:bg-sky-500/15 px-2 py-0.5 text-[10px] text-sky-700 dark:text-sky-300">Preview</span></td>
+          <td class="px-5 py-3 text-right"><button type="button" data-secret-btn="1" class="rounded border border-slate-300 dark:border-zinc-700 px-2 py-0.5 text-[10px] text-slate-700 dark:text-zinc-300 hover:border-zinc-500 hover:text-slate-900 dark:hover:text-white">Reveal</button></td>
+        </tr>
+        <tr class="hover:bg-zinc-900/40">
+          <td class="px-5 py-3 font-semibold text-indigo-600 dark:text-indigo-300">EDGE_REGION</td>
+          <td class="px-4 py-3 text-slate-900 dark:text-white">iad1, fra1, hnd1</td>
+          <td class="px-4 py-3"><span class="rounded-full bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 text-[10px] text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-white/15">All</span></td>
+          <td class="px-5 py-3 text-right text-[10px] text-slate-500 dark:text-zinc-500">Public</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-secret-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-secret-btn');
+      const val = document.querySelector('[data-secret-val="' + id + '"]');
+      if (!val) return;
+      const shown = btn.textContent === 'Hide';
+      if (shown) {
+        val.textContent = '••••••••••••••';
+        val.className = 'px-4 py-3 text-zinc-500';
+        btn.textContent = 'Reveal';
+      } else {
+        val.textContent = val.getAttribute('data-raw') || '';
+        val.className = 'px-4 py-3 text-amber-300';
+        btn.textContent = 'Hide';
+      }
+    });
+  });
+})();
+</script>

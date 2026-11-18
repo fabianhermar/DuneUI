@@ -1,0 +1,52 @@
+<div data-queue-list class="mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#121318] text-sm shadow-lg">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/10 px-4 py-3">
+    <div class="flex items-center gap-2">
+      <span class="h-2 w-2 rounded-full bg-violet-500"></span>
+      <span class="text-xs font-semibold text-slate-900 dark:text-white">Cycle 18 · Core UI</span>
+    </div>
+    <span class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">3 active</span>
+  </div>
+  <ul class="divide-y divide-slate-100 dark:divide-white/10">
+    <li class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 dark:hover:bg-white/[0.04]">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="shrink-0 font-mono text-xs text-slate-500 dark:text-zinc-400">DUN-204</span>
+        <span class="truncate font-medium text-slate-900 dark:text-white">Liquid Glass backdrop tokens</span>
+      </div>
+      <div class="flex shrink-0 items-center gap-2">
+        <button type="button" data-queue-status class="rounded-md bg-violet-50 dark:bg-violet-500/20 px-2 py-0.5 text-[11px] font-semibold text-violet-700 dark:text-violet-300">In Review</button>
+        <img src="/images/avatars/sofia.jpg" alt="Sofia" class="h-5 w-5 rounded-full object-cover ring-1 ring-slate-200 dark:ring-white/20" />
+      </div>
+    </li>
+    <li class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 dark:hover:bg-white/[0.04]">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="shrink-0 font-mono text-xs text-slate-500 dark:text-zinc-400">DUN-205</span>
+        <span class="truncate font-medium text-slate-900 dark:text-white">Mobile responsive scroller</span>
+      </div>
+      <div class="flex shrink-0 items-center gap-2">
+        <button type="button" data-queue-status class="rounded-md bg-amber-50 dark:bg-amber-500/20 px-2 py-0.5 text-[11px] font-semibold text-amber-800 dark:text-amber-300">In Progress</button>
+        <img src="/images/avatars/mateo.jpg" alt="Mateo" class="h-5 w-5 rounded-full object-cover ring-1 ring-slate-200 dark:ring-white/20" />
+      </div>
+    </li>
+    <li class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 dark:hover:bg-white/[0.04]">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="shrink-0 font-mono text-xs text-slate-500 dark:text-zinc-400">DUN-209</span>
+        <span class="truncate font-medium text-slate-900 dark:text-white">Strip preview script output</span>
+      </div>
+      <div class="flex shrink-0 items-center gap-2">
+        <button type="button" data-queue-status class="rounded-md bg-emerald-50 dark:bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">Done</button>
+        <img src="/images/avatars/sofia.jpg" alt="Sofia" class="h-5 w-5 rounded-full object-cover ring-1 ring-slate-200 dark:ring-white/20" />
+      </div>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-queue-list]').forEach((root) => {
+    const states = ['In Review', 'In Progress', 'Done'];
+    root.querySelectorAll('[data-queue-status]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = states.indexOf(btn.textContent?.trim() || 'In Review');
+        btn.textContent = states[(idx + 1) % states.length];
+      });
+    });
+  });
+</script>

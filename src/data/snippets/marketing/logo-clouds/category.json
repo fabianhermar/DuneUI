@@ -1,0 +1,69 @@
+{
+  "slug": "logo-clouds",
+  "index": "43",
+  "tag": "Marketing",
+  "title": "Logo Clouds",
+  "description": "10 enterprise logo cloud sections featuring authentic company SVG marks: monochrome hover strips, hairline bento tiles, Linear obsidian showcases, Liquid Glass integration walls, interactive stack filters, and infinite marquees.",
+  "specs": [
+    {
+      "file": "01-trusted-five-brand-monochrome-strip.html",
+      "title": "Trusted Five-Brand Monochrome Strip",
+      "styleTag": "Tailwind · Monochrome",
+      "canvas": "light"
+    },
+    {
+      "file": "02-six-tile-hairline-enterprise-grid.html",
+      "title": "Six-Tile Hairline Enterprise Grid",
+      "styleTag": "Stripe · Boxed Grid",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-dark-obsidian-partner-showcase.html",
+      "title": "Dark Obsidian Partner Showcase",
+      "styleTag": "Linear · Dark Cloud",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-split-heading-customer-stack-grid.html",
+      "title": "Split Heading & Customer Stack Grid",
+      "styleTag": "Enterprise · Split",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-ecosystem-wall.html",
+      "title": "Liquid Glass Ecosystem Wall",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-neo-brutalist-builders-strip.html",
+      "title": "Neo-Brutalist Builders Strip",
+      "styleTag": "Brutalist · Strip",
+      "canvas": "light"
+    },
+    {
+      "file": "07-editorial-broadsheet-brand-band.html",
+      "title": "Editorial Broadsheet Brand Band",
+      "styleTag": "Editorial · Ink",
+      "canvas": "light"
+    },
+    {
+      "file": "08-category-filtered-stack-partners.html",
+      "title": "Category-Filtered Stack Partners",
+      "styleTag": "Interactive · Filter",
+      "canvas": "light"
+    },
+    {
+      "file": "09-kinetic-infinite-logo-marquee.html",
+      "title": "Kinetic Infinite Logo Marquee",
+      "styleTag": "Motion · Marquee",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-security-compliance-infra-proof.html",
+      "title": "Security Compliance & Infra Proof",
+      "styleTag": "Trust · Security",
+      "canvas": "dark"
+    }
+  ]
+}

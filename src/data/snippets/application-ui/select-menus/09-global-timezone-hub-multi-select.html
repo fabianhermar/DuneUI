@@ -1,0 +1,32 @@
+<div data-sel9 class="mx-auto w-full max-w-md rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <label class="block font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400">Standup Overlap Timezones</label>
+  <div data-sel9-tags class="mt-2 flex min-h-11 flex-wrap items-center gap-1.5 rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950 p-2">
+    <span data-sel9-pill="Zurich UTC+1" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 font-mono text-[11px] font-semibold text-white dark:text-slate-950">Zurich UTC+1 <button type="button" class="cursor-pointer opacity-70 hover:opacity-100">&times;</button></span>
+    <span data-sel9-pill="Tokyo UTC+9" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 font-mono text-[11px] font-semibold text-white dark:text-slate-950">Tokyo UTC+9 <button type="button" class="cursor-pointer opacity-70 hover:opacity-100">&times;</button></span>
+    <input data-sel9-inp type="text" placeholder="Add city + Enter..." class="min-w-[100px] flex-1 bg-transparent px-1.5 py-1 text-xs focus:outline-none" />
+  </div>
+  <div class="mt-2.5 flex flex-wrap items-center gap-1.5 text-[11px]">
+    <button type="button" data-sel9-add="New York UTC-5" class="cursor-pointer rounded-lg border border-slate-200 dark:border-zinc-700 px-2.5 py-1 font-mono hover:bg-slate-100 dark:hover:bg-zinc-800">+ New York</button>
+    <button type="button" data-sel9-add="London UTC+0" class="cursor-pointer rounded-lg border border-slate-200 dark:border-zinc-700 px-2.5 py-1 font-mono hover:bg-slate-100 dark:hover:bg-zinc-800">+ London</button>
+    <button type="button" data-sel9-add="Sydney UTC+11" class="cursor-pointer rounded-lg border border-slate-200 dark:border-zinc-700 px-2.5 py-1 font-mono hover:bg-slate-100 dark:hover:bg-zinc-800">+ Sydney</button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel9]').forEach((root) => {
+    const box = root.querySelector('[data-sel9-tags]'), inp = root.querySelector('[data-sel9-inp]');
+    const add = (city) => {
+      const clean = city.trim();
+      if (!clean || !box || box.querySelector('[data-sel9-pill="' + clean + '"]')) return;
+      const sp = document.createElement('span');
+      sp.setAttribute('data-sel9-pill', clean);
+      sp.className = 'inline-flex items-center gap-1.5 rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 font-mono text-[11px] font-semibold text-white dark:text-slate-950';
+      sp.innerHTML = clean + ' <button type="button" class="cursor-pointer opacity-70 hover:opacity-100">&times;</button>';
+      box.insertBefore(sp, inp);
+    };
+    box?.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) b.parentElement.remove(); });
+    inp?.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); add(inp.value); inp.value = ''; } });
+    root.querySelectorAll('[data-sel9-add]').forEach((b) => b.addEventListener('click', () => add(b.dataset.sel9Add || '')));
+  });
+})();
+</script>

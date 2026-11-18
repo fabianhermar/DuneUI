@@ -1,0 +1,62 @@
+<section data-po5 class="mx-auto w-full max-w-5xl border-2 border-black dark:border-zinc-200 bg-[#FFFDF7] dark:bg-zinc-900 p-6 sm:p-8 shadow-[6px_6px_0_#000] dark:shadow-[6px_6px_0_#e4e4e7] text-slate-900 dark:text-zinc-100">
+  <div class="mb-6 flex flex-wrap items-center justify-between gap-3 border-b-2 border-black dark:border-zinc-200 pb-4 font-mono text-[11px] font-bold">
+    <span class="border-2 border-black dark:border-zinc-200 bg-[#FFE95A] px-2.5 py-1 text-black">DROP 04 · 500 PAIRS WORLDWIDE</span>
+    <div class="flex items-center gap-3">
+      <span>ALLOCATION: 420 / 500 CLAIMED</span>
+      <div class="h-3 w-24 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950"><div class="h-full w-4/5 bg-[#A7F3D0]"></div></div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-7 md:grid-cols-12">
+    <div class="space-y-3 md:col-span-6">
+      <div class="relative border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950">
+        <img src="/images/ecommerce/sneaker.jpg" alt="FIELD RUNNER XT-04" class="h-72 sm:h-80 w-full object-cover" />
+        <span class="absolute bottom-3 left-3 border-2 border-black bg-white px-2.5 py-1 font-mono text-[10px] font-black text-black">SERIAL #0421 / 0500</span>
+      </div>
+      <div class="grid grid-cols-3 gap-2 font-mono text-[10px] font-bold">
+        <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-2 text-center">CORDURA UPPER</div>
+        <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-2 text-center">KEVLAR LACE</div>
+        <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 p-2 text-center">VIBRAM LUGS</div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between md:col-span-6">
+      <div>
+        <h2 class="text-3xl font-black uppercase tracking-tight text-black dark:text-white">FIELD RUNNER XT-04</h2>
+        <p class="mt-2 font-mono text-xs font-medium text-neutral-700 dark:text-neutral-300">Reinforced ballistic rubber toe cap, gusseted weather tongue, numbered woven archive label inside collar.</p>
+        <div class="mt-5">
+          <div class="flex items-center justify-between font-mono text-xs font-black">
+            <span>SIZE SELECTOR (US): <span data-po5-sz>9.5</span></span>
+            <span>LIMIT 1 PER ORDER</span>
+          </div>
+          <div class="mt-2.5 grid grid-cols-4 gap-2 font-mono text-xs font-black">
+            <button type="button" data-po5-s="8" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">8</button>
+            <button type="button" data-po5-s="9" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">9</button>
+            <button type="button" data-po5-s="9.5" class="border-2 border-black dark:border-zinc-200 bg-[#FFE95A] py-2.5 text-black shadow-[2px_2px_0_#000]">9.5</button>
+            <button type="button" data-po5-s="10" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">10</button>
+            <button type="button" data-po5-s="10.5" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">10.5</button>
+            <button type="button" data-po5-s="11" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">11</button>
+            <button type="button" disabled class="border-2 border-black/30 dark:border-zinc-700 bg-neutral-200 dark:bg-zinc-800 py-2.5 text-neutral-500 line-through cursor-not-allowed">11.5</button>
+            <button type="button" data-po5-s="12" class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black">12</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t-2 border-black dark:border-zinc-200 pt-5">
+        <div>
+          <span class="block font-mono text-[10px] font-bold uppercase text-neutral-600 dark:text-neutral-400">Retail Price</span>
+          <span class="font-mono text-3xl font-black text-black dark:text-white">$195</span>
+        </div>
+        <button type="button" data-po5-cop class="flex-1 border-2 border-black dark:border-zinc-200 bg-[#A7F3D0] px-6 py-3.5 font-mono text-xs font-black text-black shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#e4e4e7] active:translate-x-[2px] active:translate-y-[2px]">COP US 9.5 NOW &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-po5]'); if (!r) return;
+  const sz = r.querySelector('[data-po5-sz]'), cop = r.querySelector('[data-po5-cop]'), btns = [...r.querySelectorAll('[data-po5-s]')];
+  btns.forEach(b => b.addEventListener('click', () => {
+    sz.textContent = b.dataset.po5S; cop.textContent = 'COP US ' + b.dataset.po5S + ' NOW →';
+    btns.forEach(x => x.className = x === b ? 'border-2 border-black dark:border-zinc-200 bg-[#FFE95A] py-2.5 text-black shadow-[2px_2px_0_#000]' : 'border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-950 py-2.5 text-black dark:text-white hover:bg-[#FFE95A] hover:text-black');
+  }));
+  cop?.addEventListener('click', () => { cop.textContent = 'PAIR #0421 LOCKED (US ' + sz.textContent + ')'; });
+})();
+</script>

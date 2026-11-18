@@ -1,0 +1,73 @@
+<div data-drw8 data-open="true" class="group/d8 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200 dark:border-white/12 bg-slate-100 dark:bg-[#090B10] text-slate-900 dark:text-zinc-100 shadow-lg">
+  <div class="flex h-full flex-col bg-[#F7F8FB] dark:bg-[#0D1017] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d8:scale-[0.97] group-data-[open=true]/d8:rounded-2xl">
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 bg-white dark:bg-[#11141E] px-5 py-3.5">
+      <div class="flex items-center gap-2"><span class="size-2 rounded-full bg-emerald-500"></span><span class="text-xs font-bold">Priority Desk (14 Open)</span></div>
+      <button type="button" data-drw8-open class="cursor-pointer rounded-full bg-emerald-600 px-3.5 py-1.5 text-[11px] font-semibold text-white hover:bg-emerald-500 transition">Open Ticket #884</button>
+    </div>
+    <div class="p-6 text-xs text-slate-500 dark:text-zinc-400">Live enterprise concierge thread with one-click security macro chips and status controls.</div>
+  </div>
+
+  <div data-drw8-bg class="absolute inset-0 bg-slate-950/30 dark:bg-black/60 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d8:opacity-100 group-data-[open=true]/d8:pointer-events-auto"></div>
+
+  <aside role="dialog" aria-modal="true" aria-label="Support thread" class="absolute inset-y-3 right-3 flex w-[calc(100%-1.5rem)] max-w-md flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#121622] shadow-2xl translate-x-[112%] group-data-[open=true]/d8:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 px-5 py-4">
+      <div class="flex items-center gap-3">
+        <img src="/images/testimonials/daniel.jpg" alt="Daniel Kim" class="size-9 rounded-full object-cover" />
+        <div>
+          <p class="text-xs font-bold">SSO SAML Certificate Rotation</p>
+          <p class="text-[11px] text-slate-500 dark:text-zinc-400">Daniel Kim &middot; Acme Corp &bull; #884</p>
+        </div>
+      </div>
+      <button type="button" data-drw8-close aria-label="Close ticket" class="cursor-pointer flex size-7 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-500 hover:text-slate-950 dark:hover:text-white">
+        <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div data-drw8-thread class="flex-1 space-y-3 overflow-y-auto p-5 text-xs">
+      <div class="rounded-2xl rounded-tl-sm border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.04] p-3.5">
+        <p class="font-semibold">Daniel Kim</p>
+        <p class="mt-1 text-slate-600 dark:text-zinc-300">Hi team, our Okta cert rotates Friday. Can we stage a secondary X.509 cert before cutover?</p>
+      </div>
+      <div class="rounded-2xl rounded-tr-sm border border-emerald-200 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 p-3.5">
+        <p class="font-semibold text-emerald-900 dark:text-emerald-200">Support Engineer</p>
+        <p class="mt-1 text-emerald-800 dark:text-emerald-300">Yes &mdash; dual-cert staging is enabled under Security &rarr; SAML.</p>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] p-4 space-y-2.5">
+      <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+        <button type="button" data-drw8-macro="Generated dual-cert staging link." class="cursor-pointer rounded-full border border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 px-2.5 py-1 text-slate-600 dark:text-zinc-300 hover:border-emerald-500">+ Stage Cert Link</button>
+        <button type="button" data-drw8-macro="Scheduled zero-downtime cutover for 02:00 UTC." class="cursor-pointer rounded-full border border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 px-2.5 py-1 text-slate-600 dark:text-zinc-300 hover:border-emerald-500">+ Schedule 02:00 UTC</button>
+      </div>
+      <form data-drw8-form class="flex gap-2">
+        <input type="text" required placeholder="Reply to Daniel..." class="min-w-0 flex-1 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.05] px-3 py-2 text-xs focus:border-emerald-500 focus:outline-none" />
+        <button type="submit" class="cursor-pointer shrink-0 rounded-xl bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-500 transition">Send</button>
+      </form>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw8]').forEach((root) => {
+    const th = root.querySelector('[data-drw8-thread]');
+    const f = root.querySelector('[data-drw8-form]');
+    const inp = f?.querySelector('input');
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    const postMsg = (txt) => {
+      if (!th || !txt.trim()) return;
+      const d = document.createElement('div');
+      d.className = 'rounded-2xl rounded-tr-sm border border-emerald-200 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 p-3.5';
+      d.innerHTML = '<p class="font-semibold text-emerald-900 dark:text-emerald-200">You (Just now)</p><p class="mt-1 text-emerald-800 dark:text-emerald-300"></p>';
+      d.querySelector('p:last-child').textContent = txt.trim();
+      th.appendChild(d);
+      th.scrollTop = th.scrollHeight;
+    };
+    root.querySelector('[data-drw8-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw8-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelector('[data-drw8-close]')?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    root.querySelectorAll('[data-drw8-macro]').forEach((b) => b.addEventListener('click', () => postMsg(b.getAttribute('data-drw8-macro') || '')));
+    f?.addEventListener('submit', (e) => { e.preventDefault(); if (inp) { postMsg(inp.value); inp.value = ''; } });
+  });
+})();
+</script>

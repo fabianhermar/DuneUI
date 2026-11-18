@@ -1,0 +1,114 @@
+<section data-cf10 class="mx-auto w-full max-w-5xl rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FAF7F2] dark:bg-zinc-900 p-6 sm:p-8 text-xs text-stone-900 dark:text-zinc-100 space-y-5">
+  <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-zinc-400">Architectural &amp; Daily Objects</span>
+      <h3 class="mt-1 font-serif text-2xl text-stone-900 dark:text-white">Multi-Dimension Craft &amp; Origin Index</h3>
+    </div>
+    <div class="flex flex-wrap items-center gap-2.5">
+      <input type="search" data-cf10-q placeholder="Search object, city, material..." class="w-52 rounded-full border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3.5 py-2 focus:border-stone-900 dark:focus:border-white focus:outline-none" />
+      <button type="button" data-cf10-rst class="rounded-full border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3.5 py-2 font-semibold hover:border-stone-900">Reset Index</button>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-4 rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/70 p-4 md:grid-cols-12">
+    <div class="space-y-2 md:col-span-5">
+      <span class="block font-mono text-[10px] uppercase tracking-wider text-stone-400">1. Department &amp; Room</span>
+      <div class="flex flex-wrap gap-1.5">
+        <button type="button" data-cf10-dept="all" class="rounded-full bg-stone-900 dark:bg-white px-3 py-1 font-semibold text-white dark:text-slate-950">All (6)</button>
+        <button type="button" data-cf10-dept="living" class="rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-medium">Living &amp; Study</button>
+        <button type="button" data-cf10-dept="table" class="rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-medium">Table &amp; Roast</button>
+        <button type="button" data-cf10-dept="wardrobe" class="rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-medium">Wardrobe &amp; Carry</button>
+      </div>
+    </div>
+    <div class="space-y-2 md:col-span-4">
+      <span class="block font-mono text-[10px] uppercase tracking-wider text-stone-400">2. Material &amp; Origin</span>
+      <div class="flex gap-2">
+        <select data-cf10-mat aria-label="Filter material" class="flex-1 rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-2.5 py-1.5 font-semibold">
+          <option value="all">All Materials</option>
+          <option value="wood">Timber &amp; Leather</option>
+          <option value="clay">Clay &amp; Roast</option>
+          <option value="wool">Merino &amp; Canvas</option>
+          <option value="metal">Brass &amp; Steel</option>
+        </select>
+        <select data-cf10-city aria-label="Filter origin city" class="flex-1 rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-2.5 py-1.5 font-semibold">
+          <option value="all">All Cities</option>
+          <option value="cph">Copenhagen</option>
+          <option value="kyoto">Kyoto</option>
+          <option value="zurich">Zurich</option>
+          <option value="biella">Biella</option>
+        </select>
+      </div>
+    </div>
+    <div class="space-y-1.5 md:col-span-3">
+      <div class="flex justify-between font-mono text-[10px] uppercase text-stone-400"><span>3. Max Price</span><strong data-cf10-pval class="text-stone-900 dark:text-white">$1,500</strong></div>
+      <input type="range" min="20" max="1500" step="20" value="1500" data-cf10-pr class="w-full accent-stone-900 dark:accent-white" />
+      <label class="flex cursor-pointer items-center gap-1.5 pt-0.5 font-semibold text-stone-700 dark:text-zinc-300">
+        <input type="checkbox" data-cf10-rdy class="accent-stone-900 dark:accent-white" /> Ready Stock Only (<span data-cf10-cnt>6</span>)
+      </label>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <article data-cf10-it data-dept="living" data-mat="wood" data-city="cph" data-p="1280" data-rdy="0" data-q="studio lounge chair danish ash leather copenhagen" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/ecommerce/chair.jpg" alt="Lounge Chair" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">Lounge Chair No. 02</p><span class="font-mono font-bold">$1,280</span></div>
+      <p class="mt-0.5 text-[11px] text-stone-500">Copenhagen &middot; Danish Ash &middot; 3-Wk Lead</p>
+    </article>
+    <article data-cf10-it data-dept="table" data-mat="clay" data-city="kyoto" data-p="68" data-rdy="1" data-q="hand-thrown stoneware carafe kyoto ceramic" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/ecommerce/carafe.jpg" alt="Kyoto Carafe" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">Kyoto Kiln Carafe</p><span class="font-mono font-bold">$68</span></div>
+      <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Kyoto &middot; Shigaraki Clay &middot; Ready Stock</p>
+    </article>
+    <article data-cf10-it data-dept="wardrobe" data-mat="wool" data-city="biella" data-p="145" data-rdy="1" data-q="extra-fine merino crew biella knitwear" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/ecommerce/knitwear.jpg" alt="Merino Crew" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">Biella Merino Crew</p><span class="font-mono font-bold">$145</span></div>
+      <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Biella &middot; 19.5&mu;m Wool &middot; Ready Stock</p>
+    </article>
+    <article data-cf10-it data-dept="wardrobe" data-mat="wool" data-city="zurich" data-p="64" data-rdy="1" data-q="24oz waxed canvas tote carry bag zurich" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/ecommerce/tote.jpg" alt="Canvas Tote" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">24oz Canvas Tote</p><span class="font-mono font-bold">$64</span></div>
+      <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Zurich &middot; Waxed Twill &middot; Ready Stock</p>
+    </article>
+    <article data-cf10-it data-dept="living" data-mat="metal" data-city="zurich" data-p="210" data-rdy="1" data-q="architectural brass desk lamp zurich lighting" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/ecommerce/lamp.jpg" alt="Brass Lamp" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">Atelier Brass Lamp</p><span class="font-mono font-bold">$210</span></div>
+      <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Zurich &middot; Brushed Brass &middot; Ready Stock</p>
+    </article>
+    <article data-cf10-it data-dept="table" data-mat="clay" data-city="kyoto" data-p="26" data-rdy="1" data-q="single-origin micro-lot pour-over coffee kyoto" class="rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-3.5">
+      <img src="/images/heroes/pour-over.jpg" alt="Micro-Lot Coffee" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-baseline justify-between"><p class="font-serif text-base text-stone-900 dark:text-white">Micro-Lot Roast 250g</p><span class="font-mono font-bold">$26</span></div>
+      <p class="mt-0.5 text-[11px] text-emerald-700 dark:text-emerald-400">Kyoto &middot; Pink Bourbon &middot; Ready Stock</p>
+    </article>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf10]'); if (!r) return;
+  const depts = [...r.querySelectorAll('[data-cf10-dept]')], mat = r.querySelector('[data-cf10-mat]'), city = r.querySelector('[data-cf10-city]');
+  const pr = r.querySelector('[data-cf10-pr]'), pval = r.querySelector('[data-cf10-pval]'), rdy = r.querySelector('[data-cf10-rdy]'), q = r.querySelector('[data-cf10-q]');
+  const items = [...r.querySelectorAll('[data-cf10-it]')], cnt = r.querySelector('[data-cf10-cnt]');
+  let curDept = 'all';
+  const upd = () => {
+    const query = q.value.trim().toLowerCase(), maxP = Number(pr.value);
+    pval.textContent = '$' + maxP.toLocaleString();
+    let n = 0;
+    items.forEach(it => {
+      const ok = (curDept === 'all' || it.dataset.dept === curDept)
+        && (mat.value === 'all' || it.dataset.mat === mat.value)
+        && (city.value === 'all' || it.dataset.city === city.value)
+        && Number(it.dataset.p) <= maxP
+        && (!rdy.checked || it.dataset.rdy === '1')
+        && (!query || it.dataset.q.includes(query));
+      it.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = String(n);
+  };
+  depts.forEach(b => b.addEventListener('click', () => {
+    curDept = b.dataset.cf10Dept; upd();
+    depts.forEach(x => x.className = x === b ? 'rounded-full bg-stone-900 dark:bg-white px-3 py-1 font-semibold text-white dark:text-slate-950' : 'rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-medium');
+  }));
+  [mat, city, rdy].forEach(el => el?.addEventListener('change', upd));
+  pr?.addEventListener('input', upd); q?.addEventListener('input', upd);
+  r.querySelector('[data-cf10-rst]')?.addEventListener('click', () => {
+    mat.value = 'all'; city.value = 'all'; pr.value = '1500'; rdy.checked = false; q.value = ''; depts[0]?.click(); upd();
+  });
+})();
+</script>

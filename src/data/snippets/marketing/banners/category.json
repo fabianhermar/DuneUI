@@ -1,0 +1,69 @@
+{
+  "slug": "banners",
+  "index": "44",
+  "tag": "Marketing",
+  "title": "Banners",
+  "description": "10 studio-grade marketing announcement bars: launch gradients, Linear release bars, floating SaaS pills, interactive GDPR consent bars, Liquid Glass drops, promo copy ribbons, and ops status banners.",
+  "specs": [
+    {
+      "file": "01-dismissible-conference-launch-bar.html",
+      "title": "Dismissible Conference Launch Bar",
+      "styleTag": "Tailwind · Launch Bar",
+      "canvas": "light"
+    },
+    {
+      "file": "02-obsidian-linear-release-bar.html",
+      "title": "Obsidian Linear Release Bar",
+      "styleTag": "Linear · Release Bar",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-floating-spotlight-pill-notice.html",
+      "title": "Floating Spotlight Pill Notice",
+      "styleTag": "SaaS · Floating Pill",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-interactive-privacy-cookie-bar.html",
+      "title": "Interactive Privacy & Cookie Bar",
+      "styleTag": "Compliance · GDPR",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-product-drop-strip.html",
+      "title": "Liquid Glass Product Drop Strip",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-neo-brutalist-flash-drop-ribbon.html",
+      "title": "Neo-Brutalist Flash Drop Ribbon",
+      "styleTag": "Brutalist · Ribbon",
+      "canvas": "light"
+    },
+    {
+      "file": "07-live-system-maintenance-status-bar.html",
+      "title": "Live System Maintenance Status Bar",
+      "styleTag": "Ops · Status Bar",
+      "canvas": "light"
+    },
+    {
+      "file": "08-luxury-storefront-announcement-bar.html",
+      "title": "Luxury Storefront Announcement Bar",
+      "styleTag": "Storefront · Top",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-interactive-copy-promo-code-pill.html",
+      "title": "Interactive Copy Promo Code Pill",
+      "styleTag": "Interactive · Coupon",
+      "canvas": "light"
+    },
+    {
+      "file": "10-editorial-print-dispatch-strip.html",
+      "title": "Editorial Print Dispatch Strip",
+      "styleTag": "Editorial · Strip",
+      "canvas": "light"
+    }
+  ]
+}

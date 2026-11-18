@@ -1,0 +1,86 @@
+<div data-drw6 data-open="true" class="group/d6 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200 dark:border-white/12 bg-slate-100 dark:bg-[#090B10] text-slate-900 dark:text-zinc-100 shadow-lg">
+  <div class="flex h-full flex-col bg-[#F7F8FB] dark:bg-[#0D1017] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d6:scale-[0.97] group-data-[open=true]/d6:rounded-2xl">
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 bg-white dark:bg-[#11141E] px-5 py-3.5">
+      <div class="flex items-center gap-2"><span class="size-2 rounded-full bg-indigo-500"></span><span class="text-xs font-bold">Workspace Feed</span></div>
+      <button type="button" data-drw6-open class="cursor-pointer inline-flex items-center gap-2 rounded-full bg-slate-950 dark:bg-white px-3.5 py-1.5 text-[11px] font-semibold text-white dark:text-slate-950">
+        <span>Inbox</span>
+        <span data-drw6-pill class="rounded-full bg-indigo-500 px-1.5 py-0.5 font-mono text-[9px] text-white">3</span>
+      </button>
+    </div>
+    <div class="p-6 text-xs text-slate-500 dark:text-zinc-400">Real-time PR approvals, Stripe transfers, and Figma review signals grouped cleanly in the slide-over tray.</div>
+  </div>
+
+  <div data-drw6-bg class="absolute inset-0 bg-slate-950/30 dark:bg-black/60 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d6:opacity-100 group-data-[open=true]/d6:pointer-events-auto"></div>
+
+  <aside role="dialog" aria-modal="true" aria-label="Notifications inbox" class="absolute inset-y-3 right-3 flex w-[calc(100%-1.5rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#121622] shadow-2xl translate-x-[112%] group-data-[open=true]/d6:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 px-5 py-4">
+      <div class="flex items-center gap-2">
+        <h3 class="text-sm font-bold">Notifications</h3>
+        <span data-drw6-badge class="rounded-full bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-bold text-indigo-700 dark:text-indigo-300">3 unread</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-drw6-readall class="cursor-pointer text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Mark all read</button>
+        <button type="button" data-drw6-close aria-label="Close inbox" class="cursor-pointer flex size-7 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-500 hover:text-slate-950 dark:hover:text-white">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex gap-1 border-b border-slate-100 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] px-5 py-2 text-[11px] font-semibold">
+      <button type="button" data-drw6-filter="all" class="cursor-pointer rounded-lg bg-white dark:bg-white/15 px-2.5 py-1 text-slate-950 dark:text-white shadow-2xs">All</button>
+      <button type="button" data-drw6-filter="code" class="cursor-pointer rounded-lg px-2.5 py-1 text-slate-500 dark:text-zinc-400">Code</button>
+      <button type="button" data-drw6-filter="pay" class="cursor-pointer rounded-lg px-2.5 py-1 text-slate-500 dark:text-zinc-400">Billing</button>
+    </div>
+
+    <ul class="flex-1 divide-y divide-slate-100 dark:divide-white/10 overflow-y-auto px-5 text-xs">
+      <li data-cat="code" data-unread="true" class="group/item flex cursor-pointer items-start gap-3 py-3.5 hover:bg-slate-50/60 dark:hover:bg-white/[0.02] -mx-2 px-2 rounded-xl transition">
+        <img src="/images/testimonials/henrik.jpg" alt="Henrik" class="size-8 shrink-0 rounded-full object-cover" />
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center justify-between gap-2"><p class="truncate font-semibold">Henrik merged PR #412</p><span class="size-2 shrink-0 rounded-full bg-indigo-600 group-data-[unread=false]/item:bg-slate-200 dark:group-data-[unread=false]/item:bg-zinc-700 transition-colors"></span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Drawer spring physics &bull; 6m ago</p>
+        </div>
+      </li>
+      <li data-cat="pay" data-unread="true" class="group/item flex cursor-pointer items-start gap-3 py-3.5 hover:bg-slate-50/60 dark:hover:bg-white/[0.02] -mx-2 px-2 rounded-xl transition">
+        <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 font-mono text-xs font-bold text-emerald-700 dark:text-emerald-300">$</span>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center justify-between gap-2"><p class="truncate font-semibold">Payout settled ($14,290)</p><span class="size-2 shrink-0 rounded-full bg-indigo-600 group-data-[unread=false]/item:bg-slate-200 dark:group-data-[unread=false]/item:bg-zinc-700 transition-colors"></span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Transfer #tr_8821 to Mercury &bull; 42m ago</p>
+        </div>
+      </li>
+      <li data-cat="code" data-unread="true" class="group/item flex cursor-pointer items-start gap-3 py-3.5 hover:bg-slate-50/60 dark:hover:bg-white/[0.02] -mx-2 px-2 rounded-xl transition">
+        <img src="/images/testimonials/maya.jpg" alt="Maya" class="size-8 shrink-0 rounded-full object-cover" />
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center justify-between gap-2"><p class="truncate font-semibold">Maya tagged you in Figma</p><span class="size-2 shrink-0 rounded-full bg-indigo-600 group-data-[unread=false]/item:bg-slate-200 dark:group-data-[unread=false]/item:bg-zinc-700 transition-colors"></span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Spotlight vignette tokens &bull; 2h ago</p>
+        </div>
+      </li>
+    </ul>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw6]').forEach((root) => {
+    const items = [...root.querySelectorAll('[data-unread]')];
+    const badge = root.querySelector('[data-drw6-badge]');
+    const pill = root.querySelector('[data-drw6-pill]');
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    const syncUnread = () => {
+      const n = items.filter((i) => i.getAttribute('data-unread') === 'true').length;
+      if (badge) badge.textContent = n + ' unread';
+      if (pill) pill.textContent = String(n);
+    };
+    items.forEach((it) => it.addEventListener('click', () => { it.setAttribute('data-unread', 'false'); syncUnread(); }));
+    root.querySelector('[data-drw6-readall]')?.addEventListener('click', () => { items.forEach((i) => i.setAttribute('data-unread', 'false')); syncUnread(); });
+    const fBtns = root.querySelectorAll('[data-drw6-filter]');
+    fBtns.forEach((b) => b.addEventListener('click', () => {
+      const cat = b.getAttribute('data-drw6-filter');
+      fBtns.forEach((x) => { x.className = x === b ? 'cursor-pointer rounded-lg bg-white dark:bg-white/15 px-2.5 py-1 text-slate-950 dark:text-white shadow-2xs' : 'cursor-pointer rounded-lg px-2.5 py-1 text-slate-500 dark:text-zinc-400'; });
+      items.forEach((it) => it.classList.toggle('hidden', cat !== 'all' && it.getAttribute('data-cat') !== cat));
+    }));
+    root.querySelector('[data-drw6-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw6-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelector('[data-drw6-close]')?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  });
+})();
+</script>

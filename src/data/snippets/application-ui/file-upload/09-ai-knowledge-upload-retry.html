@@ -1,0 +1,28 @@
+<div class="w-full max-w-xl rounded-3xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#111318] p-5 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl">
+  <label class="flex cursor-pointer flex-col items-center rounded-2xl border border-dashed border-slate-900/15 dark:border-white/20 bg-slate-900/[0.07] dark:bg-white/[0.03] px-4 py-6 text-center transition hover:border-cyan-400/60 hover:bg-cyan-500/[0.05]">
+    <input type="file" multiple accept=".pdf,.csv,.md,.docx" class="sr-only" />
+    <span class="rounded-full border border-cyan-400/30 bg-cyan-50 dark:bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold text-cyan-700 dark:text-cyan-300">PDF · CSV · MD · DOCX</span>
+    <p class="mt-3 text-sm font-semibold">Drop documents to train knowledge index</p>
+    <p class="mt-1 text-xs text-slate-600 dark:text-zinc-400">Maximum 100 MB per file · Auto chunk &amp; embed</p>
+  </label>
+  <div class="mt-4 space-y-2 text-xs">
+    <div class="flex items-center justify-between gap-2 rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.03] px-3.5 py-2.5">
+      <span class="truncate font-medium">q4-pricing-catalog.csv <span class="text-slate-500 dark:text-zinc-500">6.2 MB</span></span>
+      <span class="shrink-0 font-semibold text-emerald-600 dark:text-emerald-400">Indexed</span>
+    </div>
+    <div class="rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.03] px-3.5 py-2.5">
+      <div class="flex justify-between"><span>api-reference-v3.pdf</span><span class="text-cyan-700 dark:text-cyan-300">Uploading 45%</span></div>
+      <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"><div class="h-full w-[45%] rounded-full bg-cyan-400"></div></div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-rose-500/35 bg-rose-50 dark:bg-rose-500/10 px-3.5 py-2.5">
+      <div class="min-w-0">
+        <p class="truncate font-semibold text-rose-700 dark:text-rose-200">huge-archive.zip failed</p>
+        <p class="text-[11px] text-rose-700 dark:text-rose-300/80">Exceeds 100 MB file limit</p>
+      </div>
+      <div class="flex shrink-0 gap-2">
+        <button type="button" class="rounded-lg bg-rose-600 px-2.5 py-1 font-semibold text-white">Retry</button>
+        <label class="cursor-pointer rounded-lg border border-slate-200 dark:border-white/15 px-2.5 py-1 font-semibold text-slate-900 dark:text-white/90"><input type="file" class="sr-only" />Replace</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<article class="mx-auto w-full max-w-xl overflow-hidden border-2 border-black dark:border-zinc-200 bg-[#FAF9F5] dark:bg-zinc-900/95 shadow-[7px_7px_0_0_#000] dark:shadow-[7px_7px_0_0_#e4e4e7] text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black dark:border-zinc-200 bg-black dark:bg-zinc-950 px-5 py-2 font-mono text-[11px] font-black uppercase tracking-widest text-[#FDE047]">
+    <span>MANIFESTO &bull; <span data-swiss-label>-0.04em</span></span>
+    <div role="group" aria-label="Headline tracking preset" class="inline-flex gap-1">
+      <button type="button" data-swiss-track="-0.04em" aria-pressed="true" class="border border-[#FDE047] bg-[#FDE047] px-2 py-0.5 text-[10px] text-black dark:text-black">Tight</button>
+      <button type="button" data-swiss-track="0em" aria-pressed="false" class="border border-zinc-600 px-2 py-0.5 text-[10px] text-white hover:border-white">Normal</button>
+      <button type="button" data-swiss-track="0.06em" aria-pressed="false" class="border border-zinc-600 px-2 py-0.5 text-[10px] text-white hover:border-white">Wide</button>
+    </div>
+  </div>
+  <div class="p-6 sm:p-8">
+    <h2 data-swiss-head style="letter-spacing:-0.04em" class="text-3xl font-black uppercase leading-[0.95] text-black dark:text-white sm:text-5xl">WORDS ARE <mark class="bg-[#BEF264] px-1.5 text-black dark:text-black">STRUCTURAL BEAM</mark>, NOT FILLER.</h2>
+    <blockquote class="mt-5 border-l-4 border-black dark:border-zinc-200 bg-[#FDE047]/35 px-4 py-3 text-sm font-bold leading-snug text-black dark:text-white">&ldquo;Say less, set it larger, and trust crisp black ink over decorative softness.&rdquo;</blockquote>
+    <p class="mt-4 text-sm leading-relaxed text-neutral-800 dark:text-neutral-200">Strong Swiss-inspired editorial copy pairs <span class="underline decoration-2 underline-offset-4">unapologetic headlines</span> with short, punchy declarative paragraphs that scan cleanly on poster or screen.</p>
+  </div>
+</article>
+<script>
+(() => {
+  const btns = document.querySelectorAll('[data-swiss-track]');
+  const head = document.querySelector('[data-swiss-head]');
+  const label = document.querySelector('[data-swiss-label]');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tr = btn.getAttribute('data-swiss-track') || '-0.04em';
+      btns.forEach((b) => {
+        const active = b.getAttribute('data-swiss-track') === tr;
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        b.className = active
+          ? 'border border-[#FDE047] bg-[#FDE047] px-2 py-0.5 text-[10px] text-black dark:text-black'
+          : 'border border-zinc-600 px-2 py-0.5 text-[10px] text-white hover:border-white';
+      });
+      if (head) head.style.letterSpacing = tr;
+      if (label) label.textContent = tr;
+    });
+  });
+})();
+</script>

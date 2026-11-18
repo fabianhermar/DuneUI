@@ -1,0 +1,55 @@
+<section data-os6 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-8 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-5">
+    <div class="flex items-center gap-4">
+      <div class="flex -space-x-3">
+        <img src="/images/ecommerce/lamp.jpg" alt="Desk Lamp" class="size-12 rounded-xl object-cover ring-2 ring-white dark:ring-zinc-950" />
+        <img src="/images/ecommerce/clock.jpg" alt="Steel Clock" class="size-12 rounded-xl object-cover ring-2 ring-white dark:ring-zinc-950" />
+      </div>
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Order #EXEC-5190</span>
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white">Confirmed &middot; Arriving Thursday, Nov 21</h2>
+      </div>
+    </div>
+    <button type="button" data-os6-note-btn class="rounded-xl border border-slate-200 dark:border-zinc-800 px-3.5 py-2 font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-50 dark:hover:bg-zinc-900">Edit Delivery Note</button>
+  </div>
+  <div data-os6-note-box class="mt-4 hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-3.5">
+    <div class="flex gap-2">
+      <input data-os6-input type="text" value="Ring suite 402 bell upon arrival" class="flex-1 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-2 text-xs" />
+      <button type="button" data-os6-save class="rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-950">Update</button>
+    </div>
+  </div>
+  <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4">
+      <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Shipping Address</p>
+      <p class="mt-2 font-semibold text-slate-900 dark:text-white">Maya Patel</p>
+      <p class="mt-1 leading-relaxed text-slate-600 dark:text-zinc-400">742 Pine Street, Suite 402<br />Seattle, WA 98101<br />United States</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4">
+      <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Payment Method</p>
+      <p class="mt-2 font-semibold text-slate-900 dark:text-white">Apple Pay &middot; Visa</p>
+      <p class="mt-1 font-mono text-slate-600 dark:text-zinc-400">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</p>
+      <span class="mt-2 inline-block rounded-md bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Authorized &amp; Settled</span>
+    </div>
+    <div class="rounded-2xl border border-slate-200 dark:border-zinc-800 p-4">
+      <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Courier Instructions</p>
+      <p class="mt-2 font-semibold text-slate-900 dark:text-white">FedEx Priority Insured</p>
+      <p data-os6-note class="mt-1 leading-relaxed text-slate-600 dark:text-zinc-400">Ring suite 402 bell upon arrival</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-4">
+      <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Order Totals</p>
+      <div class="mt-2 space-y-1">
+        <div class="flex justify-between text-slate-600 dark:text-zinc-400"><span>Items (2)</span><span class="font-mono">$330.00</span></div>
+        <div class="flex justify-between text-slate-600 dark:text-zinc-400"><span>Courier</span><span class="font-mono text-emerald-600 dark:text-emerald-400">Free</span></div>
+        <div class="flex justify-between border-t border-slate-200 dark:border-zinc-800 pt-1.5 font-bold text-slate-900 dark:text-white"><span>Charged</span><span class="font-mono text-sm">$330.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-os6]'); if (!r) return;
+  const box = r.querySelector('[data-os6-note-box]'), inp = r.querySelector('[data-os6-input]'), out = r.querySelector('[data-os6-note]');
+  r.querySelector('[data-os6-note-btn]')?.addEventListener('click', () => box.classList.toggle('hidden'));
+  r.querySelector('[data-os6-save]')?.addEventListener('click', () => { out.textContent = inp.value || 'Standard delivery'; box.classList.add('hidden'); });
+})();
+</script>

@@ -1,0 +1,53 @@
+<div class="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 px-5 pt-4">
+    <div>
+      <p class="text-[11px] font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Hiring Pipeline</p>
+      <h3 class="text-sm font-bold text-slate-900 dark:text-zinc-100">Senior Frontend Architect</h3>
+    </div>
+    <span class="rounded-full bg-slate-100 dark:bg-zinc-800 px-2.5 py-1 text-[11px] font-medium text-slate-600 dark:text-zinc-300">Remote &bull; Full-Time</span>
+  </div>
+  <div class="mt-3 w-full overflow-x-auto border-b border-slate-200 dark:border-zinc-800 px-5">
+    <div role="tablist" aria-label="Candidate stages" class="-mb-px flex gap-6 whitespace-nowrap text-xs font-medium">
+      <button type="button" data-utab="applied" aria-selected="true" class="inline-flex items-center gap-2 border-b-2 border-indigo-600 pb-3 font-semibold text-indigo-600 dark:text-indigo-400">Applied <span class="rounded-full bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 text-[11px] font-bold text-indigo-700 dark:text-indigo-300">24</span></button>
+      <button type="button" data-utab="interviewing" aria-selected="false" class="inline-flex items-center gap-2 border-b-2 border-transparent pb-3 text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100">Interviewing <span class="rounded-full bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-semibold text-slate-600 dark:text-zinc-300">6</span></button>
+      <button type="button" data-utab="offers" aria-selected="false" class="inline-flex items-center gap-2 border-b-2 border-transparent pb-3 text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100">Offers <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">2</span></button>
+    </div>
+  </div>
+  <div class="p-5 text-xs">
+    <div data-upanel="applied" class="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-50 dark:bg-zinc-800/60 p-3.5">
+      <div><p class="font-semibold text-slate-900 dark:text-zinc-100">24 new portfolio submissions</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">Top match: Clara Wu (98% rubric match)</p></div>
+      <span class="rounded-lg bg-indigo-600 px-3 py-1.5 font-semibold text-white">Review Queue</span>
+    </div>
+    <div data-upanel="interviewing" class="hidden flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-50 dark:bg-zinc-800/60 p-3.5">
+      <div><p class="font-semibold text-slate-900 dark:text-zinc-100">6 candidates in final architecture loop</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">Next call today at 14:30 UTC with Engineering Panel</p></div>
+      <span class="rounded-lg bg-slate-900 dark:bg-white px-3 py-1.5 font-semibold text-white dark:text-slate-950">View Calendar</span>
+    </div>
+    <div data-upanel="offers" class="hidden flex-wrap items-center justify-between gap-2 rounded-xl bg-emerald-50/70 dark:bg-emerald-500/15 p-3.5">
+      <div><p class="font-semibold text-emerald-950 dark:text-emerald-200">2 written offers pending signature</p><p class="text-[11px] text-emerald-700 dark:text-emerald-300">Target start date: Dec 01, 2026</p></div>
+      <span class="rounded-lg bg-emerald-600 px-3 py-1.5 font-semibold text-white">Track Status</span>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-utab]');
+  const panels = document.querySelectorAll('[data-upanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-utab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-utab') === id;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? 'inline-flex items-center gap-2 border-b-2 border-indigo-600 pb-3 font-semibold text-indigo-600'
+          : 'inline-flex items-center gap-2 border-b-2 border-transparent pb-3 text-slate-500 hover:text-slate-900';
+      });
+      panels.forEach((p) => {
+        const show = p.getAttribute('data-upanel') === id;
+        p.classList.toggle('hidden', !show);
+        p.classList.toggle('flex', show);
+      });
+    });
+  });
+})();
+</script>

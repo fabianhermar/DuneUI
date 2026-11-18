@@ -1,0 +1,69 @@
+{
+  "slug": "typography",
+  "index": "18",
+  "tag": "Editorial",
+  "title": "Typography",
+  "description": "10 typographic writing systems: editorial pull-quotes, dropcaps, gradient display headlines, inline prose marks, glass voice epigraphs, annotated footnotes, and archival prose.",
+  "specs": [
+    {
+      "file": "01-editorial-pull-quote-dropcap.html",
+      "title": "Editorial Pull-Quote Dropcap",
+      "styleTag": "Editorial · Serif",
+      "canvas": "light"
+    },
+    {
+      "file": "02-gradient-headline-highlight.html",
+      "title": "Gradient Headline & Highlight",
+      "styleTag": "Linear · Display",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-oversized-quotation-cite.html",
+      "title": "Oversized Quotation & Cite",
+      "styleTag": "Quote · Dramatic",
+      "canvas": "light"
+    },
+    {
+      "file": "04-inline-marks-kbd-prose.html",
+      "title": "Inline Marks & Kbd Prose",
+      "styleTag": "Docs · Prose Marks",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-poetic-glass-epigraph-quote.html",
+      "title": "Poetic Glass Epigraph Quote",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-brutalist-manifesto-type.html",
+      "title": "Brutalist Manifesto Type",
+      "styleTag": "Brutalist · Copy",
+      "canvas": "light"
+    },
+    {
+      "file": "07-annotated-essay-footnotes.html",
+      "title": "Annotated Essay & Footnotes",
+      "styleTag": "Academic · Notes",
+      "canvas": "light"
+    },
+    {
+      "file": "08-two-column-magazine-lead.html",
+      "title": "Two-Column Magazine Lead",
+      "styleTag": "Magazine · Essay",
+      "canvas": "light"
+    },
+    {
+      "file": "09-literary-aphorism-quote.html",
+      "title": "Literary Aphorism Quote",
+      "styleTag": "Atelier · Serif",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-archival-field-note-prose.html",
+      "title": "Archival Field-Note Prose",
+      "styleTag": "Archival · Mono",
+      "canvas": "dark"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<section data-sc6 class="mx-auto w-full max-w-3xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FBF9F6] dark:bg-zinc-900 p-6 sm:p-7 text-stone-900 dark:text-zinc-100 shadow-sm">
+  <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-zinc-400">ARCHITECTURAL OBJECTS BAG</p>
+  <div class="mt-4 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between border-y border-stone-200 dark:border-zinc-800 py-5">
+    <div class="flex items-center gap-4">
+      <img src="/images/ecommerce/chair.jpg" alt="Lounge Chair" class="size-20 rounded-xl object-cover ring-1 ring-stone-200 dark:ring-zinc-700" />
+      <div>
+        <h3 class="font-serif text-xl text-stone-950 dark:text-white">Nordic Ash Lounge Chair</h3>
+        <p class="mt-0.5 text-xs text-stone-500 dark:text-zinc-400">Upholstery: Oatmeal Boucl&eacute; &middot; Hand-oiled Oak</p>
+      </div>
+    </div>
+    <p class="font-mono text-lg font-bold">$1,280.00</p>
+  </div>
+  <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 text-xs">
+    <button type="button" data-sc6-ship="0" class="cursor-pointer flex items-center justify-between rounded-xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-800 p-3.5 text-left">
+      <div><p class="font-bold">Curbside Freight (5&ndash;7 days)</p><p class="text-[11px] text-stone-500 dark:text-zinc-400">Signature delivery to threshold</p></div>
+      <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400">Free</span>
+    </button>
+    <button type="button" data-sc6-ship="95" class="cursor-pointer flex items-center justify-between rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-3.5 text-left hover:border-stone-400">
+      <div><p class="font-bold">White-Glove Room Assembly</p><p class="text-[11px] text-stone-500 dark:text-zinc-400">In-room placement &amp; crate removal</p></div>
+      <span class="font-mono font-bold">+$95</span>
+    </button>
+  </div>
+  <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+    <span class="text-xs text-stone-500 dark:text-zinc-400">Complimentary 30-day studio home trial</span>
+    <button type="button" class="cursor-pointer rounded-full bg-stone-900 dark:bg-white px-5 py-2.5 text-xs font-semibold text-white dark:text-stone-950 hover:opacity-90">Schedule Delivery &mdash; <span data-sc6-tot class="font-mono">$1,280.00</span></button>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc6]'); if (!root) return;
+  const btns = [...root.querySelectorAll('[data-sc6-ship]')], tot = root.querySelector('[data-sc6-tot]');
+  const onCls = 'cursor-pointer flex items-center justify-between rounded-xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-800 p-3.5 text-left';
+  const offCls = 'cursor-pointer flex items-center justify-between rounded-xl border border-stone-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-3.5 text-left hover:border-stone-400';
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => { x.className = x === b ? onCls : offCls; });
+    if (tot) tot.textContent = '$' + (1280 + Number(b.dataset.sc6Ship || 0)).toLocaleString('en-US') + '.00';
+  }));
+})();
+</script>

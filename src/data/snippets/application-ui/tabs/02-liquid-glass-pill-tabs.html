@@ -1,0 +1,44 @@
+<div class="relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 dark:from-[#0F172A] via-white dark:via-[#312E81] to-indigo-50/70 dark:to-[#701A75] p-5 shadow-lg dark:shadow-2xl sm:p-7 border border-slate-200 dark:border-white/15 text-slate-900 dark:text-zinc-100">
+  <div class="pointer-events-none absolute -left-10 -top-10 h-44 w-44 rounded-full bg-cyan-50 dark:bg-cyan-400/25 blur-3xl"></div>
+  <div class="relative rounded-2xl border border-slate-900/20 dark:border-white/30 bg-slate-900/[0.07] dark:bg-white/12 p-5 text-slate-900 dark:text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] backdrop-blur-2xl">
+    <div role="tablist" aria-label="Product showcase tabs" class="inline-flex flex-wrap items-center gap-1 rounded-2xl border border-slate-900/15 dark:border-white/25 bg-slate-900/[0.06] dark:bg-black/20 p-1 text-xs">
+      <button type="button" data-gtab="overview" aria-selected="true" class="rounded-xl bg-white px-4 py-1.5 font-semibold text-slate-950 shadow-sm transition border border-slate-200 dark:border-zinc-800">Overview</button>
+      <button type="button" data-gtab="specs" aria-selected="false" class="rounded-xl px-4 py-1.5 font-medium text-slate-700 dark:text-white/80 transition hover:text-slate-900 dark:hover:text-white">Specs</button>
+      <button type="button" data-gtab="reviews" aria-selected="false" class="inline-flex items-center gap-1.5 rounded-xl px-4 py-1.5 font-medium text-slate-700 dark:text-white/80 transition hover:text-slate-900 dark:hover:text-white">Reviews <span class="rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-bold">4.9</span></button>
+    </div>
+
+    <div class="mt-4 rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/10 p-4 text-xs leading-relaxed text-slate-900 dark:text-white/90">
+      <div data-gpanel="overview">
+        <p class="font-semibold text-slate-900 dark:text-white">Spatial Display Pro &bull; Titanium Unibody</p>
+        <p class="mt-1 text-slate-700 dark:text-white/80">120Hz reference OLED calibration paired with active room luminance compensation and zero-bezel acoustic diffusers.</p>
+      </div>
+      <div data-gpanel="specs" class="hidden">
+        <p class="font-semibold text-slate-900 dark:text-white">Hardware Architecture</p>
+        <p class="mt-1 font-mono text-[11px] text-cyan-700 dark:text-cyan-200">5120 &times; 2880 px &bull; 1600 nits peak &bull; 2&times; Thunderbolt 5 &bull; 3.8 kg</p>
+      </div>
+      <div data-gpanel="reviews" class="hidden">
+        <p class="font-semibold text-slate-900 dark:text-white">Verified Studio Rating (342 Reviews)</p>
+        <p class="mt-1 text-slate-700 dark:text-white/80">&ldquo;Color uniformity across dark UI interfaces is unmatched in its class.&rdquo; &mdash; Studio Kibo</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-gtab]');
+  const panels = document.querySelectorAll('[data-gpanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-gtab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-gtab') === target;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? 'inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-1.5 font-semibold text-slate-950 shadow-sm transition'
+          : 'inline-flex items-center gap-1.5 rounded-xl px-4 py-1.5 font-medium text-white/80 transition hover:text-white';
+      });
+      panels.forEach((p) => p.classList.toggle('hidden', p.getAttribute('data-gpanel') !== target));
+    });
+  });
+})();
+</script>

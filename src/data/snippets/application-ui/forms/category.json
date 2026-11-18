@@ -1,0 +1,69 @@
+{
+  "slug": "forms",
+  "index": "11",
+  "tag": "Inputs",
+  "title": "Forms",
+  "description": "Responsive checkout fields, multi-column workspace onboarding, OTP verification, and SaaS preference forms across diverse visual systems.",
+  "specs": [
+    {
+      "file": "01-workspace-profile-settings.html",
+      "title": "Workspace Profile Settings",
+      "styleTag": "Tailwind Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "02-stripe-express-payment-form.html",
+      "title": "Stripe Express Payment Form",
+      "styleTag": "Fintech Crisp",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-issue-quick-create-form.html",
+      "title": "Issue Quick-Create Form",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-liquid-glass-contact-sheet.html",
+      "title": "Liquid Glass Contact Sheet",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-otp-2fa-verification-form.html",
+      "title": "OTP 2FA Verification Form",
+      "styleTag": "Minimal Fintech",
+      "canvas": "light"
+    },
+    {
+      "file": "06-brutalist-hardware-waitlist-form.html",
+      "title": "Brutalist Hardware Waitlist Form",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-editorial-print-inquiry-sheet.html",
+      "title": "Editorial Print Inquiry Sheet",
+      "styleTag": "Editorial Serif",
+      "canvas": "light"
+    },
+    {
+      "file": "08-webhook-configuration-form.html",
+      "title": "Webhook Configuration Form",
+      "styleTag": "DevTools Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-delivery-address-checkout.html",
+      "title": "Delivery Address Checkout",
+      "styleTag": "E-Commerce Warm",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-filter-range-search-form-bar.html",
+      "title": "Filter & Range Search Form Bar",
+      "styleTag": "Travel Marketplace",
+      "canvas": "light"
+    }
+  ]
+}

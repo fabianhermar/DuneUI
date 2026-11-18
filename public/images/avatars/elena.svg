@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="elena-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </linearGradient>
+    <linearGradient id="elena-top" x1="64" y1="86" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#elena-bg)"/>
+  <circle cx="98" cy="26" r="22" fill="#F0F9FF" fill-opacity="0.55"/>
+  <path d="M38 56C38 33 50 22 64 22C78 22 90 33 90 56V78C90 84 85 88 79 88H49C43 88 38 84 38 78V56Z" fill="#3B2316"/>
+  <path d="M22 128C22 103 40 88 64 88C88 88 106 103 106 128H22Z" fill="url(#elena-top)"/>
+  <path d="M52 88L64 102L76 88H52Z" fill="#E0F2FE"/>
+  <rect x="56" y="72" width="16" height="18" rx="8" fill="#E5AE8C"/>
+  <circle cx="64" cy="55" r="21" fill="#F2C2A2"/>
+  <path d="M43 52C43 36 52 26 64 26C76 26 85 35 85 50C78 42 70 39 59 41C51 42 46 46 43 52Z" fill="#3B2316"/>
+  <circle cx="56" cy="56" r="2.1" fill="#18181B"/>
+  <circle cx="72" cy="56" r="2.1" fill="#18181B"/>
+  <path d="M58 66C61.5 68.5 66.5 68.5 70 66" stroke="#9F543E" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="49" cy="61" r="2.8" fill="#F48F79" fill-opacity="0.35"/>
+  <circle cx="79" cy="61" r="2.8" fill="#F48F79" fill-opacity="0.35"/>
+</svg>

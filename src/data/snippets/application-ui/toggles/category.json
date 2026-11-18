@@ -1,0 +1,69 @@
+{
+  "slug": "toggles",
+  "index": "21",
+  "tag": "Controls",
+  "title": "Toggles & Controls",
+  "description": "Domain-grounded switches, interactive billing toggles, theme & layout switchers, synth filter racks, GDPR consent controls, and commerce steppers.",
+  "specs": [
+    {
+      "file": "01-notification-switch-list.html",
+      "title": "Notification Switch List",
+      "styleTag": "Slack · Dev Alerts",
+      "canvas": "light"
+    },
+    {
+      "file": "02-billing-cycle-plan-switch.html",
+      "title": "Billing Cycle & Plan Switch",
+      "styleTag": "Linear · Billing",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-liquid-glass-theme-studio.html",
+      "title": "Liquid Glass Theme Studio",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-feature-flag-env-matrix.html",
+      "title": "Feature Flag Env Matrix",
+      "styleTag": "LaunchDarkly · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-brutalist-grid-studio-panel.html",
+      "title": "Brutalist Grid Studio Panel",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "muted"
+    },
+    {
+      "file": "06-workspace-view-mode-bar.html",
+      "title": "Workspace View & Mode Bar",
+      "styleTag": "Layout Switcher",
+      "canvas": "light"
+    },
+    {
+      "file": "07-synth-filter-drive-rack.html",
+      "title": "Synth Filter & Drive Rack",
+      "styleTag": "Hardware Audio",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-gdpr-privacy-switch-panel.html",
+      "title": "GDPR Privacy Switch Panel",
+      "styleTag": "Compliance · GDPR",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-editorial-print-plan-radios.html",
+      "title": "Editorial Print Plan Radios",
+      "styleTag": "Editorial Serif",
+      "canvas": "light"
+    },
+    {
+      "file": "10-merch-variant-bag-stepper.html",
+      "title": "Merch Variant & Bag Stepper",
+      "styleTag": "Commerce Tactile",
+      "canvas": "light"
+    }
+  ]
+}

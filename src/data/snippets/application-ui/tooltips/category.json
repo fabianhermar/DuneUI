@@ -1,0 +1,69 @@
+{
+  "slug": "tooltips",
+  "index": "32",
+  "tag": "Overlays",
+  "title": "Tooltips & Popovers",
+  "description": "Hover-activated tooltips and rich popovers mixing instant 0ms hints and smooth animated slides for toolbars, metrics, user profiles, and dev tools.",
+  "specs": [
+    {
+      "file": "01-instant-toolbar-shortcuts.html",
+      "title": "Instant Toolbar Shortcuts",
+      "styleTag": "Linear · Instant 0ms",
+      "canvas": "light"
+    },
+    {
+      "file": "02-revenue-breakdown-popover.html",
+      "title": "Revenue Breakdown Popover",
+      "styleTag": "Fintech · 200ms",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-author-mention-hover-card.html",
+      "title": "Author Mention Hover Card",
+      "styleTag": "Dev · Animated",
+      "canvas": "light"
+    },
+    {
+      "file": "04-glass-calibration-tooltip.html",
+      "title": "Glass Calibration Tooltip",
+      "styleTag": "Glass · Animated",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-instant-callout.html",
+      "title": "Brutalist Instant Callout",
+      "styleTag": "Brutalist · 0ms",
+      "canvas": "light"
+    },
+    {
+      "file": "06-billing-help-popover.html",
+      "title": "Billing Help Popover",
+      "styleTag": "Tailwind · Animated",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-dark-api-rate-limit-tooltip.html",
+      "title": "Dark API Rate Limit Tooltip",
+      "styleTag": "DevTools · 0ms",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-token-swatch-tooltip.html",
+      "title": "Token Swatch Tooltip",
+      "styleTag": "Design · Animated",
+      "canvas": "light"
+    },
+    {
+      "file": "09-4-direction-tooltip-matrix.html",
+      "title": "4-Direction Tooltip Matrix",
+      "styleTag": "Mixed Speed · 4-Way",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-dark-shortcut-key-popover.html",
+      "title": "Dark Shortcut Key Popover",
+      "styleTag": "Dark · Animated",
+      "canvas": "dark"
+    }
+  ]
+}

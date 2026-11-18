@@ -1,0 +1,23 @@
+<div data-glass-upgrade class="mx-auto w-full max-w-md rounded-3xl border border-slate-900/15 dark:border-white/25 bg-white/85 dark:bg-zinc-900/80 p-6 text-slate-900 dark:text-white shadow-xl backdrop-blur-2xl">
+  <div class="mx-auto flex size-12 items-center justify-center rounded-2xl bg-indigo-50 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 ring-1 ring-indigo-500/20">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+  </div>
+  <h3 class="mt-4 text-center text-lg font-semibold tracking-tight text-slate-900 dark:text-white">Unlock Studio Spatial Cloud</h3>
+  <p class="mt-1.5 text-center text-xs leading-relaxed text-slate-600 dark:text-zinc-300">Sync 2TB of layered design assets and collaborate live at 120Hz.</p>
+  <ul class="mt-4 space-y-2 rounded-2xl border border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-zinc-950/50 p-3.5 text-xs text-slate-700 dark:text-zinc-200">
+    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Unlimited Figma &amp; token snapshots</li>
+    <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-indigo-500"></span> Edge preview links with SSO guard</li>
+  </ul>
+  <div class="mt-5 flex flex-col gap-2.5 sm:flex-row">
+    <button type="button" class="flex-1 rounded-full border border-slate-200 dark:border-white/20 bg-white dark:bg-white/10 py-2.5 text-xs font-semibold text-slate-700 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/15">Not now</button>
+    <button type="button" data-trial-btn class="flex-1 rounded-full bg-slate-900 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-slate-950 shadow-lg transition hover:bg-slate-800 dark:hover:bg-zinc-200">Start 14-day trial</button>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('[data-glass-upgrade]').forEach((root) => {
+    const btn = root.querySelector('[data-trial-btn]');
+    btn?.addEventListener('click', () => {
+      btn.textContent = btn.textContent === 'Trial Activated' ? 'Start 14-day trial' : 'Trial Activated';
+    });
+  });
+</script>

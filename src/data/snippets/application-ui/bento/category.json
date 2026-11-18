@@ -1,0 +1,69 @@
+{
+  "slug": "bento",
+  "index": "23",
+  "tag": "Layout",
+  "title": "Bento Grids",
+  "description": "High-character asymmetric 2026 bento grids combining telemetry rings, terminal blocks, editorial plates, Spatial OS glass, and neo-brutalist layouts.",
+  "specs": [
+    {
+      "file": "01-dark-engine-presence-bento.html",
+      "title": "Dark Engine Presence Bento",
+      "styleTag": "Linear · Bento",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-m-series-silicon-bento.html",
+      "title": "M-Series Silicon Bento",
+      "styleTag": "Apple Minimal",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-liquid-glass-spatial-os-bento.html",
+      "title": "Liquid Glass Spatial OS Bento",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-brutalist-manifesto-bento.html",
+      "title": "Brutalist Manifesto Bento",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "05-treasury-fraud-bento.html",
+      "title": "Treasury & Fraud Bento",
+      "styleTag": "Fintech · Trust",
+      "canvas": "light"
+    },
+    {
+      "file": "06-editorial-lookbook-bento.html",
+      "title": "Editorial Lookbook Bento",
+      "styleTag": "Editorial Print",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-cli-ast-benchmark-bento.html",
+      "title": "CLI & AST Benchmark Bento",
+      "styleTag": "DevTools · CLI",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-engineering-cohort-bento.html",
+      "title": "Engineering Cohort Bento",
+      "styleTag": "Studio · Light",
+      "canvas": "light"
+    },
+    {
+      "file": "09-wearable-biometric-bento.html",
+      "title": "Wearable Biometric Bento",
+      "styleTag": "Health Ring · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-atelier-craft-bento-grid.html",
+      "title": "Atelier Craft Bento Grid",
+      "styleTag": "Atelier Commerce",
+      "canvas": "muted"
+    }
+  ]
+}

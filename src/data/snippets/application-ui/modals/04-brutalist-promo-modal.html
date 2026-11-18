@@ -1,0 +1,21 @@
+<div data-promo-modal class="mx-auto w-full max-w-md rounded-2xl border-2 border-black dark:border-zinc-200 bg-[#67E8F9] p-5 sm:p-6 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7] text-black">
+  <div class="flex items-center justify-between gap-2">
+    <span class="rounded-md border-2 border-black bg-[#FDE047] px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-black">Limited Drop</span>
+    <span class="font-mono text-xs font-bold text-black">EXPIRES IN 14H</span>
+  </div>
+  <h3 class="mt-4 text-2xl font-black tracking-tight text-black">Claim 40% Off Annual Pro</h3>
+  <p class="mt-1.5 text-sm font-medium text-black/85">Lock in founding developer pricing before the v5 design system launch.</p>
+  <div class="mt-4 flex items-center justify-between rounded-xl border-2 border-black bg-white px-3.5 py-2 font-mono text-xs font-bold text-black">
+    <span>CODE: DUNE40</span>
+    <span class="text-emerald-700">-40% OFF</span>
+  </div>
+  <button type="button" data-promo-btn class="mt-4 w-full rounded-xl border-2 border-black bg-black py-3 text-xs font-black uppercase tracking-wide text-white shadow-[3px_3px_0_0_#FDE047] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Apply Coupon DUNE40 →</button>
+</div>
+<script>
+  document.querySelectorAll('[data-promo-modal]').forEach((root) => {
+    const btn = root.querySelector('[data-promo-btn]');
+    btn?.addEventListener('click', () => {
+      btn.textContent = btn.textContent?.includes('Applied') ? 'Apply Coupon DUNE40 →' : 'Coupon DUNE40 Applied';
+    });
+  });
+</script>

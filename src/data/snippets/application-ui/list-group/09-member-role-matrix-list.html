@@ -1,0 +1,52 @@
+<div data-roles-list class="mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800 text-slate-900 dark:text-zinc-100">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 px-4 py-3">
+    <div>
+      <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Workspace Access</h3>
+      <p class="text-[11px] text-slate-500 dark:text-zinc-400">3 active members</p>
+    </div>
+    <span class="rounded-lg bg-indigo-50 dark:bg-indigo-500/15 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:text-indigo-300">Team Plan</span>
+  </div>
+  <ul class="divide-y divide-slate-100 dark:divide-zinc-800">
+    <li class="flex items-center justify-between gap-3 px-4 py-3">
+      <div class="flex min-w-0 items-center gap-3">
+        <img src="/images/avatars/sofia.jpg" alt="Sofia Cruz" class="size-9 shrink-0 rounded-full object-cover" />
+        <div class="min-w-0">
+          <p class="truncate text-xs font-semibold text-slate-900 dark:text-white">Sofia Cruz</p>
+          <p class="truncate text-[11px] text-slate-500 dark:text-zinc-400">sofia@dune.dev</p>
+        </div>
+      </div>
+      <button type="button" data-role-btn class="shrink-0 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-semibold text-slate-800 dark:text-zinc-200">Owner</button>
+    </li>
+    <li class="flex items-center justify-between gap-3 px-4 py-3">
+      <div class="flex min-w-0 items-center gap-3">
+        <img src="/images/avatars/mateo.jpg" alt="Mateo Ruiz" class="size-9 shrink-0 rounded-full object-cover" />
+        <div class="min-w-0">
+          <p class="truncate text-xs font-semibold text-slate-900 dark:text-white">Mateo Ruiz</p>
+          <p class="truncate text-[11px] text-slate-500 dark:text-zinc-400">mateo@dune.dev</p>
+        </div>
+      </div>
+      <button type="button" data-role-btn class="shrink-0 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-semibold text-slate-800 dark:text-zinc-200">Editor</button>
+    </li>
+    <li class="flex items-center justify-between gap-3 px-4 py-3">
+      <div class="flex min-w-0 items-center gap-3">
+        <img src="/images/avatars/lucas.svg" alt="Lucas Vance" class="size-9 shrink-0 rounded-full object-cover" />
+        <div class="min-w-0">
+          <p class="truncate text-xs font-semibold text-slate-900 dark:text-white">Lucas Vance</p>
+          <p class="truncate text-[11px] text-slate-500 dark:text-zinc-400">lucas@dune.dev</p>
+        </div>
+      </div>
+      <button type="button" data-role-btn class="shrink-0 rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 text-xs font-semibold text-slate-800 dark:text-zinc-200">Viewer</button>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-roles-list]').forEach((root) => {
+    const roles = ['Owner', 'Admin', 'Editor', 'Viewer'];
+    root.querySelectorAll('[data-role-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = roles.indexOf(btn.textContent?.trim() || 'Editor');
+        btn.textContent = roles[(idx + 1) % roles.length];
+      });
+    });
+  });
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "button-group",
+  "index": "06",
+  "tag": "Actions",
+  "title": "Button Groups",
+  "description": "10 interactive segmented bars: timeframe switchers, Liquid Glass tool docks, split merge menus, editor formatters, brutalist reaction pills, CAD zoom steppers, cart counters, and CLI package tabs.",
+  "specs": [
+    {
+      "file": "01-analytics-timeframe-switcher.html",
+      "title": "Analytics Timeframe Switcher",
+      "styleTag": "SaaS · Dashboard Bar",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-liquid-glass-canvas-dock.html",
+      "title": "Liquid Glass Canvas Dock",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "03-split-primary-action-bar.html",
+      "title": "Split Primary Action Bar",
+      "styleTag": "GitHub · Split Merge",
+      "canvas": "light"
+    },
+    {
+      "file": "04-dark-editor-format-toolbar.html",
+      "title": "Dark Editor Format Toolbar",
+      "styleTag": "Linear · Toolbar",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-brutalist-reaction-pills.html",
+      "title": "Brutalist Reaction Pills",
+      "styleTag": "Brutalist · Votes",
+      "canvas": "light"
+    },
+    {
+      "file": "06-zoom-viewport-controls.html",
+      "title": "Zoom & Viewport Controls",
+      "styleTag": "CAD · Precision",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-cart-quantity-stepper-pill.html",
+      "title": "Cart Quantity Stepper Pill",
+      "styleTag": "Storefront · Cart",
+      "canvas": "light"
+    },
+    {
+      "file": "08-cli-package-manager-switch.html",
+      "title": "CLI Package Manager Switch",
+      "styleTag": "DevTools · CLI",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-social-post-action-strip.html",
+      "title": "Social Post Action Strip",
+      "styleTag": "Social · Thread",
+      "canvas": "light"
+    },
+    {
+      "file": "10-aspect-ratio-align-picker.html",
+      "title": "Aspect Ratio Align Picker",
+      "styleTag": "Studio · Layout",
+      "canvas": "muted"
+    }
+  ]
+}

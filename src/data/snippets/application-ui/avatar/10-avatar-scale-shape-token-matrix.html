@@ -1,0 +1,43 @@
+<div data-token-strip class="mx-auto w-full max-w-lg rounded-2xl bg-white dark:bg-zinc-900 p-4 sm:p-5 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800 text-slate-900 dark:text-zinc-100">
+  <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-zinc-800">
+    <span class="font-mono text-xs font-semibold text-slate-600 dark:text-zinc-400">Scale Tokens (XS &rarr; LG)</span>
+    <button type="button" data-shape-toggle class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2.5 py-1 font-mono text-[11px] font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-700">Switch to Squircle</button>
+  </div>
+  <div class="mt-4 flex flex-wrap items-end justify-around gap-4">
+    <div class="flex flex-col items-center gap-1.5">
+      <img src="/images/avatars/mateo.jpg" alt="XS" data-shape-el class="size-7 rounded-full object-cover object-top ring-1 ring-slate-200 dark:ring-zinc-700 transition-all" />
+      <code class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">size-7</code>
+    </div>
+    <div class="flex flex-col items-center gap-1.5">
+      <img src="/images/avatars/nora.svg" alt="SM" data-shape-el class="size-9 rounded-full object-cover object-top ring-1 ring-slate-200 dark:ring-zinc-700 transition-all" />
+      <code class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">size-9</code>
+    </div>
+    <div class="flex flex-col items-center gap-1.5">
+      <div class="relative">
+        <img src="/images/avatars/sofia.jpg" alt="MD" data-shape-el class="size-12 rounded-full object-cover object-top ring-1 ring-slate-200 dark:ring-zinc-700 transition-all" />
+        <span class="absolute -top-1 -right-1 flex size-4 items-center justify-center rounded-full bg-rose-600 text-[9px] font-bold text-white ring-2 ring-white dark:ring-zinc-900">4</span>
+      </div>
+      <code class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">size-12</code>
+    </div>
+    <div class="flex flex-col items-center gap-1.5">
+      <span data-shape-el class="flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-base font-bold text-white shadow-sm transition-all">DX</span>
+      <code class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">size-16</code>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-token-strip]');
+      const btn = root.querySelector('[data-shape-toggle]');
+      const els = root.querySelectorAll('[data-shape-el]');
+      btn?.addEventListener('click', () => {
+        const squircle = btn.dataset.mode !== 'squircle';
+        btn.dataset.mode = squircle ? 'squircle' : 'circle';
+        btn.textContent = squircle ? 'Switch to Circle' : 'Switch to Squircle';
+        els.forEach((el) => {
+          el.classList.toggle('rounded-full', !squircle);
+          el.classList.toggle('rounded-2xl', squircle);
+        });
+      });
+    })();
+  </script>
+</div>

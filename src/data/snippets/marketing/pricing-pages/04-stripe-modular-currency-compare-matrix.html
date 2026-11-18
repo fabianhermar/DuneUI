@@ -1,0 +1,56 @@
+<div data-pp-4 class="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-white dark:bg-[#0D1017] p-6 shadow-xl ring-1 ring-slate-200 dark:ring-white/15 sm:p-10 text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-6">
+    <div>
+      <p class="font-mono text-[10px] font-bold uppercase tracking-widest text-[#635BFF]">Platform Comparison</p>
+      <h1 class="mt-1.5 text-3xl font-bold tracking-tight sm:text-4xl">Built to scale global revenue.</h1>
+    </div>
+    <div class="inline-flex rounded-xl border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/5 p-1 font-mono text-xs font-bold">
+      <button type="button" data-pp4-cur="usd" class="rounded-lg bg-white dark:bg-white px-3 py-1 text-slate-950 shadow-xs cursor-pointer">USD $</button>
+      <button type="button" data-pp4-cur="eur" class="rounded-lg px-3 py-1 text-slate-500 dark:text-zinc-400 cursor-pointer">EUR &euro;</button>
+      <button type="button" data-pp4-cur="gbp" class="rounded-lg px-3 py-1 text-slate-500 dark:text-zinc-400 cursor-pointer">GBP &pound;</button>
+    </div>
+  </div>
+
+  <div class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+      <p class="font-bold text-sm">Starter</p><p class="mt-2 font-mono text-3xl font-bold" data-pp4-p0>$0</p><p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">Up to 10k active payouts/mo</p>
+    </div>
+    <div class="rounded-2xl border-2 border-[#635BFF] bg-indigo-50/40 dark:bg-[#635BFF]/10 p-5">
+      <div class="flex items-center justify-between"><p class="font-bold text-sm text-[#635BFF] dark:text-indigo-300">Growth</p><span class="rounded bg-[#635BFF] px-2 py-0.5 font-mono text-[9px] font-bold text-white">RECOMMENDED</span></div>
+      <p class="mt-2 font-mono text-3xl font-bold" data-pp4-p1>$59</p><p class="mt-1 text-xs text-slate-600 dark:text-zinc-300">Multi-currency + tax automation</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+      <p class="font-bold text-sm">Scale</p><p class="mt-2 font-mono text-3xl font-bold" data-pp4-p2>$199</p><p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">Dedicated Treasury &amp; custom SLA</p>
+    </div>
+  </div>
+
+  <div class="mt-6 overflow-x-auto">
+    <table class="w-full text-left text-xs">
+      <thead class="border-b border-slate-200 dark:border-white/10 font-mono text-[10px] uppercase text-slate-500 dark:text-zinc-400">
+        <tr><th class="py-3 pr-4">Feature</th><th class="py-3 px-4">Starter</th><th class="py-3 px-4 text-[#635BFF] dark:text-indigo-300">Growth</th><th class="py-3 pl-4">Scale</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-white/10 text-slate-700 dark:text-zinc-300">
+        <tr class="hover:bg-slate-50 dark:hover:bg-white/[0.02]"><td class="py-3 pr-4 font-medium">Instant SEPA &amp; FedNow wires</td><td class="py-3 px-4">1.5%</td><td class="py-3 px-4 font-semibold text-indigo-700 dark:text-indigo-300">0.4%</td><td class="py-3 pl-4 font-bold text-emerald-600 dark:text-emerald-400">0.15%</td></tr>
+        <tr class="hover:bg-slate-50 dark:hover:bg-white/[0.02]"><td class="py-3 pr-4 font-medium">Automatic VAT / Sales Tax</td><td class="py-3 px-4 text-slate-400">&mdash;</td><td class="py-3 px-4 font-semibold text-indigo-700 dark:text-indigo-300">Included</td><td class="py-3 pl-4">Included + Audit</td></tr>
+        <tr class="hover:bg-slate-50 dark:hover:bg-white/[0.02]"><td class="py-3 pr-4 font-medium">SAML SSO &amp; SOC2 Stream</td><td class="py-3 px-4 text-slate-400">&mdash;</td><td class="py-3 px-4 text-slate-400">&mdash;</td><td class="py-3 pl-4 text-emerald-700 dark:text-emerald-300 font-bold">Included</td></tr>
+        <tr class="hover:bg-slate-50 dark:hover:bg-white/[0.02]"><td class="py-3 pr-4 font-medium">SLA Uptime Guarantee</td><td class="py-3 px-4">99.5%</td><td class="py-3 px-4">99.9%</td><td class="py-3 pl-4 font-bold">99.99%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('[data-pp-4]').forEach((root) => {
+    const btns = root.querySelectorAll('[data-pp4-cur]');
+    const vals = { usd: ['$0', '$59', '$199'], eur: ['€0', '€54', '€179'], gbp: ['£0', '£46', '£155'] };
+    const on = 'rounded-lg bg-white dark:bg-white px-3 py-1 text-slate-950 shadow-xs cursor-pointer';
+    const off = 'rounded-lg px-3 py-1 text-slate-500 dark:text-zinc-400 cursor-pointer';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      const k = b.getAttribute('data-pp4-cur') || 'usd';
+      btns.forEach((x) => { x.className = x === b ? on : off; });
+      (vals[k] || vals.usd).forEach((v, i) => {
+        const el = root.querySelector('[data-pp4-p' + i + ']');
+        if (el) el.textContent = v;
+      });
+    }));
+  });
+</script>

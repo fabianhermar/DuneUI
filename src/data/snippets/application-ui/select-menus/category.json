@@ -1,0 +1,69 @@
+{
+  "slug": "select-menus",
+  "index": "49",
+  "tag": "Inputs",
+  "title": "Select & Comboboxes",
+  "description": "10 radically distinct custom selects & comboboxes across cinema color LUTs, footwear sizing matrices, aviation cabin selectors, analog synth presets, barista brew pickers, ICD-10 medical search, Bauhaus type specimens, horology case finishes, timezone overlaps, and broadsheet volumes.",
+  "specs": [
+    {
+      "file": "01-cinema-film-stock-color-lut-picker.html",
+      "title": "Cinema Film Stock & Color LUT Picker",
+      "styleTag": "Cinema · Color Grade",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-footwear-archive-size-matrix-select.html",
+      "title": "Footwear Archive Size Matrix Select",
+      "styleTag": "Commerce · Size Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "03-aviation-cabin-class-pitch-select.html",
+      "title": "Aviation Cabin Class & Pitch Select",
+      "styleTag": "Travel · Flight Cabin",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-modular-synth-filter-wave-combobox.html",
+      "title": "Modular Synth Filter & Wave Combobox",
+      "styleTag": "Hardware · Synthesizer",
+      "canvas": "light"
+    },
+    {
+      "file": "05-barista-pour-over-recipe-selector.html",
+      "title": "Barista Pour-Over Recipe Selector",
+      "styleTag": "Culinary · Coffee",
+      "canvas": "light"
+    },
+    {
+      "file": "06-clinical-icd-10-diagnostic-combobox.html",
+      "title": "Clinical ICD-10 Diagnostic Combobox",
+      "styleTag": "Healthcare · Medical Code",
+      "canvas": "light"
+    },
+    {
+      "file": "07-bauhaus-typography-specimen-selector.html",
+      "title": "Bauhaus Typography Specimen Selector",
+      "styleTag": "Bauhaus · Font Picker",
+      "canvas": "light"
+    },
+    {
+      "file": "08-luxury-horology-case-material-picker.html",
+      "title": "Luxury Horology Case Material Picker",
+      "styleTag": "Horology · Atelier",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-global-timezone-hub-multi-select.html",
+      "title": "Global Timezone Hub Multi-Select",
+      "styleTag": "Remote · Timezones",
+      "canvas": "light"
+    },
+    {
+      "file": "10-broadsheet-volume-print-edition-index.html",
+      "title": "Broadsheet Volume & Print Edition Index",
+      "styleTag": "Editorial · Press Index",
+      "canvas": "light"
+    }
+  ]
+}

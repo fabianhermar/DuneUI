@@ -1,0 +1,49 @@
+<section data-ldr9 class="mx-auto w-full max-w-xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 font-mono text-xs text-slate-900 dark:text-zinc-100 shadow-lg space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Postgres Replica Migration</span>
+      <h3 class="mt-0.5 font-sans text-base font-bold text-slate-900 dark:text-white">Rebalancing 8 Cluster Shards</h3>
+    </div>
+    <button type="button" data-ldr9-sync class="rounded-xl bg-sky-600 px-3 py-1.5 text-[11px] font-bold text-white hover:bg-sky-500 transition">
+      Sync Next Shard
+    </button>
+  </div>
+  <div data-ldr9-nodes class="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3"><span class="block text-[10px] text-slate-400">SHARD-01</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; 1.2ms</strong></div>
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3"><span class="block text-[10px] text-slate-400">SHARD-02</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; 1.4ms</strong></div>
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3"><span class="block text-[10px] text-slate-400">SHARD-03</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; 1.1ms</strong></div>
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3"><span class="block text-[10px] text-slate-400">SHARD-04</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; 1.5ms</strong></div>
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3"><span class="block text-[10px] text-slate-400">SHARD-05</span><strong class="text-emerald-600 dark:text-emerald-400">&#10003; 1.3ms</strong></div>
+    <div class="rounded-xl border border-sky-500/40 bg-sky-500/10 p-3 animate-pulse"><span class="block text-[10px] text-slate-400">SHARD-06</span><strong class="text-sky-600 dark:text-sky-300">&#8635; 84%</strong></div>
+    <div class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-3"><span class="block text-[10px] text-slate-400">SHARD-07</span><strong class="text-slate-400">Queued</strong></div>
+    <div class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-3"><span class="block text-[10px] text-slate-400">SHARD-08</span><strong class="text-slate-400">Queued</strong></div>
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-zinc-800 pt-3.5 text-[11px]">
+    <span data-ldr9-rows class="text-slate-600 dark:text-zinc-300">Rows Replicated: <strong>118,400 / 150,000</strong></span>
+    <span class="text-emerald-600 dark:text-emerald-400 font-bold">Throughput: 28.4 MB/s</span>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr9]'); if (!r) return;
+  const nodes = [...r.querySelectorAll('[data-ldr9-nodes] > div')], rows = r.querySelector('[data-ldr9-rows]');
+  let active = 5;
+  r.querySelector('[data-ldr9-sync]')?.addEventListener('click', () => {
+    active = active >= 8 ? 2 : active + 1;
+    nodes.forEach((n, i) => {
+      const st = n.querySelector('strong');
+      if (i < active) {
+        n.className = 'rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3';
+        st.className = 'text-emerald-600 dark:text-emerald-400'; st.textContent = '✓ 1.2ms';
+      } else if (i === active) {
+        n.className = 'rounded-xl border border-sky-500/40 bg-sky-500/10 p-3 animate-pulse';
+        st.className = 'text-sky-600 dark:text-sky-300'; st.textContent = '↻ 84%';
+      } else {
+        n.className = 'rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 p-3';
+        st.className = 'text-slate-400'; st.textContent = 'Queued';
+      }
+    });
+    rows.innerHTML = 'Rows Replicated: <strong>' + Math.round((active / 8) * 150000).toLocaleString() + ' / 150,000</strong>';
+  });
+})();
+</script>

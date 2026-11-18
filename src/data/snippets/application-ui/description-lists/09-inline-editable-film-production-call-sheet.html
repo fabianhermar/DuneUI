@@ -1,0 +1,38 @@
+<div data-dl9 class="mx-auto w-full max-w-2xl overflow-hidden rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-[#141416] text-zinc-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex items-center justify-between bg-zinc-900 dark:bg-zinc-950 px-5 py-3 text-white">
+    <span class="font-mono text-xs font-bold uppercase tracking-widest">PRODUCTION CALL SHEET // SCENE 24B</span>
+    <span class="rounded bg-rose-600 px-2 py-0.5 font-mono text-[10px] font-bold">DAY 14 SHOOT</span>
+  </div>
+  <dl class="divide-y divide-zinc-200 dark:divide-zinc-800 px-5 text-xs">
+    <div class="flex flex-wrap items-center justify-between gap-3 py-3.5">
+      <div><dt class="font-mono text-[10px] uppercase text-zinc-500">Unit Call Time</dt><dd data-dl9-val="0" class="mt-1 font-mono font-bold">05:45 AM CET &middot; Golden Hour</dd></div>
+      <button type="button" data-dl9-edit="0" class="cursor-pointer rounded border border-zinc-300 dark:border-zinc-700 px-2.5 py-1 font-mono text-[10px] font-semibold hover:border-rose-500">Edit</button>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 py-3.5">
+      <div><dt class="font-mono text-[10px] uppercase text-zinc-500">Camera Package</dt><dd data-dl9-val="1" class="mt-1 font-semibold">ARRI Alexa 35 + Cooke Anamorphic 40mm</dd></div>
+      <button type="button" data-dl9-edit="1" class="cursor-pointer rounded border border-zinc-300 dark:border-zinc-700 px-2.5 py-1 font-mono text-[10px] font-semibold hover:border-rose-500">Edit</button>
+    </div>
+  </dl>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl9]').forEach((root) => {
+    root.querySelectorAll('[data-dl9-edit]').forEach((btn) => btn.addEventListener('click', () => {
+      const idx = btn.getAttribute('data-dl9-edit'), dd = root.querySelector('[data-dl9-val="' + idx + '"]');
+      if (!dd) return;
+      if (btn.textContent === 'Edit') {
+        const inp = document.createElement('input');
+        inp.type = 'text';
+        inp.value = dd.textContent || '';
+        inp.className = 'mt-1 rounded border border-rose-500 bg-transparent px-2 py-1 text-xs font-semibold focus:outline-none';
+        dd.textContent = ''; dd.appendChild(inp); inp.focus();
+        btn.textContent = 'Save';
+      } else {
+        const inp = dd.querySelector('input');
+        dd.textContent = inp ? inp.value : dd.textContent;
+        btn.textContent = 'Edit';
+      }
+    }));
+  });
+})();
+</script>

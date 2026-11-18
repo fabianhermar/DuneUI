@@ -1,0 +1,69 @@
+{
+  "slug": "feature-grids",
+  "index": "35",
+  "tag": "Marketing",
+  "title": "Feature Grids",
+  "description": "High-craft 6-card icon matrices, Linear hairline pillars, Fintech split previews, Spatial glass cards, Enterprise security tiers, and CI workflow showcases.",
+  "specs": [
+    {
+      "file": "01-6-card-saas-feature-matrix.html",
+      "title": "6-Card SaaS Feature Matrix",
+      "styleTag": "Tailwind · Matrix",
+      "canvas": "light"
+    },
+    {
+      "file": "02-obsidian-2-2-feature-grid.html",
+      "title": "Obsidian 2×2 Feature Grid",
+      "styleTag": "Linear · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-fintech-split-ledger-grid.html",
+      "title": "Fintech Split Ledger Grid",
+      "styleTag": "Fintech · Split",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-liquid-glass-feature-pillars.html",
+      "title": "Liquid Glass Feature Pillars",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-4-pillar-grid.html",
+      "title": "Brutalist 4-Pillar Grid",
+      "styleTag": "Brutalist · Bold",
+      "canvas": "light"
+    },
+    {
+      "file": "06-framework-adapter-grid.html",
+      "title": "Framework Adapter Grid",
+      "styleTag": "Vercel · Adapters",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-editorial-archive-features.html",
+      "title": "Editorial Archive Features",
+      "styleTag": "Editorial",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-swiss-3-col-workflow-grid.html",
+      "title": "Swiss 3-Col Workflow Grid",
+      "styleTag": "Swiss · Clean Grid",
+      "canvas": "light"
+    },
+    {
+      "file": "09-enterprise-security-pillars.html",
+      "title": "Enterprise Security Pillars",
+      "styleTag": "Security",
+      "canvas": "light"
+    },
+    {
+      "file": "10-ci-quality-gate-live-run.html",
+      "title": "CI Quality Gate & Live Run",
+      "styleTag": "Raycast · CI",
+      "canvas": "dark"
+    }
+  ]
+}

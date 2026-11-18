@@ -1,0 +1,63 @@
+<section data-os3 class="mx-auto w-full max-w-3xl overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 text-xs shadow-lg">
+  <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-900 dark:bg-zinc-900 px-6 py-5 text-white border-b border-slate-800">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="size-2 rounded-full bg-emerald-400"></span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-400">Stripe Payment Settled</span>
+      </div>
+      <h2 class="mt-1 text-xl font-bold tracking-tight">Receipt #RCP-4021</h2>
+      <p class="mt-0.5 text-[11px] text-zinc-400">Issued Nov 17, 2026 &middot; Transaction tx_3Q8xL92a</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <button type="button" data-os3-vatbtn class="rounded-xl border border-zinc-700 bg-zinc-800/80 px-3 py-2 font-semibold text-zinc-200 hover:border-zinc-500">+ Company VAT ID</button>
+      <button type="button" data-os3-pdf class="rounded-xl bg-white px-3.5 py-2 font-bold text-slate-950 hover:bg-zinc-200">Download PDF</button>
+    </div>
+  </div>
+  <div data-os3-vatbox class="hidden border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/60 px-6 py-4">
+    <p class="font-semibold text-slate-900 dark:text-white">Add Business Entity &amp; Tax ID to PDF Invoice</p>
+    <div class="mt-2 flex flex-wrap gap-2">
+      <input data-os3-co type="text" placeholder="Company Name (e.g., Nordik Labs GmbH)" class="min-w-44 flex-1 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-1.5" />
+      <input data-os3-tin type="text" placeholder="VAT / Tax ID (CHE-491.820.11)" class="w-44 rounded-lg border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3 py-1.5 font-mono" />
+      <button type="button" data-os3-apply class="rounded-lg bg-indigo-600 px-3.5 py-1.5 font-semibold text-white">Apply to Receipt</button>
+    </div>
+  </div>
+  <div class="p-6 space-y-5">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/40 p-4">
+      <div><span class="block text-[10px] uppercase tracking-wider text-slate-400">Billed To</span><strong data-os3-billed class="mt-0.5 block text-slate-900 dark:text-white">Daniel Lindqvist</strong><span class="text-slate-500 dark:text-zinc-400">daniel@duneui.dev</span></div>
+      <div><span class="block text-[10px] uppercase tracking-wider text-slate-400">Payment Method</span><strong class="mt-0.5 block font-mono text-slate-900 dark:text-white">Visa &bull;&bull;&bull;&bull; 8819</strong><span class="text-slate-500 dark:text-zinc-400">3D Secure Verified</span></div>
+      <div><span class="block text-[10px] uppercase tracking-wider text-slate-400">License Key</span><strong class="mt-0.5 block font-mono text-indigo-600 dark:text-indigo-400">DN-TEAM-94A2-X8</strong><span class="text-slate-500 dark:text-zinc-400">10 Active Seats</span></div>
+    </div>
+    <dl class="divide-y divide-slate-100 dark:divide-zinc-800 border-y border-slate-200 dark:border-zinc-800">
+      <div class="flex items-center justify-between py-3">
+        <div><dt class="font-semibold text-slate-900 dark:text-white">DuneUI Pro Team License (10 Seats)</dt><dd class="text-[11px] text-slate-500 dark:text-zinc-400">Lifetime updates + Figma Token Studio sync</dd></div>
+        <span class="font-mono font-semibold">$399.00</span>
+      </div>
+      <div class="flex items-center justify-between py-3">
+        <div><dt class="font-semibold text-slate-900 dark:text-white">Promo Credit &middot; EARLY20</dt><dd class="text-[11px] text-emerald-600 dark:text-emerald-400">20% Launch Partner Discount</dd></div>
+        <span class="font-mono font-semibold text-emerald-600 dark:text-emerald-400">-$79.80</span>
+      </div>
+      <div class="flex items-center justify-between py-3">
+        <dt class="text-slate-500 dark:text-zinc-400">VAT (0% Reverse Charge Eligible)</dt>
+        <dd class="font-mono">$0.00</dd>
+      </div>
+    </dl>
+    <div class="flex items-center justify-between">
+      <span class="text-sm font-bold text-slate-900 dark:text-white">Total Paid (USD)</span>
+      <span class="font-mono text-2xl font-bold text-slate-900 dark:text-white">$319.20</span>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-os3]'); if (!r) return;
+  const vb = r.querySelector('[data-os3-vatbox]'), billed = r.querySelector('[data-os3-billed]'), co = r.querySelector('[data-os3-co]'), tin = r.querySelector('[data-os3-tin]'), pdf = r.querySelector('[data-os3-pdf]');
+  r.querySelector('[data-os3-vatbtn]')?.addEventListener('click', () => vb.classList.toggle('hidden'));
+  r.querySelector('[data-os3-apply]')?.addEventListener('click', () => {
+    const name = co.value.trim() || 'Nordik Labs GmbH';
+    const tax = tin.value.trim() ? ' (' + tin.value.trim() + ')' : '';
+    billed.textContent = name + tax;
+    vb.classList.add('hidden');
+  });
+  pdf?.addEventListener('click', () => { pdf.textContent = 'Invoice Downloaded ✓'; });
+})();
+</script>

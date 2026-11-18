@@ -1,0 +1,52 @@
+<div class="mx-auto w-full max-w-xl text-slate-900 dark:text-zinc-100">
+  <div role="tablist" aria-label="Design binder tabs" class="flex flex-wrap gap-1 px-2 sm:gap-1.5">
+    <button type="button" data-btab="design" aria-selected="true" class="rounded-t-xl border-2 border-b-0 border-black dark:border-zinc-200 bg-[#BEF264] px-2.5 py-2 text-[10px] font-black uppercase tracking-wider text-black sm:px-4 sm:text-xs dark:text-black">01 / Design</button>
+    <button type="button" data-btab="tokens" aria-selected="false" class="rounded-t-xl border-2 border-b-0 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 px-2.5 py-2 text-[10px] font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 sm:px-4 sm:text-xs">02 / Tokens</button>
+    <button type="button" data-btab="export" aria-selected="false" class="rounded-t-xl border-2 border-b-0 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 px-2.5 py-2 text-[10px] font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 sm:px-4 sm:text-xs">03 / Export</button>
+  </div>
+  <div class="rounded-2xl border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 p-5 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7] text-black dark:text-zinc-100">
+    <div data-bpanel="design" class="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <span class="border border-black dark:border-zinc-200 bg-[#FDE047] px-2 py-0.5 font-mono text-[10px] font-black uppercase text-black dark:text-black">ACTIVE PANEL</span>
+        <p class="mt-2 text-sm font-black text-black dark:text-white">Color Tokens &amp; Hard Shadow Geometry</p>
+        <p class="mt-1 text-xs font-medium text-neutral-700 dark:text-neutral-300">Zero blur radius, 2px black strokes, and WCAG AAA pairing.</p>
+      </div>
+      <div class="flex gap-1.5">
+        <span class="h-7 w-7 border-2 border-black dark:border-zinc-200 bg-[#BEF264] text-black dark:text-black"></span>
+        <span class="h-7 w-7 border-2 border-black dark:border-zinc-200 bg-[#FDE047] text-black dark:text-black"></span>
+        <span class="h-7 w-7 border-2 border-black dark:border-zinc-200 bg-[#93C5FD] text-black dark:text-black"></span>
+      </div>
+    </div>
+    <div data-bpanel="tokens" class="hidden space-y-2 font-mono text-xs">
+      <div class="flex justify-between border-2 border-black dark:border-zinc-200 bg-zinc-50 dark:bg-zinc-800/60 px-3 py-2 font-bold"><span>--shadow-hard</span><span>6px 6px 0 #000</span></div>
+      <div class="flex justify-between border-2 border-black dark:border-zinc-200 bg-zinc-50 dark:bg-zinc-800/60 px-3 py-2 font-bold"><span>--border-stroke</span><span>2px solid #000</span></div>
+    </div>
+    <div data-bpanel="export" class="hidden flex-wrap items-center justify-between gap-3">
+      <div><p class="text-sm font-black text-black dark:text-white">Ready to ship CSS + Figma JSON</p><p class="text-xs font-medium text-neutral-600 dark:text-neutral-300">Bundled Tailwind v4 @theme tokens (4.2 KB).</p></div>
+      <button type="button" class="border-2 border-black dark:border-zinc-200 bg-[#FDE047] px-4 py-2 text-xs font-black uppercase text-black shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7] dark:text-black">Download Kit</button>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-btab]');
+  const panels = document.querySelectorAll('[data-bpanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-btab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-btab') === id;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? 'rounded-t-xl border-2 border-b-0 border-black bg-[#BEF264] px-2.5 py-2 text-[10px] font-black uppercase tracking-wider text-black sm:px-4 sm:text-xs'
+          : 'rounded-t-xl border-2 border-b-0 border-black bg-white px-2.5 py-2 text-[10px] font-bold uppercase tracking-wider text-neutral-700 hover:bg-zinc-100 sm:px-4 sm:text-xs';
+      });
+      panels.forEach((p) => {
+        const show = p.getAttribute('data-bpanel') === id;
+        p.classList.toggle('hidden', !show);
+        if (id === 'design' || id === 'export') p.classList.toggle('flex', show);
+      });
+    });
+  });
+})();
+</script>

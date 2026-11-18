@@ -1,0 +1,69 @@
+{
+  "slug": "file-upload",
+  "index": "38",
+  "tag": "Inputs",
+  "title": "File Upload",
+  "description": "Drag-and-drop upload zones, multi-file progress queues, image gallery uploaders, document KYC slots, avatar/cover croppers, and inline attachment drop bars.",
+  "specs": [
+    {
+      "file": "01-saas-dropzone-upload-queue.html",
+      "title": "SaaS Dropzone & Upload Queue",
+      "styleTag": "Tailwind · Dropzone",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-cloud-media-uploader.html",
+      "title": "Dark Cloud Media Uploader",
+      "styleTag": "Linear · Cloud",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-product-media-grid-uploader.html",
+      "title": "Product Media Grid Uploader",
+      "styleTag": "Shopify · Media",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-avatar-banner-upload-card.html",
+      "title": "Avatar & Banner Upload Card",
+      "styleTag": "Profile · Upload",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-file-dropzone.html",
+      "title": "Liquid Glass File Dropzone",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-kyc-id-document-uploader.html",
+      "title": "KYC ID Document Uploader",
+      "styleTag": "Fintech · KYC",
+      "canvas": "light"
+    },
+    {
+      "file": "07-brutalist-file-importer.html",
+      "title": "Brutalist File Importer",
+      "styleTag": "Brutalist · Upload",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-issue-attachment-dropzone.html",
+      "title": "Issue Attachment Dropzone",
+      "styleTag": "Tracker · Attach",
+      "canvas": "light"
+    },
+    {
+      "file": "09-ai-knowledge-upload-retry.html",
+      "title": "AI Knowledge Upload & Retry",
+      "styleTag": "AI Studio · Upload",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-daw-multi-stem-audio-upload.html",
+      "title": "DAW Multi-Stem Audio Upload",
+      "styleTag": "Audio Stems · Dark",
+      "canvas": "dark"
+    }
+  ]
+}

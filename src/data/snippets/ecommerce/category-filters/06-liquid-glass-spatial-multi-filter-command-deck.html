@@ -1,0 +1,140 @@
+<section data-cf6 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-br from-slate-50 dark:from-slate-950 via-white dark:via-indigo-950 to-indigo-50/70 dark:to-slate-950 p-6 sm:p-7 text-slate-900 dark:text-white text-xs space-y-5 shadow-xl">
+  <div class="space-y-3.5 rounded-2xl border border-slate-900/15 dark:border-white/20 bg-white/80 dark:bg-white/[0.08] p-4 backdrop-blur-2xl">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-900/10 dark:border-white/15 pb-3.5">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <button type="button" data-cf6-sp="all" class="rounded-full bg-slate-900 dark:bg-white px-3.5 py-1.5 font-semibold text-white dark:text-slate-950">All Objects (6)</button>
+        <button type="button" data-cf6-sp="acoustic" class="rounded-full bg-slate-900/[0.06] dark:bg-white/10 px-3.5 py-1.5 font-medium hover:bg-white/20">Acoustic</button>
+        <button type="button" data-cf6-sp="desk" class="rounded-full bg-slate-900/[0.06] dark:bg-white/10 px-3.5 py-1.5 font-medium hover:bg-white/20">Desks &amp; Light</button>
+        <button type="button" data-cf6-sp="living" class="rounded-full bg-slate-900/[0.06] dark:bg-white/10 px-3.5 py-1.5 font-medium hover:bg-white/20">Living &amp; Kiln</button>
+        <button type="button" data-cf6-sp="time" class="rounded-full bg-slate-900/[0.06] dark:bg-white/10 px-3.5 py-1.5 font-medium hover:bg-white/20">Horology</button>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <input type="search" data-cf6-q placeholder="Search object, material..." class="w-44 rounded-full border border-slate-300 dark:border-white/20 bg-white/80 dark:bg-slate-950/60 px-3.5 py-1.5 placeholder:text-slate-400 dark:placeholder:text-white/50 focus:outline-none" />
+        <select data-cf6-sort aria-label="Sort objects" class="rounded-full border border-slate-300 dark:border-white/20 bg-white/80 dark:bg-slate-950/60 px-3 py-1.5 font-semibold">
+          <option value="featured">Sort: Featured</option>
+          <option value="asc">Price: Low &rarr; High</option>
+          <option value="desc">Price: High &rarr; Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 items-center">
+      <div>
+        <div class="flex justify-between text-[11px] font-semibold"><span>Budget Cap</span><span data-cf6-plbl class="font-mono text-indigo-700 dark:text-indigo-200">$5,000</span></div>
+        <input type="range" min="60" max="5000" step="20" value="5000" data-cf6-cap class="mt-1.5 w-full accent-indigo-500" />
+      </div>
+      <div>
+        <span class="block text-[11px] font-semibold">Surface Material</span>
+        <div class="mt-1.5 flex gap-1.5">
+          <button type="button" data-cf6-mat="all" class="rounded-lg border border-slate-900 dark:border-white bg-white/60 dark:bg-white/20 px-2.5 py-1 font-semibold">All</button>
+          <button type="button" data-cf6-mat="metal" class="rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1">Metal</button>
+          <button type="button" data-cf6-mat="natural" class="rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1">Wood/Clay</button>
+        </div>
+      </div>
+      <div>
+        <span class="block text-[11px] font-semibold">Minimum Rating</span>
+        <div class="mt-1.5 flex gap-1.5">
+          <button type="button" data-cf6-rat="0" class="rounded-lg border border-slate-900 dark:border-white bg-white/60 dark:bg-white/20 px-2.5 py-1 font-semibold">Any</button>
+          <button type="button" data-cf6-rat="4.9" class="rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1">4.9&#9733;+</button>
+          <button type="button" data-cf6-rat="5.0" class="rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1">5.0&#9733;</button>
+        </div>
+      </div>
+      <div class="flex items-center justify-between gap-2">
+        <label class="inline-flex cursor-pointer items-center gap-1.5 font-semibold"><input type="checkbox" data-cf6-fast class="accent-indigo-500" /> Express 24h</label>
+        <span data-cf6-cnt class="rounded-full bg-indigo-500/20 px-2.5 py-1 font-mono text-[11px] font-bold text-indigo-700 dark:text-indigo-200">6 Objects</span>
+      </div>
+    </div>
+  </div>
+  <div data-cf6-grid class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <article data-cf6-it data-idx="0" data-sp="acoustic" data-mat="metal" data-rat="4.9" data-fast="1" data-name="spatial reference studio headphones beryllium" data-p="349" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/ecommerce/headphones.jpg" alt="Headphones" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">ACOUSTIC</span><span>4.9&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Spatial Reference Studio</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$349 &middot; CNC Aluminum &middot; 24h</p>
+      </div>
+    </article>
+    <article data-cf6-it data-idx="1" data-sp="desk" data-mat="metal" data-rat="4.8" data-fast="1" data-name="architectural brass desk lamp lighting" data-p="210" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/ecommerce/lamp.jpg" alt="Lamp" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">DESK LIGHT</span><span>4.8&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Architectural Desk Lamp</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$210 &middot; Solid Brass &middot; 24h</p>
+      </div>
+    </article>
+    <article data-cf6-it data-idx="2" data-sp="time" data-mat="metal" data-rat="5.0" data-fast="0" data-name="chronos titanium gmt watch horology" data-p="4850" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/heroes/luxury-watch.jpg" alt="Watch" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">HOROLOGY</span><span>5.0&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Chronos Titanium GMT</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$4,850 &middot; Grade 5 TI &middot; Vault</p>
+      </div>
+    </article>
+    <article data-cf6-it data-idx="3" data-sp="living" data-mat="natural" data-rat="5.0" data-fast="0" data-name="studio lounge chair danish ash leather" data-p="1280" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/ecommerce/chair.jpg" alt="Chair" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">LIVING</span><span>5.0&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Lounge Chair No. 02</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$1,280 &middot; Danish Ash &middot; 3 Wks</p>
+      </div>
+    </article>
+    <article data-cf6-it data-idx="4" data-sp="living" data-mat="natural" data-rat="4.9" data-fast="1" data-name="kyoto stoneware carafe ceramic pour-over" data-p="68" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">KILN</span><span>4.9&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Kyoto Stoneware Carafe</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$68 &middot; Shigaraki Clay &middot; 24h</p>
+      </div>
+    </article>
+    <article data-cf6-it data-idx="5" data-sp="acoustic" data-mat="metal" data-rat="4.9" data-fast="1" data-name="analog filter bank 6u modular synth" data-p="640" class="flex items-center gap-3.5 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/75 dark:bg-white/[0.07] p-3.5 backdrop-blur-xl">
+      <img src="/images/heroes/synth-modular.jpg" alt="Synth" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex justify-between text-[10px] font-mono"><span class="text-indigo-700 dark:text-indigo-300">ACOUSTIC</span><span>4.9&#9733;</span></div>
+        <p class="mt-0.5 font-bold truncate">Analog Filter Bank 6U</p>
+        <p class="text-[11px] text-slate-600 dark:text-indigo-200/80">$640 &middot; Steel Skiff &middot; 24h</p>
+      </div>
+    </article>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf6]'); if (!r) return;
+  const sps = [...r.querySelectorAll('[data-cf6-sp]')], mats = [...r.querySelectorAll('[data-cf6-mat]')], rats = [...r.querySelectorAll('[data-cf6-rat]')];
+  const q = r.querySelector('[data-cf6-q]'), cap = r.querySelector('[data-cf6-cap]'), plbl = r.querySelector('[data-cf6-plbl]'), fast = r.querySelector('[data-cf6-fast]'), sort = r.querySelector('[data-cf6-sort]');
+  const grid = r.querySelector('[data-cf6-grid]'), items = [...r.querySelectorAll('[data-cf6-it]')], cnt = r.querySelector('[data-cf6-cnt]');
+  let curSp = 'all', curMat = 'all', minRat = 0;
+  const upd = () => {
+    const query = q.value.trim().toLowerCase(), max = Number(cap.value);
+    plbl.textContent = '$' + max.toLocaleString();
+    const sorted = [...items].sort((a, b) => {
+      if (sort.value === 'asc') return Number(a.dataset.p) - Number(b.dataset.p);
+      if (sort.value === 'desc') return Number(b.dataset.p) - Number(a.dataset.p);
+      return Number(a.dataset.idx) - Number(b.dataset.idx);
+    });
+    let n = 0;
+    sorted.forEach(it => {
+      grid.appendChild(it);
+      const ok = (curSp === 'all' || it.dataset.sp === curSp)
+        && (curMat === 'all' || it.dataset.mat === curMat)
+        && Number(it.dataset.rat) >= minRat
+        && (!fast.checked || it.dataset.fast === '1')
+        && (!query || it.dataset.name.includes(query))
+        && Number(it.dataset.p) <= max;
+      it.classList.toggle('hidden', !ok); if (ok) n++;
+    });
+    cnt.textContent = n + (n === 1 ? ' Object' : ' Objects');
+  };
+  sps.forEach(b => b.addEventListener('click', () => {
+    curSp = b.dataset.cf6Sp; upd();
+    sps.forEach(x => x.className = x === b ? 'rounded-full bg-slate-900 dark:bg-white px-3.5 py-1.5 font-semibold text-white dark:text-slate-950' : 'rounded-full bg-slate-900/[0.06] dark:bg-white/10 px-3.5 py-1.5 font-medium hover:bg-white/20');
+  }));
+  mats.forEach(b => b.addEventListener('click', () => {
+    curMat = b.dataset.cf6Mat; upd();
+    mats.forEach(x => x.className = x === b ? 'rounded-lg border border-slate-900 dark:border-white bg-white/60 dark:bg-white/20 px-2.5 py-1 font-semibold' : 'rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1');
+  }));
+  rats.forEach(b => b.addEventListener('click', () => {
+    minRat = Number(b.dataset.cf6Rat); upd();
+    rats.forEach(x => x.className = x === b ? 'rounded-lg border border-slate-900 dark:border-white bg-white/60 dark:bg-white/20 px-2.5 py-1 font-semibold' : 'rounded-lg border border-slate-300 dark:border-white/15 px-2.5 py-1');
+  }));
+  q?.addEventListener('input', upd); cap?.addEventListener('input', upd); fast?.addEventListener('change', upd); sort?.addEventListener('change', upd);
+})();
+</script>

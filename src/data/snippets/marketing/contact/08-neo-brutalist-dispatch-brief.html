@@ -1,0 +1,36 @@
+<section data-ct-8 class="mx-auto w-full max-w-4xl border-2 border-black dark:border-zinc-200 bg-[#FAF9F5] dark:bg-zinc-900 p-6 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#e4e4e7] sm:p-9 text-slate-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+    <div class="md:col-span-5">
+      <span class="inline-block bg-black px-2.5 py-1 font-mono text-[10px] font-black uppercase tracking-wider text-[#BEF264]">DIRECT LINE // &lt; 24H</span>
+      <h2 class="mt-4 text-3xl font-black uppercase leading-[0.95] tracking-tight text-black dark:text-white sm:text-4xl">DROP US A BRIEF.</h2>
+      <p class="mt-3 text-xs font-bold leading-relaxed text-neutral-700 dark:text-neutral-300">Zero chatbots or sales scripts. A founding product engineer reads every submission directly.</p>
+      <div class="mt-5 flex flex-wrap gap-1.5 font-mono text-[10px] font-black uppercase">
+        <span class="border border-black dark:border-zinc-400 bg-white dark:bg-zinc-800 px-2 py-1">Design Systems</span>
+        <span class="border border-black dark:border-zinc-400 bg-white dark:bg-zinc-800 px-2 py-1">Web Apps</span>
+        <span class="border border-black dark:border-zinc-400 bg-white dark:bg-zinc-800 px-2 py-1">Audits</span>
+      </div>
+    </div>
+
+    <form data-ct-form class="space-y-3 md:col-span-7">
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <input type="text" required placeholder="YOUR NAME" class="w-full border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 font-mono text-xs font-bold text-black dark:text-white placeholder:text-neutral-400 focus:bg-[#FEF9C3] dark:focus:bg-zinc-700 focus:outline-none" />
+        <input type="email" required placeholder="EMAIL@STUDIO.COM" class="w-full border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 font-mono text-xs font-bold text-black dark:text-white placeholder:text-neutral-400 focus:bg-[#FEF9C3] dark:focus:bg-zinc-700 focus:outline-none" />
+      </div>
+      <textarea rows="3" required placeholder="TELL US WHAT YOU NEED BUILT &amp; TARGET LAUNCH..." class="w-full border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 font-mono text-xs font-bold text-black dark:text-white placeholder:text-neutral-400 focus:bg-[#FEF9C3] dark:focus:bg-zinc-700 focus:outline-none"></textarea>
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <button type="submit" class="border-2 border-black dark:border-zinc-200 bg-[#FDE047] px-6 py-2.5 font-mono text-xs font-black uppercase text-black shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#e4e4e7] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition cursor-pointer">Dispatch Brief &rarr;</button>
+        <span data-ct-ok class="hidden border border-black dark:border-zinc-200 bg-[#BEF264] px-2.5 py-1 font-mono text-[10px] font-black uppercase text-black">DISPATCHED // CHECK INBOX</span>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-ct-8]').forEach((root) => {
+    const f = root.querySelector('[data-ct-form]');
+    const ok = root.querySelector('[data-ct-ok]');
+    f?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ok?.classList.remove('hidden');
+    });
+  });
+</script>

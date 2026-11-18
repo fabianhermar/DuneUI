@@ -1,0 +1,69 @@
+{
+  "slug": "footer",
+  "index": "10",
+  "tag": "Layout",
+  "title": "Footers",
+  "description": "Responsive footers across every scale: 5-column enterprise sitemaps, illustrated editorial campaign footers, e-commerce trust footers, AI dark mega-footers, and compact single-row baselines.",
+  "specs": [
+    {
+      "file": "01-enterprise-5-col-mega-footer.html",
+      "title": "Enterprise 5-Col Mega Footer",
+      "styleTag": "Stripe · Mega",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-ai-dark-cloud-mega-footer.html",
+      "title": "AI Dark Cloud Mega Footer",
+      "styleTag": "Linear · Dark Mega",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-storefront-trust-app-footer.html",
+      "title": "Storefront Trust & App Footer",
+      "styleTag": "Shopify · Footer",
+      "canvas": "light"
+    },
+    {
+      "file": "04-editorial-monograph-footer.html",
+      "title": "Editorial Monograph Footer",
+      "styleTag": "Editorial · Print",
+      "canvas": "light"
+    },
+    {
+      "file": "05-saas-pre-footer-cta-combo.html",
+      "title": "SaaS Pre-Footer CTA Combo",
+      "styleTag": "SaaS · Sitemap",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-brutalist-studio-poster.html",
+      "title": "Brutalist Studio Poster",
+      "styleTag": "Brutalist · Poster",
+      "canvas": "light"
+    },
+    {
+      "file": "07-liquid-glass-dock-footer.html",
+      "title": "Liquid Glass Dock Footer",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "08-open-source-sponsor-footer.html",
+      "title": "Open Source Sponsor Footer",
+      "styleTag": "Docs · Community",
+      "canvas": "light"
+    },
+    {
+      "file": "09-fintech-compliance-footer.html",
+      "title": "Fintech Compliance Footer",
+      "styleTag": "Fintech · Trust",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-single-row-micro-footer.html",
+      "title": "Single-Row Micro Footer",
+      "styleTag": "Minimal · Strip",
+      "canvas": "light"
+    }
+  ]
+}

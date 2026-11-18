@@ -1,0 +1,29 @@
+<article class="mx-auto w-full max-w-2xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-xs sm:p-9 text-black dark:text-zinc-100">
+  <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400 dark:text-zinc-400">Journal of Readable Systems &bull; Vol. VII</p>
+  <h2 class="mt-2 font-serif text-2xl font-normal tracking-tight text-stone-900 dark:text-stone-100 sm:text-3xl">On White Space as Active Rhythm</h2>
+  <div class="mt-4 space-y-4 font-serif text-[15px] leading-7 text-stone-700 dark:text-stone-300">
+    <p><span class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-stone-900 dark:text-stone-100">Opening Argument &mdash;</span> Readers perceive margins before words.<sup class="ml-0.5 font-mono text-[10px] font-bold text-indigo-600 dark:text-indigo-400">[1]</sup> When line lengths exceed seventy-five characters, the eye repeatedly loses its anchor during the return sweep between lines.</p>
+    <p>Generous vertical spacing, coupled with subtle <span class="border-b border-indigo-300 text-stone-900 dark:text-stone-100">typographic markers</span> and restrained pull citations,<sup class="ml-0.5 font-mono text-[10px] font-bold text-indigo-600 dark:text-indigo-400">[2]</sup> sustains comprehension across dense long-form narratives.</p>
+  </div>
+  <div data-footnote-drawer class="hidden mt-5 space-y-2 rounded-xl border border-stone-200 dark:border-zinc-800 bg-stone-50 dark:bg-zinc-800/60 p-4 text-xs leading-relaxed text-stone-600 dark:text-stone-300">
+    <p><strong class="font-mono text-indigo-600 dark:text-indigo-400">[1]</strong> Bringhurst, Robert. <em>The Elements of Typographic Style</em> (4th ed.), Chapter 2: Rhythm &amp; Proportion, p. 26.</p>
+    <p><strong class="font-mono text-indigo-600 dark:text-indigo-400">[2]</strong> Optimal digital reading measure sits between <code class="font-mono text-stone-900 dark:text-stone-100">58ch</code> and <code class="font-mono text-stone-900 dark:text-stone-100">68ch</code> at <code class="font-mono text-stone-900 dark:text-stone-100">16&ndash;18px</code>.</p>
+  </div>
+  <footer class="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-stone-200 dark:border-zinc-800 pt-4 text-xs">
+    <span class="font-serif italic text-stone-500 dark:text-stone-400">Cited in 14 editorial systems</span>
+    <button type="button" data-footnote-btn aria-expanded="false" class="font-mono text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300">Expand footnotes [1&ndash;2] &darr;</button>
+  </footer>
+</article>
+<script>
+(() => {
+  const btn = document.querySelector('[data-footnote-btn]');
+  const drawer = document.querySelector('[data-footnote-drawer]');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    const open = !drawer.classList.contains('hidden');
+    drawer.classList.toggle('hidden', open);
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    btn.innerHTML = open ? 'Expand footnotes [1&ndash;2] &darr;' : 'Hide footnotes [1&ndash;2] &uarr;';
+  });
+})();
+</script>

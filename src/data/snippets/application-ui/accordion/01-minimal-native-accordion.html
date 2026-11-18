@@ -1,0 +1,85 @@
+<section data-acc1 class="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-8 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-5">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Core Architecture</span>
+      <h2 class="mt-1 text-xl font-bold tracking-tight text-slate-900 dark:text-white">Technical Foundation &amp; Runtime</h2>
+    </div>
+    <button type="button" data-acc1-toggle class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:border-slate-400 dark:hover:border-zinc-600 transition">
+      Expand All
+    </button>
+  </div>
+  <div class="divide-y divide-slate-200/80 dark:divide-zinc-800">
+    <details class="group py-5 [&_summary::-webkit-details-marker]:hidden" open>
+      <summary class="flex cursor-pointer items-center justify-between gap-4 text-left">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="rounded-lg bg-indigo-50 dark:bg-indigo-500/15 px-2.5 py-1 font-mono text-[11px] font-bold text-indigo-700 dark:text-indigo-300">CORE</span>
+          <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">How does DuneUI eliminate runtime JavaScript overhead?</span>
+        </div>
+        <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 text-slate-600 dark:text-zinc-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-slate-900 group-open:text-white dark:group-open:bg-white dark:group-open:text-slate-950">
+          <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" /></svg>
+        </span>
+      </summary>
+      <div class="mt-3.5 pl-0 sm:pl-16 space-y-3 text-xs leading-relaxed text-slate-600 dark:text-zinc-400">
+        <p>Every disclosure, layout, and surface is authored with semantic HTML5 primitives (<code class="rounded bg-slate-100 dark:bg-zinc-900 px-1.5 py-0.5 font-mono text-slate-800 dark:text-zinc-200">&lt;details&gt;</code>, <code class="rounded bg-slate-100 dark:bg-zinc-900 px-1.5 py-0.5 font-mono text-slate-800 dark:text-zinc-200">&lt;dialog&gt;</code>) and pure Tailwind v4 utilities—shipping zero client-side hydration wrapper libraries.</p>
+        <div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
+          <span class="rounded-md border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-2.5 py-1 text-slate-700 dark:text-zinc-300">0 KB Bundle Cost</span>
+          <span class="rounded-md border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-2.5 py-1 text-slate-700 dark:text-zinc-300">SSR &amp; Edge Ready</span>
+          <span class="rounded-md border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-2.5 py-1 text-emerald-700 dark:text-emerald-400">100 Lighthouse Score</span>
+        </div>
+      </div>
+    </details>
+    <details class="group py-5 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer items-center justify-between gap-4 text-left">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2.5 py-1 font-mono text-[11px] font-bold text-slate-700 dark:text-zinc-300">STACK</span>
+          <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Can I paste these snippets directly into Astro, Next.js, or Vue?</span>
+        </div>
+        <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 text-slate-600 dark:text-zinc-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-slate-900 group-open:text-white dark:group-open:bg-white dark:group-open:text-slate-950">
+          <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" /></svg>
+        </span>
+      </summary>
+      <div class="mt-3.5 pl-0 sm:pl-16 text-xs leading-relaxed text-slate-600 dark:text-zinc-400">
+        <p>Yes. Because components use standard HTML attributes and scoped data selectors instead of proprietary React context providers, they drop cleanly into Astro <code class="font-mono">.astro</code> files, Next.js Server Components, Laravel Blade, or SvelteKit.</p>
+      </div>
+    </details>
+    <details class="group py-5 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer items-center justify-between gap-4 text-left">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2.5 py-1 font-mono text-[11px] font-bold text-slate-700 dark:text-zinc-300">THEME</span>
+          <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">How is Light and Dark mode parity enforced across components?</span>
+        </div>
+        <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 text-slate-600 dark:text-zinc-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-slate-900 group-open:text-white dark:group-open:bg-white dark:group-open:text-slate-950">
+          <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" /></svg>
+        </span>
+      </summary>
+      <div class="mt-3.5 pl-0 sm:pl-16 text-xs leading-relaxed text-slate-600 dark:text-zinc-400">
+        <p>Every surface pairs high-contrast daytime slate/stone tokens with calibrated zinc/obsidian dark tokens (<code class="font-mono">dark:bg-zinc-950</code>, <code class="font-mono">dark:border-zinc-800</code>), ensuring WCAG AA contrast in both themes automatically.</p>
+      </div>
+    </details>
+    <details class="group pt-5 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer items-center justify-between gap-4 text-left">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="rounded-lg bg-slate-100 dark:bg-zinc-900 px-2.5 py-1 font-mono text-[11px] font-bold text-slate-700 dark:text-zinc-300">A11Y</span>
+          <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Are keyboard navigation and screen readers supported natively?</span>
+        </div>
+        <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 text-slate-600 dark:text-zinc-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-slate-900 group-open:text-white dark:group-open:bg-white dark:group-open:text-slate-950">
+          <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" /></svg>
+        </span>
+      </summary>
+      <div class="mt-3.5 pl-0 sm:pl-16 text-xs leading-relaxed text-slate-600 dark:text-zinc-400">
+        <p>Native <code class="font-mono">&lt;summary&gt;</code> elements provide built-in <kbd class="rounded border border-slate-300 dark:border-zinc-700 px-1.5 py-0.5 font-mono text-[10px]">Enter</kbd> and <kbd class="rounded border border-slate-300 dark:border-zinc-700 px-1.5 py-0.5 font-mono text-[10px]">Space</kbd> toggling and announce expanded states to assistive technologies without fragile ARIA scripts.</p>
+      </div>
+    </details>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-acc1]'); if (!r) return;
+  const btn = r.querySelector('[data-acc1-toggle]'), items = [...r.querySelectorAll('details')];
+  btn?.addEventListener('click', () => {
+    const anyClosed = items.some(d => !d.open);
+    items.forEach(d => { d.open = anyClosed; });
+    btn.textContent = anyClosed ? 'Collapse All' : 'Expand All';
+  });
+})();
+</script>

@@ -1,0 +1,61 @@
+{
+  "slug": "action-panels",
+  "index": "52",
+  "tag": "Controls",
+  "title": "Action Panels",
+  "description": "10 high-craft settings & control action panels: billing switches with seat context, Danger Zone purge guardrails, API key rotation with reveal toggle, Stripe card failover, Vercel DNS record verification, Passkey enforcement, SAML IdP setup, and GDPR archive builders.",
+  "specs": [
+    {
+      "file": "01-linear-subscription-renewal-seat-control.html",
+      "title": "Linear Subscription Renewal & Seat Control",
+      "styleTag": "SaaS · Billing Switch"
+    },
+    {
+      "file": "02-danger-zone-workspace-purge-guardrail.html",
+      "title": "Danger Zone Workspace Purge Guardrail",
+      "styleTag": "Security · Confirm"
+    },
+    {
+      "file": "03-devtools-api-secret-scope-rotator.html",
+      "title": "DevTools API Secret & Scope Rotator",
+      "styleTag": "DevTools · Dark Key",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-stripe-treasury-card-failover-selector.html",
+      "title": "Stripe Treasury Card & Failover Selector",
+      "styleTag": "Stripe · Billing Card"
+    },
+    {
+      "file": "05-vercel-edge-dns-tls-provisioning.html",
+      "title": "Vercel Edge DNS & TLS Provisioning",
+      "styleTag": "Vercel · DNS Control"
+    },
+    {
+      "file": "06-liquid-glass-storage-bandwidth-bar.html",
+      "title": "Liquid Glass Storage & Bandwidth Bar",
+      "styleTag": "Liquid Glass · Plan",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-neo-brutalist-global-edge-cache-purger.html",
+      "title": "Neo-Brutalist Global Edge Cache Purger",
+      "styleTag": "Brutalist · Control"
+    },
+    {
+      "file": "08-clerk-passkey-2fa-policy-enforcer.html",
+      "title": "Clerk Passkey & 2FA Policy Enforcer",
+      "styleTag": "Security · Passkeys"
+    },
+    {
+      "file": "09-okta-saml-2-0-identity-provider-setup.html",
+      "title": "Okta & SAML 2.0 Identity Provider Setup",
+      "styleTag": "Enterprise · SAML SSO"
+    },
+    {
+      "file": "10-awwwards-editorial-gdpr-data-vault.html",
+      "title": "Awwwards Editorial GDPR Data Vault",
+      "styleTag": "Editorial · Privacy"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<div data-sel1 data-open="true" class="group/s1 mx-auto min-h-[370px] w-full max-w-md text-stone-900 dark:text-stone-100">
+  <div class="rounded-xl border border-stone-300 dark:border-zinc-800 bg-[#FBF8F3] dark:bg-[#101013] p-4 shadow-lg">
+    <div class="flex items-center justify-between border-b border-stone-200 dark:border-zinc-800 pb-2.5">
+      <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-zinc-400">35MM LOOKUP TABLE</span>
+      <span data-sel1-grade class="rounded px-2 py-0.5 font-mono text-[10px] font-bold bg-amber-500/20 text-amber-800 dark:text-amber-300">WARM CONTRAST</span>
+    </div>
+    <div class="relative mt-3">
+      <button type="button" data-sel1-btn aria-haspopup="listbox" aria-expanded="true" class="cursor-pointer flex w-full items-center justify-between rounded-lg border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3.5 py-2.5 text-left text-xs transition hover:border-amber-500 focus:outline-none">
+        <span class="flex items-center gap-3 min-w-0">
+          <span data-sel1-swatch class="size-5 shrink-0 rounded-md bg-gradient-to-br from-amber-500 to-rose-700 ring-1 ring-black/15 dark:ring-white/20"></span>
+          <span class="min-w-0">
+            <span data-sel1-label class="block truncate font-serif text-sm font-semibold">Kodak 2383 Print Emulation</span>
+            <span data-sel1-role class="block truncate font-mono text-[10px] text-stone-500 dark:text-zinc-400">REC.709 &middot; 65-Point Cube</span>
+          </span>
+        </span>
+        <svg class="size-4 shrink-0 text-stone-400 transition-transform duration-300 group-data-[open=true]/s1:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+      </button>
+      <ul role="listbox" class="absolute inset-x-0 top-full z-30 mt-2 origin-top divide-y divide-stone-100 dark:divide-zinc-800 rounded-xl border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-1.5 shadow-2xl text-xs transition-all duration-200 opacity-0 scale-95 pointer-events-none group-data-[open=true]/s1:opacity-100 group-data-[open=true]/s1:scale-100 group-data-[open=true]/s1:pointer-events-auto">
+        <li role="option" data-sel1-opt data-name="Kodak 2383 Print Emulation" data-role="REC.709 · 65-Point Cube" data-grade="WARM CONTRAST" data-swatch="from-amber-500 to-rose-700" data-active="true" class="group/opt flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 data-[active=true]:bg-amber-50 dark:data-[active=true]:bg-amber-500/15 hover:bg-stone-50 dark:hover:bg-zinc-800">
+          <span class="flex items-center gap-2.5"><span class="size-4 rounded bg-gradient-to-br from-amber-500 to-rose-700"></span><span><strong class="block font-serif text-sm">Kodak 2383 Print Emulation</strong><span class="font-mono text-[10px] text-stone-500 dark:text-zinc-400">D65 White &middot; Halation</span></span></span>
+          <span class="hidden group-data-[active=true]/opt:inline font-mono text-amber-700 dark:text-amber-300">ACTIVE</span>
+        </li>
+        <li role="option" data-sel1-opt data-name="Fuji Eterna 250D" data-role="LOG-C4 · Soft Pastel" data-grade="PASTEL COOL" data-swatch="from-teal-500 to-cyan-800" data-active="false" class="group/opt flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 data-[active=true]:bg-amber-50 dark:data-[active=true]:bg-amber-500/15 hover:bg-stone-50 dark:hover:bg-zinc-800">
+          <span class="flex items-center gap-2.5"><span class="size-4 rounded bg-gradient-to-br from-teal-500 to-cyan-800"></span><span><strong class="block font-serif text-sm">Fuji Eterna 250D</strong><span class="font-mono text-[10px] text-stone-500 dark:text-zinc-400">Teal Shadows &middot; Subtle Grain</span></span></span>
+          <span class="hidden group-data-[active=true]/opt:inline font-mono text-amber-700 dark:text-amber-300">ACTIVE</span>
+        </li>
+        <li role="option" data-sel1-opt data-name="Silver Halide Monochrome" data-role="16-BIT · Noir Silver" data-grade="NOIR MONO" data-swatch="from-zinc-400 to-zinc-900" data-active="false" class="group/opt flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 data-[active=true]:bg-amber-50 dark:data-[active=true]:bg-amber-500/15 hover:bg-stone-50 dark:hover:bg-zinc-800">
+          <span class="flex items-center gap-2.5"><span class="size-4 rounded bg-gradient-to-br from-zinc-400 to-zinc-900"></span><span><strong class="block font-serif text-sm">Silver Halide Monochrome</strong><span class="font-mono text-[10px] text-stone-500 dark:text-zinc-400">Deep Blacks &middot; High Acutance</span></span></span>
+          <span class="hidden group-data-[active=true]/opt:inline font-mono text-amber-700 dark:text-amber-300">ACTIVE</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel1]').forEach((root) => {
+    const btn = root.querySelector('[data-sel1-btn]'), lbl = root.querySelector('[data-sel1-label]'), role = root.querySelector('[data-sel1-role]'), sw = root.querySelector('[data-sel1-swatch]'), gr = root.querySelector('[data-sel1-grade]');
+    const opts = [...root.querySelectorAll('[data-sel1-opt]')];
+    const setOpen = (v) => { root.setAttribute('data-open', String(v)); btn?.setAttribute('aria-expanded', String(v)); };
+    btn?.addEventListener('click', (e) => { e.stopPropagation(); setOpen(root.getAttribute('data-open') !== 'true'); });
+    document.addEventListener('click', (e) => { if (!root.contains(e.target)) setOpen(false); });
+    opts.forEach((opt) => opt.addEventListener('click', () => {
+      if (lbl) lbl.textContent = opt.getAttribute('data-name') || '';
+      if (role) role.textContent = opt.getAttribute('data-role') || '';
+      if (gr) gr.textContent = opt.getAttribute('data-grade') || '';
+      if (sw) sw.className = 'size-5 shrink-0 rounded-md bg-gradient-to-br ring-1 ring-black/15 dark:ring-white/20 ' + (opt.getAttribute('data-swatch') || '');
+      opts.forEach((o) => o.setAttribute('data-active', String(o === opt)));
+      setOpen(false);
+    }));
+  });
+})();
+</script>

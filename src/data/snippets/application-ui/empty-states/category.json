@@ -1,0 +1,69 @@
+{
+  "slug": "empty-states",
+  "index": "30",
+  "tag": "Feedback",
+  "title": "Empty States",
+  "description": "Authentic zero-data UI screens, empty tables & chart placeholders, search zero-match states, inbox zero cards, and clear onboarding CTAs.",
+  "specs": [
+    {
+      "file": "01-new-project-starter-empty.html",
+      "title": "New Project Starter Empty",
+      "styleTag": "Tailwind Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "02-linear-dark-inbox-zero-state.html",
+      "title": "Linear Dark Inbox Zero State",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-zero-search-results-state.html",
+      "title": "Zero Search Results State",
+      "styleTag": "Search · Empty",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-liquid-glass-blank-canvas.html",
+      "title": "Liquid Glass Blank Canvas",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-empty-bag-state.html",
+      "title": "Brutalist Empty Bag State",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "06-empty-api-keys-table-state.html",
+      "title": "Empty API Keys Table State",
+      "styleTag": "Stripe · Empty Table",
+      "canvas": "light"
+    },
+    {
+      "file": "07-blank-saved-reading-list.html",
+      "title": "Blank Saved Reading List",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-zero-pending-invites-panel.html",
+      "title": "Zero Pending Invites Panel",
+      "styleTag": "Workspace SaaS",
+      "canvas": "light"
+    },
+    {
+      "file": "09-dark-asset-vault-empty.html",
+      "title": "Dark Asset Vault Empty",
+      "styleTag": "Cloud Storage · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-zero-data-chart-overlay.html",
+      "title": "Zero-Data Chart Overlay",
+      "styleTag": "Telemetry · No Data",
+      "canvas": "muted"
+    }
+  ]
+}

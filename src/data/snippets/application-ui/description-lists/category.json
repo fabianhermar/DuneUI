@@ -1,0 +1,69 @@
+{
+  "slug": "description-lists",
+  "index": "50",
+  "tag": "Data Display",
+  "title": "Description Lists",
+  "description": "10 radically diverse key-value description lists for vinyl mastering sheets, museum gallery placards, marine weather logs, single-origin coffee passports, hotel folios, motorsport dyno telemetry, rare watch provenance, herbarium specimen labels, editable film slates, and journalism fact-check ledgers.",
+  "specs": [
+    {
+      "file": "01-audiophile-vinyl-pressing-mastering-sheet.html",
+      "title": "Audiophile Vinyl Pressing & Mastering Sheet",
+      "styleTag": "Audio · Mastering Spec",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-architectural-gallery-exhibition-placard.html",
+      "title": "Architectural Gallery & Exhibition Placard",
+      "styleTag": "Museum · Provenance",
+      "canvas": "light"
+    },
+    {
+      "file": "03-offshore-marine-weather-sea-state-log.html",
+      "title": "Offshore Marine Weather & Sea-State Log",
+      "styleTag": "Maritime · NOAA Log",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-single-origin-specialty-coffee-passport.html",
+      "title": "Single-Origin Specialty Coffee Passport",
+      "styleTag": "Roastery · Harvest Spec",
+      "canvas": "light"
+    },
+    {
+      "file": "05-boutique-hotel-guest-suite-folio.html",
+      "title": "Boutique Hotel Guest Suite Folio",
+      "styleTag": "Hospitality · Suite Folio",
+      "canvas": "light"
+    },
+    {
+      "file": "06-motorsport-wind-tunnel-dyno-telemetry-matrix.html",
+      "title": "Motorsport Wind-Tunnel & Dyno Telemetry Matrix",
+      "styleTag": "Automotive · Dyno Spec",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-rare-watch-auction-condition-archive-dossier.html",
+      "title": "Rare Watch Auction Condition & Archive Dossier",
+      "styleTag": "Horology · Provenance",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-botanical-herbarium-museum-specimen-label.html",
+      "title": "Botanical Herbarium Museum Specimen Label",
+      "styleTag": "Science · Herbarium",
+      "canvas": "light"
+    },
+    {
+      "file": "09-inline-editable-film-production-call-sheet.html",
+      "title": "Inline Editable Film Production Call Sheet",
+      "styleTag": "Cinema · Interactive",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-broadsheet-journalism-fact-check-ledger.html",
+      "title": "Broadsheet Journalism Fact-Check Ledger",
+      "styleTag": "Editorial · Verification",
+      "canvas": "light"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<div data-sel3 class="mx-auto min-h-[300px] w-full max-w-md rounded-2xl border border-sky-200 dark:border-sky-900/60 bg-white dark:bg-[#09131E] p-5 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex items-center justify-between border-b border-slate-100 dark:border-sky-900/50 pb-3">
+    <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-sky-700 dark:text-sky-400">CABIN CLASS &middot; SFO &rarr; HND</span>
+    <span data-sel3-price class="font-mono text-xs font-bold text-slate-900 dark:text-white">+$640 USD</span>
+  </div>
+  <div class="mt-3.5 space-y-2 text-xs">
+    <button type="button" data-sel3-opt data-price="$890 base" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-slate-200 dark:border-sky-900/50 bg-slate-50/70 dark:bg-sky-950/30 p-3 text-left transition hover:border-sky-400">
+      <div><p class="font-bold">Main Cabin</p><p class="mt-0.5 text-[11px] text-slate-500 dark:text-sky-200/60">31&quot; pitch &middot; 17.5&quot; width &middot; Standard meal</p></div>
+      <span class="font-mono text-[11px] text-slate-500 dark:text-sky-300">$890</span>
+    </button>
+    <button type="button" data-sel3-opt data-price="+$640 USD" data-active="true" class="cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-sky-600 dark:border-sky-400 bg-sky-50/80 dark:bg-sky-500/15 p-3 text-left transition">
+      <div><p class="font-bold text-sky-950 dark:text-white">Premium Horizon</p><p class="mt-0.5 text-[11px] text-sky-800/80 dark:text-sky-200/80">38&quot; pitch &middot; Leg rest &middot; Priority boarding</p></div>
+      <span class="font-mono text-[11px] font-bold text-sky-700 dark:text-sky-300">+$640</span>
+    </button>
+    <button type="button" data-sel3-opt data-price="+$2,450 USD" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-slate-200 dark:border-sky-900/50 bg-slate-50/70 dark:bg-sky-950/30 p-3 text-left transition hover:border-sky-400">
+      <div><p class="font-bold">Polaris Lie-Flat Suite</p><p class="mt-0.5 text-[11px] text-slate-500 dark:text-sky-200/60">78&quot; bed &middot; Direct aisle &middot; Lounge access</p></div>
+      <span class="font-mono text-[11px] text-slate-500 dark:text-sky-300">+$2,450</span>
+    </button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel3]').forEach((root) => {
+    const opts = [...root.querySelectorAll('[data-sel3-opt]')], price = root.querySelector('[data-sel3-price]');
+    const onCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border-2 border-sky-600 dark:border-sky-400 bg-sky-50/80 dark:bg-sky-500/15 p-3 text-left transition';
+    const offCls = 'cursor-pointer flex w-full items-center justify-between rounded-xl border border-slate-200 dark:border-sky-900/50 bg-slate-50/70 dark:bg-sky-950/30 p-3 text-left transition hover:border-sky-400';
+    opts.forEach((o) => o.addEventListener('click', () => {
+      opts.forEach((x) => { x.className = x === o ? onCls : offCls; });
+      if (price) price.textContent = o.dataset.price || '';
+    }));
+  });
+})();
+</script>

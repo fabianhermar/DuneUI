@@ -1,0 +1,126 @@
+<div data-drw2 data-open="true" class="group/d2 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-stone-200 dark:border-white/12 bg-[#F8F6F2] dark:bg-[#0D0D0C] text-stone-900 dark:text-zinc-100 shadow-lg">
+  <!-- Boutique Lookbook Behind Bag -->
+  <div class="flex h-full flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d2:scale-[0.97] group-data-[open=true]/d2:rounded-2xl">
+    <div class="flex items-center justify-between border-b border-stone-200 dark:border-white/10 bg-white dark:bg-[#141413] px-5 py-3.5">
+      <span class="font-serif text-base tracking-tight text-stone-950 dark:text-stone-100">Maison Solis</span>
+      <button type="button" data-drw2-open class="cursor-pointer inline-flex items-center gap-2 rounded-full bg-stone-950 dark:bg-white px-4 py-1.5 font-mono text-[11px] font-semibold text-white dark:text-stone-950 transition hover:opacity-90">
+        <span>Bag</span>
+        <span data-drw2-count class="rounded-full bg-amber-300 px-1.5 py-0.5 text-[9px] font-bold text-stone-950">2</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-1 gap-3 p-5 sm:grid-cols-3">
+      <div class="rounded-2xl border border-stone-200 dark:border-white/10 bg-white dark:bg-[#161614] p-3">
+        <img src="/images/ecommerce/carafe.jpg" alt="Carafe" class="aspect-[4/3] w-full rounded-xl object-cover" />
+        <p class="mt-2 text-xs font-semibold">Pour Carafe</p>
+        <p class="font-mono text-[10px] text-stone-500">$68 USD</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 dark:border-white/10 bg-white dark:bg-[#161614] p-3">
+        <img src="/images/ecommerce/lamp.jpg" alt="Brass Lamp" class="aspect-[4/3] w-full rounded-xl object-cover" />
+        <p class="mt-2 text-xs font-semibold">Arc Brass Lamp</p>
+        <p class="font-mono text-[10px] text-stone-500">$210 USD</p>
+      </div>
+      <div class="rounded-2xl border border-stone-200 dark:border-white/10 bg-white dark:bg-[#161614] p-3">
+        <img src="/images/ecommerce/chair.jpg" alt="Oak Chair" class="aspect-[4/3] w-full rounded-xl object-cover" />
+        <p class="mt-2 text-xs font-semibold">Koma Lounge Chair</p>
+        <p class="font-mono text-[10px] text-stone-500">$680 USD</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrim -->
+  <div data-drw2-bg class="absolute inset-0 bg-stone-950/35 dark:bg-black/65 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d2:opacity-100 group-data-[open=true]/d2:pointer-events-auto"></div>
+
+  <!-- Floating Editorial Bag Drawer -->
+  <aside role="dialog" aria-modal="true" aria-label="Shopping bag" class="absolute inset-y-3 right-3 flex w-[calc(100%-1.5rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-stone-200 dark:border-white/15 bg-white dark:bg-[#141413] shadow-2xl translate-x-[112%] group-data-[open=true]/d2:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="flex items-center justify-between border-b border-stone-200 dark:border-white/10 px-5 py-4">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg text-stone-950 dark:text-white">Your Bag</h3>
+        <span data-drw2-badge class="font-mono text-[10px] text-stone-500 dark:text-stone-400">(2 items)</span>
+      </div>
+      <button type="button" data-drw2-close aria-label="Close bag" class="cursor-pointer flex size-7 items-center justify-center rounded-full border border-stone-200 dark:border-white/15 text-stone-500 hover:bg-stone-100 dark:hover:bg-white/10 transition">
+        <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Live Free Shipping Progress Tier -->
+    <div class="border-b border-stone-100 dark:border-white/10 bg-[#FAF8F4] dark:bg-white/[0.03] px-5 py-3">
+      <div class="flex items-center justify-between font-mono text-[10px]">
+        <span data-drw2-ship-msg class="font-semibold text-stone-700 dark:text-stone-200">Priority Air Shipping Unlocked</span>
+        <span data-drw2-ship-pct class="text-emerald-700 dark:text-emerald-300 font-bold">100%</span>
+      </div>
+      <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-stone-200 dark:bg-white/10">
+        <div data-drw2-bar class="h-full w-full rounded-full bg-emerald-600 dark:bg-emerald-400 transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Bag Items -->
+    <div class="flex-1 divide-y divide-stone-100 dark:divide-white/10 overflow-y-auto px-5">
+      <div data-drw2-row="0" class="flex gap-3.5 py-4">
+        <img src="/images/ecommerce/carafe.jpg" alt="Stoneware Carafe" class="size-16 shrink-0 rounded-xl object-cover border border-stone-200 dark:border-white/10" />
+        <div class="flex-1 min-w-0">
+          <div class="flex justify-between gap-2"><p class="truncate text-xs font-semibold">Stoneware Pour Carafe</p><p class="font-mono text-xs font-bold">$68</p></div>
+          <p class="mt-0.5 text-[11px] text-stone-500 dark:text-stone-400">Sandstone Matte &middot; 750ml</p>
+          <div class="mt-2.5 flex items-center justify-between">
+            <div class="inline-flex items-center rounded-lg border border-stone-200 dark:border-white/15 bg-stone-50 dark:bg-white/5">
+              <button type="button" data-drw2-dec="0" class="cursor-pointer px-2 py-0.5 text-xs hover:text-stone-950">&minus;</button>
+              <span data-drw2-q="0" class="px-2 font-mono text-[11px] font-bold">1</span>
+              <button type="button" data-drw2-inc="0" class="cursor-pointer px-2 py-0.5 text-xs hover:text-stone-950">+</button>
+            </div>
+            <button type="button" data-drw2-zero="0" class="cursor-pointer font-mono text-[10px] text-stone-400 hover:text-rose-600 transition">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div data-drw2-row="1" class="flex gap-3.5 py-4">
+        <img src="/images/ecommerce/lamp.jpg" alt="Brass Desk Lamp" class="size-16 shrink-0 rounded-xl object-cover border border-stone-200 dark:border-white/10" />
+        <div class="flex-1 min-w-0">
+          <div class="flex justify-between gap-2"><p class="truncate text-xs font-semibold">Arc Brass Lamp</p><p class="font-mono text-xs font-bold">$210</p></div>
+          <p class="mt-0.5 text-[11px] text-stone-500 dark:text-stone-400">Brushed Bronze &middot; 2700K</p>
+          <div class="mt-2.5 flex items-center justify-between">
+            <div class="inline-flex items-center rounded-lg border border-stone-200 dark:border-white/15 bg-stone-50 dark:bg-white/5">
+              <button type="button" data-drw2-dec="1" class="cursor-pointer px-2 py-0.5 text-xs hover:text-stone-950">&minus;</button>
+              <span data-drw2-q="1" class="px-2 font-mono text-[11px] font-bold">1</span>
+              <button type="button" data-drw2-inc="1" class="cursor-pointer px-2 py-0.5 text-xs hover:text-stone-950">+</button>
+            </div>
+            <button type="button" data-drw2-zero="1" class="cursor-pointer font-mono text-[10px] text-stone-400 hover:text-rose-600 transition">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-stone-200 dark:border-white/10 bg-[#FAF8F4] dark:bg-white/[0.03] p-5">
+      <div class="flex items-center justify-between text-xs"><span class="text-stone-600 dark:text-stone-400">Estimated Total</span><span data-drw2-total class="font-mono text-base font-bold">$278</span></div>
+      <button type="button" data-drw2-checkout class="cursor-pointer mt-3.5 w-full rounded-full bg-stone-950 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-stone-950 shadow-sm transition hover:opacity-90">Checkout Express &rarr;</button>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw2]').forEach((root) => {
+    const qty = [1, 1], prices = [68, 210], target = 250;
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    const upd = () => {
+      const total = qty[0] * prices[0] + qty[1] * prices[1];
+      const count = qty[0] + qty[1];
+      const pct = Math.min(100, Math.round((total / target) * 100));
+      root.querySelector('[data-drw2-q="0"]').textContent = String(qty[0]);
+      root.querySelector('[data-drw2-q="1"]').textContent = String(qty[1]);
+      root.querySelector('[data-drw2-count]').textContent = String(count);
+      root.querySelector('[data-drw2-badge]').textContent = '(' + count + ' items)';
+      root.querySelector('[data-drw2-total]').textContent = '$' + total;
+      root.querySelector('[data-drw2-bar]').style.width = pct + '%';
+      root.querySelector('[data-drw2-ship-pct]').textContent = pct + '%';
+      root.querySelector('[data-drw2-ship-msg]').textContent = total >= target ? 'Priority Air Shipping Unlocked ✓' : 'Add $' + (target - total) + ' for Priority Air';
+    };
+    root.querySelectorAll('[data-drw2-inc]').forEach((b) => b.addEventListener('click', () => { qty[+b.dataset.drw2Inc]++; upd(); }));
+    root.querySelectorAll('[data-drw2-dec]').forEach((b) => b.addEventListener('click', () => { const i = +b.dataset.drw2Dec; if (qty[i] > 0) qty[i]--; upd(); }));
+    root.querySelectorAll('[data-drw2-zero]').forEach((b) => b.addEventListener('click', () => { qty[+b.dataset.drw2Zero] = 0; upd(); }));
+    root.querySelector('[data-drw2-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw2-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelector('[data-drw2-close]')?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    const chk = root.querySelector('[data-drw2-checkout]');
+    chk?.addEventListener('click', () => { chk.textContent = 'Order Confirmed ✓'; setTimeout(() => { chk.textContent = 'Checkout Express →'; setOpen(false); }, 900); });
+  });
+})();
+</script>

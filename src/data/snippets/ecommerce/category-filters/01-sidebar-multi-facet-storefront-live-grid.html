@@ -1,0 +1,110 @@
+<section data-cf1 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 sm:p-7 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-5">
+    <div>
+      <p class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Multi-Department Catalog</p>
+      <h2 class="mt-0.5 text-xl font-bold text-slate-900 dark:text-white">Studio &amp; Living Collection</h2>
+    </div>
+    <div class="flex flex-wrap items-center gap-3 text-xs">
+      <span class="text-slate-500 dark:text-zinc-400">Showing <strong data-cf1-cnt class="font-mono text-slate-900 dark:text-white">6</strong> of 6 objects</span>
+      <select data-cf1-sort aria-label="Sort products" class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-2 font-semibold text-slate-800 dark:text-zinc-200">
+        <option value="featured">Sort: Featured</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+  <div class="mt-6 grid grid-cols-1 gap-7 lg:grid-cols-12">
+    <aside class="space-y-5 border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-zinc-800/80 pb-5 lg:pb-0 lg:pr-6 text-xs lg:col-span-3">
+      <div>
+        <div class="flex items-center justify-between">
+          <p class="font-bold text-slate-900 dark:text-white">Department</p>
+          <button type="button" data-cf1-reset class="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Reset</button>
+        </div>
+        <div class="mt-2.5 space-y-2">
+          <label class="flex cursor-pointer items-center justify-between text-slate-700 dark:text-zinc-300"><span class="flex items-center gap-2"><input type="checkbox" checked value="audio" data-cf1-cat class="accent-indigo-600 rounded" /> Audio &amp; Synths</span><span class="font-mono text-[11px] text-slate-400">2</span></label>
+          <label class="flex cursor-pointer items-center justify-between text-slate-700 dark:text-zinc-300"><span class="flex items-center gap-2"><input type="checkbox" checked value="lighting" data-cf1-cat class="accent-indigo-600 rounded" /> Lighting</span><span class="font-mono text-[11px] text-slate-400">1</span></label>
+          <label class="flex cursor-pointer items-center justify-between text-slate-700 dark:text-zinc-300"><span class="flex items-center gap-2"><input type="checkbox" checked value="ceramic" data-cf1-cat class="accent-indigo-600 rounded" /> Ceramics</span><span class="font-mono text-[11px] text-slate-400">1</span></label>
+          <label class="flex cursor-pointer items-center justify-between text-slate-700 dark:text-zinc-300"><span class="flex items-center gap-2"><input type="checkbox" checked value="living" data-cf1-cat class="accent-indigo-600 rounded" /> Furniture</span><span class="font-mono text-[11px] text-slate-400">1</span></label>
+          <label class="flex cursor-pointer items-center justify-between text-slate-700 dark:text-zinc-300"><span class="flex items-center gap-2"><input type="checkbox" checked value="carry" data-cf1-cat class="accent-indigo-600 rounded" /> Daily Carry</span><span class="font-mono text-[11px] text-slate-400">1</span></label>
+        </div>
+      </div>
+      <div class="border-t border-slate-100 dark:border-zinc-800 pt-4">
+        <div class="flex items-center justify-between">
+          <p class="font-bold text-slate-900 dark:text-white">Max Price</p>
+          <span data-cf1-pval class="rounded-md bg-slate-100 dark:bg-zinc-900 px-2 py-0.5 font-mono font-bold">$1,500</span>
+        </div>
+        <input type="range" min="50" max="1500" step="10" value="1500" data-cf1-price class="mt-3 w-full accent-indigo-600" />
+        <div class="mt-1 flex justify-between font-mono text-[10px] text-slate-400"><span>$50</span><span>$750</span><span>$1,500</span></div>
+      </div>
+      <div class="border-t border-slate-100 dark:border-zinc-800 pt-4 space-y-2">
+        <p class="font-bold text-slate-900 dark:text-white">Availability &amp; Rating</p>
+        <label class="flex cursor-pointer items-center gap-2 text-slate-700 dark:text-zinc-300"><input type="checkbox" data-cf1-stock class="accent-indigo-600" /> In Stock (Ships 24h)</label>
+        <label class="flex cursor-pointer items-center gap-2 text-slate-700 dark:text-zinc-300"><input type="checkbox" data-cf1-top class="accent-indigo-600" /> Top Rated (4.8&#9733;+)</label>
+      </div>
+    </aside>
+    <div class="lg:col-span-9 space-y-4">
+      <div data-cf1-grid class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 text-xs">
+        <article data-cf1-item data-cat="audio" data-price="349" data-stock="1" data-rating="4.9" data-idx="0" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/ecommerce/headphones.jpg" alt="Spatial Headphones" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-emerald-500/90 px-2 py-0.5 text-[10px] font-bold text-white">In Stock</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Spatial Headphones</h3><span class="font-mono font-bold">$349</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Audio &middot; 4.9&#9733; (128)</p>
+        </article>
+        <article data-cf1-item data-cat="lighting" data-price="210" data-stock="1" data-rating="4.8" data-idx="1" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/ecommerce/lamp.jpg" alt="Desk Illuminator" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-emerald-500/90 px-2 py-0.5 text-[10px] font-bold text-white">In Stock</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Desk Illuminator</h3><span class="font-mono font-bold">$210</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Lighting &middot; 4.8&#9733; (64)</p>
+        </article>
+        <article data-cf1-item data-cat="ceramic" data-price="68" data-stock="1" data-rating="4.9" data-idx="2" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/ecommerce/carafe.jpg" alt="Stoneware Carafe" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-emerald-500/90 px-2 py-0.5 text-[10px] font-bold text-white">In Stock</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Stoneware Carafe</h3><span class="font-mono font-bold">$68</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Ceramics &middot; 4.9&#9733; (92)</p>
+        </article>
+        <article data-cf1-item data-cat="audio" data-price="899" data-stock="0" data-rating="4.7" data-idx="3" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/heroes/synth-keys.jpg" alt="Field Poly Synth" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-amber-500/90 px-2 py-0.5 text-[10px] font-bold text-slate-950">Preorder</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Field Poly Synth</h3><span class="font-mono font-bold">$899</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Audio &middot; 4.7&#9733; (41)</p>
+        </article>
+        <article data-cf1-item data-cat="living" data-price="1280" data-stock="0" data-rating="5.0" data-idx="4" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/ecommerce/chair.jpg" alt="Ash Lounge Chair" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-slate-900/85 px-2 py-0.5 text-[10px] font-bold text-white">Made to Order</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Ash Lounge Chair</h3><span class="font-mono font-bold">$1,280</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Furniture &middot; 5.0&#9733; (29)</p>
+        </article>
+        <article data-cf1-item data-cat="carry" data-price="64" data-stock="1" data-rating="4.6" data-idx="5" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3">
+          <div class="relative overflow-hidden rounded-xl"><img src="/images/ecommerce/tote.jpg" alt="Waxed Canvas Tote" class="h-36 w-full object-cover transition duration-300 group-hover:scale-105" /><span class="absolute left-2 top-2 rounded-md bg-emerald-500/90 px-2 py-0.5 text-[10px] font-bold text-white">In Stock</span></div>
+          <div class="mt-3 flex items-start justify-between gap-2"><h3 class="font-bold text-slate-900 dark:text-white">Waxed Canvas Tote</h3><span class="font-mono font-bold">$64</span></div>
+          <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">Daily Carry &middot; 4.6&#9733; (77)</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf1]'); if (!r) return;
+  const cats = [...r.querySelectorAll('[data-cf1-cat]')], pr = r.querySelector('[data-cf1-price]'), pval = r.querySelector('[data-cf1-pval]');
+  const stk = r.querySelector('[data-cf1-stock]'), top = r.querySelector('[data-cf1-top]'), sort = r.querySelector('[data-cf1-sort]');
+  const grid = r.querySelector('[data-cf1-grid]'), items = [...r.querySelectorAll('[data-cf1-item]')], cnt = r.querySelector('[data-cf1-cnt]');
+  const apply = () => {
+    const activeCats = cats.filter(c => c.checked).map(c => c.value);
+    const maxP = Number(pr.value); pval.textContent = '$' + maxP.toLocaleString();
+    const sorted = [...items].sort((a, b) => {
+      if (sort.value === 'asc') return Number(a.dataset.price) - Number(b.dataset.price);
+      if (sort.value === 'desc') return Number(b.dataset.price) - Number(a.dataset.price);
+      return Number(a.dataset.idx) - Number(b.dataset.idx);
+    });
+    let n = 0;
+    sorted.forEach(it => {
+      grid.appendChild(it);
+      const ok = activeCats.includes(it.dataset.cat) && Number(it.dataset.price) <= maxP && (!stk.checked || it.dataset.stock === '1') && (!top.checked || Number(it.dataset.rating) >= 4.8);
+      it.classList.toggle('hidden', !ok);
+      if (ok) n++;
+    });
+    cnt.textContent = String(n);
+  };
+  [...cats, stk, top, sort].forEach(el => el?.addEventListener('change', apply));
+  pr?.addEventListener('input', apply);
+  r.querySelector('[data-cf1-reset]')?.addEventListener('click', () => {
+    cats.forEach(c => { c.checked = true; }); pr.value = '1500'; stk.checked = false; top.checked = false; sort.value = 'featured'; apply();
+  });
+})();
+</script>

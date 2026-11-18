@@ -1,0 +1,37 @@
+<div data-assignee-box class="mx-auto w-full max-w-lg rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 p-4 shadow-sm text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-2.5 text-xs">
+      <img data-assignee-img src="/images/avatars/mateo.jpg" alt="Mateo Silva" class="size-7 rounded-full object-cover object-top ring-1 ring-slate-200 dark:ring-white/20" />
+      <span>Assigned to <strong data-assignee-name class="font-semibold text-slate-900 dark:text-white">Mateo Silva</strong></span>
+      <button type="button" data-cycle-assignee class="rounded-md border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-2 py-0.5 font-mono text-[11px] font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-700">Reassign</button>
+    </div>
+    <div class="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+      <div class="flex -space-x-1.5">
+        <img src="/images/avatars/sofia.jpg" alt="" class="size-4 rounded-full object-cover object-top ring-1 ring-white dark:ring-zinc-900" />
+        <img src="/images/avatars/nora.svg" alt="" class="size-4 rounded-full object-cover object-top ring-1 ring-white dark:ring-zinc-900" />
+      </div>
+      <span>2 Approvals</span>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-assignee-box]');
+      const img = root.querySelector('[data-assignee-img]');
+      const nameEl = root.querySelector('[data-assignee-name]');
+      const btn = root.querySelector('[data-cycle-assignee]');
+      const people = [
+        { name: 'Mateo Silva', src: '/images/avatars/mateo.jpg' },
+        { name: 'Sofia Navarro', src: '/images/avatars/sofia.jpg' },
+        { name: 'Nora Kim', src: '/images/avatars/nora.svg' },
+        { name: 'Lucas Vance', src: '/images/avatars/lucas.svg' }
+      ];
+      let idx = 0;
+      btn?.addEventListener('click', () => {
+        idx = (idx + 1) % people.length;
+        img.src = people[idx].src;
+        img.alt = people[idx].name;
+        nameEl.textContent = people[idx].name;
+      });
+    })();
+  </script>
+</div>

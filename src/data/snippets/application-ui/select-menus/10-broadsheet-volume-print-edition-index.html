@@ -1,0 +1,30 @@
+<div data-sel10 class="mx-auto w-full max-w-md border-y-2 border-stone-900 dark:border-zinc-200 bg-[#FDFBF7] dark:bg-zinc-900 px-5 py-5 text-stone-900 dark:text-zinc-100">
+  <div class="flex items-center justify-between">
+    <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-zinc-400">ARCHIVE VOLUMES</span>
+    <span data-sel10-meta class="font-mono text-[10px] font-bold">142 PAGES &middot; NOV 2026</span>
+  </div>
+  <div class="mt-3 divide-y divide-stone-200 dark:divide-zinc-800 border-t border-stone-300 dark:border-zinc-700 text-xs">
+    <button type="button" data-sel10-vol="142 PAGES · NOV 2026" class="cursor-pointer flex w-full items-center justify-between py-3 text-left font-serif text-base font-bold text-stone-950 dark:text-white">
+      <span>Vol. XIV &mdash; The Latency Issue</span><span class="font-mono text-[11px]">&bull;</span>
+    </button>
+    <button type="button" data-sel10-vol="128 PAGES · MAY 2026" class="cursor-pointer flex w-full items-center justify-between py-3 text-left font-serif text-base text-stone-600 dark:text-zinc-400 hover:text-stone-950 dark:hover:text-white">
+      <span>Vol. XIII &mdash; Brutalist Concrete</span><span class="font-mono text-[11px]"></span>
+    </button>
+    <button type="button" data-sel10-vol="156 PAGES · DEC 2025" class="cursor-pointer flex w-full items-center justify-between py-3 text-left font-serif text-base text-stone-600 dark:text-zinc-400 hover:text-stone-950 dark:hover:text-white">
+      <span>Vol. XII &mdash; Analog Synthesis</span><span class="font-mono text-[11px]"></span>
+    </button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel10]').forEach((root) => {
+    const btns = [...root.querySelectorAll('[data-sel10-vol]')], meta = root.querySelector('[data-sel10-meta]');
+    const onCls = 'cursor-pointer flex w-full items-center justify-between py-3 text-left font-serif text-base font-bold text-stone-950 dark:text-white';
+    const offCls = 'cursor-pointer flex w-full items-center justify-between py-3 text-left font-serif text-base text-stone-600 dark:text-zinc-400 hover:text-stone-950 dark:hover:text-white';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; if (x.lastElementChild) x.lastElementChild.textContent = x === b ? '•' : ''; });
+      if (meta) meta.textContent = b.dataset.sel10Vol || '';
+    }));
+  });
+})();
+</script>

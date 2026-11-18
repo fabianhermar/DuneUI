@@ -1,0 +1,42 @@
+<section data-ck8 class="mx-auto w-full max-w-4xl overflow-hidden rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FBF9F6] dark:bg-zinc-900 shadow-sm text-xs text-stone-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <div class="p-6 sm:p-8 md:col-span-7 space-y-4">
+      <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500">KASTEL LIVING &middot; CHECKOUT</p>
+      <h3 class="font-serif text-2xl">Room Delivery &amp; Billing</h3>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <input type="text" value="Sofia Lindholm" placeholder="Recipient Name" class="rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" />
+        <input type="text" value="Freight Elevator Available" placeholder="Access Notes" class="rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-3.5 py-2.5 focus:outline-none" />
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <button type="button" data-ck8-wg="0" class="cursor-pointer rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-3 text-left"><strong class="block">Curbside Freight</strong><span class="text-stone-500 dark:text-zinc-400">Free threshold drop</span></button>
+        <button type="button" data-ck8-wg="95" class="cursor-pointer rounded-xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-800 p-3 text-left"><strong class="block">White-Glove Room (+$95)</strong><span class="text-stone-500 dark:text-zinc-400">Unpack &amp; assembly</span></button>
+      </div>
+      <button type="button" data-ck8-cta class="cursor-pointer w-full rounded-full bg-stone-900 dark:bg-white py-3 font-semibold text-white dark:text-stone-950 hover:opacity-90">Schedule Delivery &mdash; $1,375.00</button>
+    </div>
+    <div class="bg-stone-100/70 dark:bg-zinc-950 p-6 sm:p-8 md:col-span-5 border-t md:border-t-0 md:border-l border-stone-200 dark:border-zinc-800 flex flex-col justify-between">
+      <div class="flex items-center gap-3.5">
+        <img src="/images/ecommerce/chair.jpg" alt="Lounge Chair" class="size-18 rounded-xl object-cover ring-1 ring-stone-300 dark:ring-zinc-700" />
+        <div><h4 class="font-serif text-base">Nordic Ash Lounge Chair</h4><p class="text-stone-500 dark:text-zinc-400">Oatmeal Boucl&eacute; &middot; Made to order</p><p class="mt-1 font-mono font-bold">$1,280.00</p></div>
+      </div>
+      <dl class="mt-6 space-y-2 border-t border-stone-200 dark:border-zinc-800 pt-4">
+        <div class="flex justify-between text-stone-500 dark:text-zinc-400"><dt>White-Glove Service</dt><dd data-ck8-fee class="font-mono">$95.00</dd></div>
+        <div class="flex justify-between font-bold text-sm"><dt>Total</dt><dd data-ck8-tot class="font-mono">$1,375.00</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck8]'); if (!root) return;
+  const wgs = [...root.querySelectorAll('[data-ck8-wg]')], fee = root.querySelector('[data-ck8-fee]'), tot = root.querySelector('[data-ck8-tot]'), cta = root.querySelector('[data-ck8-cta]');
+  const onCls = 'cursor-pointer rounded-xl border-2 border-stone-900 dark:border-white bg-white dark:bg-zinc-800 p-3 text-left';
+  const offCls = 'cursor-pointer rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-3 text-left';
+  wgs.forEach(w => w.addEventListener('click', () => {
+    wgs.forEach(x => { x.className = x === w ? onCls : offCls; });
+    const f = Number(w.dataset.ck8Wg || 0), sum = (1280 + f).toLocaleString('en-US') + '.00';
+    if (fee) fee.textContent = f === 0 ? 'Free' : '$' + f.toFixed(2);
+    if (tot) tot.textContent = '$' + sum;
+    if (cta) cta.textContent = 'Schedule Delivery — $' + sum;
+  }));
+})();
+</script>

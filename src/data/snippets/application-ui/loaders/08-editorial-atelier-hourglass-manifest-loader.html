@@ -1,0 +1,36 @@
+<section data-ldr8 class="mx-auto w-full max-w-xl rounded-3xl border border-stone-200 dark:border-zinc-800 bg-[#FAF7F2] dark:bg-zinc-900 p-7 sm:p-9 text-center text-stone-900 dark:text-zinc-100">
+  <div class="mx-auto flex size-20 items-center justify-center rounded-full border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 shadow-xs">
+    <svg class="size-12 animate-spin text-stone-800 dark:text-stone-200" style="animation-duration: 3.2s;" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-opacity="0.2" stroke-width="1.5" />
+      <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="48 120" />
+      <circle cx="32" cy="32" r="16" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.25" stroke-dasharray="4 6" />
+      <circle cx="32" cy="32" r="3" fill="currentColor" />
+    </svg>
+  </div>
+  <p class="mt-5 font-mono text-[10px] uppercase tracking-[0.25em] text-stone-500 dark:text-stone-400">Copenhagen &amp; Kyoto Atelier</p>
+  <h3 data-ldr8-title class="mt-1.5 font-serif text-2xl sm:text-3xl text-stone-900 dark:text-white">Reserving Your Numbered Piece...</h3>
+  <p data-ldr8-sub class="mx-auto mt-2 max-w-md text-xs leading-relaxed text-stone-600 dark:text-stone-300">Verifying kiln batch availability and assigning your stamped certificate of provenance.</p>
+  <div class="mx-auto mt-6 max-w-sm overflow-hidden rounded-full bg-stone-200 dark:bg-zinc-800 h-1.5">
+    <div data-ldr8-bar class="h-full w-2/3 rounded-full bg-stone-900 dark:bg-white transition-all duration-500"></div>
+  </div>
+  <div class="mt-5 flex items-center justify-center gap-4 text-xs">
+    <span class="font-mono text-[11px] text-stone-500 dark:text-stone-400">LOT #2026-044</span>
+    <button type="button" data-ldr8-btn class="rounded-full border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-4 py-1.5 font-semibold text-stone-800 dark:text-stone-200 hover:border-stone-900">
+      Complete Allocation
+    </button>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr8]'); if (!r) return;
+  const ttl = r.querySelector('[data-ldr8-title]'), sub = r.querySelector('[data-ldr8-sub]'), bar = r.querySelector('[data-ldr8-bar]'), btn = r.querySelector('[data-ldr8-btn]');
+  let done = false;
+  btn?.addEventListener('click', () => {
+    done = !done;
+    bar.className = done ? 'h-full w-full rounded-full bg-emerald-700 dark:bg-emerald-400 transition-all duration-500' : 'h-full w-2/3 rounded-full bg-stone-900 dark:bg-white transition-all duration-500';
+    ttl.textContent = done ? 'Edition #044 Reserved for Elena' : 'Reserving Your Numbered Piece...';
+    sub.textContent = done ? 'Provenance dossier dispatched to your inbox.' : 'Verifying kiln batch availability and assigning your stamped certificate of provenance.';
+    btn.textContent = done ? 'Replay Loader' : 'Complete Allocation';
+  });
+})();
+</script>

@@ -1,0 +1,69 @@
+{
+  "slug": "auth",
+  "index": "33",
+  "tag": "Templates",
+  "title": "Authentication",
+  "description": "Split-screen studio login panels, creator onboarding flows, passkey & FIDO2 cards, 2FA verification, CLI device approval, and workspace SSO gates.",
+  "specs": [
+    {
+      "file": "01-editorial-oauth-split-sign-in.html",
+      "title": "Editorial OAuth Split Sign In",
+      "styleTag": "Editorial Split",
+      "canvas": "light"
+    },
+    {
+      "file": "02-creator-split-signup-panel.html",
+      "title": "Creator Split Signup Panel",
+      "styleTag": "Studio Split",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-dark-passkey-magic-link.html",
+      "title": "Dark Passkey & Magic Link",
+      "styleTag": "Linear · WebAuthn",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-liquid-glass-split-login.html",
+      "title": "Liquid Glass Split Login",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "light"
+    },
+    {
+      "file": "05-brutalist-split-signup.html",
+      "title": "Brutalist Split Signup",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "06-enterprise-sso-identity-gate.html",
+      "title": "Enterprise SSO Identity Gate",
+      "styleTag": "Enterprise Split",
+      "canvas": "muted"
+    },
+    {
+      "file": "07-6-digit-2fa-verification.html",
+      "title": "6-Digit 2FA Verification",
+      "styleTag": "2FA Security",
+      "canvas": "light"
+    },
+    {
+      "file": "08-password-recovery-request.html",
+      "title": "Password Recovery Request",
+      "styleTag": "Recovery Flow",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-cli-device-auth-terminal.html",
+      "title": "CLI Device Auth Terminal",
+      "styleTag": "DevTools Security",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-workspace-switcher-invite.html",
+      "title": "Workspace Switcher & Invite",
+      "styleTag": "SaaS Portal",
+      "canvas": "light"
+    }
+  ]
+}

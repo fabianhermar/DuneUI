@@ -1,0 +1,25 @@
+<header class="mx-auto w-full max-w-4xl bg-[#FDFBF7] dark:bg-zinc-900 px-6 py-7 text-stone-900 dark:text-zinc-100 border-y-2 border-stone-900 dark:border-zinc-200">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-300 dark:border-zinc-700 pb-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-zinc-400">
+    <span>THE NORDIC REVIEW &middot; ESSAY NO. 412</span>
+    <span>TUESDAY, NOVEMBER 17, 2026 &middot; 8 MIN READ</span>
+  </div>
+  <h1 class="mt-4 font-serif text-3xl sm:text-4xl leading-tight tracking-tight text-stone-950 dark:text-white">How Subsea Fiber Cables Quietly Reshape Global Latencies</h1>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-4 pt-2 text-xs">
+    <div class="flex items-center gap-2.5">
+      <img src="/images/testimonials/henrik.jpg" alt="Henrik Lindqvist" class="size-8 rounded-full object-cover grayscale" />
+      <span>By <strong class="font-semibold underline decoration-stone-300 dark:decoration-zinc-600 underline-offset-4">Henrik Lindqvist</strong>, Infrastructure Desk</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button type="button" data-ph10-listen class="inline-flex items-center gap-1.5 rounded-full border border-stone-900 dark:border-zinc-200 px-3.5 py-1.5 text-[11px] font-semibold hover:bg-stone-900 hover:text-white dark:hover:bg-zinc-200 dark:hover:text-zinc-900 transition-colors">&#127911; Listen (8m)</button>
+      <button type="button" data-ph10-save class="rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1.5 text-[11px] font-medium hover:bg-stone-100 dark:hover:bg-zinc-800 transition-colors">Save</button>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  const listen = document.querySelector('[data-ph10-listen]'), save = document.querySelector('[data-ph10-save]');
+  let playing = false, saved = false;
+  listen?.addEventListener('click', () => { playing = !playing; listen.textContent = playing ? '❚❚ Playing (0:14)' : '🎧 Listen (8m)'; });
+  save?.addEventListener('click', () => { saved = !saved; save.textContent = saved ? 'Saved ✓' : 'Save'; });
+})();
+</script>

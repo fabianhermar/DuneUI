@@ -1,0 +1,38 @@
+<div class="mx-auto w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-white/20 bg-gradient-to-br from-sky-50 dark:from-slate-900 via-white dark:via-indigo-950 to-indigo-100/80 dark:to-slate-950 p-6 text-slate-900 dark:text-white shadow-xl">
+  <div class="rounded-2xl border border-slate-900/10 dark:border-white/20 bg-white/75 dark:bg-white/10 p-5 backdrop-blur-2xl shadow-inner">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-300">Edge Storage Quota</p>
+        <p class="mt-0.5 text-sm font-semibold" data-ap6-title>42.0 GB used of 50 GB (84%)</p>
+      </div>
+      <button type="button" data-ap6-upgrade class="shrink-0 rounded-xl bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 hover:opacity-90 transition-opacity">Upgrade to 500 GB</button>
+    </div>
+    <div class="mt-3.5 flex h-2.5 w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/15" data-ap6-track>
+      <div data-ap6-b1 class="h-full w-[48%] bg-sky-500 transition-all duration-300"></div>
+      <div data-ap6-b2 class="h-full w-[24%] bg-indigo-500 transition-all duration-300"></div>
+      <div data-ap6-b3 class="h-full w-[12%] bg-emerald-400 transition-all duration-300"></div>
+    </div>
+    <div class="mt-3 flex flex-wrap items-center gap-4 text-[11px] text-slate-600 dark:text-white/70">
+      <span class="inline-flex items-center gap-1.5"><span class="size-2 rounded-full bg-sky-500"></span>Media (24 GB)</span>
+      <span class="inline-flex items-center gap-1.5"><span class="size-2 rounded-full bg-indigo-500"></span>Builds (12 GB)</span>
+      <span class="inline-flex items-center gap-1.5"><span class="size-2 rounded-full bg-emerald-400"></span>Logs (6 GB)</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  let boosted = false;
+  const btn = document.querySelector('[data-ap6-upgrade]'), title = document.querySelector('[data-ap6-title]');
+  const b1 = document.querySelector('[data-ap6-b1]'), b2 = document.querySelector('[data-ap6-b2]'), b3 = document.querySelector('[data-ap6-b3]');
+  btn?.addEventListener('click', () => {
+    boosted = !boosted;
+    btn.textContent = boosted ? '500 GB Active ✓' : 'Upgrade to 500 GB';
+    if (title) title.textContent = boosted ? '42.0 GB used of 500 GB (8.4%)' : '42.0 GB used of 50 GB (84%)';
+    if (b1 && b2 && b3) {
+      b1.style.width = boosted ? '5%' : '48%';
+      b2.style.width = boosted ? '2.2%' : '24%';
+      b3.style.width = boosted ? '1.2%' : '12%';
+    }
+  });
+})();
+</script>

@@ -1,0 +1,30 @@
+<div data-sel7 class="mx-auto w-full max-w-sm border-2 border-black dark:border-zinc-200 bg-[#FAF6EE] dark:bg-zinc-900 p-5 text-black dark:text-zinc-100">
+  <div class="flex items-center justify-between border-b-2 border-black dark:border-zinc-200 pb-3">
+    <span class="font-mono text-[10px] font-black uppercase tracking-widest">TYPEFACE SPECIMEN</span>
+    <span data-sel7-sample class="font-serif text-xl font-bold">Aa Bb</span>
+  </div>
+  <div class="mt-3 space-y-2 text-xs">
+    <button type="button" data-sel7-font="font-serif" class="cursor-pointer flex w-full items-center justify-between border-2 border-black dark:border-zinc-200 bg-[#FACC15] px-3.5 py-2.5 text-left font-bold text-black">
+      <span class="font-serif text-sm">Instrument Serif</span><span class="font-mono text-[10px]">EDITORIAL</span>
+    </button>
+    <button type="button" data-sel7-font="font-sans" class="cursor-pointer flex w-full items-center justify-between border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 text-left font-bold hover:bg-[#BAE6FD] hover:text-black">
+      <span class="font-sans text-sm">Neue Haas Grotesk</span><span class="font-mono text-[10px]">SWISS UI</span>
+    </button>
+    <button type="button" data-sel7-font="font-mono" class="cursor-pointer flex w-full items-center justify-between border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 text-left font-bold hover:bg-[#BAE6FD] hover:text-black">
+      <span class="font-mono text-sm">JetBrains Mono</span><span class="font-mono text-[10px]">TABULAR</span>
+    </button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel7]').forEach((root) => {
+    const btns = [...root.querySelectorAll('[data-sel7-font]')], sample = root.querySelector('[data-sel7-sample]');
+    const onCls = 'cursor-pointer flex w-full items-center justify-between border-2 border-black dark:border-zinc-200 bg-[#FACC15] px-3.5 py-2.5 text-left font-bold text-black';
+    const offCls = 'cursor-pointer flex w-full items-center justify-between border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3.5 py-2.5 text-left font-bold hover:bg-[#BAE6FD] hover:text-black';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; });
+      if (sample) sample.className = 'text-xl font-bold ' + (b.dataset.sel7Font || 'font-serif');
+    }));
+  });
+})();
+</script>

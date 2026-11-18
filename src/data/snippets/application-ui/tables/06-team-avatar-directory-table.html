@@ -1,0 +1,61 @@
+<div class="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-zinc-800 px-4 py-3.5 sm:px-5">
+    <div class="flex items-center gap-2.5">
+      <h3 class="text-sm font-bold text-slate-900 dark:text-zinc-100">Workspace Members</h3>
+      <span class="rounded-full bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 font-mono text-[10px] font-semibold text-slate-600 dark:text-zinc-300">4 / 10 seats</span>
+    </div>
+    <input data-team-search type="search" placeholder="Filter by name or role..." aria-label="Filter team members" class="w-full rounded-lg border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 px-3 py-1.5 text-xs text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 focus:border-indigo-500 focus:bg-white dark:focus:bg-zinc-800 focus:outline-none sm:w-52" />
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="w-full min-w-[520px] text-left text-xs">
+      <thead class="border-b border-slate-200 dark:border-zinc-800 bg-slate-50/60 dark:bg-zinc-800/60 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+        <tr>
+          <th class="px-5 py-3">Member</th>
+          <th class="px-4 py-3">Role</th>
+          <th class="px-4 py-3">Security</th>
+          <th class="px-5 py-3 text-right">Last Active</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-zinc-800/80">
+        <tr data-team-row="clara wu principal engineer owner" class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><div class="flex items-center gap-3"><span class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-bold text-white">CW<span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-emerald-500"></span></span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Clara Wu</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">clara@acme.dev</p></div></div></td>
+          <td class="px-4 py-3"><span class="rounded-md bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">Owner</span></td>
+          <td class="px-4 py-3"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Hardware 2FA</span></td>
+          <td class="px-5 py-3 text-right text-slate-500 dark:text-zinc-400">Online now</td>
+        </tr>
+        <tr data-team-row="mateo silva staff designer admin" class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><div class="flex items-center gap-3"><span class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[11px] font-bold text-white">MS<span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-emerald-500"></span></span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Mateo Silva</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">mateo@acme.dev</p></div></div></td>
+          <td class="px-4 py-3"><span class="rounded-md bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300">Admin</span></td>
+          <td class="px-4 py-3"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Passkey</span></td>
+          <td class="px-5 py-3 text-right text-slate-500 dark:text-zinc-400">12m ago</td>
+        </tr>
+        <tr data-team-row="sora takahashi systems developer editor" class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><div class="flex items-center gap-3"><span class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-600 text-[11px] font-bold text-white">ST<span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-amber-400"></span></span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Sora Takahashi</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">sora@acme.dev</p></div></div></td>
+          <td class="px-4 py-3"><span class="rounded-md bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300">Editor</span></td>
+          <td class="px-4 py-3"><span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Authenticator</span></td>
+          <td class="px-5 py-3 text-right text-slate-500 dark:text-zinc-400">1h ago</td>
+        </tr>
+        <tr data-team-row="hannah lind finance analyst viewer" class="hover:bg-slate-50/70 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3"><div class="flex items-center gap-3"><span class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-700 text-[11px] font-bold text-white">HL</span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Hannah Lind</p><p class="text-[11px] text-slate-500 dark:text-zinc-400">hannah@acme.dev</p></div></div></td>
+          <td class="px-4 py-3"><span class="rounded-md bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-semibold text-slate-600 dark:text-zinc-300">Viewer</span></td>
+          <td class="px-4 py-3"><span class="rounded-full bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300">SMS Pending</span></td>
+          <td class="px-5 py-3 text-right text-slate-500 dark:text-zinc-400">Yesterday</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+(() => {
+  const input = document.querySelector('[data-team-search]');
+  const rows = document.querySelectorAll('[data-team-row]');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    rows.forEach((r) => {
+      const hay = r.getAttribute('data-team-row') || '';
+      r.style.display = !q || hay.includes(q) ? '' : 'none';
+    });
+  });
+})();
+</script>

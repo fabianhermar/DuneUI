@@ -1,0 +1,69 @@
+{
+  "slug": "stats",
+  "index": "20",
+  "tag": "Analytics",
+  "title": "Stats & KPIs",
+  "description": "Executive SaaS metric strips with SVG sparklines, linear telemetry histograms, fintech payout splits, Core Web Vitals radial rings, and quota gauges.",
+  "specs": [
+    {
+      "file": "01-saas-mrr-churn-executive-row.html",
+      "title": "SaaS MRR & Churn Executive Row",
+      "styleTag": "Tailwind UI Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-telemetry-bar-chart-strip.html",
+      "title": "Dark Telemetry Bar Chart Strip",
+      "styleTag": "Linear Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-balance-payout-forecast.html",
+      "title": "Balance & Payout Forecast",
+      "styleTag": "Stripe Fintech",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-glass-weather-battery.html",
+      "title": "Glass Weather & Battery",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-impact-counters.html",
+      "title": "Brutalist Impact Counters",
+      "styleTag": "Neo-Brutalist",
+      "canvas": "light"
+    },
+    {
+      "file": "06-30-day-uptime-heartbeat.html",
+      "title": "30-Day Uptime Heartbeat",
+      "styleTag": "DevTools Monitor",
+      "canvas": "light"
+    },
+    {
+      "file": "07-press-awards-stat-strip.html",
+      "title": "Press & Awards Stat Strip",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-core-web-vitals-score-bar.html",
+      "title": "Core Web Vitals Score Bar",
+      "styleTag": "Vercel Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-subscription-quota-card.html",
+      "title": "Subscription Quota Card",
+      "styleTag": "Minimal Clean",
+      "canvas": "light"
+    },
+    {
+      "file": "10-order-aov-summary-strip.html",
+      "title": "Order & AOV Summary Strip",
+      "styleTag": "Commerce Warm",
+      "canvas": "muted"
+    }
+  ]
+}

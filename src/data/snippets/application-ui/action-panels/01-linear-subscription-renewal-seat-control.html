@@ -1,0 +1,45 @@
+<div class="mx-auto w-full max-w-2xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="max-w-md min-w-0">
+      <div class="flex flex-wrap items-center gap-2">
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-zinc-100">Automatic subscription renewal</h3>
+        <span class="rounded-md bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200/80 dark:ring-indigo-500/30">PRO TEAM &middot; $49/MO</span>
+      </div>
+      <p class="mt-1.5 text-xs leading-relaxed text-slate-500 dark:text-zinc-400">Your workspace renews automatically on <strong class="font-medium text-slate-700 dark:text-zinc-200">Dec 1, 2026</strong> for 8 active seats.</p>
+    </div>
+    <button type="button" data-ap1-toggle role="switch" aria-checked="true" aria-label="Toggle auto-renewal" class="relative inline-flex h-7 w-12 shrink-0 items-center rounded-full bg-indigo-600 p-1 transition-colors focus:outline-none">
+      <span data-ap1-knob class="size-5 translate-x-5 rounded-full bg-white shadow-sm transition-transform"></span>
+    </button>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 dark:border-zinc-800 pt-3.5 text-xs">
+    <span class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400" data-ap1-status>
+      <span class="size-2 rounded-full bg-emerald-500"></span>Auto-renew active &middot; Next charge $49.00
+    </span>
+    <span class="font-mono text-[11px] text-slate-400 dark:text-zinc-500">8 / 10 seats assigned</span>
+  </div>
+</div>
+<script>
+(function(){
+  let on = true;
+  const btn = document.querySelector('[data-ap1-toggle]'), knob = document.querySelector('[data-ap1-knob]'), st = document.querySelector('[data-ap1-status]');
+  btn?.addEventListener('click', () => {
+    on = !on;
+    btn.setAttribute('aria-checked', String(on));
+    btn.classList.toggle('bg-indigo-600', on);
+    btn.classList.toggle('bg-slate-300', !on);
+    btn.classList.toggle('dark:bg-zinc-700', !on);
+    if (knob) {
+      knob.classList.toggle('translate-x-5', on);
+      knob.classList.toggle('translate-x-0', !on);
+    }
+    if (st) {
+      st.className = on
+        ? 'inline-flex items-center gap-2 font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400'
+        : 'inline-flex items-center gap-2 font-mono text-[11px] font-semibold text-amber-700 dark:text-amber-400';
+      st.innerHTML = on
+        ? '<span class="size-2 rounded-full bg-emerald-500"></span>Auto-renew active &middot; Next charge $49.00'
+        : '<span class="size-2 rounded-full bg-amber-500"></span>Scheduled to downgrade on Dec 1, 2026';
+    }
+  });
+})();
+</script>

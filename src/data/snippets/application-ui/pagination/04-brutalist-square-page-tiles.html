@@ -1,0 +1,26 @@
+<nav data-brutal-pager class="flex flex-wrap items-center justify-center gap-2 text-black">
+  <button type="button" data-bp-prev class="flex h-10 px-3 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 text-xs font-black uppercase text-black dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">← Prev</button>
+  <button type="button" data-bp-num="1" class="flex size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-[#A3E635] text-xs font-black text-black shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]">01</button>
+  <button type="button" data-bp-num="2" class="flex size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 text-xs font-black text-black dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]">02</button>
+  <button type="button" data-bp-num="3" class="flex size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 text-xs font-black text-black dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]">03</button>
+  <button type="button" data-bp-num="4" class="hidden sm:flex size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 text-xs font-black text-black dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]">04</button>
+  <button type="button" data-bp-next class="flex h-10 px-3 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-[#FDE047] text-xs font-black uppercase text-black shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Next →</button>
+</nav>
+<script>
+  document.querySelectorAll('[data-brutal-pager]').forEach((nav) => {
+    const tiles = Array.from(nav.querySelectorAll('[data-bp-num]'));
+    let active = 1;
+    const render = () => {
+      tiles.forEach((t) => {
+        const val = Number(t.getAttribute('data-bp-num'));
+        const disp = val === 4 ? 'hidden sm:flex ' : 'flex ';
+        t.className = val === active
+          ? disp + 'size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-[#A3E635] text-xs font-black text-black shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]'
+          : disp + 'size-10 items-center justify-center rounded-lg border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 text-xs font-black text-black dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#e4e4e7]';
+      });
+    };
+    tiles.forEach((t) => t.addEventListener('click', () => { active = Number(t.getAttribute('data-bp-num')); render(); }));
+    nav.querySelector('[data-bp-prev]')?.addEventListener('click', () => { if (active > 1) { active--; render(); } });
+    nav.querySelector('[data-bp-next]')?.addEventListener('click', () => { if (active < 4) { active++; render(); } });
+  });
+</script>

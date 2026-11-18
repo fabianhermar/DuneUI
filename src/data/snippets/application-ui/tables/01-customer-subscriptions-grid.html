@@ -1,0 +1,85 @@
+<div class="w-full overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800 text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-zinc-800 px-4 py-3.5 sm:px-5">
+    <div>
+      <h3 class="text-sm font-bold text-slate-900 dark:text-zinc-100">Active Subscriptions</h3>
+      <p class="text-[11px] text-slate-500 dark:text-zinc-400">Live recurring revenue ledger &bull; Updated 2m ago</p>
+    </div>
+    <div role="group" aria-label="Filter status" class="inline-flex rounded-lg border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 p-0.5 text-[11px] font-semibold">
+      <button type="button" data-sub-filter="all" aria-pressed="true" class="rounded-md bg-white dark:bg-zinc-800 px-2.5 py-1 text-slate-900 dark:text-zinc-100 shadow-2xs border border-slate-200 dark:border-zinc-800">All</button>
+      <button type="button" data-sub-filter="Active" aria-pressed="false" class="rounded-md px-2.5 py-1 text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100">Active</button>
+      <button type="button" data-sub-filter="Trial" aria-pressed="false" class="rounded-md px-2.5 py-1 text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100">Trial</button>
+      <button type="button" data-sub-filter="Past Due" aria-pressed="false" class="rounded-md px-2.5 py-1 text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100">Past Due</button>
+    </div>
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="w-full min-w-[560px] text-left text-xs">
+      <thead class="border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-800/60 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+        <tr>
+          <th class="px-5 py-3">Customer</th>
+          <th class="px-4 py-3">Plan Tier</th>
+          <th class="px-4 py-3">Status</th>
+          <th class="px-4 py-3">Renewal</th>
+          <th class="px-5 py-3 text-right">MRR</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-zinc-800/80 text-slate-700 dark:text-zinc-300">
+        <tr data-sub-row="Active" class="transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3.5"><div class="flex items-center gap-2.5"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-[10px] font-bold text-white">AR</span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Acme Robotics</p><p class="text-[11px] text-slate-400 dark:text-zinc-500">billing@acmerobotics.io</p></div></div></td>
+          <td class="px-4 py-3.5"><span class="rounded-md border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">Enterprise</span></td>
+          <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Active</span></td>
+          <td class="px-4 py-3.5 text-slate-500 dark:text-zinc-400">Dec 04, 2026</td>
+          <td class="px-5 py-3.5 text-right font-mono font-bold text-slate-900 dark:text-zinc-100 tabular-nums">$2,400</td>
+        </tr>
+        <tr data-sub-row="Trial" class="transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3.5"><div class="flex items-center gap-2.5"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-900 text-[10px] font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-white/15">NA</span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Nordic Audio</p><p class="text-[11px] text-slate-400 dark:text-zinc-500">ops@nordicaudio.se</p></div></div></td>
+          <td class="px-4 py-3.5"><span class="rounded-md border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 px-2 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300">Team Pro</span></td>
+          <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 dark:bg-amber-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-amber-800 dark:text-amber-300"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>Trial</span></td>
+          <td class="px-4 py-3.5 text-slate-500 dark:text-zinc-400">Nov 21, 2026</td>
+          <td class="px-5 py-3.5 text-right font-mono font-bold text-slate-900 dark:text-zinc-100 tabular-nums">$290</td>
+        </tr>
+        <tr data-sub-row="Active" class="transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3.5"><div class="flex items-center gap-2.5"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-600 text-[10px] font-bold text-white">VL</span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Vesper Labs</p><p class="text-[11px] text-slate-400 dark:text-zinc-500">finance@vesper.ai</p></div></div></td>
+          <td class="px-4 py-3.5"><span class="rounded-md border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300">Enterprise</span></td>
+          <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Active</span></td>
+          <td class="px-4 py-3.5 text-slate-500 dark:text-zinc-400">Dec 12, 2026</td>
+          <td class="px-5 py-3.5 text-right font-mono font-bold text-slate-900 dark:text-zinc-100 tabular-nums">$1,850</td>
+        </tr>
+        <tr data-sub-row="Past Due" class="transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/60">
+          <td class="px-5 py-3.5"><div class="flex items-center gap-2.5"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-rose-600 text-[10px] font-bold text-white">KS</span><div><p class="font-semibold text-slate-900 dark:text-zinc-100">Kanso Studio</p><p class="text-[11px] text-slate-400 dark:text-zinc-500">pay@kanso.design</p></div></div></td>
+          <td class="px-4 py-3.5"><span class="rounded-md border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 px-2 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300">Growth</span></td>
+          <td class="px-4 py-3.5"><span class="inline-flex items-center gap-1.5 rounded-full bg-rose-50 dark:bg-rose-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-rose-700 dark:text-rose-300"><span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>Past Due</span></td>
+          <td class="px-4 py-3.5 text-rose-600 dark:text-rose-400 font-medium">Overdue 3d</td>
+          <td class="px-5 py-3.5 text-right font-mono font-bold text-slate-900 dark:text-zinc-100 tabular-nums">$390</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-zinc-800/80 bg-slate-50/60 dark:bg-zinc-800/60 px-5 py-2.5 text-[11px] text-slate-500 dark:text-zinc-400">
+    <span data-sub-summary>Showing 4 accounts</span>
+    <span class="font-mono font-semibold text-slate-800 dark:text-zinc-200">Total MRR: $4,930.00</span>
+  </div>
+</div>
+<script>
+(() => {
+  const btns = document.querySelectorAll('[data-sub-filter]');
+  const rows = document.querySelectorAll('[data-sub-row]');
+  const summary = document.querySelector('[data-sub-summary]');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.getAttribute('data-sub-filter');
+      btns.forEach((b) => {
+        const active = b.getAttribute('data-sub-filter') === f;
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        b.className = active ? 'rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-2xs' : 'rounded-md px-2.5 py-1 text-slate-500 hover:text-slate-900';
+      });
+      let count = 0;
+      rows.forEach((r) => {
+        const show = f === 'all' || r.getAttribute('data-sub-row') === f;
+        r.style.display = show ? '' : 'none';
+        if (show) count++;
+      });
+      if (summary) summary.textContent = 'Showing ' + count + (count === 1 ? ' account' : ' accounts');
+    });
+  });
+})();
+</script>

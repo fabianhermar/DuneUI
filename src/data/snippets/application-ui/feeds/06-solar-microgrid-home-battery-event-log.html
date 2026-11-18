@@ -1,0 +1,25 @@
+<div class="mx-auto w-full max-w-xl rounded-2xl border border-emerald-200 dark:border-zinc-800 bg-emerald-50/30 dark:bg-zinc-900 p-6 text-xs text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-200/60 dark:border-zinc-800 pb-3.5">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">SOLAR MICROGRID &middot; 9.6 kW</span>
+      <h3 class="text-sm font-bold">Grid &amp; Battery Dispatch Feed</h3>
+    </div>
+    <button type="button" data-fd6-exp class="cursor-pointer rounded-lg border border-emerald-300 dark:border-emerald-700 bg-white dark:bg-emerald-950/50 px-3 py-1 font-mono text-[11px] font-bold text-emerald-800 dark:text-emerald-300">Export Surplus</button>
+  </div>
+  <ul data-fd6-list class="mt-4 space-y-3 border-l-2 border-emerald-400/60 pl-4">
+    <li><p class="font-semibold">Powerwall reached 100% SoC (27.0 kWh)</p><p class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">11:40 AM &middot; Switching excess to grid</p></li>
+    <li><p class="font-semibold">EV Wallbox paused for peak tariff ($0.44/kWh)</p><p class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">09:15 AM &middot; Automated rule</p></li>
+    <li><p class="font-semibold">Morning solar array crossed 4.8 kW output</p><p class="font-mono text-[10px] text-slate-500 dark:text-zinc-400">08:02 AM &middot; Clear sky index</p></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const btn = document.querySelector('[data-fd6-exp]'), list = document.querySelector('[data-fd6-list]');
+  btn?.addEventListener('click', () => {
+    btn.textContent = 'Exporting +4.2 kW';
+    const li = document.createElement('li');
+    li.innerHTML = '<p class="font-semibold text-emerald-700 dark:text-emerald-400">Manual grid export started (+4.2 kW)</p><p class="font-mono text-[10px] text-slate-500">Just now &middot; Feed-in active</p>';
+    list?.prepend(li);
+  });
+})();
+</script>

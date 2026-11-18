@@ -1,0 +1,37 @@
+<section class="relative w-full max-w-4xl overflow-hidden rounded-[28px] border border-slate-300 dark:border-white/40 bg-gradient-to-b from-white/25 to-indigo-50/70 dark:to-white/10 p-6 text-slate-900 dark:text-white shadow-[0_24px_60px_rgba(15,23,42,0.45)] backdrop-blur-2xl sm:p-9">
+  <div class="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent"></div>
+  <div class="flex flex-col justify-between gap-7 lg:flex-row lg:items-center">
+    <div class="min-w-0 max-w-xl">
+      <div class="inline-flex items-center gap-2 rounded-full border border-slate-900/20 dark:border-white/30 bg-slate-900/[0.07] dark:bg-white/15 px-3 py-1 text-[11px] font-semibold text-slate-900 dark:text-white backdrop-blur">
+        <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
+        Spatial Glass Kit · Instant Figma & CSS
+      </div>
+      <h3 class="mt-4 text-2xl font-bold tracking-tight sm:text-4xl">Turn flat interfaces into tactile optical glass.</h3>
+      <p class="mt-2 text-sm text-slate-700 dark:text-white/80">140 adaptive refraction tokens, specular borders, and accessible dark/light blur presets.</p>
+    </div>
+    <div class="w-full shrink-0 rounded-2xl border border-slate-300 dark:border-white/30 bg-slate-950/35 p-4 backdrop-blur-xl lg:w-72">
+      <div class="grid grid-cols-2 gap-1 rounded-xl border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.06] dark:bg-black/25 p-1 text-xs font-semibold" data-glass-toggle>
+        <button type="button" data-plan="Solo" data-price="$39" class="rounded-lg bg-white py-1.5 text-slate-950 shadow border border-slate-200 dark:border-zinc-800">Solo · $39</button>
+        <button type="button" data-plan="Studio" data-price="$129" class="rounded-lg py-1.5 text-slate-700 dark:text-white/80 hover:text-slate-900 dark:hover:text-white">Studio · $129</button>
+      </div>
+      <button type="button" data-glass-cta class="mt-3 w-full rounded-xl bg-slate-900 dark:bg-white py-3 text-sm font-bold text-white dark:text-slate-950 shadow-[0_8px_24px_rgba(255,255,255,0.28)] transition hover:scale-[1.01] hover:bg-slate-50">Unlock Solo License — $39</button>
+      <p class="mt-2.5 text-center text-[11px] text-slate-700 dark:text-white/75">Lifetime updates · One-time payment</p>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.parentElement;
+      const btns = root.querySelectorAll('[data-plan]');
+      const cta = root.querySelector('[data-glass-cta]');
+      btns.forEach((b) => {
+        b.addEventListener('click', () => {
+          btns.forEach((x) => {
+            x.className = 'rounded-lg py-1.5 text-white/80 hover:text-white';
+          });
+          b.className = 'rounded-lg bg-white py-1.5 text-slate-950 shadow';
+          if (cta) cta.textContent = 'Unlock ' + b.dataset.plan + ' License — ' + b.dataset.price;
+        });
+      });
+    })();
+  </script>
+</section>

@@ -1,0 +1,102 @@
+<div data-drw3 data-open="true" class="group/d3 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200/90 dark:border-white/12 bg-slate-50 dark:bg-[#08090E] text-slate-900 dark:text-white shadow-xl">
+  <!-- Host Deployment Ledger -->
+  <div class="flex h-full flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d3:scale-[0.97] group-data-[open=true]/d3:rounded-2xl">
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 bg-white dark:bg-[#0D0F17] px-5 py-3.5">
+      <div class="flex items-center gap-2 font-mono text-xs">
+        <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold">prod-edge-cluster</span>
+      </div>
+      <button type="button" data-drw3-open class="cursor-pointer rounded-lg border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/[0.05] px-3 py-1.5 font-mono text-[11px] font-semibold hover:border-indigo-400 transition">Open Inspector</button>
+    </div>
+
+    <div class="p-5 space-y-2.5 text-xs">
+      <p class="font-mono text-[10px] uppercase tracking-widest text-slate-500 dark:text-zinc-500">Click any release to inspect telemetry</p>
+      <button type="button" data-drw3-pick="0" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] px-4 py-3 text-left hover:border-indigo-400 transition">
+        <span class="font-mono font-bold">dpl_9f42c1a8</span>
+        <span class="font-mono text-[11px] text-emerald-600 dark:text-emerald-400">main @ a71e9c2 &bull; 18.4s</span>
+      </button>
+      <button type="button" data-drw3-pick="1" class="cursor-pointer flex w-full items-center justify-between rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] px-4 py-3 text-left hover:border-indigo-400 transition">
+        <span class="font-mono font-bold">dpl_7c11b02e</span>
+        <span class="font-mono text-[11px] text-amber-600 dark:text-amber-300">canary @ f02d81a &bull; 21.0s</span>
+      </button>
+    </div>
+  </div>
+
+  <div data-drw3-bg class="absolute inset-0 bg-slate-950/25 dark:bg-black/60 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d3:opacity-100 group-data-[open=true]/d3:pointer-events-auto"></div>
+
+  <!-- Double-Bezel Dark Ops Drawer -->
+  <aside role="dialog" aria-modal="true" aria-label="Deployment telemetry" class="absolute inset-y-2.5 right-2.5 flex w-[calc(100%-1.25rem)] max-w-md flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#0F121B] shadow-2xl translate-x-[112%] group-data-[open=true]/d3:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/75 to-transparent"></div>
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-white/10 px-5 py-4">
+      <div class="flex items-center gap-2.5">
+        <span class="size-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.85)]"></span>
+        <div>
+          <span data-drw3-id class="font-mono text-xs font-bold">dpl_9f42c1a8</span>
+          <span data-drw3-sha class="ml-2 rounded bg-slate-100 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[10px] text-slate-600 dark:text-zinc-300">a71e9c2</span>
+        </div>
+      </div>
+      <button type="button" data-drw3-close class="cursor-pointer rounded-lg border border-slate-200 dark:border-white/10 px-2 py-1 font-mono text-[10px] text-slate-500 dark:text-zinc-400 hover:text-slate-950 dark:hover:text-white">ESC</button>
+    </div>
+
+    <div class="flex gap-1.5 border-b border-slate-200 dark:border-white/10 px-5 py-2.5 text-xs">
+      <button type="button" data-drw3-tab="summary" class="cursor-pointer rounded-lg bg-slate-900 dark:bg-white/15 px-3 py-1 font-semibold text-white">Summary</button>
+      <button type="button" data-drw3-tab="logs" class="cursor-pointer rounded-lg px-3 py-1 font-medium text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Stream Logs</button>
+    </div>
+
+    <div data-drw3-pane="summary" class="flex-1 space-y-4 overflow-y-auto p-5 text-xs">
+      <div class="grid grid-cols-3 gap-2">
+        <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] p-3"><p class="font-mono text-[9px] text-slate-500 dark:text-zinc-500">IAD1</p><p class="mt-1 font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">14ms</p></div>
+        <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] p-3"><p class="font-mono text-[9px] text-slate-500 dark:text-zinc-500">FRA1</p><p class="mt-1 font-mono text-sm font-bold text-sky-600 dark:text-sky-400">22ms</p></div>
+        <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] p-3"><p class="font-mono text-[9px] text-slate-500 dark:text-zinc-500">HND1</p><p class="mt-1 font-mono text-sm font-bold text-indigo-600 dark:text-indigo-400">39ms</p></div>
+      </div>
+      <div class="space-y-2 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] p-3.5 font-mono text-[11px]">
+        <div class="flex justify-between"><span class="text-slate-500 dark:text-zinc-400">Build Time</span><span data-drw3-dur class="font-bold text-emerald-600 dark:text-emerald-400">18.4s (cached)</span></div>
+        <div class="flex justify-between"><span class="text-slate-500 dark:text-zinc-400">Bundle Size</span><span>13.8 kB gzip</span></div>
+        <div class="flex justify-between"><span class="text-slate-500 dark:text-zinc-400">Canary Weight</span><span data-drw3-weight class="font-bold text-indigo-600 dark:text-indigo-300">100% Live</span></div>
+      </div>
+    </div>
+
+    <div data-drw3-pane="logs" class="hidden flex-1 overflow-y-auto p-5 font-mono text-[11px] leading-relaxed text-emerald-700 dark:text-emerald-300 space-y-1.5">
+      <p>[12:04:01] Syncing Astro edge adapters &amp; Vite 6.2...</p>
+      <p>[12:04:12] Built 59 static routes (0 warnings)</p>
+      <p>[12:04:18] Edge propagation completed in 610ms.</p>
+    </div>
+
+    <div class="flex items-center justify-between border-t border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-white/[0.02] px-5 py-3.5">
+      <button type="button" data-drw3-canary class="cursor-pointer font-mono text-[11px] font-semibold text-amber-600 dark:text-amber-300 hover:underline">Set 25% Canary</button>
+      <button type="button" data-drw3-close class="cursor-pointer rounded-xl bg-slate-900 dark:bg-white px-4 py-1.5 text-xs font-semibold text-white dark:text-slate-950">Done</button>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw3]').forEach((root) => {
+    const releases = [
+      { id: 'dpl_9f42c1a8', sha: 'a71e9c2', dur: '18.4s (cached)', w: '100% Live' },
+      { id: 'dpl_7c11b02e', sha: 'f02d81a', dur: '21.0s (fresh)', w: '25% Canary' }
+    ];
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    root.querySelector('[data-drw3-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw3-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelectorAll('[data-drw3-close]').forEach((b) => b.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    root.querySelectorAll('[data-drw3-pick]').forEach((btn) => btn.addEventListener('click', () => {
+      const r = releases[Number(btn.getAttribute('data-drw3-pick') || 0)];
+      root.querySelector('[data-drw3-id]').textContent = r.id;
+      root.querySelector('[data-drw3-sha]').textContent = r.sha;
+      root.querySelector('[data-drw3-dur]').textContent = r.dur;
+      root.querySelector('[data-drw3-weight]').textContent = r.w;
+      setOpen(true);
+    }));
+    const tabs = root.querySelectorAll('[data-drw3-tab]');
+    tabs.forEach((b) => b.addEventListener('click', () => {
+      tabs.forEach((x) => { x.className = x === b ? 'cursor-pointer rounded-lg bg-slate-900 dark:bg-white/15 px-3 py-1 font-semibold text-white' : 'cursor-pointer rounded-lg px-3 py-1 font-medium text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white'; });
+      root.querySelectorAll('[data-drw3-pane]').forEach((p) => p.classList.toggle('hidden', p.getAttribute('data-drw3-pane') !== b.getAttribute('data-drw3-tab')));
+    }));
+    const wEl = root.querySelector('[data-drw3-weight]');
+    root.querySelector('[data-drw3-canary]')?.addEventListener('click', () => {
+      if (wEl) wEl.textContent = wEl.textContent === '25% Canary' ? '100% Live' : '25% Canary';
+    });
+  });
+})();
+</script>

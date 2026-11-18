@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="lucas-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="lucas-coat" x1="64" y1="86" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#lucas-bg)"/>
+  <circle cx="30" cy="30" r="22" fill="#EFF6FF" fill-opacity="0.5"/>
+  <path d="M20 128C20 102 39 87 64 87C89 87 108 102 108 128H20Z" fill="url(#lucas-coat)"/>
+  <path d="M54 88L64 103L74 88H54Z" fill="#F8FAFC"/>
+  <rect x="56" y="72" width="16" height="18" rx="8" fill="#D99B78"/>
+  <circle cx="64" cy="54" r="22" fill="#ECC0A2"/>
+  <path d="M41 51C41 34 51 24 65 24C77 24 86 33 86 48C81 42 74 39 63 39C53 39 46 43 41 51Z" fill="#1E293B"/>
+  <rect x="49" y="50" width="13" height="9" rx="3.5" stroke="#0F172A" stroke-width="2.2" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="66" y="50" width="13" height="9" rx="3.5" stroke="#0F172A" stroke-width="2.2" fill="#FFFFFF" fill-opacity="0.22"/>
+  <path d="M62 54H66" stroke="#0F172A" stroke-width="2.2"/>
+  <circle cx="55.5" cy="54.5" r="1.9" fill="#0F172A"/>
+  <circle cx="72.5" cy="54.5" r="1.9" fill="#0F172A"/>
+  <path d="M58 66C61.5 68.5 66.5 68.5 70 66" stroke="#8C4E37" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

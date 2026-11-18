@@ -1,0 +1,26 @@
+<div class="mx-auto w-full max-w-xl rounded-2xl border border-amber-900/15 dark:border-zinc-800 bg-[#FAF5EF] dark:bg-[#191614] p-6 text-xs text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-amber-900/10 dark:border-zinc-800 pb-3.5">
+    <div>
+      <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 dark:text-amber-400">EXPO PASS &middot; TABLE 12 (VIP 4)</span>
+      <h3 class="mt-0.5 font-serif text-lg">12-Course Tasting Progression</h3>
+    </div>
+    <button type="button" data-fd10-fire class="cursor-pointer rounded-full bg-amber-800 dark:bg-amber-500 px-3.5 py-1.5 font-mono text-[11px] font-bold text-white dark:text-stone-950">Fire Course 05</button>
+  </div>
+  <ul data-fd10-list class="mt-4 space-y-3">
+    <li class="flex justify-between"><span><strong>Course 04</strong> &mdash; Roasted Turbot, Champagne Beurre Blanc</span><span class="font-mono text-emerald-700 dark:text-emerald-400">PLATED 20:44</span></li>
+    <li class="flex justify-between text-stone-600 dark:text-stone-300"><span><strong>Sommelier</strong> &mdash; Poured 2018 Raveneau Chablis</span><span class="font-mono text-stone-400">20:38</span></li>
+    <li class="flex justify-between text-stone-500 dark:text-stone-400"><span><strong>Course 03</strong> &mdash; Hokkaido Uni Tartlet</span><span class="font-mono text-stone-400">20:22</span></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const btn = document.querySelector('[data-fd10-fire]'), list = document.querySelector('[data-fd10-list]');
+  btn?.addEventListener('click', () => {
+    btn.textContent = 'Course 05 Fired ✓';
+    const li = document.createElement('li');
+    li.className = 'flex justify-between font-semibold text-amber-800 dark:text-amber-300';
+    li.innerHTML = '<span><strong>Course 05</strong> &mdash; Dry-Aged Duck Breast on Pass</span><span class="font-mono">JUST NOW</span>';
+    list?.prepend(li);
+  });
+})();
+</script>

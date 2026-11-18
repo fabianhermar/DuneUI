@@ -1,0 +1,61 @@
+{
+  "slug": "order-summaries",
+  "index": "57",
+  "tag": "Commerce",
+  "title": "Order Summaries",
+  "description": "10 high-craft post-purchase order summaries, live carrier trackers, interactive B2B receipts, multi-parcel hubs, instant exchange portals, and atelier confirmations.",
+  "specs": [
+    {
+      "file": "01-flagship-order-confirmation-live-tracker.html",
+      "title": "Flagship Order Confirmation & Live Tracker",
+      "styleTag": "Post-Purchase · Flagship"
+    },
+    {
+      "file": "02-interactive-order-history-ledger.html",
+      "title": "Interactive Order History Ledger",
+      "styleTag": "Account · Order Portal"
+    },
+    {
+      "file": "03-dark-obsidian-b2b-digital-receipt.html",
+      "title": "Dark Obsidian B2B Digital Receipt",
+      "styleTag": "Dark · B2B Receipt",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-liquid-glass-express-courier-tracker.html",
+      "title": "Liquid Glass Express Courier Tracker",
+      "styleTag": "Liquid Glass · Live Route",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-neo-brutalist-drop-dispatch-manifest.html",
+      "title": "Neo-Brutalist Drop Dispatch Manifest",
+      "styleTag": "Brutalist · Dispatch Slip"
+    },
+    {
+      "file": "06-executive-4-card-billing-address-grid.html",
+      "title": "Executive 4-Card Billing & Address Grid",
+      "styleTag": "Account · Executive Grid"
+    },
+    {
+      "file": "07-multi-parcel-split-warehouse-hub.html",
+      "title": "Multi-Parcel Split Warehouse Hub",
+      "styleTag": "Logistics · Multi-Parcel"
+    },
+    {
+      "file": "08-interactive-return-exchange-portal.html",
+      "title": "Interactive Return & Exchange Portal",
+      "styleTag": "Post-Purchase · RMA Hub"
+    },
+    {
+      "file": "09-recurring-subscription-cycle-summary.html",
+      "title": "Recurring Subscription Cycle Summary",
+      "styleTag": "Subscription · Billing"
+    },
+    {
+      "file": "10-atelier-editorial-confirmation-white-glove-slot.html",
+      "title": "Atelier Editorial Confirmation & White-Glove Slot",
+      "styleTag": "Editorial · Atelier"
+    }
+  ]
+}

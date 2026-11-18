@@ -1,0 +1,28 @@
+<nav data-seg-pager class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex items-center gap-1 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-100/80 dark:bg-zinc-900 p-1 text-xs font-medium shadow-2xs">
+    <button type="button" data-seg-prev class="rounded-xl px-3 py-2 text-slate-600 dark:text-zinc-400 transition hover:text-slate-950 dark:hover:text-white">Prev</button>
+    <button type="button" data-seg-num="1" class="rounded-xl bg-white dark:bg-zinc-800 px-3.5 py-2 font-semibold text-slate-950 dark:text-white shadow-xs">1</button>
+    <button type="button" data-seg-num="2" class="rounded-xl px-3.5 py-2 text-slate-600 dark:text-zinc-300 transition hover:text-slate-950 dark:hover:text-white">2</button>
+    <button type="button" data-seg-num="3" class="rounded-xl px-3.5 py-2 text-slate-600 dark:text-zinc-300 transition hover:text-slate-950 dark:hover:text-white">3</button>
+    <button type="button" data-seg-num="4" class="hidden sm:inline-flex rounded-xl px-3.5 py-2 text-slate-600 dark:text-zinc-300 transition hover:text-slate-950 dark:hover:text-white">4</button>
+    <button type="button" data-seg-next class="rounded-xl px-3 py-2 font-semibold text-slate-900 dark:text-white transition hover:bg-white/60 dark:hover:bg-zinc-800/60">Next →</button>
+  </div>
+</nav>
+<script>
+  document.querySelectorAll('[data-seg-pager]').forEach((nav) => {
+    const btns = Array.from(nav.querySelectorAll('[data-seg-num]'));
+    let active = 1;
+    const render = () => {
+      btns.forEach((b) => {
+        const val = Number(b.getAttribute('data-seg-num'));
+        const extra = val === 4 ? 'hidden sm:inline-flex ' : '';
+        b.className = val === active
+          ? extra + 'rounded-xl bg-white dark:bg-zinc-800 px-3.5 py-2 font-semibold text-slate-950 dark:text-white shadow-xs'
+          : extra + 'rounded-xl px-3.5 py-2 text-slate-600 dark:text-zinc-300 transition hover:text-slate-950 dark:hover:text-white';
+      });
+    };
+    btns.forEach((b) => b.addEventListener('click', () => { active = Number(b.getAttribute('data-seg-num')); render(); }));
+    nav.querySelector('[data-seg-prev]')?.addEventListener('click', () => { if (active > 1) { active--; render(); } });
+    nav.querySelector('[data-seg-next]')?.addEventListener('click', () => { if (active < 4) { active++; render(); } });
+  });
+</script>

@@ -1,0 +1,59 @@
+<div class="w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#121318] text-slate-900 dark:text-zinc-100 shadow-lg dark:shadow-2xl" data-cmd-root>
+  <div class="flex items-center gap-3 border-b border-slate-200 dark:border-white/15 px-4 py-3.5">
+    <svg class="h-4 w-4 shrink-0 text-slate-600 dark:text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    <input type="text" placeholder="Search commands, projects, or actions..." class="min-w-0 flex-1 bg-transparent text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-500 focus:outline-none" oninput="const q=this.value.toLowerCase();this.closest('[data-cmd-root]').querySelectorAll('[data-cmd-item]').forEach(el=>el.style.display=el.textContent.toLowerCase().includes(q)?'flex':'none')" />
+    <span class="hidden items-center gap-1 rounded-md border border-violet-400/25 bg-violet-50 dark:bg-violet-500/10 px-2 py-0.5 text-[11px] font-medium text-violet-700 dark:text-violet-300 sm:inline-flex">Ask AI <kbd class="font-mono text-[10px] opacity-80">Tab</kbd></span>
+  </div>
+  <div class="flex items-center gap-1.5 overflow-x-auto border-b border-slate-900/15 dark:border-white/[0.06] bg-slate-900/[0.07] dark:bg-white/[0.02] px-4 py-2 text-[11px]">
+    <span class="shrink-0 rounded-md bg-slate-900/[0.07] dark:bg-white/10 px-2.5 py-1 font-medium text-slate-900 dark:text-white">All</span>
+    <span class="shrink-0 rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:bg-slate-900/[0.07] dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200">Deployments</span>
+    <span class="shrink-0 rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:bg-slate-900/[0.07] dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200">Extensions</span>
+    <span class="shrink-0 rounded-md px-2.5 py-1 text-slate-600 dark:text-zinc-400 hover:bg-slate-900/[0.07] dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-zinc-200">Snippets</span>
+  </div>
+  <div class="p-2 text-xs">
+    <p class="px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-500">Pinned Actions</p>
+    <div data-cmd-item class="flex items-center justify-between gap-2 rounded-xl bg-rose-50 dark:bg-rose-500/15 px-3 py-2.5 text-slate-900 dark:text-white ring-1 ring-inset ring-rose-400/20">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-orange-500 text-white shadow-xs">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate font-semibold">Deploy Production Cluster</p>
+          <p class="truncate text-[11px] text-rose-700 dark:text-rose-200/70">Vercel CLI · us-east-1 · main</p>
+        </div>
+      </div>
+      <kbd class="shrink-0 rounded-md border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/10 px-2 py-0.5 font-mono text-[10px] text-slate-900 dark:text-white">⌘ ↵</kbd>
+    </div>
+    <div data-cmd-item class="mt-1 flex items-center justify-between gap-2 rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-white/[0.06]">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate font-medium text-slate-900 dark:text-zinc-100">Tail Live Edge Logs</p>
+          <p class="truncate text-[11px] text-slate-500 dark:text-zinc-500">Runtime Telemetry · 42 req/s</p>
+        </div>
+      </div>
+      <kbd class="shrink-0 rounded-md border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/5 px-2 py-0.5 font-mono text-[10px] text-slate-600 dark:text-zinc-400">⌘ L</kbd>
+    </div>
+    <div data-cmd-item class="mt-1 flex items-center justify-between gap-2 rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-white/[0.06]">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sky-50 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate font-medium text-slate-900 dark:text-zinc-100">Switch Environment Staging → Prod</p>
+          <p class="truncate text-[11px] text-slate-500 dark:text-zinc-500">Workspace Env · 2 pending vars</p>
+        </div>
+      </div>
+      <kbd class="shrink-0 rounded-md border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/5 px-2 py-0.5 font-mono text-[10px] text-slate-600 dark:text-zinc-400">⌘ E</kbd>
+    </div>
+  </div>
+  <div class="flex items-center justify-between border-t border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/[0.02] px-4 py-2.5 text-[11px] text-slate-600 dark:text-zinc-400">
+    <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span><span>Production</span></div>
+    <div class="flex items-center gap-3">
+      <span class="hidden sm:inline">Run <kbd class="ml-1 rounded bg-slate-900/[0.07] dark:bg-white/10 px-1.5 py-0.5 font-mono text-[10px] text-slate-800 dark:text-zinc-200">↵</kbd></span>
+      <span>Actions <kbd class="ml-1 rounded bg-slate-900/[0.07] dark:bg-white/10 px-1.5 py-0.5 font-mono text-[10px] text-slate-800 dark:text-zinc-200">⌘ K</kbd></span>
+    </div>
+  </div>
+</div>

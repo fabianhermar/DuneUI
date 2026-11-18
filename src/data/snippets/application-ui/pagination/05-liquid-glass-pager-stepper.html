@@ -1,0 +1,32 @@
+<nav data-glass-pager class="flex justify-center text-slate-900 dark:text-white">
+  <div class="inline-flex items-center gap-3 sm:gap-4 rounded-full border border-slate-900/10 dark:border-white/25 bg-white/85 dark:bg-zinc-900/80 p-1.5 shadow-xl backdrop-blur-2xl text-xs">
+    <button type="button" data-gp-prev class="inline-flex items-center gap-1 rounded-full border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-white/10 px-3 py-1.5 font-medium text-slate-700 dark:text-zinc-200 transition hover:bg-white dark:hover:bg-white/20">← Prev</button>
+    <div class="flex items-center gap-1.5 px-1">
+      <button type="button" data-gp-dot="1" aria-label="Slide 1" class="h-2 w-7 rounded-full bg-slate-900 dark:bg-white transition-all"></button>
+      <button type="button" data-gp-dot="2" aria-label="Slide 2" class="size-2 rounded-full bg-slate-300 dark:bg-white/35 transition-all"></button>
+      <button type="button" data-gp-dot="3" aria-label="Slide 3" class="size-2 rounded-full bg-slate-300 dark:bg-white/35 transition-all"></button>
+      <button type="button" data-gp-dot="4" aria-label="Slide 4" class="size-2 rounded-full bg-slate-300 dark:bg-white/35 transition-all"></button>
+    </div>
+    <span data-gp-count class="hidden sm:inline font-mono text-[11px] font-semibold text-slate-600 dark:text-zinc-300">01/04</span>
+    <button type="button" data-gp-next class="inline-flex items-center gap-1 rounded-full bg-slate-900 dark:bg-white px-3.5 py-1.5 font-semibold text-white dark:text-slate-950 shadow-sm transition hover:bg-slate-800 dark:hover:bg-zinc-200">Next →</button>
+  </div>
+</nav>
+<script>
+  document.querySelectorAll('[data-glass-pager]').forEach((nav) => {
+    const dots = Array.from(nav.querySelectorAll('[data-gp-dot]'));
+    const count = nav.querySelector('[data-gp-count]');
+    let step = 1;
+    const render = () => {
+      dots.forEach((d) => {
+        const idx = Number(d.getAttribute('data-gp-dot'));
+        d.className = idx === step
+          ? 'h-2 w-7 rounded-full bg-slate-900 dark:bg-white transition-all'
+          : 'size-2 rounded-full bg-slate-300 dark:bg-white/35 transition-all';
+      });
+      if (count) count.textContent = '0' + step + '/04';
+    };
+    dots.forEach((d) => d.addEventListener('click', () => { step = Number(d.getAttribute('data-gp-dot')); render(); }));
+    nav.querySelector('[data-gp-prev]')?.addEventListener('click', () => { step = step === 1 ? 4 : step - 1; render(); });
+    nav.querySelector('[data-gp-next]')?.addEventListener('click', () => { step = step === 4 ? 1 : step + 1; render(); });
+  });
+</script>

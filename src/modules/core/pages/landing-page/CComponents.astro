@@ -1,55 +1,53 @@
 ---
+import Container from '@/core/components/Container.astro'
 import ItemCard from '@/core/pages/landing-page/ItemCard.astro'
-import Button from '@/core/design-system/Button.astro'
+import { CARDS } from '@/constants/Card'
 ---
 
-<section
-	class='relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 pt-32'
->
-	<div class='max-w-2xl'>
-		<h2
-			class='text-base lg:text-lg pl-1 leading-7 text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent font-semibold'
-		>
-			Components
-		</h2>
-		<p
-			class='mt-4 text-2xl lg:text-5xl tracking-tight text-slate-900 dark:text-white font-heading font-semibold'
-		>
-			Elegant, ready-to-implement user interface components for your project,
-			designed to enhance aesthetics and functionality.
-		</p>
-		<div class='max-w-xl'>
-			<p
-				class='mt-4 text-sm lg:text-base leading-7 dark:text-white text-slate-700 font-accent font-normal'
-			>
-				Components and templates expertly designed to bring your next project to
-				life with a touch of unmatched excellence and style.
-			</p>
+<section class='border-b border-rule bg-paper py-20 sm:py-28'>
+	<Container>
+		<!-- Asymmetric Section Header -->
+		<div class='mb-12 grid grid-cols-1 items-end gap-6 lg:grid-cols-12'>
+			<div class='lg:col-span-8'>
+				<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay'>
+					<span>02</span>
+					<span class='text-rule-strong'>/</span>
+					<span>COMPONENT ARCHIVE</span>
+				</div>
+				<h2 class='mt-3 font-heading text-3xl font-bold leading-[1.06] tracking-tight text-ink sm:text-5xl'>
+					Curated interface blocks,{' '}
+					<span class='font-serif italic font-normal text-clay'>engineered</span>{' '}
+					for clarity.
+				</h2>
+			</div>
+
+			<div class='flex flex-col items-start gap-4 lg:col-span-4 lg:items-end'>
+				<p class='font-accent text-sm leading-relaxed text-ink-secondary lg:text-right'>
+					{CARDS.length} UI families &amp; {CARDS.length * 10} responsive visual designs inspired by Dribbble, Tailwind UI, Liquid Glass, Linear, Stripe, and Neo-Brutalism.
+				</p>
+				<a
+					href='/components'
+					class='tactile-btn inline-flex items-center gap-2 bg-ink px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper-elevated hover:bg-obsidian-soft'
+				>
+					<span>Browse All {CARDS.length} Families</span>
+					<span aria-hidden='true'>↗</span>
+				</a>
+			</div>
 		</div>
-		<div class='mt-6'>
+
+		<!-- Featured 12 Families Grid -->
+		<ItemCard limit={12} />
+
+		<div class='mt-8 flex flex-col items-center justify-between gap-4 border border-rule bg-paper-elevated px-6 py-4 sm:flex-row'>
+			<span class='font-mono text-xs text-ink-secondary'>
+				Plus {CARDS.length - 12} more categories: Heroes, Pricing Pages, Drawers, Selects, Shopping Carts, Checkouts, Product Pages, Filters &amp; more.
+			</span>
 			<a
-				class='text-sm lg:text-base text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent hover:text-[#cea472] transition-colors font-medium'
 				href='/components'
-				>Browse all components <span aria-hidden='true'>→</span>
+				class='shrink-0 font-mono text-xs font-semibold uppercase tracking-wider text-clay hover:underline'
+			>
+				View Full Directory ({CARDS.length}) →
 			</a>
 		</div>
-	</div>
-	<div>
-		<ItemCard />
-	</div>
-	<div
-		class='pointer-events-none absolute -inset-x-2.5 -bottom-2.5 h-[16.6%] w-full bg-linear-to-t select-none overflow-hidden from-white dark:from-darker to-transparent sm:h-[44.4%]'
-	>
-	</div>
-	<div
-		class='select-none pointer-events-none relative z-10 -mt-5 flex justify-center'
-	>
-		<Button
-			href='/components'
-			target='_blank'
-			ariaLabel='More components'
-			text='More components'
-			additionalClasses='bg-[#93603e] hover:bg-[#c18156] transition-colors duration-100 select-none pointer-events-auto'
-		/>
-	</div>
+	</Container>
 </section>

@@ -1,0 +1,41 @@
+<section data-nl-8 class="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0D12] font-mono text-slate-900 dark:text-white shadow-xl dark:shadow-2xl">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/90 px-4 py-3 text-[11px]">
+    <div class="flex items-center gap-3 min-w-0">
+      <div class="flex items-center gap-1.5 shrink-0">
+        <span class="size-2.5 rounded-full bg-rose-400"></span>
+        <span class="size-2.5 rounded-full bg-amber-400"></span>
+        <span class="size-2.5 rounded-full bg-emerald-400"></span>
+      </div>
+      <span class="truncate text-emerald-700 dark:text-emerald-400">$ dune subscribe --digest=weekly</span>
+    </div>
+    <button type="button" data-copy-cli class="rounded-md border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-2 py-0.5 text-[10px] font-semibold text-slate-700 dark:text-zinc-200 hover:border-emerald-500">Copy CLI</button>
+  </div>
+  <div class="p-6 sm:p-8">
+    <h2 class="font-sans text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Changelog updates straight to your terminal inbox.</h2>
+    <p class="mt-2 font-sans text-sm text-slate-600 dark:text-zinc-400">Security advisories, runtime benchmarks, and CLI tooling releases in crisp plaintext &amp; HTML.</p>
+    <div class="mt-4 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/60 px-3.5 py-2.5 text-[11px] text-slate-600 dark:text-zinc-400">
+      <span class="text-slate-900 dark:text-zinc-200">channel:</span> "stable" · <span class="text-slate-900 dark:text-zinc-200">cadence:</span> "14d" · <span class="text-slate-900 dark:text-zinc-200">subscribers:</span> 14,820
+    </div>
+    <form data-nl-form class="mt-5 flex flex-col gap-2.5 sm:flex-row">
+      <input type="email" required placeholder="ops@platform.io" class="w-full flex-1 rounded-xl border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-4 py-2.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none" />
+      <button type="submit" class="shrink-0 rounded-xl bg-emerald-400 px-5 py-2.5 text-xs font-bold text-black hover:bg-emerald-300 transition">Subscribe Now</button>
+    </form>
+    <p data-nl-msg class="hidden mt-3 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">✓ 200 OK · Added to stable release dispatch.</p>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-8]').forEach((root) => {
+    const copyBtn = root.querySelector('[data-copy-cli]');
+    const form = root.querySelector('[data-nl-form]');
+    const msg = root.querySelector('[data-nl-msg]');
+    copyBtn?.addEventListener('click', () => {
+      navigator.clipboard?.writeText('npx dune subscribe --digest=weekly').catch(() => {});
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.textContent = 'Copy CLI'; }, 1600);
+    });
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg?.classList.remove('hidden');
+    });
+  });
+</script>

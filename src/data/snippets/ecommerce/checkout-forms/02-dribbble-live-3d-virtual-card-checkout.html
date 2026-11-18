@@ -1,0 +1,57 @@
+<section data-ck2 class="mx-auto w-full max-w-4xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0E16] p-6 sm:p-8 shadow-xl text-slate-900 dark:text-zinc-100">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+    <div class="md:col-span-5 space-y-5">
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 text-white shadow-2xl ring-1 ring-white/15">
+        <div class="flex items-center justify-between">
+          <div class="h-7 w-10 rounded-md bg-gradient-to-br from-amber-200 to-amber-500 opacity-90"></div>
+          <span data-ck2-vbrand class="font-mono text-sm font-black tracking-widest">VISA</span>
+        </div>
+        <p data-ck2-vnum class="mt-8 font-mono text-lg tracking-[0.18em]">4242 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</p>
+        <div class="mt-6 flex items-end justify-between text-xs">
+          <div><span class="block font-mono text-[9px] uppercase text-white/50">CARDHOLDER</span><strong data-ck2-vname class="uppercase tracking-wider">ELENA VANCE</strong></div>
+          <div class="text-right"><span class="block font-mono text-[9px] uppercase text-white/50">EXPIRES</span><strong data-ck2-vexp class="font-mono">08/29</strong></div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/70 p-4 text-xs space-y-1.5">
+        <div class="flex justify-between"><span class="text-slate-500 dark:text-zinc-400">Atelier Desk Monitor Light</span><span class="font-mono font-bold">$195.00</span></div>
+        <div class="flex justify-between"><span class="text-slate-500 dark:text-zinc-400">Insured Air Shipping</span><span class="font-mono text-emerald-600 dark:text-emerald-400">Included</span></div>
+      </div>
+    </div>
+
+    <div class="md:col-span-7 space-y-4 text-xs">
+      <div>
+        <h3 class="text-base font-bold">Payment Details</h3>
+        <p class="mt-0.5 text-slate-500 dark:text-zinc-400">Card preview updates live as you enter cardholder information.</p>
+      </div>
+      <div>
+        <label class="block font-semibold text-slate-700 dark:text-zinc-300">Cardholder Name</label>
+        <input type="text" data-ck2-name value="Elena Vance" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2.5 focus:border-indigo-500 focus:outline-none" />
+      </div>
+      <div>
+        <label class="block font-semibold text-slate-700 dark:text-zinc-300">Card Number</label>
+        <input type="text" data-ck2-num value="4242 8810 2201 4242" maxlength="19" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2.5 font-mono focus:border-indigo-500 focus:outline-none" />
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="block font-semibold text-slate-700 dark:text-zinc-300">Expiry (MM/YY)</label><input type="text" data-ck2-exp value="08/29" maxlength="5" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2.5 font-mono focus:border-indigo-500 focus:outline-none" /></div>
+        <div><label class="block font-semibold text-slate-700 dark:text-zinc-300">Security Code (CVV)</label><input type="text" value="842" maxlength="4" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 px-3.5 py-2.5 font-mono focus:border-indigo-500 focus:outline-none" /></div>
+      </div>
+      <button type="button" data-ck2-pay class="cursor-pointer w-full rounded-xl bg-indigo-600 py-3.5 font-semibold text-white hover:bg-indigo-500 transition-colors">Pay $195.00 Now</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck2]'); if (!root) return;
+  const nInp = root.querySelector('[data-ck2-name]'), cInp = root.querySelector('[data-ck2-num]'), eInp = root.querySelector('[data-ck2-exp]'), pay = root.querySelector('[data-ck2-pay]');
+  const vName = root.querySelector('[data-ck2-vname]'), vNum = root.querySelector('[data-ck2-vnum]'), vExp = root.querySelector('[data-ck2-vexp]'), vBrand = root.querySelector('[data-ck2-vbrand]');
+  nInp?.addEventListener('input', () => { if (vName) vName.textContent = (nInp.value || 'CARDHOLDER').toUpperCase(); });
+  eInp?.addEventListener('input', () => { if (vExp) vExp.textContent = eInp.value || 'MM/YY'; });
+  cInp?.addEventListener('input', () => {
+    const raw = cInp.value.replace(/D/g, '').slice(0, 16);
+    cInp.value = raw.replace(/(.{4})/g, '$1 ').trim();
+    if (vNum) vNum.textContent = cInp.value || '•••• •••• •••• ••••';
+    if (vBrand) vBrand.textContent = raw.startsWith('5') ? 'MASTERCARD' : raw.startsWith('3') ? 'AMEX' : 'VISA';
+  });
+  pay?.addEventListener('click', () => { pay.textContent = 'Transaction Approved ✓'; });
+})();
+</script>

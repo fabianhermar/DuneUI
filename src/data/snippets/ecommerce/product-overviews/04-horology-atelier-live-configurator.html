@@ -1,0 +1,63 @@
+<section data-po4 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-br from-slate-50 dark:from-slate-950 via-white dark:via-indigo-950/80 to-indigo-50/70 dark:to-zinc-950 p-6 sm:p-8 text-slate-900 dark:text-white shadow-xl">
+  <div class="grid grid-cols-1 gap-7 rounded-2xl border border-slate-900/10 dark:border-white/15 bg-white/80 dark:bg-white/[0.06] p-5 sm:p-7 backdrop-blur-2xl lg:grid-cols-12 lg:items-center">
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-white/15 lg:col-span-6">
+      <img src="/images/heroes/luxury-watch.jpg" alt="Chronos Titanium GMT" class="h-72 sm:h-96 w-full object-cover" />
+      <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl border border-white/20 bg-slate-950/75 px-4 py-2.5 text-[11px] text-white backdrop-blur-md">
+        <span class="font-mono">CAL. 904-Si AUTOMATIC</span>
+        <span class="font-mono text-indigo-300">39mm &times; 10.4mm · 100m WR</span>
+      </div>
+    </div>
+    <div class="space-y-5 lg:col-span-6">
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300">Geneva Numbered Allocation</span>
+          <span class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">Ref. 418-TI</span>
+        </div>
+        <h2 class="mt-1.5 text-2xl sm:text-3xl font-semibold tracking-tight">Chronos Titanium GMT</h2>
+        <p data-po4-price class="mt-1 font-mono text-2xl font-bold text-slate-900 dark:text-white">$4,850</p>
+      </div>
+      <p class="text-xs leading-relaxed text-slate-600 dark:text-indigo-100/80">Grade 5 brushed titanium case housing a 72-hour twin-barrel silicon hairspring caliber with independent jumping local hour hand.</p>
+      <div class="space-y-2">
+        <p class="text-xs font-semibold">Case &amp; Bezel Alloy: <span data-po4-case-lbl class="font-normal text-slate-500 dark:text-indigo-200">Brushed Grade 5 Titanium</span></p>
+        <div class="flex flex-wrap gap-2.5 text-xs">
+          <button type="button" data-po4-c="Brushed Grade 5 Titanium" data-po4-cp="4850" class="flex items-center gap-2 rounded-xl border-2 border-indigo-600 dark:border-white bg-indigo-50/70 dark:bg-white/15 px-3.5 py-2 font-semibold">
+            <span class="size-3.5 rounded-full bg-zinc-400 ring-1 ring-black/20"></span> Titanium ($4,850)
+          </button>
+          <button type="button" data-po4-c="DLC Stealth Matte" data-po4-cp="5150" class="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/20 px-3.5 py-2 font-medium text-slate-700 dark:text-zinc-200 hover:border-slate-400 dark:hover:border-white/50">
+            <span class="size-3.5 rounded-full bg-zinc-900 ring-1 ring-white/40"></span> DLC Matte ($5,150)
+          </button>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <p class="text-xs font-semibold">Quick-Release Strap: <span data-po4-str-lbl class="font-normal text-slate-500 dark:text-indigo-200">Integrated Titanium Bracelet</span></p>
+        <div class="grid grid-cols-3 gap-2 text-[11px] font-medium">
+          <button type="button" data-po4-s="Integrated Titanium Bracelet" class="rounded-xl border-2 border-indigo-600 dark:border-white bg-indigo-50/70 dark:bg-white/15 py-2 text-center font-semibold">TI Bracelet</button>
+          <button type="button" data-po4-s="FKM Slate Rubber" class="rounded-xl border border-slate-200 dark:border-white/20 py-2 text-center hover:border-slate-400 dark:hover:border-white/50">FKM Rubber</button>
+          <button type="button" data-po4-s="Barenia Saddle Calf" class="rounded-xl border border-slate-200 dark:border-white/20 py-2 text-center hover:border-slate-400 dark:hover:border-white/50">Calfskin</button>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 pt-2">
+        <button type="button" data-po4-cta class="flex-1 rounded-xl bg-slate-900 dark:bg-white px-5 py-3.5 text-xs font-bold text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-zinc-200 transition">Reserve Allocation &mdash; $4,850</button>
+        <button type="button" class="rounded-xl border border-slate-300 dark:border-white/20 px-4 py-3.5 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-white/10">Book Boutique Viewing</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-po4]'); if (!r) return;
+  const pr = r.querySelector('[data-po4-price]'), cLbl = r.querySelector('[data-po4-case-lbl]'), sLbl = r.querySelector('[data-po4-str-lbl]'), cta = r.querySelector('[data-po4-cta]');
+  const cs = [...r.querySelectorAll('[data-po4-c]')], ss = [...r.querySelectorAll('[data-po4-s]')];
+  let curP = '4,850';
+  cs.forEach(b => b.addEventListener('click', () => {
+    curP = Number(b.dataset.po4Cp).toLocaleString(); cLbl.textContent = b.dataset.po4C; pr.textContent = '$' + curP;
+    cta.textContent = 'Reserve Allocation — $' + curP;
+    cs.forEach(x => x.className = x === b ? 'flex items-center gap-2 rounded-xl border-2 border-indigo-600 dark:border-white bg-indigo-50/70 dark:bg-white/15 px-3.5 py-2 font-semibold' : 'flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/20 px-3.5 py-2 font-medium text-slate-700 dark:text-zinc-200 hover:border-slate-400 dark:hover:border-white/50');
+  }));
+  ss.forEach(b => b.addEventListener('click', () => {
+    sLbl.textContent = b.dataset.po4S;
+    ss.forEach(x => x.className = x === b ? 'rounded-xl border-2 border-indigo-600 dark:border-white bg-indigo-50/70 dark:bg-white/15 py-2 text-center font-semibold' : 'rounded-xl border border-slate-200 dark:border-white/20 py-2 text-center hover:border-slate-400 dark:hover:border-white/50');
+  }));
+  cta?.addEventListener('click', () => { cta.textContent = 'Allocation Held (' + sLbl.textContent + ')'; });
+})();
+</script>

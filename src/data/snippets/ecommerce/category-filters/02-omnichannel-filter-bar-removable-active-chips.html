@@ -1,0 +1,183 @@
+<section data-cf2 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-7 text-xs text-slate-900 dark:text-zinc-100 shadow-sm space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Omnichannel Storefront</span>
+      <h2 class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">Cross-Category Catalog Explorer</h2>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <input type="search" data-cf2-q placeholder="Search product, brand, SKU..." class="w-48 sm:w-56 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-2 text-xs focus:border-indigo-500 focus:outline-none" />
+      <select data-cf2-sort aria-label="Sort items" class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-2 font-semibold">
+        <option value="featured">Sort: Featured</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-3 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/60 p-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">1. Department</label>
+      <select data-cf2-dept aria-label="Filter category" class="mt-1.5 w-full rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 font-semibold">
+        <option value="all">All Categories (6)</option>
+        <option value="footwear">Footwear</option>
+        <option value="knitwear">Apparel &amp; Knitwear</option>
+        <option value="audio">Audio &amp; Synths</option>
+        <option value="horology">Horology &amp; Clocks</option>
+        <option value="home">Home &amp; Ceramics</option>
+      </select>
+    </div>
+    <div>
+      <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400">
+        <span>2. Max Budget</span>
+        <span data-cf2-plbl class="font-mono text-indigo-600 dark:text-indigo-400">$5,000</span>
+      </div>
+      <input type="range" min="60" max="5000" step="20" value="5000" data-cf2-price class="mt-2.5 w-full accent-indigo-600" />
+      <div class="flex justify-between font-mono text-[10px] text-slate-400"><span>$60</span><span>$500</span><span>$5,000</span></div>
+    </div>
+    <div>
+      <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">3. Fulfillment Hub &amp; Color</label>
+      <div class="mt-1.5 flex gap-1.5">
+        <select data-cf2-hub aria-label="Filter shipping hub" class="flex-1 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-2 font-semibold">
+          <option value="all">Global Hubs</option>
+          <option value="eu">EU (Zurich)</option>
+          <option value="us">US (Seattle)</option>
+          <option value="jp">JP (Kyoto)</option>
+        </select>
+        <select data-cf2-col aria-label="Filter color" class="rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-2 font-semibold">
+          <option value="all">Any Shade</option>
+          <option value="dark">Obsidian</option>
+          <option value="warm">Warm / Sand</option>
+          <option value="metal">Silver / Brass</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">4. Delivery &amp; Deals</span>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <label class="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1.5 font-medium"><input type="checkbox" data-cf2-fast class="accent-indigo-600" /> 24h Dispatch</label>
+        <label class="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1.5 font-medium"><input type="checkbox" data-cf2-sale class="accent-indigo-600" /> Member Deal</label>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-2 border-y border-slate-100 dark:border-zinc-800 py-3">
+    <div data-cf2-chipbar class="flex flex-wrap items-center gap-1.5">
+      <span class="font-semibold text-slate-500 dark:text-zinc-400">Active Filters:</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span data-cf2-count class="font-mono text-[11px] font-bold text-slate-600 dark:text-zinc-300">6 RESULTS</span>
+      <button type="button" data-cf2-clr class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Reset All</button>
+    </div>
+  </div>
+  <div data-cf2-grid class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <article data-cf2-card data-idx="0" data-name="alpine trail xt-4 sneaker footwear" data-dept="footwear" data-price="185" data-rating="4.9" data-hub="us" data-col="dark" data-fast="1" data-sale="1" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/sneaker.jpg" alt="Alpine Trail XT-4" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-indigo-50 dark:bg-indigo-500/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-indigo-700 dark:text-indigo-300">FOOTWEAR</span><span class="text-amber-500 font-semibold">4.9&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Alpine Trail XT-4</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$185 &middot; US Hub &middot; 24h Ship</p>
+      </div>
+    </article>
+    <article data-cf2-card data-idx="1" data-name="biella extra-fine merino crew knitwear" data-dept="knitwear" data-price="145" data-rating="4.8" data-hub="eu" data-col="warm" data-fast="1" data-sale="0" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/knitwear.jpg" alt="Merino Crew" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] font-bold">APPAREL</span><span class="text-amber-500 font-semibold">4.8&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Biella Merino Crew</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$145 &middot; EU Hub &middot; 24h Ship</p>
+      </div>
+    </article>
+    <article data-cf2-card data-idx="2" data-name="spatial reference studio headphones audio" data-dept="audio" data-price="349" data-rating="4.9" data-hub="eu" data-col="dark" data-fast="1" data-sale="1" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/headphones.jpg" alt="Spatial Studio" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-emerald-50 dark:bg-emerald-500/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-emerald-700 dark:text-emerald-300">AUDIO DEAL</span><span class="text-amber-500 font-semibold">4.9&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Spatial Reference Studio</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$349 &middot; EU Hub &middot; 24h Ship</p>
+      </div>
+    </article>
+    <article data-cf2-card data-idx="3" data-name="kyoto hand-thrown stoneware carafe ceramic home" data-dept="home" data-price="68" data-rating="4.9" data-hub="jp" data-col="warm" data-fast="1" data-sale="0" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/carafe.jpg" alt="Kyoto Carafe" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-amber-50 dark:bg-amber-500/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-amber-800 dark:text-amber-300">CERAMICS</span><span class="text-amber-500 font-semibold">4.9&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Kyoto Stoneware Carafe</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$68 &middot; JP Hub &middot; 24h Ship</p>
+      </div>
+    </article>
+    <article data-cf2-card data-idx="4" data-name="architectural brass desk lamp lighting home" data-dept="home" data-price="210" data-rating="4.7" data-hub="us" data-col="metal" data-fast="0" data-sale="1" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/ecommerce/lamp.jpg" alt="Brass Lamp" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-amber-50 dark:bg-amber-500/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-amber-800 dark:text-amber-300">HOME DEAL</span><span class="text-amber-500 font-semibold">4.7&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Architectural Brass Lamp</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$210 &middot; US Hub &middot; 3-Day</p>
+      </div>
+    </article>
+    <article data-cf2-card data-idx="5" data-name="chronos titanium gmt watch horology" data-dept="horology" data-price="4850" data-rating="5.0" data-hub="eu" data-col="metal" data-fast="0" data-sale="0" class="flex items-center gap-3.5 rounded-2xl border border-slate-200 dark:border-zinc-800 p-3.5">
+      <img src="/images/heroes/luxury-watch.jpg" alt="Titanium GMT" class="size-16 rounded-xl object-cover" />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center justify-between"><span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] font-bold">HOROLOGY</span><span class="text-amber-500 font-semibold">5.0&#9733;</span></div>
+        <p class="mt-1 font-bold text-slate-900 dark:text-white truncate">Chronos Titanium GMT</p>
+        <p class="text-[11px] text-slate-500 dark:text-zinc-400">$4,850 &middot; EU Hub &middot; Insured</p>
+      </div>
+    </article>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cf2]'); if (!r) return;
+  const q = r.querySelector('[data-cf2-q]'), sort = r.querySelector('[data-cf2-sort]'), d = r.querySelector('[data-cf2-dept]');
+  const pr = r.querySelector('[data-cf2-price]'), plbl = r.querySelector('[data-cf2-plbl]'), h = r.querySelector('[data-cf2-hub]'), col = r.querySelector('[data-cf2-col]');
+  const fast = r.querySelector('[data-cf2-fast]'), sale = r.querySelector('[data-cf2-sale]');
+  const chipbar = r.querySelector('[data-cf2-chipbar]'), cnt = r.querySelector('[data-cf2-count]'), grid = r.querySelector('[data-cf2-grid]'), cards = [...r.querySelectorAll('[data-cf2-card]')];
+  const makeChip = (label, onRemove) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'inline-flex items-center gap-1.5 rounded-full bg-indigo-50 dark:bg-indigo-500/15 px-3 py-1 font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100';
+    b.innerHTML = '<span>' + label + '</span><span>&times;</span>';
+    b.addEventListener('click', onRemove);
+    chipbar.appendChild(b);
+  };
+  const upd = () => {
+    const maxP = Number(pr.value), query = q.value.trim().toLowerCase();
+    plbl.textContent = '$' + maxP.toLocaleString();
+    chipbar.innerHTML = '<span class="font-semibold text-slate-500 dark:text-zinc-400">Active Filters:</span>';
+    let hasChip = false;
+    if (d.value !== 'all') { hasChip = true; makeChip(d.options[d.selectedIndex].text, () => { d.value = 'all'; upd(); }); }
+    if (maxP < 5000) { hasChip = true; makeChip('Max $' + maxP.toLocaleString(), () => { pr.value = '5000'; upd(); }); }
+    if (h.value !== 'all') { hasChip = true; makeChip(h.options[h.selectedIndex].text, () => { h.value = 'all'; upd(); }); }
+    if (col.value !== 'all') { hasChip = true; makeChip(col.options[col.selectedIndex].text, () => { col.value = 'all'; upd(); }); }
+    if (fast.checked) { hasChip = true; makeChip('24h Dispatch', () => { fast.checked = false; upd(); }); }
+    if (sale.checked) { hasChip = true; makeChip('Member Deal', () => { sale.checked = false; upd(); }); }
+    if (query) { hasChip = true; makeChip('“' + query + '”', () => { q.value = ''; upd(); }); }
+    if (!hasChip) {
+      const sp = document.createElement('span');
+      sp.className = 'text-slate-400 dark:text-zinc-500';
+      sp.textContent = 'All Departments · No constraints applied';
+      chipbar.appendChild(sp);
+    }
+    const sorted = [...cards].sort((a, b) => {
+      if (sort.value === 'asc') return Number(a.dataset.price) - Number(b.dataset.price);
+      if (sort.value === 'desc') return Number(b.dataset.price) - Number(a.dataset.price);
+      if (sort.value === 'rating') return Number(b.dataset.rating) - Number(a.dataset.rating);
+      return Number(a.dataset.idx) - Number(b.dataset.idx);
+    });
+    let n = 0;
+    sorted.forEach(c => {
+      grid.appendChild(c);
+      const ok = (d.value === 'all' || c.dataset.dept === d.value)
+        && Number(c.dataset.price) <= maxP
+        && (h.value === 'all' || c.dataset.hub === h.value)
+        && (col.value === 'all' || c.dataset.col === col.value)
+        && (!fast.checked || c.dataset.fast === '1')
+        && (!sale.checked || c.dataset.sale === '1')
+        && (!query || c.dataset.name.includes(query));
+      c.classList.toggle('hidden', !ok);
+      if (ok) n++;
+    });
+    cnt.textContent = n + (n === 1 ? ' RESULT' : ' RESULTS');
+  };
+  [d, h, col, fast, sale, sort].forEach(el => el?.addEventListener('change', upd));
+  pr?.addEventListener('input', upd); q?.addEventListener('input', upd);
+  r.querySelector('[data-cf2-clr]')?.addEventListener('click', () => {
+    d.value = 'all'; pr.value = '5000'; h.value = 'all'; col.value = 'all'; fast.checked = false; sale.checked = false; q.value = ''; sort.value = 'featured'; upd();
+  });
+  upd();
+})();
+</script>

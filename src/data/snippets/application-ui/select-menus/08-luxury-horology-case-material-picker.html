@@ -1,0 +1,36 @@
+<div data-sel8 class="mx-auto w-full max-w-md rounded-2xl border border-emerald-900/20 dark:border-emerald-800/50 bg-[#F4F6F3] dark:bg-[#0D1712] p-5 text-stone-900 dark:text-stone-100 shadow-sm">
+  <div class="flex items-center gap-3.5 border-b border-stone-200 dark:border-emerald-900/50 pb-3.5">
+    <img src="/images/heroes/luxury-watch.jpg" alt="Chronograph" class="size-11 rounded-xl object-cover ring-1 ring-amber-500/40" />
+    <div>
+      <p class="font-mono text-[10px] uppercase tracking-widest text-amber-700 dark:text-amber-300">CASE CONFIGURATION</p>
+      <p data-sel8-picked class="font-serif text-base">Grade 5 Brushed Titanium</p>
+    </div>
+  </div>
+  <div class="mt-3.5 grid grid-cols-2 gap-2.5 text-xs">
+    <button type="button" data-sel8-mat="Grade 5 Brushed Titanium" class="cursor-pointer flex items-center gap-2.5 rounded-xl border-2 border-amber-600 dark:border-amber-400 bg-white dark:bg-emerald-950/60 p-2.5 text-left font-semibold">
+      <span class="size-4 shrink-0 rounded-full bg-gradient-to-br from-slate-300 to-slate-500 ring-1 ring-black/20"></span>Titanium
+    </button>
+    <button type="button" data-sel8-mat="18k Rose Gold" class="cursor-pointer flex items-center gap-2.5 rounded-xl border border-stone-200 dark:border-emerald-900/50 bg-white/70 dark:bg-emerald-950/30 p-2.5 text-left font-medium hover:border-amber-500">
+      <span class="size-4 shrink-0 rounded-full bg-gradient-to-br from-amber-200 to-rose-400 ring-1 ring-black/20"></span>18k Rose Gold
+    </button>
+    <button type="button" data-sel8-mat="DLC Matte Ceramic" class="cursor-pointer flex items-center gap-2.5 rounded-xl border border-stone-200 dark:border-emerald-900/50 bg-white/70 dark:bg-emerald-950/30 p-2.5 text-left font-medium hover:border-amber-500">
+      <span class="size-4 shrink-0 rounded-full bg-gradient-to-br from-zinc-700 to-black ring-1 ring-white/20"></span>Matte Ceramic
+    </button>
+    <button type="button" data-sel8-mat="950 Platinum Polished" class="cursor-pointer flex items-center gap-2.5 rounded-xl border border-stone-200 dark:border-emerald-900/50 bg-white/70 dark:bg-emerald-950/30 p-2.5 text-left font-medium hover:border-amber-500">
+      <span class="size-4 shrink-0 rounded-full bg-gradient-to-br from-white to-slate-300 ring-1 ring-black/20"></span>950 Platinum
+    </button>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel8]').forEach((root) => {
+    const btns = [...root.querySelectorAll('[data-sel8-mat]')], picked = root.querySelector('[data-sel8-picked]');
+    const onCls = 'cursor-pointer flex items-center gap-2.5 rounded-xl border-2 border-amber-600 dark:border-amber-400 bg-white dark:bg-emerald-950/60 p-2.5 text-left font-semibold';
+    const offCls = 'cursor-pointer flex items-center gap-2.5 rounded-xl border border-stone-200 dark:border-emerald-900/50 bg-white/70 dark:bg-emerald-950/30 p-2.5 text-left font-medium hover:border-amber-500';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; });
+      if (picked) picked.textContent = b.dataset.sel8Mat || '';
+    }));
+  });
+})();
+</script>

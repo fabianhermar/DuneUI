@@ -1,0 +1,69 @@
+{
+  "slug": "team",
+  "index": "37",
+  "tag": "Marketing",
+  "title": "Team & Profiles",
+  "description": "Leadership team directories, social creator profile cards, editorial partner bios, OSS contributor lists, speaker cards, and advisory rosters.",
+  "specs": [
+    {
+      "file": "01-4-col-leadership-directory.html",
+      "title": "4-Col Leadership Directory",
+      "styleTag": "Tailwind · Team",
+      "canvas": "light"
+    },
+    {
+      "file": "02-dark-engineering-team-grid.html",
+      "title": "Dark Engineering Team Grid",
+      "styleTag": "Linear · Dark Team",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-creator-profile-showcase.html",
+      "title": "Creator Profile Showcase",
+      "styleTag": "Social · Profile",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-editorial-partner-bio.html",
+      "title": "Editorial Partner Bio",
+      "styleTag": "Editorial Serif",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-liquid-glass-bio-spotlight.html",
+      "title": "Liquid Glass Bio Spotlight",
+      "styleTag": "Liquid Glass 2026",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-brutalist-core-squad-grid.html",
+      "title": "Brutalist Core Squad Grid",
+      "styleTag": "Brutalist · Squad",
+      "canvas": "light"
+    },
+    {
+      "file": "07-open-source-maintainers.html",
+      "title": "Open Source Maintainers",
+      "styleTag": "GitHub · OSS",
+      "canvas": "light"
+    },
+    {
+      "file": "08-design-engineer-bio-card.html",
+      "title": "Design Engineer Bio Card",
+      "styleTag": "Freelance · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-keynote-speaker-card.html",
+      "title": "Keynote Speaker Card",
+      "styleTag": "Summit · Speaker",
+      "canvas": "light"
+    },
+    {
+      "file": "10-3-col-advisory-directory.html",
+      "title": "3-Col Advisory Directory",
+      "styleTag": "Advisory · Trust",
+      "canvas": "muted"
+    }
+  ]
+}

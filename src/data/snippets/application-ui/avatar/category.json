@@ -1,0 +1,69 @@
+{
+  "slug": "avatar",
+  "index": "03",
+  "tag": "Identity",
+  "title": "Avatars",
+  "description": "10 high-craft identity & presence avatars: interactive status switchers, Figma collaborator rosters, studio portrait story strips, AI telemetry orbs, and shape-morphing design system token grids.",
+  "specs": [
+    {
+      "file": "01-interactive-presence-status-switcher.html",
+      "title": "Interactive Presence & Status Switcher",
+      "styleTag": "SaaS · Presence",
+      "canvas": "light"
+    },
+    {
+      "file": "02-live-collaborator-stack-roster.html",
+      "title": "Live Collaborator Stack & Roster",
+      "styleTag": "Figma · Multiplayer",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-verified-creator-squircle-card.html",
+      "title": "Verified Creator Squircle Card",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-brutalist-photo-monogram-crew.html",
+      "title": "Brutalist Photo & Monogram Crew",
+      "styleTag": "Brutalist · Stack",
+      "canvas": "light"
+    },
+    {
+      "file": "05-linear-assignee-reviewer-bar.html",
+      "title": "Linear Assignee & Reviewer Bar",
+      "styleTag": "Linear · Assignee",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-interactive-social-story-ring-strip.html",
+      "title": "Interactive Social Story Ring Strip",
+      "styleTag": "Social · Story Strip",
+      "canvas": "light"
+    },
+    {
+      "file": "07-verified-reviewer-trust-cluster.html",
+      "title": "Verified Reviewer Trust Cluster",
+      "styleTag": "SaaS · Social Proof",
+      "canvas": "light"
+    },
+    {
+      "file": "08-editorial-author-co-author-plate.html",
+      "title": "Editorial Author & Co-Author Plate",
+      "styleTag": "Editorial · Print",
+      "canvas": "light"
+    },
+    {
+      "file": "09-ai-voice-telemetry-supervisor-orb.html",
+      "title": "AI Voice Telemetry & Supervisor Orb",
+      "styleTag": "AI Studio · Voice",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-avatar-scale-shape-token-matrix.html",
+      "title": "Avatar Scale & Shape Token Matrix",
+      "styleTag": "Design System",
+      "canvas": "muted"
+    }
+  ]
+}

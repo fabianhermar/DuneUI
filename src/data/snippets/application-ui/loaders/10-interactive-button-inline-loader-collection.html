@@ -1,0 +1,49 @@
+<section data-ldr10 class="mx-auto w-full max-w-3xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-8 text-xs text-slate-900 dark:text-zinc-100 shadow-sm space-y-5">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Interactive Async Controls</span>
+      <h2 class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">Button &amp; Inline Micro-Loaders Kit</h2>
+    </div>
+    <span class="text-slate-500 dark:text-zinc-400">Click any button to trigger its async cycle</span>
+  </div>
+  <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+    <button type="button" data-ldr10-btn="Deploy Complete ✓" data-ldr10-orig="Deploy Production..." class="flex items-center justify-center gap-2.5 rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-500 transition">
+      <span class="size-4 rounded-full border-2 border-white border-t-transparent animate-spin"></span>
+      <span>Deploy Production...</span>
+    </button>
+    <button type="button" data-ldr10-btn="Invoice Exported ✓" data-ldr10-orig="Generating PDF (82%)" class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-4 py-3 font-semibold text-slate-900 dark:text-white hover:border-slate-400 transition">
+      <span class="flex gap-1">
+        <span class="size-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-bounce"></span>
+        <span class="size-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse"></span>
+        <span class="size-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-bounce"></span>
+      </span>
+      <span>Generating PDF (82%)</span>
+    </button>
+    <button type="button" data-ldr10-btn="Index Synced ✓" data-ldr10-orig="Syncing Vector DB..." class="flex items-center justify-center gap-2.5 rounded-xl bg-slate-900 dark:bg-white px-4 py-3 font-semibold text-white dark:text-slate-950 hover:opacity-90 transition">
+      <span class="size-2 rounded-full bg-emerald-400 dark:bg-emerald-600 animate-ping"></span>
+      <span>Syncing Vector DB...</span>
+    </button>
+    <button type="button" data-ldr10-btn="MINTED #0421 ✓" data-ldr10-orig="MINTING EDITION..." class="flex items-center justify-center gap-2.5 border-2 border-black dark:border-zinc-200 bg-[#FFE95A] px-4 py-3 font-mono font-black text-black shadow-[3px_3px_0_#000] dark:shadow-[3px_3px_0_#e4e4e7]">
+      <span class="inline-block size-3.5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+      <span>MINTING EDITION...</span>
+    </button>
+    <button type="button" data-ldr10-btn="Backup Saved ✓" data-ldr10-orig="Encrypting Snapshot" class="flex items-center justify-center gap-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 font-mono font-bold text-emerald-700 dark:text-emerald-300">
+      <span class="size-3.5 rounded-full border-2 border-emerald-500 border-r-transparent animate-spin"></span>
+      <span>Encrypting Snapshot</span>
+    </button>
+    <button type="button" data-ldr10-btn="Changes Published ✓" data-ldr10-orig="Saving Draft..." class="flex items-center justify-center gap-2.5 rounded-full border border-stone-300 dark:border-zinc-700 bg-[#FAF7F2] dark:bg-zinc-900 px-4 py-3 font-serif text-sm text-stone-900 dark:text-white">
+      <span class="size-3.5 rounded-full border border-stone-900 dark:border-white border-t-transparent animate-spin"></span>
+      <span>Saving Draft...</span>
+    </button>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-ldr10]'); if (!r) return;
+  r.querySelectorAll('[data-ldr10-btn]').forEach(btn => btn.addEventListener('click', () => {
+    const label = btn.querySelector('span:last-child');
+    label.textContent = btn.dataset.ldr10Btn;
+    setTimeout(() => { label.textContent = btn.dataset.ldr10Orig; }, 1800);
+  }));
+})();
+</script>

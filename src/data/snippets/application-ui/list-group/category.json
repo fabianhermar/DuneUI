@@ -1,0 +1,69 @@
+{
+  "slug": "list-group",
+  "index": "12",
+  "tag": "Data Display",
+  "title": "List Groups",
+  "description": "10 responsive list groups: fintech ledgers, Linear issue rows, interactive checklists, Liquid Glass leaderboards, release timelines, and contact directories.",
+  "specs": [
+    {
+      "file": "01-live-transaction-ledger.html",
+      "title": "Live Transaction Ledger",
+      "styleTag": "Stripe · Activity",
+      "canvas": "muted"
+    },
+    {
+      "file": "02-linear-dark-engineering-queue.html",
+      "title": "Linear Dark Engineering Queue",
+      "styleTag": "Linear · Issue Rows",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-interactive-task-checklist.html",
+      "title": "Interactive Task Checklist",
+      "styleTag": "Productivity",
+      "canvas": "light"
+    },
+    {
+      "file": "04-liquid-glass-contributors.html",
+      "title": "Liquid Glass Contributors",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "05-brutalist-download-stack.html",
+      "title": "Brutalist Download Stack",
+      "styleTag": "Brutalist · Files",
+      "canvas": "light"
+    },
+    {
+      "file": "06-realtime-notification-feed.html",
+      "title": "Realtime Notification Feed",
+      "styleTag": "Social · Alerts",
+      "canvas": "light"
+    },
+    {
+      "file": "07-keyboard-shortcut-reference.html",
+      "title": "Keyboard Shortcut Reference",
+      "styleTag": "Raycast · Keys",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-tasting-menu-list.html",
+      "title": "Tasting Menu List",
+      "styleTag": "Editorial · Menu",
+      "canvas": "light"
+    },
+    {
+      "file": "09-member-role-matrix-list.html",
+      "title": "Member Role Matrix List",
+      "styleTag": "Team · Roles",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-cloud-storage-quota-list.html",
+      "title": "Cloud Storage Quota List",
+      "styleTag": "Storage · Usage",
+      "canvas": "light"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<header data-brutal-nav class="w-full overflow-hidden rounded-2xl border-2 border-black dark:border-zinc-200 bg-[#FDE047] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7] text-black">
+  <div class="flex items-center justify-between gap-2 bg-black px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest text-[#FDE047]">
+    <span class="truncate">★ AWWWARDS SOTD ×4 · TOKYO / BERLIN</span>
+    <span class="hidden sm:inline shrink-0 text-white">● ACCEPTING Q4 SPRINTS</span>
+  </div>
+  <div class="flex items-center justify-between gap-2 px-4 sm:px-5 py-3">
+    <div class="flex items-center gap-2.5">
+      <a href="#" class="inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-3 py-1 text-xs sm:text-sm font-black uppercase tracking-tight text-black shadow-[2px_2px_0_0_#000]">
+        <span class="size-2.5 bg-black"></span>
+        <span>ZAP STUDIO</span>
+      </a>
+      <span class="hidden lg:inline-flex rounded-md border-2 border-black bg-[#A3E635] px-2 py-0.5 font-mono text-[10px] font-black text-black">V.25</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-2 text-xs font-black uppercase tracking-wide text-black">
+      <a href="#" class="rounded-lg border-2 border-black bg-white px-3 py-1 shadow-[2px_2px_0_0_#000]">Work [14]</a>
+      <a href="#" class="rounded-lg border-2 border-transparent px-3 py-1 hover:border-black hover:bg-white/60">Labs</a>
+      <a href="#" class="rounded-lg border-2 border-transparent px-3 py-1 hover:border-black hover:bg-white/60">Manifesto</a>
+      <a href="#" class="rounded-lg border-2 border-transparent px-3 py-1 hover:border-black hover:bg-white/60">Journal</a>
+    </nav>
+    <div class="flex items-center gap-2 shrink-0">
+      <button type="button" data-brutal-cta class="rounded-lg border-2 border-black bg-[#A3E635] px-3.5 py-1.5 text-xs font-black uppercase text-black shadow-[2px_2px_0_0_#000] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Hire Us ↗</button>
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Menu" class="inline-flex md:hidden rounded-lg border-2 border-black bg-white px-2.5 py-1.5 text-xs font-black uppercase text-black shadow-[2px_2px_0_0_#000]">Menu</button>
+    </div>
+  </div>
+  <nav data-mobile-drawer class="hidden md:hidden flex-col gap-2 border-t-2 border-black bg-white p-3 text-xs font-black uppercase text-black">
+    <a href="#" class="rounded-lg border-2 border-black bg-[#FDE047] px-3 py-2">Work [14]</a>
+    <a href="#" class="rounded-lg border-2 border-black bg-white px-3 py-2">Labs &amp; Experiments</a>
+    <a href="#" class="rounded-lg border-2 border-black bg-white px-3 py-2">Manifesto</a>
+    <a href="#" class="rounded-lg border-2 border-black bg-[#A3E635] px-3 py-2 text-center shadow-[2px_2px_0_0_#000]">Book Sprint ↗</a>
+  </nav>
+</header>
+<script>
+  document.querySelectorAll('[data-brutal-nav]').forEach((nav) => {
+    const cta = nav.querySelector('[data-brutal-cta]');
+    cta?.addEventListener('click', () => {
+      cta.textContent = cta.textContent?.includes('BOOKED') ? 'Hire Us ↗' : 'SLOT BOOKED ✓';
+    });
+    const mBtn = nav.querySelector('[data-mobile-toggle]');
+    const mDrawer = nav.querySelector('[data-mobile-drawer]');
+    mBtn?.addEventListener('click', () => {
+      const open = mBtn.getAttribute('aria-expanded') === 'true';
+      mBtn.setAttribute('aria-expanded', String(!open));
+      mDrawer?.classList.toggle('hidden', open);
+      mDrawer?.classList.toggle('flex', !open);
+    });
+  });
+</script>

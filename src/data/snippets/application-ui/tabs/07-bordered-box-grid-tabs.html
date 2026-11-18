@@ -1,0 +1,44 @@
+<div class="mx-auto w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs text-black dark:text-zinc-100">
+  <div role="tablist" aria-label="Library sections" class="grid grid-cols-1 divide-y divide-slate-200 dark:divide-zinc-800 border-b border-slate-200 dark:border-zinc-800 sm:grid-cols-3 sm:divide-x sm:divide-y-0 text-xs font-semibold">
+    <button type="button" data-xtab="components" aria-selected="true" class="flex items-center justify-center gap-2 bg-slate-950 dark:bg-white py-3 text-white dark:text-slate-950">Components <span class="rounded bg-slate-900/[0.07] dark:bg-white/15 px-1.5 py-0.5 font-mono text-[10px]">400</span></button>
+    <button type="button" data-xtab="templates" aria-selected="false" class="flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 py-3 text-slate-600 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60 border border-slate-200 dark:border-zinc-800">Templates <span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] text-slate-700 dark:text-zinc-300">24</span></button>
+    <button type="button" data-xtab="icons" aria-selected="false" class="flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 py-3 text-slate-600 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60 border border-slate-200 dark:border-zinc-800">Icons <span class="rounded bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] text-slate-700 dark:text-zinc-300">320</span></button>
+  </div>
+  <div class="p-4 text-xs text-slate-600 dark:text-zinc-300">
+    <div data-xpanel="components" class="flex flex-wrap items-center justify-between gap-2">
+      <span><strong class="text-slate-900 dark:text-zinc-100">40 UI Families:</strong> Heroes, Pricing, Dashboards, Forms &amp; Modals.</span>
+      <span class="font-semibold text-indigo-600 dark:text-indigo-400">Browse UI &rarr;</span>
+    </div>
+    <div data-xpanel="templates" class="hidden flex-wrap items-center justify-between gap-2">
+      <span><strong class="text-slate-900 dark:text-zinc-100">24 Full-Page Sites:</strong> SaaS, Fintech, Agency &amp; Editorial layouts.</span>
+      <span class="font-semibold text-indigo-600 dark:text-indigo-400">Inspect Pages &rarr;</span>
+    </div>
+    <div data-xpanel="icons" class="hidden flex-wrap items-center justify-between gap-2">
+      <span><strong class="text-slate-900 dark:text-zinc-100">320 Crisp SVGs:</strong> Consistent 1.75px stroke pixel grid icons.</span>
+      <span class="font-semibold text-indigo-600 dark:text-indigo-400">Copy SVGs &rarr;</span>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const tabs = document.querySelectorAll('[data-xtab]');
+  const panels = document.querySelectorAll('[data-xpanel]');
+  tabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-xtab');
+      tabs.forEach((t) => {
+        const active = t.getAttribute('data-xtab') === id;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.className = active
+          ? 'flex items-center justify-center gap-2 bg-slate-950 py-3 text-white'
+          : 'flex items-center justify-center gap-2 bg-white py-3 text-slate-600 hover:bg-slate-50';
+      });
+      panels.forEach((p) => {
+        const show = p.getAttribute('data-xpanel') === id;
+        p.classList.toggle('hidden', !show);
+        p.classList.toggle('flex', show);
+      });
+    });
+  });
+})();
+</script>

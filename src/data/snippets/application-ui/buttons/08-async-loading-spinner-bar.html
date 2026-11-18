@@ -1,0 +1,21 @@
+<div data-async-bar class="flex flex-wrap items-center justify-center gap-4 text-slate-900 dark:text-zinc-100">
+  <button type="button" disabled class="inline-flex items-center gap-2.5 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm cursor-wait">
+    <span class="size-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+    Deploying Build...
+  </button>
+  <button type="button" data-save-async class="inline-flex items-center gap-2 rounded-xl border border-emerald-300 dark:border-emerald-500/35 bg-emerald-50 dark:bg-emerald-500/15 px-4 py-2.5 text-sm font-semibold text-emerald-800 dark:text-emerald-300 transition hover:bg-emerald-100 dark:hover:bg-emerald-500/25 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+    <span data-save-text>Saved 2s ago</span>
+  </button>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-async-bar]');
+      const btn = root.querySelector('[data-save-async]');
+      const text = root.querySelector('[data-save-text]');
+      btn?.addEventListener('click', () => {
+        text.textContent = 'Saving...';
+        setTimeout(() => { text.textContent = 'Saved just now'; }, 550);
+      });
+    })();
+  </script>
+</div>

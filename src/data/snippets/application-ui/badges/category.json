@@ -1,0 +1,69 @@
+{
+  "slug": "badges",
+  "index": "04",
+  "tag": "Status",
+  "title": "Badges",
+  "description": "10 polished taxonomic & interactive badges: pulsing status rings, AI model glow chips, working filter removers, neo-brutalist labels, tactile 3D keycaps, and Linear signal-bar priorities.",
+  "specs": [
+    {
+      "file": "01-semantic-status-pills.html",
+      "title": "Semantic Status Pills",
+      "styleTag": "Tailwind · Ring",
+      "canvas": "light"
+    },
+    {
+      "file": "02-ai-gradient-glow-chips.html",
+      "title": "AI Gradient Glow Chips",
+      "styleTag": "AI · Dark Neon",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-interactive-removable-filter-tags.html",
+      "title": "Interactive Removable Filter Tags",
+      "styleTag": "SaaS · Filters",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-brutalist-comic-stickers.html",
+      "title": "Brutalist Comic Stickers",
+      "styleTag": "Brutalist · Labels",
+      "canvas": "light"
+    },
+    {
+      "file": "05-liquid-glass-specular-pills.html",
+      "title": "Liquid Glass Specular Pills",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "06-devtools-sla-build-counters.html",
+      "title": "DevTools SLA & Build Counters",
+      "styleTag": "Vercel · Monospace",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-stock-merchandising-flags.html",
+      "title": "Stock & Merchandising Flags",
+      "styleTag": "Storefront · Merch",
+      "canvas": "light"
+    },
+    {
+      "file": "08-keyboard-shortcut-keycap-strip.html",
+      "title": "Keyboard Shortcut Keycap Strip",
+      "styleTag": "Raycast · Hotkeys",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-interactive-linear-priority-chips.html",
+      "title": "Interactive Linear Priority Chips",
+      "styleTag": "Linear · Priority",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-social-plan-tier-ribbons.html",
+      "title": "Social Plan Tier Ribbons",
+      "styleTag": "Creator · Plan Tags",
+      "canvas": "light"
+    }
+  ]
+}

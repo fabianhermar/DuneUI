@@ -1,0 +1,69 @@
+{
+  "slug": "buttons",
+  "index": "07",
+  "tag": "Actions",
+  "title": "Buttons",
+  "description": "10 responsive CTA styles: Liquid Glass pills, Neo-Brutalist press buttons, Linear shimmer actions, Stripe checkout pills, GitHub & Passkey auth, live huddle toggles, and storefront bag strips.",
+  "specs": [
+    {
+      "file": "01-liquid-glass-translucent-pills.html",
+      "title": "Liquid Glass Translucent Pills",
+      "styleTag": "Apple · Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "02-neo-brutalist-depressible-ctas.html",
+      "title": "Neo-Brutalist Depressible CTAs",
+      "styleTag": "Neo-Brutalist · Acid",
+      "canvas": "light"
+    },
+    {
+      "file": "03-dark-shimmer-shortcut-ctas.html",
+      "title": "Dark Shimmer Shortcut CTAs",
+      "styleTag": "Linear · Dark Neon",
+      "canvas": "dark"
+    },
+    {
+      "file": "04-stripe-checkout-action-row.html",
+      "title": "Stripe Checkout Action Row",
+      "styleTag": "Stripe · Checkout",
+      "canvas": "muted"
+    },
+    {
+      "file": "05-editorial-slide-fill-button.html",
+      "title": "Editorial Slide-Fill Button",
+      "styleTag": "Editorial · Luxury",
+      "canvas": "light"
+    },
+    {
+      "file": "06-social-passkey-connectors.html",
+      "title": "Social & Passkey Connectors",
+      "styleTag": "Auth · Connectors",
+      "canvas": "light"
+    },
+    {
+      "file": "07-live-audio-control-pills.html",
+      "title": "Live Audio Control Pills",
+      "styleTag": "Media · Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-async-loading-spinner-bar.html",
+      "title": "Async Loading Spinner Bar",
+      "styleTag": "UI State · Spin",
+      "canvas": "light"
+    },
+    {
+      "file": "09-3d-soft-shadow-candy-buttons.html",
+      "title": "3D Soft-Shadow Candy Buttons",
+      "styleTag": "Pastel · Candy",
+      "canvas": "muted"
+    },
+    {
+      "file": "10-add-to-bag-wishlist-strip.html",
+      "title": "Add-to-Bag & Wishlist Strip",
+      "styleTag": "Storefront · Interactive",
+      "canvas": "light"
+    }
+  ]
+}

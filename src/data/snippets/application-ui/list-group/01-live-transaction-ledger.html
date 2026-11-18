@@ -1,0 +1,80 @@
+<div data-ledger-list class="mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-sm ring-1 ring-slate-200 dark:ring-zinc-800 text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-zinc-800 px-4 py-3">
+    <div class="flex items-center gap-2">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-zinc-300">Recent Activity</h3>
+      <span class="rounded-full bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">Live</span>
+    </div>
+    <div class="flex items-center gap-1 text-[11px]">
+      <button type="button" data-ledger-filter="all" aria-pressed="true" class="rounded-md bg-slate-900 dark:bg-white px-2 py-0.5 font-semibold text-white dark:text-slate-950">All</button>
+      <button type="button" data-ledger-filter="in" aria-pressed="false" class="rounded-md px-2 py-0.5 font-medium text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800">Credits</button>
+      <button type="button" data-ledger-filter="out" aria-pressed="false" class="rounded-md px-2 py-0.5 font-medium text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800">Debits</button>
+    </div>
+  </div>
+  <ul class="divide-y divide-slate-100 dark:divide-zinc-800/80">
+    <li data-tx-type="in" class="flex items-center justify-between gap-3 px-4 py-3.5 transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/40">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate text-sm font-semibold text-slate-900 dark:text-zinc-100">Stripe Treasury Payout</p>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">Today, 14:22 · <span class="font-mono">•• 4242</span></p>
+        </div>
+      </div>
+      <div class="shrink-0 text-right">
+        <p class="font-mono text-sm font-semibold text-emerald-700 dark:text-emerald-400">+$4,820.00</p>
+        <p class="text-[10px] font-medium text-slate-500 dark:text-zinc-400">Settled</p>
+      </div>
+    </li>
+    <li data-tx-type="out" class="flex items-center justify-between gap-3 px-4 py-3.5 transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/40">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clip-rule="evenodd"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate text-sm font-semibold text-slate-900 dark:text-zinc-100">Cloudflare Workers Pro</p>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">Yesterday · Auto-pay</p>
+        </div>
+      </div>
+      <div class="shrink-0 text-right">
+        <p class="font-mono text-sm font-semibold text-slate-900 dark:text-zinc-100">-$145.00</p>
+        <p class="text-[10px] font-medium text-slate-500 dark:text-zinc-400">Cleared</p>
+      </div>
+    </li>
+    <li data-tx-type="out" class="flex items-center justify-between gap-3 px-4 py-3.5 transition hover:bg-slate-50/80 dark:hover:bg-zinc-800/40">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clip-rule="evenodd"/></svg>
+        </span>
+        <div class="min-w-0">
+          <p class="truncate text-sm font-semibold text-slate-900 dark:text-zinc-100">GitHub Enterprise</p>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">Nov 12 · 16 seats</p>
+        </div>
+      </div>
+      <div class="shrink-0 text-right">
+        <p class="font-mono text-sm font-semibold text-slate-900 dark:text-zinc-100">-$384.00</p>
+        <p class="text-[10px] font-medium text-slate-500 dark:text-zinc-400">Cleared</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-ledger-list]').forEach((root) => {
+    const btns = root.querySelectorAll('[data-ledger-filter]');
+    const rows = root.querySelectorAll('[data-tx-type]');
+    const onCls = ['bg-slate-900', 'dark:bg-white', 'font-semibold', 'text-white', 'dark:text-slate-950'];
+    const offCls = ['font-medium', 'text-slate-600', 'dark:text-zinc-400'];
+    btns.forEach((b) => b.addEventListener('click', () => {
+      const f = b.getAttribute('data-ledger-filter');
+      btns.forEach((x) => { x.setAttribute('aria-pressed', 'false'); x.classList.remove(...onCls); x.classList.add(...offCls); });
+      b.setAttribute('aria-pressed', 'true');
+      b.classList.remove(...offCls);
+      b.classList.add(...onCls);
+      rows.forEach((r) => {
+        const show = f === 'all' || r.getAttribute('data-tx-type') === f;
+        r.classList.toggle('hidden', !show);
+        r.classList.toggle('flex', show);
+      });
+    }));
+  });
+</script>

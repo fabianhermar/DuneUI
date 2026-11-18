@@ -1,0 +1,41 @@
+<figure class="mx-auto w-full max-w-2xl rounded-3xl border border-stone-200 dark:border-amber-200/15 bg-[#FAF6EE] dark:bg-[#121110] px-6 py-9 text-center text-stone-900 dark:text-[#F5EFE6] shadow-lg dark:shadow-2xl sm:px-12 sm:py-12">
+  <div class="mx-auto flex items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-amber-700 dark:text-amber-300/80">
+    <span class="h-px w-8 bg-amber-600/30 dark:bg-amber-300/30"></span>
+    <span data-quote-kicker>Aphorism 01 / 03</span>
+    <span class="h-px w-8 bg-amber-600/30 dark:bg-amber-300/30"></span>
+  </div>
+  <blockquote data-quote-text class="mt-6 font-serif text-2xl italic leading-relaxed text-stone-950 dark:text-[#FAF6EE] sm:text-3xl">&ldquo;Typography is what language looks like when thought refuses to be rushed.&rdquo;</blockquote>
+  <figcaption data-quote-author class="mt-6 text-xs uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">&mdash; Ellen Lupton, Thinking with Type</figcaption>
+  <div role="group" aria-label="Switch aphorism quote" class="mt-7 inline-flex items-center gap-1.5 rounded-full border border-slate-900/15 dark:border-white/15 bg-slate-900/[0.07] dark:bg-white/5 p-1 font-mono text-[10px]">
+    <button type="button" data-quote-idx="0" aria-pressed="true" class="rounded-full bg-amber-200 px-3 py-1 font-bold text-stone-950 dark:text-black">01</button>
+    <button type="button" data-quote-idx="1" aria-pressed="false" class="rounded-full px-3 py-1 text-stone-500 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white">02</button>
+    <button type="button" data-quote-idx="2" aria-pressed="false" class="rounded-full px-3 py-1 text-stone-500 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white">03</button>
+  </div>
+</figure>
+<script>
+(() => {
+  const quotes = [
+    { k: 'Aphorism 01 / 03', t: '“Typography is what language looks like when thought refuses to be rushed.”', a: '— Ellen Lupton, Thinking with Type' },
+    { k: 'Aphorism 02 / 03', t: '“White space is to be regarded as an active element, not merely a passive background.”', a: '— Jan Tschichold, The New Typography' },
+    { k: 'Aphorism 03 / 03', t: '“Type well used is invisible as type, just as the perfect talking voice goes unnoticed.”', a: '— Beatrice Warde, Essay on Printing' }
+  ];
+  const kicker = document.querySelector('[data-quote-kicker]');
+  const text = document.querySelector('[data-quote-text]');
+  const author = document.querySelector('[data-quote-author]');
+  const btns = document.querySelectorAll('[data-quote-idx]');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.getAttribute('data-quote-idx') || 0);
+      const item = quotes[idx];
+      btns.forEach((b, i) => {
+        const active = i === idx;
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        b.className = active ? 'rounded-full bg-amber-200 px-3 py-1 font-bold text-stone-950' : 'rounded-full px-3 py-1 text-stone-400 hover:text-white';
+      });
+      if (kicker && item) kicker.textContent = item.k;
+      if (text && item) text.textContent = item.t;
+      if (author && item) author.textContent = item.a;
+    });
+  });
+})();
+</script>

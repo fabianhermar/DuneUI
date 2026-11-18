@@ -1,0 +1,69 @@
+{
+  "slug": "blog-sections",
+  "index": "41",
+  "tag": "Marketing",
+  "title": "Blog Sections",
+  "description": "10 editorial and SaaS blog sections: hover-card engineering grids, broadsheet magazine splits, obsidian photo overlays, Liquid Glass reading stacks, Neo-Brutalist zines, and interactive filterable archives.",
+  "specs": [
+    {
+      "file": "01-editorial-three-column-engineering-grid.html",
+      "title": "Editorial Three-Column Engineering Grid",
+      "styleTag": "Tailwind UI Blog",
+      "canvas": "light"
+    },
+    {
+      "file": "02-media-cover-blog-triad.html",
+      "title": "Media Cover Blog Triad",
+      "styleTag": "Editorial · Cards",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-cover-story-broadsheet-dispatch-list.html",
+      "title": "Cover Story Broadsheet + Dispatch List",
+      "styleTag": "Magazine · Asymmetric",
+      "canvas": "light"
+    },
+    {
+      "file": "04-obsidian-photo-overlay-feature-grid.html",
+      "title": "Obsidian Photo Overlay Feature Grid",
+      "styleTag": "Awwwards · Overlay",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-release-article-changelog-stream.html",
+      "title": "Release & Article Changelog Stream",
+      "styleTag": "Docs · Stream",
+      "canvas": "light"
+    },
+    {
+      "file": "06-liquid-glass-reading-stack.html",
+      "title": "Liquid Glass Reading Stack",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "07-neo-brutalist-zine-dispatch-index.html",
+      "title": "Neo-Brutalist Zine Dispatch Index",
+      "styleTag": "Brutalist · Zine",
+      "canvas": "light"
+    },
+    {
+      "file": "08-horizontal-thumbnail-editorial-feed.html",
+      "title": "Horizontal Thumbnail Editorial Feed",
+      "styleTag": "Vercel · Clean",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-filterable-publication-archive-grid.html",
+      "title": "Filterable Publication Archive Grid",
+      "styleTag": "Interactive · Tabs",
+      "canvas": "light"
+    },
+    {
+      "file": "10-swiss-monochrome-index-archive.html",
+      "title": "Swiss Monochrome Index Archive",
+      "styleTag": "Swiss · Index",
+      "canvas": "dark"
+    }
+  ]
+}

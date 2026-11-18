@@ -1,0 +1,27 @@
+<div data-dl8 class="mx-auto w-full max-w-2xl border-2 border-emerald-900 dark:border-emerald-700 bg-[#FAF9F2] dark:bg-[#111713] p-5 text-emerald-950 dark:text-emerald-50">
+  <div class="border border-emerald-900/40 dark:border-emerald-700/50 p-4 sm:p-5">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-900/20 dark:border-emerald-700/40 pb-3">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">KEW CONSERVATORY HERBARIUM &middot; NO. 4091</p>
+        <h3 class="mt-1 font-serif text-xl italic">Monstera obliqua <span class="not-italic text-sm font-normal text-emerald-800/80 dark:text-emerald-300/80">(Peru Morphotype)</span></h3>
+      </div>
+      <button type="button" data-dl8-mist class="cursor-pointer rounded border border-emerald-800 dark:border-emerald-500 px-2.5 py-1 font-mono text-[10px] font-bold hover:bg-emerald-900 hover:text-white transition-colors">Log Mist Cycle</button>
+    </div>
+    <dl class="mt-4 grid grid-cols-2 gap-4 text-xs sm:grid-cols-3">
+      <div><dt class="font-mono text-[10px] uppercase text-emerald-700/70 dark:text-emerald-400/70">Family</dt><dd class="mt-0.5 font-semibold">Araceae</dd></div>
+      <div><dt class="font-mono text-[10px] uppercase text-emerald-700/70 dark:text-emerald-400/70">Habitat Elevation</dt><dd class="mt-0.5 font-mono">800m Cloud Forest</dd></div>
+      <div><dt class="font-mono text-[10px] uppercase text-emerald-700/70 dark:text-emerald-400/70">Last Mist Cycle</dt><dd data-dl8-time class="mt-0.5 font-mono font-bold">06:30 UTC (84% RH)</dd></div>
+    </dl>
+  </div>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl8]').forEach((root) => {
+    const btn = root.querySelector('[data-dl8-mist]'), time = root.querySelector('[data-dl8-time]');
+    btn?.addEventListener('click', () => {
+      btn.textContent = 'Misted ✓';
+      if (time) time.textContent = 'Just now (91% RH)';
+    });
+  });
+})();
+</script>

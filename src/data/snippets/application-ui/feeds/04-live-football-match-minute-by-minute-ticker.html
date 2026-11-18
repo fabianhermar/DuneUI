@@ -1,0 +1,22 @@
+<div class="mx-auto w-full max-w-xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 sm:p-6 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3 font-mono">
+      <span class="rounded bg-rose-600 px-2 py-0.5 text-[10px] font-bold text-white">72&apos; LIVE</span>
+      <span class="text-base font-black">ARS 2 &ndash; 1 MCI</span>
+    </div>
+    <label class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-600 dark:text-zinc-400 cursor-pointer">
+      <input type="checkbox" data-fd4-key class="accent-emerald-600" /> Key events only
+    </label>
+  </div>
+  <ul class="mt-4 space-y-3">
+    <li data-fd4-minor="0" class="flex gap-3 items-start"><span class="w-8 shrink-0 font-mono font-bold text-emerald-600 dark:text-emerald-400">68&apos;</span><div><p class="font-bold">GOAL &mdash; Saka cuts inside to the far post</p><p class="text-slate-500 dark:text-zinc-400">Assisted by &Oslash;degaard &middot; xG 0.42</p></div></li>
+    <li data-fd4-minor="1" class="flex gap-3 items-start"><span class="w-8 shrink-0 font-mono text-slate-400">61&apos;</span><div><p class="font-medium text-slate-700 dark:text-zinc-300">Corner cleared near the six-yard box</p></div></li>
+    <li data-fd4-minor="0" class="flex gap-3 items-start"><span class="w-8 shrink-0 font-mono font-bold text-amber-600 dark:text-amber-400">54&apos;</span><div><p class="font-semibold">Yellow Card &mdash; Rodri (tactical foul)</p></div></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const chk = document.querySelector('[data-fd4-key]'), minors = [...document.querySelectorAll('[data-fd4-minor="1"]')];
+  chk?.addEventListener('change', () => minors.forEach(m => m.classList.toggle('hidden', chk.checked)));
+})();
+</script>

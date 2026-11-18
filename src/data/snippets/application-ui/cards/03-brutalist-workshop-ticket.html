@@ -1,0 +1,43 @@
+<article data-ticket-card class="mx-auto w-full max-w-sm rounded-2xl border-2 border-black dark:border-zinc-200 bg-amber-200 p-6 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7] text-black">
+  <div class="flex items-center justify-between gap-2">
+    <span class="inline-flex items-center gap-1.5 rounded-md border-2 border-black bg-lime-300 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wide text-black">
+      <span class="size-1.5 rounded-full bg-black"></span>Live Session
+    </span>
+    <span class="font-mono text-xs font-bold uppercase text-black">NOV 28 &middot; #042</span>
+  </div>
+  <h3 class="mt-4 text-xl sm:text-2xl font-black leading-tight text-black">Motion Architecture in Tailwind v4</h3>
+  <p class="mt-2 text-sm font-medium text-neutral-800">90m live build covering GPU spring physics and zero-jank micro-interactions.</p>
+  <div class="mt-4 flex items-center gap-2.5 rounded-xl border-2 border-black bg-white/75 px-3 py-2">
+    <img src="/images/avatars/sofia.jpg" alt="Sofia Cruz" class="size-8 rounded-full border-2 border-black object-cover" />
+    <div class="text-xs leading-tight">
+      <p class="font-black text-black">Sofia Cruz</p>
+      <p class="font-medium text-neutral-700">Principal UI Engineer</p>
+    </div>
+  </div>
+  <div class="mt-5 flex items-center justify-between border-t-2 border-dashed border-black pt-4">
+    <div>
+      <span class="block font-mono text-[10px] font-bold uppercase text-neutral-700">Workshop Pass</span>
+      <span class="text-lg font-black text-black">$29 Seat</span>
+    </div>
+    <button type="button" data-ticket-btn aria-pressed="false" class="inline-flex items-center gap-1.5 rounded-xl border-2 border-black bg-black px-4 py-2 text-xs font-black uppercase text-white transition hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer">
+      <span data-ticket-label>Reserve</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-ticket-card]');
+      const btn = root.querySelector('[data-ticket-btn]');
+      const label = root.querySelector('[data-ticket-label]');
+      btn?.addEventListener('click', () => {
+        const reserved = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!reserved));
+        btn.classList.toggle('bg-lime-300', !reserved);
+        btn.classList.toggle('text-black', !reserved);
+        btn.classList.toggle('bg-black', reserved);
+        btn.classList.toggle('text-white', reserved);
+        label.textContent = reserved ? 'Reserve' : 'Reserved';
+      });
+    })();
+  </script>
+</article>

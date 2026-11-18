@@ -1,0 +1,27 @@
+<div data-format-bar class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex flex-wrap divide-x divide-slate-200 dark:divide-white/10 overflow-hidden rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-zinc-900 shadow-2xs">
+    <button type="button" data-fmt aria-pressed="true" aria-label="Bold" class="inline-flex items-center justify-center px-3.5 py-2 text-xs font-black text-slate-950 dark:text-white bg-slate-100 dark:bg-white/15 cursor-pointer transition-colors">B</button>
+    <button type="button" data-fmt aria-pressed="false" aria-label="Italic" class="inline-flex items-center justify-center px-3.5 py-2 font-serif italic text-xs font-semibold text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-white/8 cursor-pointer transition-colors">I</button>
+    <button type="button" data-fmt aria-pressed="false" aria-label="Underline" class="inline-flex items-center justify-center px-3.5 py-2 text-xs font-semibold underline underline-offset-2 text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-white/8 cursor-pointer transition-colors">U</button>
+    <button type="button" data-fmt aria-pressed="false" aria-label="Inline code" class="inline-flex items-center justify-center px-3 py-2 font-mono text-xs text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-white/8 cursor-pointer transition-colors">&lt;/&gt;</button>
+    <button type="button" data-fmt aria-pressed="false" aria-label="Insert link" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-white/8 cursor-pointer transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M8.914 6.025a.75.75 0 0 1 1.06 0 3.5 3.5 0 0 1 0 4.95l-2 2a3.5 3.5 0 0 1-5.396-4.402.75.75 0 0 1 1.251.827 2 2 0 0 0 3.085 2.514l2-2a2 2 0 0 0 0-2.828.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M7.086 9.975a.75.75 0 0 1-1.06 0 3.5 3.5 0 0 1 0-4.95l2-2a3.5 3.5 0 0 1 5.396 4.402.75.75 0 0 1-1.251-.827 2 2 0 0 0-3.085-2.514l-2 2a2 2 0 0 0 0 2.828.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"/></svg>
+      Link
+    </button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-format-bar]');
+      const activeCls = ['bg-slate-100', 'dark:bg-white/15', 'text-slate-950', 'dark:text-white'];
+      const idleCls = ['text-slate-700', 'dark:text-zinc-300'];
+      root.querySelectorAll('[data-fmt]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const on = btn.getAttribute('aria-pressed') === 'true';
+          btn.setAttribute('aria-pressed', String(!on));
+          activeCls.forEach((c) => btn.classList.toggle(c, !on));
+          idleCls.forEach((c) => btn.classList.toggle(c, on));
+        });
+      });
+    })();
+  </script>
+</div>

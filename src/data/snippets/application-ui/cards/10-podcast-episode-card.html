@@ -1,0 +1,34 @@
+<article data-pod-card class="mx-auto flex w-full max-w-md flex-col gap-4 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 sm:p-5 sm:flex-row sm:items-center text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="relative size-18 shrink-0 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/15">
+    <img src="/images/heroes/synth-keys.jpg" alt="Design Engineering podcast cover" class="h-full w-full object-cover" />
+    <span class="absolute bottom-1.5 left-1.5 rounded bg-black/75 px-1.5 py-0.5 font-mono text-[9px] font-bold text-white">EP 42</span>
+  </div>
+  <div class="flex-1 min-w-0">
+    <div class="flex items-center gap-2">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">Design Engineering</span>
+      <span class="font-mono text-[11px] text-slate-500 dark:text-zinc-400">44m</span>
+    </div>
+    <h3 class="mt-0.5 truncate text-base font-bold text-slate-950 dark:text-white">Why Tactile UI Won 2026</h3>
+    <p class="mt-0.5 text-xs text-slate-600 dark:text-zinc-400">Hosted by Sofia &amp; Mateo &middot; Season 4</p>
+  </div>
+  <button type="button" data-pod-play aria-pressed="false" class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 shadow-xs hover:bg-slate-800 dark:hover:bg-zinc-200 cursor-pointer transition-colors">
+    <svg data-pod-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5"><path d="M4.5 3.1a.75.75 0 0 1 1.13-.65l7.5 4.4a.75.75 0 0 1 0 1.3l-7.5 4.4A.75.75 0 0 1 4.5 11.9V3.1Z"/></svg>
+    <span data-pod-label>Play</span>
+  </button>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-pod-card]');
+      const btn = root.querySelector('[data-pod-play]');
+      const label = root.querySelector('[data-pod-label]');
+      const icon = root.querySelector('[data-pod-icon]');
+      const playSvg = '<path d="M4.5 3.1a.75.75 0 0 1 1.13-.65l7.5 4.4a.75.75 0 0 1 0 1.3l-7.5 4.4A.75.75 0 0 1 4.5 11.9V3.1Z"/>';
+      const pauseSvg = '<path d="M4.5 2.75a.75.75 0 0 0-.75.75v9a.75.75 0 0 0 1.5 0v-9a.75.75 0 0 0-.75-.75Zm7 0a.75.75 0 0 0-.75.75v9a.75.75 0 0 0 1.5 0v-9a.75.75 0 0 0-.75-.75Z"/>';
+      btn?.addEventListener('click', () => {
+        const playing = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!playing));
+        label.textContent = playing ? 'Play' : 'Pause';
+        icon.innerHTML = playing ? playSvg : pauseSvg;
+      });
+    })();
+  </script>
+</article>

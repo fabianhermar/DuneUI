@@ -1,0 +1,69 @@
+{
+  "slug": "heroes",
+  "index": "24",
+  "tag": "Marketing",
+  "title": "Hero Sections",
+  "description": "Dribbble & Awwwards-inspired flagship brand heroes embodying architectural spaces, hardware instruments, streetwear lookbooks, AI canvases, treasury engines, and spatial OS.",
+  "specs": [
+    {
+      "file": "01-koma-architectural-cover.html",
+      "title": "Koma Architectural Cover",
+      "styleTag": "Awwwards · Arch",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-monoform-synth-flagship.html",
+      "title": "Monoform Synth Flagship",
+      "styleTag": "Industrial Audio",
+      "canvas": "dark"
+    },
+    {
+      "file": "03-solstice-streetwear-drop.html",
+      "title": "Solstice Streetwear Drop",
+      "styleTag": "Streetwear Hero",
+      "canvas": "muted"
+    },
+    {
+      "file": "04-maison-vera-ceramic-hero.html",
+      "title": "Maison Vera Ceramic Hero",
+      "styleTag": "Kinfolk Editorial",
+      "canvas": "light"
+    },
+    {
+      "file": "05-veloce-gt-alpine-flagship.html",
+      "title": "Véloce GT Alpine Flagship",
+      "styleTag": "Motorsport Dark",
+      "canvas": "dark"
+    },
+    {
+      "file": "06-kissa-roasters-pour-over.html",
+      "title": "Kissa Roasters Pour-Over",
+      "styleTag": "Craft Beverage",
+      "canvas": "light"
+    },
+    {
+      "file": "07-vaucher-chronometer-cover.html",
+      "title": "Vaucher Chronometer Cover",
+      "styleTag": "Swiss Luxury Watch",
+      "canvas": "dark"
+    },
+    {
+      "file": "08-nordkamm-alpine-shell-hero.html",
+      "title": "Nordkamm Alpine Shell Hero",
+      "styleTag": "Outdoor Glass",
+      "canvas": "dark"
+    },
+    {
+      "file": "09-monza-carbon-gt-atelier.html",
+      "title": "Monza Carbon GT Atelier",
+      "styleTag": "Automotive Light",
+      "canvas": "light"
+    },
+    {
+      "file": "10-horizonte-expedition-cover.html",
+      "title": "Horizonte Expedition Cover",
+      "styleTag": "Docu Editorial",
+      "canvas": "dark"
+    }
+  ]
+}

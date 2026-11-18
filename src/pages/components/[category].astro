@@ -1,0 +1,142 @@
+---
+import { Code } from 'astro:components'
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/core/components/Container.astro'
+import ComponentPreview from '@/modules/core/components/ComponentPreview'
+import {
+	getAllCategoriesMeta,
+	getCategoryBySlug,
+	type CategoryMeta
+} from '@/data/componentSnippets'
+import { stripPreviewScripts } from '@/lib/htmlUtils'
+
+export function getStaticPaths() {
+	const allCategories = getAllCategoriesMeta()
+	return allCategories.map((cat) => ({
+		params: { category: cat.slug },
+		props: {
+			categoryMeta: cat,
+			allCategories
+		}
+	}))
+}
+
+interface Props {
+	categoryMeta: CategoryMeta
+	allCategories: CategoryMeta[]
+}
+
+const { categoryMeta, allCategories } = Astro.props
+const categoryData = getCategoryBySlug(categoryMeta.slug)!
+const currentIdx = allCategories.findIndex((c) => c.slug === categoryData.slug)
+const prevCategory = currentIdx > 0 ? allCategories[currentIdx - 1] : null
+const nextCategory =
+	currentIdx < allCategories.length - 1 ? allCategories[currentIdx + 1] : null
+---
+
+<Layout
+	title={`${categoryData.title} · DuneUI`}
+	description={categoryData.description}
+>
+	<div class='bg-paper py-14 sm:py-20'>
+		<Container>
+			<div class='mb-14 border-b border-rule pb-10'>
+				<a
+					href='/components'
+					class='group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-muted hover:text-ink transition-colors mb-6'
+				>
+					<span class='transition-transform group-hover:-translate-x-0.5'>←</span>
+					<span>Components Directory</span>
+				</a>
+
+				<div class='flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-widest text-clay mb-3'>
+					<span>FIG. {categoryData.index}</span>
+					<span class='text-rule-strong'>/</span>
+					<span>{categoryData.tag}</span>
+					<span class='text-rule-strong'>/</span>
+					<span>{categoryData.specs.length} DISTINCT SPECS</span>
+				</div>
+
+				<h1 class='font-heading text-4xl sm:text-6xl font-bold text-ink tracking-tight'>
+					{categoryData.title}
+				</h1>
+				<p class='mt-4 max-w-2xl font-accent text-base text-ink-secondary leading-relaxed'>
+					{categoryData.description}
+				</p>
+			</div>
+
+			<div class='space-y-12'>
+				{
+					categoryData.specs.map((spec, idx) => {
+						const title = `${String(idx + 1).padStart(2, '0')} / ${spec.title}`
+						const cleanCode = stripPreviewScripts(spec.html)
+						const canvas = spec.canvas ?? 'light'
+
+						return (
+							<section>
+								{idx < 2 ? (
+									<ComponentPreview
+										title={title}
+										styleTag={spec.styleTag}
+										defaultCanvas={canvas}
+										htmlCode={spec.html}
+										eager={true}
+										client:load
+									>
+										<Code code={cleanCode} lang='html' theme='night-owl' />
+									</ComponentPreview>
+								) : (
+									<ComponentPreview
+										title={title}
+										styleTag={spec.styleTag}
+										defaultCanvas={canvas}
+										htmlCode={spec.html}
+										client:visible
+									>
+										<Code code={cleanCode} lang='html' theme='night-owl' />
+									</ComponentPreview>
+								)}
+							</section>
+						)
+					})
+				}
+			</div>
+
+			<!-- Sibling Category Navigation -->
+			<nav aria-label='Category pagination' class='mt-16 grid grid-cols-1 gap-4 border-t border-rule pt-8 sm:grid-cols-2'>
+				{
+					prevCategory ? (
+						<a
+							href={`/components/${prevCategory.slug}`}
+							class='group flex flex-col border border-rule bg-paper-elevated p-5 transition-colors hover:border-ink'
+						>
+							<span class='font-mono text-[10px] uppercase tracking-widest text-ink-muted'>
+								← Previous Family
+							</span>
+							<span class='mt-1 font-heading text-xl font-bold text-ink group-hover:text-clay'>
+								{prevCategory.index} / {prevCategory.title}
+							</span>
+						</a>
+					) : (
+						<div />
+					)
+				}
+				{
+					nextCategory && (
+						<a
+							href={`/components/${nextCategory.slug}`}
+							class='group flex flex-col items-end border border-rule bg-paper-elevated p-5 text-right transition-colors hover:border-ink'
+						>
+							<span class='font-mono text-[10px] uppercase tracking-widest text-ink-muted'>
+								Next Family →
+							</span>
+							<span class='mt-1 font-heading text-xl font-bold text-ink group-hover:text-clay'>
+								{nextCategory.index} / {nextCategory.title}
+							</span>
+						</a>
+					)
+				}
+			</nav>
+		</Container>
+	</div>
+</Layout>

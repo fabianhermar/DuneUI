@@ -1,0 +1,39 @@
+<div data-dl-stack class="mx-auto w-full max-w-md overflow-hidden rounded-xl border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#e4e4e7]">
+  <div class="flex items-center justify-between border-b-2 border-black dark:border-zinc-200 bg-[#FFE14D] px-4 py-2.5 text-black">
+    <span class="text-xs font-black uppercase tracking-wider">Release Bundle · v4.2</span>
+    <span class="font-mono text-[11px] font-bold">3 FILES</span>
+  </div>
+  <ul class="divide-y-2 divide-black dark:divide-zinc-700 text-black dark:text-zinc-100">
+    <li class="flex items-center justify-between gap-2 px-4 py-3 transition hover:bg-lime-100 dark:hover:bg-zinc-800">
+      <div class="min-w-0">
+        <p class="truncate font-mono text-sm font-black text-black dark:text-white">brand_kit_2026.pdf</p>
+        <p class="font-mono text-[11px] font-medium text-neutral-600 dark:text-neutral-300">PDF · 14.2 MB · SHA-256</p>
+      </div>
+      <button type="button" data-dl-btn class="shrink-0 rounded-lg border-2 border-black bg-[#FDE047] px-3 py-1 text-xs font-black uppercase text-black shadow-[2px_2px_0_0_#000] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Get</button>
+    </li>
+    <li class="flex items-center justify-between gap-2 px-4 py-3 transition hover:bg-cyan-100 dark:hover:bg-zinc-800">
+      <div class="min-w-0">
+        <p class="truncate font-mono text-sm font-black text-black dark:text-white">tokens_pack.json</p>
+        <p class="font-mono text-[11px] font-medium text-neutral-600 dark:text-neutral-300">JSON · 840 KB · W3C DTCG</p>
+      </div>
+      <button type="button" data-dl-btn class="shrink-0 rounded-lg border-2 border-black bg-[#86EFAC] px-3 py-1 text-xs font-black uppercase text-black shadow-[2px_2px_0_0_#000] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Get</button>
+    </li>
+    <li class="flex items-center justify-between gap-2 px-4 py-3 transition hover:bg-rose-100 dark:hover:bg-zinc-800">
+      <div class="min-w-0">
+        <p class="truncate font-mono text-sm font-black text-black dark:text-white">dune_icons_svg.zip</p>
+        <p class="font-mono text-[11px] font-medium text-neutral-600 dark:text-neutral-300">ZIP · 3.6 MB · 420 SVGs</p>
+      </div>
+      <button type="button" data-dl-btn class="shrink-0 rounded-lg border-2 border-black bg-[#FDA4AF] px-3 py-1 text-xs font-black uppercase text-black shadow-[2px_2px_0_0_#000] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">Get</button>
+    </li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll('[data-dl-stack]').forEach((root) => {
+    root.querySelectorAll('[data-dl-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const done = btn.textContent === 'Saved';
+        btn.textContent = done ? 'Get' : 'Saved';
+      });
+    });
+  });
+</script>

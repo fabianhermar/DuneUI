@@ -1,0 +1,69 @@
+{
+  "slug": "dropdown",
+  "index": "09",
+  "tag": "Overlays",
+  "title": "Dropdowns",
+  "description": "10 zero-JS disclosure menus with locked trigger-to-panel width and stable overlay positioning: Raycast commands, SaaS user switchers, Liquid Glass filters, workspace selectors, currency pickers, and tag filters.",
+  "specs": [
+    {
+      "file": "01-raycast-dark-command-menu.html",
+      "title": "Raycast Dark Command Menu",
+      "styleTag": "Raycast · Dark Menu",
+      "canvas": "dark"
+    },
+    {
+      "file": "02-saas-user-profile-switcher.html",
+      "title": "SaaS User Profile Switcher",
+      "styleTag": "Tailwind · Profile",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-liquid-glass-workspace-menu.html",
+      "title": "Liquid Glass Workspace Menu",
+      "styleTag": "Liquid Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "04-brutalist-environment-menu.html",
+      "title": "Brutalist Environment Menu",
+      "styleTag": "Brutalist · Stack",
+      "canvas": "light"
+    },
+    {
+      "file": "05-currency-region-switcher.html",
+      "title": "Currency & Region Switcher",
+      "styleTag": "Storefront",
+      "canvas": "light"
+    },
+    {
+      "file": "06-git-branch-context-menu.html",
+      "title": "Git Branch Context Menu",
+      "styleTag": "DevTools · Monospace",
+      "canvas": "dark"
+    },
+    {
+      "file": "07-multi-select-label-filter.html",
+      "title": "Multi-Select Label Filter",
+      "styleTag": "SaaS · Multi-Filter",
+      "canvas": "light"
+    },
+    {
+      "file": "08-notion-block-format-menu.html",
+      "title": "Notion Block Format Menu",
+      "styleTag": "Notion · Text Menu",
+      "canvas": "muted"
+    },
+    {
+      "file": "09-ai-model-engine-switcher.html",
+      "title": "AI Model Engine Switcher",
+      "styleTag": "OpenAI · Models",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-export-format-split-menu.html",
+      "title": "Export Format Split Menu",
+      "styleTag": "Figma · Export",
+      "canvas": "light"
+    }
+  ]
+}

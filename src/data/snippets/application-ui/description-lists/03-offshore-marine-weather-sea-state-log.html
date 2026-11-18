@@ -1,0 +1,28 @@
+<div data-dl3 class="mx-auto w-full max-w-2xl rounded-2xl border border-cyan-200 dark:border-cyan-900/50 bg-sky-50/40 dark:bg-[#07151D] p-6 text-slate-900 dark:text-cyan-50 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-cyan-200/70 dark:border-cyan-900/50 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-400">BUOY STATION #46026 &middot; FARALLONES</span>
+      <h3 class="mt-0.5 text-base font-bold">Offshore Marine Conditions</h3>
+    </div>
+    <button type="button" data-dl3-unit class="cursor-pointer rounded-lg border border-cyan-300 dark:border-cyan-800 bg-white dark:bg-cyan-950/60 px-3 py-1 font-mono text-[11px] font-bold text-cyan-800 dark:text-cyan-300">Units: Knots</button>
+  </div>
+  <dl class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4 text-xs">
+    <div class="rounded-xl border border-cyan-200/70 dark:border-cyan-900/40 bg-white/80 dark:bg-cyan-950/30 p-3"><dt class="font-mono text-[10px] uppercase text-slate-500 dark:text-cyan-300/60">Wind Speed</dt><dd data-dl3-wind class="mt-1 font-mono text-sm font-bold text-cyan-700 dark:text-cyan-300">19 kts NW</dd></div>
+    <div class="rounded-xl border border-cyan-200/70 dark:border-cyan-900/40 bg-white/80 dark:bg-cyan-950/30 p-3"><dt class="font-mono text-[10px] uppercase text-slate-500 dark:text-cyan-300/60">Primary Swell</dt><dd class="mt-1 font-mono text-sm font-bold">2.4m @ 13s</dd></div>
+    <div class="rounded-xl border border-cyan-200/70 dark:border-cyan-900/40 bg-white/80 dark:bg-cyan-950/30 p-3"><dt class="font-mono text-[10px] uppercase text-slate-500 dark:text-cyan-300/60">Barometer</dt><dd class="mt-1 font-mono text-sm font-bold text-emerald-700 dark:text-emerald-400">1016 hPa &#8593;</dd></div>
+    <div class="rounded-xl border border-cyan-200/70 dark:border-cyan-900/40 bg-white/80 dark:bg-cyan-950/30 p-3"><dt class="font-mono text-[10px] uppercase text-slate-500 dark:text-cyan-300/60">Sea Surface</dt><dd class="mt-1 font-mono text-sm font-bold">13.2 &deg;C</dd></div>
+  </dl>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl3]').forEach((root) => {
+    let kts = true;
+    const btn = root.querySelector('[data-dl3-unit]'), wind = root.querySelector('[data-dl3-wind]');
+    btn?.addEventListener('click', () => {
+      kts = !kts;
+      btn.textContent = kts ? 'Units: Knots' : 'Units: km/h';
+      if (wind) wind.textContent = kts ? '19 kts NW' : '35 km/h NW';
+    });
+  });
+})();
+</script>

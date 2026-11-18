@@ -1,0 +1,23 @@
+<div data-byline class="mx-auto flex w-full max-w-md items-center justify-between gap-4 border border-neutral-200 dark:border-zinc-800 bg-stone-50 dark:bg-zinc-900/95 p-4 text-slate-900 dark:text-zinc-100">
+  <div class="flex items-center gap-3.5 min-w-0">
+    <div class="flex -space-x-3 shrink-0">
+      <img src="/images/avatars/mateo.jpg" alt="Mateo Silva" class="size-12 rounded-full object-cover object-top ring-2 ring-stone-50 dark:ring-zinc-900" />
+      <img src="/images/avatars/sofia.jpg" alt="Sofia Navarro" class="size-8 self-end rounded-full object-cover object-top ring-2 ring-stone-50 dark:ring-zinc-900" />
+    </div>
+    <div class="min-w-0">
+      <p class="truncate font-serif text-base text-neutral-900 dark:text-neutral-100">Mateo Silva &amp; Sofia Navarro</p>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400">Architecture Editors &middot; Nov 15 &middot; 6 min read</p>
+    </div>
+  </div>
+  <button type="button" data-save-byline class="shrink-0 rounded-lg border border-neutral-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-neutral-800 dark:text-zinc-200 hover:bg-neutral-100 dark:hover:bg-zinc-700">Save</button>
+  <script>
+    (() => {
+      const btn = document.currentScript.closest('[data-byline]').querySelector('[data-save-byline]');
+      btn?.addEventListener('click', () => {
+        const saved = btn.dataset.saved === '1';
+        btn.dataset.saved = saved ? '0' : '1';
+        btn.textContent = saved ? 'Save' : 'Saved ✓';
+      });
+    })();
+  </script>
+</div>

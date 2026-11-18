@@ -1,0 +1,50 @@
+<section data-cp10 class="mx-auto w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 sm:p-8 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-5">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Room Directory</span>
+      <h2 class="mt-0.5 text-xl font-bold text-slate-900 dark:text-white">Explore Collections by Space</h2>
+    </div>
+    <div class="flex flex-wrap gap-1.5 rounded-xl bg-slate-100 dark:bg-zinc-900 p-1 border border-slate-200 dark:border-zinc-800">
+      <button type="button" data-cp10-tab="all" class="rounded-lg bg-white dark:bg-zinc-800 px-3.5 py-1.5 font-semibold text-slate-900 dark:text-white shadow-xs">All Spaces (4)</button>
+      <button type="button" data-cp10-tab="studio" class="rounded-lg px-3.5 py-1.5 font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Studio &amp; Desk</button>
+      <button type="button" data-cp10-tab="kitchen" class="rounded-lg px-3.5 py-1.5 font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white">Kitchen &amp; Ritual</button>
+    </div>
+  </div>
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <a href="#task-lighting" data-cp10-cat="studio" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3.5 hover:border-indigo-500 transition">
+      <img src="/images/ecommerce/lamp.jpg" alt="Studio Task Lighting" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-center justify-between"><span class="rounded bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700 dark:text-indigo-300">STUDIO</span><span class="font-mono text-[11px] text-slate-500">9 items</span></div>
+      <p class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Studio Task Lighting</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">From $145 &rarr;</p>
+    </a>
+    <a href="#reading-seating" data-cp10-cat="studio" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3.5 hover:border-indigo-500 transition">
+      <img src="/images/ecommerce/chair.jpg" alt="Reading Seating" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-center justify-between"><span class="rounded bg-indigo-50 dark:bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700 dark:text-indigo-300">STUDIO</span><span class="font-mono text-[11px] text-slate-500">16 items</span></div>
+      <p class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Reading Seating</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">From $680 &rarr;</p>
+    </a>
+    <a href="#pour-over" data-cp10-cat="kitchen" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3.5 hover:border-amber-500 transition">
+      <img src="/images/ecommerce/carafe.jpg" alt="Pour-Over Barware" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-center justify-between"><span class="rounded bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-800 dark:text-amber-300">KITCHEN</span><span class="font-mono text-[11px] text-slate-500">28 items</span></div>
+      <p class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400">Pour-Over Barware</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">From $38 &rarr;</p>
+    </a>
+    <a href="#roasts" data-cp10-cat="kitchen" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/50 p-3.5 hover:border-amber-500 transition">
+      <img src="/images/heroes/pour-over.jpg" alt="Roastery Micro-Lots" class="h-36 w-full rounded-xl object-cover" />
+      <div class="mt-3 flex items-center justify-between"><span class="rounded bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-800 dark:text-amber-300">KITCHEN</span><span class="font-mono text-[11px] text-slate-500">12 items</span></div>
+      <p class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400">Micro-Lot Coffee</p>
+      <p class="mt-0.5 text-[11px] text-slate-500 dark:text-zinc-400">From $22 &rarr;</p>
+    </a>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-cp10]'); if (!r) return;
+  const bs = [...r.querySelectorAll('[data-cp10-tab]')], cards = [...r.querySelectorAll('[data-cp10-cat]')];
+  bs.forEach(b => b.addEventListener('click', () => {
+    const t = b.dataset.cp10Tab;
+    bs.forEach(x => x.className = x === b ? 'rounded-lg bg-white dark:bg-zinc-800 px-3.5 py-1.5 font-semibold text-slate-900 dark:text-white shadow-xs' : 'rounded-lg px-3.5 py-1.5 font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white');
+    cards.forEach(c => c.classList.toggle('hidden', t !== 'all' && c.dataset.cp10Cat !== t));
+  }));
+})();
+</script>

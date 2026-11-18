@@ -1,0 +1,50 @@
+<header data-luxury-nav class="w-full rounded-xl border border-stone-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 sm:px-6 py-4 shadow-xs text-stone-900 dark:text-zinc-100">
+  <div class="grid grid-cols-3 items-center text-[11px] sm:text-xs font-medium tracking-[0.14em] uppercase text-stone-600 dark:text-zinc-300">
+    <nav class="flex items-center gap-4 sm:gap-5">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Menu" class="inline-flex sm:hidden items-center text-stone-950 dark:text-white">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg>
+      </button>
+      <a href="#" class="hidden sm:inline text-stone-950 dark:text-white">Arrivals</a>
+      <a href="#" class="hidden sm:inline transition hover:text-stone-950 dark:hover:text-white">Objects</a>
+      <a href="#" class="hidden md:inline transition hover:text-stone-950 dark:hover:text-white">Atelier</a>
+    </nav>
+    <a href="#" class="flex flex-col items-center text-center normal-case tracking-normal">
+      <span class="font-serif text-lg sm:text-xl font-semibold text-stone-950 dark:text-white">Maison Solis</span>
+      <span class="text-[9px] font-semibold tracking-[0.26em] uppercase text-stone-500 dark:text-zinc-400">Paris · Kyoto</span>
+    </a>
+    <div class="flex items-center justify-end gap-4">
+      <a href="#" class="hidden sm:inline-flex items-center gap-1.5 transition hover:text-stone-950 dark:hover:text-white">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/></svg>
+        <span>Search</span>
+      </a>
+      <button type="button" data-bag-btn class="inline-flex items-center gap-1.5 rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-semibold tracking-wider text-stone-950 dark:text-white transition hover:bg-stone-100 dark:hover:bg-zinc-800">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 5v1H4.667a1.75 1.75 0 00-1.743 1.598l-.826 9.5A1.75 1.75 0 003.84 19h12.32a1.75 1.75 0 001.742-1.902l-.826-9.5A1.75 1.75 0 0015.333 6H14V5a4 4 0 00-8 0zm4-2.5A2.5 2.5 0 007.5 5v1h5V5A2.5 2.5 0 0010 2.5z" clip-rule="evenodd"/></svg>
+        <span data-bag-label>Bag (2)</span>
+      </button>
+    </div>
+  </div>
+  <nav data-mobile-drawer class="hidden sm:hidden flex-col gap-1 border-t border-stone-200 dark:border-zinc-800 mt-3 pt-3 text-xs tracking-[0.14em] uppercase text-stone-700 dark:text-zinc-300">
+    <a href="#" class="py-1.5 font-semibold text-stone-950 dark:text-white">Arrivals</a>
+    <a href="#" class="py-1.5">Objects</a>
+    <a href="#" class="py-1.5">Atelier</a>
+    <a href="#" class="py-1.5">Search Archive</a>
+  </nav>
+</header>
+<script>
+  document.querySelectorAll('[data-luxury-nav]').forEach((nav) => {
+    const btn = nav.querySelector('[data-bag-btn]');
+    const label = nav.querySelector('[data-bag-label]');
+    btn?.addEventListener('click', () => {
+      if (!label) return;
+      label.textContent = label.textContent === 'Bag (2)' ? 'Bag (3)' : 'Bag (2)';
+    });
+    const mBtn = nav.querySelector('[data-mobile-toggle]');
+    const mDrawer = nav.querySelector('[data-mobile-drawer]');
+    mBtn?.addEventListener('click', () => {
+      const open = mBtn.getAttribute('aria-expanded') === 'true';
+      mBtn.setAttribute('aria-expanded', String(!open));
+      mDrawer?.classList.toggle('hidden', open);
+      mDrawer?.classList.toggle('flex', !open);
+    });
+  });
+</script>

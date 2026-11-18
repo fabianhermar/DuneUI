@@ -1,0 +1,53 @@
+<header data-docs-nav class="w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 sm:px-5 py-3 shadow-lg text-xs text-slate-900 dark:text-zinc-100">
+  <div class="flex items-center justify-between gap-2.5">
+    <div class="flex items-center gap-2.5 shrink-0">
+      <span class="flex size-7 items-center justify-center rounded-lg bg-indigo-600 text-white font-mono text-xs font-bold shadow-xs">K</span>
+      <span class="font-bold text-slate-900 dark:text-white text-sm">Kinetix</span>
+      <button type="button" data-version-btn class="rounded-full bg-indigo-50 dark:bg-indigo-500/20 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 transition hover:bg-indigo-100 dark:hover:bg-indigo-500/30">v4.2 ▾</button>
+    </div>
+    <nav class="hidden lg:flex items-center gap-5 font-medium text-slate-600 dark:text-zinc-300">
+      <a href="#" class="font-semibold text-slate-900 dark:text-white">Guides</a>
+      <a href="#" class="hover:text-slate-900 dark:hover:text-white">API Reference</a>
+      <a href="#" class="hover:text-slate-900 dark:hover:text-white">SDKs</a>
+      <a href="#" class="hover:text-slate-900 dark:hover:text-white">Cookbook</a>
+    </nav>
+    <div class="flex items-center gap-2 shrink-0">
+      <button type="button" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-950/60 px-3 py-1.5 text-slate-600 dark:text-zinc-300">
+        <span>Ask AI or search...</span>
+        <kbd class="rounded bg-white dark:bg-zinc-800 px-1.5 py-0.5 font-mono text-[10px] font-semibold ring-1 ring-slate-200 dark:ring-zinc-700">⌘K</kbd>
+      </button>
+      <a href="#" class="hidden sm:inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-2.5 py-1.5 font-semibold text-slate-800 dark:text-zinc-100">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span>14.8k</span>
+      </a>
+      <a href="#" class="rounded-xl bg-slate-900 dark:bg-white px-3 py-1.5 font-semibold text-white dark:text-slate-950">Quickstart</a>
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Menu" class="inline-flex lg:hidden size-8 items-center justify-center rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-800 dark:text-zinc-200">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav data-mobile-drawer class="hidden lg:hidden flex-col gap-1 border-t border-slate-100 dark:border-zinc-800 mt-3 pt-3 font-medium">
+    <a href="#" class="rounded-lg bg-slate-100 dark:bg-zinc-800 px-3 py-2 font-semibold text-slate-900 dark:text-white">Guides &amp; Quickstart</a>
+    <a href="#" class="rounded-lg px-3 py-2 text-slate-700 dark:text-zinc-300">API Reference</a>
+    <a href="#" class="rounded-lg px-3 py-2 text-slate-700 dark:text-zinc-300">SDKs &amp; Cookbook</a>
+  </nav>
+</header>
+<script>
+  document.querySelectorAll('[data-docs-nav]').forEach((nav) => {
+    const versions = ['v4.2 ▾', 'v4.1 ▾', 'v3.8 LTS ▾'];
+    let idx = 0;
+    const btn = nav.querySelector('[data-version-btn]');
+    btn?.addEventListener('click', () => {
+      idx = (idx + 1) % versions.length;
+      btn.textContent = versions[idx];
+    });
+    const mBtn = nav.querySelector('[data-mobile-toggle]');
+    const mDrawer = nav.querySelector('[data-mobile-drawer]');
+    mBtn?.addEventListener('click', () => {
+      const open = mBtn.getAttribute('aria-expanded') === 'true';
+      mBtn.setAttribute('aria-expanded', String(!open));
+      mDrawer?.classList.toggle('hidden', open);
+      mDrawer?.classList.toggle('flex', !open);
+    });
+  });
+</script>

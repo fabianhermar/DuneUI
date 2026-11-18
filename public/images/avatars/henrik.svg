@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="henrik-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EDE9FE"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="henrik-sweater" x1="64" y1="86" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#henrik-bg)"/>
+  <circle cx="96" cy="96" r="24" fill="#F5F3FF" fill-opacity="0.4"/>
+  <path d="M22 128C22 103 40 88 64 88C88 88 106 103 106 128H22Z" fill="url(#henrik-sweater)"/>
+  <rect x="56" y="72" width="16" height="18" rx="8" fill="#DFA785"/>
+  <circle cx="64" cy="54" r="22" fill="#F0C2A5"/>
+  <path d="M41 51C42 33 52 24 65 24C78 24 87 34 86 50C80 41 72 38 62 39C53 40 46 44 41 51Z" fill="#B45309"/>
+  <rect x="49" y="50" width="13" height="9" rx="3.5" stroke="#1E1B4B" stroke-width="2" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="66" y="50" width="13" height="9" rx="3.5" stroke="#1E1B4B" stroke-width="2" fill="#FFFFFF" fill-opacity="0.22"/>
+  <path d="M62 54H66" stroke="#1E1B4B" stroke-width="2"/>
+  <circle cx="55.5" cy="54.5" r="1.8" fill="#1E1B4B"/>
+  <circle cx="72.5" cy="54.5" r="1.8" fill="#1E1B4B"/>
+  <path d="M58 66C61.5 68.5 66.5 68.5 70 66" stroke="#9A533C" stroke-width="2.1" stroke-linecap="round"/>
+</svg>

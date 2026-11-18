@@ -1,0 +1,38 @@
+<div class="mx-auto w-full max-w-2xl rounded-2xl border border-stone-200 dark:border-zinc-800 bg-[#FBF9F6] dark:bg-zinc-900 p-6 text-stone-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="max-w-md">
+      <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">Compliance &amp; Portability</p>
+      <h3 class="mt-1 font-serif text-xl text-stone-900 dark:text-stone-100">Export Personal Data Vault</h3>
+      <p class="mt-1 text-xs leading-relaxed text-stone-600 dark:text-zinc-300">Packages SHA-256 signed workspace activity logs, billing invoices, and member preferences.</p>
+    </div>
+    <button type="button" data-ap10-btn class="shrink-0 rounded-full border border-stone-900 dark:border-stone-200 bg-stone-900 dark:bg-stone-100 px-4 py-2 text-xs font-semibold text-white dark:text-stone-900 hover:opacity-90 transition-opacity">Prepare Archive</button>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-stone-200 dark:border-zinc-800 pt-3.5 text-xs">
+    <div class="flex items-center gap-1.5 font-mono text-[11px]">
+      <button type="button" data-ap10-fmt="JSON" class="rounded-md bg-stone-200 dark:bg-zinc-800 px-2 py-0.5 font-semibold text-stone-900 dark:text-stone-100">JSON</button>
+      <button type="button" data-ap10-fmt="CSV" class="rounded-md px-2 py-0.5 text-stone-500 dark:text-zinc-400 hover:bg-stone-100 dark:hover:bg-zinc-800">CSV</button>
+      <button type="button" data-ap10-fmt="Parquet" class="rounded-md px-2 py-0.5 text-stone-500 dark:text-zinc-400 hover:bg-stone-100 dark:hover:bg-zinc-800">Parquet</button>
+    </div>
+    <span data-ap10-status class="font-mono text-[11px] text-stone-500 dark:text-stone-400">Est. bundle: 18.4 MB (JSON)</span>
+  </div>
+</div>
+<script>
+(function(){
+  let fmt = 'JSON';
+  const fmts = [...document.querySelectorAll('[data-ap10-fmt]')], btn = document.querySelector('[data-ap10-btn]'), st = document.querySelector('[data-ap10-status]');
+  const onCls = 'rounded-md bg-stone-200 dark:bg-zinc-800 px-2 py-0.5 font-semibold text-stone-900 dark:text-stone-100';
+  const offCls = 'rounded-md px-2 py-0.5 text-stone-500 dark:text-zinc-400 hover:bg-stone-100 dark:hover:bg-zinc-800';
+  fmts.forEach(f => f.addEventListener('click', () => {
+    fmt = f.dataset.ap10Fmt || 'JSON';
+    fmts.forEach(x => { x.className = x === f ? onCls : offCls; });
+    if (st) st.textContent = 'Est. bundle: 18.4 MB (' + fmt + ')';
+  }));
+  btn?.addEventListener('click', () => {
+    btn.textContent = 'Packaging...';
+    setTimeout(() => {
+      btn.textContent = 'Download .' + fmt.toLowerCase() + '.zip';
+      if (st) st.textContent = 'Signed SHA-256 ready · Expires in 24h';
+    }, 450);
+  });
+})();
+</script>

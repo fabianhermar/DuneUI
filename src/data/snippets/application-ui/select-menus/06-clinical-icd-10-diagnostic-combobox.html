@@ -1,0 +1,27 @@
+<div data-sel6 class="mx-auto w-full max-w-md rounded-2xl border border-teal-200 dark:border-teal-900/60 bg-white dark:bg-zinc-950 p-5 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex items-center justify-between">
+    <label class="font-mono text-[10px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Primary ICD-10 Diagnosis</label>
+    <span data-sel6-code class="rounded-md bg-teal-50 dark:bg-teal-500/15 px-2 py-0.5 font-mono text-[11px] font-bold text-teal-800 dark:text-teal-300">J06.9</span>
+  </div>
+  <input data-sel6-inp type="text" placeholder="Filter by code or condition..." class="mt-2.5 w-full rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 px-3 py-2 text-xs focus:border-teal-500 focus:outline-none" />
+  <ul class="mt-2.5 divide-y divide-slate-100 dark:divide-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-800 text-xs">
+    <li data-sel6-row data-code="J06.9" data-q="j06.9 acute upper respiratory" class="cursor-pointer flex items-center justify-between px-3 py-2.5 bg-teal-50/70 dark:bg-teal-500/10 font-semibold"><span>Acute upper respiratory infection</span><span class="font-mono text-[11px] text-teal-700 dark:text-teal-300">J06.9</span></li>
+    <li data-sel6-row data-code="I10" data-q="i10 essential primary hypertension" class="cursor-pointer flex items-center justify-between px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-zinc-900"><span>Essential (primary) hypertension</span><span class="font-mono text-[11px] text-slate-500">I10</span></li>
+    <li data-sel6-row data-code="E11.9" data-q="e11.9 type 2 diabetes mellitus" class="cursor-pointer flex items-center justify-between px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-zinc-900"><span>Type 2 diabetes without complications</span><span class="font-mono text-[11px] text-slate-500">E11.9</span></li>
+  </ul>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-sel6]').forEach((root) => {
+    const inp = root.querySelector('[data-sel6-inp]'), rows = [...root.querySelectorAll('[data-sel6-row]')], badge = root.querySelector('[data-sel6-code]');
+    inp?.addEventListener('input', () => {
+      const q = inp.value.trim().toLowerCase();
+      rows.forEach((r) => r.classList.toggle('hidden', !(r.dataset.q || '').includes(q)));
+    });
+    rows.forEach((r) => r.addEventListener('click', () => {
+      rows.forEach((x) => { x.className = x === r ? 'cursor-pointer flex items-center justify-between px-3 py-2.5 bg-teal-50/70 dark:bg-teal-500/10 font-semibold' : 'cursor-pointer flex items-center justify-between px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-zinc-900'; });
+      if (badge) badge.textContent = r.dataset.code || '';
+    }));
+  });
+})();
+</script>

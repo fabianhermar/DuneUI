@@ -1,0 +1,74 @@
+<section data-blog-9 class="mx-auto w-full max-w-4xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm sm:p-9 text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-zinc-800 pb-5">
+    <div>
+      <h2 class="text-xl font-bold text-slate-900 dark:text-white">Publication Archive</h2>
+      <p data-blog-count class="mt-0.5 text-xs text-slate-500 dark:text-zinc-400">Showing 4 articles</p>
+    </div>
+    <div role="group" aria-label="Filter articles" class="flex flex-wrap gap-1.5 text-xs font-semibold">
+      <button type="button" data-blog-cat="all" aria-pressed="true" class="rounded-lg bg-indigo-600 px-3 py-1.5 text-white transition">All</button>
+      <button type="button" data-blog-cat="eng" aria-pressed="false" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3 py-1.5 text-slate-700 dark:text-zinc-300 transition">Engineering</button>
+      <button type="button" data-blog-cat="design" aria-pressed="false" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3 py-1.5 text-slate-700 dark:text-zinc-300 transition">Design</button>
+      <button type="button" data-blog-cat="perf" aria-pressed="false" class="rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3 py-1.5 text-slate-700 dark:text-zinc-300 transition">Performance</button>
+    </div>
+  </div>
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2" data-blog-grid>
+    <article data-cat="eng" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-950/50 p-5 transition hover:border-indigo-400/60">
+      <div class="flex items-center justify-between text-[10px] font-mono">
+        <span class="font-bold uppercase text-indigo-600 dark:text-indigo-400">Engineering</span>
+        <span class="text-slate-500 dark:text-zinc-400">7 min</span>
+      </div>
+      <h3 class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Incremental static regeneration internals</h3>
+      <p class="mt-1.5 text-xs text-slate-600 dark:text-zinc-300">Stale-while-revalidate invalidation without thundering herds across edge POPs.</p>
+    </article>
+    <article data-cat="design" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-950/50 p-5 transition hover:border-rose-400/60">
+      <div class="flex items-center justify-between text-[10px] font-mono">
+        <span class="font-bold uppercase text-rose-600 dark:text-rose-400">Design</span>
+        <span class="text-slate-500 dark:text-zinc-400">5 min</span>
+      </div>
+      <h3 class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400">Editorial rhythm inside SaaS apps</h3>
+      <p class="mt-1.5 text-xs text-slate-600 dark:text-zinc-300">Pairing serif display quotes with dense mono telemetry inside workspace panes.</p>
+    </article>
+    <article data-cat="perf" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-950/50 p-5 transition hover:border-emerald-400/60">
+      <div class="flex items-center justify-between text-[10px] font-mono">
+        <span class="font-bold uppercase text-emerald-700 dark:text-emerald-400">Performance</span>
+        <span class="text-slate-500 dark:text-zinc-400">6 min</span>
+      </div>
+      <h3 class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400">Cutting 120ms from initial hydration</h3>
+      <p class="mt-1.5 text-xs text-slate-600 dark:text-zinc-300">Deferring non-critical island hydration until intersection observer triggers.</p>
+    </article>
+    <article data-cat="eng" class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-950/50 p-5 transition hover:border-indigo-400/60">
+      <div class="flex items-center justify-between text-[10px] font-mono">
+        <span class="font-bold uppercase text-indigo-600 dark:text-indigo-400">Engineering</span>
+        <span class="text-slate-500 dark:text-zinc-400">9 min</span>
+      </div>
+      <h3 class="mt-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Zero-downtime PostgreSQL schema migrations</h3>
+      <p class="mt-1.5 text-xs text-slate-600 dark:text-zinc-300">Expand-and-contract table changes for multi-region write clusters.</p>
+    </article>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('[data-blog-9]').forEach((root) => {
+    const btns = Array.from(root.querySelectorAll('[data-blog-cat]'));
+    const cards = Array.from(root.querySelectorAll('[data-blog-grid] article'));
+    const countEl = root.querySelector('[data-blog-count]');
+    btns.forEach((b) => {
+      b.addEventListener('click', () => {
+        const cat = b.getAttribute('data-blog-cat');
+        btns.forEach((x) => {
+          const active = x === b;
+          x.setAttribute('aria-pressed', String(active));
+          x.className = active
+            ? 'rounded-lg bg-indigo-600 px-3 py-1.5 text-white transition'
+            : 'rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3 py-1.5 text-slate-700 dark:text-zinc-300 transition';
+        });
+        let visible = 0;
+        cards.forEach((c) => {
+          const show = cat === 'all' || c.getAttribute('data-cat') === cat;
+          c.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+        if (countEl) countEl.textContent = 'Showing ' + visible + ' article' + (visible === 1 ? '' : 's');
+      });
+    });
+  });
+</script>

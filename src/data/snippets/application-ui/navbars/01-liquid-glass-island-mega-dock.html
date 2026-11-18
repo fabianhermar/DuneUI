@@ -1,0 +1,94 @@
+<div data-glass-nav class="mx-auto flex w-full max-w-4xl flex-col items-center gap-2.5 text-slate-900 dark:text-white">
+  <div data-glass-announce class="inline-flex max-w-full items-center gap-2 rounded-full border border-slate-900/10 dark:border-white/20 bg-white/80 dark:bg-zinc-900/80 px-3 py-1 text-[11px] font-medium text-slate-700 dark:text-zinc-200 shadow-sm backdrop-blur-xl">
+    <span class="rounded-full bg-gradient-to-r from-sky-500 to-fuchsia-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">New</span>
+    <span class="truncate">Aether Engine 2.4 with real-time spatial shaders</span>
+    <button type="button" data-announce-close aria-label="Dismiss announcement" class="rounded-full p-0.5 text-slate-500 dark:text-zinc-400 hover:bg-slate-900/10 dark:hover:bg-white/15 hover:text-slate-900 dark:hover:text-white">
+      <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg>
+    </button>
+  </div>
+  <header class="w-full rounded-2xl border border-slate-900/10 dark:border-white/20 bg-white/85 dark:bg-zinc-900/80 px-4 sm:px-5 py-2.5 shadow-xl shadow-slate-950/10 dark:shadow-black/40 backdrop-blur-2xl">
+    <div class="flex items-center justify-between gap-2">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight text-sm text-slate-900 dark:text-white shrink-0">
+        <span class="flex size-7 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-600 via-sky-500 to-fuchsia-500 text-white shadow-sm">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/></svg>
+        </span>
+        <span>Aether</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1 rounded-full bg-slate-900/[0.06] dark:bg-white/[0.08] p-1 text-xs font-medium">
+        <button type="button" data-glass-link class="rounded-full bg-white dark:bg-zinc-800 px-3 py-1 font-semibold text-slate-900 dark:text-white shadow-xs transition">Overview</button>
+        <button type="button" data-glass-mega-btn aria-expanded="false" class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-slate-700 dark:text-zinc-200 transition hover:text-slate-950 dark:hover:text-white">
+          <span>Platform</span>
+          <svg class="h-3 w-3 opacity-75" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <button type="button" data-glass-link class="rounded-full px-3 py-1 text-slate-700 dark:text-zinc-200 transition hover:text-slate-950 dark:hover:text-white">Showcase</button>
+        <button type="button" data-glass-link class="rounded-full px-3 py-1 text-slate-700 dark:text-zinc-200 transition hover:text-slate-950 dark:hover:text-white">Pricing</button>
+      </nav>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="#" class="hidden lg:inline-flex px-2.5 py-1.5 text-xs font-medium text-slate-700 dark:text-zinc-200 hover:text-slate-950 dark:hover:text-white">Sign in</a>
+        <a href="#" class="inline-flex items-center gap-1.5 rounded-full bg-slate-900 dark:bg-white px-3.5 py-1.5 text-xs font-semibold text-white dark:text-slate-950 shadow-sm transition hover:bg-slate-800 dark:hover:bg-zinc-200">
+          <span>Launch</span>
+          <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        </a>
+        <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle navigation" class="inline-flex md:hidden size-8 items-center justify-center rounded-full border border-slate-900/15 dark:border-white/20 bg-white/80 dark:bg-zinc-800 text-slate-900 dark:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </div>
+    <div data-glass-mega class="hidden mt-3 border-t border-slate-900/10 dark:border-white/15 pt-3 grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
+      <a href="#" class="rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-zinc-950/60 p-3 transition hover:border-indigo-400">
+        <p class="text-xs font-semibold text-slate-900 dark:text-white">Spatial Runtime</p>
+        <p class="mt-0.5 text-[11px] text-slate-600 dark:text-zinc-300">Sub-millisecond WebGPU scene graph</p>
+      </a>
+      <a href="#" class="rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-zinc-950/60 p-3 transition hover:border-sky-400">
+        <p class="text-xs font-semibold text-slate-900 dark:text-white">Edge Shaders</p>
+        <p class="mt-0.5 text-[11px] text-slate-600 dark:text-zinc-300">Distributed GLSL asset pipeline</p>
+      </a>
+      <a href="#" class="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-900 dark:bg-white p-3 text-white dark:text-slate-950">
+        <p class="text-xs font-semibold">Live 3D Playground →</p>
+        <p class="mt-0.5 text-[11px] text-slate-300 dark:text-slate-700">Inspect shaders in browser</p>
+      </a>
+    </div>
+    <nav data-mobile-drawer class="hidden md:hidden mt-3 flex-col gap-1 border-t border-slate-900/10 dark:border-white/15 pt-3 text-xs font-medium">
+      <a href="#" class="rounded-xl bg-slate-900/[0.06] dark:bg-white/10 px-3 py-2 font-semibold text-slate-900 dark:text-white">Overview</a>
+      <a href="#" class="rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-200">Spatial Runtime &amp; Platform</a>
+      <a href="#" class="rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-200">Showcase</a>
+      <a href="#" class="rounded-xl px-3 py-2 text-slate-700 dark:text-zinc-200">Pricing</a>
+      <div class="mt-2 grid grid-cols-2 gap-2 border-t border-slate-900/10 dark:border-white/15 pt-2.5">
+        <a href="#" class="rounded-full border border-slate-300 dark:border-white/20 py-2 text-center font-semibold text-slate-900 dark:text-white">Sign in</a>
+        <a href="#" class="rounded-full bg-slate-900 dark:bg-white py-2 text-center font-semibold text-white dark:text-slate-950">Launch App</a>
+      </div>
+    </nav>
+  </header>
+</div>
+<script>
+  document.querySelectorAll('[data-glass-nav]').forEach((root) => {
+    const closeBtn = root.querySelector('[data-announce-close]');
+    const announce = root.querySelector('[data-glass-announce]');
+    closeBtn?.addEventListener('click', () => announce?.classList.add('hidden'));
+    const megaBtn = root.querySelector('[data-glass-mega-btn]');
+    const megaPanel = root.querySelector('[data-glass-mega]');
+    megaBtn?.addEventListener('click', () => {
+      const open = megaBtn.getAttribute('aria-expanded') === 'true';
+      megaBtn.setAttribute('aria-expanded', String(!open));
+      megaPanel?.classList.toggle('hidden', open);
+      megaPanel?.classList.toggle('grid', !open);
+    });
+    const links = Array.from(root.querySelectorAll('[data-glass-link]'));
+    links.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        links.forEach((el) => {
+          el.className = 'rounded-full px-3 py-1 text-slate-700 dark:text-zinc-200 transition hover:text-slate-950 dark:hover:text-white';
+        });
+        btn.className = 'rounded-full bg-white dark:bg-zinc-800 px-3 py-1 font-semibold text-slate-900 dark:text-white shadow-xs transition';
+      });
+    });
+    const mBtn = root.querySelector('[data-mobile-toggle]');
+    const mDrawer = root.querySelector('[data-mobile-drawer]');
+    mBtn?.addEventListener('click', () => {
+      const open = mBtn.getAttribute('aria-expanded') === 'true';
+      mBtn.setAttribute('aria-expanded', String(!open));
+      mDrawer?.classList.toggle('hidden', open);
+      mDrawer?.classList.toggle('flex', !open);
+    });
+  });
+</script>

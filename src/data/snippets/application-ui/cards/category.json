@@ -1,0 +1,69 @@
+{
+  "slug": "cards",
+  "index": "08",
+  "tag": "Containers",
+  "title": "Cards",
+  "description": "10 showcase-grade responsive card templates: Spatial glass audio players, gradient sparkline KPI cards, Neo-Brutalist event passes, AI agent spotlights, storefront swatch cards, editorial lookbooks, careers, weather, DevOps telemetry, and podcast players.",
+  "specs": [
+    {
+      "file": "01-liquid-glass-audio-player.html",
+      "title": "Liquid Glass Audio Player",
+      "styleTag": "Apple · Spatial Glass",
+      "canvas": "mesh"
+    },
+    {
+      "file": "02-stripe-revenue-sparkline-card.html",
+      "title": "Stripe Revenue Sparkline Card",
+      "styleTag": "Stripe · Fintech KPI",
+      "canvas": "muted"
+    },
+    {
+      "file": "03-brutalist-workshop-ticket.html",
+      "title": "Brutalist Workshop Ticket",
+      "styleTag": "Brutalist · Poster",
+      "canvas": "light"
+    },
+    {
+      "file": "04-linear-dark-agent-spotlight.html",
+      "title": "Linear Dark Agent Spotlight",
+      "styleTag": "Linear · AI Agent",
+      "canvas": "dark"
+    },
+    {
+      "file": "05-sneaker-product-swatch-card.html",
+      "title": "Sneaker Product Swatch Card",
+      "styleTag": "Storefront · Swatches",
+      "canvas": "light"
+    },
+    {
+      "file": "06-editorial-lookbook-card.html",
+      "title": "Editorial Lookbook Card",
+      "styleTag": "Editorial · Print",
+      "canvas": "light"
+    },
+    {
+      "file": "07-job-board-open-role-card.html",
+      "title": "Job Board Open Role Card",
+      "styleTag": "Careers · Hiring",
+      "canvas": "muted"
+    },
+    {
+      "file": "08-studio-weather-telemetry.html",
+      "title": "Studio Weather Telemetry",
+      "styleTag": "iOS · Glass Weather",
+      "canvas": "mesh"
+    },
+    {
+      "file": "09-dark-server-cluster-status.html",
+      "title": "Dark Server Cluster Status",
+      "styleTag": "DevOps · Infra",
+      "canvas": "dark"
+    },
+    {
+      "file": "10-podcast-episode-card.html",
+      "title": "Podcast Episode Card",
+      "styleTag": "Media · Podcast",
+      "canvas": "light"
+    }
+  ]
+}

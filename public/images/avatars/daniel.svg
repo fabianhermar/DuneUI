@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="daniel-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D1FAE5"/>
+      <stop offset="100%" stop-color="#6EE7B7"/>
+    </linearGradient>
+    <linearGradient id="daniel-jacket" x1="64" y1="86" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#daniel-bg)"/>
+  <circle cx="28" cy="28" r="20" fill="#ECFDF5" fill-opacity="0.55"/>
+  <path d="M22 128C22 103 40 88 64 88C88 88 106 103 106 128H22Z" fill="url(#daniel-jacket)"/>
+  <path d="M53 88L64 100L75 88H53Z" fill="#F8FAFC"/>
+  <rect x="56" y="72" width="16" height="18" rx="8" fill="#7C4D34"/>
+  <circle cx="64" cy="54" r="22" fill="#8D583B"/>
+  <path d="M42 50C42 33 52 24 64 24C76 24 86 33 86 50C82 40 74 36 64 36C54 36 46 40 42 50Z" fill="#18181B"/>
+  <path d="M46 61C47 71 54 77 64 77C74 77 81 71 82 61C78 68 72 71 64 71C56 71 50 68 46 61Z" fill="#18181B" fill-opacity="0.82"/>
+  <circle cx="56" cy="53" r="2.1" fill="#09090B"/>
+  <circle cx="72" cy="53" r="2.1" fill="#09090B"/>
+  <path d="M58 64C61.5 66.5 66.5 66.5 70 64" stroke="#F5D0BA" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,56 @@
+<section data-sc9 class="mx-auto w-full max-w-3xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 text-xs text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div>
+      <h2 class="text-base font-bold">Enterprise License Quote Cart</h2>
+      <p class="mt-0.5 text-slate-500 dark:text-zinc-400">Adjust seat count or attach add-ons to export a PO-ready quote.</p>
+    </div>
+    <span class="rounded-md bg-indigo-50 dark:bg-indigo-500/15 px-2.5 py-1 font-mono text-[10px] font-bold text-indigo-700 dark:text-indigo-300">NET-30 INVOICING</span>
+  </div>
+  <div class="mt-4 overflow-x-auto">
+    <table class="w-full text-left">
+      <thead class="border-b border-slate-200 dark:border-zinc-800 text-slate-500 dark:text-zinc-400">
+        <tr><th class="py-2 font-medium">SKU / License</th><th class="py-2 font-medium">Quantity</th><th class="py-2 text-right font-medium">Monthly</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-zinc-800">
+        <tr>
+          <td class="py-3.5 font-semibold">Pro Organization Seat ($24/mo)</td>
+          <td class="py-3.5">
+            <div class="inline-flex items-center rounded-lg border border-slate-200 dark:border-zinc-700 font-mono">
+              <button type="button" data-sc9-dec class="cursor-pointer px-2 py-0.5 hover:bg-slate-100 dark:hover:bg-zinc-800">&minus;</button>
+              <span data-sc9-seats class="px-2.5 font-bold">12</span>
+              <button type="button" data-sc9-inc class="cursor-pointer px-2 py-0.5 hover:bg-slate-100 dark:hover:bg-zinc-800">+</button>
+            </div>
+          </td>
+          <td data-sc9-sub class="py-3.5 text-right font-mono font-bold">$288.00</td>
+        </tr>
+        <tr>
+          <td class="py-3.5"><label class="inline-flex items-center gap-2 font-semibold cursor-pointer"><input type="checkbox" checked data-sc9-addon class="accent-indigo-600" /> Figma Tokens Sync Add-On</label></td>
+          <td class="py-3.5 font-mono text-slate-500">1 org</td>
+          <td data-sc9-addprice class="py-3.5 text-right font-mono font-bold">$49.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 dark:border-zinc-800 pt-4">
+    <span class="font-mono text-sm font-bold">Monthly Quote: <span data-sc9-tot>$337.00</span>/mo</span>
+    <button type="button" data-sc9-link class="cursor-pointer rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-950 hover:opacity-90">Generate Quote Link</button>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-sc9]'); if (!root) return;
+  let seats = 12;
+  const addon = root.querySelector('[data-sc9-addon]'), link = root.querySelector('[data-sc9-link]');
+  const sync = () => {
+    const addOnCost = addon?.checked ? 49 : 0;
+    root.querySelector('[data-sc9-seats]').textContent = String(seats);
+    root.querySelector('[data-sc9-sub]').textContent = '$' + (seats * 24).toFixed(2);
+    root.querySelector('[data-sc9-addprice]').textContent = addon?.checked ? '$49.00' : '$0.00';
+    root.querySelector('[data-sc9-tot]').textContent = '$' + (seats * 24 + addOnCost).toFixed(2);
+  };
+  root.querySelector('[data-sc9-inc]')?.addEventListener('click', () => { seats++; sync(); });
+  root.querySelector('[data-sc9-dec]')?.addEventListener('click', () => { if (seats > 1) seats--; sync(); });
+  addon?.addEventListener('change', sync);
+  link?.addEventListener('click', () => { link.textContent = 'Quote Link Copied ✓'; setTimeout(() => { link.textContent = 'Generate Quote Link'; }, 1000); });
+})();
+</script>

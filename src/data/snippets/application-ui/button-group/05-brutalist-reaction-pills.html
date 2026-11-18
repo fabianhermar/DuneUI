@@ -1,0 +1,46 @@
+<div data-brutal-votes class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex flex-wrap overflow-hidden rounded-xl border-2 border-black dark:border-zinc-200 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#e4e4e7]">
+    <button type="button" data-upvote aria-pressed="true" class="inline-flex items-center gap-1.5 border-r-2 border-black dark:border-zinc-200 bg-lime-300 px-4 py-2 text-xs font-black text-black cursor-pointer transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path d="M8 3.25a.75.75 0 0 1 .58.273l4.25 5.25a.75.75 0 0 1-.58 1.227H3.75a.75.75 0 0 1-.58-1.227l4.25-5.25A.75.75 0 0 1 8 3.25Z"/></svg>
+      <span>Upvote</span>
+      <span data-vote-count class="font-mono">142</span>
+    </button>
+    <button type="button" data-save aria-pressed="false" class="inline-flex items-center gap-1.5 border-r-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 px-4 py-2 text-xs font-bold text-black dark:text-white hover:bg-amber-200 dark:hover:bg-amber-300 dark:hover:text-black cursor-pointer transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path d="M4.75 2A1.75 1.75 0 0 0 3 3.75v10.02a.5.5 0 0 0 .777.416L8 11.4l4.223 2.786a.5.5 0 0 0 .777-.416V3.75A1.75 1.75 0 0 0 11.25 2h-6.5Z"/></svg>
+      <span data-save-label>Save</span>
+    </button>
+    <button type="button" class="inline-flex items-center gap-1.5 bg-white dark:bg-zinc-900 px-4 py-2 text-xs font-bold text-black dark:text-white hover:bg-cyan-200 dark:hover:bg-cyan-300 dark:hover:text-black cursor-pointer transition-colors">
+      <span>Share</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-brutal-votes]');
+      const up = root.querySelector('[data-upvote]');
+      const countEl = root.querySelector('[data-vote-count]');
+      const saveBtn = root.querySelector('[data-save]');
+      const saveLabel = root.querySelector('[data-save-label]');
+      up?.addEventListener('click', () => {
+        const voted = up.getAttribute('aria-pressed') === 'true';
+        up.setAttribute('aria-pressed', String(!voted));
+        up.classList.toggle('bg-lime-300', !voted);
+        up.classList.toggle('bg-white', voted);
+        up.classList.toggle('dark:bg-zinc-900', voted);
+        up.classList.toggle('text-black', !voted);
+        up.classList.toggle('dark:text-white', voted);
+        countEl.textContent = voted ? '141' : '142';
+      });
+      saveBtn?.addEventListener('click', () => {
+        const saved = saveBtn.getAttribute('aria-pressed') === 'true';
+        saveBtn.setAttribute('aria-pressed', String(!saved));
+        saveBtn.classList.toggle('bg-amber-200', !saved);
+        saveBtn.classList.toggle('text-black', !saved);
+        saveBtn.classList.toggle('bg-white', saved);
+        saveBtn.classList.toggle('dark:bg-zinc-900', saved);
+        saveBtn.classList.toggle('dark:text-white', saved);
+        saveLabel.textContent = saved ? 'Save' : 'Saved';
+      });
+    })();
+  </script>
+</div>

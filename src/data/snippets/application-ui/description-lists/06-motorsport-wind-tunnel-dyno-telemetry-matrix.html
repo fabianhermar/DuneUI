@@ -1,0 +1,37 @@
+<div data-dl6 class="mx-auto w-full max-w-3xl rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#0B0C0F] p-6 text-slate-900 dark:text-zinc-100 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/heroes/alpine-coupe.jpg" alt="Kastel GT" class="h-12 w-18 rounded-lg object-cover ring-1 ring-slate-200 dark:ring-white/15" />
+      <div>
+        <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-orange-600 dark:text-orange-400">WIND TUNNEL TEST #84</span>
+        <h3 class="text-sm font-bold">Kastel GT-R Carbon Aero Spec</h3>
+      </div>
+    </div>
+    <div class="inline-flex rounded-lg border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-900 p-0.5 font-mono text-[10px]">
+      <button type="button" data-dl6-u="metric" class="cursor-pointer rounded-md bg-orange-600 px-2.5 py-1 font-bold text-white">METRIC</button>
+      <button type="button" data-dl6-u="imp" class="cursor-pointer rounded-md px-2.5 py-1 font-semibold text-slate-500 dark:text-zinc-400">IMPERIAL</button>
+    </div>
+  </div>
+  <dl class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 font-mono text-xs">
+    <div class="rounded-xl bg-slate-50 dark:bg-zinc-900 p-3.5 border border-slate-200/80 dark:border-zinc-800"><dt class="text-[10px] uppercase text-slate-500 dark:text-zinc-400">Peak Torque</dt><dd data-dl6-trq class="mt-1 text-base font-bold">780 Nm</dd></div>
+    <div class="rounded-xl bg-slate-50 dark:bg-zinc-900 p-3.5 border border-slate-200/80 dark:border-zinc-800"><dt class="text-[10px] uppercase text-slate-500 dark:text-zinc-400">Drag Coeff</dt><dd class="mt-1 text-base font-bold text-orange-600 dark:text-orange-400">0.21 Cd</dd></div>
+    <div class="rounded-xl bg-slate-50 dark:bg-zinc-900 p-3.5 border border-slate-200/80 dark:border-zinc-800"><dt class="text-[10px] uppercase text-slate-500 dark:text-zinc-400">Curb Weight</dt><dd data-dl6-wt class="mt-1 text-base font-bold">1,690 kg</dd></div>
+    <div class="rounded-xl bg-slate-50 dark:bg-zinc-900 p-3.5 border border-slate-200/80 dark:border-zinc-800"><dt class="text-[10px] uppercase text-slate-500 dark:text-zinc-400">Top Speed</dt><dd data-dl6-spd class="mt-1 text-base font-bold">285 km/h</dd></div>
+  </dl>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl6]').forEach((root) => {
+    const btns = [...root.querySelectorAll('[data-dl6-u]')];
+    const onCls = 'cursor-pointer rounded-md bg-orange-600 px-2.5 py-1 font-bold text-white';
+    const offCls = 'cursor-pointer rounded-md px-2.5 py-1 font-semibold text-slate-500 dark:text-zinc-400';
+    btns.forEach((b) => b.addEventListener('click', () => {
+      btns.forEach((x) => { x.className = x === b ? onCls : offCls; });
+      const imp = b.dataset.dl6U === 'imp';
+      root.querySelector('[data-dl6-trq]').textContent = imp ? '575 lb-ft' : '780 Nm';
+      root.querySelector('[data-dl6-wt]').textContent = imp ? '3,725 lbs' : '1,690 kg';
+      root.querySelector('[data-dl6-spd]').textContent = imp ? '177 mph' : '285 km/h';
+    }));
+  });
+})();
+</script>

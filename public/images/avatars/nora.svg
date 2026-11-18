@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="nora-bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFE4D6"/>
+      <stop offset="100%" stop-color="#F6B89E"/>
+    </linearGradient>
+    <linearGradient id="nora-shirt" x1="64" y1="84" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#nora-bg)"/>
+  <circle cx="96" cy="28" r="24" fill="#FFF1EA" fill-opacity="0.45"/>
+  <path d="M22 128C22 103 40 88 64 88C88 88 106 103 106 128H22Z" fill="url(#nora-shirt)"/>
+  <path d="M40 52C40 33 50 22 64 22C78 22 88 33 88 52V74C88 82 82 88 74 88H54C46 88 40 82 40 74V52Z" fill="#27272A"/>
+  <rect x="56" y="74" width="16" height="18" rx="8" fill="#E6AD8B"/>
+  <circle cx="64" cy="56" r="22" fill="#F2BE9E"/>
+  <path d="M42 52C42 36 52 26 64 26C76 26 86 35 86 50C79 44 72 41 64 41C55 41 48 45 42 52Z" fill="#27272A"/>
+  <circle cx="56" cy="56" r="2.2" fill="#18181B"/>
+  <circle cx="72" cy="56" r="2.2" fill="#18181B"/>
+  <path d="M58 66C61.5 69 66.5 69 70 66" stroke="#9A533C" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="48.5" cy="61" r="3" fill="#EA8A77" fill-opacity="0.35"/>
+  <circle cx="79.5" cy="61" r="3" fill="#EA8A77" fill-opacity="0.35"/>
+</svg>

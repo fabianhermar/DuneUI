@@ -1,0 +1,89 @@
+<div data-drw5 data-open="true" class="group/d5 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-200 dark:border-white/15 bg-gradient-to-br from-sky-50 via-white to-indigo-100 dark:from-[#0A101F] dark:via-[#171642] dark:to-[#070811] text-slate-900 dark:text-white shadow-xl">
+  <!-- Ambient Orbs Behind Glass -->
+  <div aria-hidden="true" class="pointer-events-none absolute -top-20 left-12 h-64 w-64 rounded-full bg-cyan-300/35 dark:bg-cyan-400/20 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute bottom-0 right-16 h-72 w-72 rounded-full bg-indigo-300/35 dark:bg-violet-500/25 blur-3xl"></div>
+
+  <!-- Studio Roster Behind Sheet -->
+  <div class="relative flex h-full flex-col p-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-left group-data-[open=true]/d5:scale-[0.96]">
+    <div class="flex items-center justify-between">
+      <div><p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-600 dark:text-cyan-300">STUDIO ROSTER</p><p class="mt-0.5 text-sm font-bold">Core Design Team</p></div>
+      <button type="button" data-drw5-open class="cursor-pointer rounded-full border border-slate-900/15 dark:border-white/25 bg-white/75 dark:bg-white/10 px-4 py-1.5 text-xs font-semibold backdrop-blur-md transition hover:scale-105">Inspect Profile</button>
+    </div>
+
+    <div class="mt-5 space-y-2.5 max-w-md text-xs">
+      <button type="button" data-drw5-pick="0" class="cursor-pointer flex w-full items-center gap-3 rounded-2xl border border-white/80 dark:border-white/15 bg-white/60 dark:bg-white/[0.06] p-3 text-left backdrop-blur-xl hover:bg-white/85 dark:hover:bg-white/10 transition">
+        <img src="/images/testimonials/elena.jpg" alt="Elena Vance" class="size-9 rounded-xl object-cover" />
+        <div><p class="font-bold">Elena Vance</p><p class="text-[11px] text-slate-600 dark:text-white/65">Staff Product Designer &bull; Zurich</p></div>
+      </button>
+      <button type="button" data-drw5-pick="1" class="cursor-pointer flex w-full items-center gap-3 rounded-2xl border border-white/80 dark:border-white/15 bg-white/60 dark:bg-white/[0.06] p-3 text-left backdrop-blur-xl hover:bg-white/85 dark:hover:bg-white/10 transition">
+        <img src="/images/testimonials/henrik.jpg" alt="Henrik Lindqvist" class="size-9 rounded-xl object-cover" />
+        <div><p class="font-bold">Henrik Lindqvist</p><p class="text-[11px] text-slate-600 dark:text-white/65">Principal UI Engineer &bull; Stockholm</p></div>
+      </button>
+      <button type="button" data-drw5-pick="2" class="cursor-pointer flex w-full items-center gap-3 rounded-2xl border border-white/80 dark:border-white/15 bg-white/60 dark:bg-white/[0.06] p-3 text-left backdrop-blur-xl hover:bg-white/85 dark:hover:bg-white/10 transition">
+        <img src="/images/testimonials/daniel.jpg" alt="Daniel Kim" class="size-9 rounded-xl object-cover" />
+        <div><p class="font-bold">Daniel Kim</p><p class="text-[11px] text-slate-600 dark:text-white/65">Motion Systems Lead &bull; Seoul</p></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Frosted Glass Slide-Over -->
+  <aside role="dialog" aria-modal="true" aria-label="Member inspector" class="absolute inset-y-3 right-3 flex w-[calc(100%-1.5rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-white/90 dark:border-white/25 bg-white/75 dark:bg-[#14172B]/80 p-5 shadow-2xl backdrop-blur-2xl translate-x-[112%] group-data-[open=true]/d5:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"></div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img data-drw5-img src="/images/testimonials/elena.jpg" alt="Elena Vance" class="size-12 rounded-2xl object-cover ring-2 ring-white/80 dark:ring-white/30" />
+        <div>
+          <h3 data-drw5-name class="text-sm font-bold">Elena Vance</h3>
+          <p data-drw5-role class="text-xs text-indigo-700 dark:text-cyan-200">Staff Product Designer</p>
+        </div>
+      </div>
+      <button type="button" data-drw5-close aria-label="Close inspector" class="cursor-pointer flex size-8 items-center justify-center rounded-full border border-slate-900/10 dark:border-white/20 bg-white/60 dark:bg-white/10 hover:bg-white dark:hover:bg-white/20 transition">
+        <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="mt-5 grid grid-cols-2 gap-2.5 text-xs">
+      <div class="rounded-xl border border-white/70 dark:border-white/15 bg-white/55 dark:bg-white/[0.06] p-3"><p class="font-mono text-[9px] uppercase tracking-wider text-slate-500 dark:text-white/50">Location</p><p data-drw5-tz class="mt-1 font-semibold">CET &bull; Zurich</p></div>
+      <div class="rounded-xl border border-white/70 dark:border-white/15 bg-white/55 dark:bg-white/[0.06] p-3"><p class="font-mono text-[9px] uppercase tracking-wider text-slate-500 dark:text-white/50">Availability</p><p class="mt-1 flex items-center gap-1.5 font-semibold text-emerald-700 dark:text-emerald-300"><span class="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Online</p></div>
+    </div>
+
+    <p data-drw5-bio class="mt-4 text-xs leading-relaxed text-slate-700 dark:text-white/80">Owns design system tokens, spatial glass elevation surfaces, and Figma-to-Tailwind parity audits across 59 UI families.</p>
+
+    <div class="mt-4 flex flex-wrap gap-1.5 font-mono text-[10px]">
+      <span class="rounded-full border border-white/70 dark:border-white/15 bg-white/60 dark:bg-white/10 px-2.5 py-1">Design Systems</span>
+      <span class="rounded-full border border-white/70 dark:border-white/15 bg-white/60 dark:bg-white/10 px-2.5 py-1">Tailwind v4</span>
+      <span class="rounded-full border border-white/70 dark:border-white/15 bg-white/60 dark:bg-white/10 px-2.5 py-1">WCAG AAA</span>
+    </div>
+
+    <div class="mt-auto pt-4 flex gap-2.5">
+      <button type="button" data-drw5-ping class="cursor-pointer flex-1 rounded-xl bg-slate-950 dark:bg-white py-2.5 text-xs font-semibold text-white dark:text-slate-950 shadow-sm hover:opacity-90 transition">Ping on Huddle</button>
+      <button type="button" data-drw5-close class="cursor-pointer rounded-xl border border-slate-900/15 dark:border-white/25 bg-white/60 dark:bg-white/10 px-4 py-2.5 text-xs font-semibold hover:bg-white dark:hover:bg-white/20 transition">Close</button>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw5]').forEach((root) => {
+    const members = [
+      { img: '/images/testimonials/elena.jpg', name: 'Elena Vance', role: 'Staff Product Designer', tz: 'CET · Zurich', bio: 'Owns design system tokens, spatial glass elevation surfaces, and Figma-to-Tailwind parity audits across 59 UI families.' },
+      { img: '/images/testimonials/henrik.jpg', name: 'Henrik Lindqvist', role: 'Principal UI Engineer', tz: 'CET · Stockholm', bio: 'Builds zero-JS CSS disclosure primitives, keyboard navigation flows, and Astro island hydration pipelines.' },
+      { img: '/images/testimonials/daniel.jpg', name: 'Daniel Kim', role: 'Motion Systems Lead', tz: 'KST · Seoul', bio: 'Designs spring-physics drawers, reduced-motion fallbacks, and real-time WAAPI interactive showcases.' }
+    ];
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    root.querySelector('[data-drw5-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelectorAll('[data-drw5-close]').forEach((b) => b.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    root.querySelectorAll('[data-drw5-pick]').forEach((btn) => btn.addEventListener('click', () => {
+      const m = members[Number(btn.getAttribute('data-drw5-pick') || 0)];
+      root.querySelector('[data-drw5-img]').src = m.img;
+      root.querySelector('[data-drw5-name]').textContent = m.name;
+      root.querySelector('[data-drw5-role]').textContent = m.role;
+      root.querySelector('[data-drw5-tz]').textContent = m.tz;
+      root.querySelector('[data-drw5-bio]').textContent = m.bio;
+      setOpen(true);
+    }));
+    const ping = root.querySelector('[data-drw5-ping]');
+    ping?.addEventListener('click', () => { ping.textContent = 'Invite Sent ✓'; setTimeout(() => { ping.textContent = 'Ping on Huddle'; }, 1600); });
+  });
+})();
+</script>

@@ -1,0 +1,95 @@
+<div data-shell-glass class="flex w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-slate-900/20 dark:border-white/40 bg-slate-200/80 dark:bg-white/15 text-slate-900 dark:text-white shadow-lg dark:shadow-2xl backdrop-blur-2xl md:min-h-[460px] md:flex-row">
+  <div class="flex md:hidden items-center justify-between gap-2 border-b border-slate-900/15 dark:border-white/20 bg-slate-900/[0.06] dark:bg-white/10 px-4 py-2.5">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle Finder sidebar" class="inline-flex size-8 shrink-0 items-center justify-center rounded-xl border border-slate-900/15 dark:border-white/25 bg-white/80 dark:bg-white/15 text-slate-900 dark:text-white">
+        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <span class="truncate text-xs font-semibold text-slate-900 dark:text-white">Spatial Finder</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <span class="size-2.5 rounded-full bg-rose-400"></span>
+      <span class="size-2.5 rounded-full bg-amber-300"></span>
+      <span class="size-2.5 rounded-full bg-emerald-400"></span>
+    </div>
+  </div>
+
+  <aside data-sidebar-drawer class="hidden md:flex w-full shrink-0 flex-col justify-between border-b border-slate-900/15 dark:border-white/20 bg-slate-900/[0.07] dark:bg-white/10 p-4 md:w-64 md:border-b-0 md:border-r">
+    <div>
+      <div class="hidden md:flex items-center justify-between px-1 pb-3">
+        <div class="flex items-center gap-1.5">
+          <span class="size-3 rounded-full bg-rose-400"></span>
+          <span class="size-3 rounded-full bg-amber-300"></span>
+          <span class="size-3 rounded-full bg-emerald-400"></span>
+        </div>
+        <span class="text-[11px] font-medium text-slate-700 dark:text-white/80">Spatial Finder</span>
+      </div>
+
+      <div class="md:mt-2 space-y-4 text-xs">
+        <div>
+          <p class="px-2.5 text-[10px] font-semibold uppercase tracking-wider text-slate-600 dark:text-white/70">Favorites</p>
+          <nav class="mt-1.5 space-y-1 font-medium">
+            <button type="button" data-glass-nav data-folder="Recents" class="flex w-full items-center gap-2.5 rounded-xl bg-white/85 dark:bg-white/25 px-3 py-2 text-left font-semibold text-slate-900 dark:text-white shadow-xs"><span>✦</span> Recents</button>
+            <button type="button" data-glass-nav data-folder="Design Assets" class="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-slate-800 dark:text-white/85 hover:bg-slate-900/[0.07] dark:hover:bg-white/15"><span>◫</span> Design Assets</button>
+            <button type="button" data-glass-nav data-folder="Shared iCloud" class="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-slate-800 dark:text-white/85 hover:bg-slate-900/[0.07] dark:hover:bg-white/15"><span>☁</span> Shared iCloud</button>
+          </nav>
+        </div>
+
+        <div>
+          <p class="px-2.5 text-[10px] font-semibold uppercase tracking-wider text-slate-600 dark:text-white/70">Smart Tags</p>
+          <nav class="mt-1.5 space-y-1 text-slate-800 dark:text-white/85">
+            <button type="button" data-glass-nav data-folder="Production Specs" class="flex w-full items-center gap-2.5 rounded-xl px-3 py-1.5 text-left hover:bg-slate-900/[0.07] dark:hover:bg-white/15"><span class="size-2.5 rounded-full bg-sky-400"></span> Production Specs</button>
+            <button type="button" data-glass-nav data-folder="Concept 2027" class="flex w-full items-center gap-2.5 rounded-xl px-3 py-1.5 text-left hover:bg-slate-900/[0.07] dark:hover:bg-white/15"><span class="size-2.5 rounded-full bg-fuchsia-400"></span> Concept 2027</button>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/60 dark:bg-white/15 p-3 text-xs">
+      <p class="font-semibold">248 GB / 500 GB Free</p>
+      <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-900/15 dark:bg-white/20"><div class="h-full w-1/2 rounded-full bg-slate-900 dark:bg-white"></div></div>
+    </div>
+  </aside>
+
+  <main class="flex flex-1 min-w-0 flex-col justify-between bg-white/50 dark:bg-black/15 p-4 sm:p-7">
+    <div>
+      <div class="flex items-center justify-between border-b border-slate-900/15 dark:border-white/15 pb-3">
+        <h4 data-main-folder class="text-base font-semibold">Recents</h4>
+        <span class="rounded-full bg-slate-900/[0.07] dark:bg-white/20 px-3 py-1 text-[11px]">Icon View</span>
+      </div>
+      <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 text-xs">
+        <div class="rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/65 dark:bg-white/15 p-4 text-center"><p class="font-semibold">Hero-v4.fig</p><p class="mt-1 text-[10px] text-slate-600 dark:text-white/75">Edited 2m ago</p></div>
+        <div class="rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/65 dark:bg-white/15 p-4 text-center"><p class="font-semibold">Tokens.json</p><p class="mt-1 text-[10px] text-slate-600 dark:text-white/75">Today</p></div>
+        <div class="rounded-2xl border border-slate-900/15 dark:border-white/25 bg-white/65 dark:bg-white/15 p-4 text-center col-span-2 sm:col-span-1"><p class="font-semibold">Motion.mov</p><p class="mt-1 text-[10px] text-slate-600 dark:text-white/75">Yesterday</p></div>
+      </div>
+    </div>
+    <p class="mt-6 text-[11px] text-slate-700 dark:text-white/75">Translucent sidebar chrome with collapsible mobile drawer and native hierarchy</p>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-glass]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const mainFolder = root.querySelector('[data-main-folder]');
+    const items = Array.from(root.querySelectorAll('[data-glass-nav]'));
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    items.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        items.forEach((el) => {
+          el.classList.remove('bg-white/85', 'dark:bg-white/25', 'font-semibold', 'shadow-xs');
+        });
+        btn.classList.add('bg-white/85', 'dark:bg-white/25', 'font-semibold', 'shadow-xs');
+        if (mainFolder) mainFolder.textContent = btn.getAttribute('data-folder') || 'Recents';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+  });
+</script>

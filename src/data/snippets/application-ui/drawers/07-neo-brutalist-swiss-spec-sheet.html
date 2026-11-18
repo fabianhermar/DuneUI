@@ -1,0 +1,64 @@
+<div data-drw7 data-open="true" class="group/d7 relative mx-auto h-[500px] w-full max-w-4xl overflow-hidden rounded-2xl border-2 border-black dark:border-zinc-200 bg-[#FFFDF7] dark:bg-[#111110] text-black dark:text-zinc-100 shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#e4e4e7]">
+  <div class="flex h-full flex-col">
+    <div class="flex items-center justify-between border-b-2 border-black dark:border-zinc-200 bg-[#FDE047] px-5 py-3 text-black">
+      <span class="font-mono text-xs font-black uppercase tracking-wider">SPRINT-14 // ARTIFACT QA</span>
+      <button type="button" data-drw7-open class="cursor-pointer border-2 border-black bg-white px-3 py-1 font-mono text-xs font-black text-black shadow-[3px_3px_0_0_#000] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">OPEN SPEC &rarr;</button>
+    </div>
+    <div class="p-6 space-y-3">
+      <div class="inline-flex items-center gap-2 border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-800 px-3 py-1.5 font-mono text-xs font-bold">
+        <span>STATUS:</span>
+        <span data-drw7-status class="bg-[#BEF264] px-2 py-0.5 text-black">IN REVIEW</span>
+      </div>
+      <p class="max-w-sm text-xs font-bold text-neutral-700 dark:text-neutral-300">Verify responsive drawer mechanics, dark/light contrast pairs, and Escape dismissal across all 59 component families.</p>
+    </div>
+  </div>
+
+  <div data-drw7-bg class="absolute inset-0 bg-black/35 opacity-0 pointer-events-none transition-opacity duration-300 group-data-[open=true]/d7:opacity-100 group-data-[open=true]/d7:pointer-events-auto"></div>
+
+  <aside role="dialog" aria-modal="true" aria-label="Task specification" class="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 translate-x-full group-data-[open=true]/d7:translate-x-0 transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="flex items-center justify-between border-b-2 border-black dark:border-zinc-200 bg-[#BEF264] px-5 py-3.5 text-black">
+      <span class="font-mono text-xs font-black uppercase">TASK #DN-204</span>
+      <button type="button" data-drw7-close class="cursor-pointer border-2 border-black bg-white px-2.5 py-0.5 font-mono text-xs font-black text-black">ESC [X]</button>
+    </div>
+
+    <div class="flex-1 space-y-4 overflow-y-auto p-5">
+      <h3 class="text-lg font-black uppercase leading-tight">Audit responsive drawers &amp; spring entrance physics</h3>
+      <div class="flex flex-wrap gap-2 font-mono text-[10px] font-black text-black">
+        <span class="border-2 border-black bg-[#FDE047] px-2 py-0.5">P0 BLOCKER</span>
+        <span class="border-2 border-black bg-white px-2 py-0.5">375PX &rarr; 1440PX</span>
+      </div>
+
+      <div class="space-y-2 border-2 border-black dark:border-zinc-200 bg-[#FAF9F5] dark:bg-zinc-800 p-3.5 text-xs font-bold">
+        <div class="flex items-center justify-between font-mono text-[10px]"><span class="uppercase">QA CHECKLIST</span><span data-drw7-prog>2 / 3 DONE</span></div>
+        <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked data-drw7-chk class="size-4 accent-black" /> Keyboard Escape &amp; backdrop click</label>
+        <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" checked data-drw7-chk class="size-4 accent-black" /> Light + Dark contrast tokens</label>
+        <label class="flex cursor-pointer items-center gap-2"><input type="checkbox" data-drw7-chk class="size-4 accent-black" /> Zero CSS overflow on mobile</label>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between border-t-2 border-black dark:border-zinc-200 bg-[#FAF9F5] dark:bg-zinc-800 p-4">
+      <button type="button" data-drw7-close class="cursor-pointer font-mono text-xs font-black underline">CLOSE</button>
+      <button type="button" data-drw7-ship class="cursor-pointer border-2 border-black bg-black px-4 py-2 font-mono text-xs font-black text-[#FDE047] shadow-[3px_3px_0_0_#C4653F] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">MARK SHIPPED &rarr;</button>
+    </div>
+  </aside>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-drw7]').forEach((root) => {
+    const chks = [...root.querySelectorAll('[data-drw7-chk]')];
+    const prog = root.querySelector('[data-drw7-prog]');
+    const status = root.querySelector('[data-drw7-status]');
+    const setOpen = (v) => root.setAttribute('data-open', String(v));
+    const sync = () => { if (prog) prog.textContent = chks.filter((c) => c.checked).length + ' / 3 DONE'; };
+    chks.forEach((c) => c.addEventListener('change', sync));
+    root.querySelector('[data-drw7-open]')?.addEventListener('click', () => setOpen(true));
+    root.querySelector('[data-drw7-bg]')?.addEventListener('click', () => setOpen(false));
+    root.querySelectorAll('[data-drw7-close]').forEach((b) => b.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    root.querySelector('[data-drw7-ship]')?.addEventListener('click', () => {
+      if (status) { status.textContent = 'SHIPPED ✓'; status.className = 'bg-[#FDE047] px-2 py-0.5 text-black'; }
+      setOpen(false);
+    });
+  });
+})();
+</script>

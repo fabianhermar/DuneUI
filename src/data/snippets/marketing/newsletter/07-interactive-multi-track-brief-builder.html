@@ -1,0 +1,71 @@
+<section data-nl-7 class="mx-auto w-full max-w-3xl rounded-3xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm sm:p-9 text-black dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <div>
+      <h2 class="text-xl font-bold text-slate-900 dark:text-zinc-100 sm:text-2xl">Customize your technical brief</h2>
+      <p class="mt-1 text-xs text-slate-600 dark:text-zinc-300">Pick your tracks and delivery cadence before subscribing.</p>
+    </div>
+    <span data-nl-count class="rounded-full bg-indigo-50 dark:bg-indigo-500/20 px-3 py-1 font-mono text-xs font-semibold text-indigo-700 dark:text-indigo-300">2 tracks active</span>
+  </div>
+  <div class="mt-5 flex flex-wrap gap-2" data-nl-topics>
+    <button type="button" data-topic aria-pressed="true" class="rounded-full border border-indigo-600 bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white transition">✓ UI Architecture</button>
+    <button type="button" data-topic aria-pressed="true" class="rounded-full border border-indigo-600 bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white transition">✓ Performance</button>
+    <button type="button" data-topic aria-pressed="false" class="rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 transition">AI Engineering</button>
+    <button type="button" data-topic aria-pressed="false" class="rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 transition">Design Tokens</button>
+    <button type="button" data-topic aria-pressed="false" class="rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 transition">CSS Layout</button>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-zinc-400">
+    <span class="font-medium">Cadence:</span>
+    <button type="button" data-cadence="Weekly" aria-pressed="true" class="rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 text-[11px] font-semibold text-white dark:text-slate-950">Weekly</button>
+    <button type="button" data-cadence="Bi-weekly" aria-pressed="false" class="rounded-lg border border-slate-200 dark:border-zinc-700 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-zinc-300">Bi-weekly</button>
+  </div>
+  <form data-nl-form class="mt-5 flex flex-col gap-2.5 sm:flex-row">
+    <input type="email" required placeholder="engineer@team.dev" class="w-full flex-1 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-4 py-2.5 text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none" />
+    <button type="submit" class="shrink-0 rounded-xl bg-slate-900 dark:bg-white px-5 py-2.5 text-xs font-bold text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-zinc-200 transition">Save Preferences</button>
+  </form>
+  <p data-nl-msg class="hidden mt-3 text-xs font-semibold text-emerald-600 dark:text-emerald-400"></p>
+</section>
+<script>
+  document.querySelectorAll('[data-nl-7]').forEach((root) => {
+    const btns = Array.from(root.querySelectorAll('[data-topic]'));
+    const cadBtns = Array.from(root.querySelectorAll('[data-cadence]'));
+    const lbl = root.querySelector('[data-nl-count]');
+    const form = root.querySelector('[data-nl-form]');
+    const msg = root.querySelector('[data-nl-msg]');
+    let cadence = 'Weekly';
+
+    btns.forEach((b) => {
+      const baseText = b.textContent.replace(/^✓s*/, '');
+      b.addEventListener('click', () => {
+        const active = b.getAttribute('aria-pressed') === 'true';
+        const next = !active;
+        b.setAttribute('aria-pressed', String(next));
+        b.textContent = next ? '✓ ' + baseText : baseText;
+        b.className = next
+          ? 'rounded-full border border-indigo-600 bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white transition'
+          : 'rounded-full border border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-zinc-300 transition';
+        const n = root.querySelectorAll('[data-nl-topics] [aria-pressed="true"]').length;
+        if (lbl) lbl.textContent = n + ' track' + (n === 1 ? '' : 's') + ' active';
+      });
+    });
+    cadBtns.forEach((c) => {
+      c.addEventListener('click', () => {
+        cadence = c.getAttribute('data-cadence') || 'Weekly';
+        cadBtns.forEach((el) => {
+          const on = el === c;
+          el.setAttribute('aria-pressed', String(on));
+          el.className = on
+            ? 'rounded-lg bg-slate-900 dark:bg-white px-2.5 py-1 text-[11px] font-semibold text-white dark:text-slate-950'
+            : 'rounded-lg border border-slate-200 dark:border-zinc-700 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-zinc-300';
+        });
+      });
+    });
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const n = root.querySelectorAll('[data-nl-topics] [aria-pressed="true"]').length;
+      if (msg) {
+        msg.textContent = '✓ Preferences saved: ' + n + ' tracks (' + cadence + ' digest).';
+        msg.classList.remove('hidden');
+      }
+    });
+  });
+</script>

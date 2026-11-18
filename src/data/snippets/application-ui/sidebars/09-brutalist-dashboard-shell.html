@@ -1,0 +1,68 @@
+<div data-shell-brutal class="flex w-full max-w-5xl flex-col overflow-hidden border-2 border-black dark:border-zinc-200 bg-[#FAF7F0] dark:bg-zinc-950 shadow-[8px_8px_0px_#000] dark:shadow-[8px_8px_0px_#e4e4e7] md:min-h-[440px] md:flex-row text-slate-900 dark:text-zinc-100">
+  <div class="flex md:hidden items-center justify-between gap-2 border-b-2 border-black dark:border-zinc-200 bg-[#FDE047] px-3.5 py-2.5 text-black">
+    <span class="border-2 border-black bg-white px-2.5 py-1 text-xs font-black uppercase tracking-tight text-black">CREATOR OS // V4</span>
+    <button type="button" data-mobile-toggle aria-expanded="false" aria-label="Toggle brutalist sidebar" class="inline-flex items-center gap-1.5 border-2 border-black bg-[#A7F3D0] px-2.5 py-1 text-[11px] font-black uppercase text-black shadow-[2px_2px_0px_#000]">
+      <span data-toggle-label>MENU</span>
+      <span>≡</span>
+    </button>
+  </div>
+
+  <aside data-sidebar-drawer class="hidden md:flex w-full shrink-0 flex-col justify-between border-b-2 border-black dark:border-zinc-200 bg-[#FDE047] p-4 md:w-64 md:border-b-0 md:border-r-2 text-black">
+    <div>
+      <div class="hidden md:block border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 px-3 py-2 text-sm font-black uppercase tracking-tight text-black dark:text-white">CREATOR OS // V4</div>
+      <nav class="md:mt-5 space-y-2 text-xs font-black uppercase">
+        <button type="button" data-brutal-nav data-heading="Weekly Merch Drop" data-badge="LIVE STATS" class="flex w-full items-center justify-between border-2 border-black bg-[#A7F3D0] px-3 py-2.5 text-left text-black shadow-[3px_3px_0px_#000]"><span>01 Dashboard</span><span>→</span></button>
+        <button type="button" data-brutal-nav data-heading="Creator Payout Ledger" data-badge="PAYOUT QUEUE" class="flex w-full items-center justify-between border-2 border-black bg-white px-3 py-2.5 text-left text-black hover:bg-[#93C5FD]"><span>02 Payouts</span><span class="border border-black bg-[#FDE047] px-1.5 text-[10px] text-black">$4.2K</span></button>
+        <button type="button" data-brutal-nav data-heading="Active Apparel Drops" data-badge="DROP INVENTORY" class="flex w-full items-center justify-between border-2 border-black bg-white px-3 py-2.5 text-left text-black hover:bg-[#FCA5A5]"><span>03 Drops</span></button>
+        <button type="button" data-brutal-nav data-heading="Storefront Settings" data-badge="CONFIG" class="flex w-full items-center justify-between border-2 border-black bg-white px-3 py-2.5 text-left text-black hover:bg-zinc-100"><span>04 Settings</span></button>
+      </nav>
+    </div>
+    <div class="mt-6 border-2 border-black bg-white dark:bg-black p-3 text-slate-900 dark:text-white">
+      <p class="text-[11px] font-black uppercase">PRO CREATOR PASS</p>
+      <p class="mt-0.5 text-[10px] text-slate-700 dark:text-zinc-300">0% platform fee active</p>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0 p-5 sm:p-7">
+    <span data-brutal-badge class="inline-block border-2 border-black dark:border-zinc-200 bg-[#93C5FD] px-2.5 py-0.5 text-[10px] font-black uppercase text-black">LIVE STATS</span>
+    <h4 data-brutal-heading class="mt-3 text-2xl font-black uppercase text-black dark:text-white">Weekly Merch Drop</h4>
+    <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 p-4 shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#e4e4e7] text-black dark:text-zinc-100"><p class="text-[11px] font-bold uppercase">Orders</p><p class="mt-1 text-2xl font-black">384</p></div>
+      <div class="border-2 border-black dark:border-zinc-200 bg-white dark:bg-zinc-900 p-4 shadow-[4px_4px_0px_#000] dark:shadow-[4px_4px_0px_#e4e4e7] text-black dark:text-zinc-100"><p class="text-[11px] font-bold uppercase">Revenue</p><p class="mt-1 text-2xl font-black">$19,420</p></div>
+    </div>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('[data-shell-brutal]').forEach((root) => {
+    const toggle = root.querySelector('[data-mobile-toggle]');
+    const toggleLabel = root.querySelector('[data-toggle-label]');
+    const drawer = root.querySelector('[data-sidebar-drawer]');
+    const badge = root.querySelector('[data-brutal-badge]');
+    const heading = root.querySelector('[data-brutal-heading]');
+    const links = Array.from(root.querySelectorAll('[data-brutal-nav]'));
+
+    const setDrawer = (open) => {
+      toggle?.setAttribute('aria-expanded', String(open));
+      if (toggleLabel) toggleLabel.textContent = open ? 'CLOSE' : 'MENU';
+      drawer?.classList.toggle('hidden', !open);
+      drawer?.classList.toggle('flex', open);
+    };
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setDrawer(!open);
+    });
+    links.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        links.forEach((el) => {
+          el.classList.remove('bg-[#A7F3D0]', 'shadow-[3px_3px_0px_#000]');
+          el.classList.add('bg-white');
+        });
+        btn.classList.remove('bg-white');
+        btn.classList.add('bg-[#A7F3D0]', 'shadow-[3px_3px_0px_#000]');
+        if (heading) heading.textContent = btn.getAttribute('data-heading') || 'Weekly Merch Drop';
+        if (badge) badge.textContent = btn.getAttribute('data-badge') || 'LIVE STATS';
+        if (window.innerWidth < 768) setDrawer(false);
+      });
+    });
+  });
+</script>

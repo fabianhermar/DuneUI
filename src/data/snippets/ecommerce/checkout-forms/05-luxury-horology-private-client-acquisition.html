@@ -1,0 +1,47 @@
+<section data-ck5 class="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-emerald-900/20 dark:border-emerald-800/50 bg-white dark:bg-[#0B1510] shadow-xl text-stone-900 dark:text-stone-100">
+  <div class="grid grid-cols-1 md:grid-cols-12">
+    <div class="bg-[#F4F6F3] dark:bg-[#08100C] p-6 sm:p-8 md:col-span-5 flex flex-col justify-between border-b md:border-b-0 md:border-r border-stone-200 dark:border-emerald-900/40">
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-700 dark:text-amber-300">GENEVA PRIVATE DESK</span>
+        <img src="/images/heroes/luxury-watch.jpg" alt="Chronograph" class="mt-4 h-48 w-full rounded-2xl object-cover ring-1 ring-amber-500/30" />
+        <h3 class="mt-4 font-serif text-2xl">Calibre 09 Chronograph</h3>
+        <p class="mt-1 text-xs text-stone-500 dark:text-stone-400">Delivered via bonded armored courier with Geneva archive extract.</p>
+      </div>
+      <div class="mt-6 border-t border-stone-200 dark:border-emerald-900/40 pt-4 flex items-baseline justify-between">
+        <span class="text-xs text-stone-500 dark:text-stone-400">Acquisition Total</span>
+        <span class="font-mono text-2xl font-bold">$4,850 <span class="text-xs font-normal">CHF</span></span>
+      </div>
+    </div>
+    <div class="p-6 sm:p-8 md:col-span-7 space-y-4 text-xs">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-lg">Client &amp; Delivery Protocol</h4>
+        <div class="flex rounded-lg border border-stone-200 dark:border-emerald-800 p-0.5 font-mono text-[10px]">
+          <button type="button" data-ck5-rail="wire" class="cursor-pointer rounded-md bg-stone-900 dark:bg-amber-400 px-2.5 py-1 font-bold text-white dark:text-stone-950">Swiss Wire</button>
+          <button type="button" data-ck5-rail="card" class="cursor-pointer rounded-md px-2.5 py-1">Private Card</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div><label class="block font-medium text-stone-500 dark:text-stone-400">Collector Full Name</label><input type="text" value="Henrik Lindqvist" class="mt-1 w-full rounded-xl border border-stone-200 dark:border-emerald-800/60 bg-stone-50 dark:bg-emerald-950/30 px-3.5 py-2.5 focus:outline-none" /></div>
+        <div><label class="block font-medium text-stone-500 dark:text-stone-400">Private Phone (Courier)</label><input type="tel" value="+41 44 580 12 90" class="mt-1 w-full rounded-xl border border-stone-200 dark:border-emerald-800/60 bg-stone-50 dark:bg-emerald-950/30 px-3.5 py-2.5 font-mono focus:outline-none" /></div>
+        <div class="sm:col-span-2"><label class="block font-medium text-stone-500 dark:text-stone-400">Vault Delivery Address</label><input type="text" value="Bahnhofstrasse 18, 8001 Zurich" class="mt-1 w-full rounded-xl border border-stone-200 dark:border-emerald-800/60 bg-stone-50 dark:bg-emerald-950/30 px-3.5 py-2.5 focus:outline-none" /></div>
+      </div>
+      <div data-ck5-wire class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 font-mono text-[11px]">IBAN CH93 0076 2011 6238 5295 7 &middot; Reference #LOT-042</div>
+      <div data-ck5-card class="hidden"><input type="text" value="3782 •••••• 8801" class="w-full rounded-xl border border-stone-200 dark:border-emerald-800/60 bg-stone-50 dark:bg-emerald-950/30 px-3.5 py-2.5 font-mono" /></div>
+      <button type="button" data-ck5-cta class="cursor-pointer w-full rounded-xl bg-amber-600 dark:bg-amber-400 py-3 font-bold text-white dark:text-stone-950 hover:opacity-90">Confirm Escrow Acquisition</button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const root = document.querySelector('[data-ck5]'); if (!root) return;
+  const rails = [...root.querySelectorAll('[data-ck5-rail]')], w = root.querySelector('[data-ck5-wire]'), c = root.querySelector('[data-ck5-card]'), cta = root.querySelector('[data-ck5-cta]');
+  const onCls = 'cursor-pointer rounded-md bg-stone-900 dark:bg-amber-400 px-2.5 py-1 font-bold text-white dark:text-stone-950';
+  const offCls = 'cursor-pointer rounded-md px-2.5 py-1';
+  rails.forEach(r => r.addEventListener('click', () => {
+    rails.forEach(x => { x.className = x === r ? onCls : offCls; });
+    const isCard = r.dataset.ck5Rail === 'card';
+    w?.classList.toggle('hidden', isCard); c?.classList.toggle('hidden', !isCard);
+  }));
+  cta?.addEventListener('click', () => { cta.textContent = 'Concierge Escrow Confirmed ✓'; });
+})();
+</script>

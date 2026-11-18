@@ -1,0 +1,45 @@
+<section data-acc10 class="mx-auto w-full max-w-2xl rounded-3xl border border-teal-900/15 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 sm:p-7 shadow-sm space-y-4 text-slate-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-zinc-800 pb-4">
+    <div>
+      <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">Patient Intake Checklist</span>
+      <h2 class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">Pre-Visit Readiness Steps</h2>
+    </div>
+    <span data-acc10-prog class="rounded-full bg-teal-50 dark:bg-teal-500/15 px-3 py-1 font-mono text-xs font-bold text-teal-800 dark:text-teal-300">2 of 3 Completed</span>
+  </div>
+  <div class="space-y-2.5">
+    <details class="group rounded-2xl border border-teal-200 dark:border-teal-500/30 bg-teal-50/60 dark:bg-teal-500/10 p-4 [&_summary::-webkit-details-marker]:hidden" open>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold text-teal-950 dark:text-teal-200">
+        <span class="flex items-center gap-2.5"><span class="flex size-5 items-center justify-center rounded-full bg-teal-600 text-[11px] text-white">&#10003;</span> 1. Insurance &amp; Identity Verified</span>
+        <span class="rounded-full bg-white/80 dark:bg-zinc-900 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-teal-700 dark:text-teal-300">100% Complete</span>
+      </summary>
+      <p class="mt-2.5 pl-7 text-xs leading-relaxed text-teal-900/80 dark:text-teal-200/80">Primary coverage and biometric photo ID were encrypted and approved by the clinical intake desk.</p>
+    </details>
+    <details class="group rounded-2xl border border-teal-200 dark:border-teal-500/30 bg-teal-50/60 dark:bg-teal-500/10 p-4 [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold text-teal-950 dark:text-teal-200">
+        <span class="flex items-center gap-2.5"><span class="flex size-5 items-center justify-center rounded-full bg-teal-600 text-[11px] text-white">&#10003;</span> 2. Medication &amp; Allergy History</span>
+        <span class="rounded-full bg-white/80 dark:bg-zinc-900 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-teal-700 dark:text-teal-300">Synced</span>
+      </summary>
+      <p class="mt-2.5 pl-7 text-xs leading-relaxed text-teal-900/80 dark:text-teal-200/80">Current prescriptions and lab sensitivities imported from your connected EHR health record.</p>
+    </details>
+    <details class="group rounded-2xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-800/60 p-4 [&_summary::-webkit-details-marker]:hidden" open>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold text-slate-900 dark:text-white">
+        <span class="flex items-center gap-2.5"><span data-acc10-dot class="size-2.5 rounded-full bg-amber-500"></span> 3. 8-Hour Fasting Lab Protocol</span>
+        <span data-acc10-st class="rounded-full bg-amber-100 dark:bg-amber-500/20 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-amber-800 dark:text-amber-300">Action Required</span>
+      </summary>
+      <div class="mt-3 pl-5 space-y-3 text-xs leading-relaxed text-slate-600 dark:text-zinc-300">
+        <p>Drink plain water only for 8 hours prior to your 08:30 AM metabolic blood panel draw.</p>
+        <button type="button" data-acc10-ack class="rounded-xl bg-teal-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-teal-500 transition">Acknowledge Fasting Rules</button>
+      </div>
+    </details>
+  </div>
+</section>
+<script>
+(function(){
+  const r = document.querySelector('[data-acc10]'); if (!r) return;
+  const btn = r.querySelector('[data-acc10-ack]'), st = r.querySelector('[data-acc10-st]'), prog = r.querySelector('[data-acc10-prog]'), dot = r.querySelector('[data-acc10-dot]');
+  btn?.addEventListener('click', () => {
+    btn.textContent = 'Acknowledged ✓'; st.textContent = 'Confirmed';
+    prog.textContent = '3 of 3 Completed'; dot.className = 'size-2.5 rounded-full bg-teal-500';
+  });
+})();
+</script>

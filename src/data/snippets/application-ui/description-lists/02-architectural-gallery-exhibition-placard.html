@@ -1,0 +1,27 @@
+<div data-dl2 class="mx-auto w-full max-w-2xl rounded-xl border border-stone-300 dark:border-zinc-800 bg-[#FAF9F6] dark:bg-zinc-900 p-6 sm:p-7 text-stone-900 dark:text-zinc-100">
+  <div class="flex flex-wrap items-start justify-between gap-4 border-b border-stone-200 dark:border-zinc-800 pb-4">
+    <div class="flex items-center gap-3.5">
+      <img src="/images/heroes/concrete-pavilion.jpg" alt="Pavilion model" class="size-12 rounded-lg object-cover ring-1 ring-stone-200 dark:ring-zinc-700" />
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-stone-500 dark:text-zinc-400">GALLERY III &middot; OBJECT 14</p>
+        <h3 class="mt-0.5 font-serif text-xl text-stone-950 dark:text-white">Study in Cantilevered Brutalism</h3>
+      </div>
+    </div>
+    <button type="button" data-dl2-note class="cursor-pointer rounded-full border border-stone-300 dark:border-zinc-700 px-3 py-1 font-mono text-[10px] font-semibold hover:bg-stone-200/60 dark:hover:bg-zinc-800">Curator Note</button>
+  </div>
+  <dl class="mt-3 divide-y divide-stone-200/80 dark:divide-zinc-800 text-xs">
+    <div class="flex justify-between gap-4 py-3"><dt class="font-mono text-[10px] uppercase text-stone-500 dark:text-zinc-400">Architect</dt><dd class="font-medium text-right">Studio Kastel, Zurich</dd></div>
+    <div class="flex justify-between gap-4 py-3"><dt class="font-mono text-[10px] uppercase text-stone-500 dark:text-zinc-400">Medium</dt><dd class="font-medium text-right">Cast Gypsum &amp; Smoked Ashwood (1:25)</dd></div>
+    <div class="flex justify-between gap-4 py-3"><dt class="font-mono text-[10px] uppercase text-stone-500 dark:text-zinc-400">Dimensions</dt><dd class="font-mono text-right">64 &times; 42 &times; 28 cm</dd></div>
+    <div class="flex justify-between gap-4 py-3"><dt class="font-mono text-[10px] uppercase text-stone-500 dark:text-zinc-400">Accession</dt><dd class="font-mono text-right">Gift of Kunsthalle Basel, 2025</dd></div>
+  </dl>
+  <p data-dl2-body class="hidden mt-3 rounded-lg bg-stone-100 dark:bg-zinc-800/70 p-3 text-xs leading-relaxed text-stone-600 dark:text-zinc-300">Exhibited during the Alpine Timber &amp; Stone retrospective; original formwork cast using raw pine planks.</p>
+</div>
+<script>
+(() => {
+  document.querySelectorAll('[data-dl2]').forEach((root) => {
+    const btn = root.querySelector('[data-dl2-note]'), body = root.querySelector('[data-dl2-body]');
+    btn?.addEventListener('click', () => body?.classList.toggle('hidden'));
+  });
+})();
+</script>

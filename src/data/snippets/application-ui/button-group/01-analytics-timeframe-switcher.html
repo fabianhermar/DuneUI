@@ -1,0 +1,28 @@
+<div data-tf-group class="flex justify-center text-slate-900 dark:text-zinc-100">
+  <div class="inline-flex flex-wrap items-center justify-center gap-1 rounded-xl bg-slate-200/85 p-1 ring-1 ring-slate-300/60 dark:bg-zinc-800 dark:ring-white/10">
+    <button type="button" data-tf="24h" aria-pressed="false" class="rounded-lg px-3.5 py-1.5 text-xs font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white cursor-pointer transition-all">24h</button>
+    <button type="button" data-tf="7d" aria-pressed="true" class="rounded-lg bg-white dark:bg-zinc-900 px-3.5 py-1.5 text-xs font-semibold text-slate-900 dark:text-white shadow-xs ring-1 ring-slate-200 dark:ring-zinc-700 cursor-pointer transition-all">7d</button>
+    <button type="button" data-tf="30d" aria-pressed="false" class="rounded-lg px-3.5 py-1.5 text-xs font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white cursor-pointer transition-all">30d</button>
+    <button type="button" data-tf="12m" aria-pressed="false" class="rounded-lg px-3.5 py-1.5 text-xs font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white cursor-pointer transition-all">12m</button>
+  </div>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-tf-group]');
+      const btns = root.querySelectorAll('[data-tf]');
+      const activeCls = ['bg-white', 'dark:bg-zinc-900', 'font-semibold', 'text-slate-900', 'dark:text-white', 'shadow-xs', 'ring-1', 'ring-slate-200', 'dark:ring-zinc-700'];
+      const idleCls = ['font-medium', 'text-slate-600', 'dark:text-zinc-300', 'hover:text-slate-900', 'dark:hover:text-white'];
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => {
+            b.setAttribute('aria-pressed', 'false');
+            b.classList.remove(...activeCls);
+            b.classList.add(...idleCls);
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          btn.classList.remove(...idleCls);
+          btn.classList.add(...activeCls);
+        });
+      });
+    })();
+  </script>
+</div>
