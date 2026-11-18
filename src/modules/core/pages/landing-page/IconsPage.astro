@@ -1,85 +1,191 @@
-<section
-	class='grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 sm:px-6 lg:px-8 pt-6 md:pt-32'
->
-	<div class='image-container'>
-		<img
-			src='/icons.png'
-			alt="Preview of the icons, it's just a preview, they aren't the real icons"
-			loading='lazy'
-			decoding='async'
-		/>
-	</div>
-	<div class='max-w-2xl'>
-		<h2
-			class='text-base lg:text-lg pl-1 leading-7 text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent font-medium'
-		>
-			SVG Icons
-		</h2>
-		<p
-			class='mt-4 text-2xl lg:text-5xl tracking-tight text-slate-900 dark:text-white font-heading font-semibold'
-		>
-			Dune UI Icons, a collection of over 300 high-quality SVG icons.
-		</p>
-		<div class='max-w-xl pt-6'>
-			<div class='prose-sm'>
-				<p class='text-base lg:text-lg font-accent font-normal'>
-					Dune UI Icons offers a vast collection of over 300 high-quality SVG
-					icons designed to integrate seamlessly with Tailwind CSS & Figma.
-				</p>
-				<p class='font-accent text-base lg:text-lg font-normal'>
-					With styles available in both solid and outline, these icons are fully
-					customizable. Adjust their size, color, and stroke width effortlessly
-					using Tailwind utilities or our intuitive configurator tool.
-				</p>
-				<!-- <p class='font-accent text-base lg:text-lg'>
-					For Figma users, importing the icons is quick and easy through our
-					dedicated community file, making them perfect for both design and
-					development workflows.
-				</p> -->
+---
+import Container from '@/core/components/Container.astro'
+import { SVG_ICONS_CATALOG } from '@/data/svgIconsCatalog'
+
+const featuredNames = [
+	'fingerprint',
+	'sparkles',
+	'shield-check',
+	'layers',
+	'cpu',
+	'credit-card',
+	'globe',
+	'zap',
+	'bot-message',
+	'palette',
+	'lock',
+	'rocket'
+]
+const featuredIcons = featuredNames
+	.map((name) => SVG_ICONS_CATALOG.find((i) => i.name === name))
+	.filter((icon): icon is NonNullable<typeof icon> => Boolean(icon))
+---
+
+<section class='border-b border-rule bg-paper py-20 sm:py-28'>
+	<Container>
+		<div class='mb-12'>
+			<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay'>
+				<span>04</span>
+				<span class='text-rule-strong'>/</span>
+				<span>ECOSYSTEM BENTO</span>
 			</div>
+			<h2 class='mt-3 max-w-2xl font-heading text-3xl font-bold leading-[1.06] tracking-tight text-ink sm:text-5xl'>
+				Icons &amp; page blueprints built in the{' '}
+				<span class='font-serif italic font-normal text-clay'>same hand.</span>
+			</h2>
 		</div>
-		<div class='mt-6'>
-			<a
-				class='text-sm lg:text-base text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent hover:text-[#cea472] transition-colors font-medium'
-				href='https://neoicons.duneui.com'
-				target='_blank'
-				rel='noopener noreferrer'
-				aria-label="Browse Dune UI's SVG Icons"
-				>Browse SVG Icon Library <span aria-hidden='true'>→</span>
-			</a>
+
+		<!-- Asymmetric 12-Col Bento Grid -->
+		<div class='grid grid-cols-1 gap-6 lg:grid-cols-12'>
+			<!-- Bento 1: DuneUI Icons (5 cols) -->
+			<article class='flex flex-col justify-between border border-rule bg-paper-elevated p-6 sm:p-8 lg:col-span-5'>
+				<div>
+					<div class='flex items-center justify-between border-b border-rule pb-4'>
+						<span class='font-mono text-xs font-semibold uppercase tracking-widest text-clay'>
+							04A / NEOICONS
+						</span>
+						<span class='border border-rule bg-paper px-2.5 py-0.5 font-mono text-[10px] text-ink-muted'>
+							{SVG_ICONS_CATALOG.length}+ SVG GLYPHS
+						</span>
+					</div>
+
+					<h3 class='mt-6 font-heading text-2xl font-bold tracking-tight text-ink sm:text-3xl'>
+						Crisp geometric icons, duotone &amp; outline.
+					</h3>
+					<p class='mt-3 font-accent text-sm leading-relaxed text-ink-secondary'>
+						Precision 24×24 grid SVG icons engineered to match DuneUI’s stroke rhythm—ready in Stroke, Duotone, and Two-Tone for Tailwind or Figma.
+					</p>
+
+					<!-- Crisp Architectural Glyph Matrix -->
+					<div class='mt-7 grid grid-cols-4 border-l border-t border-rule bg-paper'>
+						{featuredIcons.map((icon) => (
+							<div class='group flex aspect-square items-center justify-center border-b border-r border-rule transition-colors hover:bg-obsidian hover:text-paper-elevated' title={icon.name}>
+								<svg
+									class='size-5 text-ink transition-all group-hover:scale-110 group-hover:text-sand'
+									viewBox='0 0 24 24'
+									fill='none'
+									stroke='currentColor'
+									stroke-width='1.75'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+								>
+									{(icon.duotonePaths || []).map((d) => (
+										<path d={d} stroke='none' fill='currentColor' fill-opacity='0.14' />
+									))}
+									{icon.outlinePaths.map((d) => <path d={d} />)}
+									{(icon.accentPaths || []).map((d) => <path d={d} />)}
+								</svg>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class='mt-8 flex items-center justify-between border-t border-rule pt-5'>
+					<span class='font-mono text-[11px] text-ink-muted'>/icons &bull; SVG MATRIX</span>
+					<a
+						href='/icons'
+						aria-label="Browse Dune UI's SVG Icons"
+						class='inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-clay transition-colors hover:text-clay-deep'
+					>
+						<span>Browse Library</span>
+						<span aria-hidden='true'>→</span>
+					</a>
+				</div>
+			</article>
+
+			<!-- Bento 2: Templates (7 cols, Dark Obsidian Contrast) -->
+			<article class='flex flex-col justify-between border border-ink bg-obsidian p-6 text-paper-elevated sm:p-8 lg:col-span-7'>
+				<div>
+					<div class='flex items-center justify-between border-b border-white/15 pb-4'>
+						<span class='font-mono text-xs font-semibold uppercase tracking-widest text-sand'>
+							04B / PAGE TEMPLATES
+						</span>
+						<span class='border border-white/15 bg-obsidian-soft px-2.5 py-0.5 font-mono text-[10px] text-white/70'>
+							PRODUCTION STARTERS
+						</span>
+					</div>
+
+					<div class='mt-6 grid grid-cols-1 items-end gap-6 sm:grid-cols-12'>
+						<div class='sm:col-span-7'>
+							<h3 class='font-heading text-2xl font-bold tracking-tight text-paper-elevated sm:text-3xl'>
+								Full-page layouts ready to customize and ship.
+							</h3>
+						</div>
+						<div class='sm:col-span-5'>
+							<p class='font-accent text-sm leading-relaxed text-white/70'>
+								Study real typographic hierarchy, responsive grid discipline, and production Tailwind v4 patterns.
+							</p>
+						</div>
+					</div>
+
+					<!-- Architectural Template Blueprints Stage -->
+					<div class='mt-7 border border-white/15 bg-obsidian-soft p-3'>
+						<div class='mb-3 flex items-center justify-between px-1 font-mono text-[10px] text-white/50'>
+							<span>BLUEPRINT ARCHIVE // 03 STARTER LAYOUTS</span>
+							<span>RESPONSIVE GRID</span>
+						</div>
+						<div class='grid grid-cols-1 gap-3 sm:grid-cols-3'>
+							<!-- Mini Blueprint 1: Editorial -->
+							<div class='group border border-white/15 bg-[#191613] p-3 transition-colors hover:border-sand/60'>
+								<div class='flex items-center justify-between font-mono text-[9px] text-sand'>
+									<span>T-01</span>
+									<span>EDITORIAL</span>
+								</div>
+								<div class='mt-3 space-y-2'>
+									<div class='h-2 w-2/3 bg-paper-elevated/90'></div>
+									<div class='h-1.5 w-full bg-white/20'></div>
+									<div class='h-1.5 w-4/5 bg-white/15'></div>
+									<div class='mt-3 grid grid-cols-2 gap-1.5 pt-1'>
+										<div class='h-14 border border-white/10 bg-white/5'></div>
+										<div class='h-14 border border-white/10 bg-clay/30'></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Mini Blueprint 2: Bento SaaS -->
+							<div class='group border border-white/15 bg-[#191613] p-3 transition-colors hover:border-sand/60'>
+								<div class='flex items-center justify-between font-mono text-[9px] text-sand'>
+									<span>T-02</span>
+									<span>BENTO APP</span>
+								</div>
+								<div class='mt-3 grid grid-cols-3 gap-1.5'>
+									<div class='col-span-2 h-10 border border-white/15 bg-white/10'></div>
+									<div class='h-10 border border-sand/30 bg-sand/20'></div>
+									<div class='h-12 border border-white/10 bg-white/5'></div>
+									<div class='col-span-2 h-12 border border-white/10 bg-white/5'></div>
+								</div>
+							</div>
+
+							<!-- Mini Blueprint 3: Commerce -->
+							<div class='group border border-white/15 bg-[#191613] p-3 transition-colors hover:border-sand/60'>
+								<div class='flex items-center justify-between font-mono text-[9px] text-sand'>
+									<span>T-03</span>
+									<span>ATELIER SHOP</span>
+								</div>
+								<div class='mt-3 space-y-2'>
+									<div class='h-12 border border-white/15 bg-linear-to-br from-clay/30 to-transparent'></div>
+									<div class='flex items-center justify-between pt-1'>
+										<div class='h-2 w-1/2 bg-white/70'></div>
+										<div class='h-4 w-8 bg-sand'></div>
+									</div>
+									<div class='h-1.5 w-3/4 bg-white/20'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class='mt-7 flex items-center justify-between border-t border-white/15 pt-5'>
+					<span class='font-mono text-[11px] text-white/50'>ASTRO &middot; NEXT.JS &middot; HTML</span>
+					<a
+						href='/templates'
+						class='inline-flex items-center gap-2 bg-sand px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wider text-obsidian transition-colors hover:bg-paper-elevated'
+					>
+						<span>Explore Full Templates</span>
+						<span aria-hidden='true'>&rarr;</span>
+					</a>
+				</div>
+			</article>
 		</div>
-	</div>
+	</Container>
 </section>
-
-<style>
-	.image-container {
-		width: 100%;
-		height: 0;
-		padding-bottom: 72.17%;
-		/* (817 / 1132) * 100% */
-		position: relative;
-		overflow: hidden;
-	}
-
-	img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-	}
-
-	@media (max-width: 768px) {
-		.image-container {
-			display: none;
-			/* (817 / 1132) * 75% - ajusta para pantallas medianas */
-		}
-	}
-
-	/* @media (min-width: 1024px) {
-		.image-container {
-			/* (817 / 1132) * 50% - ajusta para pantallas grandes
-		}
-	} */
-</style>

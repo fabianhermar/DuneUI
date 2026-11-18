@@ -1,0 +1,884 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/core/components/Container.astro'
+import { ICON_CATEGORIES, SVG_ICONS_CATALOG } from '@/data/svgIconsCatalog'
+
+const categoryCounts = ICON_CATEGORIES.map((cat) => ({
+	name: cat,
+	count: SVG_ICONS_CATALOG.filter((i) => i.category === cat).length
+}))
+---
+
+<Layout
+	title='SVG Icons Library · DuneUI'
+	description={`${SVG_ICONS_CATALOG.length}+ precision 24x24 geometric SVG icons in Stroke, Duotone, and Two-Tone styles. Built for developers, designers, and everyday apps.`}
+>
+	<section class='border-b border-rule bg-paper pt-12 pb-20 sm:pt-16 sm:pb-28'>
+		<Container>
+			<!-- Editorial Header -->
+			<div class='mb-10 grid grid-cols-1 items-end gap-8 border-b border-rule pb-10 lg:grid-cols-12'>
+				<div class='lg:col-span-7'>
+					<div class='flex flex-wrap items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay'>
+						<span>04A / NEOICONS</span>
+						<span class='text-rule-strong'>/</span>
+						<span>{SVG_ICONS_CATALOG.length} PREMIUM SVG GLYPHS</span>
+						<span class='text-rule-strong'>/</span>
+						<span>STROKE · DUOTONE · TWO-TONE</span>
+					</div>
+					<h1 class='mt-3 font-heading text-4xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl'>
+						Sculpted{' '}
+						<span class='font-serif italic font-normal text-clay'>SVG Icons.</span>
+					</h1>
+					<p class='mt-4 max-w-xl font-accent text-base leading-relaxed text-ink-secondary'>
+						Precision 24&times;24 geometric glyphs crafted with rounded optical balance, duotone depth, and two-tone editorial accents. Click any glyph to inspect, download, or copy SVG &amp; React JSX.
+					</p>
+				</div>
+
+				<!-- Search & Quick Stats -->
+				<div class='lg:col-span-5 space-y-3'>
+					<div class='flex items-center border border-rule-strong bg-paper-elevated px-3.5 py-2.5 focus-within:border-ink'>
+						<span class='mr-2 font-mono text-xs text-clay'>/</span>
+						<input
+							id='icons-search'
+							type='search'
+							placeholder={`Search ${SVG_ICONS_CATALOG.length} icons (fingerprint, terminal, coffee, figma, ai)...`}
+							class='w-full bg-transparent font-accent text-sm text-ink placeholder:text-ink-muted focus:outline-none'
+						/>
+						<kbd class='ml-2 hidden border border-rule bg-paper px-1.5 py-0.5 font-mono text-[10px] text-ink-muted sm:inline-block'>
+							/
+						</kbd>
+					</div>
+
+					<div class='flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-ink-muted'>
+						<span id='icons-match-count'>Showing {SVG_ICONS_CATALOG.length} of {SVG_ICONS_CATALOG.length} glyphs</span>
+						<span class='text-ink-muted'>Click any glyph to open export options</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Studio Controls Toolbar -->
+			<div class='mb-6 flex flex-wrap items-center justify-between gap-3 border border-rule bg-paper-elevated p-3 font-mono text-[11px]'>
+				<!-- Style Mode -->
+				<div class='flex flex-wrap items-center gap-2'>
+					<div class='flex items-center gap-1 border border-rule bg-paper p-1'>
+						<span class='px-2 uppercase text-ink-muted'>Style</span>
+						{[
+							{ id: 'duotone', label: 'Duotone' },
+							{ id: 'twotone', label: 'Two-Tone' },
+							{ id: 'stroke', label: 'Stroke' }
+						].map((st) => (
+							<button
+								type='button'
+								data-icon-style={st.id}
+								class={`cursor-pointer px-2.5 py-1 transition-colors ${st.id === 'duotone' ? 'bg-ink font-bold text-paper-elevated' : 'text-ink-secondary hover:text-ink'}`}
+							>
+								{st.label}
+							</button>
+						))}
+					</div>
+
+					<!-- Size -->
+					<div class='flex items-center gap-1 border border-rule bg-paper p-1'>
+						<span class='px-2 uppercase text-ink-muted'>Size</span>
+						{['16', '20', '24', '32'].map((sz) => (
+							<button
+								type='button'
+								data-icon-size={sz}
+								class={`cursor-pointer px-2 py-1 transition-colors ${sz === '24' ? 'bg-ink font-bold text-paper-elevated' : 'text-ink-secondary hover:text-ink'}`}
+							>
+								{sz}px
+							</button>
+						))}
+					</div>
+
+					<!-- Stroke -->
+					<div class='flex items-center gap-1 border border-rule bg-paper p-1'>
+						<span class='px-2 uppercase text-ink-muted'>Stroke</span>
+						{['1.25', '1.5', '1.75', '2'].map((sw) => (
+							<button
+								type='button'
+								data-icon-stroke={sw}
+								class={`cursor-pointer px-2 py-1 transition-colors ${sw === '1.75' ? 'bg-ink font-bold text-paper-elevated' : 'text-ink-secondary hover:text-ink'}`}
+							>
+								{sw}
+							</button>
+						))}
+					</div>
+				</div>
+
+				<!-- Color Swatches & Surface Toggle -->
+				<div class='flex flex-wrap items-center gap-2'>
+					<div class='flex items-center gap-1.5 border border-rule bg-paper px-2.5 py-1.5'>
+						<span class='mr-1 uppercase text-ink-muted'>Ink</span>
+						{[
+							{ id: 'ink', primary: '#161412', accent: '#B5542D', label: 'Obsidian' },
+							{ id: 'clay', primary: '#B5542D', accent: '#161412', label: 'Terracotta' },
+							{ id: 'cobalt', primary: '#1D4ED8', accent: '#0EA5E9', label: 'Cobalt' },
+							{ id: 'emerald', primary: '#047857', accent: '#10B981', label: 'Emerald' },
+							{ id: 'violet', primary: '#6D28D9', accent: '#EC4899', label: 'Violet' }
+						].map((sw, idx) => (
+							<button
+								type='button'
+								title={sw.label}
+								aria-label={`Color ${sw.label}`}
+								data-icon-palette={sw.id}
+								data-primary={sw.primary}
+								data-accent={sw.accent}
+								style={`background-color:${sw.primary}`}
+								class={`size-4 cursor-pointer rounded-full transition-transform hover:scale-110 ${idx === 0 ? 'ring-2 ring-ink ring-offset-2 ring-offset-paper' : ''}`}
+							/>
+						))}
+					</div>
+
+					<button
+						id='icons-surface-toggle'
+						type='button'
+						class='cursor-pointer border border-rule bg-paper px-3 py-1.5 text-ink-secondary transition-colors hover:border-ink hover:text-ink'
+					>
+						Surface: Light
+					</button>
+				</div>
+			</div>
+
+			<!-- Audience Presets -->
+			<div class='mb-3 flex flex-wrap items-center gap-2 font-mono text-[11px]' id='icons-role-bar'>
+				<span class='uppercase tracking-wider text-ink-muted mr-1'>For</span>
+				{[
+					{ id: 'all', label: 'Everyone', cats: 'ALL' },
+					{ id: 'dev', label: 'Developers & DevOps', cats: 'Development,AI & Data,Devices,Security,Files' },
+					{ id: 'design', label: 'Designers & Creatives', cats: 'Design,Media,Shapes,Interface' },
+					{ id: 'everyday', label: 'Everyday Users', cats: 'Lifestyle,Time & Weather,Users,Communication,Navigation' },
+					{ id: 'business', label: 'Business & Commerce', cats: 'Commerce,Productivity,Users,Communication' }
+				].map((role, idx) => (
+					<button
+						type='button'
+						data-icon-role={role.id}
+						data-role-cats={role.cats}
+						class={`cursor-pointer border px-2.5 py-1 transition-colors ${idx === 0 ? 'border-clay bg-clay/10 font-semibold text-clay' : 'border-rule bg-paper-elevated text-ink-secondary hover:border-ink hover:text-ink'}`}
+					>
+						{role.label}
+					</button>
+				))}
+			</div>
+
+			<!-- Category Filter Pills -->
+			<div class='mb-8 flex flex-wrap items-center gap-1.5' id='icons-cat-bar'>
+				<button
+					type='button'
+					data-icon-cat='All'
+					class='cursor-pointer border border-ink bg-ink px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-paper-elevated transition-colors'
+				>
+					All ({SVG_ICONS_CATALOG.length})
+				</button>
+				{
+					categoryCounts.map((cat) => (
+						<button
+							type='button'
+							data-icon-cat={cat.name}
+							class='cursor-pointer border border-rule bg-paper-elevated px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-secondary transition-colors hover:border-ink hover:text-ink'
+						>
+							{cat.name} ({cat.count})
+						</button>
+					))
+				}
+			</div>
+
+			<!-- Architectural Icon Matrix -->
+			<div
+				id='icons-grid'
+				data-style='duotone'
+				data-surface='light'
+				style='--icon-primary:#161412;--icon-accent:#B5542D;'
+				class='grid grid-cols-2 border-l border-t border-rule bg-paper-elevated transition-colors sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8'
+			>
+				{
+					SVG_ICONS_CATALOG.map((icon) => (
+						<button
+							type='button'
+							data-icon-card
+							data-name={icon.name}
+							data-category={icon.category}
+							data-tags={icon.tags}
+							data-search={`${icon.name} ${icon.tags} ${icon.category}`.toLowerCase()}
+							class='icon-card group relative flex aspect-square cursor-pointer flex-col items-center justify-center gap-3 border-b border-r border-rule p-3 transition-colors duration-150 hover:bg-paper-recessed/70 focus:outline-none'
+							title={`Click to copy & inspect ${icon.name}.svg`}
+						>
+							<span class='absolute right-2 top-2 font-mono text-[9px] uppercase tracking-wider text-clay opacity-0 transition-opacity duration-150 group-hover:opacity-100'>
+								SELECT
+							</span>
+							<svg
+								data-icon-svg
+								style='width:24px;height:24px;color:var(--icon-primary);'
+								class='transition-transform duration-150 group-hover:scale-110'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								stroke-width='1.75'
+								stroke-linecap='round'
+								stroke-linejoin='round'
+							>
+								{(icon.duotonePaths || []).map((d) => (
+									<path data-layer='duotone' d={d} stroke='none' fill='currentColor' fill-opacity='0.14' />
+								))}
+								{icon.outlinePaths.map((d) => (
+									<path data-layer='outline' d={d} />
+								))}
+								{(icon.accentPaths || []).map((d) => (
+									<path data-layer='accent' d={d} />
+								))}
+							</svg>
+							<span class='icon-label max-w-full truncate font-mono text-[10px] text-ink-muted transition-colors duration-150 group-hover:text-ink'>
+								{icon.name}
+							</span>
+						</button>
+					))
+				}
+			</div>
+
+			<!-- Empty Search State -->
+			<div id='icons-empty' class='hidden border border-t-0 border-rule bg-paper-elevated px-6 py-16 text-center'>
+				<p class='font-heading text-xl font-bold text-ink'>No matching glyphs found</p>
+				<p class='mt-2 font-accent text-sm text-ink-secondary'>
+					Try searching by concept like <span class='font-mono text-clay'>biometric</span>, <span class='font-mono text-clay'>billing</span>, <span class='font-mono text-clay'>git</span>, or <span class='font-mono text-clay'>ai</span>.
+				</p>
+				<button
+					id='icons-reset-btn'
+					type='button'
+					class='mt-5 cursor-pointer border border-ink bg-ink px-4 py-2 font-mono text-xs uppercase tracking-wider text-paper-elevated hover:bg-clay hover:border-clay'
+				>
+					Reset Filters
+				</button>
+			</div>
+		</Container>
+	</section>
+
+	<!-- Floating Action & Promise Notification -->
+	<div
+		id='icons-copy-toast'
+		role='status'
+		aria-live='polite'
+		class='pointer-events-none fixed right-4 top-4 z-[60] w-[calc(100vw-2rem)] max-w-sm translate-y-2 opacity-0 transition-all duration-200 sm:right-6 sm:top-6'
+	>
+		<div
+			id='icons-toast-card'
+			class='pointer-events-auto relative overflow-hidden border border-ink bg-obsidian p-3.5 text-paper-elevated shadow-2xl'
+		>
+			<div class='flex items-start gap-3'>
+				<div
+					id='icons-toast-icon'
+					class='mt-0.5 flex size-6 shrink-0 items-center justify-center border border-sand/40 bg-sand/15 text-sand'
+				>
+					<svg class='size-3.5' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'>
+						<path d='M5 12.5 9.5 17 19 7' />
+					</svg>
+				</div>
+				<div class='min-w-0 flex-1'>
+					<p id='icons-toast-title' class='font-mono text-xs font-bold uppercase tracking-wider text-paper-elevated'>
+						Copied
+					</p>
+					<p id='icons-toast-desc' class='mt-0.5 font-accent text-xs text-white/70'></p>
+				</div>
+				<button
+					id='icons-toast-close'
+					type='button'
+					aria-label='Dismiss notification'
+					class='cursor-pointer px-1 font-mono text-sm leading-none text-white/50 hover:text-white'
+				>
+					&times;
+				</button>
+			</div>
+			<div id='icons-toast-progress-wrap' class='mt-2.5 hidden h-1 w-full overflow-hidden bg-white/10'>
+				<div id='icons-toast-progress-bar' class='h-full w-0 bg-sand transition-all duration-500 ease-out'></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Live Glyph Inspector Dock -->
+	<div
+		id='icon-inspector'
+		class='fixed inset-x-0 bottom-4 z-50 mx-auto hidden max-w-3xl px-4'
+		aria-live='polite'
+	>
+		<div class='flex flex-col gap-4 border border-ink bg-obsidian p-4 text-paper-elevated shadow-2xl sm:flex-row sm:items-center sm:justify-between'>
+			<div class='flex items-center gap-4'>
+				<!-- 24x24 Blueprint Preview Stage -->
+				<div
+					class='relative flex size-16 shrink-0 items-center justify-center border border-white/15 bg-obsidian-soft'
+					style='background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 8px 8px;'
+				>
+					<div id='inspector-preview' class='text-sand'></div>
+				</div>
+				<div class='min-w-0'>
+					<div class='flex items-center gap-2'>
+						<h2 id='inspector-name' class='truncate font-mono text-sm font-bold text-paper-elevated'>
+							fingerprint
+						</h2>
+						<span id='inspector-category' class='border border-sand/30 bg-sand/10 px-2 py-0.5 font-mono text-[10px] uppercase text-sand'>
+							Security
+						</span>
+					</div>
+					<p id='inspector-tags' class='mt-1 truncate font-accent text-xs text-white/60'>
+						biometric sso touch id
+					</p>
+				</div>
+			</div>
+
+			<div class='flex flex-wrap items-center gap-2 font-mono text-[11px]'>
+				<button
+					id='inspector-copy-svg'
+					type='button'
+					class='cursor-pointer bg-sand px-3 py-2 font-bold uppercase tracking-wider text-obsidian transition-colors hover:bg-paper-elevated'
+				>
+					Copy SVG
+				</button>
+				<button
+					id='inspector-copy-jsx'
+					type='button'
+					class='cursor-pointer border border-white/20 bg-obsidian-soft px-3 py-2 uppercase tracking-wider text-paper-elevated transition-colors hover:border-sand hover:text-sand'
+				>
+					Copy JSX
+				</button>
+				<button
+					id='inspector-download'
+					type='button'
+					class='cursor-pointer border border-white/20 bg-obsidian-soft px-3 py-2 uppercase tracking-wider text-paper-elevated transition-colors hover:border-sand hover:text-sand'
+				>
+					.SVG
+				</button>
+				<button
+					id='inspector-close'
+					type='button'
+					aria-label='Close inspector'
+					class='cursor-pointer px-2 py-2 text-white/60 hover:text-white'
+				>
+					&times;
+				</button>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	/* Style modes */
+	#icons-grid[data-style='stroke'] [data-layer='duotone'] {
+		display: none;
+	}
+	#icons-grid[data-style='duotone'] [data-layer='duotone'] {
+		display: block;
+		fill: currentColor;
+		fill-opacity: 0.14;
+	}
+	#icons-grid[data-style='twotone'] [data-layer='duotone'] {
+		display: block;
+		fill: var(--icon-accent);
+		fill-opacity: 0.16;
+	}
+	#icons-grid[data-style='twotone'] [data-layer='accent'] {
+		stroke: var(--icon-accent);
+	}
+
+	/* Dark surface mode */
+	#icons-grid[data-surface='dark'] {
+		background-color: #151311;
+		border-color: rgba(255, 255, 255, 0.12);
+	}
+	#icons-grid[data-surface='dark'] .icon-card {
+		background-color: #151311;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+	#icons-grid[data-surface='dark'] .icon-card:hover {
+		background-color: #221E1A;
+	}
+	#icons-grid[data-surface='dark'] [data-icon-svg] {
+		color: #FAF7F2 !important;
+	}
+	#icons-grid[data-surface='dark'] .icon-label {
+		color: rgba(255, 255, 255, 0.62);
+	}
+	#icons-grid[data-surface='dark'] .icon-card:hover .icon-label {
+		color: #FAF7F2;
+	}
+	#icons-grid[data-surface='dark'][data-style='twotone'] [data-layer='accent'] {
+		stroke: #C9955B;
+	}
+	#icons-grid[data-surface='dark'][data-style='twotone'] [data-layer='duotone'] {
+		fill: #C9955B;
+		fill-opacity: 0.2;
+	}
+</style>
+
+<script>
+	interface SelectedIconData {
+		name: string
+		category: string
+		tags: string
+		outline: string[]
+		accent: string[]
+		duotone: string[]
+	}
+
+	function initIconsGallery() {
+		const search = document.getElementById('icons-search') as HTMLInputElement | null
+		const grid = document.getElementById('icons-grid')
+		const catBar = document.getElementById('icons-cat-bar')
+		const toast = document.getElementById('icons-copy-toast')
+		const toastCard = document.getElementById('icons-toast-card')
+		const toastIcon = document.getElementById('icons-toast-icon')
+		const toastTitle = document.getElementById('icons-toast-title')
+		const toastDesc = document.getElementById('icons-toast-desc')
+		const toastClose = document.getElementById('icons-toast-close')
+		const toastProgressWrap = document.getElementById('icons-toast-progress-wrap')
+		const toastProgressBar = document.getElementById('icons-toast-progress-bar')
+		const matchCount = document.getElementById('icons-match-count')
+		const emptyState = document.getElementById('icons-empty')
+		const resetBtn = document.getElementById('icons-reset-btn')
+		const surfaceToggle = document.getElementById('icons-surface-toggle')
+		const inspector = document.getElementById('icon-inspector')
+		const inspectorPreview = document.getElementById('inspector-preview')
+		const inspectorName = document.getElementById('inspector-name')
+		const inspectorCategory = document.getElementById('inspector-category')
+		const inspectorTags = document.getElementById('inspector-tags')
+		const inspectorCopySvg = document.getElementById('inspector-copy-svg')
+		const inspectorCopyJsx = document.getElementById('inspector-copy-jsx')
+		const inspectorDownload = document.getElementById('inspector-download')
+		const inspectorClose = document.getElementById('inspector-close')
+
+		if (!grid || grid.getAttribute('data-bound') === 'true') return
+		grid.setAttribute('data-bound', 'true')
+
+		const cards = Array.from(grid.querySelectorAll<HTMLButtonElement>('[data-icon-card]'))
+		const totalCount = cards.length
+
+		let activeCat = 'All'
+		let activeRoleCats: string[] | null = null
+		let curSize = '24'
+		let curStroke = '1.75'
+		let curStyle: 'duotone' | 'twotone' | 'stroke' = 'duotone'
+		let curSurface: 'light' | 'dark' = 'light'
+		let curPrimary = '#161412'
+		let curAccent = '#B5542D'
+		let selectedIcon: SelectedIconData | null = null
+		let toastTimer: number | undefined
+
+		type ToastState = 'loading' | 'success' | 'error'
+
+		const toastIcons: Record<ToastState, { cls: string; svg: string }> = {
+			loading: {
+				cls: 'mt-0.5 flex size-6 shrink-0 items-center justify-center border border-sand/40 bg-sand/15 text-sand',
+				svg: '<svg class="size-3.5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" /></svg>'
+			},
+			success: {
+				cls: 'mt-0.5 flex size-6 shrink-0 items-center justify-center border border-emerald-400/40 bg-emerald-500/15 text-emerald-300',
+				svg: '<svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7" /></svg>'
+			},
+			error: {
+				cls: 'mt-0.5 flex size-6 shrink-0 items-center justify-center border border-red-400/40 bg-red-500/15 text-red-300',
+				svg: '<svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18" /></svg>'
+			}
+		}
+
+		const hideToast = () => {
+			if (!toast) return
+			window.clearTimeout(toastTimer)
+			toast.classList.add('opacity-0', 'translate-y-2')
+			toast.classList.remove('opacity-100', 'translate-y-0')
+		}
+
+		const showNotification = (
+			state: ToastState,
+			title: string,
+			desc: string,
+			options?: { showProgress?: boolean; progressPct?: number; autoHideMs?: number }
+		) => {
+			if (!toast) return
+			window.clearTimeout(toastTimer)
+			if (toastTitle) toastTitle.textContent = title
+			if (toastDesc) toastDesc.textContent = desc
+			if (toastIcon) {
+				toastIcon.className = toastIcons[state].cls
+				toastIcon.innerHTML = toastIcons[state].svg
+			}
+			if (toastCard) {
+				toastCard.classList.toggle('border-red-400/50', state === 'error')
+				toastCard.classList.toggle('border-ink', state !== 'error')
+			}
+			if (toastProgressWrap && toastProgressBar) {
+				const showProg = Boolean(options?.showProgress)
+				toastProgressWrap.classList.toggle('hidden', !showProg)
+				toastProgressBar.className =
+					state === 'error'
+						? 'h-full bg-red-400 transition-all duration-300 ease-out'
+						: state === 'success'
+							? 'h-full bg-emerald-400 transition-all duration-300 ease-out'
+							: 'h-full bg-sand transition-all duration-500 ease-out'
+				toastProgressBar.style.width = `${options?.progressPct ?? 0}%`
+			}
+
+			toast.classList.remove('opacity-0', 'translate-y-2')
+			toast.classList.add('opacity-100', 'translate-y-0')
+
+			if (options?.autoHideMs && options.autoHideMs > 0) {
+				toastTimer = window.setTimeout(hideToast, options.autoHideMs)
+			}
+		}
+
+		toastClose?.addEventListener('click', hideToast)
+
+		const copyText = async (text: string) => {
+			if (navigator.clipboard?.writeText) {
+				await navigator.clipboard.writeText(text)
+				return
+			}
+			const ta = document.createElement('textarea')
+			ta.value = text
+			ta.setAttribute('readonly', '')
+			ta.style.position = 'fixed'
+			ta.style.opacity = '0'
+			document.body.appendChild(ta)
+			ta.select()
+			const ok = document.execCommand('copy')
+			document.body.removeChild(ta)
+			if (!ok) throw new Error('Clipboard access unavailable')
+		}
+
+		const buildSvgMarkup = (icon: SelectedIconData, jsx = false, sizeOverride?: string) => {
+			const sz = sizeOverride || curSize
+			const layers: string[] = []
+
+			if (curStyle !== 'stroke' && icon.duotone.length > 0) {
+				const fillVal = curStyle === 'twotone' ? curAccent : 'currentColor'
+				const op = curStyle === 'twotone' ? '0.16' : '0.14'
+				icon.duotone.forEach((d) => {
+					if (jsx) {
+						layers.push(`  <path d="${d}" stroke="none" fill="${fillVal}" fillOpacity="${op}" />`)
+					} else {
+						layers.push(`  <path d="${d}" stroke="none" fill="${fillVal}" fill-opacity="${op}" />`)
+					}
+				})
+			}
+
+			icon.outline.forEach((d) => {
+				layers.push(`  <path d="${d}" />`)
+			})
+
+			icon.accent.forEach((d) => {
+				if (curStyle === 'twotone') {
+					layers.push(`  <path d="${d}" stroke="${curAccent}" />`)
+				} else {
+					layers.push(`  <path d="${d}" />`)
+				}
+			})
+
+			if (jsx) {
+				return `<svg\n  xmlns="http://www.w3.org/2000/svg"\n  width={${sz}}\n  height={${sz}}\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  strokeWidth={${curStroke}}\n  strokeLinecap="round"\n  strokeLinejoin="round"\n>\n${layers.join('\n')}\n</svg>`
+			}
+
+			return `<svg xmlns="http://www.w3.org/2000/svg" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${curStroke}" stroke-linecap="round" stroke-linejoin="round">\n${layers.join('\n')}\n</svg>`
+		}
+
+		const renderInspector = () => {
+			if (!selectedIcon || !inspector || !inspectorPreview) return
+			inspector.classList.remove('hidden')
+			if (inspectorName) inspectorName.textContent = selectedIcon.name
+			if (inspectorCategory) inspectorCategory.textContent = selectedIcon.category
+			if (inspectorTags) inspectorTags.textContent = selectedIcon.tags
+
+			const previewMarkup = buildSvgMarkup(selectedIcon, false, '40')
+			inspectorPreview.innerHTML = previewMarkup
+			const svgEl = inspectorPreview.querySelector('svg')
+			if (svgEl) {
+				svgEl.style.color = '#FAF7F2'
+				if (curStyle === 'twotone') {
+					svgEl.querySelectorAll('path[stroke]:not([stroke="none"])').forEach((p) => {
+						if (p.getAttribute('stroke') === curAccent) {
+							p.setAttribute('stroke', '#C9955B')
+						}
+					})
+					svgEl.querySelectorAll('path[fill]:not([fill="none"])').forEach((p) => {
+						p.setAttribute('fill', '#C9955B')
+					})
+				}
+			}
+		}
+
+		const applyFilters = () => {
+			const q = (search?.value || '').trim().toLowerCase()
+			let visible = 0
+			cards.forEach((card) => {
+				const cat = card.dataset.category || ''
+				const matchesRole = !activeRoleCats || activeRoleCats.includes(cat)
+				const matchesCat = activeCat === 'All' || cat === activeCat
+				const matchesQuery = !q || (card.dataset.search || '').includes(q)
+				const show = matchesRole && matchesCat && matchesQuery
+				card.style.display = show ? '' : 'none'
+				if (show) visible++
+			})
+			if (matchCount) {
+				matchCount.textContent = `Showing ${visible} of ${totalCount} glyphs`
+			}
+			if (emptyState) {
+				emptyState.classList.toggle('hidden', visible > 0)
+			}
+		}
+
+		const roleBar = document.getElementById('icons-role-bar')
+		const roleOn = 'cursor-pointer border px-2.5 py-1 transition-colors border-clay bg-clay/10 font-semibold text-clay'
+		const roleOff = 'cursor-pointer border px-2.5 py-1 transition-colors border-rule bg-paper-elevated text-ink-secondary hover:border-ink hover:text-ink'
+
+		roleBar?.querySelectorAll<HTMLButtonElement>('[data-icon-role]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const raw = btn.dataset.roleCats || 'ALL'
+				activeRoleCats = raw === 'ALL' ? null : raw.split(',')
+				activeCat = 'All'
+				catBar?.querySelectorAll<HTMLButtonElement>('[data-icon-cat]').forEach((b, idx) => {
+					b.className = idx === 0 ? catOn : catOff
+				})
+				roleBar.querySelectorAll<HTMLButtonElement>('[data-icon-role]').forEach((b) => {
+					b.className = b === btn ? roleOn : roleOff
+				})
+				applyFilters()
+			})
+		})
+
+		search?.addEventListener('input', applyFilters)
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === '/' && document.activeElement !== search && !(document.activeElement instanceof HTMLInputElement)) {
+				e.preventDefault()
+				search?.focus()
+			}
+		})
+
+		const catOn = 'cursor-pointer border border-ink bg-ink px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-paper-elevated transition-colors'
+		const catOff = 'cursor-pointer border border-rule bg-paper-elevated px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-secondary transition-colors hover:border-ink hover:text-ink'
+
+		catBar?.querySelectorAll<HTMLButtonElement>('[data-icon-cat]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				activeCat = btn.dataset.iconCat || 'All'
+				activeRoleCats = null
+				roleBar?.querySelectorAll<HTMLButtonElement>('[data-icon-role]').forEach((b, idx) => {
+					b.className = idx === 0 ? roleOn : roleOff
+				})
+				catBar.querySelectorAll<HTMLButtonElement>('[data-icon-cat]').forEach((b) => {
+					b.className = b === btn ? catOn : catOff
+				})
+				applyFilters()
+			})
+		})
+
+		resetBtn?.addEventListener('click', () => {
+			if (search) search.value = ''
+			activeCat = 'All'
+			activeRoleCats = null
+			roleBar?.querySelectorAll<HTMLButtonElement>('[data-icon-role]').forEach((b, idx) => {
+				b.className = idx === 0 ? roleOn : roleOff
+			})
+			catBar?.querySelectorAll<HTMLButtonElement>('[data-icon-cat]').forEach((b, idx) => {
+				b.className = idx === 0 ? catOn : catOff
+			})
+			applyFilters()
+		})
+
+		const ctrlOn = 'cursor-pointer px-2.5 py-1 transition-colors bg-ink font-bold text-paper-elevated'
+		const ctrlOff = 'cursor-pointer px-2.5 py-1 transition-colors text-ink-secondary hover:text-ink'
+
+		document.querySelectorAll<HTMLButtonElement>('[data-icon-style]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				curStyle = (btn.dataset.iconStyle as 'duotone' | 'twotone' | 'stroke') || 'duotone'
+				grid.setAttribute('data-style', curStyle)
+				document.querySelectorAll<HTMLButtonElement>('[data-icon-style]').forEach((b) => {
+					b.className = b === btn ? ctrlOn : ctrlOff
+				})
+				renderInspector()
+			})
+		})
+
+		document.querySelectorAll<HTMLButtonElement>('[data-icon-size]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				curSize = btn.dataset.iconSize || '24'
+				document.querySelectorAll<HTMLButtonElement>('[data-icon-size]').forEach((b) => {
+					b.className = b === btn
+						? 'cursor-pointer px-2 py-1 transition-colors bg-ink font-bold text-paper-elevated'
+						: 'cursor-pointer px-2 py-1 transition-colors text-ink-secondary hover:text-ink'
+				})
+				grid.querySelectorAll<SVGElement>('[data-icon-svg]').forEach((svg) => {
+					svg.style.width = curSize + 'px'
+					svg.style.height = curSize + 'px'
+				})
+			})
+		})
+
+		document.querySelectorAll<HTMLButtonElement>('[data-icon-stroke]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				curStroke = btn.dataset.iconStroke || '1.75'
+				document.querySelectorAll<HTMLButtonElement>('[data-icon-stroke]').forEach((b) => {
+					b.className = b === btn
+						? 'cursor-pointer px-2 py-1 transition-colors bg-ink font-bold text-paper-elevated'
+						: 'cursor-pointer px-2 py-1 transition-colors text-ink-secondary hover:text-ink'
+				})
+				grid.querySelectorAll<SVGElement>('[data-icon-svg]').forEach((svg) => {
+					svg.setAttribute('stroke-width', curStroke)
+				})
+				renderInspector()
+			})
+		})
+
+		document.querySelectorAll<HTMLButtonElement>('[data-icon-palette]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				curPrimary = btn.dataset.primary || '#161412'
+				curAccent = btn.dataset.accent || '#B5542D'
+				grid.style.setProperty('--icon-primary', curPrimary)
+				grid.style.setProperty('--icon-accent', curAccent)
+				document.querySelectorAll<HTMLButtonElement>('[data-icon-palette]').forEach((b) => {
+					b.classList.remove('ring-2', 'ring-ink', 'ring-offset-2', 'ring-offset-paper')
+				})
+				btn.classList.add('ring-2', 'ring-ink', 'ring-offset-2', 'ring-offset-paper')
+				renderInspector()
+			})
+		})
+
+		surfaceToggle?.addEventListener('click', () => {
+			curSurface = curSurface === 'light' ? 'dark' : 'light'
+			grid.setAttribute('data-surface', curSurface)
+			surfaceToggle.textContent = curSurface === 'light' ? 'Surface: Light' : 'Surface: Dark'
+		})
+
+		const readLayerPaths = (card: HTMLButtonElement, layer: 'outline' | 'accent' | 'duotone') =>
+			Array.from(card.querySelectorAll<SVGPathElement>(`path[data-layer="${layer}"]`))
+				.map((path) => path.getAttribute('d') || '')
+				.filter(Boolean)
+
+		let activeCard: HTMLButtonElement | null = null
+
+		grid.addEventListener('click', (event) => {
+			const card = (event.target as Element | null)?.closest<HTMLButtonElement>('[data-icon-card]')
+			if (!card || !grid.contains(card)) return
+
+			if (activeCard && activeCard !== card) {
+				activeCard.classList.remove('ring-2', 'ring-inset', 'ring-clay')
+			}
+			card.classList.add('ring-2', 'ring-inset', 'ring-clay')
+			activeCard = card
+
+			selectedIcon = {
+				name: card.dataset.name || 'icon',
+				category: card.dataset.category || 'Interface',
+				tags: card.dataset.tags || '',
+				outline: readLayerPaths(card, 'outline'),
+				accent: readLayerPaths(card, 'accent'),
+				duotone: readLayerPaths(card, 'duotone')
+			}
+
+			renderInspector()
+		})
+
+		inspectorCopySvg?.addEventListener('click', async () => {
+			if (!selectedIcon) return
+			const iconName = selectedIcon.name
+			try {
+				await copyText(buildSvgMarkup(selectedIcon, false))
+				showNotification(
+					'success',
+					`Copied ${iconName}.svg`,
+					`SVG component (${curStyle} · ${curSize}px · ${curStroke}px) copied to clipboard.`,
+					{ autoHideMs: 2600 }
+				)
+			} catch (err) {
+				const reason = err instanceof Error ? err.message : 'Clipboard permission denied.'
+				showNotification('error', `Could not copy ${iconName}.svg`, reason, { autoHideMs: 3600 })
+			}
+		})
+
+		inspectorCopyJsx?.addEventListener('click', async () => {
+			if (!selectedIcon) return
+			const iconName = selectedIcon.name
+			try {
+				await copyText(buildSvgMarkup(selectedIcon, true))
+				showNotification(
+					'success',
+					`Copied ${iconName} JSX`,
+					`React JSX component (${curStyle} · ${curSize}px) copied to clipboard.`,
+					{ autoHideMs: 2600 }
+				)
+			} catch (err) {
+				const reason = err instanceof Error ? err.message : 'Clipboard permission denied.'
+				showNotification('error', `Could not copy ${iconName} JSX`, reason, { autoHideMs: 3600 })
+			}
+		})
+
+		let isDownloading = false
+
+		const downloadSvgFile = (icon: SelectedIconData) =>
+			new Promise<string>((resolve, reject) => {
+				window.requestAnimationFrame(() => {
+					if (toastProgressBar) toastProgressBar.style.width = '68%'
+				})
+				window.setTimeout(() => {
+					try {
+						const markup = buildSvgMarkup(icon, false)
+						if (!markup.includes('<svg')) {
+							throw new Error('Generated SVG markup is invalid.')
+						}
+						const svgBlob = new Blob([markup], { type: 'image/svg+xml;charset=utf-8' })
+						const url = URL.createObjectURL(svgBlob)
+						const a = document.createElement('a')
+						a.href = url
+						a.download = `${icon.name}.svg`
+						document.body.appendChild(a)
+						a.click()
+						document.body.removeChild(a)
+						window.setTimeout(() => URL.revokeObjectURL(url), 1000)
+						resolve(`${icon.name}.svg`)
+					} catch (err) {
+						reject(err instanceof Error ? err : new Error('Failed to generate SVG download.'))
+					}
+				}, 480)
+			})
+
+		inspectorDownload?.addEventListener('click', async () => {
+			if (!selectedIcon || isDownloading) return
+			const iconToDownload = selectedIcon
+			isDownloading = true
+			inspectorDownload.setAttribute('disabled', 'true')
+			inspectorDownload.classList.add('opacity-60', 'cursor-wait')
+
+			showNotification(
+				'loading',
+				`Downloading ${iconToDownload.name}.svg…`,
+				`Preparing ${curStyle} (${curSize}px) SVG file…`,
+				{ showProgress: true, progressPct: 22 }
+			)
+
+			try {
+				const filename = await downloadSvgFile(iconToDownload)
+				showNotification(
+					'success',
+					`Downloaded ${filename}`,
+					`${filename} downloaded successfully.`,
+					{ showProgress: true, progressPct: 100, autoHideMs: 3000 }
+				)
+			} catch (err) {
+				const reason = err instanceof Error ? err.message : 'Unexpected download error.'
+				showNotification(
+					'error',
+					`Failed to download ${iconToDownload.name}.svg`,
+					reason,
+					{ showProgress: true, progressPct: 100, autoHideMs: 4200 }
+				)
+			} finally {
+				isDownloading = false
+				inspectorDownload.removeAttribute('disabled')
+				inspectorDownload.classList.remove('opacity-60', 'cursor-wait')
+			}
+		})
+
+		inspectorClose?.addEventListener('click', () => {
+			inspector?.classList.add('hidden')
+			activeCard?.classList.remove('ring-2', 'ring-inset', 'ring-clay')
+			activeCard = null
+		})
+	}
+
+	initIconsGallery()
+	document.addEventListener('astro:page-load', initIconsGallery)
+</script>
