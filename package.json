@@ -2,23 +2,25 @@
 	"name": "duneui",
 	"type": "module",
 	"version": "2.0.0",
-	"engines": {
-		"node": ">=24.0.0"
-	},
+	"packageManager": "pnpm@12.21.0",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro check && astro build",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint src tests",
+		"build": "tsc --noEmit && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"test": "playwright test"
+		"test:unit": "node --test tests/unit/*.test.ts",
+		"test:e2e": "playwright test",
+		"test:e2e:chromium": "playwright test --project=chromium",
+		"test": "pnpm run test:unit && pnpm run test:e2e",
+		"audit:security": "pnpm audit --audit-level=moderate"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.9.12",
 		"@astrojs/mdx": "^8.1.6",
 		"@astrojs/partytown": "2.1.9",
 		"@astrojs/react": "7.1.9",
-		"@astrojs/rss": "^4.0.19",
 		"@astrojs/sitemap": "^3.7.5",
 		"@astrojs/vercel": "^11.0.22",
 		"@fontsource-variable/albert-sans": "^5.3.0",
@@ -34,7 +36,6 @@
 		"lucide-react": "1.73.0",
 		"react": "19.3.1",
 		"react-dom": "19.3.1",
-		"react-syntax-highlighter": "16.1.2",
 		"tailwind-merge": "3.7.0",
 		"typescript": "6.0.3"
 	},
@@ -45,11 +46,9 @@
 		"@tailwindcss/vite": "^4.3.1",
 		"@types/bun": "latest",
 		"@types/node": "^26.0.1",
-		"@types/react-syntax-highlighter": "15.5.13",
 		"animated-tailwindcss": "4.0.0",
 		"eslint": "^10.6.0",
 		"eslint-config-prettier": "10.1.8",
-		"eslint-config-standard": "17.1.0",
 		"globals": "17.14.0",
 		"prettier": "3.10.1",
 		"tailwindcss": "4.3.5",
