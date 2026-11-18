@@ -1,0 +1,72 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/core/components/Container.astro'
+import DocsContent from '@/modules/core/pages/docs/DocsContent'
+import { CARDS } from '@/constants/Card'
+
+const specs = [
+	{ label: 'Distribution', value: 'No npm package' },
+	{ label: 'Requirement', value: 'Tailwind CSS v4+' },
+	{ label: 'Interactivity', value: 'JS optional / per block' },
+	{ label: 'Frameworks', value: 'HTML · React · Vue · Astro' }
+]
+---
+
+<Layout
+	title='Documentation · DuneUI'
+	description='Learn how to install Tailwind CSS v4, wire interactive JavaScript behavior, and integrate DuneUI components in HTML, React, Vue, and Astro.'
+>
+	<div class='bg-paper py-14 sm:py-20'>
+		<Container>
+			<!-- Editorial Documentation Header -->
+			<div class='border-b border-rule pb-10 mb-12'>
+				<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay mb-3'>
+					<span>DOCUMENTATION</span>
+					<span class='text-rule-strong'>/</span>
+					<span>GETTING STARTED</span>
+				</div>
+
+				<div class='grid grid-cols-1 items-end gap-8 lg:grid-cols-12'>
+					<div class='lg:col-span-8'>
+						<h1 class='font-heading text-4xl sm:text-6xl font-bold text-ink leading-[1.02] tracking-tight'>
+							Setup, integration &amp;{' '}
+							<span class='font-serif italic font-normal text-clay'>interactivity.</span>
+						</h1>
+						<p class='mt-4 max-w-2xl font-accent text-base text-ink-secondary leading-relaxed'>
+							Everything you need to start shipping with DuneUI. No package to install—just a recent version of Tailwind CSS v4, clean semantic markup, and optional JavaScript for interactive blocks.
+						</p>
+					</div>
+
+					<div class='lg:col-span-4 flex lg:justify-end'>
+						<a
+							href='/components'
+							class='tactile-btn inline-flex items-center gap-2.5 bg-ink px-5 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-paper-elevated hover:bg-obsidian-soft'
+						>
+							<span>Browse {CARDS.length} Families</span>
+							<span aria-hidden='true'>↗</span>
+						</a>
+					</div>
+				</div>
+
+				<!-- 4-Cell Spec Strip -->
+				<div class='mt-10 grid grid-cols-2 border-l border-t border-rule bg-paper-elevated sm:grid-cols-4'>
+					{
+						specs.map((spec) => (
+							<div class='border-b border-r border-rule px-4 py-3.5'>
+								<p class='font-mono text-[10px] uppercase tracking-widest text-ink-muted'>
+									{spec.label}
+								</p>
+								<p class='mt-1 font-heading text-sm sm:text-base font-bold text-ink'>
+									{spec.value}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<!-- Interactive Documentation Body -->
+			<DocsContent client:load />
+		</Container>
+	</div>
+</Layout>
