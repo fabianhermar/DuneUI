@@ -1,15 +1,16 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import Container from '@/core/components/Container.astro'
 
 const groups = [
   {
     id: 'general',
+    index: '01',
     label: 'General',
-    icon: `<svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>`,
     items: [
       {
         q: 'What is DuneUI?',
-        a: 'DuneUI is a free, open-source library of UI components and page sections built with TailwindCSS. It\'s designed to help you ship beautiful interfaces faster — no account required, no restrictions.',
+        a: 'DuneUI is a free, open-source library of UI components and page sections built with TailwindCSS v4 and pure CSS. Designed to help you ship distinct interfaces faster — no account required, no lock-in.',
       },
       {
         q: 'Is DuneUI completely free?',
@@ -17,80 +18,68 @@ const groups = [
       },
       {
         q: 'Do I need to create an account?',
-        a: 'No. All components are accessible directly from the website. Just browse, find what you need, and copy the code.',
+        a: 'No. All components are accessible directly from the website. Just browse, inspect at any viewport, and copy the code.',
       },
       {
         q: 'Who is DuneUI made for?',
-        a: 'Developers who use TailwindCSS and want production-ready UI blocks without starting from scratch. Whether you\'re building a SaaS, a marketing site, or a personal project — DuneUI has something for you.',
+        a: 'Developers and designers who want production-ready UI blocks without generic bloat. Whether you are building a SaaS, a studio site, or a personal archive — DuneUI gives you solid architectural primitives.',
       },
     ],
   },
   {
     id: 'components',
+    index: '02',
     label: 'Components',
-    icon: `<svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
     items: [
       {
         q: 'Which frameworks are supported?',
-        a: 'Components are written in plain HTML + TailwindCSS, making them compatible with any framework: React, Vue, Svelte, Astro, Next.js, and more. Copy the markup and adapt it to your framework\'s syntax.',
+        a: 'Components are written in semantic HTML + TailwindCSS v4 (plus pure CSS options), making them compatible with React, Vue, Svelte, Astro, Next.js, and vanilla HTML.',
       },
       {
         q: 'Can I modify the components?',
-        a: 'Absolutely. Components are a starting point, not a constraint. Modify colors, spacing, layout, and typography however you want. They\'re yours once you copy them.',
+        a: 'Absolutely. Components are a starting point, not a constraint. Modify tokens, spacing, layout, and typography however you want.',
       },
       {
         q: 'Are the components accessible?',
-        a: 'We follow accessibility best practices including semantic HTML, ARIA labels, and keyboard navigation on all interactive components. We\'re continuously improving this with each release.',
+        a: 'We follow accessibility best practices including semantic HTML, ARIA attributes, and keyboard navigation across interactive primitives.',
       },
       {
         q: 'Which TailwindCSS version is used?',
-        a: 'As of v2.0, DuneUI is built with TailwindCSS v4. Components from earlier versions may use v3 syntax and are being updated progressively.',
-      },
-      {
-        q: 'Are there full-page templates?',
-        a: 'Yes. The Templates section includes complete page layouts ready to be used as project starters. More are added with each major release.',
+        a: 'As of v2.0, DuneUI is built for TailwindCSS v4 alongside standalone Pure CSS specimens.',
       },
     ],
   },
   {
     id: 'license',
+    index: '03',
     label: 'License & Usage',
-    icon: `<svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
     items: [
       {
         q: 'Can I use DuneUI in commercial projects?',
-        a: 'Yes. Use any component in commercial projects — SaaS apps, client websites, e-commerce stores, and more. No restrictions.',
+        a: 'Yes. Use any component in commercial projects — SaaS apps, client websites, e-commerce stores, and more.',
       },
       {
         q: 'Can I redistribute components as a UI library?',
-        a: 'No. You cannot package DuneUI components into a UI library or component package and distribute it publicly, whether for free or for sale. You are free to use them inside your own product.',
+        a: 'No. You cannot package DuneUI components into a competing UI kit or component package and distribute it publicly, whether for free or for sale.',
       },
       {
         q: 'Do I need to credit DuneUI?',
-        a: 'Attribution is not required. A mention is always appreciated and helps the project grow, but it\'s entirely optional.',
-      },
-      {
-        q: 'Can I use DuneUI for client projects?',
-        a: 'Yes. Build websites and applications for clients using DuneUI components. The resulting product belongs to your client.',
+        a: 'Attribution is not required. A mention is always appreciated and helps the project grow, but it is entirely optional.',
       },
     ],
   },
   {
     id: 'technical',
+    index: '04',
     label: 'Technical',
-    icon: `<svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>`,
     items: [
       {
         q: 'Do I need to install a package?',
-        a: 'No. DuneUI is copy-paste based. Just make sure TailwindCSS is set up in your project and paste the component code directly.',
+        a: 'No. DuneUI is copy-paste based. Set up TailwindCSS v4 (or drop in our Pure CSS blocks) and paste the markup directly.',
       },
       {
-        q: 'How do I set up TailwindCSS?',
-        a: 'Follow the official TailwindCSS installation guide at tailwindcss.com/docs/installation. DuneUI components work out of the box once Tailwind is configured.',
-      },
-      {
-        q: 'What fonts do DuneUI components use?',
-        a: 'DuneUI uses "Albert Sans" and "Urbanist" as primary fonts, loaded via @fontsource. You can swap them for your own font system by updating font-family in your Tailwind config.',
+        q: 'What fonts does DuneUI use?',
+        a: 'DuneUI pairs Instrument Serif, Urbanist, Albert Sans, and JetBrains Mono via @fontsource. You can swap them for your own font tokens anytime.',
       },
     ],
   },
@@ -101,119 +90,123 @@ const groups = [
   title='FAQs · DuneUI'
   description='Frequently asked questions about DuneUI — components, licensing, usage, and more.'
 >
-  <!-- ── Header ────────────────────────────────────── -->
-  <div class='mx-auto w-full max-w-4xl px-4 sm:px-6 pt-32 pb-16'>
-    <div class='max-w-2xl'>
-      <span class='inline-block text-xs font-semibold font-accent uppercase tracking-[0.2em] text-[#93603e] mb-4'>
-        Got questions?
-      </span>
-      <h1 class='text-5xl lg:text-6xl font-bold font-heading text-neutral-900 leading-[1.05] tracking-tight'>
-        Frequently asked<br/>questions
-      </h1>
-      <p class='mt-5 text-base font-accent text-neutral-500 leading-relaxed'>
-        Everything you need to know about DuneUI. Can't find the answer you're looking for?{' '}
-        <a href='https://x.com/FabianHermar' target='_blank' rel='noreferrer' class='text-[#93603e] font-semibold underline underline-offset-2 hover:text-[#7a4f33] transition-colors'>
-          Reach out on Twitter.
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- ── Content ───────────────────────────────────── -->
-  <div class='mx-auto w-full max-w-4xl px-4 sm:px-6 pb-28'>
-    <div class='flex flex-col gap-16' id='faq-root'>
-      {groups.map((group) => (
-        <section>
-          <!-- Group header -->
-          <div class='flex items-center gap-3 mb-10'>
-            <div class='flex h-8 w-8 items-center justify-center rounded-lg bg-[#f6edde] text-[#93603e]'>
-              <Fragment set:html={group.icon} />
-            </div>
-            <h2 class='text-base font-bold font-heading text-neutral-900'>
-              {group.label}
-            </h2>
-            <div class='flex-1 h-px bg-neutral-100'></div>
+  <div class='bg-paper py-14 sm:py-20'>
+    <Container>
+      <div class='max-w-4xl mx-auto'>
+        <div class='border-b border-rule pb-10 mb-14'>
+          <div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay mb-3'>
+            <span>SUPPORT</span>
+            <span class='text-rule-strong'>/</span>
+            <span>FREQUENTLY ASKED</span>
           </div>
+          <h1 class='font-heading text-4xl sm:text-6xl font-bold text-ink leading-[1.02] tracking-tight'>
+            Questions &amp;{' '}
+            <span class='font-serif italic font-normal text-clay'>answers.</span>
+          </h1>
+          <p class='mt-4 font-accent text-base text-ink-secondary leading-relaxed max-w-xl'>
+            Everything you need to know about DuneUI. Need something specific?{' '}
+            <a href='https://x.com/FabianHermar' target='_blank' rel='noreferrer' class='text-clay font-semibold underline underline-offset-4 hover:text-clay-deep'>
+              Reach out on X / Twitter.
+            </a>
+          </p>
+        </div>
 
-          <!-- Accordion items -->
-          <div class='space-y-px rounded-xl overflow-hidden border border-neutral-100 shadow-sm'>
-            {group.items.map((item, i) => (
-              <div class='faq-item bg-white' data-q={item.q.toLowerCase()}>
-                <button
-                  class='faq-trigger flex w-full items-start justify-between gap-6 px-6 py-5 text-left'
-                  aria-expanded='false'
-                >
-                  <span class='text-sm font-semibold font-accent text-neutral-800 leading-snug pt-px'>
-                    {item.q}
-                  </span>
-                  <span class='faq-chevron mt-0.5 shrink-0 text-neutral-400 transition-transform duration-300'>
-                    <svg class='size-4' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-                      <path stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7' />
-                    </svg>
-                  </span>
-                </button>
-                <div class='faq-body max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out'>
-                  <p class='px-6 pb-5 text-sm font-accent text-neutral-500 leading-relaxed'>
-                    {item.a}
-                  </p>
-                </div>
+        <div class='flex flex-col gap-14' id='faq-root'>
+          {groups.map((group) => (
+            <section>
+              <div class='flex items-center gap-3 mb-5'>
+                <span class='font-mono text-xs font-semibold text-clay'>{group.index}</span>
+                <h2 class='font-heading text-xl font-bold text-ink'>{group.label}</h2>
+                <div class='flex-1 h-px bg-rule'></div>
               </div>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
 
-    <!-- Still have questions -->
-    <div class='mt-28 rounded-2xl bg-neutral-950 px-8 py-10 text-center'>
-      <p class='text-xs font-semibold font-accent uppercase tracking-[0.2em] text-neutral-500 mb-3'>Still stuck?</p>
-      <h3 class='text-2xl font-bold font-heading text-white mb-2'>We're happy to help</h3>
-      <p class='text-sm font-accent text-neutral-400 mb-7 max-w-sm mx-auto leading-relaxed'>
-        Can't find the answer you're looking for? Reach out and we'll get back to you.
-      </p>
-      <a
-        href='https://x.com/FabianHermar'
-        target='_blank'
-        rel='noreferrer noopener'
-        class='inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-semibold font-accent text-neutral-900 hover:bg-neutral-100 transition-colors duration-200'
-      >
-        <svg class='size-4' fill='currentColor' viewBox='0 0 24 24'>
-          <path d='M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' />
-        </svg>
-        Ask on Twitter
-      </a>
-    </div>
+              <div class='divide-y divide-rule border border-rule bg-paper-elevated'>
+                {group.items.map((item) => (
+                  <div class='faq-item'>
+                    <button
+                      type='button'
+                      class='faq-trigger flex w-full cursor-pointer items-start justify-between gap-6 px-6 py-5 text-left transition-colors hover:bg-paper'
+                      aria-expanded='false'
+                    >
+                      <span class='font-accent text-sm sm:text-base font-semibold text-ink leading-snug'>
+                        {item.q}
+                      </span>
+                      <span class='faq-chevron shrink-0 font-mono text-base text-clay transition-transform duration-200'>
+                        +
+                      </span>
+                    </button>
+                    <div class='faq-body max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out'>
+                      <p class='px-6 pb-5 font-accent text-sm text-ink-secondary leading-relaxed'>
+                        {item.a}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <div class='mt-20 border border-ink bg-obsidian px-8 py-10 text-paper-elevated flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6'>
+          <div>
+            <p class='font-mono text-[11px] uppercase tracking-[0.2em] text-sand mb-2'>STILL STUCK?</p>
+            <h3 class='font-heading text-2xl font-bold'>Ask directly on X / Twitter</h3>
+            <p class='mt-1 font-accent text-sm text-white/70'>
+              Have a question about integration, licensing, or upcoming components?
+            </p>
+          </div>
+          <a
+            href='https://x.com/FabianHermar'
+            target='_blank'
+            rel='noreferrer noopener'
+            class='shrink-0 inline-flex items-center gap-2 bg-sand px-6 py-3 font-mono text-xs font-semibold uppercase tracking-widest text-obsidian hover:bg-paper-elevated transition-colors'
+          >
+            <span>Message @FabianHermar</span>
+            <span aria-hidden='true'>↗</span>
+          </a>
+        </div>
+      </div>
+    </Container>
   </div>
 </Layout>
 
 <script>
-  document.querySelectorAll<HTMLButtonElement>('.faq-trigger').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item')!
-      const body = item.querySelector<HTMLElement>('.faq-body')!
-      const chevron = item.querySelector<HTMLElement>('.faq-chevron')!
-      const isOpen = btn.getAttribute('aria-expanded') === 'true'
+  function initFaq() {
+    document.querySelectorAll<HTMLButtonElement>('.faq-trigger').forEach(btn => {
+      if (btn.getAttribute('data-bound') === 'true') return
+      btn.setAttribute('data-bound', 'true')
 
-      // Close all in the same group
-      const group = item.closest('section')!
-      group.querySelectorAll('.faq-item').forEach(other => {
-        if (other !== item) {
-          other.querySelector<HTMLButtonElement>('.faq-trigger')!.setAttribute('aria-expanded', 'false')
-          const ob = other.querySelector<HTMLElement>('.faq-body')!
-          ob.style.maxHeight = '0'
-          other.querySelector<HTMLElement>('.faq-chevron')!.style.transform = ''
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item')!
+        const body = item.querySelector<HTMLElement>('.faq-body')!
+        const chevron = item.querySelector<HTMLElement>('.faq-chevron')!
+        const isOpen = btn.getAttribute('aria-expanded') === 'true'
+
+        const group = item.closest('section')!
+        group.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.querySelector<HTMLButtonElement>('.faq-trigger')!.setAttribute('aria-expanded', 'false')
+            other.querySelector<HTMLElement>('.faq-body')!.style.maxHeight = '0'
+            const oc = other.querySelector<HTMLElement>('.faq-chevron')!
+            oc.style.transform = ''
+            oc.textContent = '+'
+          }
+        })
+
+        if (isOpen) {
+          btn.setAttribute('aria-expanded', 'false')
+          body.style.maxHeight = '0'
+          chevron.style.transform = ''
+          chevron.textContent = '+'
+        } else {
+          btn.setAttribute('aria-expanded', 'true')
+          body.style.maxHeight = body.scrollHeight + 'px'
+          chevron.style.transform = 'rotate(45deg)'
         }
       })
-
-      if (isOpen) {
-        btn.setAttribute('aria-expanded', 'false')
-        body.style.maxHeight = '0'
-        chevron.style.transform = ''
-      } else {
-        btn.setAttribute('aria-expanded', 'true')
-        body.style.maxHeight = body.scrollHeight + 'px'
-        chevron.style.transform = 'rotate(180deg)'
-      }
     })
-  })
+  }
+
+  initFaq()
+  document.addEventListener('astro:page-load', initFaq)
 </script>
