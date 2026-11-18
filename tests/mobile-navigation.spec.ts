@@ -54,6 +54,6 @@ test.describe('Mobile Navigation Interaction', () => {
     
     // Check if the menu would be closed. Actually, navigating away will close it anyway,
     // but the JS specifically removes the classes. We can test if the classes are gone or if we navigated.
-    await expect(page).toHaveURL(/.*components/);
+    await expect(page).toHaveURL(/.*components/, { timeout: 15_000 });
   });
 });

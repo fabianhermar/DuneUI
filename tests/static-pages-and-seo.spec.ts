@@ -53,8 +53,13 @@ test.describe('Static Pages, SEO Metadata & Core Interactions', () => {
     await page.goto('/changelog');
     const releaseLink = page.locator('main a[href^="/changelog/"]').first();
     await expect(releaseLink).toBeVisible();
-    await releaseLink.click();
-    await expect(page).toHaveURL(/\/changelog\/.+/);
-    await expect(page.locator('main')).toBeVisible();
+
+    await expect(async () => {
+      await releaseLink.scrollIntoViewIfNeeded();
+      await releaseLink.click();
+      await expect(page).toHaveURL(/\/changelog\/.+/, { timeout: 8_000 });
+    }).toPass({ timeout: 20_000 });
+
+    await expect(page.locator('main')).toBeVisible({ timeout: 15_000 });
   });
 });

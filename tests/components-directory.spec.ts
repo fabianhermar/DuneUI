@@ -61,9 +61,16 @@ test.describe('Components Directory & Category Routes', () => {
     const nextLink = pagination.getByRole('link', { name: /Next Family/i });
     await expect(nextLink).toHaveAttribute('href', '/components/alerts');
 
-    await nextLink.click();
-    await expect(page).toHaveURL(/\/components\/alerts\/?$/);
-    await expect(page.getByRole('heading', { level: 1, name: /Alerts/i })).toBeVisible();
+    // Scroll to footer pagination; retry click if lazy iframe height expansion shifts the link mid-scroll
+    await expect(async () => {
+      await nextLink.scrollIntoViewIfNeeded();
+      await nextLink.click();
+      await expect(page).toHaveURL(/\/components\/alerts\/?$/, { timeout: 8_000 });
+    }).toPass({ timeout: 20_000 });
+
+    await expect(page.getByRole('heading', { level: 1, name: /Alerts/i })).toBeVisible({
+      timeout: 15_000,
+    });
 
     const prevLink = page
       .getByRole('navigation', { name: 'Category pagination' })
