@@ -1,19 +1,26 @@
 ---
 import Card from '@/core/design-system/Card.astro'
 import { CARDS } from '@/constants/Card'
+
+interface Props {
+	limit?: number
+}
+
+const { limit } = Astro.props
+const visibleCards = typeof limit === 'number' ? CARDS.slice(0, limit) : CARDS
 ---
 
-<div
-	class='relative grid grid-cols-[repeat(330px,minmax(12rem,1fr))] gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center pt-10'
->
+<div class='grid grid-cols-1 border-l border-t border-rule sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 	{
-		CARDS.map((card) => (
+		visibleCards.map((card) => (
 			<Card
+				index={card.index}
 				title={card.title}
 				quantity={card.quantity}
 				image={card.image}
 				href={card.href}
 				alt={card.alt}
+				tag={card.tag}
 			/>
 		))
 	}

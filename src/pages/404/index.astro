@@ -1,39 +1,51 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Button from '@/core/design-system/Button.astro'
+import Container from '@/core/components/Container.astro'
 ---
 
 <Layout
-	title='404 - page not found'
+	title='404 · Lost in the Dunes · DuneUI'
 	description='The page you are looking for seems to have vanished like sand in the wind.'
 >
-	<main class='pt-10 md:pt-24'>
-		<div class='min-h-screen flex flex-col justify-between'>
-			<div
-				class='grow flex flex-col items-center justify-center text-center px-4 pt-5'
-			>
-				<h1 class='text-6xl font-bold font-heading mb-4'>
-					Oops, you got lost in the dunes.
+	<section class='bg-paper py-20 sm:py-28'>
+		<Container>
+			<div class='mx-auto max-w-3xl border border-rule bg-paper-elevated p-8 sm:p-14 text-center shadow-[6px_6px_0_0_#DDD5C7]'>
+				<span class='font-mono text-xs font-semibold uppercase tracking-[0.25em] text-clay'>
+					ERROR 404 // ROUTE NOT FOUND
+				</span>
+				<h1 class='mt-4 font-heading text-4xl sm:text-6xl font-bold tracking-tight text-ink'>
+					Lost in the{' '}
+					<span class='font-serif italic font-normal text-clay'>dunes.</span>
 				</h1>
-				<p class='mb-4 font-normal font-accent text-lg max-w-lg'>
-					The page you are looking for seems to have vanished like sand in the
-					wind.
+				<p class='mt-4 mx-auto max-w-md font-accent text-base text-ink-secondary leading-relaxed'>
+					The coordinate you requested has shifted with the wind. Return to the index or browse components directly.
 				</p>
-				<Button
-					href='/'
-					text='Back to the Oasis'
-					additionalClasses='bg-[#93603e] hover:bg-[#c18156] transition-colors duration-100 select-none'
-				/>
+
+				<div class='mt-8 flex flex-wrap justify-center gap-3'>
+					<a
+						href='/'
+						class='tactile-btn bg-ink px-6 py-3 font-mono text-xs font-semibold uppercase tracking-widest text-paper-elevated'
+					>
+						Back to Home ↗
+					</a>
+					<a
+						href='/components'
+						class='border border-rule-strong bg-paper px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-ink hover:border-ink'
+					>
+						Browse Components
+					</a>
+				</div>
+
+				<div class='mt-10 border-t border-rule pt-8'>
+					<img
+						src='/svg/dune.svg'
+						width={1200}
+						height={300}
+						alt='Desert landscape with dunes'
+						class='w-full h-auto select-none opacity-90'
+					/>
+				</div>
 			</div>
-			<div class='w-full'>
-				<img
-					src='/svg/dune.svg'
-					width={1200}
-					height={300}
-					alt='Desert landscape with cacti and mountains under a crescent moon'
-					class='w-full h-auto select-none'
-				/>
-			</div>
-		</div>
-	</main>
+		</Container>
+	</section>
 </Layout>

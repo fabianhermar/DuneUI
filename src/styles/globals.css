@@ -2,252 +2,195 @@
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
 
-@custom-variant dark (&:is(.dark *));
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/jetbrains-mono';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @utility container {
 	margin-inline: auto;
-	padding-inline: 2rem;
+	padding-inline: 1.5rem;
 
 	@media (width >=--theme(--breakpoint-sm)) {
 		max-width: none;
+		padding-inline: 2rem;
 	}
 
 	@media (width >=1400px) {
-		max-width: 1400px;
+		max-width: 1380px;
 	}
 }
 
+@utility max-w-container {
+	max-width: 1380px;
+}
+
 @theme {
+	--font-serif: "Instrument Serif", Georgia, serif;
 	--font-accent: "Albert Sans Variable", system-ui, sans-serif;
 	--font-heading: "Urbanist Variable", system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+	--color-paper: #F5F1EA;
+	--color-paper-elevated: #FAF7F2;
+	--color-paper-recessed: #EAE3D7;
+	--color-ink: #161412;
+	--color-ink-secondary: #574F47;
+	--color-ink-muted: #857B70;
+	--color-rule: #DDD5C7;
+	--color-rule-strong: #C5B9A6;
+	--color-clay: #B5542D;
+	--color-clay-deep: #8E3E1E;
+	--color-sand: #C9955B;
+	--color-obsidian: #151311;
+	--color-obsidian-soft: #201D19;
 
 	--animate-accordion-down: accordion-down 0.2s ease-out;
 	--animate-accordion-up: accordion-up 0.2s ease-out;
 	--animate-marquee: marquee var(--duration) linear infinite;
 	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-	/* Hero animations */
-	--animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-	--animate-fade-in: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-	--animate-orb-drift: orb-drift 10s ease-in-out infinite alternate;
-	--animate-orb-drift-reverse: orb-drift 12s ease-in-out infinite alternate-reverse;
-	--animate-gradient-shift: gradient-shift 4s ease infinite;
-	--animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
-	--animate-scroll-pulse: scroll-pulse 2s ease-in-out infinite;
-	--animate-float-pill: float-pill 5s ease-in-out infinite;
-	--animate-float-star: float-star 4s ease-in-out infinite;
+	--animate-reveal-up: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 
 	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-
-		to {
-			height: var(--radix-accordion-content-height);
-		}
+		from { height: 0; }
+		to { height: var(--radix-accordion-content-height); }
 	}
 
 	@keyframes accordion-up {
-		from {
-			height: var(--radix-accordion-content-height);
-		}
-
-		to {
-			height: 0;
-		}
+		from { height: var(--radix-accordion-content-height); }
+		to { height: 0; }
 	}
 
 	@keyframes marquee {
-		from {
-			transform: translateX(0);
-		}
-
-		to {
-			transform: translateX(calc(-100% - var(--gap)));
-		}
+		from { transform: translateX(0); }
+		to { transform: translateX(calc(-100% - var(--gap))); }
 	}
 
 	@keyframes marquee-vertical {
-		from {
-			transform: translateY(0);
-		}
-
-		to {
-			transform: translateY(calc(-100% - var(--gap)));
-		}
+		from { transform: translateY(0); }
+		to { transform: translateY(calc(-100% - var(--gap))); }
 	}
 
-	@keyframes fade-up {
+	@keyframes reveal-up {
 		from {
 			opacity: 0;
-			transform: translateY(32px);
+			transform: translateY(18px);
 		}
-
 		to {
 			opacity: 1;
 			transform: translateY(0);
-		}
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes orb-drift {
-		0% {
-			transform: translate(0, 0) scale(1);
-		}
-
-		100% {
-			transform: translate(30px, 20px) scale(1.08);
-		}
-	}
-
-
-	@keyframes gradient-shift {
-
-		0%,
-		100% {
-			background-position: 0% 50%;
-		}
-
-		50% {
-			background-position: 100% 50%;
-		}
-	}
-
-	@keyframes pulse-dot {
-
-		0%,
-		100% {
-			box-shadow: 0 0 8px rgba(193, 129, 86, 0.8);
-		}
-
-		50% {
-			box-shadow: 0 0 14px rgba(193, 129, 86, 1), 0 0 20px rgba(193, 129, 86, 0.4);
-		}
-	}
-
-	@keyframes scroll-pulse {
-		0% {
-			transform: scaleY(0);
-			transform-origin: top;
-			opacity: 0;
-		}
-
-		50% {
-			transform: scaleY(1);
-			transform-origin: top;
-			opacity: 1;
-		}
-
-		100% {
-			transform: scaleY(1);
-			transform-origin: bottom;
-			opacity: 0;
-		}
-	}
-
-	@keyframes float-pill {
-
-		0%,
-		100% {
-			transform: translateY(0);
-		}
-
-		50% {
-			transform: translateY(-8px);
-		}
-	}
-
-	@keyframes float-star {
-
-		0%,
-		100% {
-			transform: translateY(0) rotate(0deg);
-			opacity: 0.3;
-		}
-
-		50% {
-			transform: translateY(-10px) rotate(15deg);
-			opacity: 0.6;
 		}
 	}
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles,
-  we need to add an explicit border color utility to any element that depends on these defaults. */
 @layer base {
-
 	*,
 	::after,
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentcolor);
-	}
-}
-
-@layer utilities {
-
-	*,
-	*::before,
-	*::after {
+		border-color: var(--color-rule);
 		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-  }
-}
-	@font-face {
-		font-family: 'Urbanist Variable';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 100 900;
-		src: url(@fontsource-variable/urbanist/files/urbanist-latin-wght-normal.woff2) format('woff2-variations');
 	}
 
-	@font-face {
-		font-family: 'Albert Sans Variable';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 100 900;
-		src: url(@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2) format('woff2-variations');
+	html {
+		scroll-behavior: smooth;
+		background-color: #F5F1EA;
+		color: #161412;
 	}
 
-html,
-body {
-	background-color: #ffffff;
+	body {
+		background-color: #F5F1EA;
+		color: #161412;
+		font-family: var(--font-accent);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		overflow-x: clip;
+	}
 }
 
-html {
-	scroll-behavior: smooth;
+@font-face {
+	font-family: 'Urbanist Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url(@fontsource-variable/urbanist/files/urbanist-latin-wght-normal.woff2) format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Albert Sans Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url(@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2) format('woff2-variations');
+}
+
+/* Tactile paper grain overlay — subtle human materiality */
+.paper-grain {
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Architectural drafting grid */
+.arch-grid-bg {
+	background-image:
+		linear-gradient(to right, rgba(22, 20, 18, 0.045) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(22, 20, 18, 0.045) 1px, transparent 1px);
+	background-size: 32px 32px;
+}
+
+.arch-dots-bg {
+	background-image: radial-gradient(rgba(22, 20, 18, 0.14) 1px, transparent 1px);
+	background-size: 16px 16px;
+}
+
+/* Tactile offset press shadow */
+.tactile-btn {
+	box-shadow: 3px 3px 0 0 #B5542D;
+	transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.16s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.16s ease;
+}
+
+.tactile-btn:hover {
+	transform: translate(-1.5px, -1.5px);
+	box-shadow: 5px 5px 0 0 #B5542D;
+}
+
+.tactile-btn:active {
+	transform: translate(1.5px, 1.5px);
+	box-shadow: 1px 1px 0 0 #B5542D;
 }
 
 ::selection {
-	background-color: #f6edde;
-	color: #d39c64;
+	background-color: #B5542D;
+	color: #FAF7F2;
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 9px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #d39c64;
-	border-radius: 10px;
+	background-color: #C5B9A6;
+	border: 2px solid #F5F1EA;
+	border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #B5542D;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #f6edde;
+	background-color: #F5F1EA;
+}
+
+/* Pre-highlighted Shiki code blocks rendered inside ComponentPreview slots */
+.dune-code-slot pre.astro-code {
+	margin: 0;
+	padding: 1.75rem;
+	min-height: 300px;
+	background-color: transparent !important;
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
+	line-height: 1.65;
+	overflow-x: auto;
 }

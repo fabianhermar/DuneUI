@@ -20,7 +20,7 @@ const { title, description } = Astro.props
 		<meta name='viewport' content='width=device-width, initial-scale=1' />
 		<meta
 			name='keywords'
-			content='duneiu, tailwindcss, duneui.com, components, templates, open-source, tailwindcss-components, tailwindcss-templates'
+			content='duneui, tailwindcss, duneui.com, components, templates, open-source, tailwindcss-components, tailwindcss-templates'
 		/>
 		<link rel='shortcut icon' href='/favicon/favicon.ico' type='image/x-icon' />
 		<meta name='description' content={description} />
@@ -45,10 +45,10 @@ const { title, description } = Astro.props
 		<link
 			rel='mask-icon'
 			href='/favicon/safari-pinned-tab.svg'
-			color='#000000'
+			color='#161412'
 		/>
-		<meta name='msapplication-TileColor' content='#ffffff' />
-		<meta name='theme-color' content='#ffffff' />
+		<meta name='msapplication-TileColor' content='#F5F1EA' />
+		<meta name='theme-color' content='#F5F1EA' />
 		<link rel='canonical' href='https://duneui.com/' />
 		<meta name='apple-mobile-web-app-title' content='DuneUI' />
 		<meta name='application-name' content='DuneUI' />
@@ -60,7 +60,7 @@ const { title, description } = Astro.props
 			content='https://res.cloudinary.com/dvjzjasfg/image/upload/v1694909149/DuneUI_v1.0_qu7myh.png'
 		/>
 		<meta property='og:description' content={description} />
-		<meta property='og:locate' content='es_MX' />
+		<meta property='og:locale' content='en_US' />
 		<meta property='og:site_name' content='DuneUI' />
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:site' content='@FabianHermar' />
@@ -89,9 +89,13 @@ const { title, description } = Astro.props
 		</script>
 		<ClientRouter />
 	</head>
-	<body class='flex h-full flex-col'>
+	<body class='relative flex min-h-screen flex-col bg-paper text-ink antialiased'>
+		<div
+			aria-hidden='true'
+			class='paper-grain pointer-events-none fixed inset-0 z-50 opacity-[0.032] mix-blend-multiply'
+		></div>
 		<Header />
-		<main class='flex-1'>
+		<main class='relative flex-1'>
 			<slot />
 		</main>
 		<Footer />

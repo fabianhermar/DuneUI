@@ -1,63 +1,68 @@
 ---
-import Grid from './Grid.astro'
-import Link from './Link.astro'
+import Container from '@/core/components/Container.astro'
 ---
 
-<section class='text-gray-600 overflow-hidden wave px-2'>
-	<div class='container px-5 py-32 mx-auto'>
-		<div class='flex flex-col text-center w-full mb-20 gap-4'>
-			<span
-				class='text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent'
-			>
-				Thanks for your support
-			</span>
-			<h1
-				class='sm:text-7xl text-5xl font-[GilroyBold] mb-2 text-gray-900 dark:text-white'
-			>
-				Sponsor
-			</h1>
-			<p
-				class='lg:w-2/3 mx-auto leading-relaxed text-base font-[GilroySemiBold] text-gray-500'
-			>
-				By sponsoring Wind UI you help the team behind it to continue creating
-				wonderful products for the developer community.
-			</p>
-			<p
-				class='lg:w-2/3 mx-auto leading-relaxed text-base font-[GilroySemiBold] text-gray-500'
-			>
-				For more information, please scroll down.
-			</p>
-		</div>
-		<article class='flex flex-wrap items-center justify-center -m-4'>
-			<div
-				class='relative overflow-hidden rounded-2xl bg-linear-to-br border border-slate-200 dark:border-0 backdrop-blur-md bg-white/10 dark:from-white/5 dark:to-darker/5 p-8 dark:bg-darker'
-			>
-				<div class='text-xl font-heading text-white md:text-3xl'>
+<section class='border-b border-rule bg-paper py-14 sm:py-20'>
+	<Container>
+		<div class='max-w-4xl mx-auto'>
+			<div class='border-b border-rule pb-10'>
+				<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay mb-3'>
+					<span>PATRONAGE</span>
+					<span class='text-rule-strong'>/</span>
+					<span>SUPPORT DUNEUI</span>
+				</div>
+				<h1 class='font-heading text-4xl sm:text-6xl font-bold text-ink leading-[1.02] tracking-tight'>
+					Back independent{' '}
+					<span class='font-serif italic font-normal text-clay'>open-source</span>{' '}
+					craft.
+				</h1>
+				<p class='mt-4 max-w-2xl font-accent text-base text-ink-secondary leading-relaxed'>
+					DuneUI is completely free and open-source. Sponsorships fund ongoing component design, accessibility audits, Tailwind v4 maintenance, and new templates.
+				</p>
+			</div>
+
+			<div class='mt-12 border border-ink bg-obsidian p-8 sm:p-10 text-paper-elevated shadow-[6px_6px_0_0_#B5542D]'>
+				<div class='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-b border-white/15 pb-6'>
+					<div>
+						<span class='font-mono text-[10px] uppercase tracking-widest text-sand'>DIRECT SPONSORSHIP</span>
+						<h2 class='mt-2 font-heading text-2xl sm:text-3xl font-bold'>
+							Sponsor DuneUI Development
+						</h2>
+					</div>
 					<img
-						alt='Wind UI'
-						src='/svg/DuneUI-logo-black.svg'
-						width='150'
-						height='70'
-						style='max-width: 100%;'
+						alt='DuneUI'
+						src='/svg/DuneUI.svg'
+						class='size-12 shrink-0'
 						loading='lazy'
 						decoding='async'
 					/>
 				</div>
-				<div
-					class='mt-4 text-lg z-10 font-accent text-darker dark:text-gray-300'
-				>
-					Support the development of Wind UI and get exclusive rewards.
-				</div>
-				<p class='mt-4 text-lg font-accent text-slate-400 dark:text-slate-500'>
-					Design stunning landing pages with the same quality you love on your
-					favorite sites. <br class='hidden md:block' />
-					Create stunning landing pages with our customizable premium components.
+
+				<p class='mt-6 font-accent text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl'>
+					Every contribution helps us expand our component archive, improve documentation, and keep every primitive free forever without paywalls.
 				</p>
-				<div class='pt-6 font-accent text-base'>
-					<Link />
+
+				<div class='mt-8 flex flex-wrap gap-3'>
+					<a
+						href='https://buymeacoffee.com/fabianhermar'
+						target='_blank'
+						rel='noopener noreferrer'
+						class='inline-flex items-center gap-2 bg-sand px-6 py-3 font-mono text-xs font-semibold uppercase tracking-widest text-obsidian transition-colors hover:bg-paper-elevated'
+					>
+						<span>Buy Me a Coffee</span>
+						<span aria-hidden='true'>↗</span>
+					</a>
+					<a
+						href='https://github.com/sponsors/fabianhermar'
+						target='_blank'
+						rel='noopener noreferrer'
+						class='inline-flex items-center gap-2 border border-white/25 bg-obsidian-soft px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-paper-elevated transition-colors hover:border-white/60'
+					>
+						<span>GitHub Sponsors</span>
+						<span aria-hidden='true'>↗</span>
+					</a>
 				</div>
-				<Grid />
 			</div>
-		</article>
-	</div>
+		</div>
+	</Container>
 </section>

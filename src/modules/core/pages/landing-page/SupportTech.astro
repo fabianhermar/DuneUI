@@ -1,55 +1,79 @@
 ---
+import Container from '@/core/components/Container.astro'
+
 const techs = [
-	{ name: 'Astro', img: '/svg/logos/astro.svg' },
-	{ name: 'HTML', img: '/svg/logos/html.svg' },
-	{ name: 'Next.js', img: '/svg/logos/nextjs.svg' },
-	{ name: 'Nuxt', img: '/svg/logos/nuxt.svg' },
-	{ name: 'Preact', img: '/svg/logos/preact.svg' },
-	{ name: 'React', img: '/svg/logos/react.svg' },
-	{ name: 'Svelte', img: '/svg/logos/svelte.svg' },
-	{ name: 'Vue', img: '/svg/logos/vue.svg' },
+	{ index: '01', name: 'Astro', img: '/svg/logos/astro.svg', note: '.astro' },
+	{ index: '02', name: 'React', img: '/svg/logos/react.svg', note: '.tsx' },
+	{ index: '03', name: 'Next.js', img: '/svg/logos/nextjs.svg', note: 'RSC' },
+	{ index: '04', name: 'Vue', img: '/svg/logos/vue.svg', note: '.vue' },
+	{ index: '05', name: 'Nuxt', img: '/svg/logos/nuxt.svg', note: 'SSR' },
+	{ index: '06', name: 'Svelte', img: '/svg/logos/svelte.svg', note: '.svelte' },
+	{ index: '07', name: 'Preact', img: '/svg/logos/preact.svg', note: '3kB' },
+	{ index: '08', name: 'HTML5', img: '/svg/logos/html.svg', note: 'Raw' }
 ]
 ---
 
-<section class='relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 pt-32 pb-32'>
-	<div class='flex flex-col md:flex-row items-start md:items-center gap-14 md:gap-20'>
-
-		<!-- Left: Text -->
-		<div class='shrink-0 md:max-w-sm'>
-			<p class='text-sm font-semibold font-accent uppercase tracking-widest text-[#93603e] mb-4'>
-				Compatible with
-			</p>
-			<h2 class='text-3xl md:text-4xl font-bold font-heading text-neutral-900 leading-tight'>
-				Works with your favorite frameworks
-			</h2>
-			<p class='mt-4 text-base font-accent text-neutral-500 leading-relaxed'>
-				Any framework that supports TailwindCSS is compatible with Dune UI out of the box.
-			</p>
-		</div>
-
-		<!-- Divider -->
-		<span class='hidden md:block self-stretch w-px bg-[#ede9e3] rounded-full'></span>
-
-		<!-- Right: Logo grid -->
-		<div class='flex-1 grid grid-cols-4 gap-5'>
-			{techs.map(tech => (
-				<div
-					class='group flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#ede9e3] bg-white/70 p-6 shadow-sm transition-all duration-200 hover:border-[#c18156]/30 hover:shadow-md hover:-translate-y-1 hover:bg-white'
-				>
-					<img
-						src={tech.img}
-						alt={tech.name}
-						width='48'
-						height='48'
-						class='size-12 object-contain grayscale transition-all duration-200 group-hover:grayscale-0'
-						loading='lazy'
-						decoding='async'
-					/>
-					<span class='text-sm font-semibold font-accent text-neutral-400 group-hover:text-neutral-700 transition-colors duration-200'>
-						{tech.name}
-					</span>
+<section class='border-b border-rule bg-paper-elevated py-16 sm:py-20'>
+	<Container>
+		<div class='grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:items-center'>
+			<!-- Left Editorial Index -->
+			<div class='lg:col-span-4'>
+				<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay'>
+					<span>01</span>
+					<span class='text-rule-strong'>/</span>
+					<span>STACK AGNOSTIC</span>
 				</div>
-			))}
+				<h2 class='mt-3 font-heading text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl'>
+					Built to drop into{' '}
+					<span class='font-serif italic font-normal text-clay'>any</span>{' '}
+					workflow.
+				</h2>
+				<p class='mt-4 font-accent text-sm leading-relaxed text-ink-secondary'>
+					Clean semantic HTML and Tailwind CSS v4 utilities—zero proprietary wrappers, zero package lock-in. Copy once, adapt anywhere.
+				</p>
+				<a
+					href='/docs'
+					class='mt-5 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-clay transition-colors hover:text-clay-deep'
+				>
+					<span>Read Setup &amp; Framework Docs</span>
+					<span aria-hidden='true'>→</span>
+				</a>
+			</div>
+
+			<!-- Right Architectural 4x2 Matrix -->
+			<div class='lg:col-span-8'>
+				<div class='grid grid-cols-2 border-l border-t border-rule bg-paper sm:grid-cols-4'>
+					{
+						techs.map((tech) => (
+							<div class='group relative flex flex-col justify-between gap-6 border-b border-r border-rule p-5 transition-colors duration-200 hover:bg-paper-elevated'>
+								<div class='flex items-center justify-between'>
+									<span class='font-mono text-[10px] text-ink-muted transition-colors group-hover:text-clay'>
+										{tech.index}
+									</span>
+									<span class='font-mono text-[10px] text-ink-muted opacity-0 transition-opacity group-hover:opacity-100'>
+										{tech.note}
+									</span>
+								</div>
+
+								<div class='flex items-center gap-3'>
+									<img
+										src={tech.img}
+										alt={tech.name}
+										width='28'
+										height='28'
+										class='size-7 object-contain grayscale opacity-75 transition-all duration-200 group-hover:grayscale-0 group-hover:opacity-100'
+										loading='lazy'
+										decoding='async'
+									/>
+									<span class='font-heading text-base font-semibold text-ink-secondary transition-colors group-hover:text-ink'>
+										{tech.name}
+									</span>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
 		</div>
-	</div>
+	</Container>
 </section>

@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import Container from '@/core/components/Container.astro'
 import { getCollection } from 'astro:content'
 import { Image } from 'astro:assets'
 
@@ -20,153 +21,135 @@ function getInitials(name: string) {
 	title='Blog · DuneUI'
 	description='Read the latest articles and updates on DuneUI, Tailwind CSS components, and templates.'
 >
-	<div class='relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 pt-32 pb-28'>
+	<div class='bg-paper py-14 sm:py-20'>
+		<Container>
+			<!-- Editorial Header -->
+			<div class='flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-b border-rule pb-12 mb-12'>
+				<div>
+					<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay mb-3'>
+						<span>JOURNAL</span>
+						<span class='text-rule-strong'>/</span>
+						<span>NEWS &amp; NOTES</span>
+					</div>
+					<h1 class='font-heading text-4xl sm:text-6xl font-bold text-ink leading-[1.02] tracking-tight'>
+						Dispatches from the{' '}
+						<span class='font-serif italic font-normal text-clay'>atelier.</span>
+					</h1>
+					<p class='mt-4 max-w-md font-accent text-base text-ink-secondary leading-relaxed'>
+						Release essays, architecture notes, and craft updates from DuneUI.
+					</p>
+				</div>
 
-		<!-- ── Header ────────────────────────────────────── -->
-		<div class='flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16'>
-			<div>
-				<span class='inline-block text-xs font-semibold font-accent uppercase tracking-[0.2em] text-[#93603e] mb-4'>
-					What's new
-				</span>
-				<h1 class='text-5xl lg:text-6xl font-bold font-heading text-neutral-900 leading-[1.05] tracking-tight'>
-					News &amp;<br/>Improvements
-				</h1>
-				<p class='mt-5 max-w-md text-base font-accent text-neutral-500 leading-relaxed'>
-					Stay up to date with all the latest additions and improvements we've made to DuneUI.
-				</p>
-			</div>
-
-			<!-- Subscribe -->
-			<form
-				class='flex gap-3 shrink-0'
-				action='https://app.kit.com/forms/8415064/subscriptions'
-				method='post'
-			>
-				<div class='relative'>
-					<svg viewBox='0 0 20 20' fill='currentColor' class='pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-neutral-400'>
-						<path d='M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z'/>
-						<path d='m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z'/>
-					</svg>
+				<!-- Subscribe -->
+				<form
+					class='flex flex-col sm:flex-row gap-2.5 shrink-0'
+					action='https://app.kit.com/forms/8415064/subscriptions'
+					method='post'
+				>
 					<input
-						type='email' required autocomplete='email'
+						type='email'
+						required
+						autocomplete='email'
 						name='email_address'
 						placeholder='your@email.com'
-						class='w-64 rounded-full border border-neutral-200 bg-white py-2.5 pl-10 pr-4 text-sm font-accent text-neutral-800 placeholder:text-neutral-400 focus:border-[#93603e] focus:outline-none transition-colors'
+						aria-label='Email address'
+						class='w-full sm:w-64 border border-rule-strong bg-paper-elevated py-2.5 px-4 font-accent text-sm text-ink placeholder:text-ink-muted focus:border-ink focus:outline-none transition-colors'
 					/>
-				</div>
-				<button type='submit' class='shrink-0 rounded-full bg-[#93603e] px-5 py-2.5 text-sm font-semibold font-accent text-white hover:bg-[#7a4f33] transition-colors'>
-					Subscribe
-				</button>
-			</form>
-		</div>
-
-		<!-- ── Decorative rule ───────────────────────────── -->
-		<div class='flex items-center gap-4 mb-14'>
-			<div class='h-px flex-1 bg-neutral-100'></div>
-			<span class='text-xs font-semibold font-accent uppercase tracking-widest text-neutral-400'>
-				{posts.length} article{posts.length !== 1 ? 's' : ''}
-			</span>
-			<div class='h-px flex-1 bg-neutral-100'></div>
-		</div>
-
-		<!-- ── Articles grid 3 columns ──────────────────── -->
-		{posts.length > 0 ? (
-			<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
-				{posts.map((post, i) => (
-					<a
-						href={`/blog/${post.id}/`}
-						class={`group flex flex-col rounded-2xl overflow-hidden bg-white border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+					<button
+						type='submit'
+						class='tactile-btn shrink-0 bg-ink px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-widest text-paper-elevated hover:bg-obsidian-soft cursor-pointer'
 					>
-						<div class='relative overflow-hidden' style='aspect-ratio: 16/9;'>
-							<Image
-								src={post.data.heroImage || '/placeholder.svg'}
-								alt={post.data.title}
-								width={700}
-								height={394}
-								class='w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none'
-								loading={i === 0 ? 'eager' : 'lazy'}
-							/>
+						Subscribe
+					</button>
+				</form>
+			</div>
 
-							<div class='absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent'></div>
+			<!-- Count Rule -->
+			<div class='flex items-center justify-between mb-8 font-mono text-[11px] uppercase tracking-widest text-ink-muted'>
+				<span>PUBLISHED ARTICLES</span>
+				<span>{posts.length} ENTRY{posts.length !== 1 ? 'IES' : ''}</span>
+			</div>
 
-							{post.data.category && (
-								<span class='absolute top-4 left-4 inline-flex items-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1 text-xs font-semibold font-accent text-white'>
-									{post.data.category}
-								</span>
-							)}
+			{posts.length > 0 ? (
+				<div class='grid grid-cols-1 border-l border-t border-rule sm:grid-cols-2 lg:grid-cols-3'>
+					{posts.map((post, i) => (
+						<a
+							href={`/blog/${post.id}/`}
+							class='group flex flex-col justify-between border-b border-r border-rule bg-paper-elevated transition-colors hover:bg-paper'
+						>
+							<div>
+								<div class='relative overflow-hidden border-b border-rule' style='aspect-ratio: 16/9;'>
+									<Image
+										src={post.data.heroImage || '/placeholder.svg'}
+										alt={post.data.title}
+										width={700}
+										height={394}
+										class='w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] select-none'
+										loading={i === 0 ? 'eager' : 'lazy'}
+									/>
+									{post.data.category && (
+										<span class='absolute top-3 left-3 border border-ink bg-paper-elevated/95 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink'>
+											{post.data.category}
+										</span>
+									)}
+								</div>
 
-							{post.data.readTime && (
-								<span class='absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-black/30 backdrop-blur-md px-2.5 py-1 text-xs font-accent text-white/90'>
-									<svg class='size-3' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-										<circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/>
-									</svg>
-									{post.data.readTime} min
-								</span>
-							)}
-
-							<div class='absolute bottom-0 left-0 right-0 p-5'>
-								<h2 class='text-white font-bold font-heading text-lg leading-snug line-clamp-2 drop-shadow-sm'>
-									{post.data.title}
-								</h2>
+								<div class='p-6'>
+									<div class='flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-ink-muted mb-3'>
+										<time datetime={post.data.pubDate.toISOString()}>
+											{formatDate(post.data.pubDate)}
+										</time>
+										{post.data.readTime && <span>{post.data.readTime} MIN READ</span>}
+									</div>
+									<h2 class='font-heading text-xl font-bold text-ink leading-snug group-hover:text-clay transition-colors'>
+										{post.data.title}
+									</h2>
+									<p class='mt-2.5 font-accent text-sm text-ink-secondary leading-relaxed line-clamp-2'>
+										{post.data.description}
+									</p>
+								</div>
 							</div>
-						</div>
 
-						<div class='flex flex-col flex-1 p-5 gap-3'>
-							<p class='text-sm font-accent text-neutral-500 leading-relaxed line-clamp-2 flex-1'>
-								{post.data.description}
-							</p>
-
-							<div class='h-px bg-neutral-100'></div>
-
-							<div class='flex items-center justify-between gap-3'>
+							<div class='flex items-center justify-between border-t border-rule/70 px-6 py-4'>
 								<div class='flex items-center gap-2.5'>
 									{post.data.writerImage ? (
 										<img
 											src={post.data.writerImage}
 											alt={post.data.writer}
-											class='size-8 rounded-full object-cover ring-2 ring-neutral-100'
+											class='size-7 object-cover border border-rule'
 											loading='lazy'
 										/>
 									) : (
-										<span class='size-8 rounded-full bg-[#93603e] flex items-center justify-center text-xs font-bold text-white ring-2 ring-[#93603e]/20 shrink-0'>
+										<span class='size-7 bg-ink flex items-center justify-center font-mono text-[10px] font-bold text-paper-elevated shrink-0'>
 											{getInitials(post.data.writer)}
 										</span>
 									)}
-									<div class='min-w-0'>
-										<p class='text-xs font-semibold font-accent text-neutral-800 truncate leading-tight'>
-											{post.data.writer}
-										</p>
-										{post.data.role && (
-											<p class='text-[10px] font-accent text-neutral-400 truncate leading-tight'>
-												{post.data.role}
-											</p>
-										)}
-									</div>
+									<span class='font-accent text-xs font-semibold text-ink'>
+										{post.data.writer}
+									</span>
 								</div>
-
-								<div class='flex items-center gap-1.5 text-xs font-accent text-neutral-400 shrink-0'>
-									<svg class='size-3.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-										<rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/>
-									</svg>
-									<time datetime={post.data.pubDate.toISOString()}>
-										{formatDate(post.data.pubDate)}
-									</time>
-								</div>
+								<span class='font-mono text-xs text-clay'>Read →</span>
 							</div>
-						</div>
-					</a>
-				))}
-			</div>
-		) : (
-			<div class='flex flex-col items-center justify-center py-32 text-center'>
-				<div class='size-16 rounded-full bg-neutral-100 flex items-center justify-center mb-4'>
-					<svg class='size-8 text-neutral-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='1.5'>
-						<path stroke-linecap='round' stroke-linejoin='round' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' />
-					</svg>
+						</a>
+					))}
 				</div>
-				<p class='text-lg font-semibold font-heading text-neutral-700'>No articles yet</p>
-				<p class='text-sm font-accent text-neutral-400 mt-2'>Check back soon for the latest news.</p>
-			</div>
-		)}
+			) : (
+				<div class='border border-rule bg-paper-elevated py-20 px-6 text-center'>
+					<span class='font-mono text-xs uppercase tracking-widest text-clay'>ARCHIVE // EMPTY</span>
+					<p class='mt-3 font-heading text-2xl font-bold text-ink'>No journal dispatches published yet</p>
+					<p class='mt-2 mx-auto max-w-md font-accent text-sm text-ink-secondary'>
+						Meanwhile, inspect our latest v2.0 release notes in the changelog or explore the component directory.
+					</p>
+					<div class='mt-7 flex flex-wrap justify-center gap-3'>
+						<a href='/changelog' class='tactile-btn bg-ink px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-wider text-paper-elevated'>
+							View Changelog ↗
+						</a>
+						<a href='/components' class='border border-rule-strong bg-paper px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink hover:border-ink'>
+							Browse Components
+						</a>
+					</div>
+				</div>
+			)}
+		</Container>
 	</div>
 </Layout>

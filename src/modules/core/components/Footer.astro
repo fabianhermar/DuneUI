@@ -1,145 +1,121 @@
 ---
+import Container from './Container.astro'
+
 const sections = [
 	{
-		title: 'Application UI',
+		index: '01',
+		title: 'Primitives',
 		links: [
-			{ label: 'Tables', href: '#' },
-			{ label: 'Forms Layout', href: '#' },
-			{ label: 'Select Menus', href: '#' },
-			{ label: 'Radio Groups', href: '#' },
-			{ label: 'Checkboxes', href: '#' },
-			{ label: 'Navbars', href: '#' },
-			{ label: 'Pagination', href: '#' },
-			{ label: 'Buttons', href: '#' },
-			{ label: 'Dropdowns', href: '#' },
-			{ label: 'Browse All →', href: '#', isAccent: true }
+			{ label: 'Accordion', href: '/components/accordion' },
+			{ label: 'Alerts', href: '/components/alerts' },
+			{ label: 'Buttons', href: '/components/buttons' },
+			{ label: 'Badges', href: '/components/badges' },
+			{ label: 'Cards', href: '/components/cards' },
+			{ label: 'All Components →', href: '/components', isAccent: true }
 		]
 	},
 	{
-		title: 'Ecommerce',
+		index: '02',
+		title: 'Patterns',
 		links: [
-			{ label: 'Products Overview', href: '#' },
-			{ label: 'Products List', href: '#' },
-			{ label: 'Category Previews', href: '#' },
-			{ label: 'Shopping Cart', href: '#' },
-			{ label: 'Product Features', href: '#' },
-			{ label: 'Promotions & Discounts', href: '#' },
-			{ label: 'Checkout Forms', href: '#' },
-			{ label: 'Reviews & Ratings', href: '#' },
-			{ label: 'Order Summary', href: '#' },
-			{ label: 'Browse All →', href: '#', isAccent: true }
+			{ label: 'Avatar', href: '/components/avatar' },
+			{ label: 'Breadcrumb', href: '/components/breadcrumb' },
+			{ label: 'Button Group', href: '/components/button-group' },
+			{ label: 'Dropdown', href: '/components/dropdown' },
+			{ label: 'Forms', href: '/components/forms' },
+			{ label: 'List Group', href: '/components/list-group' }
 		]
 	},
 	{
-		title: 'Marketing',
+		index: '03',
+		title: 'Ecosystem',
 		links: [
-			{ label: 'Hero Sections', href: '#' },
-			{ label: 'Feature Sections', href: '#' },
-			{ label: 'Pricing Sections', href: '#' },
-			{ label: 'Newsletter Sections', href: '#' },
-			{ label: 'Testimonials', href: '#' },
-			{ label: 'Content Sections', href: '#' },
-			{ label: 'Newsletter Sections', href: '#' },
-			{ label: 'FAQs', href: '#' },
-			{ label: 'Footers', href: '#' },
-			{ label: 'Browse All →', href: '#', isAccent: true }
-		]
-	},
-	{
-		title: 'Templates',
-		links: [
-			{ label: '1', href: '#' },
-			{ label: '2', href: '#' },
-			{ label: '3', href: '#' },
-			{ label: '4', href: '#' }
+			{ label: 'Documentation', href: '/docs', external: false },
+			{ label: 'Pure CSS Kit', href: '/css', external: false },
+			{ label: 'Page Templates', href: '/templates', external: false },
+			{ label: 'SVG Icons', href: '/icons', external: false },
+			{ label: 'Changelog', href: '/changelog', external: false },
+			{ label: 'FAQs & License', href: '/license', external: false },
+			{ label: 'Sponsor Project', href: '/support', isAccent: true, external: false }
 		]
 	}
 ]
 ---
 
-<footer class='bg-white'>
-	<div class='mx-auto px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24'>
-		<div class='grid grid-cols-1 gap-8 lg:grid-cols-3'>
-			<div>
-				<div class='flex justify-center sm:justify-start'>
-					<img
-						src='/svg/DuneUI-logo-black.svg'
-						class='h-12'
-						alt='DuneUI Logo'
-						loading='lazy'
-						decoding='async'
-					/>
+<footer class='border-t border-rule bg-paper-elevated text-ink'>
+	<Container>
+		<div class='grid grid-cols-1 gap-12 py-16 lg:grid-cols-12 lg:py-20'>
+			<!-- Brand Column -->
+			<div class='flex flex-col justify-between gap-8 lg:col-span-5'>
+				<div>
+					<div class='flex items-center gap-3'>
+						<img
+							src='/svg/DuneUI.svg'
+							class='size-9'
+							alt='DuneUI Logo'
+							loading='lazy'
+							decoding='async'
+						/>
+						<span class='font-heading text-2xl font-bold tracking-tight'>
+							Dune<span class='font-serif italic font-normal text-clay'>UI</span>
+						</span>
+					</div>
+
+					<p class='mt-5 max-w-sm font-accent text-sm leading-relaxed text-ink-secondary'>
+						An open-source atelier of Tailwind CSS v4 and pure CSS interface primitives—crafted for teams who reject generic templates.
+					</p>
+
+					<div class='mt-6 inline-flex items-center gap-2 border border-rule bg-paper px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-secondary'>
+						<span class='size-1.5 bg-clay'></span>
+						<span>Free · Open Source · Copy-Paste</span>
+					</div>
 				</div>
 
-				<p
-					class='mt-6 max-w-md text-center font-accent font-normal leading-relaxed text-gray-500 sm:max-w-xs sm:text-left'
-				>
-					Create stunning user interfaces in minutes with our free collection of
-					high-quality Tailwind CSS components.
-				</p>
-
-				<ul class='mt-8 flex justify-center gap-6 sm:justify-start md:gap-8'>
-					<li>
-						<a
-							href='https://x.com/FabianHermar'
-							rel='noreferrer'
-							target='_blank'
-							class='text-[#93603e] transition hover:text-[#93603e]/75'
-						>
-							<span class='sr-only'>Twitter</span>
-							<svg
-								class='size-6'
-								fill='currentColor'
-								viewBox='0 0 24 24'
-								aria-hidden='true'
-							>
-								<path
-									d='M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84'
-								></path>
-							</svg>
-						</a>
-					</li>
-
-					<li>
-						<a
-							href='https://github.com/FabianHermar'
-							rel='noreferrer'
-							target='_blank'
-							class='text-[#93603e] transition hover:text-[#93603e]/75'
-						>
-							<span class='sr-only'>GitHub</span>
-							<svg
-								class='size-6'
-								fill='currentColor'
-								viewBox='0 0 24 24'
-								aria-hidden='true'
-							>
-								<path
-									fill-rule='evenodd'
-									d='M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z'
-									clip-rule='evenodd'></path>
-							</svg>
-						</a>
-					</li>
-				</ul>
+				<div class='flex items-center gap-3'>
+					<a
+						href='https://x.com/FabianHermar'
+						rel='noreferrer noopener'
+						target='_blank'
+						class='inline-flex items-center gap-2 border border-rule bg-paper px-3.5 py-2 font-mono text-xs text-ink-secondary transition-colors hover:border-ink hover:text-ink'
+					>
+						<span>X / Twitter</span>
+						<span aria-hidden='true'>↗</span>
+					</a>
+					<a
+						href='https://github.com/FabianHermar'
+						rel='noreferrer noopener'
+						target='_blank'
+						class='inline-flex items-center gap-2 border border-rule bg-paper px-3.5 py-2 font-mono text-xs text-ink-secondary transition-colors hover:border-ink hover:text-ink'
+					>
+						<span>GitHub</span>
+						<span aria-hidden='true'>↗</span>
+					</a>
+				</div>
 			</div>
 
-			<div
-				class='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2'
-			>
+			<!-- Index Columns -->
+			<div class='grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7'>
 				{
 					sections.map((section) => (
-						<div class='text-center sm:text-left'>
-							<p class='text-lg font-semibold text-gray-900 font-accent'>
-								{section.title}
-							</p>
-
-							<ul class='mt-8 flex flex-col gap-4 text-sm font-accent font-normal'>
+						<div>
+							<div class='mb-5 flex items-center gap-2 border-b border-rule pb-2.5'>
+								<span class='font-mono text-[10px] text-clay'>{section.index}</span>
+								<p class='font-mono text-xs font-semibold uppercase tracking-widest text-ink'>
+									{section.title}
+								</p>
+							</div>
+							<ul class='flex flex-col gap-2.5 font-accent text-sm'>
 								{section.links.map((link) => (
 									<li>
 										<a
-											class={`text-gray-700 transition hover:text-gray-700/75 ${link.isAccent ? 'font-accent' : ''}`}
 											href={link.href}
+											target={link.external ? '_blank' : undefined}
+											rel={link.external ? 'noreferrer noopener' : undefined}
+											class={`inline-flex items-center gap-1 transition-colors ${
+												link.isAccent
+													? 'font-semibold text-clay hover:text-clay-deep'
+													: 'text-ink-secondary hover:text-ink'
+											}`}
 										>
 											{link.label}
 										</a>
@@ -152,49 +128,30 @@ const sections = [
 			</div>
 		</div>
 
-		<div class='mt-12 border-t border-gray-100 pt-6'>
-			<div class='text-center sm:flex sm:justify-between sm:text-left'>
-				<div class='flex flex-wrap items-center justify-center sm:justify-start gap-4 text-sm text-gray-500 font-accent font-normal'>
-					<a
-						class='text-[#93603e] underline underline-offset-2 transition hover:text-[#7a4f33]'
-						href='/changelog'
-					>
-						Changelog
-					</a>
-
-					<span class='text-gray-300'>&bull;</span>
-
-					<a
-						class='text-[#93603e] underline underline-offset-2 transition hover:text-[#7a4f33]'
-						href='/license'
-					>
-						License
-					</a>
-
-					<span class='text-gray-300'>&bull;</span>
-
-					<a
-						class='text-[#93603e] underline underline-offset-2 transition hover:text-[#7a4f33]'
-						href='/faqs'
-					>
-						FAQs
-					</a>
-				</div>
-
-				<p
-					class='mt-4 text-sm text-gray-500 sm:order-first sm:mt-0 font-accent'
+		<!-- Bottom Architectural Baseline -->
+		<div class='flex flex-col items-center justify-between gap-4 border-t border-rule py-6 sm:flex-row'>
+			<p class='font-mono text-xs text-ink-muted'>
+				CRAFTED BY{' '}
+				<a
+					href='http://fabianh.me'
+					aria-label='Visit the website of Fabian Herrera - Creator of Dune UI'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='font-semibold text-ink underline decoration-rule-strong underline-offset-4 transition-colors hover:text-clay hover:decoration-clay'
 				>
-					Created by <a
-						href='http://fabianh.me'
-						aria-label='Visit the website of Fabian Herrera - Creator of Dune UI'
-						target='_blank'
-						rel='noopener noreferrer'
-						class='font-accent font-bold underline'
-					>
-						Fabian Herrera
-					</a>
-				</p>
+					FABIAN HERRERA
+				</a>
+			</p>
+
+			<div class='flex items-center gap-5 font-mono text-xs uppercase tracking-wider text-ink-muted'>
+				<a href='/docs' class='transition-colors hover:text-ink'>Docs</a>
+				<span aria-hidden='true'>/</span>
+				<a href='/changelog' class='transition-colors hover:text-ink'>Changelog</a>
+				<span aria-hidden='true'>/</span>
+				<a href='/license' class='transition-colors hover:text-ink'>License</a>
+				<span aria-hidden='true'>/</span>
+				<a href='/faqs' class='transition-colors hover:text-ink'>FAQs</a>
 			</div>
 		</div>
-	</div>
+	</Container>
 </footer>

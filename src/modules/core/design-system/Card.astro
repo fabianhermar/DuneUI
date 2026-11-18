@@ -1,46 +1,60 @@
 ---
-import LinkIcon from '@/core/design-system/Icons/LinkIcon.astro'
 import { Image } from 'astro:assets'
-import '@/styles/globals.css'
 
 interface Props {
+	index?: string
 	title: string
 	quantity: string
-	href?: string
+	href: string
 	image: string
 	alt?: string
+	tag?: string
 }
 
-const { title, quantity, href, image, alt } = Astro.props
+const { index = '00', title, quantity, href, image, alt, tag = 'UI' } = Astro.props
 ---
 
-<section>
-	<div
-		class='relative text-gray-700 bg-white border-2 border-neutral-500/15 transition-all duration-100 transform scale-100 hover:scale-101 w-72 lg:w-[320px] rounded-lg group'
-	>
-		<a
-			href={href}
-			class='flex items-center flex-col justify-center bg-[#F2F3F5]/15'
-			aria-label={alt}
-		>
-			<div
-				class='flex justify-between items-center border-b-2 border-neutral-500/15 w-full px-4 py-2 text-black'
-			>
-				<h3
-					class='flex flex-col text-xl font-heading font-semibold leading-snug tracking-normal'
-				>
-					{title}
-					<span class='font-accent text-sm text-gray-500 font-normal'>
-						{quantity}
-					</span>
-				</h3>
-				<LinkIcon />
-			</div>
-			<div
-				class='drop-shadow-[0_1px_15px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_1px_15px_rgba(255,255,255,0.15)] select-none'
-			>
-				<Image src={image} alt={alt ?? ''} width='250' height='250' />
-			</div>
-		</a>
+<a
+	href={href}
+	aria-label={`${title} — ${quantity}`}
+	class='group relative flex flex-col justify-between border-b border-r border-rule bg-paper-elevated transition-colors duration-200 hover:bg-paper'
+>
+	<!-- Top Specimen Bar -->
+	<div class='flex items-center justify-between border-b border-rule/70 px-4 py-3'>
+		<div class='flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-ink-muted'>
+			<span class='text-clay'>FIG.{index}</span>
+			<span>/</span>
+			<span>{tag}</span>
+		</div>
+		<span class='font-mono text-[10px] text-ink-muted'>
+			{quantity}
+		</span>
 	</div>
-</section>
+
+	<!-- Wireframe Stage -->
+	<div class='arch-dots-bg relative flex h-48 items-center justify-center overflow-hidden p-6'>
+		<div class='transition-transform duration-300 ease-out group-hover:scale-[1.04]'>
+			<Image
+				src={image}
+				alt={alt ?? title}
+				width='220'
+				height='180'
+				loading='eager'
+				class='max-h-36 w-auto object-contain drop-shadow-[0_6px_16px_rgba(22,20,18,0.08)] select-none'
+			/>
+		</div>
+	</div>
+
+	<!-- Footer Title Row -->
+	<div class='flex items-center justify-between border-t border-rule/70 px-4 py-3.5'>
+		<h3 class='font-heading text-lg font-bold tracking-tight text-ink transition-colors group-hover:text-clay'>
+			{title}
+		</h3>
+		<span
+			aria-hidden='true'
+			class='inline-flex size-7 items-center justify-center border border-rule bg-paper font-mono text-xs text-ink-secondary transition-all duration-200 group-hover:border-clay group-hover:bg-clay group-hover:text-paper-elevated'
+		>
+			↗
+		</span>
+	</div>
+</a>

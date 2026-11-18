@@ -1,142 +1,176 @@
 ---
 import Container from './Container.astro'
+
+const pathname = Astro.url.pathname
+const navItems = [
+	{ index: '01', label: 'Components', href: '/components' },
+	{ index: '02', label: 'Pure CSS', href: '/css' },
+	{ index: '03', label: 'Templates', href: '/templates' },
+	{ index: '04', label: 'Icons', href: '/icons' },
+	{ index: '05', label: 'Docs', href: '/docs' },
+	{ index: '06', label: 'Changelog', href: '/changelog' },
+	{ index: '07', label: 'FAQs', href: '/faqs' }
+]
 ---
 
 <script>
-	let isToggled = false
-	const navlinks = document.querySelector('#navlinks')
-	const hamburger = document.querySelector('#hamburger')
-	const links = [...navlinks.querySelector('ul').children]
+	function initNavbar() {
+		const navlinks = document.querySelector('#navlinks')
+		const hamburger = document.querySelector('#hamburger')
+		if (!navlinks || !hamburger) return
 
-	function toggleNavlinks() {
-		if (isToggled) {
-			navlinks.classList.add(
-				'visible!',
-				'scale-100!',
-				'opacity-100!',
-				'!lg:translate-y-0'
-			)
-			hamburger.classList.add('toggled')
-			// layer.classList.add("origin-top", "scale-y-100", "backdrop-blur-lg");
-		} else {
-			navlinks.classList.remove(
-				'visible!',
-				'scale-100!',
-				'opacity-100!',
-				'!lg:translate-y-0'
-			)
-			hamburger.classList.remove('toggled')
-			// layer.classList.remove("origin-top", "scale-y-100", "backdrop-blur-lg");
+		// Avoid duplicate listeners after view transitions
+		if (hamburger.getAttribute('data-bound') === 'true') return
+		hamburger.setAttribute('data-bound', 'true')
+
+		let isToggled = false
+		const links = [...(navlinks.querySelector('ul')?.children ?? [])]
+
+		function toggleNavlinks() {
+			if (!navlinks || !hamburger) return
+			if (isToggled) {
+				navlinks.classList.add(
+					'visible!',
+					'scale-100!',
+					'opacity-100!',
+					'!lg:translate-y-0'
+				)
+				hamburger.classList.add('toggled')
+				hamburger.setAttribute('aria-expanded', 'true')
+			} else {
+				navlinks.classList.remove(
+					'visible!',
+					'scale-100!',
+					'opacity-100!',
+					'!lg:translate-y-0'
+				)
+				hamburger.classList.remove('toggled')
+				hamburger.setAttribute('aria-expanded', 'false')
+			}
 		}
-	}
-	hamburger.addEventListener('click', () => {
-		isToggled = !isToggled
-		toggleNavlinks()
-	})
 
-	links.forEach((link) => {
-		link.addEventListener('click', () => {
+		hamburger.addEventListener('click', () => {
 			isToggled = !isToggled
 			toggleNavlinks()
 		})
-	})
+
+		links.forEach((link) => {
+			link.addEventListener('click', () => {
+				if (isToggled) {
+					isToggled = false
+					toggleNavlinks()
+				}
+			})
+		})
+	}
+
+	initNavbar()
+	document.addEventListener('astro:page-load', initNavbar)
 </script>
 
-<header>
+<header class='sticky top-0 z-40 w-full select-none'>
 	<nav
-		class='fixed z-20 w-full select-none border-b border-black/5 bg-white/1 pt-0 backdrop-blur-lg dark:border-white/5 lg:border-transparent'
+		aria-label='Primary'
+		class='w-full border-b border-rule bg-paper/90 backdrop-blur-md'
 	>
 		<Container>
-			<div
-				class='flex w-full flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4'
-			>
-				<div class='z-20 flex w-full justify-between md:px-0'>
+			<div class='relative flex h-16 items-center justify-between gap-6'>
+				<!-- Brand -->
+				<div class='flex items-center gap-3'>
 					<a
 						href='/'
-						aria-label='logo'
-						class='fill-current flex w-full items-center justify-start space-x-2 text-black dark:text-white'
+						aria-label='DuneUI Home'
+						class='group flex items-center gap-2.5 text-ink'
 					>
 						<img
 							src='/svg/DuneUI.svg'
-							alt='logo'
-							class='size-12'
-							loading='lazy'
+							alt='DuneUI mark'
+							class='size-8 transition-transform duration-300 group-hover:rotate-[-4deg]'
+							loading='eager'
 							decoding='async'
 						/>
-						<span class='font-heading text-2xl font-bold'
-							>Dune<span class='text-[#93603e]'>UI</span></span
-						>
+						<span class='font-heading text-xl font-bold tracking-tight text-ink'>
+							Dune<span class='font-serif italic font-normal text-clay'>UI</span>
+						</span>
 					</a>
+					<span
+						class='hidden sm:inline-flex items-center border border-rule bg-paper-elevated px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-ink-muted'
+					>
+						v2.0
+					</span>
+				</div>
 
-					<div
-						class='relative flex max-h-10 w-full items-center justify-end pr-4 lg:hidden'
+				<!-- Mobile hamburger -->
+				<div class='flex items-center lg:hidden'>
+					<button
+						aria-label='Toggle navigation menu'
+						aria-expanded='false'
+						id='hamburger'
+						type='button'
+						class='relative flex size-10 flex-col items-center justify-center border border-rule bg-paper-elevated transition-colors hover:border-rule-strong'
 					>
-						<button
-							aria-label='humburger'
-							id='hamburger'
-							class='relative -mr-6 mt-4 flex flex-col justify-center p-6'
+						<div
+							aria-hidden='true'
+							id='line'
+							class='h-0.5 w-4 bg-ink transition duration-300'
+						></div>
+						<div
+							aria-hidden='true'
+							id='line2'
+							class='mt-1.5 h-0.5 w-4 bg-ink transition duration-300'
+						></div>
+					</button>
+				</div>
+
+				<!-- Desktop & Mobile Nav Links -->
+				<div
+					id='navlinks'
+					class='invisible absolute left-0 top-[calc(100%+0.5rem)] z-30 w-full origin-top scale-95 flex-col border border-rule bg-paper-elevated p-5 opacity-0 shadow-xl transition-all duration-200 lg:visible lg:static lg:flex lg:w-auto lg:scale-100 lg:flex-row lg:items-center lg:gap-6 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none'
+				>
+					<ul
+						class='flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-0.5'
+					>
+						{
+							navItems.map((item) => {
+								const active =
+									pathname === item.href ||
+									(item.href !== '/' && pathname.startsWith(item.href))
+								return (
+									<li>
+										<a
+											href={item.href}
+											aria-label={item.label}
+											class={`group flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 font-accent text-sm transition-colors ${
+												active
+													? 'font-semibold text-clay'
+													: 'font-medium text-ink-secondary hover:text-ink'
+											}`}
+										>
+											<span class='font-mono text-[10px] text-ink-muted transition-colors group-hover:text-clay'>
+												{item.index}
+											</span>
+											<span>{item.label}</span>
+										</a>
+									</li>
+								)
+							})
+						}
+					</ul>
+
+					<div class='mt-4 flex flex-col gap-2 border-t border-rule pt-4 lg:mt-0 lg:flex-row lg:items-center lg:gap-3 lg:border-l lg:border-t-0 lg:pl-5 lg:pt-0'>
+						<a
+							href='/support'
+							class='inline-flex items-center justify-center px-3 py-2 font-mono text-xs uppercase tracking-wider text-ink-secondary transition-colors hover:text-clay'
 						>
-							<div
-								aria-hidden='true'
-								id='line'
-								class='m-auto h-0.5 w-5 rounded-md bg-black transition duration-300 dark:bg-white'
-							>
-							</div>
-							<div
-								aria-hidden='true'
-								id='line2'
-								class='m-auto mt-2 h-0.5 w-5 rounded-lg bg-black transition duration-300 dark:bg-white'
-							>
-							</div>
-						</button>
-					</div>
-					<!-- <div id="navLayer" aria-hidden="true" class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 backdrop-blur-lg transition duration-500 dark:bg-gray-100/10 lg:hidden"></div> -->
-					<div
-						id='navlinks'
-						class='invisible absolute left-0 top-full z-20 h-56 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl bg-neutral-300 p-8 opacity-0 shadow-2xl transition-all duration-300 dark:bg-neutral-700 dark:shadow-none dark:md:bg-transparent lg:visible lg:relative lg:flex lg:h-auto lg:w-full lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none'
-					>
-						<div class='text-gray-600 w-full lg:w-max lg:pr-4 lg:pt-0'>
-							<ul
-								class='flex flex-col items-center justify-end gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-base font-medium'
-							>
-								<li>
-									<a
-										href='/components'
-										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
-										aria-label='Components'
-									>
-										<span>Components</span>
-									</a>
-								</li>
-								<li>
-									<a
-										href='/templates'
-										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
-										aria-label='Templates'
-									>
-										<span>Templates</span>
-									</a>
-								</li>
-								<li>
-									<a
-										href='/showcases'
-										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
-										aria-label='Showcases'
-									>
-										<span>Showcases</span>
-									</a>
-								</li>
-								<li>
-									<a
-										href='/blog'
-										class='block font-accent text-base text-black transition-colors hover:text-neutral-300 dark:text-white md:px-4'
-										aria-label='Blog'
-									>
-										<span>What's new</span>
-									</a>
-								</li>
-							</ul>
-						</div>
+							Support
+						</a>
+						<a
+							href='/components'
+							class='tactile-btn inline-flex items-center justify-center gap-2 bg-ink px-4 py-2 font-mono text-xs font-medium uppercase tracking-wider text-paper-elevated hover:bg-obsidian-soft'
+						>
+							<span>Browse UI</span>
+							<span aria-hidden='true'>↗</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -146,19 +180,11 @@ import Container from './Container.astro'
 	<style>
 		@reference "../../../styles/globals.css";
 
-		#toggle_nav:checked ~ div #hamburger #line {
-			@apply translate-y-1.5 rotate-45;
-		}
-
-		#toggle_nav:checked ~ div #hamburger #line2 {
-			@apply -translate-y-1 -rotate-45;
-		}
-
 		.toggled div:first-child {
-			@apply translate-y-1.5 rotate-45;
+			@apply translate-y-[4px] rotate-45;
 		}
 		.toggled div:last-child {
-			@apply -translate-y-1 -rotate-45;
+			@apply -translate-y-[4px] -rotate-45;
 		}
 	</style>
 </header>

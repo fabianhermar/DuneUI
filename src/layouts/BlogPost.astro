@@ -61,85 +61,67 @@ const canonicalUrl = `https://duneui.com/blog/`
 		<ClientRouter />
 	</head>
 
-	<body class='bg-white antialiased'>
-		<Header logo='invert' navLinks='text-black' />
+	<body class='relative flex min-h-screen flex-col bg-paper text-ink antialiased'>
+		<div aria-hidden='true' class='paper-grain pointer-events-none fixed inset-0 z-50 opacity-[0.032] mix-blend-multiply'></div>
+		<Header />
 
-		<main class='pt-28 pb-24'>
-			<div class='mx-auto w-full max-w-3xl px-4 sm:px-6'>
-
-				<!-- ── Back link ─────────────────────────── -->
+		<main class='flex-1 py-14 sm:py-20'>
+			<div class='mx-auto w-full max-w-3xl px-5 sm:px-8'>
 				<a
 					href='/blog'
-					class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-neutral-500 hover:text-neutral-800 transition-colors mb-8 group'
+					class='inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-muted hover:text-ink transition-colors mb-8 group'
 				>
-					<svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-						<path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
-					</svg>
-					Back to blog
+					<span class='transition-transform group-hover:-translate-x-0.5'>←</span>
+					<span>Back to journal</span>
 				</a>
 
-				<!-- ── Meta row ──────────────────────────── -->
-				<div class='flex items-center gap-2 text-xs font-semibold font-accent uppercase tracking-widest text-[#93603e] mb-5'>
+				<div class='flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-clay mb-4'>
 					{category && <span>{category}</span>}
-					{category && <span class='text-neutral-300'>·</span>}
+					{category && <span class='text-rule-strong'>/</span>}
 					<time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
 					{readTime && (
 						<>
-							<span class='text-neutral-300'>·</span>
-							<span class='inline-flex items-center gap-1.5'>
-								<svg class='size-3.5 text-[#93603e]' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-									<circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/>
-								</svg>
-								{readTime} min read
-							</span>
+							<span class='text-rule-strong'>/</span>
+							<span>{readTime} MIN READ</span>
 						</>
 					)}
 				</div>
 
-				<!-- ── Title ─────────────────────────────── -->
-				<h1 class='text-4xl sm:text-5xl font-bold font-heading text-neutral-900 leading-[1.1] tracking-tight mb-8'>
+				<h1 class='font-heading text-4xl sm:text-5xl font-bold text-ink leading-[1.06] tracking-tight mb-8'>
 					{title}
 				</h1>
 
-				<!-- ── Author row ────────────────────────── -->
-				<div class='flex items-center justify-between mb-6'>
+				<div class='flex items-center justify-between border-y border-rule py-4 mb-10'>
 					<div class='flex items-center gap-3'>
 						{writerImage ? (
 							<img
 								src={writerImage}
 								alt={writer}
-								class='size-10 rounded-full object-cover ring-2 ring-neutral-100'
+								class='size-9 object-cover border border-rule'
 								loading='lazy'
 							/>
 						) : (
-							<span class='size-10 rounded-full bg-[#93603e] flex items-center justify-center text-sm font-bold text-white ring-2 ring-[#93603e]/20 shrink-0'>
+							<span class='size-9 bg-ink flex items-center justify-center font-mono text-xs font-bold text-paper-elevated shrink-0'>
 								{getInitials(writer)}
 							</span>
 						)}
 						<div>
-							<p class='text-sm font-semibold font-accent text-neutral-800 leading-tight'>{writer}</p>
-							{role && <p class='text-xs font-accent text-neutral-400 leading-tight'>{role}</p>}
+							<p class='font-accent text-sm font-semibold text-ink leading-tight'>{writer}</p>
+							{role && <p class='font-mono text-[10px] uppercase tracking-wider text-ink-muted leading-tight mt-0.5'>{role}</p>}
 						</div>
 					</div>
 
-					<!-- Copy link button -->
 					<button
 						id='copy-link-btn'
-						class='inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold font-accent text-neutral-600 hover:border-neutral-300 hover:text-neutral-900 transition-all duration-200 cursor-pointer'
+						type='button'
+						class='inline-flex items-center gap-2 border border-rule bg-paper-elevated px-3.5 py-2 font-mono text-[11px] uppercase tracking-wider text-ink-secondary hover:border-ink hover:text-ink transition-colors cursor-pointer'
 					>
-						<svg class='size-3.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-							<path stroke-linecap='round' stroke-linejoin='round' d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' />
-						</svg>
 						Copy link
 					</button>
 				</div>
 
-				<!-- ── Divider ───────────────────────────── -->
-				<div class='h-px bg-neutral-100 mb-10'></div>
-
-				<!-- ── Hero image ────────────────────────── -->
 				{heroImage && (
-					<div class='w-full rounded-2xl overflow-hidden mb-12 shadow-md'>
+					<div class='w-full border border-rule bg-paper-elevated p-2 mb-12'>
 						<img
 							src={heroImage}
 							alt={title}
@@ -151,28 +133,23 @@ const canonicalUrl = `https://duneui.com/blog/`
 					</div>
 				)}
 
-				<!-- ── Article body ──────────────────────── -->
-				<div class='prose prose-neutral md:prose-lg prose-headings:font-heading prose-a:text-[#93603e] prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-[#93603e] prose-code:text-[#93603e] prose-pre:bg-neutral-900 prose-img:rounded-2xl max-w-none font-accent prose-p:leading-relaxed marker:text-[#93603e]'>
+				<div class='prose prose-neutral md:prose-lg prose-headings:font-heading prose-headings:text-ink prose-p:text-ink-secondary prose-a:text-clay prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-clay prose-code:text-clay prose-pre:bg-obsidian max-w-none font-accent prose-p:leading-relaxed marker:text-clay'>
 					<slot />
 				</div>
 
-				<!-- ── Updated date ──────────────────────── -->
 				{updatedDate && (
-					<p class='mt-10 text-xs font-accent text-neutral-400 italic'>
-						Last updated on {formatDate(updatedDate)}
+					<p class='mt-10 font-mono text-xs text-ink-muted uppercase tracking-wider'>
+						Last updated // {formatDate(updatedDate)}
 					</p>
 				)}
 
-				<!-- ── Footer nav ────────────────────────── -->
-				<div class='mt-14 pt-8 border-t border-neutral-100'>
+				<div class='mt-14 pt-8 border-t border-rule'>
 					<a
 						href='/blog'
-						class='inline-flex items-center gap-2 text-sm font-semibold font-accent text-[#93603e] hover:text-[#7a4f33] transition-colors group'
+						class='inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-clay hover:text-clay-deep transition-colors'
 					>
-						<svg class='size-4 transition-transform duration-200 group-hover:-translate-x-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-							<path stroke-linecap='round' stroke-linejoin='round' d='M10 19l-7-7m0 0l7-7m-7 7h18' />
-						</svg>
-						Back to all articles
+						<span>←</span>
+						<span>Back to all articles</span>
 					</a>
 				</div>
 			</div>
@@ -182,19 +159,17 @@ const canonicalUrl = `https://duneui.com/blog/`
 	</body>
 </html>
 
-
-
 <script>
 	const btn = document.getElementById('copy-link-btn')
 	btn?.addEventListener('click', async () => {
 		try {
 			await navigator.clipboard.writeText(window.location.href)
-			const original = btn.innerHTML
-			btn.innerHTML = `<svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Copied!`
-			btn.classList.add('border-[#93603e]', 'text-[#93603e]')
+			const original = btn.textContent
+			btn.textContent = 'Copied!'
+			btn.classList.add('border-clay', 'text-clay')
 			setTimeout(() => {
-				btn.innerHTML = original
-				btn.classList.remove('border-[#93603e]', 'text-[#93603e]')
+				btn.textContent = original
+				btn.classList.remove('border-clay', 'text-clay')
 			}, 2000)
 		} catch {}
 	})
