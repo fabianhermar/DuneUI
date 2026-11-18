@@ -1,8 +1,23 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('SVG Icons Library (/icons)', () => {
-  test('renders 340+ icons with valid geometry and interactive controls', async ({ page, context }) => {
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  test('renders 600+ icons with valid geometry and interactive controls', async ({ page, context, browserName }) => {
+    if (browserName === 'chromium') {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    } else {
+      await page.addInitScript(() => {
+        let lastCopied = '';
+        Object.defineProperty(navigator, 'clipboard', {
+          configurable: true,
+          value: {
+            writeText: async (text: string) => {
+              lastCopied = text;
+            },
+            readText: async () => lastCopied,
+          },
+        });
+      });
+    }
     await page.goto('/icons');
 
     const cards = page.locator('[data-icon-card]');

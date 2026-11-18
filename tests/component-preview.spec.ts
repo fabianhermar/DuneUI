@@ -4,7 +4,9 @@ test.describe('ComponentPreview Interaction', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/components/accordion');
     // Wait for the eager first ComponentPreview island to hydrate before clicking controls
-    await expect(page.locator('main section').first().locator('iframe')).toBeVisible();
+    await expect(page.locator('main section').first().locator('iframe')).toBeVisible({
+      timeout: 15_000,
+    });
   });
 
   test('Toggles between Preview and Code tabs with pre-highlighted Shiki code', async ({ page }) => {

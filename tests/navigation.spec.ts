@@ -15,9 +15,7 @@ test.describe('DuneUI Navigation and Pages', () => {
   test('Blog page loads', async ({ page }) => {
     await page.goto('/blog');
     await expect(page.locator('body')).toBeVisible();
-    // Assuming a heading or title might have 'Blog'
-    const title = await page.title();
-    // Optional: expect(title).toMatch(/Blog/i);
+    await expect(page).toHaveTitle(/./);
   });
 
   test('Components page loads', async ({ page }) => {
