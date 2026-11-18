@@ -1,180 +1,315 @@
-<section
-	class='relative mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8 pt-32 flex flex-col md:flex-row gap-y-10 md:gap-y-0 items-center justify-between pb-32 md:pb-0'
->
-	<div class='max-w-2xl'>
-		<h2
-			class='text-base lg:text-lg pl-1 leading-7 text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent font-medium'
-		>
-			CSS Components
-		</h2>
-		<p
-			class='mt-4 text-2xl lg:text-5xl tracking-tight text-slate-900 dark:text-white font-heading font-semibold'
-		>
-			Pure CSS components, no TailwindCSS required—simple, stylish, and ready to
-			use.
-		</p>
-		<div class='max-w-xl'>
-			<p
-				class='mt-4 text-sm lg:text-base leading-7 dark:text-white text-slate-700 font-accent font-normal'
-			>
-				For pure CSS lovers we also have a section of components purely made
-				with CSS, keeping the essence of Dune UI.
-			</p>
+---
+import Container from '@/core/components/Container.astro'
+---
+
+<section class='border-b border-rule bg-paper-elevated py-20 sm:py-28'>
+	<Container>
+		<div class='grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14'>
+			<!-- Left Editorial Explanation -->
+			<div class='lg:col-span-5'>
+				<div class='flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-clay'>
+					<span>03</span>
+					<span class='text-rule-strong'>/</span>
+					<span>PURE CSS ENGINE</span>
+				</div>
+
+				<h2 class='mt-3 font-heading text-3xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl'>
+					Zero Tailwind?
+					<span class='block mt-1 font-serif italic font-normal text-clay'>
+						Pure CSS primitives.
+					</span>
+				</h2>
+
+				<p class='mt-5 font-accent text-base leading-relaxed text-ink-secondary'>
+					Not every project runs a utility compiler. DuneUI provides standalone, token-driven CSS modules built on native custom properties, container queries, and modern selectors—portable into any legacy or minimalist stack.
+				</p>
+
+				<div class='mt-7 space-y-3 border-t border-rule pt-6 font-mono text-xs text-ink-secondary'>
+					<div class='flex items-center justify-between'>
+						<span>Native CSS Variables</span>
+						<span class='text-clay'>--dune-*</span>
+					</div>
+					<div class='flex items-center justify-between'>
+						<span>Build Step Required</span>
+						<span class='text-ink'>None (0 ms)</span>
+					</div>
+					<div class='flex items-center justify-between'>
+						<span>Modern Nesting &amp; Cascade</span>
+						<span class='text-ink'>Baseline 2026</span>
+					</div>
+				</div>
+
+				<div class='mt-8'>
+					<a
+						href='/css'
+						class='inline-flex items-center gap-2 border border-ink bg-paper px-5 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper-elevated'
+					>
+						<span>Browse CSS Components</span>
+						<span aria-hidden='true'>→</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Right Interactive Pure CSS Specimen -->
+			<div class='lg:col-span-7'>
+				<div class='border border-rule bg-paper p-4 sm:p-7 shadow-[6px_6px_0_0_#DDD5C7]'>
+					<div class='mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-4'>
+						<div class='flex items-center gap-2 font-mono text-[11px] text-ink-muted'>
+							<span class='text-clay'>SPECIMEN.CSS</span>
+							<span>/</span>
+							<span>INTERACTIVE TOKENS</span>
+						</div>
+						<div class='flex items-center gap-1.5' id='css-token-switcher'>
+							<button
+								type='button'
+								data-accent='#B5542D'
+								data-name='TERRACOTTA'
+								class='css-swatch cursor-pointer border border-ink bg-[#B5542D] px-2.5 py-1 font-mono text-[10px] text-white'
+							>
+								CLAY
+							</button>
+							<button
+								type='button'
+								data-accent='#1F4E5F'
+								data-name='MINERAL'
+								class='css-swatch cursor-pointer border border-rule bg-paper-elevated px-2.5 py-1 font-mono text-[10px] text-ink hover:border-ink'
+							>
+								MINERAL
+							</button>
+							<button
+								type='button'
+								data-accent='#4A5D3F'
+								data-name='SAGE'
+								class='css-swatch cursor-pointer border border-rule bg-paper-elevated px-2.5 py-1 font-mono text-[10px] text-ink hover:border-ink'
+							>
+								OLIVE
+							</button>
+						</div>
+					</div>
+
+					<!-- Pure CSS Rendered Card -->
+					<div id='pure-css-demo' class='dune-css-card'>
+						<div class='dune-css-card__media'>
+							<div class='dune-css-card__badge'>SERIES 04</div>
+							<div class='dune-css-card__ring'></div>
+							<div class='dune-css-card__core'></div>
+						</div>
+						<div class='dune-css-card__body'>
+							<div class='dune-css-card__meta'>
+								<span>AUDIO MODULE</span>
+								<span>D-04</span>
+							</div>
+							<h3 class='dune-css-card__title'>Monolith Synth Dock</h3>
+							<p class='dune-css-card__desc'>
+								Styled exclusively with scoped native CSS variables—switch swatches above to mutate the live token state.
+							</p>
+							<div class='dune-css-card__footer'>
+								<span class='dune-css-card__price'>$240</span>
+								<a href='/components/cards' class='dune-css-card__btn'>
+									View Card Specs ↗
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Token Output Strip -->
+					<div class='mt-5 flex flex-wrap items-center justify-between gap-2 bg-obsidian px-4 py-3 font-mono text-[11px] text-paper-elevated'>
+						<span>
+							<span class='text-sand'>--dune-accent:</span>{' '}
+							<span id='css-token-value'>#B5542D</span>;
+						</span>
+						<span class='text-white/50'>
+							THEME: <span id='css-token-name' class='text-paper-elevated'>TERRACOTTA</span>
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class='mt-6'>
-			<a
-				class='text-sm lg:text-base text-transparent bg-clip-text bg-linear-to-r from-[#93603e] via-[#c18156] to-[#cea472] font-accent hover:text-[#cea472] transition-colors font-medium'
-				href='/css'
-				>Browse CSS components <span aria-hidden='true'>→</span>
-			</a>
-		</div>
-	</div>
-	<div class='card hidden md:block'>
-		<nav class='flex items-center justify-between'>
-			<svg
-				class='arrow'
-				version='1.1'
-				viewBox='0 0 512 512'
-				width='512px'
-				xml:space='preserve'
-				xmlns='http://www.w3.org/2000/svg'
-				xmlns:xlink='http://www.w3.org/1999/xlink'
-				><polygon
-					points='352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 '
-					stroke='#727272'></polygon></svg
-			>
-			<span class='font-accent'>Decorative Plant</span>
-			<svg
-				class='heart'
-				version='1.1'
-				viewBox='0 0 512 512'
-				width='512px'
-				xml:space='preserve'
-				stroke='#727272'
-				xmlns='http://www.w3.org/2000/svg'
-				xmlns:xlink='http://www.w3.org/1999/xlink'
-				><path
-					d='M340.8,98.4c50.7,0,91.9,41.3,91.9,92.3c0,26.2-10.9,49.8-28.3,66.6L256,407.1L105,254.6c-15.8-16.6-25.6-39.1-25.6-63.9  c0-51,41.1-92.3,91.9-92.3c38.2,0,70.9,23.4,84.8,56.8C269.8,121.9,302.6,98.4,340.8,98.4 M340.8,83C307,83,276,98.8,256,124.8  c-20-26-51-41.8-84.8-41.8C112.1,83,64,131.3,64,190.7c0,27.9,10.6,54.4,29.9,74.6L245.1,418l10.9,11l10.9-11l148.3-149.8  c21-20.3,32.8-47.9,32.8-77.5C448,131.3,399.9,83,340.8,83L340.8,83z'
-					stroke='#727272'></path></svg
-			>
-		</nav>
-		<div class='photo'>
-			<img
-				src='https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg'
-			/>
-		</div>
-		<div class='description'>
-			<h3 class='font-heading font-semibold -mb-4'>Classic Peace Lily</h3>
-			<p class='font-accent -mb-4'>Popular House Plant</p>
-			<span class='font-accent'>$18</span>
-			<p class='font-accent'>
-				Classic Peace Lily is a spathiphyllum floor plant arranged in a bamboo
-				planter with a blue & red ribbom and butterfly pick.
-			</p>
-			<button class='font-accent'>Add to Cart</button>
-			<button class='font-accent'>Wishlist</button>
-		</div>
-	</div>
+	</Container>
 </section>
 
+<script>
+	function initCssSwatchDemo() {
+		const container = document.getElementById('pure-css-demo')
+		const tokenVal = document.getElementById('css-token-value')
+		const tokenName = document.getElementById('css-token-name')
+		const buttons = document.querySelectorAll<HTMLButtonElement>('.css-swatch')
+		if (!container || !buttons.length) return
+
+		buttons.forEach((btn) => {
+			if (btn.getAttribute('data-bound') === 'true') return
+			btn.setAttribute('data-bound', 'true')
+
+			btn.addEventListener('click', () => {
+				const accent = btn.dataset.accent || '#B5542D'
+				const name = btn.dataset.name || 'TERRACOTTA'
+				container.style.setProperty('--dune-accent', accent)
+				if (tokenVal) tokenVal.textContent = accent
+				if (tokenName) tokenName.textContent = name
+
+				buttons.forEach((b) => {
+					b.classList.remove('border-ink', 'text-white')
+					b.classList.add('border-rule', 'bg-paper-elevated', 'text-ink')
+					b.style.backgroundColor = ''
+				})
+				btn.classList.remove('border-rule', 'bg-paper-elevated', 'text-ink')
+				btn.classList.add('border-ink', 'text-white')
+				btn.style.backgroundColor = accent
+			})
+		})
+	}
+
+	initCssSwatchDemo()
+	document.addEventListener('astro:page-load', initCssSwatchDemo)
+</script>
+
 <style>
-	.card {
-		width: 650px;
-		background: white;
-		margin: 0 auto;
-		top: 50%;
-		left: 100%;
-		box-shadow:
-			0 2px 5px 0 rgba(0, 0, 0, 0.16),
-			0 2px 10px 0 rgba(0, 0, 0, 0.12);
-		transition: all 0.3s;
+	.dune-css-card {
+		--dune-accent: #b5542d;
+		--dune-surface: #faf7f2;
+		--dune-ink: #161412;
+		--dune-muted: #574f47;
+		--dune-border: #ddd5c7;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		border: 1px solid var(--dune-border);
+		background: var(--dune-surface);
+		transition: border-color 0.2s ease;
 	}
-	.card nav {
-		width: 100%;
-		color: #727272;
+
+	@media (min-width: 640px) {
+		.dune-css-card {
+			grid-template-columns: 200px 1fr;
+		}
+	}
+
+	.dune-css-card__media {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 190px;
+		background: #eae3d7;
+		border-bottom: 1px solid var(--dune-border);
+		overflow: hidden;
+	}
+
+	@media (min-width: 640px) {
+		.dune-css-card__media {
+			border-bottom: 0;
+			border-right: 1px solid var(--dune-border);
+		}
+	}
+
+	.dune-css-card__badge {
+		position: absolute;
+		top: 0.75rem;
+		left: 0.75rem;
+		padding: 0.2rem 0.45rem;
+		font-family: var(--font-mono);
+		font-size: 0.625rem;
+		letter-spacing: 0.14em;
+		background: var(--dune-ink);
+		color: var(--dune-surface);
+	}
+
+	.dune-css-card__ring {
+		width: 112px;
+		height: 112px;
+		border-radius: 9999px;
+		border: 1.5px dashed color-mix(in srgb, var(--dune-accent) 55%, transparent);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.5s ease, border-color 0.25s ease;
+	}
+
+	.dune-css-card:hover .dune-css-card__ring {
+		transform: rotate(35deg);
+	}
+
+	.dune-css-card__core {
+		position: absolute;
+		width: 62px;
+		height: 62px;
+		border-radius: 9999px;
+		background: var(--dune-accent);
+		box-shadow: inset 0 -6px 14px rgba(0, 0, 0, 0.22);
+		transition: background-color 0.25s ease, transform 0.25s ease;
+	}
+
+	.dune-css-card:hover .dune-css-card__core {
+		transform: scale(1.06);
+	}
+
+	.dune-css-card__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1.35rem;
+	}
+
+	.dune-css-card__meta {
+		display: flex;
+		justify-content: space-between;
+		font-family: var(--font-mono);
+		font-size: 0.6875rem;
+		letter-spacing: 0.12em;
+		color: var(--dune-accent);
+		transition: color 0.25s ease;
+	}
+
+	.dune-css-card__title {
+		margin-top: 0.5rem;
+		font-family: var(--font-heading);
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: var(--dune-ink);
+	}
+
+	.dune-css-card__desc {
+		margin-top: 0.4rem;
+		font-family: var(--font-accent);
+		font-size: 0.875rem;
+		line-height: 1.55;
+		color: var(--dune-muted);
+	}
+
+	.dune-css-card__footer {
+		margin-top: 1.25rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--dune-border);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+	}
+
+	.dune-css-card__price {
+		font-family: var(--font-heading);
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--dune-ink);
+	}
+
+	.dune-css-card__btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 0.9rem;
+		background: var(--dune-accent);
+		color: #faf7f2;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		padding: 20px;
-		border-bottom: 2px solid #efefef;
-		font-size: 12px;
+		text-decoration: none;
+		transition: background-color 0.25s ease, transform 0.15s ease;
 	}
-	.card nav svg.heart {
-		height: 24px;
-		width: 24px;
-		float: right;
-		margin-top: -3px;
-		transition: all 0.3s ease;
-		cursor: pointer;
-	}
-	.card nav svg.heart:hover {
-		fill: red;
-	}
-	.card nav svg.arrow {
-		float: left;
-		height: 15px;
-		width: 15px;
-		margin-right: 10px;
-	}
-	.card .photo {
-		padding: 30px;
-		width: 45%;
-		text-align: center;
-		float: left;
-	}
-	.card .photo img {
-		max-height: 240px;
-	}
-	.card .description {
-		padding: 30px;
-		float: left;
-		width: 55%;
-		border-left: 2px solid #efefef;
-	}
-	.card .description h1 {
-		color: #515151;
-		font-weight: 300;
-		padding-top: 15px;
-		margin: 0;
-		font-size: 30px;
-		font-weight: 300;
-	}
-	.card .description h2 {
-		color: #515151;
-		margin: 0;
-		text-transform: uppercase;
-		font-weight: 500;
-	}
-	.card .description h4 {
-		margin: 0;
-		color: #727272;
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: 12px;
-	}
-	.card .description p {
-		font-size: 12px;
-		line-height: 20px;
-		color: #727272;
-		padding: 20px 0;
-		margin: 0;
-	}
-	.card .description button {
-		outline: 0;
-		border: 0;
-		background: none;
-		border: 1px solid #d9d9d9;
-		padding: 8px 0px;
-		margin-bottom: 30px;
-		color: #515151;
-		text-transform: uppercase;
-		width: 125px;
-		font-family: inherit;
-		margin-right: 5px;
-		transition: all 0.3s ease;
-		font-weight: 500;
-	}
-	.card .description button:hover {
-		border: 1px solid #3a7330;
-		color: #3a7330;
-		cursor: pointer;
+
+	.dune-css-card__btn:hover {
+		transform: translateY(-1px);
+		filter: brightness(0.92);
 	}
 </style>
