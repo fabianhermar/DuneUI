@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://duneui.com" target="_blank" rel="noreferrer">
+  <a href="https://duneui.dev" target="_blank" rel="noreferrer">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/FabianHermar/DuneUI/refs/heads/main/public/svg/DuneUI-logo-white.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/FabianHermar/DuneUI/refs/heads/main/public/svg/DuneUI-logo-black.svg" />
@@ -13,15 +13,15 @@
   </p>
 
   <p>
-    <a href="https://duneui.com">Website</a>
+    <a href="https://duneui.dev">Website</a>
     &nbsp;·&nbsp;
-    <a href="https://duneui.com/components">Components</a>
+    <a href="https://duneui.dev/components">Components</a>
     &nbsp;·&nbsp;
-    <a href="https://duneui.com/icons">SVG Icons</a>
+    <a href="https://duneui.dev/icons">SVG Icons</a>
     &nbsp;·&nbsp;
-    <a href="https://duneui.com/docs">Documentation</a>
+    <a href="https://duneui.dev/docs">Documentation</a>
     &nbsp;·&nbsp;
-    <a href="https://duneui.com/changelog">Changelog</a>
+    <a href="https://duneui.dev/changelog">Changelog</a>
   </p>
 </div>
 
@@ -58,8 +58,8 @@ DuneUI organizes **60 component categories** (`10` distinct specs each) across t
 
 ## 🛠 Using Components in Your Project
 
-1. **Ensure Tailwind CSS v4+ is configured** in your project (Vite, PostCSS, Tailwind CLI, or Play CDN). See the [DuneUI Docs](https://duneui.com/docs) for setup snippets across HTML, React/Next.js, Vue/Nuxt, and Astro.
-2. **Browse a category** at [duneui.com/components](https://duneui.com/components) and test breakpoints or light/dark stage modes live.
+1. **Ensure Tailwind CSS v4+ is configured** in your project (Vite, PostCSS, Tailwind CLI, or Play CDN). See the [DuneUI Docs](https://duneui.dev/docs) for setup snippets across HTML, React/Next.js, Vue/Nuxt, and Astro.
+2. **Browse a category** at [duneui.dev/components](https://duneui.dev/components) and test breakpoints or light/dark stage modes live.
 3. **Copy & adapt** the HTML snippet into your project. When pasting into React/JSX, convert standard HTML attributes (`class` → `className`, `for` → `htmlFor`, `stroke-width` → `strokeWidth`, self-closing tags).
 
 > [!NOTE]
@@ -163,4 +163,4 @@ DuneUI is **free and open** for personal, client, SaaS, commercial, and open-sou
 - **Allowed:** Personal sites, commercial products, client deliverables, open-source repositories, and full customization of copied snippets.
 - **Not allowed:** Repackaging or reselling DuneUI components as a competing UI kit, standalone asset pack, or marketplace theme.
 
-See the full plain-language terms on the [License page](https://duneui.com/license) ([`src/pages/license/index.astro`](src/pages/license/index.astro)).
+See the full plain-language terms on the [License page](https://duneui.dev/license) ([`src/pages/license/index.astro`](src/pages/license/index.astro)).
